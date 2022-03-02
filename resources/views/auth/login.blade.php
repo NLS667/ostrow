@@ -49,7 +49,7 @@
                         {{ Form::submit(trans('labels.frontend.auth.login_button'), ['class' => 'btn btn-primary-blue btn-block btn-round']) }}
                         {{ Form::close() }}
                         <div class="forgot">
-                            {{ link_to_route('auth.password.request', trans('labels.frontend.passwords.forgot_password'), [], ['class' => 'btn btn-link btn-primary-blue']) }}
+                            {{ link_to_route('auth.password.reset', trans('labels.frontend.passwords.forgot_password'), [], ['class' => 'btn btn-link btn-primary-blue']) }}
                         </div>
                     </div>
                 </div>
