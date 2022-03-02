@@ -14,6 +14,6 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return View('index');
+        return View('welcome');
     }
 }
