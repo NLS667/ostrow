@@ -10,14 +10,14 @@
                     <div class="card card-register">
                         <h3 class="card-title">{{ trans('labels.frontend.auth.login_box_title') }}</h3>
                         {{ Form::open(['route' => 'auth.login', 'class' => 'register-form']) }}
-                        <label for="email">e-mail</label>
+                        <label for="email">E-mail</label>
                         <div class="input-group form-group-no-border">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                     <i class="nc-icon nc-email-85"></i>
                                 </span>
                             </div> 
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="{{ trans('validation.attributes.frontend.register-user.email') }}">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="e-mail">
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -31,7 +31,7 @@
                                     <i class="nc-icon nc-key-25"></i>
                                 </span>
                             </div>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="new-password" placeholder="{{ trans('validation.attributes.frontend.register-user.password') }}">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="new-password" placeholder="hasło">
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
