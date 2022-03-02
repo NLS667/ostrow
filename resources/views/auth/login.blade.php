@@ -10,7 +10,7 @@
                     <div class="card card-register">
                         <h3 class="card-title">{{ trans('labels.frontend.auth.login_box_title') }}</h3>
                         {{ Form::open(['route' => 'auth.login', 'class' => 'register-form']) }}
-                        <label for="email">{{ trans('validation.attributes.frontend.register-user.email') }}</label>
+                        <label for="email">e-mail</label>
                         <div class="input-group form-group-no-border">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -24,7 +24,7 @@
                                 </span>
                             @enderror
                         </div>
-                        <label for="password">{{ trans('validation.attributes.frontend.register-user.password') }}</label>
+                        <label for="password">Hasło</label>
                         <div class="input-group form-group-no-border">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -42,14 +42,14 @@
                             <label class="form-check-label">                                
                                 <input id="remember" type="checkbox" class="form-check-input @error('remember') is-invalid @enderror" name="remember" value="0">
                                 <span class="form-check-sign"></span>
-                                <small>{{ trans('labels.frontend.auth.remember_me') }}</small>                                
+                                <small>Zapamiętaj mnie</small>                                
                             </label>
                         </div>
                         
-                        {{ Form::submit(trans('labels.frontend.auth.login_button'), ['class' => 'btn btn-primary-blue btn-block btn-round']) }}
+                        {{ Form::submit('Zaloguj', ['class' => 'btn btn-primary-blue btn-block btn-round']) }}
                         {{ Form::close() }}
                         <div class="forgot">
-                            {{ link_to_route('auth.password.reset', trans('labels.frontend.passwords.forgot_password'), [], ['class' => 'btn btn-link btn-primary-blue']) }}
+                            {{ link_to_route('auth.password.reset', 'Nie pamiętam hasła', [], ['class' => 'btn btn-link btn-primary-blue']) }}
                         </div>
                     </div>
                 </div>
