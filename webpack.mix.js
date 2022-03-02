@@ -11,6 +11,24 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.autoload({
+        jquery: ['$', 'window.jQuery', 'jQuery'],
+        'popper.js/dist/umd/popper.js': ['Popper']
+    })
+	.sass('resources/assets/sass/front.scss', 'public/css/front.css')
+	.sass('resources/assets/sass/app.scss', 'public/css')
+    .styles([
+        'node_modules/select2/dist/css/select2.css',
+    ], 'public/css/app-custom.css')
+	.js([
+    	'resources/assets/js/front.js',
+    	'resources/assets/js/plugins/paper-kit.js',
+    ], 'public/js/front.js')
+    .js('resources/assets/js/app.js', 'public/js')
+    .scripts([
+        "resources/assets/js/plugins/black-dashboard.js",  
+        "resources/assets/js/plugins/common.js",
+        "resources/assets/js/plugins/theme.js",
+    ], 'public/js/backend-custom.js')
     .vue()
-    .sass('resources/sass/app.scss', 'public/css');
+    .version();
