@@ -5,6 +5,8 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ChangePasswordController;
+//use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +61,5 @@ Route::group(['namespace' => 'Auth', 'as' => 'auth.'], function () {
         Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.reset');
     });
 });
+
+//Route::get('admin', [AdminController::class, 'index'])->name('index');
