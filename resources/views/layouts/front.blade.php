@@ -42,7 +42,7 @@
 
     <!-- Scripts -->
     @yield('before-scripts')
-    {!! Html::script(mix('js/front.js')) !!}
+    {!! Html::script(mix('js/front.js')) !!} 
     @yield('after-scripts')
     
 </body>
