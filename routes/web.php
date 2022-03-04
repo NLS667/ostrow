@@ -19,7 +19,7 @@ use App\Http\Controllers\Auth\ChangePasswordController;
 |
 */
 
-Route::get('/', [FrontendController::class, 'index'])->name('welcome');
+Route::get('/', [FrontendController::class, 'index'])->name('index');
 
 Route::group(['namespace' => 'Auth', 'as' => 'auth.'], function () {
 
