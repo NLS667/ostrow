@@ -31,7 +31,9 @@
 </head>
 <body>
     <div id="app">
-        @include('includes.nav')
+        @if (\Request::is('login') == false)  
+            @include('includes.nav')
+        @endif    
         @yield('content')
         @if (\Request::is('login') == false && \Request::is('register') == false && \Request::is('password/forgot') == false && \Request::is('password/reset') == false)  
             @include('includes.footer')
