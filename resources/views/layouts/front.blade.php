@@ -30,14 +30,9 @@
     </script>
 </head>
 <body>
-    <div id="app">
-        @if (\Request::is('login') == false)  
-            @include('includes.nav')
-        @endif    
+    <div id="app"> 
         @yield('content')
-        @if (\Request::is('login') == false && \Request::is('register') == false && \Request::is('password/forgot') == false && \Request::is('password/reset') == false)  
-            @include('includes.footer')
-        @endif      
+        @include('includes.footer')    
     </div>
 
     <!-- Scripts -->
