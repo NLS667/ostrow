@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="wrapper">
-    <div class="page-header" style="background-image: url('../img/register_bg.png'), linear-gradient(104.36deg, #00264c 60%, #0054A6 90%);">
+    <div class="page-header">
         <div class="filter"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 offset-lg-4 col-sm-6 offset-sm-3">
                     <div class="card card-register">
-                        <h3 class="card-title">{{ trans('labels.frontend.auth.login_box_title') }}</h3>
+                        <h3 class="card-title">CRM Login</h3>
                         {{ Form::open(['route' => 'auth.login', 'class' => 'register-form']) }}
                         <label for="email">E-mail</label>
                         <div class="input-group form-group-no-border">
