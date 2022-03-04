@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-4 offset-lg-4 col-sm-6 offset-sm-3">
                     <div class="card card-register">
-                        <h3 class="card-title">CRM Login</h3>
+                        <h3 class="card-title">Logowanie do CRM</h3>
                         {{ Form::open(['route' => 'auth.login', 'class' => 'register-form']) }}
                         <label for="email">E-mail</label>
                         <div class="input-group form-group-no-border">
