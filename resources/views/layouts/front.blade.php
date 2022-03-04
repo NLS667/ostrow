@@ -32,7 +32,6 @@
 <body>
     <div id="app"> 
         @yield('content')
-        @include('includes.footer')    
     </div>
 
     <!-- Scripts -->
