@@ -10,7 +10,7 @@
 			</div>
 	        <div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
-                @if (! $logged_in_user)         
+                @if (! $logged_in_user)     
                     <li class="nav-item">
                         <a href="{{ route('auth.login') }}" class="nav-link"><i class="fas fa-sign-in-alt"></i>Login</a>
                     </li>
