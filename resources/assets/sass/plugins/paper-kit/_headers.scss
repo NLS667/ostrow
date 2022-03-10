@@ -49,8 +49,8 @@
 
     .filter{
       &::after{
-        background: linear-gradient(180deg,#003974 0%,rgba(0,57,116,0) 100%);
-        //background-color: rgba($filter-primary-blue, 0.5);
+        //background: linear-gradient(180deg,#003974 0%,rgba(0,57,116,0) 100%);
+        background-color: rgba($filter-primary-blue, 0.5);
         content: "";
         display: block;
         height: 100%;
