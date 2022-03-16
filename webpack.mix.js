@@ -24,14 +24,9 @@ mix.autoload({
     	'resources/assets/js/front.js',
     	'resources/assets/js/plugins/paper-kit.js',
     ], 'public/js/front.js')
-    .js([
-    	'resources/assets/js/app.js',
-    	'resources/assets/js/plugins/bootstrap-material-design.min.js',
-    ], 'public/js/app.js')
+    .js('resources/assets/js/app.js', 'public/js')
     .scripts([
-        "resources/assets/js/plugins/black-dashboard.js",  
-        "resources/assets/js/plugins/common.js",
-        "resources/assets/js/plugins/theme.js",
+        'resources/assets/js/plugins/bootstrap-material-design.min.js'
     ], 'public/js/backend-custom.js')
     .vue()
     .version();
