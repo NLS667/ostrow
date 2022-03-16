@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Backend\User\AccountController;
+use App\Http\Controllers\Backend\User\ProfileController;
+
 /*
  * These backend controllers require the user to be logged in
  * All route names are prefixed with 'admin.'

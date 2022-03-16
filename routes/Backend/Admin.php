@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminController;
+
 /**
  * All route names are prefixed with 'admin.'.
  */

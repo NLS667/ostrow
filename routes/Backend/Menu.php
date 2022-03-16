@@ -1,4 +1,7 @@
 <?php
+
+use App\Http\Controllers\Backend\Menu\MenuFormController;
+
 /**
  * Menu Management.
  */
