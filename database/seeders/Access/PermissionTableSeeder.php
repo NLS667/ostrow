@@ -3,7 +3,7 @@
 use Carbon\Carbon;
 use Database\DisableForeignKeys;
 use Database\TruncateTable;
-use Illuminate\Database\Seeders;
+use Illuminate\Database\Seeder;
 
 /**
  * Class PermissionTableSeeder.
