@@ -26,7 +26,7 @@
     <body class="hold-transition sidebar-mini layout-fixed" style="padding-top:0px;">
         <div class="loading" style="display:none"></div>
         @include('includes.partials.logged-in-as')
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
         <div class="wrapper" id="app">
