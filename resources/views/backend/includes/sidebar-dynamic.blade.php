@@ -1,4 +1,22 @@
 <!-- Main Sidebar Container -->
+<div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
+    <div class="logo">
+        <a href="#" class="simple-text logo-normal">
+            OSTR CRM
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="nav-item {{ active_class(if_route('admin.index'), 'active', '') }}">
+                <a class="nav-link" href="{{ route('admin.index') }}">
+                  <i class="material-icons">dashboard</i>
+                    <p>Pulpit</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
 <aside class="main-sidebar sidebar-dark-dark elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('admin.index') }}" class="brand-link">
@@ -18,9 +36,6 @@
                         {{ trans('menus.backend.sidebar.dashboard') }}
                     </a>
                 </li>
-                <li class="nav-header">{{ trans('menus.backend.sidebar.sit') }}</li>
-                {{ renderMenuItems(getMenuItems('backend', 2)) }}
-                <li class="nav-header">{{ trans('menus.backend.sidebar.system') }}</li>
                 {{ renderMenuItems(getMenuItems('backend', 1)) }}
             </ul>
         </nav><!-- /.sidebar-menu -->
