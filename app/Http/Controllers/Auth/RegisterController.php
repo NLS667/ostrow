@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend\Auth;
+namespace App\Http\Controllers\Auth;
 
 use App\Events\Frontend\Auth\UserRegistered;
 use App\Http\Controllers\Controller;
