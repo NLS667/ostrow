@@ -4,12 +4,12 @@
     <section class="sidebar">
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">{{ trans('menus.backend.sidebar.general') }}</li>
+            <li class="header">Menu Główne</li>
 
             <li class="{{ active_class(Active::checkUriPattern('admin')) }}">
-                <a href="{{ route('admin.dashboard') }}">
+                <a href="{{ route('admin.index') }}">
                     <i class="fa fa-dashboard"></i>
-                    <span>{{ trans('menus.backend.sidebar.dashboard') }}</span>
+                    <span>Strona Główna</span>
                 </a>
             </li>
 
