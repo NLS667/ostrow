@@ -10,7 +10,7 @@ use App\Http\Controllers\Backend\Access\User\UserSessionController;
 use App\Http\Controllers\Backend\Access\Role\RoleController;
 //use App\Http\Controllers\Backend\Access\Role\RoleTableController;
 use App\Http\Controllers\Backend\Access\Permission\PermissionController;
-use App\Http\Controllers\Backend\Access\Permission\PermissionTableController;
+//use App\Http\Controllers\Backend\Access\Permission\PermissionTableController;
 
 /**
  * All route names are prefixed with 'admin.access'.
