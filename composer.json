@@ -31,8 +31,7 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/",
-            "LaravelFrontendPresets\\MaterialPreset\\": "presets/material/src"
+            "Database\\Seeders\\": "database/seeders/"
         },
         "classmap": [
             "database/seeders",
