@@ -65,7 +65,7 @@
 
 // Apply the mixin to the buttons
 .btn-primary { @include btn-styles($primary-color, $primary-states-color); }
-.btn-primary-blue { @include btn-styles($primary-blue-color, $primary-blue-states-color); }
+.btn-primary-blue { @include btn-styles(#8fc1e3, $primary-blue-states-color); }
 .btn-success { @include btn-styles($success-color, $success-states-color); }
 .btn-info    { @include btn-styles($info-color, $info-states-color); }
 .btn-warning { @include btn-styles($warning-color, $warning-states-color); }
