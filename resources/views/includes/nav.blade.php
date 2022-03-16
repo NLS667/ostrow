@@ -10,11 +10,7 @@
 			</div>
 	        <div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
-                @if (! $logged_in_user)     
-                    <li class="nav-item">
-                        <a href="{{ route('auth.login') }}" class="nav-link"><i class="fas fa-sign-in-alt"></i>Login</a>
-                    </li>
-                @else
+                @if ($logged_in_user)     
                     <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" id="dropdownMenuButton" role="button" aria-haspopup="true" aria-expanded="false">
                             {{ $logged_in_user->username }} <span class="caret"></span>
