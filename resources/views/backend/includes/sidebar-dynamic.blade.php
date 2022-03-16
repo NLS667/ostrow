@@ -1,8 +1,8 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-dark elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('frontend.home') }}" class="brand-link">
-        <span class="brand-text font-weight-light">SIT</span>
+    <a href="{{ route('admin.index') }}" class="brand-link">
+        <span class="brand-text font-weight-light">OSTR CRM</span>
     </a>
 
     <!-- Sidebar -->
