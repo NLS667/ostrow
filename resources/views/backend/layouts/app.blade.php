@@ -13,7 +13,7 @@
 
     <!-- Styles -->
     @yield('before-styles')
-    {{ Html::style(mix('css/backend.css')) }}
+    {{ Html::style(mix('css/app.css')) }}
     @yield('after-styles')
 
     <!-- Scripts -->
@@ -48,7 +48,7 @@
         
         <!-- JavaScripts -->
         @yield('before-scripts')
-        {{ Html::script(mix('js/backend.js')) }}
+        {{ Html::script(mix('js/app.js')) }}
         @yield('after-scripts')
     </body>
 </html>
