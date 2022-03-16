@@ -1,6 +1,6 @@
 <li class="{{ active_class(isActiveMenuItem($item), 'active') }} nav-item">
     @if (!empty($item->children))
-        <a class="nav-link"data-toggle="collapse" aria-expanded="true" href="#{{ $item->id }}">
+        <a class="nav-link"data-toggle="collapse" aria-expanded="true" href="#{{ $item->content }}">
             <i class="material-icons">{{ @$item->icon }}</i>
             <p>{{ $item->name }}<b class="caret"></b></p>
     @else
@@ -10,7 +10,7 @@
     @endif        
         </a>
     @if (!empty($item->children))
-        <div class="collapse show" id="{{ $item->id }}">
+        <div class="collapse show" id="{{ $item->content }}">
             <ul class="nav">
                 {{ renderMenuItems($item->children) }}
             </ul>

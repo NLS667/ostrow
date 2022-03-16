@@ -17,48 +17,51 @@ class MenuTableSeeder extends Seeder
 
         $sysmenu = '[{
                 "view_permission_id":"view-access-management",
-                "icon":"fa-users",
+                "icon":"security",
                 "open_in_new_tab":0,
                 "url_type":"route",
                 "url":"",
-                "name":"Access Management",
+                "name":"Ustawienia Dostępu",
                 "id":6,
-                "content":"Access Management",
+                "content":"Access-Management",
                 "children":[{
                     "view_permission_id":"view-user-management",
+                    "icon":"people",
                     "open_in_new_tab":0,
                     "url_type":"route",
                     "url":"admin.access.user.index",
-                    "name":"User Management",
+                    "name":"Użytkownicy",
                     "id":12,
-                    "content":"User Management"
+                    "content":"User-Management"
                 },
                 {
                     "view_permission_id":"view-role-management",
+                    "icon":"assignment_ind",
                     "open_in_new_tab":0,
                     "url_type":"route",
                     "url":"admin.access.role.index",
-                    "name":"Role Management",
+                    "name":"Role",
                     "id":7,
-                    "content":"Role Management"
+                    "content":"Role-Management"
                 },
                 {
                     "view_permission_id":"view-permission-management",
+                    "icon":"assignment_turned_in",
                     "open_in_new_tab":0,
                     "url_type":"route",
                     "url":"admin.access.permission.index",
-                    "name":"Permission Management",
+                    "name":"Uprawnienia",
                     "id":8,
-                    "content":"Permission Management"
+                    "content":"Permission-Management"
                 }]
             },
             {
                 "view_permission_id":"view-menu",
-                "icon":"fa-bars",
+                "icon":"list",
                 "open_in_new_tab":0,
                 "url_type":"route",
                 "url":"admin.menus.index",
-                "name":"Menus",
+                "name":"Ustawienia Menu",
                 "id":9,
                 "content":"Menus"
             }]';
@@ -67,7 +70,7 @@ class MenuTableSeeder extends Seeder
             [
                 'id'                    => 1,
                 'type'                  => 'backend',
-                'name'                  => 'Main CRM Menu',
+                'name'                  => 'Główne Menu Systemowe',
                 'items'                 => $sysmenu,
                 'created_by'            => 1,
                 'created_at'            => Carbon::now(),
