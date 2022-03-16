@@ -7,7 +7,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        {{ link_to_route('backend.index','Strona główna', [], ['class' => 'nav-link']) }}
+        {{ link_to_route('admin.index','Strona główna', [], ['class' => 'nav-link']) }}
       </li>
     </ul>
 
