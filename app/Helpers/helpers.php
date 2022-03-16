@@ -96,6 +96,26 @@ if (!function_exists('renderMenuItems')) {
     }
 }
 
+if (!function_exists('getMenuItems')) {
+    /**
+     * Converts items (json string) to array and return array.
+     */
+    function getMenuItems($type = 'backend', $id = null)
+    {
+        $menu = new \App\Models\Menu\Menu();
+        $menu = $menu->where('type', $type);
+        if (!empty($id)) {
+            $menu = $menu->where('id', $id);
+        }
+        $menu = $menu->first();
+        if (!empty($menu) && !empty($menu->items)) {
+            return json_decode($menu->items);
+        }
+
+        return [];
+    }
+}
+
 if (!function_exists('isActiveMenuItem')) {
     /**
      * checks if current URL is of current menu/sub-menu.
