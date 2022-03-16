@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="footer register-footer text-center">
-            <h6>© 2021, made with <i class="fa fa-heart heart"></i> by RAD</h6>
+            <h6>© 2022, wykonano z <i class="fa fa-heart heart"></i> przez RAD</h6>
         </div>
     </div>
 </div>
