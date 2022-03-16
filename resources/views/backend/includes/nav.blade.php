@@ -43,7 +43,7 @@
             </p>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-            <a class="dropdown-item" href="{{ route('admin.account') }}">{{ __('Profile') }}</a>
+            <a class="dropdown-item" href="{{ route('user.account') }}">{{ __('Profile') }}</a>
             <a class="dropdown-item" href="#">{{ __('Settings') }}</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('auth.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Wyloguj</a>
