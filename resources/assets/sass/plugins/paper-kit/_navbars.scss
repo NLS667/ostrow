@@ -142,18 +142,18 @@
       box-shadow: none;
 
       .navbar-brand {
-        color: #5085A5;
+        color: #687864;
       }
 
       .navbar-nav {
         .nav-item .nav-link {
-          color: $white-color;
+          color: #687864;
         }
       }
 
       .navbar-toggler {
         .navbar-toggler-bar {
-          background: $white-color !important;
+          background: #687864 !important;
         }
       }
     }
@@ -187,7 +187,7 @@
     }
     .navbar-toggler {
       .navbar-toggler-bar {
-        background: $white-color !important;
+        background: #687864 !important;
         display: block;
         position: relative;
         width: 24px;
@@ -200,14 +200,14 @@
 
 .navbar-transparent, [class*="bg"]{
     .navbar-brand{
-        color: $white-color;
+        color: #687864;
         @include opacity(.9);
 
         &:focus,
         &:hover{
             background-color: transparent;
             @include opacity(1);
-            color: $white-color;
+            color: #687864;
         }
     }
 
