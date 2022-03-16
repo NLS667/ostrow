@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Backend\Access\User\UserTableController;
+//use App\Http\Controllers\Backend\Access\User\UserTableController;
 use App\Http\Controllers\Backend\Access\User\UserStatusController;
 use App\Http\Controllers\Backend\Access\User\UserController;
 use App\Http\Controllers\Backend\Access\User\UserConfirmationController;
