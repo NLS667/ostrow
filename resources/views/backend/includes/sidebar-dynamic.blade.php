@@ -12,8 +12,8 @@
             <ul class="nav nav-sidebar flex-column" data-widget="treeview">
                 <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                 <li class="nav-header">{{ trans('menus.backend.sidebar.general') }}</li>
-                <li class="nav-item {{ active_class(if_route('admin.home'), 'active', '') }}">
-                    <a href="{{ route('admin.home') }} " class="nav-link">
+                <li class="nav-item {{ active_class(if_route('admin.index'), 'active', '') }}">
+                    <a href="{{ route('admin.index') }} " class="nav-link">
                         <i class="fas fa-tachometer-alt nav-icon"></i>
                         {{ trans('menus.backend.sidebar.dashboard') }}
                     </a>
