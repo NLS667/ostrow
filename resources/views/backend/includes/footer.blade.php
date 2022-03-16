@@ -1,9 +1,21 @@
 <!-- Main Footer -->
-<footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-     	<span class="copyright">made with <i class="fa fa-heart heart"></i> by Kosu</span>
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; {{ date('Y') }} <a href="#">{{ app_name() }}</a>.</strong> {{ trans('strings.backend.general.all_rights_reserved') }}
-  </footer>
+<footer class="footer">
+	<div class="container-fluid">
+		<nav class="float-left">
+			<ul>
+				<li>
+					<a href="https://radspzoo.pl">
+						RAD
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="copyright float-right">
+			&copy;
+			<script>
+				document.write(new Date().getFullYear())
+			</script>, wykonane z <i class="material-icons">favorite</i> przez
+			<a href="https://www.creative-tim.com" target="_blank">RAD Sp. z o.o.</a>
+		</div>
+	</div>
+</footer>
