@@ -27,23 +27,18 @@
         <div class="loading" style="display:none"></div>
         @include('includes.partials.logged-in-as')
         <div class="wrapper" id="app">
-            @include('backend.includes.nav')
-            @include('backend.includes.sidebar-dynamic')
-            
+            @include('backend.includes.sidebar-dynamic')            
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper main-panel">
-                <!-- Content Header (Page header) -->
-                <div class="content-header">
-                    @yield('page-header')
-                </div>
+                @include('backend.includes.nav')
 
                 <!-- Main content -->
-                <div class="content">
-                    @include('includes.partials.messages')
-                    @yield('content')
-                </div><!-- /.content -->                
+                @include('includes.partials.messages')
+                @yield('content')
+                @include('backend.includes.footer')
+                            
             </div><!-- /.content-wrapper -->
-            @include('backend.includes.footer')
+            
         </div><!-- ./wrapper -->
         
         <!-- JavaScripts -->
