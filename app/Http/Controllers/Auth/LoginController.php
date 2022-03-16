@@ -1,34 +1,36 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Frontend\Auth;
 
+use App\Events\Frontend\Auth\UserLoggedIn;
+use App\Events\Frontend\Auth\UserLoggedOut;
+use App\Exceptions\GeneralException;
+use App\Helpers\Auth\Auth;
+use App\Helpers\Frontend\Auth\Socialite;
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
+use App\Http\Utilities\NotificationIos;
+use App\Http\Utilities\PushNotification;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
+/**
+ * Class LoginController.
+ */
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
     use AuthenticatesUsers;
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * @var \App\Http\Utilities\PushNotification
      */
-    public function __construct()
+    protected $notification;
+
+    /**
+     * @param NotificationIos $notification
+     */
+    public function __construct(PushNotification $notification)
     {
-        $this->middleware('guest')->except('logout');
+        $this->notification = $notification;
     }
 
     /**
@@ -42,9 +44,10 @@ class LoginController extends Controller
             return route('admin.home');
         }
 
-        return route('auth.login');
+        return route('frontend.homepage');
     }
-     /**
+
+    /**
      * Show the application's login form.
      *
      * @return \Illuminate\Http\Response
@@ -137,7 +140,7 @@ class LoginController extends Controller
     {
         //If for some reason route is getting hit without someone already logged in
         if (!access()->user()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('frontend.auth.login');
         }
 
         //If admin id is set, relogin
@@ -158,7 +161,7 @@ class LoginController extends Controller
             //Otherwise logout and redirect to login
             access()->logout();
 
-            return redirect()->route('auth.login');
+            return redirect()->route('frontend.auth.login');
         }
     }
 }

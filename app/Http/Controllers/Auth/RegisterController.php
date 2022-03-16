@@ -1,73 +1,81 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Frontend\Auth;
 
+use App\Events\Frontend\Auth\UserRegistered;
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use App\Models\User;
+use App\Http\Requests\Frontend\Auth\RegisterRequest;
+use App\Repositories\Frontend\Access\User\UserRepository;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
+/**
+ * Class RegisterController.
+ */
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
     use RegistersUsers;
 
     /**
-     * Where to redirect users after registration.
-     *
-     * @var string
+     * @var UserRepository
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $user;
 
     /**
-     * Create a new controller instance.
+     * RegisterController constructor.
      *
-     * @return void
+     * @param UserRepository $user
      */
-    public function __construct()
+    public function __construct(UserRepository $user)
     {
-        $this->middleware('guest');
+        // Where to redirect users after registering
+        $this->redirectTo = route('frontend.home');
+
+        $this->user = $user;
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Show the application registration form.
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @return \Illuminate\Http\Response
      */
-    protected function validator(array $data)
+    public function showRegistrationForm()
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        return view('frontend.auth.register');
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * @param RegisterRequest $request
      *
-     * @param  array  $data
-     * @return \App\Models\User
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    protected function create(array $data)
+    public function register(RegisterRequest $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        /*if (config('access.users.confirm_email')) {
+            $user = $this->user->create($request->all());
+            event(new UserRegistered($user));
+
+            return redirect($this->redirectPath())->withFlashSuccess(trans('exceptions.frontend.auth.confirmation.created_confirm'));
+        } else {
+            access()->login($this->user->create($request->all()));
+            event(new UserRegistered(access()->user()));
+
+            return redirect($this->redirectPath());
+        }*/
+
+        if (config('access.users.confirm_email') || config('access.users.requires_approval')) {
+            $user = $this->user->create($request->only('first_name', 'last_name', 'email', 'password', 'is_term_accept'));
+            event(new UserRegistered($user));
+
+            return redirect($this->redirectPath())->withFlashSuccess(
+                config('access.users.requires_approval') ?
+                    trans('exceptions.frontend.auth.confirmation.created_pending') :
+                    trans('exceptions.frontend.auth.confirmation.created_confirm')
+            );
+        } else {
+            access()->login($this->user->create($request->only('first_name', 'last_name', 'email', 'password', 'is_term_accept')));
+            event(new UserRegistered(access()->user()));
+
+            return redirect($this->redirectPath());
+        }
     }
 }
