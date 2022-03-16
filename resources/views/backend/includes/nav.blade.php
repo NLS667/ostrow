@@ -46,7 +46,7 @@
             <a class="dropdown-item" href="{{ route('user.account') }}">{{ __('Profile') }}</a>
             <a class="dropdown-item" href="#">{{ __('Settings') }}</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('auth.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Wyloguj</a>
+            <a class="dropdown-item" href="{{ route('auth.logout') }}">Wyloguj</a>
           </div>
         </li>
       </ul>
