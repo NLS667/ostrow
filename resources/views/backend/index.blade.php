@@ -6,9 +6,9 @@
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
-            <div class="card-header card-header-warning card-header-icon">
+            <div class="card-header card-header-info card-header-icon">
               <div class="card-icon">
-                <i class="material-icons">content_copy</i>
+                <i class="material-icons">face</i>
               </div>
               <p class="card-category">Klienci</p>
               <h3 class="card-title">23</h3>
@@ -22,9 +22,9 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
-            <div class="card-header card-header-success card-header-icon">
+            <div class="card-header card-header-danger card-header-icon">
               <div class="card-icon">
-                <i class="fas fa-boxes"></i>
+                <i class="material-icons">add_task</i>
               </div>
               <p class="card-category">Zlecone usługi</p>
               <h3 class="card-title">96</h3>
@@ -38,9 +38,9 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
-            <div class="card-header card-header-danger card-header-icon">
+            <div class="card-header card-header-success card-header-icon">
               <div class="card-icon">
-                <i class="fas fa-info-circle"></i>
+                <i class="material-icons">done_all</i>
               </div>
               <p class="card-category">Wykonane Usługi</p>
               <h3 class="card-title">75</h3>
