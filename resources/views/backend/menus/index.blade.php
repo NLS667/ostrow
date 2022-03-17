@@ -1,60 +1,65 @@
-@extends('backend.layouts.app', ['activePage' => 'menu-management', 'titlePage' => __('Menu Management')])
-
-@section ('title', trans('labels.backend.menus.management'))
-
-@section('page-header')
-    <h1>{{ trans('labels.backend.menus.management') }}</h1>
-@endsection
+@extends('backend.layouts.app', ['activePage' => 'menu-management', 'titlePage' => __('Zarządzanie Menu')])
 
 @section('content')
-    <div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('labels.backend.menus.management') }}</h3>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12"> 
+                <div class="card ">
+                    <div class="card-header card-header-info d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">Zarządzanie Menu</h4>
 
-            <div class="box-tools float-right">
-                @include('backend.menus.partials.header-buttons')
+                        <div class="card-tools">
+                            @include('backend.menus.partials.header-buttons')
+                        </div>
+                    </div><!-- /.box-header -->
+
+                    <div class="card-body">
+                        <div class="table-responsive data-table-wrapper">
+                            <table id="menus-table" class="table table-condensed table-hover table-bordered">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>Nazwa</th>
+                                        <th>Rodzaj</th>
+                                        <th>Utworzone</th>
+                                        <th>Akcje</th>
+                                    </tr>
+                                </thead>
+                                <thead class="transparent-bg">
+                                    <tr>
+                                        <th>
+                                            {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Nazwa']) !!}
+                                            <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
+                                        </th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div><!--table-responsive-->
+                    </div><!-- /.box-body -->
+                </div><!--box-->
             </div>
-        </div><!-- /.box-header -->
-
-        <div class="box-body">
-            <div class="table-responsive data-table-wrapper">
-                <table id="menus-table" class="table table-condensed table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th>{{ trans('labels.backend.menus.table.name') }}</th>
-                            <th>{{ trans('labels.backend.menus.table.type') }}</th>
-                            <th>{{ trans('labels.backend.menus.table.createdat') }}</th>
-                            <th>{{ trans('labels.general.actions') }}</th>
-                        </tr>
-                    </thead>
-                    <thead class="transparent-bg">
-                        <tr>
-                            <th>
-                                {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => trans('labels.backend.menus.table.name')]) !!}
-                                <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
-                            </th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                </table>
-            </div><!--table-responsive-->
-        </div><!-- /.box-body -->
-    </div><!--box-->
-
-    <div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('history.backend.recent_history') }}</h3>
-            <div class="box-tools float-right">
-                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            </div><!-- /.box tools -->
-        </div><!-- /.box-header -->
-        <div class="box-body">
-            {{-- {!! history()->renderType('Menu') !!} --}}
-        </div><!-- /.box-body -->
-    </div><!--box box-success-->
+        </div>
+        <div class="row">
+            <div class="col-md-12"> 
+                <div class="card">
+                    <div class="card-header card-header-success d-flex justify-content-between align-items-center">
+                        <h3 class="card-title">Historia</h3>
+                        <div class="card-tools">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        </div><!-- /.box tools -->
+                    </div><!-- /.box-header -->
+                    <div class="card-body">
+                        {{-- {!! history()->renderType('Menu') !!} --}}
+                    </div><!-- /.box-body -->
+                </div><!--box box-success -->
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('after-scripts')
