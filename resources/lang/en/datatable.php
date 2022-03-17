@@ -12,7 +12,7 @@ return [
         "sLengthMenu":     "Pokaż _MENU_ rekordów",
         "sLoadingRecords": "Ładuję...",
         "sProcessing":     "Przetwarzam...",
-        "sSearch":         "Szukajh:",
+        "sSearch":         "Szukaj:",
         "sZeroRecords":    "Brakuje pasujących rekordów",
         "oPaginate": {
                 "sFirst":    "Pierwszy",
