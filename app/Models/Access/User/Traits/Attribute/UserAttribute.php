@@ -132,7 +132,7 @@ trait UserAttribute
     {
         if (access()->user()->id == $this->id && access()->allow('edit-user')) {
             return '<a class="'.$class.'" href="'.route('admin.access.user.change-password', $this).'">
-                        <i class="fas fa-sync-alt" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.change_password').'">
+                        <i class="fas fa-sync-alt" data-toggle="tooltip" data-placement="top" title="Zmień Hasło">
                         </i>
                     </a>';
         }
@@ -149,7 +149,7 @@ trait UserAttribute
                     if (access()->allow('activate-user')) {
                         $name = $class == '' ? 'Activate' : '';
 
-                        return '<a class="'.$class.'" href="'.route('admin.access.user.mark', [$this, 1]).'"><i class="fas fa-check-square" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.activate').'"></i>'.$name.'</a>';
+                        return '<a class="'.$class.'" href="'.route('admin.access.user.mark', [$this, 1]).'"><i class="fas fa-check-square" data-toggle="tooltip" data-placement="top" title="Aktywuj"></i>'.$name.'</a>';
                     }
                     break;
 
@@ -157,7 +157,7 @@ trait UserAttribute
                     if (access()->allow('deactivate-user')) {
                         $name = ($class == '') ? 'Deactivate' : '';
 
-                        return '<a class="'.$class.'" href="'.route('admin.access.user.mark', [$this, 0]).'"><i class="fas fa-square" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.deactivate').'"></i>'.$name.'</a>';
+                        return '<a class="'.$class.'" href="'.route('admin.access.user.mark', [$this, 0]).'"><i class="fas fa-square" data-toggle="tooltip" data-placement="top" title="Deaktywuj"></i>'.$name.'</a>';
                     }
                     break;
 
@@ -175,7 +175,7 @@ trait UserAttribute
     public function getConfirmedButtonAttribute($class)
     {
         if (!$this->isConfirmed() && access()->allow('edit-user')) {
-            return '<a class="'.$class.'" href="'.route('admin.access.user.account.confirm.resend', $this).'"><i class="fas fa-sync-alt" data-toggle="tooltip" data-placement="top" title='.trans('buttons.backend.access.users.resend_email').'"></i></a> ';
+            return '<a class="'.$class.'" href="'.route('admin.access.user.account.confirm.resend', $this).'"><i class="fas fa-sync-alt" data-toggle="tooltip" data-placement="top" title="Wyślij ponownie"></i></a> ';
         }
 
         return '';
@@ -191,9 +191,9 @@ trait UserAttribute
 
             return '<a class="'.$class.'" href="'.route('admin.access.user.destroy', $this).'"
                  data-method="delete"
-                 data-trans-button-cancel="'.trans('buttons.general.cancel').'"
-                 data-trans-button-confirm="'.trans('buttons.general.crud.delete').'"
-                 data-trans-title="'.trans('strings.backend.general.are_you_sure').'"><i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.general.crud.delete').'"></i>'.$name.'</a>';
+                 data-trans-button-cancel="Anuluj"
+                 data-trans-button-confirm="Usuń"
+                 data-trans-title="Czy na pewno?"><i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Usuń"></i>'.$name.'</a>';
         }
 
         return '';
@@ -205,7 +205,7 @@ trait UserAttribute
     public function getRestoreButtonAttribute($class)
     {
         if (access()->allow('delete-user')) {
-            return '<a class="'.$class.'" href="'.route('admin.access.user.restore', $this).'" name="restore_user"><i class="fas fa-sync-alt" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.restore_user').'"></i></a> ';
+            return '<a class="'.$class.'" href="'.route('admin.access.user.restore', $this).'" name="restore_user"><i class="fas fa-sync-alt" data-toggle="tooltip" data-placement="top" title="Przywróć Użytkownika"></i></a> ';
         }
     }
 
@@ -214,7 +214,7 @@ trait UserAttribute
      */
     public function getDeletePermanentlyButtonAttribute($class)
     {
-        return '<a class="'.$class.'" href="'.route('admin.access.user.delete-permanently', $this).'" name="delete_user_perm"><i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.delete_permanently').'"></i></a> ';
+        return '<a class="'.$class.'" href="'.route('admin.access.user.delete-permanently', $this).'" name="delete_user_perm"><i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Usuń permanentnie"></i></a> ';
     }
 
     /**
@@ -247,10 +247,10 @@ trait UserAttribute
 
         if ($this->id != access()->id() && config('session.driver') == 'database' && access()->allow('clear-user-session')) {
             return '<a class="'.$class.'" href="'.route('admin.access.user.clear-session', $this).'"
-			 	 data-trans-button-cancel="'.trans('buttons.general.cancel').'"
-                 data-trans-button-confirm="'.trans('buttons.general.continue').'"
-                 data-trans-title="'.trans('strings.backend.general.are_you_sure').'"
-                 name="confirm_item"><i class="fas fa-times" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.clear_session').'"></i>'.$name.'</a>';
+			 	 data-trans-button-cancel="Anuluj"
+                 data-trans-button-confirm="Dalej"
+                 data-trans-title="Czy na pewno ?"
+                 name="confirm_item"><i class="fas fa-times" data-toggle="tooltip" data-placement="top" title="Wyczyść Sesję"></i>'.$name.'</a>';
         }
 
         return '';

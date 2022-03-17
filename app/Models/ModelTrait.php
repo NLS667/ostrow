@@ -10,7 +10,7 @@ trait ModelTrait
     public function getEditButtonAttribute($permission, $route)
     {
         if (access()->allow($permission)) {
-            return '<a href="'.route($route, $this).'" class="btn btn-flat btn-default">
+            return '<a href="'.route($route, $this).'" class="btn btn-flat btn-success">
                     <i data-toggle="tooltip" data-placement="top" title="Edytuj" class="fas fa-pencil-alt"></i>
                 </a>';
         }
@@ -23,7 +23,7 @@ trait ModelTrait
     {
         if (access()->allow($permission)) {
             return '<a href="'.route($route, $this).'" 
-                    class="btn btn-flat btn-default" data-method="delete"
+                    class="btn btn-flat btn-danger" data-method="delete"
                     data-trans-button-cancel="Anuluj"
                     data-trans-button-confirm="Usuń"
                     data-trans-title="Czy jesteś pewny, że chcesz to zrobić ?">

@@ -13,8 +13,8 @@ trait RoleAttribute
     public function getEditButtonAttribute()
     {
         if (access()->allow('edit-role')) {
-            return '<a class="btn btn-flat btn-default" href="'.route('admin.access.role.edit', $this).'">
-                    <i data-toggle="tooltip" data-placement="top" title="Edit" class="fas fa-pencil-alt"></i>
+            return '<a class="btn btn-flat btn-success" href="'.route('admin.access.role.edit', $this).'">
+                    <i data-toggle="tooltip" data-placement="top" title="Edytuj" class="fas fa-pencil-alt"></i>
                 </a>';
         }
     }
@@ -26,11 +26,11 @@ trait RoleAttribute
     {
         //Can't delete master admin role
         if ($this->id != 1 && access()->allow('delete-role')) {
-            return '<a class="btn btn-flat btn-default" href="'.route('admin.access.role.destroy', $this).'" data-method="delete"
-                        data-trans-button-cancel="'.trans('buttons.general.cancel').'"
-                        data-trans-button-confirm="'.trans('buttons.general.crud.delete').'"
-                        data-trans-title="'.trans('strings.backend.general.are_you_sure').'">
-                            <i data-toggle="tooltip" data-placement="top" title="Delete" class="fas fa-trash"></i>
+            return '<a class="btn btn-flat btn-danger" href="'.route('admin.access.role.destroy', $this).'" data-method="delete"
+                        data-trans-button-cancel="Anuluj"
+                        data-trans-button-confirm="Usuń"
+                        data-trans-title="Czy na pewno?">
+                            <i data-toggle="tooltip" data-placement="top" title="Usuń" class="fas fa-trash"></i>
                     </a>';
         }
 
