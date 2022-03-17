@@ -1,14 +1,16 @@
 @extends('backend.layouts.app', ['activePage' => 'user-management', 'titlePage' => __('User Management')])
 
 @section('content')
+<div class="content">
+    <div class="container-fluid">
     <div class="card card-info">
         <div class="card-header with-border">
-            <h3 class="card-title">{{ trans('labels.backend.access.users.management') }}</h3>
+            <h3 class="card-title">Zarządzanie Użytkownikami</h3>
 
             <div class="card-tools float-right action-tools">
                 @include('backend.access.includes.partials.user-header-buttons')
             </div>
-        </div><!-- /.card-header -->
+        </div><!-- /.card-header --> 
 
         <div class="card-body">
             <div class="table-responsive data-table-wrapper">
@@ -65,6 +67,8 @@
             {{-- {!! history()->renderType('User') !!} --}}
         </div><!-- /.card-body -->
     </div><!--card box-info-->
+</div>
+</div>
 @endsection
 
 @section('after-scripts')
