@@ -2,11 +2,11 @@
 
 use Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
-use Database\Seeders\Access\UserTableSeeder;
-use Database\Seeders\Access\RoleTableSeeder;
-use Database\Seeders\Access\PermissionTableSeeder;
-use Database\Seeders\Access\PermissionRoleSeeder;
-use Database\Seeders\Access\UserRoleSeeder;
+//use Database\Seeders\Access\UserTableSeeder;
+//use Database\Seeders\Access\RoleTableSeeder;
+//use Database\Seeders\Access\PermissionTableSeeder;
+//use Database\Seeders\Access\PermissionRoleSeeder;
+//use Database\Seeders\Access\UserRoleSeeder;
 
 /**
  * Class AccessTableSeeder.
