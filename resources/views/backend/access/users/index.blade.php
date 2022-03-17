@@ -64,7 +64,7 @@
                         <div class="card-tools pull-right">
                             <button class="btn btn-card-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         </div><!-- /.card tools -->
-                    </div><!-- /.card-header --> -->
+                    </div><!-- /.card-header -->
                     <div class="card-body">
                         {{-- {!! history()->renderType('User') !!} --}}
                     </div><!-- /.card-body -->
