@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\Frontend\Auth\UserLoggedIn;
-use App\Events\Frontend\Auth\UserLoggedOut;
+use App\Events\Auth\UserLoggedIn;
+use App\Events\Auth\UserLoggedOut;
 use App\Exceptions\GeneralException;
 use App\Helpers\Auth\Auth;
 use App\Helpers\Frontend\Auth\Socialite;
