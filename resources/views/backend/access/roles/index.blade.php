@@ -1,40 +1,39 @@
-@extends('backend.layouts.app', ['activePage' => 'role-management', 'titlePage' => __('Role Management')])
+@extends('backend.layouts.app', ['activePage' => 'role-management', 'titlePage' => 'Zarządzanie Rolami'])
 
 @section('content')
-    <div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('labels.backend.access.roles.management') }}</h3>
-
+    <div class="card">
+        <div class="card-header card-header-info d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Zarządzanie Rolami</h4>
             <div class="box-tools float-right">
                 @include('backend.access.includes.partials.role-header-buttons')
             </div>
         </div><!-- /.box-header -->
 
-        <div class="box-body">
+        <div class="card-body">
             <div class="table-responsive data-table-wrapper">
                 <table id="roles-table" class="table table-condensed table-hover table-bordered">
-                    <thead>
+                    <thead class=" text-primary">
                         <tr>
-                            <th>{{ trans('labels.backend.access.roles.table.role') }}</th>
-                            <th>{{ trans('labels.backend.access.roles.table.permissions') }}</th>
-                            <th>{{ trans('labels.backend.access.roles.table.number_of_users') }}</th>
-                            <th>{{ trans('labels.backend.access.roles.table.sort') }}</th>
-                            <th>{{ trans('labels.general.actions') }}</th>
+                            <th>Rola</th>
+                            <th>Uprawnienia</th>
+                            <th>Ilość użytkowników</th>
+                            <th>Kolejność</th>
+                            <th>Akcje</th>
                         </tr>
                     </thead>
                     <thead class="transparent-bg">
                         <tr>
                             <th>
-                                {!! Form::text('role', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => trans('labels.backend.access.roles.table.role')]) !!}
+                                {!! Form::text('role', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Rola']) !!}
                                     <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
                             </th>
                             <th>
-                                {!! Form::text('permission', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => trans('labels.backend.access.roles.table.permissions')]) !!}
+                                {!! Form::text('permission', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Uprawnienie']) !!}
                                     <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
                             </th>
                             <th></th>
                             <th>
-                            {!! Form::text('sort', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => trans('labels.backend.access.roles.table.sort')]) !!}
+                            {!! Form::text('sort', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Kolejność']) !!}
                                 <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
                             </th>
                             <th></th>
@@ -45,14 +44,14 @@
         </div><!-- /.box-body -->
     </div><!--box-->
 
-    <!--<div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('history.backend.recent_history') }}</h3>
-            <div class="box-tools pull-right">
+    <div class="card box-info">
+        <div class="card-header card-header-success d-flex justify-content-between align-items-center">
+            <h4 class="card-title">{{ trans('history.backend.recent_history') }}</h4>
+            <div class="card-tools">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div><!-- /.box tools -->
         </div><!-- /.box-header --> -->
-        <div class="box-body">
+        <div class="card-body">
             {{-- {!! history()->renderType('Role') !!} --}}
         </div><!-- /.box-body -->
     </div><!--box box-info-->
