@@ -29,10 +29,10 @@ trait UserAttribute
     public function getStatusLabelAttribute()
     {
         if ($this->isActive()) {
-            return "<label class='badge badge-success'>".trans('labels.general.active').'</label>';
+            return "<label class='badge badge-success'>Aktywny</label>";
         }
 
-        return "<label class='badge badge-danger'>".trans('labels.general.inactive').'</label>';
+        return "<label class='badge badge-danger'>Nieaktywny</label>";
     }
 
     /**
@@ -41,10 +41,10 @@ trait UserAttribute
     public function getConfirmedLabelAttribute()
     {
         if ($this->isConfirmed()) {
-            return "<label class='badge badge-success'>".trans('labels.general.yes').'</label>';
+            return "<label class='badge badge-success'>Tak</label>";
         }
 
-        return "<label class='badge badge-danger'>".trans('labels.general.no').'</label>';
+        return "<label class='badge badge-danger'>Nie</label>";
     }
 
     /**
@@ -383,17 +383,17 @@ trait UserAttribute
     {
         if ($this->trashed()) {
             return '<div class="btn-group action-btn">
-                        '.$this->getRestoreButtonAttribute('btn btn-default btn-flat').'
-                        '.$this->getDeletePermanentlyButtonAttribute('btn btn-default btn-flat').'
+                        '.$this->getRestoreButtonAttribute('btn btn-success btn-flat').'
+                        '.$this->getDeletePermanentlyButtonAttribute('btn btn-danger btn-flat').'
                     </div>';
         }
 
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
             return '<div class="btn-group action-btn">
-                    '.$this->getShowButtonAttribute('btn btn-default btn-flat').'
-                    '.$this->getEditButtonAttribute('btn btn-default btn-flat').'
-                    '.$this->getChangePasswordButtonAttribute('btn btn-default btn-flat').'
+                    '.$this->getShowButtonAttribute('btn btn-info btn-flat').'
+                    '.$this->getEditButtonAttribute('btn btn-success btn-flat').'
+                    '.$this->getChangePasswordButtonAttribute('btn btn-primary btn-flat').'
                     '.$this->checkAdmin().'
                 </div>';
         } else {
