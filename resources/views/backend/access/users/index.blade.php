@@ -8,7 +8,6 @@
                 <div class="card">
                     <div class="card-header card-header-info d-flex justify-content-between align-items-center">
                         <h4 class="card-title">Zarządzanie Użytkownikami</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
                         <div class="card-tools float-right action-tools">
                             @include('backend.access.includes.partials.user-header-buttons')
                         </div>
