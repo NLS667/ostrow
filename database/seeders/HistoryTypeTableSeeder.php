@@ -1,7 +1,5 @@
 <?php
 
-namespace Database\Seeders;
-
 use Carbon\Carbon as Carbon;
 use Database\DisableForeignKeys;
 use Database\TruncateTable;
