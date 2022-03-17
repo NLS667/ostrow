@@ -177,7 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\HistoryServiceProvider::class,
-
+        Bvipul\Generator\Provider\CrudGeneratorServiceProvider::class,
     ],
 
     /*
