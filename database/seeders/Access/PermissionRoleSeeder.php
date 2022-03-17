@@ -1,7 +1,5 @@
 <?php
 
-namespace Database\Seeders\Access;
-
 use App\Models\Access\Role\Role;
 use Database\DisableForeignKeys;
 use Database\TruncateTable;
