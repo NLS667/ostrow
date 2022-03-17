@@ -1,14 +1,14 @@
 <!--Action Button-->
 <div class="btn-group">
-  <button type="button" class="btn btn-success btn-flat dropdown-toggle" data-toggle="dropdown">Eksport
+  <button type="button" class="btn btn-warning btn-flat dropdown-toggle" data-toggle="dropdown">Eksport
     <span class="caret"></span>
     <span class="sr-only">Zwiń/Rozwiń</span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li id="copyButton" class="dropdown-item"><a href="#"><i class="fas fa-copy"></i> Kopiuj</a></li>
-    <li id="csvButton" class="dropdown-item"><a href="#"><i class="far fa-file-text"></i> CSV</a></li>
-    <li id="excelButton" class="dropdown-item"><a href="#"><i class="far fa-file-excel"></i> Excel</a></li>
-    <li id="pdfButton" class="dropdown-item"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></li>
-    <li id="printButton" class="dropdown-item"><a href="#"><i class="fas fa-print"></i> Drukuj</a></li>
+    <a href="#" class="dropdown-item"><i class="fa fa-clone"></i> Kopiuj</a>
+    <a href="#" class="dropdown-item"><i class="fa fa-file-text-o"></i> CSV</a>
+    <a href="#" class="dropdown-item"><i class="fa fa-file-excel-o"></i> Excel</a>
+    <a href="#" class="dropdown-item"><i class="fa fa-file-pdf-o"></i> PDF</a>
+    <a href="#" class="dropdown-item"><i class="fa fa-print"></i> Drukuj</a>
   </ul>
 </div>
