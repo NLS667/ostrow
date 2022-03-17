@@ -4,15 +4,14 @@
 @endif
 <!--Action Button-->
 <div class="btn-group">
-  <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">Action
+  <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">Działania
     <span class="caret"></span>
-    <span class="sr-only">Toggle Dropdown</span>
+    <span class="sr-only">Zwiń/Rozwiń</span>
   </button>
-  <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-item"><a href="{{route('admin.menus.index')}}"><i class="fa fa-list-ul"></i> {{trans('menus.backend.menus.all')}}</a></li>
+  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+    <a href="{{route('admin.menus.index')}}" class="dropdown-item"><i class="fa fa-list-ul"></i> Wszystkie Menu</a>
     @permission('create-menu')
-    <li class="dropdown-item"><a href="{{route('admin.menus.create')}}"><i class="fa fa-plus"></i> {{trans('menus.backend.menus.create')}}</a></li>
+    <a href="{{route('admin.menus.create')}}" class="dropdown-item"><i class="fa fa-plus"></i> Dodaj Menu</a>
     @endauth
   </ul>
 </div>
-<div class="clearfix"></div>
