@@ -41,10 +41,10 @@ class LoginController extends Controller
     public function redirectPath()
     {
         if (access()->allow('view-backend')) {
-            return route('admin.home');
+            return route('admin.index');
         }
 
-        return route('frontend.homepage');
+        return route('auth.login');
     }
 
     /**
@@ -54,7 +54,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('frontend.auth.login')
+        return view('auth.login')
             ->withSocialiteLinks((new Socialite())->getSocialLinks());
     }
 
@@ -140,7 +140,7 @@ class LoginController extends Controller
     {
         //If for some reason route is getting hit without someone already logged in
         if (!access()->user()) {
-            return redirect()->route('frontend.auth.login');
+            return redirect()->route('auth.login');
         }
 
         //If admin id is set, relogin
@@ -161,7 +161,7 @@ class LoginController extends Controller
             //Otherwise logout and redirect to login
             access()->logout();
 
-            return redirect()->route('frontend.auth.login');
+            return redirect()->route('auth.login');
         }
     }
 }
