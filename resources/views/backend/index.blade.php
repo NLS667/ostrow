@@ -1,4 +1,4 @@
-@extends('backend.layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
+@extends('backend.layouts.app', ['activePage' => 'dashboard', 'titlePage' => 'Pulpit'])
 
 @section('content')
   <div class="content">
@@ -8,16 +8,14 @@
           <div class="card card-stats">
             <div class="card-header card-header-warning card-header-icon">
               <div class="card-icon">
-                <i class="fas fa-route"></i>
+                <i class="material-icons">content_copy</i>
               </div>
-              <p class="card-category">Geo Objektów</p>
-              <h3 class="card-title">253
-              <small>szt</small>
-              </h3>
+              <p class="card-category">Klienci</p>
+              <h3 class="card-title">23</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="fas fa-history"></i> Just Updated
+                <i class="fas fa-history"></i> Przed chwilą
               </div>
             </div>
           </div>
@@ -28,13 +26,12 @@
               <div class="card-icon">
                 <i class="fas fa-boxes"></i>
               </div>
-              <p class="card-category">Kategorie</p>
-              <h3 class="card-title">96
-              <small>szt</small></h3>
+              <p class="card-category">Zlecone usługi</p>
+              <h3 class="card-title">96</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="fas fa-calendar-day"></i> Last 24 Hours
+                <i class="material-icons">date_range</i> Ostatnie 24 godziny
               </div>
             </div>
           </div>
@@ -45,28 +42,31 @@
               <div class="card-icon">
                 <i class="fas fa-info-circle"></i>
               </div>
-              <p class="card-category">Fixed Issues</p>
+              <p class="card-category">Wykonane Usługi</p>
               <h3 class="card-title">75</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="fas fa-tag"></i> Tracked from Github
+                <i class="material-icons">date_range</i> Ostatnie 24 godziny
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
-            <div class="card-header card-header-info card-header-icon">
+            <div class="card-header card-header-warning card-header-icon">
               <div class="card-icon">
-                <i class="fab fa-facebook-f"></i>
+                <i class="material-icons">content_copy</i>
               </div>
-              <p class="card-category">Followers</p>
-              <h3 class="card-title">+245</h3>
+              <p class="card-category">Zajęte miejsce</p>
+              <h3 class="card-title">49/50
+                <small>GB</small>
+              </h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="fas fa-history"></i> Just Updated
+                <i class="material-icons text-danger">warning</i>
+                <a href="#pablo">Zaraz zabraknie miejsca...</a>
               </div>
             </div>
           </div>

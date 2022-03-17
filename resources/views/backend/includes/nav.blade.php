@@ -39,12 +39,12 @@
           <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">person</i>
             <p class="d-lg-none d-md-block">
-              {{ __('Account') }}
+              Moje Konto
             </p>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-            <a class="dropdown-item" href="{{ route('user.account') }}">{{ __('Profile') }}</a>
-            <a class="dropdown-item" href="#">{{ __('Settings') }}</a>
+            <a class="dropdown-item" href="{{ route('user.account') }}">Profil</a>
+            <a class="dropdown-item" href="#">Ustawienia</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('auth.logout') }}">Wyloguj</a>
           </div>
