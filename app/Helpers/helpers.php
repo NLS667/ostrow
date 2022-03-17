@@ -22,6 +22,26 @@ if (!function_exists('access')) {
     }
 }
 
+if (!function_exists('history')) {
+    /**
+     * Access the history facade anywhere.
+     */
+    function history()
+    {
+        return app('history');
+    }
+}
+
+if (!function_exists('gravatar')) {
+    /**
+     * Access the gravatar helper.
+     */
+    function gravatar()
+    {
+        return app('gravatar');
+    }
+}
+
 if (!function_exists('getRouteUrl')) {
     /**
      * Converts querystring params to array and use it as route params and returns URL.
