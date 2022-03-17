@@ -65,8 +65,7 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons text-danger">warning</i>
-                <a href="#pablo">Zaraz zabraknie miejsca...</a>
+                <i class="material-icons text-danger">warning</i> Zaraz zabraknie miejsca...
               </div>
             </div>
           </div>
