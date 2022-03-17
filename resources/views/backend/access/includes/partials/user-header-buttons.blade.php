@@ -8,7 +8,7 @@
     <span class="caret"></span>
     <span class="sr-only">Zwiń/Rozwiń</span>
   </button>
-  <ul class="dropdown-menu" role="menu">
+  <ul class="dropdown-menu dropdown-menu-right" role="menu">
     <a href="{{route('admin.access.user.index')}}" class="dropdown-item"><i class="fas fa-list-ul"></i>Wszyscy Użytkownicy</a>
     @permission('create-user')
     <a href="{{route('admin.access.user.create')}}" class="dropdown-item"><i class="fas fa-plus"></i>Dodaj Użytkownika</a>
