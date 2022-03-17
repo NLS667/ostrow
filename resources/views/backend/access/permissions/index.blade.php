@@ -93,7 +93,7 @@
                 ],
                 order: [[3, "asc"]],
                 searchDelay: 500,
-                dom: 'lBfrtip',
+                dom: 'frt<"d-inline-flex"i><"d-inline-flex float-right"p>',
                 buttons: {
                     buttons: [
                         { extend: 'copy', className: 'copyButton',  exportOptions: {columns: [ 0, 1, 2 ]  }},
