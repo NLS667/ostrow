@@ -18,6 +18,8 @@ mix.autoload({
 	.sass('resources/assets/sass/front.scss', 'public/css/front.css')
 	.sass('resources/assets/sass/app.scss', 'public/css')
     .styles([
+        'node_modules/datatables.net/jquery.dataTables.min.css',
+        'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css',
         'node_modules/select2/dist/css/select2.css',
     ], 'public/css/app-custom.css')
 	.js([
