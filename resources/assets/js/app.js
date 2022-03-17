@@ -8,9 +8,24 @@ import 'bootstrap';
 
 require('./bootstrap');
 
+// Import jQuery plugins
+import 'datatables.net-bs4';
+import 'datatables.net-buttons-bs4';
+import 'datatables.net-buttons/js/buttons.flash.js';
+import 'datatables.net-buttons/js/buttons.html5.js';
+import 'datatables.net-buttons/js/buttons.print.js';
+
+//Import perfect scrollbar 
+window.PerfectScrollbar = require('perfect-scrollbar').default;
+
+//Import chart.js
+window.Chart = require('chart.js/auto').default;
+
 //Import Select2
 window.select2 = require('select2');
 //import select2 from 'select2';
+
+import 'bootstrap-notify';
 
 window.Vue = require('vue').default;
 
