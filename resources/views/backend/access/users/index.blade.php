@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12"> 
                 <div class="card">
-                    <div class="card-header card-header-primary">
+                    <div class="card-header card-header-info">
                         <h4 class="card-title">Zarządzanie Użytkownikami</h4>
                         <p class="card-category"> Here is a subtitle for this table</p>
                         <div class="card-tools float-right action-tools">
