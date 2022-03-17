@@ -56,7 +56,7 @@
                         <div class="card-tools">
                             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="card-body">
                         {{-- {!! history()->renderType('Permission') !!} --}}
                     </div><!-- /.box-body -->
