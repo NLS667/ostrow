@@ -54,8 +54,10 @@ const app = new Vue({
     el: '#app',
 });
 
+/**
 window.events = new Vue();
 
 window.flash = function(message, type) {
   window.events.$emit('flash', message, type);
 }
+*/
