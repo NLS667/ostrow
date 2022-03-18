@@ -1,23 +1,23 @@
 <div class="form-group">
-    {{ Form::label('name', trans('validation.attributes.backend.access.permissions.name'), ['class' => 'col-lg-2 control-label required']) }}
+    {{ Form::label('name', 'Nazwa', ['class' => 'col-lg-2 control-label required']) }}
 
     <div class="col-lg-10">
-        {{ Form::text('name', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.access.permissions.name'), 'required' => 'required']) }}
+        {{ Form::text('name', null, ['class' => 'form-control box-size', 'placeholder' => 'Nazwa', 'required' => 'required']) }}
     </div><!--col-lg-10-->
 </div><!--form control-->
 
 <div class="form-group">
-    {{ Form::label('display_name', trans('validation.attributes.backend.access.permissions.display_name'), ['class' => 'col-lg-2 control-label required']) }}
+    {{ Form::label('display_name', 'Nazwa Wyświetlana', ['class' => 'col-lg-2 control-label required']) }}
 
     <div class="col-lg-10">
-        {{ Form::text('display_name', null,['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.access.permissions.display_name'), 'required' => 'required']) }}
+        {{ Form::text('display_name', null,['class' => 'form-control box-size', 'placeholder' => 'Nazwa Wyświetlana' 'required' => 'required']) }}
     </div><!--col-lg-3-->
 </div><!--form control-->
 
 <div class="form-group">
-    {{ Form::label('sort', trans('validation.attributes.backend.access.permissions.sort'), ['class' => 'col-lg-2 control-label']) }}
+    {{ Form::label('sort', 'Kolejność', ['class' => 'col-lg-2 control-label']) }}
 
     <div class="col-lg-10">
-        {{ Form::text('sort', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.access.permissions.sort')]) }}
+        {{ Form::text('sort', null, ['class' => 'form-control box-size', 'placeholder' => 'Kolejność']) }}
     </div><!--col-lg-10-->
 </div><!--form control-->
