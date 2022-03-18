@@ -49,3 +49,9 @@ window.Vue = require('vue').default;
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+window.events = new Vue();
+
+window.flash = function(message, type) {
+  window.events.$emit('flash', message, type);
+}
