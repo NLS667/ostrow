@@ -29,7 +29,7 @@
                             {{ Form::label('associated_permissions', 'Przydzielone Uprawnienia', ['class' => 'col-lg-2 control-label']) }}
 
                             <div class="col-lg-10">
-                                {{ Form::select('associated_permissions', array('all' => trans('labels.general.all'), 'custom' => trans('labels.general.custom')), 'all', ['class' => 'form-control select2 box-size']) }}
+                                {{ Form::select('associated_permissions', array('all' => 'Wszystkie', 'custom' => 'Wybrane'), 'all', ['class' => 'form-control select2 box-size']) }}
 
                                 <div id="available-permissions" class="hidden mt-20" style="width: 700px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
                                     <div class="row">
@@ -52,7 +52,7 @@
                         </div><!--form control-->
 
                         <div class="form-group">
-                            {{ Form::label('sort', trans('validation.attributes.backend.access.roles.sort'), ['class' => 'col-lg-2 control-label']) }}
+                            {{ Form::label('sort', 'Kolejność', ['class' => 'col-lg-2 control-label']) }}
 
                             <div class="col-lg-10">
                                 {{ Form::text('sort', ($roleCount+1), ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.access.roles.sort')]) }}
