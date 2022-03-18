@@ -37,7 +37,7 @@
                                             <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                                         </th>
                                         <th>
-                                            {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko') !!}
+                                            {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
                                             <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                                         </th>
                                         <th>
