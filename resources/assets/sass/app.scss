@@ -8,9 +8,10 @@
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
 // Variables
-//@import 'variables';
+@import 'variables';
+
+@import 'material/material-dashboard.css';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-@import 'material/material-dashboard.css';
