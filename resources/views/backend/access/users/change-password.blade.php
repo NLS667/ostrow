@@ -10,7 +10,7 @@
 
                 <div class="card">
                     <div class="card-header card-header-info">
-                        <h4 class="card-title">Zmiana hasła użytkownika {{ $user->first_name $user->last_name}}</h4>
+                        <h4 class="card-title">Zmiana hasła użytkownika {{ $user->first_name}} {{ $user->last_name }}</h4>
                     </div><!-- /.box-header -->
 
                     <div class="card-body">
