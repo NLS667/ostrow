@@ -14,5 +14,5 @@ return [
     */
 
     'general' => [
-        'all'     => 'Wszystkie',
+        'all'     => 'Wszystkie'
     ]
