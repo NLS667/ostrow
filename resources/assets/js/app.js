@@ -29,6 +29,12 @@ import 'bootstrap-notify';
 
 window.Vue = require('vue').default;
 
+window.events = new Vue();
+
+window.flash = function(message, type) {
+  window.events.$emit('flash', message, type);
+}
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -51,11 +57,8 @@ Vue.component('flash', require('./components/Flash.vue').default);
 
 const app = new Vue({
     el: '#app',
-});
+}).$mount();
 
 
-window.events = new Vue();
 
-window.flash = function(message, type) {
-  window.events.$emit('flash', message, type);
-}
+
