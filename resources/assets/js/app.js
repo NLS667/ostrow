@@ -6,7 +6,7 @@
 
 import 'bootstrap';
 
-require('./bootstrap');
+/*require('./bootstrap');*/
 
 // Import jQuery plugins
 import 'datatables.net-bs4';
