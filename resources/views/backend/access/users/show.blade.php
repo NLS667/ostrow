@@ -1,53 +1,52 @@
-@extends ('backend.layouts.app')
-
-@section ('title', trans('labels.backend.access.users.management') . ' | ' . trans('labels.backend.access.users.view'))
-
-@section('page-header')
-    <h1>
-        {{ trans('labels.backend.access.users.management') }}
-        <small>{{ trans('labels.backend.access.users.view') }}</small>
-    </h1>
-@endsection
+@extends ('backend.layouts.app', ['activePage' => 'user-view', 'titlePage' => 'Podgląd Użytkownika'])
 
 @section('content')
-    <div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('labels.backend.access.users.view') }}</h3>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">Podgląd Użytkownika</h4>
 
-            <div class="box-tools float-right">
-                @include('backend.access.includes.partials.user-header-buttons')
-            </div><!--box-tools pull-right-->
-        </div><!-- /.box-header -->
+                        <div class="card-tools">
+                            @include('backend.access.includes.partials.user-header-buttons')
+                        </div><!--box-tools pull-right-->
+                    </div><!-- /.box-header -->
 
-        <div class="box-body">
+                    <div class="card-body">
 
-            <div role="tabpanel">
+                        <div role="tabpanel">
 
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active">
-                        <a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">{{ trans('labels.backend.access.users.tabs.titles.overview') }}</a>
-                    </li>
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">{{ trans('labels.backend.access.users.tabs.titles.overview') }}</a>
+                                </li>
 
-                    <li role="presentation">
-                        <a href="#history" aria-controls="history" role="tab" data-toggle="tab">{{ trans('labels.backend.access.users.tabs.titles.history') }}</a>
-                    </li>
-                </ul>
+                                <li role="presentation">
+                                    <a href="#history" aria-controls="history" role="tab" data-toggle="tab">{{ trans('labels.backend.access.users.tabs.titles.history') }}</a>
+                                </li>
+                            </ul>
 
-                <div class="tab-content">
+                            <div class="tab-content">
 
-                    <div role="tabpanel" class="tab-pane mt-30 active" id="overview">
-                        @include('backend.access.show.tabs.overview')
-                    </div><!--tab overview profile-->
+                                <div role="tabpanel" class="tab-pane mt-30 active" id="overview">
+                                    Informacje ogólne
+                                </div><!--tab overview profile-->
 
-                    <div role="tabpanel" class="tab-pane mt-30" id="history">
-                        @include('backend.access.show.tabs.history')
-                    </div><!--tab panel history-->
+                                <div role="tabpanel" class="tab-pane mt-30" id="history">
+                                    Historia
+                                </div><!--tab panel history-->
 
-                </div><!--tab content-->
+                            </div><!--tab content-->
 
-            </div><!--tab panel-->
+                        </div><!--tab panel-->
 
-        </div><!-- /.box-body -->
-    </div><!--box-->
+                    </div><!-- /.box-body -->
+                </div><!--box-->
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
