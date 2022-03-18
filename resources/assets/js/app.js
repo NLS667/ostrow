@@ -27,7 +27,7 @@ window.select2 = require('select2');
 
 import 'bootstrap-notify';
 
-import 'admincrm.js';
+import './admincrm.js';
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
