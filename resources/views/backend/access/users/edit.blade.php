@@ -130,7 +130,7 @@
                                             </div>
                                             @endforeach
                                         @else
-                                            <p>There are no available permissions.</p>
+                                            <p>Brak pasujących uprawnień.</p>
                                         @endif
                                     </div><!--col-lg-6-->
                                 </div><!--row-->
@@ -140,8 +140,9 @@
 
                 @endif
               </div>
-              <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary">Zapisz</button>
+              <div class="edit-form-btn">
+                {{ link_to_route('admin.access.user.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
+                {{ Form::submit('Zmień', ['class' => 'btn btn-primary btn-md']) }}
               </div>
             </div>
           </form>
