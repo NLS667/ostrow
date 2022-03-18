@@ -25,7 +25,7 @@
             <div class="dropdown-divider"></div>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown notifications-menu">
           <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">notifications</i>
             <span class="notification">0</span>
