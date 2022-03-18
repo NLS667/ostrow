@@ -27,7 +27,7 @@
             </div>
             @endforeach
             <br/>
-            <button type="button" class="btn btn-info show-modal" data-form="_add_custom_url_form" data-header="Add Custom URL"><i class="fa fa-plus" ></i>&nbsp;&nbsp;Add Custom URL</button>
+            <button type="button" class="btn btn-info show-modal" data-form="_add_custom_url_form" data-header="Dodaj własny link"><i class="fa fa-plus" ></i>&nbsp;&nbsp;Dodaj własny link</button>
         </div>
     </div>
 </div>
