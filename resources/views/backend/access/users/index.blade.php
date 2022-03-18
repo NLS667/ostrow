@@ -37,7 +37,7 @@
                                         <th rowspan="1" colspan="1">Role</th>
                                         <th rowspan="1" colspan="1">Utworzony</th>
                                         <th rowspan="1" colspan="1">Zmieniony</th>
-                                        <th class="text-right" rowspan="1" colspan="1">Actions</th>
+                                        <th class="text-right" rowspan="1" colspan="1">Akcje</th>
                                     </tr>
                                 </tfoot>
                                 <thead class="transparent-bg">
@@ -117,17 +117,17 @@
                     {data: 'first_name', name: '{{config('access.users_table')}}.first_name'},
                     {data: 'last_name', name: '{{config('access.users_table')}}.last_name'},
                     {data: 'email', name: '{{config('access.users_table')}}.email'},
-                    {data: 'confirmed', name: '{{config('access.users_table')}}.confirmed', render: function ( data, type, row, meta ) {
+                    {data: 'confirmed', className: 'text-center', name: '{{config('access.users_table')}}.confirmed', render: function ( data, type, row, meta ) {
                         if(data=1) {
                             return '<span class="badge badge-success">Confirmed</a>';
                         } else {
                             return '<span class="badge badge-danger">Unconfirmed</a>';
                         }
                     }},
-                    {data: 'roles', name: '{{config('access.roles_table')}}.name', sortable: false},
+                    {data: 'roles', name: '{{config('access.roles_table')}}.name', className: 'text-center', sortable: false},
                     {data: 'created_at', name: '{{config('access.users_table')}}.created_at'},
                     {data: 'updated_at', name: '{{config('access.users_table')}}.updated_at'},
-                    {data: 'actions', name: 'actions', searchable: false, sortable: false}
+                    {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 order: [[3, "asc"]],
                 searchDelay: 500,
