@@ -16,18 +16,30 @@
                     <div class="card-body">
                         <div class="table-responsive data-table-wrapper">
                             <table id="users-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;" role="grid" aria-describedby="datatables_info">
-                                <thead class=" text-primary">
-                                    <tr>
-                                        <th>Imię</th>
-                                        <th>Nazwisko</th>
-                                        <th>E-mail</th>
-                                        <th>Potwierdzony ?</th>
-                                        <th>Role</th>
-                                        <th>Utworzony</th>
-                                        <th>Zmieniony</th>
-                                        <th>Akcje</th>
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0">Imię</th>
+                                        <th class="sorting_asc" tabindex="0">Nazwisko</th>
+                                        <th class="sorting_asc" tabindex="0">E-mail</th>
+                                        <th class="sorting_asc" tabindex="0">Potwierdzony?</th>
+                                        <th class="sorting_asc" tabindex="0">Role</th>
+                                        <th class="sorting_asc" tabindex="0">Utworzony</th>
+                                        <th class="sorting_asc" tabindex="0">Zmieniony</th>
+                                        <th class="disabled-sorting text-right sorting" tabindex="0">Akcje</th>
                                     </tr>
                                 </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th rowspan="1" colspan="1">Imię</th>
+                                        <th rowspan="1" colspan="1">Nazwisko</th>
+                                        <th rowspan="1" colspan="1">E-mail</th>
+                                        <th rowspan="1" colspan="1">Potwierdzony?</th>
+                                        <th rowspan="1" colspan="1">Role</th>
+                                        <th rowspan="1" colspan="1">Utworzony</th>
+                                        <th rowspan="1" colspan="1">Zmieniony</th>
+                                        <th class="text-right" rowspan="1" colspan="1">Actions</th>
+                                    </tr>
+                                </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
                                         <th>
