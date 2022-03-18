@@ -27,7 +27,7 @@ window.select2 = require('select2');
 
 import 'bootstrap-notify';
 
-require('./admincrm').default;
+require('./admincrm.js');
 
 /**
  * The following block of code may be used to automatically register your
