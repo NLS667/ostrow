@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'user-management', 'titlePage' => 'Zarządzanie użytkownikami'])
+@extends('backend.layouts.app', ['activePage' => 'user-management', 'titlePage' => 'Zarządzanie użytkownikami'])
 
 @section('content')
   <div class="content">
