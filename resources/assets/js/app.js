@@ -27,6 +27,8 @@ window.select2 = require('select2');
 
 import 'bootstrap-notify';
 
+import * as mdb from 'mdb-ui-kit';
+
 window.Vue = require('vue').default;
 
 window.events = new Vue();
