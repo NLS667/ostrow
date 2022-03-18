@@ -43,7 +43,7 @@
                                             <br/>
                                             @endforeach
                                             @else
-                                            <p>There are no available permissions.</p>
+                                            <p>Brak dostępnych uprawnień.</p>
                                             @endif
                                         </div><!--col-lg-6-->
                                     </div><!--row-->
