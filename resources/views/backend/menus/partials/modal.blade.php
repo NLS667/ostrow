@@ -7,7 +7,7 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-                <p>Something went wrong! Please try again later.</p>
+                <p>Coś poszło nie tak! Spróbuj jeszcze raz.</p>
             </div>
         </div>
     </div>

@@ -1,38 +1,34 @@
-@extends ('backend.layouts.app')
-
-@section ('title', trans('labels.backend.menus.management') . ' | ' . trans('labels.backend.menus.create'))
-
-@section('page-header')
-    <h1>
-        {{ trans('labels.backend.menus.management') }}
-        <small>{{ trans('labels.backend.menus.create') }}</small>
-    </h1>
-@endsection
+@extends ('backend.layouts.app', ['activePage' => 'menu-management', 'titlePage' => __('Zarządzanie Menu')])
 
 @section('content')
-    {{ Form::open(['route' => 'admin.menus.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post', 'id' => 'create-menu', 'files' => false]) }}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12"> 
+                {{ Form::open(['route' => 'admin.menus.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post', 'id' => 'create-menu', 'files' => false]) }}
 
-    <div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('labels.backend.menus.create') }}</h3>
+                <div class="card">
+                    <div class="card-header card-header-info d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">Utwórz Menu</h4>
+                        <div class="card-tools">
+                            @include('backend.menus.partials.header-buttons')
+                        </div><!--box-tools float-right-->
+                    </div><!-- /.box-header -->
 
-            <div class="box-tools float-right">
-                @include('backend.menus.partials.header-buttons')
-            </div><!--box-tools float-right-->
-        </div><!-- /.box-header -->
-
-        {{-- Including Form blade file --}}
-        <div class="box-body">
-            <div class="form-group">
-                @include("backend.menus.form")
-                <div class="edit-form-btn">
-                    {{ link_to_route('admin.menus.index', trans('buttons.general.cancel'), [], ['class' => 'btn btn-danger btn-md']) }}
-                    {{ Form::submit(trans('buttons.general.crud.create'), ['class' => 'btn btn-primary btn-md']) }}
-                    <div class="clearfix"></div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            @include("backend.menus.form")
+                            <div class="edit-form-btn">
+                                {{ link_to_route('admin.menus.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
+                                {{ Form::submit('Utwórz', ['class' => 'btn btn-primary btn-md']) }}
+                            </div>
+                        </div>
+                    </div><!--box-->
                 </div>
+                {{ Form::close() }}
             </div>
-        </div><!--box-->
+        </div>
     </div>
-    {{ Form::close() }}
+</div>
     @include("backend.menus.partials.modal")
 @endsection
