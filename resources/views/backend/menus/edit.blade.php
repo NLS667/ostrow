@@ -22,7 +22,6 @@
                             <div class="edit-form-btn">
                                 {{ link_to_route('admin.menus.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
                                 {{ Form::submit('Zmień', ['class' => 'btn btn-primary btn-md']) }}
-                                <div class="clearfix"></div>
                             </div>
                         </div>
                     </div><!--box-->
