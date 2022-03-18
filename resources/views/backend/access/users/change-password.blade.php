@@ -30,7 +30,7 @@
                         </div><!--form control-->
 
                         <div class="form-group">
-                            {{ Form::label('password_confirmation', Potwierdzenie hasła, ['class' => 'col-lg-2 control-label', 'placeholder' => 'Potwierdź hasło']) }}
+                            {{ Form::label('password_confirmation', 'Potwierdzenie hasła', ['class' => 'col-lg-2 control-label', 'placeholder' => 'Potwierdź hasło']) }}
 
                             <div class="col-lg-10">
                                 {{ Form::password('password_confirmation', ['class' => 'form-control  box-size']) }}
