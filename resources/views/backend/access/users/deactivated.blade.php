@@ -1,56 +1,47 @@
-@extends ('backend.layouts.app')
-
-@section ('title', trans('labels.backend.access.users.management') . ' | ' . trans('labels.backend.access.users.deactivated'))
-
-@section('page-header')
-    <h1>
-        {{ trans('labels.backend.access.users.management') }}
-        <small>{{ trans('labels.backend.access.users.deactivated') }}</small>
-    </h1>
-@endsection
+@extends ('backend.layouts.app', ['activePage' => 'user-deactivated', 'titlePage' => 'Deaktywowani Użytkownicy'])
 
 @section('content')
-    <div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('labels.backend.access.users.deactivated') }}</h3>
+    <div class="card">
+        <div class="card-header card-header-info d-flex justify-content-between align-items-center">
+            <h3 class="card-title">Deaktywowani Użytkownicy</h3>
 
-            <div class="box-tools float-right">
+            <div class="card-tools">
                 @include('backend.access.includes.partials.user-header-buttons')
             </div><!--box-tools pull-right-->
         </div><!-- /.box-header -->
 
-        <div class="box-body">
+        <div class="card-body">
             <div class="table-responsive data-table-wrapper">
                 <table id="users-table" class="table table-condensed table-hover table-bordered">
                     <thead>
                         <tr>
-                            <th>{{ trans('labels.backend.access.users.table.first_name') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.last_name') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.email') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.confirmed') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.roles') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.created') }}</th>
-                            <th>{{ trans('labels.backend.access.users.table.last_updated') }}</th>
-                            <th>{{ trans('labels.general.actions') }}</th>
+                            <th>Imię</th>
+                            <th>Nazwisko</th>
+                            <th>E-mail</th>
+                            <th>Potwierdzony ?</th>
+                            <th>Role</th>
+                            <th>Utworzony</th>
+                            <th>Zmieniony</th>
+                            <th>Akcje</th>
                         </tr>
                     </thead>
                     <thead class="transparent-bg">
                         <tr>
                             <th>
-                                {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => trans('labels.backend.access.users.table.first_name')]) !!}
+                                {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Imię']) !!}
                                 <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                             </th>
                             <th>
-                                {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => trans('labels.backend.access.users.table.last_name')]) !!}
+                                {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
                                 <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                             </th>
                             <th>
-                                {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => trans('labels.backend.access.users.table.email')]) !!}
+                                {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'E-mail']) !!}
                                 <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                             </th>
                             <th></th>
                             <th>
-                            {!! Form::text('roles', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => trans('labels.backend.access.users.table.roles')]) !!}
+                            {!! Form::text('roles', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Role']) !!}
                             <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                             </th>
                             <th></th>
@@ -94,7 +85,7 @@
                 ],
                 order: [[0, "asc"]],
                 searchDelay: 500,
-                dom: 'lBfrtip',
+                dom: 'frt<"d-inline-flex"i><"d-inline-flex float-right"p>',
                 buttons: {
                     buttons: [
                         { extend: 'copy', className: 'copyButton',  exportOptions: {columns: [ 0, 1, 2, 3, 4, 5, 6 ]  }},
