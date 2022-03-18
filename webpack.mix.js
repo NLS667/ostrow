@@ -30,7 +30,7 @@ mix.autoload({
     .scripts([
         "resources/assets/js/plugins/common.js",        
         "resources/assets/js/plugins/settings.js", 
-        'resources/assets/js/plugins/bootstrap-material-design.min.js',
+        //'resources/assets/js/plugins/bootstrap-material-design.min.js',
         'resources/assets/js/plugins/material-dashboard.js',
     ], 'public/js/app-custom.js')
     .vue()
