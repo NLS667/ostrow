@@ -1,14 +1,14 @@
 <div class="form-group">
-    {{ Form::label('categories', 'Rodzaj', ['class' => 'col-lg-4 col-md-4 col-sm-4 control-label required']) }}
+    {{ Form::label('categories', 'Rodzaj', ['class' => 'col-lg-2 control-label required']) }}
 
     <div class="col-lg-10">
         {{ Form::select('type', $types, null, ['class' => 'form-control tags box-size', 'required' => 'required']) }}
     </div>
 </div>
 
-<div class="form-group row">
-    {{ Form::label('name', 'Nazwa', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
-    <div class="col-lg-10 col-md-10 col-sm-10">
+<div class="form-group">
+    {{ Form::label('name', 'Nazwa', ['class' => 'col-lg-2 control-label required']) }}
+    <div class="col-lg-10">
         {{ Form::text('name', null, ['class' => 'form-control box-size', 'placeholder' => 'Nazwa', 'required' => 'required']) }}
     </div>
 </div>
