@@ -8,7 +8,6 @@ import 'bootstrap';
 
 require('./bootstrap');
 
-require('./admincrm');
 // Import jQuery plugins
 import 'datatables.net-bs4';
 import 'datatables.net-buttons-bs4';
@@ -27,6 +26,8 @@ window.select2 = require('select2');
 //import select2 from 'select2';
 
 import 'bootstrap-notify';
+
+require('./admincrm');
 
 window.Vue = require('vue').default;
 
