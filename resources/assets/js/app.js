@@ -27,9 +27,7 @@ window.select2 = require('select2');
 
 import 'bootstrap-notify';
 
-require('./admincrm');
-
-window.Vue = require('vue').default;
+require('./admincrm').default;
 
 /**
  * The following block of code may be used to automatically register your
