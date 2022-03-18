@@ -119,9 +119,9 @@
                     {data: 'email', name: '{{config('access.users_table')}}.email'},
                     {data: 'confirmed', className: 'text-center', name: '{{config('access.users_table')}}.confirmed', render: function ( data, type, row, meta ) {
                         if(data=1) {
-                            return '<span class="badge badge-success">Confirmed</a>';
+                            return '<span class="badge badge-success">Tak</a>';
                         } else {
-                            return '<span class="badge badge-danger">Unconfirmed</a>';
+                            return '<span class="badge badge-danger">Nie</a>';
                         }
                     }},
                     {data: 'roles', name: '{{config('access.roles_table')}}.name', className: 'text-center', sortable: false},
