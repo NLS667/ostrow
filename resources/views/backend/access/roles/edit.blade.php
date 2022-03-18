@@ -1,40 +1,31 @@
-@extends ('backend.layouts.app')
-
-@section ('title', trans('labels.backend.access.roles.management') . ' | ' . trans('labels.backend.access.roles.edit'))
-
-@section('page-header')
-    <h1>
-        {{ trans('labels.backend.access.roles.management') }}
-        <small>{{ trans('labels.backend.access.roles.edit') }}</small>
-    </h1>
-@endsection
+@extends ('backend.layouts.app', ['activePage' => 'role-management', 'titlePage' => 'Zarządzanie Rolami'])
 
 @section('content')
     {{ Form::model($role, ['route' => ['admin.access.role.update', $role], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'id' => 'edit-role']) }}
 
-        <div class="box box-info">
-            <div class="box-header with-border">
-                <h3 class="box-title">{{ trans('labels.backend.access.roles.edit') }}</h3>
+        <div class="card">
+            <div class="card-header card-header-info d-flex justify-content-between align-items-center">
+                <h4 class="card-title">Zarządzanie Rolami</h4>
 
-                <div class="box-tools float-right">
+                <div class="card-tools">
                     @include('backend.access.includes.partials.role-header-buttons')
                 </div><!--box-tools pull-right-->
             </div><!-- /.box-header -->
 
-            <div class="box-body">
+            <div class="card-body">
                 <div class="form-group">
-                    {{ Form::label('name', trans('validation.attributes.backend.access.roles.name'), ['class' => 'col-lg-2 control-label required']) }}
+                    {{ Form::label('name', 'Nazwa', ['class' => 'col-lg-2 control-label required']) }}
 
                     <div class="col-lg-10">
-                        {{ Form::text('name', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.access.roles.name'), 'required' => 'required']) }}
+                        {{ Form::text('name', null, ['class' => 'form-control box-size', 'placeholder' => 'Nazwa', 'required' => 'required']) }}
                     </div><!--col-lg-10-->
                 </div><!--form control-->
 
                 <div class="form-group">
-                    {{ Form::label('associated_permissions', trans('validation.attributes.backend.access.roles.associated_permissions'), ['class' => 'col-lg-2 control-label']) }}
+                    {{ Form::label('associated_permissions', 'Przypisane Uprawnienia', ['class' => 'col-lg-2 control-label']) }}
 
                     <div class="col-lg-10">
-                        {{ Form::select('associated_permissions', ['all' => 'All', 'custom' => 'Custom'], $role->all ? 'all' : 'custom', ['class' => 'form-control select2 box-size']) }}
+                        {{ Form::select('associated_permissions', ['all' => 'Wszystkie', 'custom' => 'Wybrane'], $role->all ? 'wszystkie' : 'wybrane', ['class' => 'form-control select2 box-size']) }}
 
                         <div id="available-permissions" class="hidden mt-20" style="width: 700px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
                             <div class="row">
@@ -48,7 +39,7 @@
                                             <br/>
                                         @endforeach
                                     @else
-                                        <p>There are no available permissions.</p>
+                                        <p>Brak dostępnych uprawnień.</p>
                                     @endif
                                 </div><!--col-lg-6-->
                             </div><!--row-->
@@ -57,15 +48,15 @@
                 </div><!--form control-->
 
                 <div class="form-group">
-                    {{ Form::label('sort', trans('validation.attributes.backend.access.roles.sort'), ['class' => 'col-lg-2 control-label']) }}
+                    {{ Form::label('sort', 'Kolejność', ['class' => 'col-lg-2 control-label']) }}
 
                     <div class="col-lg-10">
-                        {{ Form::text('sort', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.access.roles.sort')]) }}
+                        {{ Form::text('sort', null, ['class' => 'form-control box-size', 'placeholder' => 'Kolejność']) }}
                     </div><!--col-lg-10-->
                 </div><!--form control-->
                 <div class="edit-form-btn">
-                    {{ link_to_route('admin.access.role.index', trans('buttons.general.cancel'), [], ['class' => 'btn btn-danger btn-md']) }}
-                    {{ Form::submit(trans('buttons.general.crud.update'), ['class' => 'btn btn-primary btn-md']) }}
+                    {{ link_to_route('admin.access.role.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
+                    {{ Form::submit('Zmień', ['class' => 'btn btn-primary btn-md']) }}
                     <div class="clearfix"></div>
                 </div>
             </div><!-- /.box-body -->
