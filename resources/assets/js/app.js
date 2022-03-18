@@ -28,6 +28,10 @@ window.select2 = require('select2');
 import 'bootstrap-notify';
 
 import './admincrm.js';
+
+
+window.Vue = require('vue').default;
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -51,3 +55,10 @@ Vue.component('flash', require('./components/Flash.vue').default);
 const app = new Vue({
     el: '#app',
 });
+
+
+window.events = new Vue();
+
+window.flash = function(message, type) {
+  window.events.$emit('flash', message, type);
+}

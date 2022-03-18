@@ -31,8 +31,6 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
-window.Vue = require('vue').default;
-
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -49,9 +47,3 @@ window.Vue = require('vue').default;
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
-
-window.events = new Vue();
-
-window.flash = function(message, type) {
-  window.events.$emit('flash', message, type);
-}
