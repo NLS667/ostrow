@@ -1,4 +1,4 @@
-@extends ('backend.layouts.app', ['activePage' => 'user-deactivated', 'titlePage' => 'Deaktywowani Użytkownicy'])
+@extends ('backend.layouts.app', ['activePage' => 'user-deactivated', 'titlePage' => 'Nieaktywni Użytkownicy'])
 
 @section('content')
 <div class="content">
@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-info d-flex justify-content-between align-items-center">
-                        <h3 class="card-title">Deaktywowani Użytkownicy</h3>
+                        <h3 class="card-title">Nieaktywni Użytkownicy</h3>
 
                         <div class="card-tools">
                             @include('backend.access.includes.partials.user-header-buttons')
@@ -102,6 +102,9 @@
                         { extend: 'pdf', className: 'pdfButton',  exportOptions: {columns: [ 0, 1, 2, 3, 4, 5, 6 ]  }},
                         { extend: 'print', className: 'printButton',  exportOptions: {columns: [ 0, 1, 2, 3, 4, 5, 6 ]  }}
                     ]
+                },
+                language: {
+                    @lang('datatable.strings')
                 }
             });
 
