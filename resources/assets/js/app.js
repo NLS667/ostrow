@@ -27,9 +27,6 @@ window.select2 = require('select2');
 
 import 'bootstrap-notify';
 
-import './admincrm.js';
-
-
 window.Vue = require('vue').default;
 
 /**

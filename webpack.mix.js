@@ -29,6 +29,7 @@ mix.autoload({
     .js('resources/assets/js/app.js', 'public/js')
     .scripts([
         'resources/assets/js/plugins/bootstrap-material-design.min.js',
+        "resources/assets/js/plugins/common.js",
     ], 'public/js/app-custom.js')
     .vue()
     .version();
