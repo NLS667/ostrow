@@ -30,6 +30,6 @@ mix.autoload({
     .scripts([
         'resources/assets/js/plugins/bootstrap-material-design.min.js',
         'resources/assets/js/admincrm.js',
-    ], 'public/js/backend-custom.js')
+    ], 'public/js/app-custom.js')
     .vue()
     .version();

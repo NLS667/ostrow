@@ -44,6 +44,7 @@
         <!-- JavaScripts -->
         @yield('before-scripts')
         {{ Html::script(mix('js/app.js')) }}
+        {{ Html::script(mix('js/app-custom.js')) }}
         @yield('after-scripts')
     </body>
 </html>
