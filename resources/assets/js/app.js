@@ -8,6 +8,7 @@ import 'bootstrap';
 
 require('./bootstrap');
 
+require('./admincrm');
 // Import jQuery plugins
 import 'datatables.net-bs4';
 import 'datatables.net-buttons-bs4';
