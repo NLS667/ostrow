@@ -16,3 +16,4 @@ return [
     'general' => [
         'all'     => 'Wszystkie'
     ]
+];
