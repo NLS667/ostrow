@@ -49,5 +49,3 @@ window.Vue = require('vue').default;
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
-
-window.events = new Vue();
