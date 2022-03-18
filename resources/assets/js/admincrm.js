@@ -14,7 +14,7 @@ export {
 //common functionalities for all the javascript featueres
 var Backend = {}; // common variable used in all the files of the backend
 
-$(function () {
+(function () {
 
     Backend = {
 
@@ -789,4 +789,4 @@ $(function () {
         }
     };
 
-})();
+})(jQuery);
