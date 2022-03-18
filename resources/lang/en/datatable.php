@@ -3,7 +3,7 @@
 return [
 
     'strings' => '
-        "sEmptyTable":     "W bazie brak pasującyh danych",
+        "sEmptyTable":     "W bazie brak pasujących danych",
         "sInfo":           "Pokazuję _START_ do _END_ z _TOTAL_ rekordów",
         "sInfoEmpty":      "Pokazuję 0 do 0 z 0 rekordów",
         "sInfoFiltered":   "(wyfiltrowane z _MAX_ wszystkich rekordów)",
