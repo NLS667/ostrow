@@ -8,7 +8,7 @@
         <ul class="nav">
             <li class="nav-item {{ active_class(if_route('admin.index'), 'active', '') }}">
                 <a class="nav-link" href="{{ route('admin.index') }}">
-                  <i class="material-icons">dashboard</i>
+                    <i class="material-icons">dashboard</i>
                     <p>Pulpit</p>
                 </a>
             </li>

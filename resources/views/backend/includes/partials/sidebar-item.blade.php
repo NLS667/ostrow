@@ -11,8 +11,8 @@
         </div>
     @else
         <a class="nav-link" href="{{ getRouteUrl($item->url, $item->url_type) }}">
-            <span class="sidebar-mini"><i class="material-icons">{{ @$item->icon }}</i></span>
-            <span class="sidebar-normal">{{ $item->name }}</span>
+            <i class="material-icons">{{ @$item->icon }}</i>
+            <p>{{ $item->name }}</p>
         </a>
     @endif
 </li>
