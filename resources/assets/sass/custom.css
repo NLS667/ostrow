@@ -4,9 +4,8 @@
 
 .form-clear {
   align-items: center;
-  background: #cecece;
-  border-radius: 50%;
-  bottom: 8px;
+  background: transparent;
+  bottom: 5px;
   color: rgba(0, 0, 0, .54);
   cursor: pointer;
   display: flex;

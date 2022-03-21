@@ -43,9 +43,9 @@
                                 <thead class="transparent-bg">
                                     <tr>
                                         <th>
-                                            <div class="input-group">
+                                            <div class="input-group position-relative">
                                                 {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Imię']) !!}
-                                                <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                                <span class="form-clear d-none"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th>
@@ -55,13 +55,17 @@
                                             </div>
                                         </th>
                                         <th>
-                                            {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'email']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'email']) !!}
+                                                <span class="form-clear d-none"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th></th>
                                         <th>
-                                            {!! Form::text('roles', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Role']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('roles', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Role']) !!}
+                                                <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                            </div>
                                         </th>
                                         <th></th>
                                         <th></th>
