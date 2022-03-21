@@ -39,8 +39,8 @@ mix.autoload({
 */
 
 mix.autoload({
-        jquery: ['$', 'window.jQuery', 'jQuery'],
-        'popper.js/dist/umd/popper.js': ['Popper']
+        jquery: ['$', 'window.jQuery', "window.$",'jQuery'],
+        'popper.js/dist/umd/popper.js': ['Popper', 'popper']
     })
     .sass('resources/assets/sass/front.scss', 'public/css/front.css')
     .sass('resources/assets/sass/app.scss', 'public/css')
