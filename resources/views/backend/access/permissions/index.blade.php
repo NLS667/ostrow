@@ -68,10 +68,10 @@
                     <div class="card-header card-header-success d-flex justify-content-between align-items-center">
                         <h4 class="card-title">Historia</h4>
                         <div class="card-tools">
-                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-box-tool" data-toggle="collapse" data-target="#collapseBody"><i class="fa fa-minus"></i></button>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div id="collapseBody" class="card-body">
                         {{-- {!! history()->renderType('Permission') !!} --}}
                     </div><!-- /.box-body -->
                 </div><!--box box-info-->
@@ -122,6 +122,7 @@
                 }
             });
 
+            bootstrapClearButton();
             Backend.DataTableSearch.init(dataTable);
         });
     </script>

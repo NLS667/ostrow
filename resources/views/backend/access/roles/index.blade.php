@@ -126,6 +126,7 @@
                 }
             });
 
+            bootstrapClearButton();
             Backend.DataTableSearch.init(dataTable);
         });
     </script>
