@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-//import 'bootstrap';
+import 'bootstrap';
 
 require('./bootstrap');
 
@@ -19,7 +19,7 @@ import 'datatables.net-buttons/js/buttons.print.js';
 window.PerfectScrollbar = require('perfect-scrollbar').default;
 
 //Import chart.js
-//window.Chart = require('chart.js/auto').default;
+window.Chart = require('chart.js/auto').default;
 
 //Import Select2
 //window.select2 = require('select2');
