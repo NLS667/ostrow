@@ -3,18 +3,16 @@
         <a class="nav-link"data-toggle="collapse" aria-expanded="true" href="#{{ $item->content }}">
             <i class="material-icons">{{ @$item->icon }}</i>
             <p>{{ $item->name }}<b class="caret"></b></p>
-    @else
-        <a class="nav-link" href="{{ getRouteUrl($item->url, $item->url_type) }}">
-            <span class="sidebar-mini"><i class="material-icons">{{ @$item->icon }}</i></span>
-            <span class="sidebar-normal">{{ $item->name }}</span>
-    @endif        
         </a>
-    @if (!empty($item->children))
         <div class="collapse show" id="{{ $item->content }}">
             <ul class="nav">
                 {{ renderMenuItems($item->children) }}
             </ul>
         </div>
+    @else
+        <a class="nav-link" href="{{ getRouteUrl($item->url, $item->url_type) }}">
+            <span class="sidebar-mini"><i class="material-icons">{{ @$item->icon }}</i></span>
+            <span class="sidebar-normal">{{ $item->name }}</span>
+        </a>
     @endif
-
 </li>
