@@ -45,26 +45,26 @@
                                         <th>
                                             <div class="input-group position-relative">
                                                 {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Imię']) !!}
-                                                <span class="form-clear d-none"><i class="material-icons">clear</i></span>
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
                                                 {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
-                                                <span class="form-clear d-none"><i class="material-icons">clear</i></span>
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
                                                 {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'email']) !!}
-                                                <span class="form-clear d-none"><i class="material-icons">clear</i></span>
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th></th>
                                         <th>
                                             <div class="input-group position-relative">
                                                 {!! Form::text('roles', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Role']) !!}
-                                                <span class="form-clear d-none"><i class="material-icons">clear</i></span>
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th></th>
