@@ -7,7 +7,7 @@
             <div class="col-md-12"> 
                 <div class="card">
                     <div class="card-header card-header-info d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">Zarządzanie Użytkownikami</h4>
+                        <h4 class="card-title">Wszyscy Użytkownicy</h4>
                         <div class="card-tools action-tools">
                             @include('backend.access.includes.partials.user-header-buttons')
                         </div>

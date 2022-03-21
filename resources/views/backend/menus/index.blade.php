@@ -7,8 +7,7 @@
             <div class="col-md-12"> 
                 <div class="card ">
                     <div class="card-header card-header-info d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">Zarządzanie Menu</h4>
-
+                        <h4 class="card-title">Wszystkie Menu</h4>
                         <div class="card-tools">
                             @include('backend.menus.partials.header-buttons')
                         </div>
@@ -25,7 +24,7 @@
                                         <th>Akcje</th>
                                     </tr>
                                 </thead>
-                                <tfooy>
+                                <tfoot>
                                     <tr>
                                         <th>Nazwa</th>
                                         <th>Rodzaj</th>

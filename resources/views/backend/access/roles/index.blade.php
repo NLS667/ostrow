@@ -7,7 +7,7 @@
             <div class="col-md-12"> 
                 <div class="card">
                     <div class="card-header card-header-info d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">Zarządzanie Rolami</h4>
+                        <h4 class="card-title">Wszystkie Role</h4>
                         <div class="box-tools float-right">
                             @include('backend.access.includes.partials.role-header-buttons')
                         </div>
@@ -25,20 +25,35 @@
                                         <th>Akcje</th>
                                     </tr>
                                 </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Rola</th>
+                                        <th>Uprawnienia</th>
+                                        <th>Ilość użytkowników</th>
+                                        <th>Kolejność</th>
+                                        <th>Akcje</th>
+                                    </tr>
+                                </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
                                         <th>
-                                            {!! Form::text('role', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Rola']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('role', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Rola']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th>
-                                            {!! Form::text('permission', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Uprawnienie']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('permission', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Uprawnienie']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th></th>
                                         <th>
-                                            {!! Form::text('sort', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Kolejność']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('sort', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Kolejność']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th></th>
                                     </tr>
