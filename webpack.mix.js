@@ -48,7 +48,7 @@ mix.autoload({
         'resources/assets/sass/plugins/jquery.dataTables.min.css',
         //'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css',
         'node_modules/select2/dist/css/select2.css',
-        'resources/assets/sass/custom.css',
+        'resources/assets/sass/custom.scss',
     ], 'public/css/app-custom.css')
     .js([
         'resources/assets/js/front.js',
