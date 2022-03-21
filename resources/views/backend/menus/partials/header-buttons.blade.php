@@ -11,7 +11,7 @@
   <ul class="dropdown-menu dropdown-menu-right" role="menu">
     <a href="{{route('admin.menus.index')}}" class="dropdown-item"><span class="material-icons">list</span>Wszystkie Menu</a>
     @permission('create-menu')
-    <a href="{{route('admin.menus.create')}}" class="dropdown-item"><span class="material-icons">Dodaj Menu</a>
+    <a href="{{route('admin.menus.create')}}" class="dropdown-item"><span class="material-icons">add</span>Dodaj Menu</a>
     @endauth
   </ul>
 </div>
