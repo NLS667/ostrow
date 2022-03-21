@@ -43,10 +43,12 @@
                                 <thead class="transparent-bg">
                                     <tr>
                                         <th>
-                                            {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Imię']) !!}
-                                            <button type="button" class="btn bg-transparent reset-data"  href="javascript:void(0)" style="margin-left: -40px; z-index: 100;">
-                                              <i class="fas fa-times"></i>
-                                            </button>
+                                            <div class="input-group">
+                                                {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Imię']) !!}
+                                                <button type="button" class="btn bg-transparent reset-data"  href="javascript:void(0)" style="margin-left: -40px; z-index: 100;">
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </button>
+                                            </div>
                                         </th>
                                         <th>
                                             {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
