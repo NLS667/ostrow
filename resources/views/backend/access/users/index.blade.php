@@ -15,7 +15,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive data-table-wrapper">
-                            <table id="users-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;" role="grid" aria-describedby="datatables_info">
+                            <table id="users-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting_asc" tabindex="0">Imię</th>

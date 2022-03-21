@@ -15,7 +15,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive data-table-wrapper">
-                            <table id="roles-table" class="table table-condensed table-hover table-bordered">
+                            <table id="roles-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
                                 <thead class=" text-primary">
                                     <tr>
                                         <th>Rola</th>
