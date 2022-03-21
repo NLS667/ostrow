@@ -9,9 +9,9 @@
     <span class="sr-only">Zwiń/Rozwiń</span>
   </button>
   <ul class="dropdown-menu dropdown-menu-right" role="menu">
-    <a href="{{route('admin.access.role.index')}}" class="dropdown-item"><i class="fas fa-list-ul"></i> Wszystkie Role</a>
+    <a href="{{route('admin.access.role.index')}}" class="dropdown-item"><span class="material-icons">list</span>Wszystkie Role</a>
     @permission('create-role')
-    <a href="{{route('admin.access.role.create')}}" class="dropdown-item"><i class="fas fa-plus"></i> Dodaj Rolę</a>
+    <a href="{{route('admin.access.role.create')}}" class="dropdown-item"><span class="material-icons">add</span>Dodaj Rolę</a>
     @endauth
   </ul>
 </div>

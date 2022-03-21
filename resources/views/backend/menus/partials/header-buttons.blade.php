@@ -9,9 +9,9 @@
     <span class="sr-only">Zwiń/Rozwiń</span>
   </button>
   <ul class="dropdown-menu dropdown-menu-right" role="menu">
-    <a href="{{route('admin.menus.index')}}" class="dropdown-item"><i class="fa fa-list-ul"></i> Wszystkie Menu</a>
+    <a href="{{route('admin.menus.index')}}" class="dropdown-item"><span class="material-icons">list</span>Wszystkie Menu</a>
     @permission('create-menu')
-    <a href="{{route('admin.menus.create')}}" class="dropdown-item"><i class="fa fa-plus"></i> Dodaj Menu</a>
+    <a href="{{route('admin.menus.create')}}" class="dropdown-item"><span class="material-icons">Dodaj Menu</a>
     @endauth
   </ul>
 </div>
