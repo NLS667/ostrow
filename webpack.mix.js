@@ -60,7 +60,7 @@ mix.autoload({
         "resources/assets/js/plugins/popper.min.js",
         "resources/assets/js/plugins/common.js",
         'resources/assets/js/plugins/bootstrap-material-design.min.js',
-        //'resources/assets/js/plugins/perfect-scrollbar.jquery.min.js',
+        'resources/assets/js/plugins/perfect-scrollbar.jquery.min.js',
         'resources/assets/js/plugins/moment.min.js',
         'resources/assets/js/plugins/sweetalert2.js',
         'resources/assets/js/plugins/jquery.validate.min.js',
