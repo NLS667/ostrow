@@ -362,63 +362,6 @@ var Backend = {}; // common variable used in all the files of the backend
             }
         },
 
-        /**
-         * Creature
-         *
-         */
-        Creature: {
-            selectors: {
-                tags: $(".tags"),
-                categories: $(".categories"),
-                toDisplay: $(".toDisplay"),
-                GenerateSlugUrl: "",
-                name: document.getElementById("name"),
-                SlugUrl: "",
-                slug: document.getElementById("slug"),
-            },
-
-            init: function (locale) {
-                this.addHandlers();
-                //Backend.tinyMCE.init(locale);
-            },
-
-            addHandlers: function () {
-
-                this.selectors.tags.select2({
-                    tags: true,
-                });
-                this.selectors.categories.select2();
-                this.selectors.toDisplay.select2();
-                this.selectors.status.select2();
-
-                //For Blog datetimepicker for publish_datetime
-                //this.selectors.datetimepicker1.datetimepicker();
-
-                // For generating the Slug  //changing slug on blur event
-                this.selectors.name.onblur = function (event) {
-                    url = event.target.value;
-                    if (url !== '') {
-                        callback = {
-                            success: function (request) {
-                                if (request.status >= 200 && request.status < 400) {
-                                    // Success!
-                                    response = request.responseText;
-                                    Backend.Creature.selectors.slug.value = Backend.Creature.selectors.SlugUrl + '/' + response.trim();
-                                }
-                            },
-                            error: function (request) {
-
-                            }
-                        };
-                        Backend.Utils.ajaxrequest(Backend.Creature.selectors.GenerateSlugUrl, "post", {
-                            text: url
-                        }, Backend.Utils.csrf, callback);
-                    }
-                };
-
-            }
-        },
-
         Menu: {
             selectors: {
                 menuItemContainer: $("#menu-items"),

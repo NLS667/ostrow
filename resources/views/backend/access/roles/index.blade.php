@@ -8,10 +8,10 @@
                 <div class="card">
                     <div class="card-header card-header-info d-flex justify-content-between align-items-center">
                         <h4 class="card-title">Wszystkie Role</h4>
-                        <div class="box-tools float-right">
+                        <div class="card-tools">
                             @include('backend.access.includes.partials.role-header-buttons')
                         </div>
-                    </div><!-- /.box-header -->
+                    </div><!-- /.card-header -->
 
                     <div class="card-body">
                         <div class="table-responsive data-table-wrapper">
@@ -70,10 +70,10 @@
                     <div class="card-header card-header-success d-flex justify-content-between align-items-center">
                         <h4 class="card-title">Historia</h4>
                         <div class="card-tools">
-                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-box-tool" data-toggle="collapse" data-target="#collapseBody"><i class="fa fa-minus"></i></button>
                         </div><!-- /.box tools -->
                     </div><!-- /.box-header -->
-                    <div class="card-body">
+                    <div id="collapseBody" class="card-body">
                         {{-- {!! history()->renderType('Role') !!} --}}
                     </div><!-- /.box-body -->
                 </div><!--box box-info-->
