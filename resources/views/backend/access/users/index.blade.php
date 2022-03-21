@@ -44,7 +44,9 @@
                                     <tr>
                                         <th>
                                             {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Imię']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                            <button type="button" class="btn bg-transparent reset-data"  href="javascript:void(0)" style="margin-left: -40px; z-index: 100;">
+                                              <i class="fas fa-times"></i>
+                                            </button>
                                         </th>
                                         <th>
                                             {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}

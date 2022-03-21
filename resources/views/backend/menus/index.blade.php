@@ -16,8 +16,8 @@
 
                     <div class="card-body">
                         <div class="table-responsive data-table-wrapper">
-                            <table id="menus-table" class="table table-condensed table-hover table-bordered">
-                                <thead class=" text-primary">
+                            <table id="menus-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
+                                <thead>
                                     <tr>
                                         <th>Nazwa</th>
                                         <th>Rodzaj</th>
