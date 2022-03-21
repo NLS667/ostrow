@@ -49,9 +49,11 @@
                                             </div>
                                         </th>
                                         <th>
-                                            <div class="input-group has-clear">
-                                                {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
-                                                <span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>
+                                            <div class="input-group">
+                                                <div class="form-group has-feedback has-clear">
+                                                    {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
+                                                    <span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>
+                                                </div>
                                             </div>
                                         </th>
                                         <th>
