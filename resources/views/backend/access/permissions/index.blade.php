@@ -25,19 +25,33 @@
                                         <th>Akcje</th>
                                     </tr>
                                 </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Uprawnienie</th>
+                                        <th>Nazwa Wyświetlana</th>
+                                        <th>Kolejność</th>
+                                        <th class="text-right">Akcje</th>
+                                    </tr>
+                                </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
                                         <th>
-                                            {!! Form::text('permission', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Uprawnienie']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('permission', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Kod Uprawnienia']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th>
-                                            {!! Form::text('display_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwa']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('display_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwa']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th>
-                                            {!! Form::text('sort', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Kolejność']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fa fas-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('sort', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Kolejność']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th></th>
                                     </tr>

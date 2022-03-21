@@ -31,7 +31,7 @@
                                         <th>Uprawnienia</th>
                                         <th>Ilość użytkowników</th>
                                         <th>Kolejność</th>
-                                        <th>Akcje</th>
+                                        <th class="text-right">Akcje</th>
                                     </tr>
                                 </tfoot>
                                 <thead class="transparent-bg">
