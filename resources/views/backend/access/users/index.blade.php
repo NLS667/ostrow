@@ -64,7 +64,7 @@
                                         <th>
                                             <div class="input-group position-relative">
                                                 {!! Form::text('roles', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Role']) !!}
-                                                <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                                <span class="form-clear d-none"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th></th>
