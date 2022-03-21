@@ -14,6 +14,7 @@
     <!-- Styles -->
     @yield('before-styles')
     {{ Html::style(mix('css/app.css')) }}
+    {{ Html::style(mix('css/app-custom.css')) }}
     @yield('after-styles')
 
     <!-- Scripts -->
