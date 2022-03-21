@@ -18,14 +18,14 @@
                             <table id="users-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th class="sorting" tabindex="0">Imię</th>
-                                        <th class="sorting" tabindex="0">Nazwisko</th>
-                                        <th class="sorting" tabindex="0">E-mail</th>
-                                        <th class="sorting" tabindex="0">Potwierdzony?</th>
-                                        <th tabindex="0">Role</th>
-                                        <th class="sorting" tabindex="0">Utworzony</th>
-                                        <th class="sorting" tabindex="0">Zmieniony</th>
-                                        <th class="text-right" tabindex="0">Akcje</th>
+                                        <th>Imię</th>
+                                        <th>Nazwisko</th>
+                                        <th>E-mail</th>
+                                        <th>Potwierdzony?</th>
+                                        <th>Role</th>
+                                        <th>Utworzony</th>
+                                        <th>Zmieniony</th>
+                                        <th>Akcje</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
