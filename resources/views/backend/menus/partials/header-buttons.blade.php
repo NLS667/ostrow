@@ -1,6 +1,6 @@
 <!--Action Button-->
 @if(Active::checkUriPattern('admin/menus'))
-    <export-component></export-component>
+    @include('backend.access.includes.partials.header-export')
 @endif
 <!--Action Button-->
 <div class="btn-group">
