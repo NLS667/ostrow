@@ -49,11 +49,9 @@
                                             </div>
                                         </th>
                                         <th>
-                                            <div class="input-group">
-                                                <div class="form-group has-feedback has-clear">
-                                                    {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
-                                                    <span class="form-control-clear form-control-feedback hidden"><i class="fas fa-times"></i></span>
-                                                </div>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
+                                                <span class="form-clear d-none"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th>
