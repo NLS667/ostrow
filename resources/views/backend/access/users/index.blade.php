@@ -49,8 +49,10 @@
                                             </div>
                                         </th>
                                         <th>
-                                            {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fas fa-times"></i></a>
+                                            <div class="input-group">
+                                                {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
+                                                <span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>
+                                            </div>
                                         </th>
                                         <th>
                                             {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'email']) !!}
