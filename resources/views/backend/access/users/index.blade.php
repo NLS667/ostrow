@@ -149,6 +149,9 @@
                     @lang('datatable.strings')
                 }
             });
+
+            bootstrapClearButton();
+    
         });
     </script>
 @endsection
