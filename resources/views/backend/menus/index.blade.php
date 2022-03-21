@@ -25,11 +25,21 @@
                                         <th>Akcje</th>
                                     </tr>
                                 </thead>
+                                <tfooy>
+                                    <tr>
+                                        <th>Nazwa</th>
+                                        <th>Rodzaj</th>
+                                        <th>Utworzone</th>
+                                        <th class="text-right">Akcje</th>
+                                    </tr>
+                                </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
                                         <th>
-                                            {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Nazwa']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Nazwa']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th></th>
                                         <th></th>

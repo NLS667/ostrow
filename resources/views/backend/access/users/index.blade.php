@@ -30,14 +30,14 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th rowspan="1" colspan="1">Imię</th>
-                                        <th rowspan="1" colspan="1">Nazwisko</th>
-                                        <th rowspan="1" colspan="1">E-mail</th>
-                                        <th rowspan="1" colspan="1">Potwierdzony?</th>
-                                        <th rowspan="1" colspan="1">Role</th>
-                                        <th rowspan="1" colspan="1">Utworzony</th>
-                                        <th rowspan="1" colspan="1">Zmieniony</th>
-                                        <th class="text-right" rowspan="1" colspan="1">Akcje</th>
+                                        <th>Imię</th>
+                                        <th>Nazwisko</th>
+                                        <th>E-mail</th>
+                                        <th>Potwierdzony?</th>
+                                        <th>Role</th>
+                                        <th>Utworzony</th>
+                                        <th>Zmieniony</th>
+                                        <th class="text-right">Akcje</th>
                                     </tr>
                                 </tfoot>
                                 <thead class="transparent-bg">
