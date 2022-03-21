@@ -39,8 +39,8 @@ mix.autoload({
 */
 
 mix.autoload({
-        jquery: ['$', 'window.jQuery', "window.$",'jQuery'],
-        'popper.js/dist/umd/popper.js': ['Popper', 'popper']
+        jquery: ['$', 'window.jQuery', 'jQuery'],
+        'popper.js/dist/umd/popper.js': ['Popper']
     })
     .sass('resources/assets/sass/front.scss', 'public/css/front.css')
     .sass('resources/assets/sass/app.scss', 'public/css')
@@ -56,7 +56,7 @@ mix.autoload({
     .js('resources/assets/js/app.js', 'public/js')
     .scripts([
         "resources/assets/js/plugins/common.js",
-        'resources/assets/js/plugins/mdb.js',
+        'resources/assets/js/plugins/bootstrap-material-design.min.js',
         'resources/assets/js/plugins/perfect-scrollbar.jquery.min.js',
         'resources/assets/js/plugins/moment.min.js',
         'resources/assets/js/plugins/sweetalert2.js',
