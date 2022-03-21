@@ -18,14 +18,14 @@
                             <table id="users-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th class="sorting_asc" tabindex="0">Imię</th>
-                                        <th class="sorting_asc" tabindex="0">Nazwisko</th>
-                                        <th class="sorting_asc" tabindex="0">E-mail</th>
-                                        <th class="sorting_asc" tabindex="0">Potwierdzony?</th>
-                                        <th class="sorting_asc" tabindex="0">Role</th>
-                                        <th class="sorting_asc" tabindex="0">Utworzony</th>
-                                        <th class="sorting_asc" tabindex="0">Zmieniony</th>
-                                        <th class="disabled-sorting text-right sorting" tabindex="0">Akcje</th>
+                                        <th class="sorting" tabindex="0">Imię</th>
+                                        <th class="sorting" tabindex="0">Nazwisko</th>
+                                        <th class="sorting" tabindex="0">E-mail</th>
+                                        <th class="sorting" tabindex="0">Potwierdzony?</th>
+                                        <th tabindex="0">Role</th>
+                                        <th class="sorting" tabindex="0">Utworzony</th>
+                                        <th class="sorting" tabindex="0">Zmieniony</th>
+                                        <th class="text-right" tabindex="0">Akcje</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -138,11 +138,11 @@
                 dom: 'frt<"d-inline-flex"i><"d-inline-flex float-right"p>',
                 buttons: {
                     buttons: [
-                        { extend: 'copy', className: 'copyButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
-                        { extend: 'csv', className: 'csvButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
-                        { extend: 'excel', className: 'excelButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
-                        { extend: 'pdf', className: 'pdfButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
-                        { extend: 'print', className: 'printButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }}
+                        { extend: 'copy', className: 'copyButton',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6 ]  }},
+                        { extend: 'csv', className: 'csvButton',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6 ]  }},
+                        { extend: 'excel', className: 'excelButton',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6 ]  }},
+                        { extend: 'pdf', className: 'pdfButton',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6 ]  }},
+                        { extend: 'print', className: 'printButton',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6 ]  }}
                     ]
                 },
                 language: {
