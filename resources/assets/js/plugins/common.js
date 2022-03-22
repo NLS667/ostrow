@@ -71,7 +71,7 @@ $(function () {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    
+
     /**
      * Add the data-method="delete" forms to all delete links
      */
@@ -113,6 +113,7 @@ $(function () {
     /**
      * Generic 'are you sure' confirm box
      */
+    /**
     $('body').on('click', 'a[name=confirm_item]', function(e){
         e.preventDefault();
         var link = $(this);
@@ -132,7 +133,7 @@ $(function () {
                 window.location = link.attr('href');
         });
     });
-
+    */
     /**
      * Bind all bootstrap tooltips
      */
