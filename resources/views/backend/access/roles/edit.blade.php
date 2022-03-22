@@ -65,19 +65,21 @@
                             {{ Form::label('sort', 'Kolejność', ['class' => 'col-lg-2 control-label']) }}
                             <div class="col-sm-7">
                                 <div class="form-group">                                    
-                                    {{ Form::text('sort', ($roleCount+1), ['class' => 'form-control box-size', 'placeholder' => 'Kolejność']) }}
+                                    {{ Form::text('sort', null, ['class' => 'form-control box-size', 'placeholder' => 'Kolejność']) }}
                                 </div><!--form control-->
                             </div>
                         </div>
 
-                        <div class="row">
+                       <div class="row">
                             {{ Form::label('status', 'Aktywna?', ['class' => 'col-lg-2 control-label']) }}
                             <div class="col-sm-7">
                                 <div class="form-group">
-                                    <div class="control-group">
-                                        <label class="control control--checkbox">
-                                            {{ Form::checkbox('status', 1, true) }}
-                                            <div class="control__indicator"></div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" name="status" value="{{ old('status') }}" id="status" {{ old('status') ? 'checked' : '' }} />
+                                            <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
                                         </label>
                                     </div>
                                 </div>
@@ -86,10 +88,10 @@
 
                         <div class="card-footer">
                             {{ link_to_route('admin.access.role.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
-                            {{ Form::submit('Dodaj', ['class' => 'btn btn-primary btn-md']) }}
+                            {{ Form::submit('Zmień', ['class' => 'btn btn-primary btn-md']) }}
                         </div>
-                    </div><!-- /.card-body -->
-                </div><!--card-->
+                    </div><!-- /.box-body -->
+                </div><!--box-->
                 {{ Form::close() }}
             </div>
         </div>

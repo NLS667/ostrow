@@ -74,10 +74,12 @@
                             {{ Form::label('status', 'Aktywna?', ['class' => 'col-lg-2 control-label']) }}
                             <div class="col-sm-7">
                                 <div class="form-group">
-                                    <div class="control-group">
-                                        <label class="control control--checkbox">
-                                            {{ Form::checkbox('status', 1, true) }}
-                                            <div class="control__indicator"></div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" name="status" value="1" id="status" />
+                                            <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
                                         </label>
                                     </div>
                                 </div>
