@@ -35,7 +35,7 @@ class ModulesTableSeeder extends Seeder
                 'updated_at' => null,
             ],
             [
-                'id'         => 1,
+                'id'         => 2,
                 'view_permission_id' => 'view-user-management',
                 'name'       => 'Użytkownicy',
                 'url'        => 'admin.access.user.index',
@@ -45,7 +45,7 @@ class ModulesTableSeeder extends Seeder
                 'updated_at' => null,
             ],
             [
-                'id'         => 1,
+                'id'         => 3,
                 'view_permission_id' => 'view-role-management',
                 'name'       => 'Role',
                 'url'        => 'admin.access.role.index',
@@ -55,7 +55,7 @@ class ModulesTableSeeder extends Seeder
                 'updated_at' => null,
             ],
             [
-                'id'         => 1,
+                'id'         => 4,
                 'view_permission_id' => 'view-permission-management',
                 'name'       => 'Uprawnienia',
                 'url'        => 'admin.access.permission.index',
@@ -65,7 +65,7 @@ class ModulesTableSeeder extends Seeder
                 'updated_at' => null,
             ],
             [
-                'id'         => 1,
+                'id'         => 5,
                 'view_permission_id' => 'view-menu',
                 'name'       => 'Ustawienia Menu',
                 'url'        => 'admin.menus.index',
