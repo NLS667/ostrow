@@ -74,7 +74,7 @@ class EloquentHistoryRepository implements HistoryContract
             return $this;
         }
 
-        throw new GeneralException('An invalid history type was supplied: '.$type.'.');
+        throw new GeneralException('Został podany błędny typ historii: '.$type.'.');
     }
 
     /**
@@ -89,7 +89,7 @@ class EloquentHistoryRepository implements HistoryContract
         if (strlen($text)) {
             $this->text = $text;
         } else {
-            throw new GeneralException('You must supply text for each history item.');
+            throw new GeneralException('Musisz wpisać tekst dla każdego z elementów historii.');
         }
 
         return $this;
@@ -148,21 +148,9 @@ class EloquentHistoryRepository implements HistoryContract
      */
     public function log()
     {
-        if(access()->id()){
-             $user_id = access()->id();
-        } else {
-            if($this->type->name == 'DataSnippet'){
-                $payload = DataSnippet::where('id', $this->entity_id)->first()->payload;
-                $data = explode(';',$payload);
-                $user_id = Alarm::where('uid', $data[2])->first()->user_id;
-            } else {
-                $user_id = Alarm::where('id', $this->entity_id)->first()->user_id;
-            }            
-        }
-
         return History::create([
             'type_id'   => $this->type->id,
-            'user_id'   => $user_id,
+            'user_id'   => access()->id();,
             'entity_id' => $this->entity_id,
             'icon'      => $this->icon,
             'class'     => $this->class,
