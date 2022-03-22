@@ -97,15 +97,15 @@
         var associated_container = $("#available-permissions");
 
         if (associated.val() == "custom")
-            associated_container.removeClass('hidden');
+            associated_container.removeClass('d-none');
         else
-            associated_container.addClass('hidden');
+            associated_container.addClass('d-none');
 
         associated.change(function() {
             if ($(this).val() == "custom")
-                associated_container.removeClass('hidden');
+                associated_container.removeClass('d-none');
             else
-                associated_container.addClass('hidden');
+                associated_container.addClass('d-none');
         });
 
         Backend.Utils.documentReady(function(){
