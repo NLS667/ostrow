@@ -92,9 +92,23 @@
 @endsection
 
 @section('after-scripts')
-    {{ Html::script('js/backend/access/roles/script.js') }}
      <script type="text/javascript">
-         Backend.Utils.documentReady(function(){
+        var associated = $("select[name='associated_permissions']");
+        var associated_container = $("#available-permissions");
+
+        if (associated.val() == "custom")
+            associated_container.removeClass('hidden');
+        else
+            associated_container.addClass('hidden');
+
+        associated.change(function() {
+            if ($(this).val() == "custom")
+                associated_container.removeClass('hidden');
+            else
+                associated_container.addClass('hidden');
+        });
+
+        Backend.Utils.documentReady(function(){
              Backend.Roles.init("rolecreate")
         });
     </script>
