@@ -35,22 +35,27 @@
                                 <div class="form-group">
                                     {{ Form::select('associated_permissions', array('all' => 'Wszystkie', 'custom' => 'Wybrane'), 'all', ['class' => 'form-control select2 box-size']) }}
                                     <div id="available-permissions" class="hidden mt-20" style="width: 700px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            @if ($permissions->count())
-                                            @foreach ($permissions as $perm)
-                                            <label class="control control--checkbox">
-                                                <input type="checkbox" name="permissions[{{ $perm->id }}]" value="{{ $perm->id }}" id="perm_{{ $perm->id }}" {{ is_array(old('permissions')) && in_array($perm->id, old('permissions')) ? 'checked' : '' }} /> <label for="perm_{{ $perm->id }}">{{ $perm->display_name }}</label>
-                                                <div class="control__indicator"></div>
-                                            </label>
-                                            <br/>
-                                            @endforeach
-                                            @else
-                                            <p>Brak dostępnych uprawnień.</p>
-                                            @endif
-                                        </div><!--col-lg-6-->
-                                    </div><!--row-->
-                                </div><!--available permissions-->
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                @if ($permissions->count())
+                                                @foreach ($permissions as $perm)
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="permissions[{{ $perm->id }}]" value="{{ $perm->id }}" id="perm_{{ $perm->id }}" {{ is_array(old('permissions')) && in_array($perm->id, old('permissions')) ? 'checked' : '' }} />
+                                                        $perm->display_name }}
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <br/>
+                                                @endforeach
+                                                @else
+                                                <p>Brak dostępnych uprawnień.</p>
+                                                @endif
+                                            </div><!--col-lg-6-->
+                                        </div><!--row-->
+                                    </div><!--available permissions-->
                                 </div>
                             </div>
                         </div>
