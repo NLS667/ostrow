@@ -94,8 +94,7 @@ $(function () {
             showCancelButton: true,
             cancelButtonText: cancel,
             confirmButtonColor: "#DD6B55",
-            confirmButtonText: confirm,
-            closeOnConfirm: true
+            confirmButtonText: confirm
         }, function(confirmed) {
             if (confirmed)
                 form.submit();
@@ -118,8 +117,7 @@ $(function () {
             showCancelButton: true,
             cancelButtonText: cancel,
             confirmButtonColor: "#3C8DBC",
-            confirmButtonText: confirm,
-            closeOnConfirm: true
+            confirmButtonText: confirm
         }, function(confirmed) {
             if (confirmed)
                 window.location = link.attr('href');
