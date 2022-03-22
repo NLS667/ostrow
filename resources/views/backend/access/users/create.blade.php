@@ -10,7 +10,7 @@
           @method('post')
 
           <div class="card ">
-            <div class="card-header card-header-primary">
+            <div class="card-header card-header-primary d-flex justify-content-between align-items-center">
               <h4 class="card-title">Dodaj Użytkownika</h4>
               <div class="card-tools">
                 <ul class="nav nav-tabs">
