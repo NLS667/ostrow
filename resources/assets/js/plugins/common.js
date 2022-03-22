@@ -30,7 +30,7 @@ function addDeleteForms() {
         else
             return "";
     })
-        .attr('href', '#')
+        .removeAttr('href')
         .attr('style', 'cursor:pointer;')
         .attr('onclick', '$(this).find("form").submit();');
 }
@@ -63,6 +63,15 @@ function bootstrapClearButton() {
 }
 
 $(function () {
+    /**
+     * Place the CSRF token as a header on all pages for access in AJAX requests
+     */
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    
     /**
      * Add the data-method="delete" forms to all delete links
      */
