@@ -1,6 +1,5 @@
 @extends ('backend.layouts.app', ['activePage' => 'permission-management', 'titlePage' => 'Zarządzanie Uprawnieniami'])
 
-
 @section('content')
 <div class="content">
     <div class="container-fluid">
@@ -26,7 +25,6 @@
                         <div class="edit-form-btn">
                             {{ link_to_route('admin.access.permission.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
                             {{ Form::submit('Zmień', ['class' => 'btn btn-primary btn-md']) }}
-                            <div class="clearfix"></div>
                         </div>
                     </div><!-- /.box-body -->
                 </div><!--box-->
