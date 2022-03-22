@@ -8,6 +8,14 @@ namespace App\Models\Access\Role\Traits\Attribute;
 trait RoleAttribute
 {
     /**
+     * @return bool
+     */
+    public function isActive()
+    {
+        return $this->status == 1;
+    }
+    
+    /**
      * @return string
      */
     public function getEditButtonAttribute()

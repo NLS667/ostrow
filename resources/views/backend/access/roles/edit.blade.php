@@ -69,7 +69,7 @@
                                 </div><!--form control-->
                             </div>
                         </div>
-
+                        {{ old() }}
                        <div class="row">
                             {{ Form::label('status', 'Aktywna?', ['class' => 'col-lg-2 control-label']) }}
                             <div class="col-sm-7">
