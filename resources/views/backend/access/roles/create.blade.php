@@ -34,9 +34,9 @@
                             <div class="col-sm-7">
                                 <div class="form-group">
                                     {{ Form::select('associated_permissions', array('all' => 'Wszystkie', 'custom' => 'Wybrane'), 'all', ['class' => 'form-control select2 box-size']) }}
-                                    <div id="available-permissions" class="hidden mt-20" style="width: 700px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
+                                    <div id="available-permissions" class="d-none" style="margin-top:10px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
                                         <div class="row">
-                                            <div class="col-xs-12">
+                                            <div class="col-lg-12">
                                                 @if ($permissions->count())
 
                                                 @foreach ($permissions as $perm)
