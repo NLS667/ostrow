@@ -32,7 +32,6 @@ class RoleTableSeeder extends Seeder
                 'updated_by' => null,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'deleted_at' => null,
             ],
         ];
 

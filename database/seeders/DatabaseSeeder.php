@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(HistoryTypeTableSeeder::class);
         //$this->call(SettingsTableSeeder::class);
         $this->call(MenuTableSeeder::class);
-        //$this->call(ModulesTableSeeder::class);
+        $this->call(ModulesTableSeeder::class);
 
         Model::reguard();
     }

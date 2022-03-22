@@ -85,6 +85,12 @@ return [
      */
     'menus_table'      => 'menus',
     'menu_items_table' => 'menu_items',
+
+    /*
+     * Modules table used to store modules
+     */
+    'modules_table' => 'modules',
+
     /*
      * Configurations for the user
      */

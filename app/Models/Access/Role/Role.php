@@ -19,8 +19,7 @@ class Role extends BaseModel
         ModelTrait,
         RoleAccess,
         RoleAttribute,
-        RoleRelationship,
-        SoftDeletes {
+        RoleRelationship {
             RoleAttribute::getEditButtonAttribute insteadof ModelTrait;
             RoleAttribute::getDeleteButtonAttribute insteadof ModelTrait;
         }
