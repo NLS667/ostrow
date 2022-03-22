@@ -18,10 +18,8 @@
                     </div><!-- /.box-header -->
 
                     <div class="card-body">
-
                         {{-- Including Form --}}
                         @include("backend.access.permissions.form")
-
                         <div class="card-footer">
                             {{ link_to_route('admin.access.permission.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
                             {{ Form::submit('Dodaj', ['class' => 'btn btn-primary btn-md']) }}
