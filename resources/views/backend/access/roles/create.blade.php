@@ -89,7 +89,6 @@
                             {{ link_to_route('admin.access.role.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
                             {{ Form::submit('Dodaj', ['class' => 'btn btn-primary btn-md']) }}
                         </div>
-                        </div>
                     </div><!-- /.box-body -->
                 </div><!--box-->
                 {{ Form::close() }}

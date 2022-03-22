@@ -9,10 +9,12 @@
 
                 <div class="card">
                     <div class="card-header card-header-info d-flex justify-content-between align-items-center">
-                        <h4 class="box-title">Utwórz Uprawnienie</h4>
-                        <div class="card-toolst">
-                            @include('backend.access.includes.partials.permission-header-buttons')
-                        </div><!--box-tools pull-right-->
+                        <h4 class="card-title">Utwórz Uprawnienie</h4>
+                        <ul class="nav nav-tabs">
+                          <li class="nav-item">
+                            <a href="{{ route('admin.access.permission.index') }}" class="nav-link btn btn-sm btn-default">Powrót do listy</a>
+                          </li>
+                        </ul>
                     </div><!-- /.box-header -->
 
                     <div class="card-body">
@@ -20,7 +22,7 @@
                         {{-- Including Form --}}
                         @include("backend.access.permissions.form")
 
-                        <div class="edit-form-btn">
+                        <div class="card-footer">
                             {{ link_to_route('admin.access.permission.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
                             {{ Form::submit('Dodaj', ['class' => 'btn btn-primary btn-md']) }}
                         </div>
