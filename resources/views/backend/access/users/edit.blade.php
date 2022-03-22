@@ -84,13 +84,13 @@
                                     <a href="#" data-role="role_{{$role->id}}" class="show-permissions small">
                                         (
                                             <span class="show-text">{{ trans('labels.general.show') }}</span>
-                                            <span class="hide-text hidden">{{ trans('labels.general.hide') }}</span>
+                                            <span class="hide-text d-none">{{ trans('labels.general.hide') }}</span>
                                             {{ trans('labels.backend.access.users.permissions') }}
                                         )
                                     </a>
                                     </label>
                                     </div>
-                                    <div class="permission-list hidden" data-role="role_{{$role->id}}">
+                                    <div class="permission-list d-none" data-role="role_{{$role->id}}">
                                         @if ($role->all)
                                             {{ trans('labels.backend.access.users.all_permissions') }}
                                         @else
