@@ -30,7 +30,7 @@ function addDeleteForms() {
         else
             return "";
     })
-        .attr('href', '')
+        .attr('href', '#')
         .attr('style', 'cursor:pointer;')
         .attr('onclick', '$(this).find("form").submit();');
 }
