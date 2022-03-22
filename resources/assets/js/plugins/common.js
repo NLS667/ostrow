@@ -97,15 +97,15 @@ $(function () {
         var title = (link.attr('data-trans-title')) ? link.attr('data-trans-title') : "Uwaga";
         var text = (link.attr('data-trans-text')) ? link.attr('data-trans-text') : "Czy na pewno chcesz usunąć ten element?";
 
-        swal({
+        Swal.fire({
             title: title,
             type: "warning",
             showCancelButton: true,
             cancelButtonText: cancel,
             confirmButtonColor: "#DD6B55",
             confirmButtonText: confirm
-        }, function(confirmed) {
-            if (confirmed)
+        }).then((result) {
+            if (result.isConfirmed)
                 form.submit();
         });
     });
