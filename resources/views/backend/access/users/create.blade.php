@@ -145,8 +145,8 @@
                   </div><!--form control-->
                 </div>
               </div>
-              <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary">Dodaj</button>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-fill btn-success">Dodaj</button>
               </div>
             </div>
           </form>
