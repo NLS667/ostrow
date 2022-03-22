@@ -14,9 +14,9 @@
                         </div><!--box-tools pull-right-->
                     </div><!-- /.box-header -->
 
-                    <div role="card-body">
+                    <div class="card-body">
                         <!-- Nav tabs -->
-                        <ul class="nav nav-pills nav-pills-warning" role="tablist">
+                        <ul class="nav nav-pills nav-pills-warning" role="tablist" style="margin-top:20px;">
                             <li role="presentation" class="nav-item">
                                 <a class="nav-link active show" href="#overview" aria-controls="overview" role="tablist" data-toggle="tab">Informacje Ogólne</a>
                             </li>
