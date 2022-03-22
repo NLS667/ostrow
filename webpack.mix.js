@@ -19,7 +19,7 @@ mix.autoload({
     .styles([
         //'resources/assets/sass/plugins/jquery.dataTables.min.css',
         //'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css',
-        'node_modules/select2/dist/css/select2.css',
+        'resources/assets/sass/plugins/select2.css',
         'resources/assets/sass/material/material-dashboard.css',
         'resources/assets/sass/custom.scss',
     ], 'public/css/app-custom.css')
@@ -36,6 +36,7 @@ mix.autoload({
         'resources/assets/js/plugins/perfect-scrollbar.jquery.min.js',
         'resources/assets/js/plugins/moment.min.js',
         'resources/assets/js/plugins/sweetalert2.js',
+        'resources/assets/js/plugins/select2.js',
         'resources/assets/js/plugins/jquery.validate.min.js',
         'resources/assets/js/plugins/jquery.bootstrap-wizard.js',
         'resources/assets/js/plugins/bootstrap-selectpicker.js',
