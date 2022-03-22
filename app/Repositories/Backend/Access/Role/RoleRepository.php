@@ -2,9 +2,9 @@
 
 namespace App\Repositories\Backend\Access\Role;
 
-use App\Events\Backend\Access\Role\RoleCreated;
-use App\Events\Backend\Access\Role\RoleDeleted;
-use App\Events\Backend\Access\Role\RoleUpdated;
+use App\Events\Access\Role\RoleCreated;
+use App\Events\Access\Role\RoleDeleted;
+use App\Events\Access\Role\RoleUpdated;
 use App\Exceptions\GeneralException;
 use App\Models\Access\Role\Role;
 use App\Repositories\BaseRepository;
