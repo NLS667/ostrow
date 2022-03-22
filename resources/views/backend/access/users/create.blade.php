@@ -12,14 +12,15 @@
           <div class="card ">
             <div class="card-header card-header-primary">
               <h4 class="card-title">Dodaj Użytkownika</h4>
-              <p class="card-category"></p>
+              <div class="card-tools">
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a href="{{ route('admin.access.user.index') }}" class="nav-link btn btn-sm btn-primary">Powrót do listy</a>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class="card-body ">
-              <div class="row">
-                <div class="col-md-12 text-right">
-                  <a href="{{ route('admin.access.user.index') }}" class="btn btn-sm btn-primary">Powrót do listy</a>
-                </div>
-              </div>
 
               {{-- First Name --}}
               <div class="row">
