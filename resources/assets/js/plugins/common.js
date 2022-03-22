@@ -105,7 +105,7 @@ $(function () {
             confirmButtonColor: "#DD6B55",
             confirmButtonText: confirm
         }).then(result => {
-            if (result.isConfirmed){
+            if (result.value){
                 form.submit();
             }
         });
