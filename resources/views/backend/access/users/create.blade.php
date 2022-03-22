@@ -20,6 +20,8 @@
                       <a href="{{ route('admin.access.user.index') }}" class="btn btn-sm btn-primary">Powrót do listy</a>
                   </div>
                 </div>
+
+                {{-- First Name --}}
                 <div class="row">
                   <label class="col-sm-2 col-form-label">Imię</label>
                   <div class="col-sm-7">
@@ -31,6 +33,8 @@
                     </div>
                   </div>
                 </div>
+
+                {{-- Last Name --}}
                 <div class="row">
                   <label class="col-sm-2 col-form-label">Nazwisko</label>
                   <div class="col-sm-7">
@@ -42,6 +46,8 @@
                     </div>
                   </div>
                 </div>
+
+                {{-- Email --}}
                 <div class="row">
                   <label class="col-sm-2 col-form-label">E-mail</label>
                   <div class="col-sm-7">
@@ -53,6 +59,8 @@
                     </div>
                   </div>
                 </div>
+
+                {{-- Password --}}
                 <div class="row">
                   <label class="col-sm-2 col-form-label" for="input-password">Hasło</label>
                   <div class="col-sm-7">
@@ -64,6 +72,8 @@
                     </div>
                   </div>
                 </div>
+
+                {{-- Password Confirmation --}}
                 <div class="row">
                   <label class="col-sm-2 col-form-label" for="input-password-confirmation">Potwierdź Hasło</label>
                   <div class="col-sm-7">
@@ -72,6 +82,67 @@
                     </div>
                   </div>
                 </div>
+
+
+                {{-- Associated Roles --}}
+                <div class="form-group">
+                    {{ Form::label('status', trans('validation.attributes.backend.access.users.associated_roles'), ['class' => 'col-lg-2 control-label']) }}
+
+                    <div class="col-lg-8">
+                        @if (count($roles) > 0)
+                            @foreach($roles as $role)
+                                <div>
+                                <label for="role-{{$role->id}}" class="control control--radio">
+                                <input type="radio" value="{{$role->id}}" name="assignees_roles[]" id="role-{{$role->id}}" class="get-role-for-permissions" {{ $role->id == 3 ? 'checked' : '' }} />  &nbsp;&nbsp;{!! $role->name !!}
+                                <div class="control__indicator"></div>
+                                    <a href="#" data-role="role_{{ $role->id }}" class="show-permissions small">
+                                        (
+                                            <span class="show-text">{{ trans('labels.general.show') }}</span>
+                                            <span class="hide-text hidden">{{ trans('labels.general.hide') }}</span>
+                                            {{ trans('labels.backend.access.users.permissions') }}
+                                        )
+                                    </a>
+                                </label>
+                                </div>
+                                <div class="permission-list hidden" data-role="role_{{ $role->id }}">
+                                    @if ($role->all)
+                                        {{ trans('labels.backend.access.users.all_permissions') }}<br/><br/>
+                                    @else
+                                        @if (count($role->permissions) > 0)
+                                            <blockquote class="small">{{--
+                                        --}}@foreach ($role->permissions as $perm){{--
+                                            --}}{{$perm->display_name}}<br/>
+                                                @endforeach
+                                            </blockquote>
+                                        @else
+                                            {{ trans('labels.backend.access.users.no_permissions') }}<br/><br/>
+                                        @endif
+                                    @endif
+                                </div><!--permission list-->
+                            @endforeach
+                        @else
+                            {{ trans('labels.backend.access.users.no_roles') }}
+                        @endif
+                    </div><!--col-lg-3-->
+                </div><!--form control-->
+
+                {{-- Associated Permissions --}}
+                <div class="form-group">
+                    {{ Form::label('associated-permissions', trans('validation.attributes.backend.access.roles.associated_permissions'), ['class' => 'col-lg-2 control-label']) }}
+                    <div class="col-lg-12">
+                        <div id="available-permissions" class="hidden mt-20" style="width: 700px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
+                            <div class="row">
+                                <div class="col-xs-12 get-available-permissions">
+
+                                </div><!--col-lg-6-->
+                            </div><!--row-->
+                        </div><!--available permissions-->
+                    </div><!--col-lg-3-->
+                </div><!--form control-->
+
+
+
+
               </div>
               <div class="card-footer ml-auto mr-auto">
                 <button type="submit" class="btn btn-primary">Dodaj</button>
