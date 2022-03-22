@@ -149,9 +149,10 @@
                 <button type="submit" class="btn btn-fill btn-success">Dodaj</button>
               </div>
             </div>
+          </div>
           </form>
-        </div>
       </div>
     </div>
   </div>
-  @endsection
+</div>
+@endsection
