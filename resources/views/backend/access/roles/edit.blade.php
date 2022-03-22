@@ -69,8 +69,7 @@
                                 </div><!--form control-->
                             </div>
                         </div>
-                        {{ old('status') }}
-                       <div class="row">
+                        <div class="row">
                             {{ Form::label('status', 'Aktywna?', ['class' => 'col-lg-2 control-label']) }}
                             <div class="col-sm-7">
                                 <div class="form-group">
@@ -84,6 +83,10 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="edit-form-btn">
+                            {{ link_to_route('admin.access.role.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-flat']) }}
+                            {{ Form::submit('Zmień', ['class' => 'btn btn-success btn-flat']) }}
                         </div>
                     </div><!-- /.box-body -->
                 </div><!--box-->
@@ -111,7 +114,7 @@
             else
                 associated_container.addClass('d-none');
         });
-        
+
         Backend.Utils.documentReady(function(){
              Backend.Roles.init("edit")
         });

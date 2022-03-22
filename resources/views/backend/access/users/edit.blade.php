@@ -137,7 +137,6 @@
                             </div><!--available permissions-->
                         </div><!--col-lg-3-->
                     </div><!--form control-->
-
                 @endif
                   <div class="edit-form-btn">
                     {{ link_to_route('admin.access.user.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
