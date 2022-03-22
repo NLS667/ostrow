@@ -88,7 +88,7 @@
                         </div><!-- /.card tools -->
                     </div><!-- /.card-header -->
                     <div id="collapseBody" class="card-body">
-                        {{-- {!! history()->renderType('User') !!} --}}
+                        {{-- {!! history()->renderType('Użytkownik') !!} --}}
                     </div><!-- /.card-body -->
                 </div><!--card box-info-->
             </div>
