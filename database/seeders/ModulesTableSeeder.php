@@ -58,7 +58,7 @@ class ModulesTableSeeder extends Seeder
                 'id'         => 1,
                 'view_permission_id' => 'view-permission-management',
                 'name'       => 'Uprawnienia',
-                'url'        => 'admin.access.permission.index'
+                'url'        => 'admin.access.permission.index',
                 'created_by' => 1,
                 'updated_by' => null,
                 'created_at' => Carbon::now(),
