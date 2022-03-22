@@ -1,4 +1,4 @@
-@extends ('backend.layouts.app', ['activePage' => 'user-view', 'titlePage' => 'Podgląd Użytkownika'])
+@extends ('backend.layouts.app', ['activePage' => 'user-view', 'titlePage' => 'Zarządzanie Użytkownikami'])
 
 @section('content')
 <div class="content">
@@ -14,35 +14,30 @@
             </div><!--box-tools pull-right-->
         </div><!-- /.box-header -->
 
-        <div class="card-body">
-
-            <div role="tabpanel">
+        <div role="tabpanel">
 
                 <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active">
-                        <a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Informacje Ogólne</a>
+                <ul class="nav nav-pills nav-pills-warning" role="tablist">
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link active show" href="#overview" aria-controls="overview" role="tablist" data-toggle="tab">Informacje Ogólne</a>
                     </li>
 
-                    <li role="presentation">
-                        <a href="#history" aria-controls="history" role="tab" data-toggle="tab">Historia</a>
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link" href="#history" aria-controls="history" role="tablist" data-toggle="tab">Historia</a>
                     </li>
                 </ul>
 
-                <div class="tab-content">
+                <div class="tab-content tab-space">
 
-                    <div role="tabpanel" class="tab-pane mt-30 active" id="overview">
+                    <div role="tabpanel" class="tab-pane active show" id="overview">
                         @include('backend.access.show.tabs.overview')
                     </div><!--tab overview profile-->
 
-                    <div role="tabpanel" class="tab-pane mt-30" id="history">
+                    <div role="tabpanel" class="tab-pane" id="history">
                         @include('backend.access.show.tabs.history')
                     </div><!--tab panel history-->
 
                 </div><!--tab content-->
-
-            </div><!--tab panel-->
-
         </div><!-- /.box-body -->
     </div><!--box-->
 </div>
