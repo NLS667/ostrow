@@ -100,21 +100,6 @@
 
 @section('after-scripts')
      <script type="text/javascript">
-        var associated = $("select[name='associated_permissions']");
-        var associated_container = $("#available-permissions");
-
-        if (associated.val() == "custom")
-            associated_container.removeClass('d-none');
-        else
-            associated_container.addClass('d-none');
-
-        associated.change(function() {
-            if ($(this).val() == "custom")
-                associated_container.removeClass('d-none');
-            else
-                associated_container.addClass('d-none');
-        });
-
         Backend.Utils.documentReady(function(){
              Backend.Roles.init("rolecreate")
         });
