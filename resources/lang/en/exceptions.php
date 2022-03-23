@@ -1,0 +1,82 @@
+<?php
+return [
+	"backend" => [
+		"access" => [
+			"roles" => [
+				"already_exists" => "Taka Rola już istnieje. Wybierz inną nazwę.",
+				"cant_delete_admin" => "Nie można usunąć Roli SuperAdmin.",
+				"create_error" => "Wystąpił problem podczas tworzenia Roli. Spróbuj ponownie.",
+				"delete_error" => "Wystapił problem podczas usuwania Roli. Spróbuj ponownie.",
+				"has_users" => "Nie możesz usunąć Roli z przypisanymi Użytkownikami.",
+				"needs_permission" => "Musisz wybrać przynajmniej jedno Uprawnienie.",
+				"not_found" => "Taka Rola nie istnieje.",
+				"update_error" => "Wystąpił problem podczas aktualizacji Roli. Spróbuj ponownie.",
+			],
+			"permissions" => [
+				"already_exists" => "Takie Uprawnienie już istnieje. Wybierz inną nazwę.",
+				"create_error" => "Wystąpił problem podczas tworzenia Uprawnienia. Spróbuj ponownie.",
+				"delete_error" => "Wystąpił problem podczas usuwania Uprawnienia. Spróbuj ponownie.",
+				"not_found" => "Takie Uprawnienie nie istnieje.",
+				"update_error" => "Wystąpił problem podczas aktualizacji Uprawnienia. Spróbuj ponownie.",
+			],
+			"users" => [
+				"cant_deactivate_self" => "Nie możesz tego sobie zrobić.",
+				"cant_delete_self" => "Nie możesz usunąć siebie.",
+				"cant_delete_admin" => "Nie możesz usunąć SuperAdmina.",
+				"cant_delete_own_session" => "Nie możesz usunąć swojej własnej sesji.",
+				"cant_restore" => "Ten użytkownik nie został usunięty więc nie da się go przywrócić.",
+				"create_error" => "Wystąpił problem podczas tworzenia Użytkownika. Spróbuj ponownie.",
+				"delete_error" => "Wystąpił problem podczas usuwania Użytkownika. Spróbuj ponownie.",
+				"delete_first" => "Użytkownika trzeba najpierw usunąć, aby usunąć go bezpowrotnie.",
+				"email_error" => "Taki adres już jest wykorzystany przez innego Użytkownika.",
+				"mark_error" => "Wystąpił problem podczas aktualizacji Użytkownika. Spróbuj ponownie.",
+				"not_found" => "Nie ma takiego Użytkownika.",
+				"restore_error" => "Wystąpił problem podczas przywracania Użytkownika. Spróbuj ponownie.",
+				"role_needed_create" => "Musisz wybrać przynajmniej jedną Rolę.",
+				"role_needed" => "Musisz wybrać przynajmniej jedną Rolę.",
+				"session_wrong_driver" => "Your session driver must be set to database to use this feature.",
+				"change_mismatch" => "To nie jest Twoje aktualne hasło.",
+				"update_error" => "Wystąpił problem podczas aktualizacji Użytkownika. Spróbuj ponownie.",
+				"update_password_error" => "Wystąpił problem podczas zmiany hasła tego Użytkownika. Spróbuj ponownie.",
+			],
+		],
+		"settings" => [
+			"update_error" => "Wystąpił problem podczas zapisywania Konfiguracji. Spróbuj ponownie.",
+		],
+		"menus" => [
+			"already_exists" => "Takie Menu już istnieje. Wybierz inną nazwę.",
+			"create_error" => "Wystąpił problem podczas tworzenia Menu. Spróbuj ponownie.",
+			"delete_error" => "Wystąpił problem podczas usuwania Menu. Spróbuj ponownie.",
+			"not_found" => "Nie ma takiego Menu.",
+			"update_error" => "Wystąpił problem podczas aktualizacji Menu. Spróbuj ponownie.",
+		],
+		"modules" => [
+			"already_exists" => "Taki Moduł już istnieje. Wybierz inną nazwę.",
+			"create_error" => "Wystąpił problem podczas tworzenia Modułu. Spróbuj ponownie.",
+			"delete_error" => "Wystąpił problem podczas usuwania Modułu. Spróbuj ponownie.",
+			"not_found" => "That Module does not exist.",
+			"update_error" => "Wystąpił problem podczas aktualizacji Modułu. Spróbuj ponownie.",
+		],
+	],
+	"frontend" => [
+		"auth" => [
+			"confirmation" => [
+				"already_confirmed" => "Your account is already confirmed.",
+				"confirm" => "Confirm your account!",
+				"created_confirm" => "Your account was successfully created. We have sent you an e-mail to confirm your account.",
+				"created_pending" => "Your account was successfully created and is pending approval. An e-mail will be sent when your account is approved.",
+				"mismatch" => "Your confirmation code does not match.",
+				"not_found" => "That confirmation code does not exist.",
+				"resend" => "Your account is not confirmed. Please click the confirmation link in your e-mail, or <a href=http://alarmy.esog.pl/account/confirm/resend/:user_id>click here</a> to resend the confirmation e-mail.",
+				"success" => "Your account has been successfully confirmed!",
+				"resent" => "A new confirmation e-mail has been sent to the address on file.",
+			],
+			"deactivated" => "Your account has been deactivated.",
+			"email_taken" => "That e-mail address is already taken.",
+			"password" => [
+				"change_mismatch" => "That is not your old password.",
+			],
+			"registration_disabled" => "Registration is currently closed.",
+		],
+	],
+];
