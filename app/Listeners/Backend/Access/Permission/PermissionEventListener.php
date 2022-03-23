@@ -10,7 +10,7 @@ class PermissionEventListener
     /**
      * @var string
      */
-    private $history_slug = 'Permission';
+    private $history_slug = 'Uprawnienie';
 
     /**
      * @param $event

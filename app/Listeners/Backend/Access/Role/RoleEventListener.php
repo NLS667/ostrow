@@ -10,7 +10,7 @@ class RoleEventListener
     /**
      * @var string
      */
-    private $history_slug = 'Role';
+    private $history_slug = 'Rola';
 
     /**
      * @param $event

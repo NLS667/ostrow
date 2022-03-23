@@ -2,9 +2,9 @@
 
 namespace App\Repositories\Backend\Access\Permission;
 
-use App\Events\Backend\Access\Permission\PermissionCreated;
-use App\Events\Backend\Access\Permission\PermissionDeleted;
-use App\Events\Backend\Access\Permission\PermissionUpdated;
+use App\Events\Access\Permission\PermissionCreated;
+use App\Events\Access\Permission\PermissionDeleted;
+use App\Events\Access\Permission\PermissionUpdated;
 use App\Exceptions\GeneralException;
 use App\Models\Access\Permission\Permission;
 use App\Repositories\BaseRepository;

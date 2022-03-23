@@ -6,7 +6,6 @@ use App\Models\Access\Permission\Traits\Attribute\PermissionAttribute;
 use App\Models\Access\Permission\Traits\Relationship\PermissionRelationship;
 use App\Models\BaseModel;
 use App\Models\ModelTrait;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Permission.
@@ -14,7 +13,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Permission extends BaseModel
 {
     use ModelTrait,
-        SoftDeletes,
         PermissionAttribute,
         PermissionRelationship {
             //PermissionAttribute::getEditButtonAttribute insteadof ModelTrait;

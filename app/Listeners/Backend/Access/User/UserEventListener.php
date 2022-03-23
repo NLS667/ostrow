@@ -10,7 +10,7 @@ class UserEventListener
     /**
      * @var string
      */
-    private $history_slug = 'User';
+    private $history_slug = 'Użytkownik';
 
     /**
      * @param $event
