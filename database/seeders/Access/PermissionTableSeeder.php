@@ -38,7 +38,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         /**
@@ -52,7 +52,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         /**
@@ -66,7 +66,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -77,7 +77,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -88,7 +88,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -99,7 +99,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -110,7 +110,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -121,7 +121,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -132,7 +132,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -143,7 +143,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -154,7 +154,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -165,7 +165,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -176,7 +176,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -187,7 +187,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         /**
@@ -201,7 +201,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -212,7 +212,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -223,7 +223,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -234,7 +234,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         /**
@@ -248,7 +248,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -259,7 +259,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -270,7 +270,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
@@ -281,7 +281,7 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         /**
@@ -347,29 +347,40 @@ class PermissionTableSeeder extends Seeder
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'create-menu';
+        $permModel->display_name = 'Tworzenie Menu';
+        $permModel->sort = 24;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'edit-menu';
         $permModel->display_name = 'Edycja Menu';
-        $permModel->sort = 24;
+        $permModel->sort = 25;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'delete-menu';
         $permModel->display_name = 'Usuwanie Menu';
-        $permModel->sort = 25;
+        $permModel->sort = 26;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         /**
@@ -379,11 +390,58 @@ class PermissionTableSeeder extends Seeder
         $permModel = new $permission_model();
         $permModel->name = 'edit-settings';
         $permModel->display_name = 'Edytuj Konfigurację';
-        $permModel->sort = 26;
+        $permModel->sort = 27;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
-        $permModel->updated_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        /**
+         * Clients
+         */
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'view-client-management';
+        $permModel->display_name = 'Zarządzanie Klientami';
+        $permModel->sort = 28;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'create-client';
+        $permModel->display_name = 'Tworzenie Klienta';
+        $permModel->sort = 29;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'edit-client';
+        $permModel->display_name = 'Edycja Klienta';
+        $permModel->sort = 30;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'delete-client';
+        $permModel->display_name = 'Usuwanie Klienta';
+        $permModel->sort = 31;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
         $permModel->save();
 
         $this->enableForeignKeys();

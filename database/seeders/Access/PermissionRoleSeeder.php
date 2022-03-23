@@ -20,20 +20,21 @@ class PermissionRoleSeeder extends Seeder
     public function run()
     {
         $this->disableForeignKeys();
-        //$this->truncate(config('access.permission_role_table'));
+        $this->truncate(config('access.permission_role_table'));
 
         /*
-         * Assign permissions to manager role
+         * Assign permissions to admin role
         */
-        $manager = [2, 28, 29, 30, 31, 32 ];
+        $administrator = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ,21, 22, 27, 28, 29, 30, 31 ];
 
         /*
-         *  Assign permissions to serviceman role
+         *  Assign permissions to employee role
         */
-        $serviceman = [1, 2, 3, 4, 5, 6, 7, 8, 12, 13, 14, 16, 20, 28, 29, 30, 32 ];
+        $employee = [1, 28];
 
-        //Role::find(2)->permissions()->sync($exec);
-        //Role::find(3)->permissions()->sync($user);
+        Role::find(2)->permissions()->sync($administrator);
+        Role::find(3)->permissions()->sync($employee);
+        
         $this->enableForeignKeys();
     }
 }
