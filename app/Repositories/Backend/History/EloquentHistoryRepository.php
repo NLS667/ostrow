@@ -150,7 +150,7 @@ class EloquentHistoryRepository implements HistoryContract
     {
         return History::create([
             'type_id'   => $this->type->id,
-            'user_id'   => access()->id();,
+            'user_id'   => access()->id(),
             'entity_id' => $this->entity_id,
             'icon'      => $this->icon,
             'class'     => $this->class,
