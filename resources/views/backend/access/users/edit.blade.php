@@ -73,7 +73,7 @@
 
                 {{-- Associated Roles --}}
                 <div class="row">
-                  {{ Form::label('status', 'Przypisane Role', ['class' => 'col-lg-2 control-label']) }}
+                  {{ Form::label('status', 'Przypisane Role', ['class' => 'col-lg-2 col-form-label']) }}
                   <div class="col-sm-7">
                     <div class="form-group"> 
                       <div class="col-lg-12">
@@ -112,7 +112,7 @@
 
                 {{-- Associated Permissions --}}
                 <div class="row">
-                  {{ Form::label('associated-permissions', 'Przydzielone Uprawnienia', ['class' => 'col-lg-2 control-label']) }}
+                  {{ Form::label('associated-permissions', 'Przydzielone Uprawnienia', ['class' => 'col-lg-2 col-form-label']) }}
                   <div class="col-sm-7">
                     <div class="form-group">
                         
