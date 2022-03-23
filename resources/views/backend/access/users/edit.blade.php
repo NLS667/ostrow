@@ -73,7 +73,7 @@
 
                 {{-- Associated Roles --}}
                 <div class="row">
-                  {{ Form::label('status', trans('validation.attributes.backend.access.users.associated_roles'), ['class' => 'col-lg-2 control-label']) }}
+                  {{ Form::label('status', 'Przypisane Role', ['class' => 'col-lg-2 control-label']) }}
                   <div class="col-sm-7">
                     <div class="form-group"> 
                       <div class="col-lg-12">
@@ -97,7 +97,7 @@
                                                     @endforeach
                                                 </blockquote>
                                             @else
-                                                {{ trans('labels.backend.access.users.no_permissions') }}<br/><br/>
+                                              Brak przydzielonych Uprawnień.<br/><br/>
                                             @endif
                                         @endif
                         </div><!--permission list-->
@@ -112,7 +112,7 @@
 
                 {{-- Associated Permissions --}}
                 <div class="row">
-                  {{ Form::label('associated-permissions', trans('validation.attributes.backend.access.roles.associated_permissions'), ['class' => 'col-lg-2 control-label']) }}
+                  {{ Form::label('associated-permissions', 'Przydzielone Uprawnienia', ['class' => 'col-lg-2 control-label']) }}
                   <div class="col-sm-7">
                     <div class="form-group">
                         
