@@ -174,5 +174,14 @@
             else
                 associated_container.addClass('d-none');
         });
+
+        Backend.Utils.documentReady(function(){
+            Backend.Users.selectors.getPremissionURL = "{{ route('admin.get.permission') }}";
+            Backend.Users.init("create");
+        });
+
+        window.onload = function () {
+            Backend.Users.windowloadhandler();
+        };
     </script>
 @endsection
