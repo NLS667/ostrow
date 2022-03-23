@@ -62,7 +62,7 @@
                   <div class="col-sm-7">
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="status" value="1" id="status" {{ $role->status == 1 ? 'checked' : '' }} />
+                        <input class="form-check-input" type="checkbox" name="status" value="1" id="status" {{ $user->status == 1 ? 'checked' : '' }} />
                         <span class="form-check-sign">
                           <span class="check"></span>
                         </span>
