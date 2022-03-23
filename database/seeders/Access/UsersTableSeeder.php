@@ -53,6 +53,7 @@ class UsersTableSeeder extends Seeder
                 'first_name'        => 'User',
                 'last_name'         => 'Test',
                 'email'             => 'test@uroczysko.org',
+                'email_verified_at' => now(),
                 'password'          => bcrypt('1234qwer'),
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,
