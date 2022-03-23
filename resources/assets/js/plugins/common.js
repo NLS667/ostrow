@@ -281,16 +281,16 @@ var Backend = {}; // common variable used in all the files of the backend
 
                 if (associated_container != null)
                     if (associated.value == "custom")
-                        Backend.Utils.removeClass(associated_container, "hidden");
+                        Backend.Utils.removeClass(associated_container, "d-none");
                     else
-                        Backend.Utils.addClass(associated_container, 'hidden');
+                        Backend.Utils.addClass(associated_container, 'd-none');
 
                 associated.onchange = function (event) {
                     if (associated_container != null)
                         if (associated.value == "custom")
-                            Backend.Utils.removeClass(associated_container, "hidden");
+                            Backend.Utils.removeClass(associated_container, "d-none");
                         else
-                            Backend.Utils.addClass(associated_container, 'hidden');
+                            Backend.Utils.addClass(associated_container, 'd-none');
                 };
             },
             setRolepermission: function (page) {
@@ -339,7 +339,7 @@ var Backend = {}; // common variable used in all the files of the backend
                                     Backend.Users.selectors.getAvailabelPermissions.innerHTML = "";
                                     htmlstring = "";
                                     if (permissions.length == 0) {
-                                        Backend.Users.selectors.getAvailabelPermissions.innerHTML = '<p>There are no available permissions.</p>';
+                                        Backend.Users.selectors.getAvailabelPermissions.innerHTML = '<p>Brak dostępnych Uprawnień.</p>';
                                     } else {
                                         for (var key in permissions) {
                                             var addChecked = '';
@@ -358,11 +358,11 @@ var Backend = {}; // common variable used in all the files of the backend
 
                                 } else {
                                     // We reached our target server, but it returned an error
-                                    Backend.Users.selectors.getAvailabelPermissions.innerHTML = '<p>There are no available permissions.</p>';
+                                    Backend.Users.selectors.getAvailabelPermissions.innerHTML = '<p>Brak dostępnych Uprawnień.</p>';
                                 }
                             },
                             error: function () {
-                                Backend.Users.selectors.getAvailabelPermissions.innerHTML = '<p>There are no available permissions.</p>';
+                                Backend.Users.selectors.getAvailabelPermissions.innerHTML = '<p>Brak dostępnych Uprawnień.</p>';
                             }
                         };
 
