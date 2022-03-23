@@ -56,43 +56,39 @@
 
                 {{-- Status --}}
                 @if ($user->id != 1)
-                    {{-- Confirmed --}}
-                    <div class="form-group">
-                        {{ Form::label('confirmed', trans('validation.attributes.backend.access.users.confirmed'), ['class' => 'col-lg-2 control-label']) }}
+                {{-- Confirmed --}}
+                <div class="row"> 
+                  {{ Form::label('confirmed', 'Potwierdzony?', ['class' => 'col-lg-2 control-label']) }}
+                  <div class="col-sm-7">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="status" value="1" id="status" />
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
 
-                        <div class="col-lg-1">
-                            <div class="control-group">
-                                <label class="control control--checkbox">
-                                    {{ Form::checkbox('confirmed', '1', $user->confirmed == 1) }}
-                                    <div class="control__indicator"></div>
-                                </label>
-                            </div>
-                        </div><!--col-lg-1-->
-                    </div><!--form control-->
-
-                    {{-- Associated Roles --}}
-                    <div class="form-group">
-                        {{ Form::label('status', trans('validation.attributes.backend.access.users.associated_roles'), ['class' => 'col-lg-2 control-label']) }}
-
-                        <div class="col-lg-8">
-                            @if (count($roles) > 0)
-                                @foreach($roles as $role)
-                                    <div>
-                                    <label for="role-{{$role->id}}" class="control control--radio">
-                                    <input type="radio" value="{{$role->id}}" name="assignees_roles[]" {{ is_array(old('assignees_roles')) ? (in_array($role->id, old('assignees_roles')) ? 'checked' : '') : (in_array($role->id, $userRoles) ? 'checked' : '') }} id="role-{{$role->id}}" class="get-role-for-permissions" />  &nbsp;&nbsp;{!! $role->name !!}
-                                    <div class="control__indicator"></div>
-                                    <a href="#" data-role="role_{{$role->id}}" class="show-permissions small">
-                                        (
-                                            <span class="show-text">{{ trans('labels.general.show') }}</span>
-                                            <span class="hide-text d-none">{{ trans('labels.general.hide') }}</span>
-                                            {{ trans('labels.backend.access.users.permissions') }}
-                                        )
-                                    </a>
-                                    </label>
-                                    </div>
-                                    <div class="permission-list d-none" data-role="role_{{$role->id}}">
+                {{-- Associated Roles --}}
+                <div class="row">
+                  {{ Form::label('status', trans('validation.attributes.backend.access.users.associated_roles'), ['class' => 'col-lg-2 control-label']) }}
+                  <div class="col-sm-7">
+                    <div class="form-group"> 
+                      <div class="col-lg-12">
+                        @if (count($roles) > 0)
+                        @foreach($roles as $role)
+                        <div>
+                          <label for="role-{{$role->id}}" class="control control--radio">
+                            <input type="radio" value="{{$role->id}}" name="assignees_roles[]" {{ is_array(old('assignees_roles')) ? (in_array($role->id, old('assignees_roles')) ? 'checked' : '') : (in_array($role->id, $userRoles) ? 'checked' : '') }} id="role-{{$role->id}}" class="get-role-for-permissions" />  &nbsp;&nbsp;{!! $role->name !!}
+                            <div class="control__indicator"></div>
+                            <a href="#" data-role="role_{{$role->id}}" class="show-permissions small">(<span class="show-text">Pokaż</span><span class="hide-text d-none">Ukryj</span> Uprawnienia)</a>
+                          </label>
+                        </div>
+                        <div class="permission-list d-none" data-role="role_{{$role->id}}">
                                         @if ($role->all)
-                                            {{ trans('labels.backend.access.users.all_permissions') }}
+                                            Wszystkie Uprawnienia
                                         @else
                                             @if (count($role->permissions) > 0)
                                                 <blockquote class="small">
@@ -104,30 +100,38 @@
                                                 {{ trans('labels.backend.access.users.no_permissions') }}<br/><br/>
                                             @endif
                                         @endif
-                                    </div><!--permission list-->
-                                @endforeach
-                            @else
-                                {{ trans('labels.backend.access.users.no_roles') }}
-                            @endif
-                        </div><!--col-lg-3-->
-                    </div><!--form control-->
+                        </div><!--permission list-->
+                        @endforeach
+                        @else
+                        Brak przypisanych Ról.
+                        @endif
+                      </div><!--col-lg-12-->
+                    </div><!--form-group-->
+                  </div>
+                </div>
 
-                    {{-- Associated Permissions --}}
+                {{-- Associated Permissions --}}
+                <div class="row">
+                  {{ Form::label('associated-permissions', trans('validation.attributes.backend.access.roles.associated_permissions'), ['class' => 'col-lg-2 control-label']) }}
+                  <div class="col-sm-7">
                     <div class="form-group">
-                        {{ Form::label('associated-permissions', trans('validation.attributes.backend.access.roles.associated_permissions'), ['class' => 'col-lg-2 control-label']) }}
+                        
                         <div class="col-lg-10">
-                            <div id="available-permissions" style="width: 700px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
+                            <div id="available-permissions" style="margin-top:10px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
                                 <div class="row">
                                     <div class="col-xs-12 get-available-permissions">
                                         @if ($permissions)
 
                                             @foreach ($permissions as $id => $display_name)
-                                            <div class="control-group">
-                                                <label class="control control--checkbox" for="perm_{{ $id }}">
-                                                    <input type="checkbox" name="permissions[{{ $id }}]" value="{{ $id }}" id="perm_{{ $id }}" {{ isset($userPermissions) && in_array($id, $userPermissions) ? 'checked' : '' }} /> <label for="perm_{{ $id }}">{{ $display_name }}</label>
-                                                    <div class="control__indicator"></div>
-                                                </label>
+                                            <div class="form-check">
+                                              <label  for="perm_{{ $id }}" class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" name="permissions[{{ $id }}]" value="{{ $id }}"  id="perm_{{ $id }}" ' + addChecked + ' {{ isset($userPermissions) && in_array($id, $userPermissions) ? 'checked' : '' }} />
+                                                <span class="form-check-sign">
+                                                  <span class="check"></span>
+                                                </span>
+                                              </label>
                                             </div>
+                                            <br>
                                             @endforeach
                                         @else
                                             <p>Brak pasujących uprawnień.</p>
@@ -137,11 +141,13 @@
                             </div><!--available permissions-->
                         </div><!--col-lg-3-->
                     </div><!--form control-->
-                @endif
-                  <div class="edit-form-btn">
-                    {{ link_to_route('admin.access.user.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
-                    {{ Form::submit('Zmień', ['class' => 'btn btn-primary btn-md']) }}
                   </div>
+                </div>
+                @endif
+                <div class="edit-form-btn">
+                  {{ link_to_route('admin.access.user.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
+                  {{ Form::submit('Zmień', ['class' => 'btn btn-primary btn-md']) }}
+                </div>
               </div>
             </div>
           </form>
