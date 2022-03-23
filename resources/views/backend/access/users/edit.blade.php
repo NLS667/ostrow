@@ -117,7 +117,7 @@
                     <div class="form-group">
                         
                         <div class="col-lg-10">
-                            <div id="available-permissions" class="d-none container" style="margin-top:10px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
+                            <div id="available-permissions" class="ontainer" style="margin-top:10px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
                                 <div class="row">
                                     <div class="col-xs-12 get-available-permissions">
                                         @if ($permissions)
@@ -126,7 +126,7 @@
                                             <div class="form-check">
                                               <label  for="perm_{{ $id }}" class="form-check-label">
                                                 <input class="form-check-input" type="checkbox" name="permissions[{{ $id }}]" value="{{ $id }}"  id="perm_{{ $id }}" {{ isset($userPermissions) && in_array($id, $userPermissions) ? 'checked' : '' }} />
-
+                                                {{ $display_name }}
                                                 <span class="form-check-sign">
                                                   <span class="check"></span>
                                                 </span>
