@@ -99,13 +99,13 @@
                           <a href="#" data-role="role_{{ $role->id }}" class="show-permissions small">
                             (
                             <span class="show-text">Pokaż</span>
-                            <span class="hide-text hidden">Ukryj</span>
+                            <span class="hide-text d-none">Ukryj</span>
                             Uprawnienia
                             )
                           </a>
                         </label>
                       </div>
-                      <div class="permission-list hidden" data-role="role_{{ $role->id }}">
+                      <div class="permission-list d-none" data-role="role_{{ $role->id }}">
                         @if ($role->all)
                         Wszystkie Uprawnienia<br/><br/>
                         @else
@@ -156,4 +156,23 @@
     </div>
   </div>
 </div>
+@endsection
+
+@section('after-scripts')
+     <script type="text/javascript">
+        var associated = $("select[name='associated_permissions']");
+        var associated_container = $("#available-permissions");
+
+        if (associated.val() == "custom")
+            associated_container.removeClass('d-none');
+        else
+            associated_container.addClass('d-none');
+
+        associated.change(function() {
+            if ($(this).val() == "custom")
+                associated_container.removeClass('d-none');
+            else
+                associated_container.addClass('d-none');
+        });
+    </script>
 @endsection
