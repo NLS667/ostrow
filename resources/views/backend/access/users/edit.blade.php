@@ -58,11 +58,11 @@
                 @if ($user->id != 1)
                 {{-- Confirmed --}}
                 <div class="row"> 
-                  {{ Form::label('confirmed', 'Potwierdzony?', ['class' => 'col-lg-2 control-label']) }}
+                  {{ Form::label('confirmed', 'Potwierdzony?', ['class' => 'col-lg-2 col-form-label']) }}
                   <div class="col-sm-7">
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="status" value="1" id="status" />
+                        <input class="form-check-input" type="checkbox" name="status" value="1" id="status" {{ $role->status == 1 ? 'checked' : '' }} />
                         <span class="form-check-sign">
                           <span class="check"></span>
                         </span>
@@ -125,7 +125,7 @@
                                             @foreach ($permissions as $id => $display_name)
                                             <div class="form-check">
                                               <label  for="perm_{{ $id }}" class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="permissions[{{ $id }}]" value="{{ $id }}"  id="perm_{{ $id }}" ' + addChecked + ' {{ isset($userPermissions) && in_array($id, $userPermissions) ? 'checked' : '' }} />
+                                                <input class="form-check-input" type="checkbox" name="permissions[{{ $id }}]" value="{{ $id }}"  id="perm_{{ $id }}" {{ isset($userPermissions) && in_array($id, $userPermissions) ? 'checked' : '' }} />
                                                 <span class="form-check-sign">
                                                   <span class="check"></span>
                                                 </span>
