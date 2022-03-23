@@ -119,7 +119,7 @@
                         <div class="col-lg-10">
                             <div id="available-permissions" class="ontainer" style="margin-top:10px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
                                 <div class="row">
-                                    <div class="col-xs-12 get-available-permissions">
+                                    <div class="col-lg-12 get-available-permissions">
                                         @if ($permissions)
 
                                             @foreach ($permissions as $id => $display_name)
