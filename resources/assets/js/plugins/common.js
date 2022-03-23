@@ -350,7 +350,8 @@ var Backend = {}; // common variable used in all the files of the backend
                                                     addChecked = 'checked="checked"';
                                                 }
                                             }
-                                            htmlstring += '<label class="control control--checkbox"> <input type="checkbox" name="permissions[' + key + ']" value="' + key + '" id="perm_' + key + '" ' + addChecked + ' /> <label for="perm_' + key + '">' + permissions[key] + '</label> <div class="control__indicator"></div> </label> <br>';
+                                            htmlstring += '<div class="form-check"><label  for="perm_' + key + '" class="form-check-label"><input class="form-check-input" type="checkbox" name="permissions[' + key + ']" value="' + key + '"  id="perm_' + key + '" ' + addChecked + ' />' + permissions[key] + '<span class="form-check-sign"><span class="check"></span></span></label></div><br>';
+                                        
                                         }
                                     }
                                     Backend.Users.selectors.getAvailabelPermissions.innerHTML = htmlstring;
