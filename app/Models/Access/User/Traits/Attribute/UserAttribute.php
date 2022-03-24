@@ -243,7 +243,7 @@ trait UserAttribute
      */
     public function getClearSessionButtonAttribute($class)
     {
-        $name = $class == '' ? 'Clear Session' : '';
+        $name = $class == '' ? 'Wyczyść Sesję' : '';
 
         if ($this->id != access()->id() && config('session.driver') == 'database' && access()->allow('clear-user-session')) {
             return '<a class="'.$class.'" href="'.route('admin.access.user.clear-session', $this).'"
@@ -261,14 +261,14 @@ trait UserAttribute
         if ($this->id != 1) {
             return '<div class="btn-group dropup">
                         <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-option-vertical"></span>
+                            <span class="material-icons">expand_more</span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                        <li class="dropdown-item">'.$this->getStatusButtonAttribute('').'</li>
-                        <li class="dropdown-item">'.$this->getClearSessionButtonAttribute('').'</li>
-                        <li class="dropdown-item">'.$this->getDeleteButtonAttribute('').'</li>
-                        <li class="dropdown-item">'.$this->getLoginAsButtonAttribute('').'</li>
-                        </ul>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item">'.$this->getStatusButtonAttribute('').'</a>
+                            <a class="dropdown-item">'.$this->getClearSessionButtonAttribute('').'</a>
+                            <a class="dropdown-item">'.$this->getDeleteButtonAttribute('').'</a>
+                            <a class="dropdown-item">'.$this->getLoginAsButtonAttribute('').'</a>
+                        </div>
                     </div>';
         }
     }
