@@ -139,8 +139,7 @@ class UserRepository extends BaseRepository
         $permissions = $request->get('permissions');
 
         $this->checkUserByEmail($data, $user);
-        \Debugbar::info('update');
-        \Log::error('update');
+        
         DB::transaction(function () use ($user, $data, $roles, $permissions) {
             if ($user->update($data)) {
                 $user->status = isset($data['status']) && $data['status'] == '1' ? 1 : 0;
@@ -152,6 +151,8 @@ class UserRepository extends BaseRepository
                 $this->flushRoles($roles, $user);
 
                 $this->flushPermissions($permissions, $user);
+
+                \Log::error('update');
                 \Event::dispatch(new UserUpdated($user));
 
                 return true;
