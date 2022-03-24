@@ -6,6 +6,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ChangePasswordController;
+use App\Http\Controllers\Backend\User\AccountController;
+use App\Http\Controllers\Backend\User\ProfileController;
 //use App\Http\Controllers\AdminController;
 
 /*
