@@ -158,5 +158,33 @@ class UserAccessEventListener
             UserUpdated::class,
             [UserAccessEventListener::class, 'onUpdated']
         );
+        $events->listen(
+            UserCreated::class,
+            [UserAccessEventListener::class, 'onCreated']
+        );
+        $events->listen(
+            UserDeleted::class,
+            [UserAccessEventListener::class, 'onDeleted']
+        );
+        $events->listen(
+            UserRestored::class,
+            [UserAccessEventListener::class, 'onRestored']
+        );
+        $events->listen(
+            UserPermanentlyDeleted::class,
+            [UserAccessEventListener::class, 'onPermanentlyDeleted']
+        );
+        $events->listen(
+            UserPasswordChanged::class,
+            [UserAccessEventListener::class, 'onPasswordChanged']
+        );
+        $events->listen(
+            UserDeactivated::class,
+            [UserAccessEventListener::class, 'onDeactivated']
+        );
+        $events->listen(
+            UserReactivated::class,
+            [UserAccessEventListener::class, 'onReactivated']
+        );
     }
 }
