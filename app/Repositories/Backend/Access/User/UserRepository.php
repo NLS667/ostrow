@@ -115,7 +115,7 @@ class UserRepository extends BaseRepository
                     $user->notify(new UserNeedsConfirmation($user->confirmation_code));
                 }
 
-                \Event::fire(new UserCreated($user));
+                \Event::dispatch(new UserCreated($user));
 
                 return true;
             }
@@ -151,7 +151,7 @@ class UserRepository extends BaseRepository
                 $this->flushRoles($roles, $user);
 
                 $this->flushPermissions($permissions, $user);
-                \Event::fire(new UserUpdated($user));
+                \Event::dispatch(new UserUpdated($user));
 
                 return true;
             }
