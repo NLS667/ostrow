@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon as Carbon;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
