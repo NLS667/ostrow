@@ -56,6 +56,6 @@ class UserAccessController extends Controller
         access()->loginUsingId($user->id);
 
         // Redirect to frontend
-        return redirect()->route('index');
+        return redirect()->route('admin.index');
     }
 }
