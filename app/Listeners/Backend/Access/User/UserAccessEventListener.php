@@ -2,14 +2,14 @@
 
 namespace App\Listeners\Backend\Access\User;
 
-use App\Events\Backend\Access\User\UserCreated;
-use App\Events\Backend\Access\User\UserUpdated;
-use App\Events\Backend\Access\User\UserDeleted;
-use App\Events\Backend\Access\User\UserRestored;
-use App\Events\Backend\Access\User\UserPermanentlyDeleted;
-use App\Events\Backend\Access\User\UserPasswordChanged;
-use App\Events\Backend\Access\User\UserDeactivated;
-use App\Events\Backend\Access\User\UserReactivated;
+use App\Events\Access\User\UserCreated;
+use App\Events\Access\User\UserUpdated;
+use App\Events\Access\User\UserDeleted;
+use App\Events\Access\User\UserRestored;
+use App\Events\Access\User\UserPermanentlyDeleted;
+use App\Events\Access\User\UserPasswordChanged;
+use App\Events\Access\User\UserDeactivated;
+use App\Events\Access\User\UserReactivated;
 
 /**
  * Class UserAccessEventListener.

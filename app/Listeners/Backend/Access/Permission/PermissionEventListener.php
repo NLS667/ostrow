@@ -59,17 +59,17 @@ class PermissionEventListener
     public function subscribe($events)
     {
         $events->listen(
-            \App\Events\Backend\Access\Permission\PermissionCreated::class,
+            \App\Events\Access\Permission\PermissionCreated::class,
             'App\Listeners\Backend\Access\Permission\PermissionEventListener@onCreated'
         );
 
         $events->listen(
-            \App\Events\Backend\Access\Permission\PermissionUpdated::class,
+            \App\Events\Access\Permission\PermissionUpdated::class,
             'App\Listeners\Backend\Access\Permission\PermissionEventListener@onUpdated'
         );
 
         $events->listen(
-            \App\Events\Backend\Access\Permission\PermissionDeleted::class,
+            \App\Events\Access\Permission\PermissionDeleted::class,
             'App\Listeners\Backend\Access\Permission\PermissionEventListener@onDeleted'
         );
     }

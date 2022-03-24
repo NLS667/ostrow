@@ -60,17 +60,17 @@ class RoleEventListener
     {
         $events->listen(
             \App\Events\Backend\Access\Role\RoleCreated::class,
-            'App\Listeners\Backend\Access\Role\RoleEventListener@onCreated'
+            'App\Listeners\Access\Role\RoleEventListener@onCreated'
         );
 
         $events->listen(
             \App\Events\Backend\Access\Role\RoleUpdated::class,
-            'App\Listeners\Backend\Access\Role\RoleEventListener@onUpdated'
+            'App\Listeners\Access\Role\RoleEventListener@onUpdated'
         );
 
         $events->listen(
             \App\Events\Backend\Access\Role\RoleDeleted::class,
-            'App\Listeners\Backend\Access\Role\RoleEventListener@onDeleted'
+            'App\Listeners\Access\Role\RoleEventListener@onDeleted'
         );
     }
 }
