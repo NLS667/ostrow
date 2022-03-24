@@ -10,7 +10,7 @@
     </tr>
 
     <tr>
-        <th>Potwierdzony?</th>
+        <th>Aktywny?</th>
         <td>{!! $user->confirmed_label !!}</td>
     </tr>
 

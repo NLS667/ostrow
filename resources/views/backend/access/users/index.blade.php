@@ -21,7 +21,7 @@
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
                                         <th>E-mail</th>
-                                        <th>Potwierdzony?</th>
+                                        <th>Aktywny?</th>
                                         <th>Role</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>
@@ -33,7 +33,7 @@
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
                                         <th>E-mail</th>
-                                        <th>Potwierdzony?</th>
+                                        <th>Aktywny?</th>
                                         <th>Role</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>

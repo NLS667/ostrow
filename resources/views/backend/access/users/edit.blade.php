@@ -58,7 +58,7 @@
                 @if ($user->id != 1)
                 {{-- Confirmed --}}
                 <div class="row"> 
-                  {{ Form::label('confirmed', 'Potwierdzony?', ['class' => 'col-lg-2 col-form-label']) }}
+                  {{ Form::label('confirmed', 'Aktywny?', ['class' => 'col-lg-2 col-form-label']) }}
                   <div class="col-sm-7">
                     <div class="form-check">
                       <label class="form-check-label">
