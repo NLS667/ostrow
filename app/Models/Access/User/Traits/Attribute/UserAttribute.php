@@ -264,10 +264,10 @@ trait UserAttribute
                             <span class="material-icons">expand_more</span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item">'.$this->getStatusButtonAttribute('').'</a>
-                            <a class="dropdown-item">'.$this->getClearSessionButtonAttribute('').'</a>
-                            <a class="dropdown-item">'.$this->getDeleteButtonAttribute('').'</a>
-                            <a class="dropdown-item">'.$this->getLoginAsButtonAttribute('').'</a>
+                            '.$this->getStatusButtonAttribute('dropdown-item').'
+                            '.$this->getClearSessionButtonAttribute('dropdown-item').'
+                            '.$this->getDeleteButtonAttribute('dropdown-item').'
+                            '.$this->getLoginAsButtonAttribute('dropdown-item').'
                         </div>
                     </div>';
         }
