@@ -2,6 +2,7 @@
 
 namespace App\Events\Access\User;
 
+use App\Models\Access\User\User;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
@@ -20,7 +21,7 @@ class UserUpdated
     /**
      * @param $user
      */
-    public function __construct($user)
+    public function __construct(User $user)
     {
         $this->user = $user;
     }

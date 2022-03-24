@@ -95,7 +95,7 @@ class UserRepository extends BaseRepository
         $roles = $request->get('assignees_roles');
         $permissions = $request->get('permissions');
         $user = $this->createUserStub($data);
-
+        \Debugbar::info('create');
         DB::transaction(function () use ($user, $data, $roles, $permissions) {
             if ($user->save()) {
 
@@ -139,7 +139,7 @@ class UserRepository extends BaseRepository
         $permissions = $request->get('permissions');
 
         $this->checkUserByEmail($data, $user);
-
+        \Debugbar::info('update');
         DB::transaction(function () use ($user, $data, $roles, $permissions) {
             if ($user->update($data)) {
                 $user->status = isset($data['status']) && $data['status'] == '1' ? 1 : 0;
