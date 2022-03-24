@@ -260,7 +260,7 @@ trait UserAttribute
     {
         if ($this->id != 1) {
             return '<div class="btn-group dropup">
-                        <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-option-vertical"></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -281,7 +281,7 @@ trait UserAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['8', '10', '11', '12', '13', '14', '15'];
+        $attributePermission = ['7', '9', '10', '11', '12', '13', '14'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
@@ -302,7 +302,7 @@ trait UserAttribute
     public function getActionButtonsByPermissionName($permissionName, $counter)
     {
         // check if counter is less then 3 then apply button client
-        $class = ($counter <= 3) ? 'btn btn-default btn-flat' : '';
+        $class = ($counter <= 3) ? 'btn btn-primary btn-flat' : '';
 
         switch ($permissionName) {
             case 'show-user':
