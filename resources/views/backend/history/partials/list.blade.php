@@ -1,4 +1,4 @@
-<ul class="timeline">
+<ul class="timeline timeline-simple">
     @each('backend.history.partials.item', $history, 'historyItem')
 </ul>
 
