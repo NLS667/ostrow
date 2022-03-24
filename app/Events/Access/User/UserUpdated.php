@@ -23,7 +23,6 @@ class UserUpdated
      */
     public function __construct(User $user)
     {
-        \Log::error('Update construct'.$user);
         $this->user = $user;
     }
 }
