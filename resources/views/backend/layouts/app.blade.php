@@ -26,8 +26,8 @@
     </head>
     <body class="hold-transition layout-fixed" style="padding-top:0px;">
         <div class="loading" style="display:none"></div>
-        @include('includes.partials.logged-in-as')
         <div class="wrapper" id="app">
+            @include('includes.partials.logged-in-as')
             @include('backend.includes.sidebar-dynamic')            
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper main-panel">
