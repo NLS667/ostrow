@@ -1,4 +1,4 @@
-@extends ('backend.layouts.app', ['activePage' => 'user-deactivated', 'titlePage' => 'Nieaktywni Użytkownicy'])
+@extends ('backend.layouts.app', ['activePage' => 'user-deactivated', 'titlePage' => 'Zarządzanie Użytkownikami']) 
 
 @section('content')
 <div class="content">
@@ -8,7 +8,6 @@
                 <div class="card">
                     <div class="card-header card-header-info d-flex justify-content-between align-items-center">
                         <h3 class="card-title">Nieaktywni Użytkownicy</h3>
-
                         <div class="card-tools">
                             @include('backend.access.includes.partials.user-header-buttons')
                         </div><!--box-tools pull-right-->
@@ -16,37 +15,57 @@
 
                     <div class="card-body">
                         <div class="table-responsive data-table-wrapper">
-                            <table id="users-table" class="table table-condensed table-hover table-bordered">
+                            <table id="users-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
                                 <thead>
-                                    <tr>
+                                    <tr role="row">
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
                                         <th>E-mail</th>
-                                        <th>Potwierdzony ?</th>
+                                        <th>Potwierdzony?</th>
                                         <th>Role</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>
                                         <th>Akcje</th>
                                     </tr>
                                 </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Imię</th>
+                                        <th>Nazwisko</th>
+                                        <th>E-mail</th>
+                                        <th>Potwierdzony?</th>
+                                        <th>Role</th>
+                                        <th>Utworzony</th>
+                                        <th>Zmieniony</th>
+                                        <th class="text-right">Akcje</th>
+                                    </tr>
+                                </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
                                         <th>
-                                            {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Imię']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('first_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Imię']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th>
-                                            {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th>
-                                            {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'E-mail']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'email']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th></th>
                                         <th>
-                                            {!! Form::text('roles', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Role']) !!}
-                                            <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('roles', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Rola']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
                                         </th>
                                         <th></th>
                                         <th></th>

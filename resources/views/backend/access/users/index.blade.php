@@ -63,7 +63,7 @@
                                         <th></th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('roles', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Role']) !!}
+                                                {!! Form::text('roles', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Rola']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
