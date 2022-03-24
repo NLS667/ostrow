@@ -27,7 +27,7 @@ class UserAccessController extends Controller
         if (session()->has('admin_user_id') && session()->has('temp_user_id')) {
             // Let's not try to login as ourselves.
             if (access()->id() == $user->id || session()->get('admin_user_id') == $user->id) {
-                throw new GeneralException('Do not try to login as yourself.');
+                throw new GeneralException('Nie próbuj logować się sam na siebie.');
             }
 
             // Overwrite temp user ID.
@@ -37,14 +37,14 @@ class UserAccessController extends Controller
             access()->loginUsingId($user->id);
 
             // Redirect.
-            return redirect()->route('frontend.index');
+            return redirect()->route('admin.index');
         }
 
         app()->make(Auth::class)->flushTempSession();
 
         // Won't break, but don't let them "Login As" themselves
         if (access()->id() == $user->id) {
-            throw new GeneralException('Do not try to login as yourself.');
+            throw new GeneralException('Nie próbuj logować się sam na siebie.');
         }
 
         // Add new session variables
@@ -56,6 +56,6 @@ class UserAccessController extends Controller
         access()->loginUsingId($user->id);
 
         // Redirect to frontend
-        return redirect()->route('frontend.index');
+        return redirect()->route('index');
     }
 }
