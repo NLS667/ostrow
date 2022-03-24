@@ -149,7 +149,7 @@ trait UserAttribute
                     if (access()->allow('activate-user')) {
                         $name = ($class == '' || $class == 'dropdown-item') ? 'Aktywuj' : '';
 
-                        return '<a class="'.$class.'" href="'.route('admin.access.user.mark', [$this, 1]).'"><i class="fas fa-check-square" data-toggle="tooltip" data-placement="top" title="Aktywuj"></i>'.$name.'</a>';
+                        return '<a class="'.$class.'" href="'.route('admin.access.user.mark', [$this, 1]).'"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Aktywuj">lock_open</span>'.$name.'</a>';
                     }
                     break;
 
@@ -157,7 +157,7 @@ trait UserAttribute
                     if (access()->allow('deactivate-user')) {
                         $name = ($class == '' || $class == 'dropdown-item') ? 'Deaktywuj' : '';
 
-                        return '<a class="'.$class.'" href="'.route('admin.access.user.mark', [$this, 0]).'"><i class="fas fa-square" data-toggle="tooltip" data-placement="top" title="Deaktywuj"></i>'.$name.'</a>';
+                        return '<a class="'.$class.'" href="'.route('admin.access.user.mark', [$this, 0]).'"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Deaktywuj">lock</span>'.$name.'</a>';
                     }
                     break;
 
@@ -260,7 +260,7 @@ trait UserAttribute
         if ($this->id != 1) {
             return '<div class="btn-group dropup">
                         <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">
-                            <span class="material-icons">expand_more</span>
+                            <span class="material-icons">settings</span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
                             '.$this->getStatusButtonAttribute('dropdown-item').'
