@@ -48,27 +48,6 @@ function getNotifications() {
     });
 }
 
-/**
-     * Bind all bootstrap tooltips
-     */
-    $("app").tooltip({ selector: '[data-toggle=tooltip]' });
-
-    /**
-     * Bind all bootstrap popovers
-     */
-    $("app").popover({ selector: '[data-toggle=popover]' });
-
-    /**
-     * This closes the popover when its clicked away from
-     */
-    $('body').on('click', function (e) {
-        $('[data-toggle="popover"]').each(function () {
-            if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
-                $(this).popover('hide');
-            }
-        });
-    });
-
 function bootstrapClearButton() {
   $('.position-relative :input').on('keydown focus', function() {
     if ($(this).val().length > 0) {
@@ -157,6 +136,26 @@ $(function () {
         });
     });
     */
+    /**
+     * Bind all bootstrap tooltips
+     */
+    $('body').tooltip({ selector: '[data-toggle=tooltip]' });
+
+    /**
+     * Bind all bootstrap popovers
+     */
+    $('[data-toggle="popover"]').popover();
+
+    /**
+     * This closes the popover when its clicked away from
+     */
+    $('body').on('click', function (e) {
+        $('[data-toggle="popover"]').each(function () {
+            if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                $(this).popover('hide');
+            }
+        });
+    });
 })
 
 
