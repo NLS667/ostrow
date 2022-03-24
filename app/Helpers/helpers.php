@@ -164,3 +164,56 @@ if (!function_exists('isActiveMenuItem')) {
         return false;
     }
 }
+
+if (!function_exists('checkDatabaseConnection')) {
+
+    /**
+     * @return bool
+     */
+    function checkDatabaseConnection()
+    {
+        try {
+            DB::connection()->reconnect();
+
+            return true;
+        } catch (Exception $ex) {
+            return false;
+        }
+    }
+}
+
+if (!function_exists('escapeSlashes')) {
+    /**
+     * Access the escapeSlashes helper.
+     */
+    function escapeSlashes($path)
+    {
+        $path = str_replace('\\', DIRECTORY_SEPARATOR, $path);
+        $path = str_replace('//', DIRECTORY_SEPARATOR, $path);
+        $path = trim($path, DIRECTORY_SEPARATOR);
+
+        return $path;
+    }
+}
+
+if (!function_exists('createNotification')) {
+    /**
+     * create new notification.
+     *
+     * @param  $message    message you want to show in notification
+     * @param  $userId     To Whom You Want To send Notification
+     *
+     * @return object
+     */
+    function createNotification($message, $userId)
+    {
+        $notification = new Notification();
+
+        return $notification->insert([
+            'message'    => $message,
+            'user_id'    => $userId,
+            'type'       => 1,
+            'created_at' => Carbon::now(),
+        ]);
+    }
+}

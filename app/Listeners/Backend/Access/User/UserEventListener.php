@@ -33,13 +33,14 @@ class UserEventListener
      */
     public function onUpdated($event)
     {
+         \Log::info('User Updated: '.$event->user->first_name);
         history()->withType($this->history_slug)
             ->withEntity($event->user->id)
             ->withText('trans("history.backend.users.updated") <strong>{user}</strong>')
             ->withIcon('save')
             ->withClass('bg-aqua')
             ->withAssets([
-                'user_link' => ['admin.access.user.show', $event->user->name, $event->user->id],
+                'user_link' => ['admin.access.user.show', $event->user->first_name, $event->user->id],
             ])
             ->log();
     }

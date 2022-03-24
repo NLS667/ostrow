@@ -27,19 +27,31 @@ class HistoryTypeTableSeeder extends Seeder
         $types = [
             [
                 'id'         => 1,
-                'name'       => 'User',
+                'name'       => 'Użytkownik',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'id'         => 2,
-                'name'       => 'Role',
+                'name'       => 'Rola',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'id'         => 3,
-                'name'       => 'Permission',
+                'name'       => 'Uprawnienie',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'id'         => 4,
+                'name'       => 'Klient',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'id'         => 5,
+                'name'       => 'Usługa',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

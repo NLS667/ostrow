@@ -25,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        /*
+         * setLocale to use Carbon source locales. Enables diffForHumans() localized
+         */
+        Carbon::setLocale(config('app.locale'));
          // Force SSL
         URL::forceScheme('https');
 
