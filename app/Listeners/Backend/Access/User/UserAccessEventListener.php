@@ -40,7 +40,7 @@ class UserAccessEventListener
     /**
      * @param $event
      */
-    public function onUpdated($event)
+    public function onUpdated(UserUpdated $event)
     {
          \Log::error('User Updated: '.$event->user->first_name);
         history()->withType($this->history_slug)

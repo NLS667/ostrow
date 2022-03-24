@@ -152,8 +152,8 @@ class UserRepository extends BaseRepository
 
                 $this->flushPermissions($permissions, $user);
 
-                \Log::error('update');
-                event(new UserUpdated($user));
+                //event(new UserUpdated($user));
+                UserUpdated::dispatch($user);
 
                 return true;
             }
