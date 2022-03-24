@@ -140,6 +140,7 @@ class UserRepository extends BaseRepository
 
         $this->checkUserByEmail($data, $user);
         \Debugbar::info('update');
+        \Log::error('update');
         DB::transaction(function () use ($user, $data, $roles, $permissions) {
             if ($user->update($data)) {
                 $user->status = isset($data['status']) && $data['status'] == '1' ? 1 : 0;
