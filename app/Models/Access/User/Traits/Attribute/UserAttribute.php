@@ -147,7 +147,7 @@ trait UserAttribute
             switch ($this->status) {
                 case 0:
                     if (access()->allow('activate-user')) {
-                        $name = $class == '' ? 'Activate' : '';
+                        $name = ($class == '' || $class == 'dropdown-item') ? 'Aktywuj' : '';
 
                         return '<a class="'.$class.'" href="'.route('admin.access.user.mark', [$this, 1]).'"><i class="fas fa-check-square" data-toggle="tooltip" data-placement="top" title="Aktywuj"></i>'.$name.'</a>';
                     }
@@ -155,7 +155,7 @@ trait UserAttribute
 
                 case 1:
                     if (access()->allow('deactivate-user')) {
-                        $name = ($class == '') ? 'Deactivate' : '';
+                        $name = ($class == '' || $class == 'dropdown-item') ? 'Deaktywuj' : '';
 
                         return '<a class="'.$class.'" href="'.route('admin.access.user.mark', [$this, 0]).'"><i class="fas fa-square" data-toggle="tooltip" data-placement="top" title="Deaktywuj"></i>'.$name.'</a>';
                     }
@@ -187,7 +187,7 @@ trait UserAttribute
     public function getDeleteButtonAttribute($class)
     {
         if ($this->id != access()->id() && access()->allow('delete-user')) {
-            $name = $class == '' ? 'Delete' : '';
+            $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
             return '<a class="'.$class.'" href="'.route('admin.access.user.destroy', $this).'"
                  data-method="delete"
@@ -222,7 +222,7 @@ trait UserAttribute
      */
     public function getLoginAsButtonAttribute($class)
     {
-        $name = $class == '' ? 'Login As' : '';
+        $name = ($class == '' || $class == 'dropdown-item') ? 'Zaloguj jako' : '';
         /*
          * If the admin is currently NOT spoofing a user
          */
@@ -230,8 +230,7 @@ trait UserAttribute
             //Won't break, but don't let them "Login As" themselves
             if ($this->id != access()->id()) {
                 return '<a class="'.$class.'" href="'.route('admin.access.user.login-as',
-                    $this).'"><i class="fas fa-lock" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.login_as',
-                    ['user' => $this->name]).'"></i>'.$name.'</a>';
+                    $this).'"><i class="fas fa-lock" data-toggle="tooltip" data-placement="top" title="Zaloguj jako"></i>'.$name.'</a>';
             }
         }
 
@@ -243,7 +242,7 @@ trait UserAttribute
      */
     public function getClearSessionButtonAttribute($class)
     {
-        $name = $class == '' ? 'Wyczyść Sesję' : '';
+        $name = ($class == '' || $class == 'dropdown-item') ? 'Wyczyść Sesję' : '';
 
         if ($this->id != access()->id() && config('session.driver') == 'database' && access()->allow('clear-user-session')) {
             return '<a class="'.$class.'" href="'.route('admin.access.user.clear-session', $this).'"
