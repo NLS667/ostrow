@@ -12,9 +12,9 @@ use App\Events\Backend\Access\User\UserDeactivated;
 use App\Events\Backend\Access\User\UserReactivated;
 
 /**
- * Class UserEventListener.
+ * Class UserAccessEventListener.
  */
-class UserEventListener
+class UserAccessEventListener
 {
     /**
      * @var string

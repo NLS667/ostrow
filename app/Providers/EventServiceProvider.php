@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Auth\Events\Registered;
 use App\Listeners\Frontend\Auth\UserEventListener;
-use App\Listeners\Backend\Access\User\UserEventListener;
+use App\Listeners\Backend\Access\User\UserAccessEventListener;
 use App\Listeners\Backend\Access\Role\RoleEventListener;
 use App\Listeners\Backend\Access\Permission\PermissionEventListener;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -42,7 +42,7 @@ class EventServiceProvider extends ServiceProvider
         /*
          * Access Subscribers
          */
-        UserEventListener::class,
+        UserAccessEventListener::class,
         RoleEventListener::class,
         PermissionEventListener::class,
     ];
