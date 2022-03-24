@@ -144,7 +144,7 @@ $(function () {
     /**
      * Bind all bootstrap popovers
      */
-    $('[data-toggle="popover"]').popover();
+    $('body').popover({ selector: '[data-toggle=popover]' });
 
     /**
      * This closes the popover when its clicked away from

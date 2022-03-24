@@ -107,8 +107,8 @@ trait UserAttribute
     public function getShowButtonAttribute($class)
     {
         if (access()->allow('show-user')) {
-            return '<a class="'.$class.'" href="'.route('admin.access.user.show', $this).'">
-                    <i data-toggle="tooltip" data-placement="top" title="View" class="fas fa-eye"></i>
+            return '<a class="'.$class.'"  data-toggle="tooltip" data-placement="top" title="View" href="'.route('admin.access.user.show', $this).'">
+                    <span class="material-icons">visibility</span>
                 </a>';
         }
     }
