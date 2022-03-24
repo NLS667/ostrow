@@ -211,7 +211,7 @@ class EloquentHistoryRepository implements HistoryContract
         if (!$history->count()) {
             return trans('history.backend.none_for_type');
         }
-        Debugbar::addMessage(json_encode($history));
+        \Log::error(json_encode($history));
         return $this->buildList($history, $paginate);
     }
 
