@@ -154,15 +154,9 @@ class UserAccessEventListener
      */
     public function subscribe($events)
     {
-        return [
-            UserCreated::class => 'onCreated',
-            UserUpdated::class => 'onUpdated',
-            UserDeleted::class => 'onDeleted',
-            UserRestored::class => 'onRestored',
-            UserPermanentlyDeleted::class => 'onPermanentlyDeleted',
-            UserPasswordChanged::class => 'onPasswordChanged',
-            UserDeactivated::class => 'onDeactivated',
-            UserReactivated::class => 'onReactivated',
-        ];
+        $events->listen(
+            UserUpdated::class,
+            [UserAccessEventListener::class, 'onUpdated']
+        );
     }
 }
