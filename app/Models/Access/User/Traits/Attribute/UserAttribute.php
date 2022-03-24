@@ -193,7 +193,7 @@ trait UserAttribute
                  data-method="delete"
                  data-trans-button-cancel="Anuluj"
                  data-trans-button-confirm="Usuń"
-                 data-trans-title="Czy na pewno?"><i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Usuń"></i>'.$name.'</a>';
+                 data-trans-title="Czy na pewno?"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Usuń">delete</span>'.$name.'</a>';
         }
 
         return '';
@@ -214,7 +214,7 @@ trait UserAttribute
      */
     public function getDeletePermanentlyButtonAttribute($class)
     {
-        return '<a class="'.$class.'" href="'.route('admin.access.user.delete-permanently', $this).'" name="delete_user_perm"><i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Usuń permanentnie"></i></a> ';
+        return '<a class="'.$class.'" href="'.route('admin.access.user.delete-permanently', $this).'" name="delete_user_perm"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Usuń permanetnie">delete</span></a> ';
     }
 
     /**
@@ -230,7 +230,7 @@ trait UserAttribute
             //Won't break, but don't let them "Login As" themselves
             if ($this->id != access()->id()) {
                 return '<a class="'.$class.'" href="'.route('admin.access.user.login-as',
-                    $this).'"><i class="fas fa-lock" data-toggle="tooltip" data-placement="top" title="Zaloguj jako"></i>'.$name.'</a>';
+                    $this).'"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Zaloguj jako">login</span>'.$name.'</a>';
             }
         }
 
@@ -249,7 +249,7 @@ trait UserAttribute
 			 	 data-trans-button-cancel="Anuluj"
                  data-trans-button-confirm="Dalej"
                  data-trans-title="Czy na pewno ?"
-                 name="confirm_item"><i class="fas fa-times" data-toggle="tooltip" data-placement="top" title="Wyczyść Sesję"></i>'.$name.'</a>';
+                 name="confirm_item"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Wyczyść Sesję">clear</span>'.$name.'</a>';
         }
 
         return '';
