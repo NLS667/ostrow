@@ -2,6 +2,7 @@
 
 namespace App\Listeners\Backend\Access\User;
 
+use App\Events\Backend\Access\User\UserUpdated;
 /**
  * Class UserEventListener.
  */
@@ -151,8 +152,8 @@ class UserEventListener
         );
 
         $events->listen(
-            \App\Events\Backend\Access\User\UserUpdated::class,
-            'App\Listeners\Backend\Access\User\UserEventListener@onUpdated'
+            UserUpdated::class,
+            [UserEventListener::class, 'onUpdated']
         );
 
         $events->listen(
