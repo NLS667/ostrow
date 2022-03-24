@@ -1,6 +1,6 @@
 <?php
 
-//use App\Http\Controllers\Backend\NotificationController;
+use App\Http\Controllers\Backend\NotificationController;
 
 /*
  * Notificatons Management
