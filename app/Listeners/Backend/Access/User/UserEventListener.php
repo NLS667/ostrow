@@ -2,7 +2,15 @@
 
 namespace App\Listeners\Backend\Access\User;
 
+use App\Events\Backend\Access\User\UserCreated;
 use App\Events\Backend\Access\User\UserUpdated;
+use App\Events\Backend\Access\User\UserDeleted;
+use App\Events\Backend\Access\User\UserRestored;
+use App\Events\Backend\Access\User\UserPermanentlyDeleted;
+use App\Events\Backend\Access\User\UserPasswordChanged;
+use App\Events\Backend\Access\User\UserDeactivated;
+use App\Events\Backend\Access\User\UserReactivated;
+
 /**
  * Class UserEventListener.
  */
@@ -146,44 +154,15 @@ class UserEventListener
      */
     public function subscribe($events)
     {
-        $events->listen(
-            \App\Events\Backend\Access\User\UserCreated::class,
-            'App\Listeners\Backend\Access\User\UserEventListener@onCreated'
-        );
-
-        $events->listen(
-            UserUpdated::class,
-            [UserEventListener::class, 'onUpdated']
-        );
-
-        $events->listen(
-            \App\Events\Backend\Access\User\UserDeleted::class,
-            'App\Listeners\Backend\Access\User\UserEventListener@onDeleted'
-        );
-
-        $events->listen(
-            \App\Events\Backend\Access\User\UserRestored::class,
-            'App\Listeners\Backend\Access\User\UserEventListener@onRestored'
-        );
-
-        $events->listen(
-            \App\Events\Backend\Access\User\UserPermanentlyDeleted::class,
-            'App\Listeners\Backend\Access\User\UserEventListener@onPermanentlyDeleted'
-        );
-
-        $events->listen(
-            \App\Events\Backend\Access\User\UserPasswordChanged::class,
-            'App\Listeners\Backend\Access\User\UserEventListener@onPasswordChanged'
-        );
-
-        $events->listen(
-            \App\Events\Backend\Access\User\UserDeactivated::class,
-            'App\Listeners\Backend\Access\User\UserEventListener@onDeactivated'
-        );
-
-        $events->listen(
-            \App\Events\Backend\Access\User\UserReactivated::class,
-            'App\Listeners\Backend\Access\User\UserEventListener@onReactivated'
-        );
+        return [
+            UserCreated::class => 'onCreated',
+            UserUpdated::class => 'onUpdated',
+            UserDeleted::class => 'onDeleted',
+            UserRestored::class => 'onRestored',
+            UserPermanentlyDeleted::class => 'onPermanentlyDeleted',
+            UserPasswordChanged::class => 'onPasswordChanged',
+            UserDeactivated::class => 'onDeactivated',
+            UserReactivated::class => 'onReactivated',
+        ]
     }
 }
