@@ -5,13 +5,14 @@ namespace App\Events\Access\User;
 use App\Models\Access\User\User;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Broadcasting\InteractsWithSockets;
 
 /**
  * Class UserUpdated.
  */
 class UserUpdated
 {
-    use Dispatchable, SerializesModels;
+    use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
      * @var
