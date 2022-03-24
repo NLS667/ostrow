@@ -24,7 +24,6 @@ class UserUpdated
      */
     public function __construct(User $user)
     {
-        \Log::error("UserUpdated event fired.");
         $this->user = $user;
     }
 }
