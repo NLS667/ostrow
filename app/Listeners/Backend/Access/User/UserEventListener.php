@@ -163,6 +163,6 @@ class UserEventListener
             UserPasswordChanged::class => 'onPasswordChanged',
             UserDeactivated::class => 'onDeactivated',
             UserReactivated::class => 'onReactivated',
-        ]
+        ];
     }
 }
