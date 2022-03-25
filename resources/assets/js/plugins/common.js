@@ -438,8 +438,7 @@ var Backend = {}; // common variable used in all the files of the backend
                             showCancelButton: true,
                             confirmButtonColor: "#DD6B55",
                             confirmButtonText: Backend.UserDeleted.selectors.continue,
-                            cancelButtonText: Backend.UserDeleted.selectors.cancel,
-                            closeOnConfirm: false
+                            cancelButtonText: Backend.UserDeleted.selectors.cancel
                         }, function (isConfirmed) {
                             if (isConfirmed) {
                                 window.location.href = linkURL;
