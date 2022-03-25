@@ -137,7 +137,7 @@
                     {data: 'updated_at', name: '{{config('access.users_table')}}.updated_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
-                order: [[3, "asc"]],
+                order: [[5, "asc"]],
                 searchDelay: 500,
                 dom: 'frt<"d-inline-flex"i><"d-inline-flex float-right"p>',
                 buttons: {
