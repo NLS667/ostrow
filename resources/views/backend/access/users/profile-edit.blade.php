@@ -44,7 +44,7 @@
                 <div class="card-body">
                     {{ Form::open(['route' => ['admin.access.user.change-password', $logged_in_user], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'patch']) }}
                     <div class="row">
-                        {{ Form::label('old password', 'Stare hasło', ['class' => 'col-lg-2 col-form-label required', 'placeholder' => 'Stare hasło']) }}
+                        {{ Form::label('old password', 'Aktualne hasło', ['class' => 'col-lg-2 col-form-label required', 'placeholder' => 'Aktualne hasło']) }}
                         <div class="col-sm-7">
                             <div class="form-group bmd-form-group">
                                 {{ Form::password('old_password', ['class' => 'form-control']) }}
@@ -80,6 +80,7 @@
                 <div class="card-body">
                     <h6 class="card-category text-gray"></h6>
                     <h4 class="card-title"></h4>
+                    <p>{{ $logged_in_user }}</p>
                 </div>
             </div>
         </div>
