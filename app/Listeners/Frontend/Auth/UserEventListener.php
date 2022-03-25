@@ -45,7 +45,7 @@ class UserEventListener
         );
         $events->listen(
             UserLoggedOut::class,
-            [UserEventListener::class, 'UserLoggedOut']
+            [UserEventListener::class, 'onLoggedOut']
         );
     }
 }
