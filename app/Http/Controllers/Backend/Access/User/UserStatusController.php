@@ -85,7 +85,7 @@ class UserStatusController extends Controller
      */
     public function restore(User $deletedUser, DeleteUserRequest $request)
     {
-        \Log::error('restore start');
+        \Log::error($this->users);
         //$this->users->withTrashed()->restore($deletedUser);
         $user = $this->users->withTrashed()->find($deletedUser);
         $user->restore();
