@@ -1,37 +1,40 @@
-@extends('backend.layouts.app')
-
-@section('page-header')
-    <h1>
-        {{ app_name() }}
-        <small>Notifications</small>
-    </h1>
-@endsection
+@extends ('backend.layouts.app', ['activePage' => 'notifications', 'titlePage' => 'Powiadomienia'])
 
 @section('content')
-    <div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">Notifications</h3>
-            <div class="box-tools float-right">
-                <button class="btn btn-box-tool" data-widget="collapse"><i class="fas fa-minus"></i></button>
-            </div><!-- /.box tools -->
-        </div><!-- /.box-header -->
-        <div class="box-body">
-            <ul class="timeline notification-list">
-                @foreach($notifications as $notification)
-                @php
-                    $currentTime     = \carbon\Carbon::now();
-                    $notificationTime = $notification->created_at;
-                @endphp 
-                <li>
-                    <div class="timeline-item">
-                        <span class="time"><i class="far fa-clock"></i> {{$notificationTime->diffForHumans($currentTime)}}</span>
-                        <h3 class="timeline-header">
-                            {{$notification->message}}
-                        </h3>
-                    </div>
-                </li>
-                @endforeach
-            </ul>
-        </div><!-- /.box-body -->
-    </div><!--box box-info-->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12"> 
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Notifications</h4>
+                    </div><!-- /.box-header -->
+                    <div class="card-body">
+                        <ul class="timeline timeline-simple notification-list">
+                            @foreach($notifications as $notification)
+                            @php
+                            $currentTime     = \carbon\Carbon::now();
+                            $notificationTime = $notification->created_at;
+                            @endphp 
+                            <li class="timeline-inverted">
+                                <div class="timeline-badge default">
+                                    <i class="material-icons">schedule</i>
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <span class="badge badge-pill badge-default">{{$notificationTime->diffForHumans($currentTime)}}</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        {{$notification->message}}
+                                    </div>
+                                </div><!--timeline-panel-->
+                            </li>
+                            @endforeach
+                        </ul><!--timeline-->
+                    </div><!-- /.card-body -->
+                </div><!--card-->
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
