@@ -17,15 +17,15 @@
                             $notificationTime = $notification->created_at;
                             @endphp 
                             <li class="timeline-inverted">
-                                <div class="timeline-badge default">
+                                <div class="timeline-badge info">
                                     <i class="material-icons">schedule</i>
                                 </div>
                                 <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <span class="badge badge-pill badge-default">{{$notificationTime->diffForHumans($currentTime)}}</span>
-                                    </div>
                                     <div class="timeline-body">
                                         {{$notification->message}}
+                                    </div>
+                                    <div class="timeline-footer">
+                                        <span class="badge badge-pill badge-default">{{$notificationTime->diffForHumans($currentTime)}}</span>
                                     </div>
                                 </div><!--timeline-panel-->
                             </li>

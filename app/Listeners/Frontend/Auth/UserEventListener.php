@@ -15,10 +15,10 @@ class UserEventListener
      */
     public function onLoggedIn($event)
     {
-        \Log::info('User Logged In: '.$event->user->first_name);
+        \Log::info('User Logged In: '.$event->user->first_name.' '.$event->user->last_name);
 
         // Generating notification
-        createNotification('User Logged In: '.$event->user->first_name, 1);
+        createNotification('User Logged In: '.$event->user->first_name.' '.$event->user->last_name, 1);
     }
 
     /**
@@ -26,10 +26,10 @@ class UserEventListener
      */
     public function onLoggedOut($event)
     {
-        \Log::info('User Logged Out: '.$event->user->first_name);
+        \Log::info('User Logged Out: '.$event->user->first_name.' '.$event->user->last_name);
 
         // Generating notification
-        createNotification('User Logged In: '.$event->user->first_name, 1);
+        createNotification('User Logged Out: '.$event->user->first_name.' '.$event->user->last_name, 1);
     }
 
     /**
