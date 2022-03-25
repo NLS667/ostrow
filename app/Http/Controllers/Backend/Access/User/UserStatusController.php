@@ -83,6 +83,7 @@ class UserStatusController extends Controller
      */
     public function restore(User $deletedUser, DeleteUserRequest $request)
     {
+        \Log::error('restore start');
         $this->users->withTrashed()->restore($deletedUser);
 
         return redirect()->route('admin.access.user.index')->withFlashSuccess(trans('alerts.backend.users.restored'));
