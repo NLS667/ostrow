@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div id="collapseBody" class="card-body">
-                        {{-- {!! history()->renderType('Uprawnienie') !!} --}}
+                        {!! history()->renderType('Uprawnienie') !!}
                     </div><!-- /.box-body -->
                 </div><!--box box-info-->
             </div>
