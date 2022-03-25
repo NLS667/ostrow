@@ -74,7 +74,7 @@
                         </div><!-- /.box tools -->
                     </div><!-- /.box-header -->
                     <div id="collapseBody" class="card-body">
-                        {{-- {!! history()->renderType('Rola') !!} --}}
+                        {!! history()->renderType('Rola') !!}
                     </div><!-- /.box-body -->
                 </div><!--box box-info-->
             </div>
