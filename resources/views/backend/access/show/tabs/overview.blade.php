@@ -21,7 +21,11 @@
 
     <tr>
         <th>Ostatnia modyfikacja</th>
-        <td>{{ $user->updated_at }} ({{ $user->updated_at->diffForHumans() }})</td>
+        @if(isset($user->updated_at))
+            <td>{{ $user->updated_at }} ({{ $user->updated_at->diffForHumans() }})</td>
+        @else
+            <td>Nie modyfikowany.</td>
+        @endif
     </tr>
 
     @if ($user->trashed())
