@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     </div>
-                    {{ Form::submit('Aktualizuj Profil', ['class' => 'btn btn-success pull-right', 'id' => 'update-profile']) }}
+                    {{ Form::submit('Aktualizuj Profil', ['class' => 'btn btn-success float-right', 'id' => 'update-profile']) }}
                     {{ Form::close() }}
                 </div>
             </div>
@@ -39,12 +39,12 @@
                     <div class="card-icon">
                         <i class="material-icons">lock</i>
                     </div>
-                    <h4 class="card-title">Zmień hasło</h4>
+                    <h4 class="card-title">Zmiana hasła</h4>
                 </div>
                 <div class="card-body">
                     {{ Form::open(['route' => ['admin.access.user.change-password', $logged_in_user], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'patch']) }}
                     <div class="row">
-                        {{ Form::label('old password', 'Stare hasło', ['class' => 'col-lg-2 col-form-label required', 'placeholder' => 'Stare Hasło']) }}
+                        {{ Form::label('old password', 'Stare hasło', ['class' => 'col-lg-2 col-form-label required', 'placeholder' => 'Stare hasło']) }}
                         <div class="col-sm-7">
                             <div class="form-group bmd-form-group">
                                 {{ Form::password('old_password', ['class' => 'form-control']) }}
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        {{ Form::label('password', 'Hasło', ['class' => 'col-lg-2 col-form-label required', 'placeholder' => 'Hasło']) }}
+                        {{ Form::label('password', 'Nowe hasło', ['class' => 'col-lg-2 col-form-label required', 'placeholder' => 'Nowe hasło']) }}
                         <div class="col-sm-7">
                             <div class="form-group bmd-form-group">
                                 {{ Form::password('password', ['class' => 'form-control']) }}
@@ -60,14 +60,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        {{ Form::label('password_confirmation', 'Potwierdź hasło', ['class' => 'col-lg-2 col-form-label', 'placeholder' => 'Potwierdź hasło']) }}
+                        {{ Form::label('password_confirmation', 'Potwierdź hasło', ['class' => 'col-lg-2 col-form-label', 'placeholder' => 'Potwierdź nowe hasło']) }}
                         <div class="col-sm-7">
                             <div class="form-group bmd-form-group">
                                 {{ Form::password('password_confirmation', ['class' => 'form-control']) }}
                             </div>
                         </div>
                     </div>
-                    {{ Form::submit('Zmień', ['class' => 'btn btn-success pull-right']) }}
+                    {{ Form::submit('Zmień hasło', ['class' => 'btn btn-success float-right']) }}
                     {{ Form::close() }}
                 </div>
             </div>          
