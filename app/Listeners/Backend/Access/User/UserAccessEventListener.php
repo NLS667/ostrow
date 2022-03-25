@@ -29,7 +29,7 @@ class UserAccessEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->user->id)
             ->withText('trans("history.backend.users.created") <strong>{user}</strong>')
-            ->withIcon('plus')
+            ->withIcon('person_add')
             ->withClass('success')
             ->withAssets([
                 'user_link' => ['admin.access.user.show', $event->user->name, $event->user->id],
@@ -46,7 +46,7 @@ class UserAccessEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->user->id)
             ->withText('trans("history.backend.users.updated") <strong>{user}</strong>')
-            ->withIcon('update')
+            ->withIcon('manage_accounts')
             ->withClass('info')
             ->withAssets([
                 'user_link' => ['admin.access.user.show', $event->user->first_name, $event->user->id],
@@ -62,7 +62,7 @@ class UserAccessEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->user->id)
             ->withText('trans("history.backend.users.deleted") <strong>{user}</strong>')
-            ->withIcon('trash')
+            ->withIcon('person_remove')
             ->withClass('danger')
             ->withAssets([
                 'user_link' => ['admin.access.user.show', $event->user->name, $event->user->id],
@@ -78,7 +78,7 @@ class UserAccessEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->user->id)
             ->withText('trans("history.backend.users.restored") <strong>{user}</strong>')
-            ->withIcon('refresh')
+            ->withIcon('person_add_alt_1')
             ->withClass('info')
             ->withAssets([
                 'user_link' => ['admin.access.user.show', $event->user->name, $event->user->id],
@@ -94,7 +94,7 @@ class UserAccessEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->user->id)
             ->withText('trans("history.backend.users.permanently_deleted") <strong>{user}</strong>')
-            ->withIcon('trash')
+            ->withIcon('delete')
             ->withClass('danger')
             ->log();
     }
@@ -107,7 +107,7 @@ class UserAccessEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->user->id)
             ->withText('trans("history.backend.users.changed_password") <strong>{user}</strong>')
-            ->withIcon('lock')
+            ->withIcon('sync_lock')
             ->withClass('info')
             ->withAssets([
                 'user_link' => ['admin.access.user.show', $event->user->name, $event->user->id],
@@ -123,7 +123,7 @@ class UserAccessEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->user->id)
             ->withText('trans("history.backend.users.deactivated") <strong>{user}</strong>')
-            ->withIcon('times')
+            ->withIcon('person_off')
             ->withClass('warning')
             ->withAssets([
                 'user_link' => ['admin.access.user.show', $event->user->name, $event->user->id],
@@ -139,7 +139,7 @@ class UserAccessEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->user->id)
             ->withText('trans("history.backend.users.reactivated") <strong>{user}</strong>')
-            ->withIcon('check')
+            ->withIcon('person')
             ->withClass('success')
             ->withAssets([
                 'user_link' => ['admin.access.user.show', $event->user->name, $event->user->id],

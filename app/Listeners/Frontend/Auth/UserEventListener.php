@@ -2,6 +2,9 @@
 
 namespace App\Listeners\Frontend\Auth;
 
+use App\Events\Auth\UserLoggedIn;
+use App\Events\Auth\UserLoggedOut;
+
 /**
  * Class UserEventListener.
  */
@@ -24,22 +27,9 @@ class UserEventListener
     public function onLoggedOut($event)
     {
         \Log::info('User Logged Out: '.$event->user->first_name);
-    }
 
-    /**
-     * @param $event
-     */
-    public function onRegistered($event)
-    {
-        \Log::info('User Registered: '.$event->user->full_name);
-    }
-
-    /**
-     * @param $event
-     */
-    public function onConfirmed($event)
-    {
-        \Log::info('User Confirmed: '.$event->user->first_name);
+        // Generating notification
+        createNotification('User Logged In: '.$event->user->first_name, 1);
     }
 
     /**
@@ -50,23 +40,12 @@ class UserEventListener
     public function subscribe($events)
     {
         $events->listen(
-            \App\Events\Frontend\Auth\UserLoggedIn::class,
-            'App\Listeners\Frontend\Auth\UserEventListener@onLoggedIn'
+            UserLoggedIn::class,
+            [UserEventListener::class, 'onLoggedIn']
         );
-
         $events->listen(
-            \App\Events\Frontend\Auth\UserLoggedOut::class,
-            'App\Listeners\Frontend\Auth\UserEventListener@onLoggedOut'
-        );
-
-        $events->listen(
-            \App\Events\Frontend\Auth\UserRegistered::class,
-            'App\Listeners\Frontend\Auth\UserEventListener@onRegistered'
-        );
-
-        $events->listen(
-            \App\Events\Frontend\Auth\UserConfirmed::class,
-            'App\Listeners\Frontend\Auth\UserEventListener@onConfirmed'
+            UserLoggedOut::class,
+            [UserEventListener::class, 'UserLoggedOut']
         );
     }
 }

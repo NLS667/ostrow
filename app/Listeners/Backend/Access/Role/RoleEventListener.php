@@ -2,6 +2,10 @@
 
 namespace App\Listeners\Backend\Access\Role;
 
+use App\Events\Access\Role\RoleCreated;
+use App\Events\Access\Role\RoleUpdated;
+use App\Events\Access\Role\RoleDeleted;
+
 /**
  * Class RoleEventListener.
  */
@@ -20,8 +24,8 @@ class RoleEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->role->id)
             ->withText('trans("history.backend.roles.created") <strong>'.$event->role->name.'</strong>')
-            ->withIcon('plus')
-            ->withClass('bg-green')
+            ->withIcon('create')
+            ->withClass('success')
             ->log();
     }
 
@@ -33,8 +37,8 @@ class RoleEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->role->id)
             ->withText('trans("history.backend.roles.updated") <strong>'.$event->role->name.'</strong>')
-            ->withIcon('save')
-            ->withClass('bg-aqua')
+            ->withIcon('update')
+            ->withClass('info')
             ->log();
     }
 
@@ -46,8 +50,8 @@ class RoleEventListener
         history()->withType($this->history_slug)
             ->withEntity($event->role->id)
             ->withText('trans("history.backend.roles.deleted") <strong>'.$event->role->name.'</strong>')
-            ->withIcon('trash')
-            ->withClass('bg-maroon')
+            ->withIcon('delete')
+            ->withClass('danger')
             ->log();
     }
 
@@ -59,18 +63,16 @@ class RoleEventListener
     public function subscribe($events)
     {
         $events->listen(
-            \App\Events\Backend\Access\Role\RoleCreated::class,
-            'App\Listeners\Access\Role\RoleEventListener@onCreated'
+            RoleCreated::class,
+            [RoleEventListener::class, 'onCreated']
         );
-
         $events->listen(
-            \App\Events\Backend\Access\Role\RoleUpdated::class,
-            'App\Listeners\Access\Role\RoleEventListener@onUpdated'
+            RoleUpdated::class,
+            [RoleEventListener::class, 'onUpdated']
         );
-
         $events->listen(
-            \App\Events\Backend\Access\Role\RoleDeleted::class,
-            'App\Listeners\Access\Role\RoleEventListener@onDeleted'
+            RoleDeleted::class,
+            [RoleEventListener::class, 'onDeleted']
         );
     }
 }
