@@ -22,6 +22,37 @@ class AdminController extends Controller
     }
 
     /**
+     * Used to display form for edit profile.
+     *
+     * @return view
+     */
+    public function editProfile(Request $request)
+    {
+        return view('backend.access.users.profile-edit')
+            ->withLoggedInUser(access()->user());
+    }
+
+    /**
+     * Used to update profile.
+     *
+     * @return view
+     */
+    public function updateProfile(Request $request)
+    {
+        $input = $request->all();
+        $userId = access()->user()->id;
+        $user = User::find($userId);
+        $user->first_name = $input['first_name'];
+        $user->last_name = $input['last_name'];
+        $user->updated_by = access()->user()->id;
+
+        if ($user->save()) {
+            return redirect()->route('admin.profile.edit')
+                ->withFlashSuccess(trans('labels.backend.profile_updated'));
+        }
+    }
+
+    /**
      * This function is used to get permissions details by role.
      *
      * @param Request $request
@@ -48,18 +79,18 @@ class AdminController extends Controller
      *
      * @param Request $request
      */
-    public function getDevices()
+    public function getClients()
     {
-        $devices = Device::all()->count();
+        $clients = Client::all()->count();
 
         /*
          * pass jsonencode array
          * 
          */
         $passArray['view'] = view('backend.includes.dashboard-widget')
-                ->with('counter', $devices)
+                ->with('counter', $clients)
                 ->with('icon', 'icon-bell-55')
-                ->with('title', 'Total Devices')
+                ->with('title', 'Total Clients')
                 ->with('color', 'primary')
                 ->render();
 
