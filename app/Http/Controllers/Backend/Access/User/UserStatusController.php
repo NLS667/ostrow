@@ -70,9 +70,7 @@ class UserStatusController extends Controller
      */
     public function delete(User $deletedUser, DeleteUserRequest $request)
     {
-        //$this->users->forceDelete($deletedUser);
-        $user = User::withTrashed()->find($deletedUser);
-        $user->forceDelete();
+        $this->users->forceDelete($deletedUser);
 
         return redirect()->route('admin.access.user.deleted')->withFlashSuccess(trans('alerts.backend.users.deleted_permanently'));
     }
@@ -86,9 +84,7 @@ class UserStatusController extends Controller
     public function restore(User $deletedUser, DeleteUserRequest $request)
     {
         \Log::error($this->users);
-        //$this->users->withTrashed()->restore($deletedUser);
-        $user = $this->users->withTrashed()->find($deletedUser);
-        $user->restore();
+        $this->users->restore($deletedUser);
 
         return redirect()->route('admin.access.user.index')->withFlashSuccess(trans('alerts.backend.users.restored'));
     }
