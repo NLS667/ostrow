@@ -78,7 +78,7 @@
 
                 </div>
                 <div class="card-body">
-                    <h6 class="card-category text-gray">{{ $logged_in_user->roles }}</h6>
+                    <h6 class="card-category text-gray">{{ $logged_in_user->roles->first()->name }}</h6>
                     <h4 class="card-title">{{$logged_in_user->first_name}} {{$logged_in_user->last_name}}</h4>
                     <p></p>
                 </div>
