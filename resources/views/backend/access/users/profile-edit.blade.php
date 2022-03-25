@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header card-header-icon card-header-info">
                     <div class="card-icon">
-                        <i class="material-icon">perm_identity</i>
+                        <i class="material-icons">perm_identity</i>
                     </div>
                     <h4 class="card-title">Edycja Profilu</h4>
                 </div>
@@ -37,7 +37,7 @@
             <div class="card">
                 <div class="card-header card-header-icon card-header-info">
                     <div class="card-icon">
-                        <i class="material-icon">lock</i>
+                        <i class="material-icons">lock</i>
                     </div>
                     <h4 class="card-title">Zmień hasło</h4>
                 </div>
