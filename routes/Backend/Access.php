@@ -69,8 +69,8 @@ Route::group([
              * Deleted User
              */
             Route::group(['prefix' => 'user/{deletedUser}'], function () {
-                Route::get('delete', [UserStatusController::class, 'delete'])->name('user.delete-permanently');
-                Route::get('restore', [UserStatusController::class, 'restore'])->name('user.restore');
+                Route::get('delete', [UserStatusController::class, 'delete'])->name('user.delete-permanently')->withTrashed();
+                Route::get('restore', [UserStatusController::class, 'restore'])->name('user.restore')->withTrashed();
             });
         });
 
