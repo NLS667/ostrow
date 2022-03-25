@@ -431,7 +431,8 @@ var Backend = {}; // common variable used in all the files of the backend
                     element.onclick = function (event) {
                         event.preventDefault();
                         var linkURL = this.getAttribute("href");
-                        swal({
+
+                        Swal.fire({
                             title: Backend.UserDeleted.selectors.Areyousure,
                             text: Backend.UserDeleted.selectors.delete_user_confirm,
                             type: "warning",
@@ -439,8 +440,8 @@ var Backend = {}; // common variable used in all the files of the backend
                             confirmButtonColor: "#DD6B55",
                             confirmButtonText: Backend.UserDeleted.selectors.continue,
                             cancelButtonText: Backend.UserDeleted.selectors.cancel
-                        }, function (isConfirmed) {
-                            if (isConfirmed) {
+                        }).then(result => {
+                            if (result.value){
                                 window.location.href = linkURL;
                             }
                         });
@@ -456,17 +457,16 @@ var Backend = {}; // common variable used in all the files of the backend
 
                         var linkURL = this.getAttribute("href");
 
-                        swal({
+                        Swal.fire({
                             title: Backend.UserDeleted.selectors.Areyousure,
                             text: Backend.UserDeleted.selectors.restore_user_confirm,
                             type: "warning",
                             showCancelButton: true,
                             confirmButtonColor: "#DD6B55",
                             confirmButtonText: Backend.UserDeleted.selectors.continue,
-                            cancelButtonText: Backend.UserDeleted.selectors.cancel,
-                            closeOnConfirm: false
-                        }, function (isConfirmed) {
-                            if (isConfirmed) {
+                            cancelButtonText: Backend.UserDeleted.selectors.cancel
+                        }).then(result => {
+                            if (result.value){
                                 window.location.href = linkURL;
                             }
                         });
@@ -897,15 +897,14 @@ var Backend = {}; // common variable used in all the files of the backend
                 route = route.replace('-1', data_id);
                 this.selectors.removeLogo.onclick = function (event) {
                     var data = event.target.getAttribute("data-id");
-
+                    
                     swal({
                         title: "Warning",
                         text: "Are you sure you want to remove?",
                         type: "warning",
                         showCancelButton: true,
                         confirmButtonColor: "#DD6B55",
-                        confirmButtonText: "Yes",
-                        closeOnConfirm: true
+                        confirmButtonText: "Yes"
                     }, function (confirmed) {
                         if (confirmed) {
                             if (data == 'logo') {
