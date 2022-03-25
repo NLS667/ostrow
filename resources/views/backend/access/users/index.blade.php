@@ -154,6 +154,7 @@
                 }
             });
 
+            this.Backend.DataTableSearch.init(dataTable);
             bootstrapClearButton();
     
         });

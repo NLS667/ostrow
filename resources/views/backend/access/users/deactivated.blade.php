@@ -128,6 +128,7 @@
             });
 
             Backend.DataTableSearch.init(dataTable);
+            bootstrapClearButton();
         })();
        
     </script>

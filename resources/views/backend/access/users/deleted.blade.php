@@ -134,6 +134,7 @@
                 Backend.UserDeleted.selectors.continue = "Dalej";
                 Backend.UserDeleted.selectors.cancel ="Anuluj";
                 Backend.UserDeleted.selectors.restore_user_confirm ="Potwierdź przywrócenie Użytkownika";
+                bootstrapClearButton();
             
             });
 
