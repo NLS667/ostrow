@@ -412,11 +412,11 @@ var Backend = {}; // common variable used in all the files of the backend
             selectors: {
                 AlldeletePerms: document.querySelectorAll("a[name='delete_user_perm']"),
                 AllrestorePerms: document.querySelectorAll("a[name='restore_user']"),
-                Areyousure: "",
-                delete_user_confirm: "",
-                continue: "",
-                cancel: "",
-                restore_user_confirm: "",
+                Areyousure: "Czy na pewno?",
+                delete_user_confirm: "Potwierdź usunięcie Użytkownika",
+                continue: "Dalej",
+                cancel: "Anuluj",
+                restore_user_confirm: "Potwierdź przywrócenie Użytkownika",
             },
             setSelectors: function () {
                 this.selectors.AlldeletePerms = document.querySelectorAll("a[name='delete_user_perm']");
