@@ -139,7 +139,7 @@
                 ],
                 order: [[5, "asc"]],
                 searchDelay: 500,
-                dom: 'frt<"d-inline-flex"i><"d-inline-flex float-right"p>',
+                dom: 'lfrt<"d-inline-flex"i><"d-inline-flex float-right"p>',
                 buttons: {
                     buttons: [
                         { extend: 'copy', className: 'copyButton',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6 ]  }},
