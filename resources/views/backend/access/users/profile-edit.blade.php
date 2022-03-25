@@ -1,43 +1,48 @@
-@extends ('backend.layouts.app')
-
-@section ('title', trans('labels.backend.access.users.management') . ' | ' . trans('labels.backend.access.users.edit'))
-
-@section('page-header')
-    <h1>
-        {{ trans('labels.backend.access.users.edit-profile') }}
-    </h1>
-@endsection
+@extends ('backend.layouts.app', ['activePage' => 'profile-edit', 'titlePage' => 'Moje Konto'])
 
 @section('content')
-	{{ Form::model($logged_in_user, ['route' => 'admin.profile.update', 'class' => 'form-horizontal', 'method' => 'PATCH']) }}
-
-     <div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('labels.backend.access.users.edit-profile') }}</h3>
-        </div>
-        <div class="box-body">
-            <div class="form-group">
-                {{ Form::label('first_name', trans('validation.attributes.frontend.register-user.firstName'), ['class' => 'col-lg-2 control-label']) }}
-                <div class="col-lg-10">
-                    {{ Form::input('text', 'first_name', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.frontend.register-user.firstName')]) }}
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            {{ Form::model($logged_in_user, ['route' => 'admin.profile.update', 'class' => 'form-horizontal', 'method' => 'PATCH']) }}
+            <div class="card">
+                <div class="card-header card-header-info">
+                    <h4 class="card-title">Edycja Profilu</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {{ Form::label('first_name', 'Imię', ['class' => 'col-lg-2 col-form-label']) }}
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                
+                                <div class="col-lg-10">
+                                    {{ Form::input('text', 'first_name', null, ['class' => 'form-control box-size', 'placeholder' => 'Imię']) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {{ Form::label('last_name', 'Nazwisko', ['class' => 'col-lg-2 col-form-label']) }}
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                
+                                <div class="col-lg-10">
+                                    {{ Form::input('text', 'last_name', null, ['class' => 'form-control box-size', 'placeholder' => 'Nazwisko']) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edit-form-btn">
+                        {{ Form::submit('Zmień', ['class' => 'btn btn-success', 'id' => 'update-profile']) }}
+                    </div>
                 </div>
             </div>
-
-            <div class="form-group">
-                {{ Form::label('last_name', trans('validation.attributes.frontend.register-user.lastName'), ['class' => 'col-lg-2 control-label']) }}
-                <div class="col-lg-10">
-                    {{ Form::input('text', 'last_name', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.frontend.register-user.firstName')]) }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-10 col-md-offset-4">
-                    {{ Form::submit(trans('labels.general.buttons.update'), ['class' => 'btn btn-primary', 'id' => 'update-profile']) }}
-                </div>
-            </div>
+            {{ Form::close() }}
         </div>
     </div>
-{{ Form::close() }}
+</div>
+</div>
 @endsection
 @section('after-scripts')
 
