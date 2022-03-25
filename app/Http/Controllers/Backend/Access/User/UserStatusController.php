@@ -71,7 +71,7 @@ class UserStatusController extends Controller
     public function delete(User $deletedUser, DeleteUserRequest $request)
     {
         //$this->users->forceDelete($deletedUser);
-        $user = $this->users->withTrashed()->find($deletedUser);
+        $user = User::withTrashed()->find($deletedUser);
         $user->forceDelete();
 
         return redirect()->route('admin.access.user.deleted')->withFlashSuccess(trans('alerts.backend.users.deleted_permanently'));

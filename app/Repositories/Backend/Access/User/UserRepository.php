@@ -95,7 +95,6 @@ class UserRepository extends BaseRepository
         $roles = $request->get('assignees_roles');
         $permissions = $request->get('permissions');
         $user = $this->createUserStub($data);
-        \Debugbar::info('create');
         DB::transaction(function () use ($user, $data, $roles, $permissions) {
             if ($user->save()) {
 
