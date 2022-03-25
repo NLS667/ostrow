@@ -114,7 +114,7 @@
                 ],
                 processing: true,
                 serverSide: true,
-                searching: false,
+                searching: true,
 
                 ajax: {
                     url: '{{ route("admin.access.user.get") }}',
