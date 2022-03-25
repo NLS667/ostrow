@@ -9,16 +9,16 @@ return [
         "sInfoFiltered":   "(wyfiltrowane z _MAX_ wszystkich rekordów)",
         "sInfoPostFix":    "",
         "sInfoThousands":  ",",
-        "sLengthMenu":     "Pokaż _MENU_ rekordów",
+        "sLengthMenu":     "Pokazuję _MENU_ rekordów",
         "sLoadingRecords": "Ładuję...",
         "sProcessing":     "Przetwarzam...",
         "sSearch":         "Szukaj:",
         "sZeroRecords":    "Brakuje pasujących rekordów",
         "oPaginate": {
-                "sFirst":    "Pierwszy",
-        "sLast":     "Ostatni",
-        "sNext":     ">>",
-        "sPrevious": "<<"
+                "sFirst":    "<<",
+        "sLast":     ">>",
+        "sNext":     ">",
+        "sPrevious": "<"
         },
         "oAria": {
             "sSortAscending":  ": sortowanie rosnące",
