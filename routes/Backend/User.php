@@ -17,16 +17,16 @@ Route::group(['middleware' => 'auth'], function () {
         /*
          * User Account Specific
          */
-        Route::get('account', [AccountController::class, 'index'])->name('account');
+        //Route::get('account', [AccountController::class, 'index'])->name('account');
 
         /*
          * User Profile Specific
          */
-        Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
+        //Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
         /*
          * User Profile Picture
          */
-        Route::patch('profile-picture/update', [ProfileController::class, 'updateProfilePicture'])->name('profile-picture.update');
+        //Route::patch('profile-picture/update', [ProfileController::class, 'updateProfilePicture'])->name('profile-picture.update');
     });
 });
