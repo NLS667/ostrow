@@ -13,3 +13,4 @@ Route::post('get-permission', [AdminController::class, 'getPermissionByRole'])->
 */
 Route::get('profile/edit', [AdminController::class, 'editProfile'])->name('profile.edit');
 Route::patch('profile/update', [AdminController::class, 'updateProfile'])->name('profile.update');
+//Route::patch('profile-picture/update', [AdminController::class, 'updateProfilePicture'])->name('profile-picture.update');
