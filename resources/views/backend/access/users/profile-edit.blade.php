@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     </div>
-                    {{ Form::submit('Aktualizuj Profil', ['class' => 'btn btn-rose pull-right', 'id' => 'update-profile']) }}
+                    {{ Form::submit('Aktualizuj Profil', ['class' => 'btn btn-success pull-right', 'id' => 'update-profile']) }}
                     {{ Form::close() }}
                 </div>
             </div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                     </div>
-                    {{ Form::submit('Zmień', ['class' => 'btn btn-rose pull-right']) }}
+                    {{ Form::submit('Zmień', ['class' => 'btn btn-success pull-right']) }}
                     {{ Form::close() }}
                 </div>
             </div>          
