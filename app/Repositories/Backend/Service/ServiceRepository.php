@@ -86,7 +86,6 @@ class ServiceRepository extends BaseRepository
             $service = self::MODEL;
             $service = new $service();
             $service->name = $request['name'];
-            $service->sort = isset($input['sort']) && strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int) $input['sort'] : 0;
 
             $service->created_by = access()->user()->id;
 
