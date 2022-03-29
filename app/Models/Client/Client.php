@@ -4,6 +4,7 @@ namespace App\Models\Client;
 
 use App\Models\Client\Traits\Attribute\ClientAttribute;
 use App\Models\Client\Traits\Relationship\ClientRelationship;
+use App\Models\Client\Traits\Scope\ClientScope;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\BaseModel;
 
@@ -14,6 +15,7 @@ class Client extends BaseModel
 {
     use ClientAttribute,
         ClientRelationship,
+        ClientScope,
         SoftDeletes;
         
     /**
