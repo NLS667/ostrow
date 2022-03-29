@@ -71,6 +71,21 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header card-header-text card-header-rose">
+              <div class="card-text">
+                <h4 class="card-title">Satellite Map</h4>
+              </div>
+            </div>
+            <div class="card-body ">
+              <h4 class="card-title">Mapa Klientów</h4>
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 @endsection
