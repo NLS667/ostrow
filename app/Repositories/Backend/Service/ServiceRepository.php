@@ -70,7 +70,7 @@ class ServiceRepository extends BaseRepository
             return $dataTableQuery->onlyTrashed();
         }
 
-        // active() is a scope on the ClientScope trait
+        // active() is a scope on the ServiceScope trait
         return $dataTableQuery->active($status);
     }
 
