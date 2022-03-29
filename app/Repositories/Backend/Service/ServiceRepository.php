@@ -54,7 +54,6 @@ class ServiceRepository extends BaseRepository
          */
         $dataTableQuery = $this->query()
             ->leftJoin('service_client', 'service_client.client_id', '=', 'clients.id')
-            ->leftJoin('services', 'service_client.service_id', '=', 'services.id')
             ->select([
                 config('service.services_table').'.id',
                 config('service.services_table').'.name',
