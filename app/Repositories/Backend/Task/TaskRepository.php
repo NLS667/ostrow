@@ -7,6 +7,7 @@ use App\Events\Task\TaskDeleted;
 use App\Events\Task\TaskUpdated;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
+use App\Models\Task\Task;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
