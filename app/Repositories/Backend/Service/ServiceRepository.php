@@ -52,7 +52,7 @@ class ServiceRepository extends BaseRepository
          * Note: You must return deleted_at or the User getActionButtonsAttribute won't
          * be able to differentiate what buttons to show for each row.
          */
-        $dataTableQuery = $this->query()
+        return $this->query()
             ->leftJoin('service_client', 'service_client.client_id', '=', 'clients.id')
             ->select([
                 config('service.services_table').'.id',
