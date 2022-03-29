@@ -53,8 +53,8 @@ class ServiceRepository extends BaseRepository
          * be able to differentiate what buttons to show for each row.
          */
         return $this->query()
-            ->leftJoin('clients', 'service_client.client_id', '=', 'clients.id')
             ->leftJoin('service_client', 'service_client.service_id', '=', 'service.id')
+            ->leftJoin('clients', 'service_client.client_id', '=', 'clients.id')
             ->select([
                 config('service.services_table').'.id',
                 config('service.services_table').'.name',
