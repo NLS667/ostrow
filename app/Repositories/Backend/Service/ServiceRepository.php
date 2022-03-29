@@ -22,7 +22,7 @@ class ServiceRepository extends BaseRepository
     const MODEL = Service::class;
 
     /**
-     * @var Client Model
+     * @var Service Model
      */
     protected $model;
 
@@ -148,79 +148,6 @@ class ServiceRepository extends BaseRepository
         }
 
         throw new GeneralException(trans('exceptions.backend.clients.delete_error'));
-    }
-
-    /**
-     * @param $client
-     *
-     * @throws GeneralException
-     */
-    public function forceDelete($client)
-    {
-        if (is_null($client->deleted_at)) {
-            throw new GeneralException(trans('exceptions.backend.clients.delete_first'));
-        }
-
-        DB::transaction(function () use ($client) {
-            if ($client->forceDelete()) {
-                event(new ClientPermanentlyDeleted($client));
-
-                return true;
-            }
-
-            throw new GeneralException(trans('exceptions.backend.clients.delete_error'));
-        });
-    }
-
-    /**
-     * @param $client
-     *
-     * @throws GeneralException
-     *
-     * @return bool
-     */
-    public function restore($client)
-    {
-        if (is_null($client->deleted_at)) {
-            throw new GeneralException(trans('exceptions.backend.clients.cant_restore'));
-        }
-
-        if ($client->restore()) {
-            event(new ClientRestored($client));
-
-            return true;
-        }
-
-        throw new GeneralException(trans('exceptions.backend.clients.restore_error'));
-    }
-
-    /**
-     * @param $client
-     * @param $status
-     *
-     * @throws GeneralException
-     *
-     * @return bool
-     */
-    public function mark($client, $status)
-    {
-        $client->status = $status;
-
-        switch ($status) {
-            case 0:
-                event(new ClientDeactivated($client));
-            break;
-
-            case 1:
-                event(new ClientReactivated($client));
-            break;
-        }
-
-        if ($client->save()) {
-            return true;
-        }
-
-        throw new GeneralException(trans('exceptions.backend.clients.mark_error'));
     }
 
     /**
