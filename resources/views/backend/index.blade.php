@@ -76,12 +76,12 @@
           <div class="card ">
             <div class="card-header card-header-text card-header-rose">
               <div class="card-text">
-                <h4 class="card-title">Satellite Map</h4>
+                <h4 class="card-title">Mapa Klientów</h4>
               </div>
             </div>
             <div class="card-body ">
-              <h4 class="card-title">Mapa Klientów</h4>
-              <div id="map"></div>
+              <h4 class="card-title"></h4>
+              <div id="mapa"></div>
             </div>
           </div>
         </div>
