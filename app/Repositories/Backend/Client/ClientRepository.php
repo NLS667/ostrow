@@ -61,14 +61,14 @@ class ClientRepository extends BaseRepository
             ->leftJoin('service_client', 'service_client.client_id', '=', 'clients.id')
             ->leftJoin('services', 'service_client.service_id', '=', 'services.id')
             ->select([
-                config('client.clients_table').'.id',
-                config('client.clients_table').'.first_name',
-                config('client.clients_table').'.last_name',
-                config('client.clients_table').'.email',
-                config('client.clients_table').'.status',
-                config('client.clients_table').'.created_at',
-                config('client.clients_table').'.updated_at',
-                config('client.clients_table').'.deleted_at',
+                config('clients.clients_table').'.id',
+                config('clients.clients_table').'.first_name',
+                config('clients.clients_table').'.last_name',
+                config('clients.clients_table').'.email',
+                config('clients.clients_table').'.status',
+                config('clients.clients_table').'.created_at',
+                config('clients.clients_table').'.updated_at',
+                config('clients.clients_table').'.deleted_at',
                 DB::raw('GROUP_CONCAT(services.name) as services'),
             ])
             ->groupBy('clients.id');
