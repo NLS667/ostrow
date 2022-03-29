@@ -2,8 +2,8 @@
 
 namespace App\Models\Service;
 
-use App\Models\Service\Traits\Attribute\ClientAttribute;
-use App\Models\Service\Traits\Relationship\ClientRelationship;
+use App\Models\Service\Traits\Attribute\ServiceAttribute;
+use App\Models\Service\Traits\Relationship\ServiceRelationship;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\BaseModel;
 
