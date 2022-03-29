@@ -46,7 +46,6 @@ trait ServiceAttribute
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
             return '<div class="btn-group action-btn">
-            '.$this->getShowButtonAttribute('btn btn-info btn-flat').'
             '.$this->getEditButtonAttribute('btn btn-success btn-flat').'
             </div>';
         } else {
@@ -79,7 +78,7 @@ trait ServiceAttribute
             return $actionButton;
         }
     }
-    
+
     /**
      * Get action button attribute by permission name.
      *
