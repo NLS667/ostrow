@@ -112,7 +112,7 @@ class ServiceRepository extends BaseRepository
     public function update($service, $request)
     {
         DB::transaction(function () use ($service, $request) {
-            if ($service->update($request->all())) {
+            if ($service->update($request)) {
                 
                 $service->save();
 
