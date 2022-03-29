@@ -5,6 +5,7 @@ namespace App\Models\Client;
 use App\Models\Client\Traits\Attribute\ClientAttribute;
 use App\Models\Client\Traits\Relationship\ClientRelationship;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\BaseModel;
 
 /**
  * Class Client.
