@@ -24,7 +24,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">messages</i>
-            <span class="message messages-counter">0</span>
+            <span class="notification messages-counter">0</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <span class="dropdown-header">{{ trans_choice('strings.backend.general.you_have.messages', 0, ['number' => 0]) }}</span>
