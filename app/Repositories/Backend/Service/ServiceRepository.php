@@ -56,15 +56,15 @@ class ServiceRepository extends BaseRepository
             ->leftJoin('service_client', 'service_client.client_id', '=', 'clients.id')
             ->leftJoin('services', 'service_client.service_id', '=', 'services.id')
             ->select([
-                config('client.clients_table').'.id',
-                config('client.clients_table').'.first_name',
-                config('client.clients_table').'.last_name',
-                config('client.clients_table').'.email',
-                config('client.clients_table').'.status',
-                config('client.clients_table').'.created_at',
-                config('client.clients_table').'.updated_at',
-                config('client.clients_table').'.deleted_at',
-                DB::raw('GROUP_CONCAT(services.name) as services'),
+                config('service.services_table').'.id',
+                config('service.services_table').'.name',
+                config('service.services_table').'.description',
+                ->select([
+                    DB::raw('(SELECT COUNT(service_client.id) FROM service_client LEFT JOIN clients ON service_client.client_id = clients.id WHERE service_client.service_id = services.id AND clients.deleted_at IS NULL) AS clientCount'),
+                ]),
+                config('service.services_table').'.created_at',
+                config('service.services_table').'.updated_at',
+                DB::raw('GROUP_CONCAT(service.name) as services'),
             ])
             ->groupBy('clients.id');
 
@@ -77,41 +77,37 @@ class ServiceRepository extends BaseRepository
     }
 
     /**
-     * Create Client.
+     * Create Service.
      *
      * @param Model $request
      */
     public function create($request)
     {
-        $data = $request->except('services', 'tasks');
-        $services = $request->get('services');
-        $tasks = $request->get('tasks');
-        $client = $this->createClientStub($data);
-        DB::transaction(function () use ($client, $data, $services, $tasks) {
-            if ($user->save()) {
+        if ($this->query()->where('name', $input['name'])->first()) {
+            throw new GeneralException(trans('exceptions.backend.service.already_exists'));
+        }
 
-                //Client Created, Validate Roles
-                //if (!count($roles)) {
-                //    throw new GeneralException(trans('exceptions.backend.access.users.role_needed_create'));
-                //}
+        //$data = $request->except('services', 'tasks');
+        //$services = $request->get('services');
+        //$tasks = $request->get('tasks');
+        //$client = $this->createClientStub($data);
+        DB::transaction(function () use ($request) {
 
-                //Attach new roles
-                $client->attachServices($services);
+            $service = self::MODEL;
+            $service = new $service();
+            $service->name = $input['name'];
+            $service->sort = isset($input['sort']) && strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int) $input['sort'] : 0;
 
-                // Attach New Permissions
-                $client->attachTasks($tasks);
+            $service->created_by = access()->user()->id;
 
-                //Send confirmation email if requested and account approval is off
-                //if (isset($data['confirmation_email']) && $user->confirmed == 0) {
-                 //   $user->notify(new UserNeedsConfirmation($user->confirmation_code));
-                //}
+            if ($service->save()) {
 
-                \Event::dispatch(new ClientCreated($client));
+                event(new ServiceCreated($service));
 
                 return true;
             }
 
-            throw new GeneralException(trans('exceptions.backend.clients.create_error'));
+            throw new GeneralException(trans('exceptions.backend.service.create_error'));
         });
     }
 
