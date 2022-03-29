@@ -55,6 +55,6 @@ class Client extends BaseModel
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->table = config('access.clients_table');
+        $this->table = config('client.clients_table');
     }
 }
