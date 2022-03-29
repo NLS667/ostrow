@@ -34,10 +34,10 @@ class ServiceRepository extends BaseRepository
     /**
      * @param ServiceRepository $service
      */
-    public function __construct(Client $model, ServiceRepository $service)
+    public function __construct(Service $model)
     {
         $this->model = $model;
-        $this->service = $service;
+        //$this->service = $service;
     }
 
     /**
