@@ -46,7 +46,8 @@ trait ServiceAttribute
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
             return '<div class="btn-group action-btn">
-            '.$this->getEditButtonAttribute('btn btn-success btn-flat').'
+            '.$this->getEditButtonAttribute('btn btn-info btn-flat').'
+            '.$this->getDeleteButtonAttribute('btn btn-success btn-flat').'
             </div>';
         } else {
             $userPermission = $this->getUserPermission();
