@@ -34,7 +34,7 @@
         <li class="nav-item dropdown notifications-menu">
           <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">notifications</i>
-            <span class="notification notifications-counter">0</span>
+            <span class="notification notification-counter">0</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right notification-menu-container" aria-labelledby="navbarDropdownMenuLink">
             <span class="dropdown-header">{{ trans_choice('strings.backend.general.you_have.notifications', 0, ['number' => 0]) }}</span>
