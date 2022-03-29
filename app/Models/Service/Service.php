@@ -4,7 +4,6 @@ namespace App\Models\Service;
 
 use App\Models\Service\Traits\Attribute\ServiceAttribute;
 use App\Models\Service\Traits\Relationship\ServiceRelationship;
-use App\Models\Service\Traits\Scope\ServiceScope;
 use App\Models\BaseModel;
 
 /**
@@ -13,8 +12,7 @@ use App\Models\BaseModel;
 class Service extends BaseModel
 {
     use ServiceAttribute,
-        ServiceRelationship,
-        ServiceScope;
+        ServiceRelationship;
         
     /**
      * The database table used by the model.
