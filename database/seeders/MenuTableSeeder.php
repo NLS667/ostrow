@@ -24,8 +24,17 @@ class MenuTableSeeder extends Seeder
                 "name":"Klienci",
                 "id":1,
                 "content":"Clients"
-
-        }]';
+            },
+            {
+                "view_permission_id":"view-services-management",
+                "icon":"handyman",
+                "open_in_new_tab":0,
+                "url_type":"route",
+                "url":"admin.service.index",
+                "name":"Usługi",
+                "id":1,
+                "content":"Services"
+            }]';
 
         $sysmenu = '[{
                 "view_permission_id":"view-access-management",
