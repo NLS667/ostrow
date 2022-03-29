@@ -28,6 +28,7 @@
                                         <th>E-mail</th>
                                         <th>Nr telefonu</th>
                                         <th>Aktywny?</th>
+                                        <th>Usługi</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>
                                         <th>Akcje</th>
@@ -40,6 +41,7 @@
                                         <th>E-mail</th>
                                         <th>Nr telefonu</th>
                                         <th>Aktywny?</th>
+                                        <th>Usługi</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>
                                         <th class="text-right">Akcje</th>
@@ -59,6 +61,7 @@
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
+                                        <th></th>
                                         <th></th>
                                         <th></th>
                                         <th></th>
