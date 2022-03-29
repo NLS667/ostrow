@@ -7,9 +7,9 @@ use App\Models\Task\Traits\Relationship\TaskRelationship;
 use App\Models\BaseModel;
 
 /**
- * Class Client.
+ * Class Task.
  */
-class Client extends BaseModel
+class Task extends BaseModel
 {
     use TaskAttribute,
         TaskRelationship;
