@@ -63,7 +63,7 @@ class ServiceRepository extends BaseRepository
                 config('service.services_table').'.updated_at',
                 DB::raw('GROUP_CONCAT(services.name) as services'),
             ])
-            ->groupBy('clients.id');
+            ->groupBy('services.id');
     }
 
     /**
