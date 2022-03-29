@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Client\Traits\Attribute;
+namespace App\Models\Service\Traits\Attribute;
 
 /**
  * Class ServiceAttribute.
