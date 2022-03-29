@@ -41,7 +41,7 @@ class ClientController extends Controller
     public function __construct(ClientRepository $clients, TaskRepository $tasks)
     {
         $this->clients = $clients;
-        $this->roles = $roles;
+        $this->tasks = $tasks;
     }
 
     /**
