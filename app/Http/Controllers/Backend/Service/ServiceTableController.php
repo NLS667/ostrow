@@ -18,9 +18,9 @@ class ServiceTableController extends Controller
     /**
      * @param \App\Repositories\Backend\Service\ServiceRepository $service
      */
-    public function __construct(ServiceRepository $service)
+    public function __construct(ServiceRepository $services)
     {
-        $this->service = $service;
+        $this->services = $services;
     }
 
     /**
@@ -30,7 +30,7 @@ class ServiceTableController extends Controller
      */
     public function __invoke(ManageServiceRequest $request)
     {
-        return Datatables::of($this->service->getForDataTable())
+        return Datatables::of($this->services->getForDataTable())
             ->escapeColumns(['name'])
             ->addColumn('description', function ($service) {
                 return $service->description;
