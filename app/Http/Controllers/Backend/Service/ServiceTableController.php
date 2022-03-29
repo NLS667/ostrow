@@ -30,7 +30,7 @@ class ServiceTableController extends Controller
      */
     public function __invoke(ManageServiceRequest $request)
     {
-        return Datatables::of($this->services->getForDataTable())
+        return Datatables::make($this->services->getForDataTable())
             ->escapeColumns(['name'])
             ->addColumn('description', function ($service) {
                 return $service->description;
