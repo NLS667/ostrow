@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Access\Role\Traits\Relationship;
+namespace App\Models\Access\Service\Traits\Relationship;
 
 /**
  * Class ServiceRelationship.
