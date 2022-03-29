@@ -26,7 +26,7 @@
               <div class="card-icon">
                 <i class="material-icons">add_task</i>
               </div>
-              <p class="card-category">Zlecone usługi</p>
+              <p class="card-category">Zlecone Zadania</p>
               <h3 class="card-title">96</h3>
             </div>
             <div class="card-footer">
@@ -42,7 +42,7 @@
               <div class="card-icon">
                 <i class="material-icons">done_all</i>
               </div>
-              <p class="card-category">Wykonane Usługi</p>
+              <p class="card-category">Wykonane Zadania</p>
               <h3 class="card-title">75</h3>
             </div>
             <div class="card-footer">
