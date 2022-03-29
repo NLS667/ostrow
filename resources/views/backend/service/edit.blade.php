@@ -1,11 +1,11 @@
-@extends('backend.layouts.app', ['activePage' => 'user-management', 'titlePage' => __('Zarządzanie Usługami')])
+@extends('backend.layouts.app', ['activePage' => 'service-management', 'titlePage' => __('Zarządzanie Usługami')])
 
 @section('content')
   <div class="content">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <form method="post" action="{{ route('admin.access.user.update', $user) }}" autocomplete="off" class="form-horizontal">
+          <form method="post" action="{{ route('admin.service.update', $service) }}" autocomplete="off" class="form-horizontal">
             @csrf
             @method('put')
 
