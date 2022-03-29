@@ -36,9 +36,4 @@ trait ServiceAttribute
 
         return '';
     }
-
-    public function getNameAttribute()
-    {
-        return $this->name;
-    }
 }
