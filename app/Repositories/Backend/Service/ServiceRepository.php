@@ -86,6 +86,7 @@ class ServiceRepository extends BaseRepository
             $service = self::MODEL;
             $service = new $service();
             $service->name = $request['name'];
+            $service->description = $request['description'];
 
             $service->created_by = access()->user()->id;
 
