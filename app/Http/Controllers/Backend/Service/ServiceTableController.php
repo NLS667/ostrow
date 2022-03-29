@@ -35,6 +35,9 @@ class ServiceTableController extends Controller
             ->addColumn('description', function ($service) {
                 return $service->description;
             })
+            ->addColumn('clients', function ($service) {
+                return $service->clientCount;
+            })
             ->addColumn('created_by', function ($service) {
                 return $service->created_by;
             })
