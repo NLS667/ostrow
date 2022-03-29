@@ -85,7 +85,7 @@ class ServiceRepository extends BaseRepository
 
             $service = self::MODEL;
             $service = new $service();
-            $service->name = $input['name'];
+            $service->name = $request['name'];
             $service->sort = isset($input['sort']) && strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int) $input['sort'] : 0;
 
             $service->created_by = access()->user()->id;
@@ -148,24 +148,6 @@ class ServiceRepository extends BaseRepository
         }
 
         throw new GeneralException(trans('exceptions.backend.clients.delete_error'));
-    }
-
-    /**
-     * @param  $input
-     *
-     * @return mixed
-     */
-    protected function createClientStub($input)
-    {
-        $user = self::MODEL;
-        $user = new $user();
-        $user->first_name = $input['first_name'];
-        $user->last_name = $input['last_name'];
-        $user->email = $input['email'];
-        $user->status = isset($input['status']) ? 1 : 0;
-        $user->created_by = access()->user()->id;
-
-        return $user;
     }
 
     /**
