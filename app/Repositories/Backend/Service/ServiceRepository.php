@@ -73,7 +73,7 @@ class ServiceRepository extends BaseRepository
      */
     public function create($request)
     {
-        if ($this->query()->where('name', $input['name'])->first()) {
+        if ($this->query()->where('name', $request['name'])->first()) {
             throw new GeneralException(trans('exceptions.backend.service.already_exists'));
         }
 
