@@ -38,11 +38,11 @@ class ServiceTableController extends Controller
             ->addColumn('clients', function ($service) {
                 return $service->clientCount;
             })
-            ->addColumn('created_by', function ($service) {
-                return $service->created_by;
-            })
             ->addColumn('created_at', function ($service) {
                 return Carbon::parse($service->created_at)->toDateString();
+            })
+            ->addColumn('updated_at', function ($service) {
+                return Carbon::parse($service->updated_at)->toDateString();
             })
             ->addColumn('actions', function ($service) {
                 return $service->action_buttons;
