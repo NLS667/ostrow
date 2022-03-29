@@ -40,6 +40,10 @@ class StoreServiceRequest extends Request
      */
     public function messages()
     {
-        //
+        return [
+            'name.required' => 'Musisz podać nazwę Usługi.',
+            'name.max' => 'Nazwa jest za długa (max 255 znaków).',
+            'description.required' => 'Opis jest za długi (max 255 znaków).',
+        ];
     }
 }
