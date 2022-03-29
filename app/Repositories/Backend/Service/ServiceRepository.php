@@ -111,10 +111,6 @@ class ServiceRepository extends BaseRepository
      */
     public function update($service, $request)
     {
-        $data = $request->except('services', 'tasks');
-        $services = $request->get('services');
-        $tasks = $request->get('tasks');
-
         DB::transaction(function () use ($service, $request) {
             if ($service->update($request->all())) {
                 
