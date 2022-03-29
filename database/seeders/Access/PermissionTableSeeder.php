@@ -376,6 +376,53 @@ class PermissionTableSeeder extends Seeder
         $permModel->save();
 
         /**
+         * Service Management.
+         */
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'view-service-management';
+        $permModel->display_name = 'Dostęp do zarządzania Usługami';
+        $permModel->sort = 23;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'create-service';
+        $permModel->display_name = 'Utwórz Usługę';
+        $permModel->sort = 25;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'edit-service';
+        $permModel->display_name = 'Edytuj Usługę';
+        $permModel->sort = 26;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'delete-service';
+        $permModel->display_name = 'Usuń Usługę';
+        $permModel->sort = 29;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        /**
          * Email Templates.
         
         $permission_model = config('access.permission');
