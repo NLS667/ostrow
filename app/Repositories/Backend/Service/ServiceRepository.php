@@ -46,7 +46,7 @@ class ServiceRepository extends BaseRepository
      *
      * @return mixed
      */
-    public function getForDataTable($status = 1, $trashed = false)
+    public function getForDataTable()
     {
         /**
          * Note: You must return deleted_at or the User getActionButtonsAttribute won't
@@ -64,10 +64,6 @@ class ServiceRepository extends BaseRepository
                 DB::raw('GROUP_CONCAT(services.name) as services'),
             ])
             ->groupBy('clients.id');
-
-        if ($trashed == 'true') {
-            return $dataTableQuery->onlyTrashed();
-        }
     }
 
     /**
