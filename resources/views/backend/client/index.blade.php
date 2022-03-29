@@ -14,7 +14,7 @@
                             <h4 class="card-title">Aktywni Klienci</h4>
                         </div>
                         <div class="card-tools">
-                            @include('backend.access.includes.partials.client-header-buttons')
+                            @include('backend.includes.partials.client-header-buttons')
                         </div>
                     </div><!-- /.card-header --> 
 
