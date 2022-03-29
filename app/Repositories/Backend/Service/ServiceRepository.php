@@ -61,7 +61,7 @@ class ServiceRepository extends BaseRepository
                 DB::raw('(SELECT COUNT(service_client.id) FROM service_client LEFT JOIN clients ON service_client.client_id = clients.id WHERE service_client.service_id = services.id AND clients.deleted_at IS NULL) AS clientCount'),
                 config('service.services_table').'.created_at',
                 config('service.services_table').'.updated_at',
-                DB::raw('GROUP_CONCAT(service.name) as services'),
+                DB::raw('GROUP_CONCAT(services.name) as services'),
             ])
             ->groupBy('clients.id');
 
