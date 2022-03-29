@@ -13,6 +13,7 @@
                 </a>
             </li>
             {{ renderMenuItems(getMenuItems('backend', 1)) }}
+            {{ renderMenuItems(getMenuItems('backend', 2)) }}
         </ul>
     </div><!-- /.sidebar-menu -->
 </div><!-- /.sidebar -->
