@@ -20,7 +20,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive data-table-wrapper">
-                            <table id="users-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
+                            <table id="clients-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
                                         <th>Imię</th>
@@ -88,7 +88,7 @@
                 }
             });
 
-            var dataTable = $('#users-table').dataTable({
+            var dataTable = $('#clients-table').dataTable({
                 columnDefs: [
                     {"className": "dt-center", "targets": "_all"}
                 ],
@@ -97,7 +97,7 @@
                 searching: true,
 
                 ajax: {
-                    url: '{{ route("admin.access.user.get") }}',
+                    url: '{{ route("admin.client.get") }}',
                     type: 'post',
                     data: {status: 1, trashed: false}
                 },
