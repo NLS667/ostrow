@@ -96,57 +96,56 @@ class ServiceRepository extends BaseRepository
                 return true;
             }
 
-            throw new GeneralException(trans('exceptions.backend.service.create_error'));
+            throw new GeneralException(trans('exceptions.backend.services.create_error'));
         });
     }
 
     /**
-     * @param Model $client
+     * @param Model $service
      * @param $request
      *
      * @throws GeneralException
      *
      * @return bool
      */
-    public function update($client, $request)
+    public function update($service, $request)
     {
         $data = $request->except('services', 'tasks');
         $services = $request->get('services');
         $tasks = $request->get('tasks');
 
-        DB::transaction(function () use ($client, $data, $services, $tasks) {
-            if ($user->update($data)) {
-                $user->status = isset($data['status']) && $data['status'] == '1' ? 1 : 0;
+        DB::transaction(function () use ($service, $request) {
+            if ($service->update($request->all())) {
                 
-                $user->save();
+                $service->save();
 
-                event(new ClientUpdated($client));
+                event(new ServiceUpdated($service));
 
                 return true;
             }
 
-            throw new GeneralException(trans('exceptions.backend.clients.update_error'));
+            throw new GeneralException(trans('exceptions.backend.services.update_error'));
         });
     }
 
     /**
-     * Delete Client.
+     * Delete Service.
      *
-     * @param Model $client
+     * @param Model $service
      *
      * @throws GeneralException
      *
      * @return bool
      */
-    public function delete($client)
+    public function delete($service)
     {
-        if ($client->delete()) {
-            event(new ClientDeleted($client));
+        if ($service->delete()) {
+            event(new ServiceDeleted($service));
 
             return true;
         }
 
-        throw new GeneralException(trans('exceptions.backend.clients.delete_error'));
+        throw new GeneralException(trans('exceptions.backend.services.delete_error'));
     }
 
     /**
