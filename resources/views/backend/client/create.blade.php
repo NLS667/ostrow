@@ -23,17 +23,13 @@
               <div class="row">
                 {{-- First Name --}}
                 <div class="col-sm-6">
-                  <div class="row">
-                    <label class="col-sm-2 col-form-label">Imię</label>
-                    <div class="col-sm-10">
-                      <div class="form-group{{ $errors->has('first_name') ? ' has-danger' : '' }}">
-                        <input class="form-control" name="first_name" id="input-first_name" type="text" placeholder="Imię" value="{{ old('first_name') }}" />
-                        @if ($errors->has('first_name'))
-                        <span class="material-icons form-control-feedback">clear</span>
-                        <span id="first_name-error" class="error text-danger" for="input-first_name">{{ $errors->first('first_name') }}</span>
-                        @endif
-                      </div>
-                    </div>
+                  <div class="form-group bmd-form-group {{ $errors->has('first_name') ? ' has-danger' : '' }}">
+                    <label class="bmd-label-floating">Imię</label>
+                    <input class="form-control" name="first_name" id="input-first_name" type="text" placeholder="Imię" value="{{ old('first_name') }}" />
+                    @if ($errors->has('first_name'))
+                    <span class="material-icons form-control-feedback">clear</span>
+                    <span id="first_name-error" class="error text-danger" for="input-first_name">{{ $errors->first('first_name') }}</span>
+                    @endif
                   </div>
                 </div>
                 {{-- Last Name --}}
