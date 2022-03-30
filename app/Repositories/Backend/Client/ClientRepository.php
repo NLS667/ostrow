@@ -88,11 +88,10 @@ class ClientRepository extends BaseRepository
      */
     public function create($request)
     {
-        $data = $request->except('services', 'tasks');
+        $data = $request->except('services');
         $services = $request->get('services');
-        $tasks = $request->get('tasks');
         $client = $this->createClientStub($data);
-        DB::transaction(function () use ($client, $data, $services, $tasks) {
+        DB::transaction(function () use ($client, $data, $services) {
             if ($user->save()) {
 
                 //Client Created, Validate Roles
@@ -104,14 +103,14 @@ class ClientRepository extends BaseRepository
                 $client->attachServices($services);
 
                 // Attach New Permissions
-                $client->attachTasks($tasks);
+                //$client->attachTasks($tasks);
 
                 //Send confirmation email if requested and account approval is off
                 //if (isset($data['confirmation_email']) && $user->confirmed == 0) {
                  //   $user->notify(new UserNeedsConfirmation($user->confirmation_code));
                 //}
 
-                \Event::dispatch(new ClientCreated($client));
+                event(new ClientCreated($client));
 
                 return true;
             }
