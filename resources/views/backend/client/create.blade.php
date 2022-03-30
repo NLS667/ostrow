@@ -8,7 +8,47 @@
         <form method="post" action="{{ route('admin.client.store') }}" autocomplete="off" class="form-horizontal">
           @csrf
           @method('post')
-
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card ">
+                <div class="card-header card-header-icon card-header-primary">
+                  <div class="col-md-6">
+                    <div class="card-icon">
+                      <i class="material-icons">face</i>
+                    </div>
+                    <h4 class="card-title">Dane podstawowe</h4>
+                  </div>
+                </div>
+                <div class="card-body ">              
+                  <div class="row">
+                    {{-- First Name --}}
+                    <div class="form-group bmd-form-group {{ $errors->has('first_name') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Imię</label>
+                      <input class="form-control" name="first_name" id="input-first_name" type="text" value="{{ old('first_name') }}" />
+                      @if ($errors->has('first_name'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="first_name-error" class="error text-danger" for="input-first_name">{{ $errors->first('first_name') }}</span>
+                      @endif
+                    </div>
+                  </div>
+                  <div class="row">
+                    {{-- Last Name --}}
+                    <div class="form-group{{ $errors->has('last_name') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Nazwisko</label>
+                      <input class="form-control" name="last_name" id="input-last_name" type="text" value="{{ old('last_name') }}" />
+                      @if ($errors->has('last_name'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="last_name-error" class="error text-danger" for="input-last_name">{{ $errors->first('last_name') }}</span>
+                      @endif
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              
+            </div>
+          </div>
           <div class="card ">
             <div class="card-header card-header-icon card-header-primary d-flex justify-content-between align-items-center">
               <div class="col-md-6">
