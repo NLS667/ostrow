@@ -124,39 +124,73 @@
                       </div>
                     </div>
                   </div>
-                </div>                
-              </div>
-
-              {{-- Email --}}
-              <div class="row">
-                <label class="col-sm-2 col-form-label">E-mail</label>
-                <div class="col-sm-7">
-                  <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                    <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="E-mail" value="{{ old('email') }}" required />
-                    @if ($errors->has('email'))
-                    <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
-                    @endif
+                </div>
+                <div class="col-sm-6">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="row">
+                        <label class="col-sm-4 col-form-label">Woj.</label>
+                        <div class="col-sm-8">
+                          <div class="form-group{{ $errors->has('adr_region') ? ' has-danger' : '' }}">
+                            <input class="form-control{{ $errors->has('adr_region') ? ' is-invalid' : '' }}" name="adr_region" id="input-adr_region" type="text" placeholder="województwo" value="{{ old('adr_region') }}" required="true" aria-required="true"/>
+                            @if ($errors->has('adr_region'))
+                            <span id="adr_region-error" class="error text-danger" for="input-adr_region">{{ $errors->first('adr_region') }}</span>
+                            @endif
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="row">
+                        <label class="col-sm-4 col-form-label">Kraj</label>
+                        <div class="col-sm-8">
+                          <div class="form-group{{ $errors->has('adr_country') ? ' has-danger' : '' }}">
+                            <input class="form-control{{ $errors->has('adr_country') ? ' is-invalid' : '' }}" name="adr_country" id="input-adr_country" type="text" placeholder="kraj" value="{{ old('adr_country') }}" required="true" aria-required="true"/>
+                            @if ($errors->has('adr_country'))
+                            <span id="adr_country-error" class="error text-danger" for="input-adr_country">{{ $errors->first('adr_country') }}</span>
+                            @endif
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              {{-- Phone --}}
               <div class="row">
-                <label class="col-sm-2 col-form-label">Nr telefonu</label>
-                <div class="col-sm-7">
-                  <div class="form-group{{ $errors->has('phone_nr') ? ' has-danger' : '' }}">
-                    <input class="form-control{{ $errors->has('phone_nr') ? ' is-invalid' : '' }}" name="phone_nr" id="input-phone_nr" type="text" placeholder="Nr telefonu" value="{{ old('phone_nr') }}" required />
-                    @if ($errors->has('phone_nr'))
-                    <span id="phone_nr-error" class="error text-danger" for="input-phone_nr">{{ $errors->first('phone_nr') }}</span>
-                    @endif
+                {{-- Email --}}
+                <div class="col-sm-6">
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">E-mail</label>
+                    <div class="col-sm-7">
+                      <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                        <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="E-mail" value="{{ old('email') }}" required />
+                        @if ($errors->has('email'))
+                        <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
+                        @endif
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-
+                {{-- Phone --}}
+                <div class="col-sm-6">
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Nr telefonu</label>
+                    <div class="col-sm-7">
+                      <div class="form-group{{ $errors->has('phone_nr') ? ' has-danger' : '' }}">
+                        <input class="form-control{{ $errors->has('phone_nr') ? ' is-invalid' : '' }}" name="phone_nr" id="input-phone_nr" type="text" placeholder="Nr telefonu" value="{{ old('phone_nr') }}" required />
+                        @if ($errors->has('phone_nr'))
+                        <span id="phone_nr-error" class="error text-danger" for="input-phone_nr">{{ $errors->first('phone_nr') }}</span>
+                        @endif
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>     
+              
               {{-- Associated Services --}}
               <div class="row">
                 <label class="col-sm-2 col-form-label" for="status">Przypisane Usługi</label>
-                <div class="col-sm-7">
+                <div class="col-sm-10">
                   <div class="form-group">
                       @if (count($services) > 0)
                       <select name="associated_services[]" class="form-control select2" multiple="multiple">
