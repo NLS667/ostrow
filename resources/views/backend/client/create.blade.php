@@ -81,6 +81,7 @@
                   <div class="form-group">
                     <div class="col-lg-8">
                       @if (count($services) > 0)
+                      {{ Form::select('associated_servicess', $services, 'all', ['class' => 'form-control select2']) }}
                       @foreach($services as $service)
                       <div>
                         <label for="service-{{$service->id}}" class="control control--radio">
