@@ -8,18 +8,18 @@
         <form method="post" action="{{ route('admin.client.store') }}" autocomplete="off" class="form-horizontal">
           @csrf
           @method('post')
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="card ">
-                <div class="card-header card-header-icon card-header-primary">
-                  <div class="col-md-6">
-                    <div class="card-icon">
-                      <i class="material-icons">face</i>
-                    </div>
-                    <h4 class="card-title">Dane podstawowe</h4>
-                  </div>
+          <div class="card ">
+            <div class="card-header card-header-icon card-header-primary">
+              <div class="col-md-6">
+                <div class="card-icon">
+                  <i class="material-icons">face</i>
                 </div>
-                <div class="card-body ">              
+                <h4 class="card-title">Dodaj Klienta</h4>
+              </div>
+            </div>
+            <div class="card-body ">              
+              <div class="row">
+                <div class="col-md-6">
                   <div class="row">
                     {{-- First Name --}}
                     <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('first_name') ? ' has-danger' : '' }}">
@@ -65,10 +65,36 @@
                     </div>
                   </div>
                 </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    {{-- Address Street --}}
+                    <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('adr_street') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Ulica</label>
+                      <input class="form-control" name="adr_street" id="input-adr_street" type="text" value="{{ old('adr_street') }}" />
+                      @if ($errors->has('adr_street'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="adr_street-error" class="error text-danger" for="input-adr_street">{{ $errors->first('adr_street') }}</span>
+                      @endif
+                    </div>
+                    <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('adr_street_nr') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Numer</label>
+                      <input class="form-control" name="adr_street_nr" id="input-adr_street_nr" type="text" value="{{ old('adr_street_nr') }}" />
+                      @if ($errors->has('adr_street_nr'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="adr_street_nr-error" class="error text-danger" for="input-adr_street_nr">{{ $errors->first('adr_street_nr') }}</span>
+                      @endif
+                    </div>
+                    <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('adr_home_nr') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Numer domu/mieszkania</label>
+                      <input class="form-control" name="adr_home_nr" id="input-adr_home_nr" type="text" value="{{ old('adr_home_nr') }}" />
+                      @if ($errors->has('adr_home_nr'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="adr_home_nr-error" class="error text-danger" for="input-adr_home_nr">{{ $errors->first('adr_home_nr') }}</span>
+                      @endif
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-sm-6">
-              
             </div>
           </div>
           <div class="card ">
@@ -114,46 +140,19 @@
                 {{-- Address Street --}}
                 <div class="col-sm-6">
                   <div class="row">
-                    <label class="col-sm-2 col-form-label">Ulica</label>
-                    <div class="col-sm-10">
-                      <div class="form-group{{ $errors->has('adr_street') ? ' has-danger' : '' }}">
-                        <input class="form-control" name="adr_street" id="input-adr_street" type="text" placeholder="ulica" value="{{ old('adr_street') }}" />
-                        @if ($errors->has('adr_street'))
-                        <span class="material-icons form-control-feedback">clear</span>
-                        <span id="adr_street-error" class="error text-danger" for="input-adr_street">{{ $errors->first('adr_street') }}</span>
-                        @endif
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
                 {{-- Address Street Number--}}
                 <div class="col-sm-3">
                   <div class="row">
-                    <label class="col-sm-4 col-form-label">Numer</label>
-                    <div class="col-sm-8">
-                      <div class="form-group{{ $errors->has('adr_street_nr') ? ' has-danger' : '' }}">
-                        <input class="form-control" name="adr_street_nr" id="input-adr_street_nr" type="text" placeholder="numer" value="{{ old('adr_street_nr') }}" />
-                        @if ($errors->has('adr_street_nr'))
-                        <span class="material-icons form-control-feedback">clear</span>
-                        <span id="adr_street_nr-error" class="error text-danger" for="input-adr_street_nr">{{ $errors->first('adr_street_nr') }}</span>
-                        @endif
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
                 {{-- Address Home Number--}}
                 <div class="col-sm-3">
                   <div class="row">
-                    <label class="col-sm-6 col-form-label">Numer domu/mieszkania</label>
-                    <div class="col-sm-6">
-                      <div class="form-group{{ $errors->has('adr_home_nr') ? ' has-danger' : '' }}">
-                        <input class="form-control" name="adr_home_nr" id="input-adr_home_nr" type="text" placeholder="numer domu" value="{{ old('adr_home_nr') }}" />
-                        @if ($errors->has('adr_home_nr'))
-                        <span class="material-icons form-control-feedback">clear</span>
-                        <span id="adr_home_nr-error" class="error text-danger" for="input-adr_home_nr">{{ $errors->first('adr_home_nr') }}</span>
-                        @endif
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
