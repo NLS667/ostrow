@@ -480,11 +480,14 @@ var Backend = {}; // common variable used in all the files of the backend
          */
         Clients: {
             selectors: {
-                select2: $(".select2")
+                select2: $(".select2"),
             },
             init: function (page) {
                 this.setSelectors();
                 this.addHandlers(page);
+            },
+            setSelectors: function () {
+                this.selectors.select2 = $(".select2");
             },
             addHandlers: function (page) {
                 this.selectors.select2.select2();
