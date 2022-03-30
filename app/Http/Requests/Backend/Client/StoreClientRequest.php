@@ -37,7 +37,7 @@ class StoreClientRequest extends Request
             'adr_zipcode'       => 'nullable|regex:/[0-9]{2}-[0-9]{3}/',
             'adr_city'          => 'nullable|max:191',
             'adr_street'        => 'nullable|max:191',
-            'adr_street_nr'     => 'nullablemax:5',
+            'adr_street_nr'     => 'nullable|max:5',
             'adr_home_nr'       => 'nullable|max:5',
         ];
     }
