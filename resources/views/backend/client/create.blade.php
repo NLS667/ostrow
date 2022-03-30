@@ -163,7 +163,7 @@
                     <label class="col-sm-2 col-form-label">E-mail</label>
                     <div class="col-sm-10">
                       <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                        <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="E-mail" value="{{ old('email') }}"  />
+                        <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="E-mail" value="{{ old('email') }}"/>
                         @if ($errors->has('email'))
                         <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
                         @endif
