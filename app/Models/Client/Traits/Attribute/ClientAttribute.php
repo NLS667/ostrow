@@ -159,6 +159,46 @@ trait ClientAttribute
     }
 
     /**
+     * Alias to eloquent many-to-many relation's attach() method.
+     *
+     * @param mixed $service
+     *
+     * @return void
+     */
+    public function attachService($service)
+    {
+        if (is_object($service)) {
+            $service = $service->getKey();
+        }
+
+        if (is_array($service)) {
+            $service = $service['id'];
+        }
+
+        $this->services()->attach($service);
+    }
+
+    /**
+     * Alias to eloquent many-to-many relation's detach() method.
+     *
+     * @param mixed $service
+     *
+     * @return void
+     */
+    public function detachService($service)
+    {
+        if (is_object($service)) {
+            $service = $service->getKey();
+        }
+
+        if (is_array($service)) {
+            $service = $service['id'];
+        }
+
+        $this->services()->detach($service);
+    }
+
+    /**
      * @return string
     
     public function getActionButtonsAttribute()

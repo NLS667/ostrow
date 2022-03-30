@@ -92,7 +92,7 @@ class ClientRepository extends BaseRepository
         $services = $request->get('services');
         $client = $this->createClientStub($data);
         DB::transaction(function () use ($client, $data, $services) {
-            if ($user->save()) {
+            if ($client->save()) {
 
                 //Client Created, Validate Roles
                 //if (!count($roles)) {
@@ -248,15 +248,23 @@ class ClientRepository extends BaseRepository
      */
     protected function createClientStub($input)
     {
-        $user = self::MODEL;
-        $user = new $user();
-        $user->first_name = $input['first_name'];
-        $user->last_name = $input['last_name'];
-        $user->email = $input['email'];
-        $user->status = isset($input['status']) ? 1 : 0;
-        $user->created_by = access()->user()->id;
+        $client = self::MODEL;
+        $client = new $client();
+        $client->first_name = $input['first_name'];
+        $client->last_name = $input['last_name'];
+        $client->email = $input['email'];
+        $client->phone_nr = $input['phone_nr'];
+        $client->adr_country = $input['adr_country'];
+        $client->adr_region = $input['adr_region'];
+        $client->adr_zipcode = $input['adr_zipcode'];
+        $client->adr_city = $input['adr_city'];
+        $client->adr_street = $input['adr_street'];
+        $client->adr_street_nr = $input['adr_street_nr'];
+        $client->adr_home_nr = $input['adr_home_nr'];
+        $client->status = isset($input['status']) ? 1 : 0;
+        $client->created_by = access()->user()->id;
 
-        return $user;
+        return $client;
     }
 
     /**
