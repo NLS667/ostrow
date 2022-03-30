@@ -28,16 +28,17 @@ class StoreClientRequest extends Request
     public function rules()
     {
         return [
-            'first_name'      => 'required|max:255',
-            'last_name'       => 'required|max:255',
-            'email'           => 'email|max:255',
-            'phone_nr'        => 'numeric|max:9',
-            'adr_country'     => 'max:255',
-            'adr_region'      => 'max:255',
-            'adr_zipcode'     => 'max:255',
-            'adr_city'        => 'max:255',
-            'adr_street'      => 'max:255',
-            'adr_street_nr'   => 'numeric|max:3',
+            'first_name'        => 'required|max:191',
+            'last_name'         => 'required|max:191',
+            'email'             => 'required|email',
+            'phone_nr'          => 'numeric|max:12|regex:(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)',
+            'adr_country'       => 'max:191',
+            'adr_region'        => 'max:191',
+            'adr_zipcode'       => 'regex:[0-9]{2}-[0-9]{3}',
+            'adr_city'          => 'max:191',
+            'ad_street'         => 'max:191',
+            'adr_street_nr'     => 'numeric|max:5',
+            'adr_home_nr'       => 'numeric|max:5',
         ];
     }
 
@@ -48,6 +49,24 @@ class StoreClientRequest extends Request
      */
     public function messages()
     {
-        //
+        return [
+            'first_name.required'        => 'To pole jest wymagane.',
+            'first_name.max'             => 'Długość max. 191 znaków.',
+            'last_name.required'         => 'To pole jest wymagane.',
+            'last_name.max'              => 'Długość max. 191 znaków.',
+            'email.required'             => 'To pole jest wymagane.',
+            'email.email'                => 'Podaj prawidłowy adres email.',
+            'phone_nr.max'               => 'Długość max. 12 znaków.',
+            'phone_nr.regex'             => 'To nie jest prawidłowy numer telefonu.',
+            'adr_country.max'            => 'Długość max. 191 znaków.',
+            'adr_region.max'             => 'Długość max. 191 znaków.',
+            'adr_zipcode'                => 'To nie jest prawidłowy kod pocztowy.',
+            'adr_city.max'               => 'Długość max. 191 znaków.',
+            'ad_street.max'              => 'Długość max. 191 znaków.',
+            'adr_street_nr.numeric'      => 'Wpisz jedynie cyfry.',
+            'adr_street_nr.max'          => 'Długość max. 5 znaków.',
+            'adr_home_nr.numeric'        => 'Wpisz jedynie cyfry.',
+            'adr_home_nr.max'            => 'Długość max. 5 znaków.',
+        ];
     }
 }
