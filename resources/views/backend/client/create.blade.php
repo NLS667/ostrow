@@ -106,12 +106,7 @@
 @section('after-scripts')
      <script type="text/javascript">
         Backend.Utils.documentReady(function(){
-            Backend.Users.selectors.getPremissionURL = "{{ route('admin.get.permission') }}";
-            Backend.Users.init("create");
+            Backend.Clients.init("create");
         });
-
-        window.onload = function () {
-            Backend.Users.windowloadhandler();
-        };
     </script>
 @endsection

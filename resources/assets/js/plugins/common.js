@@ -474,7 +474,26 @@ var Backend = {}; // common variable used in all the files of the backend
                 });
             }
         },
-
+        /**
+         * Clients management
+         *
+         */
+        Clients: {
+            selectors: {
+                select2: $(".select2")
+            },
+            init: function (page) {
+                this.setSelectors();
+                this.addHandlers(page);
+            },
+            addHandlers: function (page) {
+                this.selectors.select2.select2();
+            }
+        },
+        /**
+         * Menu management
+         *
+         */
         Menu: {
             selectors: {
                 menuItemContainer: $("#menu-items"),
