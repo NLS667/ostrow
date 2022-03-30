@@ -24371,8 +24371,3 @@ select.bs-select-hidden,select.selectpicker {
         display: none!important
     }
 }
-
-#email-error {
-    height: 30px;
-    margin-left: 54px
-}
