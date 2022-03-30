@@ -200,7 +200,7 @@ trait ClientAttribute
 
     /**
      * @return string
-    
+     */
     public function getActionButtonsAttribute()
     {
         if ($this->trashed()) {
@@ -225,19 +225,12 @@ trait ClientAttribute
             $i = 1;
 
             if (access()->user()->id == $this->id) {
-                if (in_array('clear-user-session', $userPermission)) {
+                
+                if (in_array('delete-client', $userPermission)) {
                     $permissionCounter = $permissionCounter - 1;
                 }
 
-                if (in_array('login-as-user', $userPermission)) {
-                    $permissionCounter = $permissionCounter - 1;
-                }
-
-                if (in_array('delete-user', $userPermission)) {
-                    $permissionCounter = $permissionCounter - 1;
-                }
-
-                if (in_array('deactivate-user', $userPermission)) {
+                if (in_array('deactivate-client', $userPermission)) {
                     $permissionCounter = $permissionCounter - 1;
                 }
             }
@@ -265,5 +258,5 @@ trait ClientAttribute
 
             return $actionButton;
         }
-    } */
+    }
 }
