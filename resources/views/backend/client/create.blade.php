@@ -17,13 +17,11 @@
                 </div>
                 <h4 class="card-title">Dodaj Klienta</h4>
               </div>
-              <div class="card-tools">
-                <ul class="nav nav-tabs">
-                  <li class="nav-item">
-                    <a href="{{ route('admin.client.index') }}" class="nav-link btn btn-sm btn-primary">Powrót do listy</a>
-                  </li>
-                </ul>
-              </div>
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a href="{{ route('admin.client.index') }}" class="nav-link btn btn-sm btn-primary">Powrót do listy</a>
+                </li>
+              </ul>
             </div>
             <div class="card-body ">
 
