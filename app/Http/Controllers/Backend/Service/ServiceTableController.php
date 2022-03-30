@@ -42,7 +42,12 @@ class ServiceTableController extends Controller
                 return Carbon::parse($service->created_at)->toDateString();
             })
             ->addColumn('updated_at', function ($service) {
-                return Carbon::parse($service->updated_at)->toDateString();
+                if(isset($service->updated_at))
+                {
+                    return Carbon::parse($service->updated_at)->toDateString();                    
+                } else {
+                    return 'Nigdy';
+                }
             })
             ->addColumn('actions', function ($service) {
                 return $service->action_buttons;
