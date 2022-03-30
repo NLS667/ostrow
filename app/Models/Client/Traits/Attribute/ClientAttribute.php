@@ -215,6 +215,7 @@ trait ClientAttribute
             return '<div class="btn-group action-btn">
                     '.$this->getShowButtonAttribute('btn btn-info btn-flat').'
                     '.$this->getEditButtonAttribute('btn btn-success btn-flat').'
+                    '.$this->getDeleteButtonAttribute('btn btn-danger btn-flat').'
                 </div>';
         } else {
             $userPermission = $this->getUserPermission();
