@@ -25,6 +25,7 @@ class CreateClientsTable extends Migration
             $table->string('adr_city', 191)->unique();
             $table->string('adr_street', 191)->unique();
             $table->string('adr_street_nr', 191)->unique();
+            $table->string('adr_home_nr', 191)->unique();
             $table->boolean('status')->default(1);
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
