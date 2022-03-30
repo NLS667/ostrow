@@ -81,7 +81,6 @@
                   <div class="form-group">
                       @if (count($services) > 0)
                       <select name="associated_services" class="form-control select2">
-                      {{ Form::select('associated_servicess', array('all' => 'Wszystkie', 'custom' => 'Wybrane'), 'all', ['class' => 'form-control select2']) }}
                       @foreach($services as $service)
                         <option value="{{ $service->id }}">{{ $service->name }}</option>
                       @endforeach
