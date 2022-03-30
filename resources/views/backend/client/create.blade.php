@@ -29,6 +29,7 @@
                       <div class="form-group{{ $errors->has('first_name') ? ' has-danger' : '' }}">
                         <input class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" id="input-first_name" type="text" placeholder="Imię" value="{{ old('first_name') }}" />
                         @if ($errors->has('first_name'))
+                        <span class="material-icons form-control-feedback">clear</span>
                         <span id="first_name-error" class="error text-danger" for="input-first_name">{{ $errors->first('first_name') }}</span>
                         @endif
                       </div>
