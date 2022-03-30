@@ -10,8 +10,13 @@
           @method('post')
 
           <div class="card ">
-            <div class="card-header card-header-primary d-flex justify-content-between align-items-center">
-              <h4 class="card-title">Dodaj Klienta</h4>
+            <div class="card-header card-header-icon card-header-primary d-flex justify-content-between align-items-center">
+              <div class="col-md-6">
+                <div class="card-icon">
+                  <i class="material-icons">face</i>
+                </div>
+                <h4 class="card-title">Dodaj Klienta</h4>
+              </div>
               <div class="card-tools">
                 <ul class="nav nav-tabs">
                   <li class="nav-item">
@@ -22,28 +27,30 @@
             </div>
             <div class="card-body ">
 
-              {{-- First Name --}}
+              
               <div class="row">
-                <label class="col-sm-2 col-form-label">Imię</label>
-                <div class="col-sm-7">
-                  <div class="form-group{{ $errors->has('first_name') ? ' has-danger' : '' }}">
-                    <input class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" id="input-first_name" type="text" placeholder="Imię" value="{{ old('first_name') }}" required="true" aria-required="true"/>
-                    @if ($errors->has('first_name'))
-                    <span id="name-error" class="error text-danger" for="input-first_name">{{ $errors->first('first_name') }}</span>
-                    @endif
+                {{-- First Name --}}
+                <div class="col-lg-6">
+                  <label class="col-sm-2 col-form-label">Imię</label>
+                  <div class="col-sm-7">
+                    <div class="form-group{{ $errors->has('first_name') ? ' has-danger' : '' }}">
+                      <input class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" id="input-first_name" type="text" placeholder="Imię" value="{{ old('first_name') }}" required="true" aria-required="true"/>
+                      @if ($errors->has('first_name'))
+                      <span id="name-error" class="error text-danger" for="input-first_name">{{ $errors->first('first_name') }}</span>
+                      @endif
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              {{-- Last Name --}}
-              <div class="row">
-                <label class="col-sm-2 col-form-label">Nazwisko</label>
-                <div class="col-sm-7">
-                  <div class="form-group{{ $errors->has('last_name') ? ' has-danger' : '' }}">
-                    <input class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" id="input-last_name" type="text" placeholder="Nazwisko" value="{{ old('last_name') }}" required="true" aria-required="true"/>
-                    @if ($errors->has('last_name'))
-                    <span id="name-error" class="error text-danger" for="input-last_name">{{ $errors->first('last_name') }}</span>
-                    @endif
+                {{-- Last Name --}}
+                <div class="col-lg-6">
+                  <label class="col-sm-2 col-form-label">Nazwisko</label>
+                  <div class="col-sm-7">
+                    <div class="form-group{{ $errors->has('last_name') ? ' has-danger' : '' }}">
+                      <input class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" id="input-last_name" type="text" placeholder="Nazwisko" value="{{ old('last_name') }}" required="true" aria-required="true"/>
+                      @if ($errors->has('last_name'))
+                      <span id="name-error" class="error text-danger" for="input-last_name">{{ $errors->first('last_name') }}</span>
+                      @endif
+                    </div>
                   </div>
                 </div>
               </div>
