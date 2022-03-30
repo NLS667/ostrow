@@ -189,8 +189,8 @@
               
               {{-- Associated Services --}}
               <div class="row">
-                <label class="col-sm-2 col-form-label" for="status">Przypisane Usługi</label>
-                <div class="col-sm-10">
+                <label class="col-sm-1 col-form-label" for="status">Przypisane Usługi</label>
+                <div class="col-sm-11">
                   <div class="form-group">
                       @if (count($services) > 0)
                       <select name="associated_services[]" class="form-control select2" multiple="multiple">
