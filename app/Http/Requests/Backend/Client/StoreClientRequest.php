@@ -31,13 +31,13 @@ class StoreClientRequest extends Request
             'first_name'        => 'required|max:191',
             'last_name'         => 'required|max:191',
             'email'             => 'required|email',
-            'phone_nr'          => ['nullable', 'numeric', 'max:12', 'regex:/(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/'],
+            'phone_nr'          => ['nullable', 'max:12', 'regex:/(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/'],
             'adr_country'       => 'nullable|max:191',
             'adr_region'        => 'nullable|max:191',
             'adr_zipcode'       => 'nullable|regex:/[0-9]{2}-[0-9]{3}/',
             'adr_city'          => 'nullable|max:191',
             'adr_street'        => 'nullable|max:191',
-            'adr_street_nr'     => 'nullable|numeric|max:5',
+            'adr_street_nr'     => 'nullablemax:5',
             'adr_home_nr'       => 'nullable|max:5',
         ];
     }
@@ -56,7 +56,6 @@ class StoreClientRequest extends Request
             'last_name.max'              => 'Długość max. 191 znaków.',
             'email.required'             => 'To pole jest wymagane.',
             'email.email'                => 'Podaj prawidłowy adres email.',
-            'phone_nr.numeric'           => 'Numer telefonu musi być wpisany cyframi.',
             'phone_nr.max'               => 'Długość max. 12 znaków.',
             'phone_nr.regex'             => 'To nie jest prawidłowy numer telefonu.',
             'adr_country.max'            => 'Długość max. 191 znaków.',
@@ -66,7 +65,6 @@ class StoreClientRequest extends Request
             'adr_street.max'             => 'Długość max. 191 znaków.',
             'adr_street_nr.numeric'      => 'Wpisz jedynie cyfry.',
             'adr_street_nr.max'          => 'Długość max. 5 znaków.',
-            'adr_home_nr.numeric'        => 'Wpisz jedynie cyfry.',
             'adr_home_nr.max'            => 'Długość max. 5 znaków.',
         ];
     }
