@@ -79,21 +79,16 @@
                 <label class="col-sm-2 col-form-label" for="status">Przypisane Usługi</label>
                 <div class="col-sm-7">
                   <div class="form-group">
-                    <div class="col-lg-8">
                       @if (count($services) > 0)
-                      {{ Form::select('associated_servicess', $services, 'all', ['class' => 'form-control select2']) }}
+                      <select name="associated_services" class="form-control select2">
+                      {{ Form::select('associated_servicess', array('all' => 'Wszystkie', 'custom' => 'Wybrane'), 'all', ['class' => 'form-control select2']) }}
                       @foreach($services as $service)
-                      <div>
-                        <label for="service-{{$service->id}}" class="control control--radio">
-                          <input type="radio" value="{{$service->id}}" name="assigned_services[]" id="service-{{$service->id}}" class="get-service-for-permissions" {{ $service->id == 3 ? 'checked' : '' }} />  &nbsp;&nbsp;{!! $service->name !!}
-                          <div class="control__indicator"></div>
-                        </label>
-                      </div>
+                        <option value="{{ $service->id }}">{{ $service->name }}</option>
                       @endforeach
+                      </select>
                       @else
                       Brak przypisanych Usług.
                       @endif
-                    </div><!--col-lg-3-->
                   </div><!--form control-->
                 </div>
               </div> 
@@ -111,21 +106,6 @@
 
 @section('after-scripts')
      <script type="text/javascript">
-        var associated = $("select[name='associated_permissions']");
-        var associated_container = $("#available-permissions");
-
-        if (associated.val() == "custom")
-            associated_container.removeClass('d-none');
-        else
-            associated_container.addClass('d-none');
-
-        associated.change(function() {
-            if ($(this).val() == "custom")
-                associated_container.removeClass('d-none');
-            else
-                associated_container.addClass('d-none');
-        });
-
         Backend.Utils.documentReady(function(){
             Backend.Users.selectors.getPremissionURL = "{{ route('admin.get.permission') }}";
             Backend.Users.init("create");
