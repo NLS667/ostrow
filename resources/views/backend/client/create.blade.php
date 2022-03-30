@@ -17,14 +17,9 @@
                 </div>
                 <h4 class="card-title">Dodaj Klienta</h4>
               </div>
-              <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a href="{{ route('admin.client.index') }}" class="nav-link btn btn-sm btn-primary">Powrót do listy</a>
-                </li>
-              </ul>
+              <a href="{{ route('admin.client.index') }}" class="btn btn-sm btn-primary">Powrót do listy</a>              
             </div>
             <div class="card-body ">
-
               {{-- First Name --}}
               <div class="row">
                 <label class="col-sm-2 col-form-label">Imię</label>
@@ -37,7 +32,6 @@
                   </div>
                 </div>
               </div>
-
               {{-- Last Name --}}
               <div class="row">
                 <label class="col-sm-2 col-form-label">Nazwisko</label>
