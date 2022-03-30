@@ -26,6 +26,8 @@ class CreateClientRequest extends Request
      */
     public function rules()
     {
-       //
+       return [
+            //
+        ];
     }
 }
