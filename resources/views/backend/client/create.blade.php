@@ -42,6 +42,28 @@
                       @endif
                     </div>
                   </div>
+                  <div class="row">
+                    {{-- Email --}}
+                    <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('email') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">E-mail</label>
+                      <input class="form-control" name="email" id="input-email" type="text" value="{{ old('email') }}"/>
+                      @if ($errors->has('email'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
+                      @endif
+                    </div>
+                  </div>
+                  <div class="row">
+                    {{-- Phone --}}
+                    <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('phone_nr') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Nr telefonu</label>
+                      <input class="form-control" name="phone_nr" id="input-phone_nr" type="text" value="{{ old('phone_nr') }}"/>
+                      @if ($errors->has('phone_nr'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="phone_nr-error" class="error text-danger" for="input-phone_nr">{{ $errors->first('phone_nr') }}</span>
+                      @endif
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
