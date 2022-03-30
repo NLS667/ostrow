@@ -10910,7 +10910,6 @@ label {
 
 .is-filled .bmd-label-floating,.is-focused .bmd-label-floating {
     top: -1rem;
-    left: 0;
     font-size: .6875rem
 }
 
