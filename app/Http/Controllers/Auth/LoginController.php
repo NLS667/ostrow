@@ -44,7 +44,7 @@ class LoginController extends Controller
             return route('admin.index');
         }
 
-        return route('auth.login');
+        return route('index');
     }
 
     /**
@@ -54,7 +54,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('index');
+        return view('home');
     }
 
     /**
