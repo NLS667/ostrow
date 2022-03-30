@@ -31,7 +31,7 @@ class StoreClientRequest extends Request
             'first_name'        => 'required|max:191',
             'last_name'         => 'required|max:191',
             'email'             => 'required|email',
-            'phone_nr'          => 'numeric|max:12|regex:(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)',
+            'phone_nr'          => 'numeric|max:12',
             'adr_country'       => 'max:191',
             'adr_region'        => 'max:191',
             'adr_zipcode'       => 'regex:[0-9]{2}-[0-9]{3}',
