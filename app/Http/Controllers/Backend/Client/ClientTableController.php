@@ -36,8 +36,8 @@ class ClientTableController extends Controller
         return Datatables::make($this->clients->getForDataTable($request->get('status'), $request->get('trashed')))
             ->escapeColumns(['id', 'email'])
             ->editColumn('phone_nr', function ($client) {
-                if(isset($client->updated_at)){
-                    return $client->updated_at;
+                if(isset($client->phone_nr)){
+                    return $client->phone_nr;
                 } else {
                     return 'Brak';
                 }
