@@ -16,7 +16,7 @@ use App\Http\Responses\Backend\Client\ShowResponse;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Client\Client;
-use App\Repositories\Backend\Task\TaskRepository;
+use App\Repositories\Backend\Service\ServiceRepository;
 use App\Repositories\Backend\Client\ClientRepository;
 
 /**
@@ -30,18 +30,18 @@ class ClientController extends Controller
     protected $clients;
 
     /**
-     * @var \App\Repositories\Backend\Access\Role\TaskRepository
+     * @var \App\Repositories\Backend\Service\ServiceRepository
      */
-    protected $tasks;
+    protected $services;
 
     /**
      * @param \App\Repositories\Backend\Client\ClientRepository $clients
-     * @param \App\Repositories\Backend\Task\TaskRepository $tasks
+     * @param \App\Repositories\Backend\Service\ServiceRepository $services
      */
-    public function __construct(ClientRepository $clients, TaskRepository $tasks)
+    public function __construct(ClientRepository $clients, ServiceRepository $services)
     {
         $this->clients = $clients;
-        $this->tasks = $tasks;
+        $this->services = $services;
     }
 
     /**
@@ -61,9 +61,9 @@ class ClientController extends Controller
      */
     public function create(CreateClientRequest $request)
     {
-        $roles = $this->roles->getAll();
+        $services = $this->services->getAll();
 
-        return new CreateResponse($roles);
+        return new CreateResponse($services);
     }
 
     /**
@@ -73,7 +73,7 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-        $this->users->create($request);
+        $this->clients->create($request);
 
         return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.clients.created')]);
     }
