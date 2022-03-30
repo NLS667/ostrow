@@ -39,7 +39,11 @@ class MenuTableController extends Controller
                 return Carbon::parse($menus->created_at)->toDateTimeString();
             })
             ->addColumn('updated_at', function ($menus) {
-                return Carbon::parse($menus->updated_at)->toDateTimeString();
+                if(isset($menus->updated_at)){
+                    return Carbon::parse($menus->updated_at)->toDateTimeString();
+                } else {
+                    return 'Nigdy';
+                }
             })
             ->addColumn('actions', function ($menus) {
                 return $menus->action_buttons;

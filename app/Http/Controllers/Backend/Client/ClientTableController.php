@@ -42,7 +42,11 @@ class ClientTableController extends Controller
                 return Carbon::parse($client->created_at)->toDateString();
             })
             ->addColumn('updated_at', function ($client) {
-                return Carbon::parse($client->updated_at)->toDateString();
+                if(isset($client->updated_at)){
+                    return Carbon::parse($client->updated_at)->toDateString();
+                } else {
+                    return 'Nigdy';
+                }
             })
             ->addColumn('actions', function ($client) {
                 return $client->action_buttons;

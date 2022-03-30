@@ -45,7 +45,12 @@ class UserTableController extends Controller
                 return Carbon::parse($user->created_at)->toDateString();
             })
             ->addColumn('updated_at', function ($user) {
-                return Carbon::parse($user->updated_at)->toDateString();
+                if(isset($user->updated_at)){
+                    return Carbon::parse($user->updated_at)->toDateString();
+                } else {
+                    return 'Nigdy';
+                }
+
             })
             ->addColumn('actions', function ($user) {
                 return $user->action_buttons;
