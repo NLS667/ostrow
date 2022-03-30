@@ -73,8 +73,8 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-        $validated = $request->validate();
-        
+        $validated = $request->validated();
+
         $this->clients->create($request);
 
         return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.clients.created')]);
