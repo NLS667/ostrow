@@ -36,7 +36,7 @@ class StoreClientRequest extends Request
             'adr_region'        => 'max:191',
             'adr_zipcode'       => 'regex:/[0-9]{2}-[0-9]{3}/',
             'adr_city'          => 'max:191',
-            'ad_street'         => 'max:191',
+            'ad_street'         => 'required|max:191',
             'adr_street_nr'     => 'numeric|max:5',
             'adr_home_nr'       => 'numeric|max:5',
         ];
@@ -62,6 +62,7 @@ class StoreClientRequest extends Request
             'adr_region.max'             => 'Długość max. 191 znaków.',
             'adr_zipcode'                => 'To nie jest prawidłowy kod pocztowy.',
             'adr_city.max'               => 'Długość max. 191 znaków.',
+            'ad_street.required'         => 'To pole jest wymagane.',
             'ad_street.max'              => 'Długość max. 191 znaków.',
             'adr_street_nr.numeric'      => 'Wpisz jedynie cyfry.',
             'adr_street_nr.max'          => 'Długość max. 5 znaków.',
