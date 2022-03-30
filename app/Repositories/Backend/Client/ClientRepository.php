@@ -261,7 +261,7 @@ class ClientRepository extends BaseRepository
         $client->adr_street = $input['adr_street'];
         $client->adr_street_nr = $input['adr_street_nr'];
         $client->adr_home_nr = $input['adr_home_nr'];
-        $client->status = isset($input['status']) ? 1 : 0;
+        $client->status = 1;
         $client->created_by = access()->user()->id;
 
         return $client;
