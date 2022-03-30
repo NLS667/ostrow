@@ -22,7 +22,7 @@
                 <div class="card-body ">              
                   <div class="row">
                     {{-- First Name --}}
-                    <div class="form-group bmd-form-group {{ $errors->has('first_name') ? ' has-danger' : '' }}">
+                    <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('first_name') ? ' has-danger' : '' }}">
                       <label class="bmd-label-floating">Imię</label>
                       <input class="form-control" name="first_name" id="input-first_name" type="text" value="{{ old('first_name') }}" />
                       @if ($errors->has('first_name'))
@@ -33,7 +33,7 @@
                   </div>
                   <div class="row">
                     {{-- Last Name --}}
-                    <div class="form-group{{ $errors->has('last_name') ? ' has-danger' : '' }}">
+                    <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('last_name') ? ' has-danger' : '' }}">
                       <label class="bmd-label-floating">Nazwisko</label>
                       <input class="form-control" name="last_name" id="input-last_name" type="text" value="{{ old('last_name') }}" />
                       @if ($errors->has('last_name'))
