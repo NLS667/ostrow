@@ -136,6 +136,23 @@
                   </div>
                 </div>
               </div>
+              {{-- Associated Services --}}
+              <div class="row">
+                <label class="col-sm-1 col-form-label" for="status">Przypisane Usługi</label>
+                <div class="col-sm-11">
+                  <div class="form-group">
+                      @if (count($services) > 0)
+                      <select name="associated_services[]" class="form-control select2" multiple="multiple">
+                      @foreach($services as $service)
+                        <option value="{{ $service->id }}">{{ $service->name }}</option>
+                      @endforeach
+                      </select>
+                      @else
+                      Brak przypisanych Usług.
+                      @endif
+                  </div><!--form control-->
+                </div>
+              </div> 
               <div class="card-footer">
                 <button type="submit" class="btn btn-fill btn-success">Dodaj</button>
               </div>
