@@ -28,7 +28,7 @@ class CreateResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.access.clients.create')->with([
+        return view('backend.clients.create')->with([
             'services' => $this->services,
         ]);
     }
