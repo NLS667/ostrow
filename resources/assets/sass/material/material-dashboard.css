@@ -10734,7 +10734,6 @@ form {
 
 .bmd-form-group .is-filled .bmd-label-floating,.bmd-form-group .is-focused .bmd-label-floating {
     top: -1rem;
-    left: 0;
     font-size: .6875rem
 }
 
