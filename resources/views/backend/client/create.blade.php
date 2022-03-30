@@ -97,30 +97,34 @@
               <div class="row">
                 <div class="col-sm-6">
                   <div class="row">
-                    <label class="col-sm-4 col-form-label">Kod Pocztowy</label>
-                    <div class="col-sm-8">
-                      <div class="form-group{{ $errors->has('adr_zipcode') ? ' has-danger' : '' }}">
-                        <input class="form-control{{ $errors->has('adr_zipcode') ? ' is-invalid' : '' }}" name="adr_zipcode" id="input-adr_zipcode" type="text" placeholder="kod pocztowy" value="{{ old('adr_zipcode') }}" required="true" aria-required="true"/>
-                        @if ($errors->has('adr_zipcode'))
-                        <span id="adr_zipcode-error" class="error text-danger" for="input-adr_zipcode">{{ $errors->first('adr_zipcode') }}</span>
-                        @endif
+                    <div class="col-sm-6">
+                      <div class="row">
+                        <label class="col-sm-4 col-form-label">Kod Pocztowy</label>
+                        <div class="col-sm-8">
+                          <div class="form-group{{ $errors->has('adr_zipcode') ? ' has-danger' : '' }}">
+                            <input class="form-control{{ $errors->has('adr_zipcode') ? ' is-invalid' : '' }}" name="adr_zipcode" id="input-adr_zipcode" type="text" placeholder="kod pocztowy" value="{{ old('adr_zipcode') }}" required="true" aria-required="true"/>
+                            @if ($errors->has('adr_zipcode'))
+                            <span id="adr_zipcode-error" class="error text-danger" for="input-adr_zipcode">{{ $errors->first('adr_zipcode') }}</span>
+                            @endif
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="row">
+                        <label class="col-sm-4 col-form-label">Miasto</label>
+                        <div class="col-sm-8">
+                          <div class="form-group{{ $errors->has('adr_city') ? ' has-danger' : '' }}">
+                            <input class="form-control{{ $errors->has('adr_city') ? ' is-invalid' : '' }}" name="adr_city" id="input-adr_city" type="text" placeholder="miasto" value="{{ old('adr_city') }}" required="true" aria-required="true"/>
+                            @if ($errors->has('adr_city'))
+                            <span id="adr_city-error" class="error text-danger" for="input-adr_city">{{ $errors->first('adr_city') }}</span>
+                            @endif
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row">
-                    <label class="col-sm-4 col-form-label">Miasto</label>
-                    <div class="col-sm-8">
-                      <div class="form-group{{ $errors->has('adr_city') ? ' has-danger' : '' }}">
-                        <input class="form-control{{ $errors->has('adr_city') ? ' is-invalid' : '' }}" name="adr_city" id="input-adr_city" type="text" placeholder="miasto" value="{{ old('adr_city') }}" required="true" aria-required="true"/>
-                        @if ($errors->has('adr_city'))
-                        <span id="adr_city-error" class="error text-danger" for="input-adr_city">{{ $errors->first('adr_city') }}</span>
-                        @endif
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </div>                
               </div>
 
               {{-- Email --}}
