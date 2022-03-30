@@ -10985,7 +10985,7 @@ select,select.form-control {
 }
 
 textarea {
-    height: auto!important;
+    /*height: auto!important;*/
     resize: none;
     line-height: 1.42857143!important
 }
