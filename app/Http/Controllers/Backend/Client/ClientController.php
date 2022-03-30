@@ -73,7 +73,7 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-        $request->validate();
+        $validated = $request->validate();
         
         $this->clients->create($request);
 
