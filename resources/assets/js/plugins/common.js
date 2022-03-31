@@ -505,7 +505,7 @@ var Backend = {}; // common variable used in all the files of the backend
                                 $.get("getserviceform", function(data){
                                     $('.tab-content').append('<div class="tab-pane" id="' + tabId + '">' + data + '</div>');
                                 });
-                                //$('.tab-content').append('<div class="tab-pane" id="' + tabId + '">@include("backend.includes.partials.client-add-service")</div>');
+                                //$('.tab-content').append('<div class="tab-pane active show" id="' + tabId + '">@include("backend.includes.partials.client-add-service")</div>');
                                 $('.services li:nth-child(' + count + ') a').click();
                             }
                         }
