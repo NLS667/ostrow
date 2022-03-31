@@ -137,8 +137,9 @@ class ClientController extends Controller
      *
      * @return \App\Http\Responses\RedirectResponse
      */
-    public function getServiceForm()
+    public function getServiceForm($request)
     {
-        return view('backend.includes.partials.client-add-service');
+        $service = $this->services->where('id', $request->service)->first();
+        return view('backend.includes.partials.client-add-service', ['service' => $service]);
     }
 }

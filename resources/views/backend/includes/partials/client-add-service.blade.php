@@ -1,5 +1,5 @@
 <div class="row">
 	<div class="col-sm-12">
-		<p>test</p>
+		<p>{{ $service->name }}</p>
 	</div>
 </div>
