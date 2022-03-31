@@ -152,7 +152,7 @@
               <!-- Nav tabs -->
               <ul class="nav nav-pills nav-pills-warning services" role="tablist">
                 <li class="nav-item">
-                  <div class="form-group add" data-toggle="tab" href="#tab1" role="tablist">
+                  <div class="form-group add" role="tablist">
                       @if (count($services) > 0)
                       <select name="add-service" class="form-control add-service select2" data-placeholder="Wybierz Usługę">
                         <option></option>
