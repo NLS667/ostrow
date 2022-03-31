@@ -158,9 +158,24 @@
               </div>
             </div>
           </div>
+          <div class="card">
+            <div class="card-body">
+              <!-- Nav tabs -->
+              <ul class="nav nav-pills nav-pills-warning" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#tab1" role="tablist">
+                    <span class="material-icons">add</span>
+                  </a>
+                </li>
+              </ul>
+              <!-- Tab panes -->
+              <div id="tab-content" class="tab-content">
+              </div>
+            </div>
+          </div>
         </form>
       </div>
-    </div>
+    </div>    
   </div>
 </div>
 @endsection
