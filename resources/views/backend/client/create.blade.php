@@ -173,7 +173,7 @@
                 <li class="nav-item">
                   <div class="form-group" data-toggle="tab" href="#tab1" role="tablist">
                       @if (count($services) > 0)
-                      <select name="add-service" class="form-control select2 add-service selectpicker" data-placeholder="Dodaj Usługę">
+                      <select name="add-service" class="form-control add-service selectpicker" data-placeholder="Dodaj Usługę">
                       @foreach($services as $service)
                         <option value="{{ $service->id }}">{{ $service->name }}</option>
                       @endforeach
