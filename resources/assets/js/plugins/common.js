@@ -489,7 +489,7 @@ var Backend = {}; // common variable used in all the files of the backend
             },
             setSelectors: function () {
                 this.selectors.select2 = $(".select2");
-                this.selectors.addService = $(".add-service");
+                this.selectors.addService = document.querySelector("select[name='add-service']");
             },
             addHandlers: function (page) {
                 this.selectors.select2.select2();
@@ -497,6 +497,7 @@ var Backend = {}; // common variable used in all the files of the backend
             windowloadhandler: function () {
                 this.selectors.addService.forEach(function (element) {
                     element.onchange = function (event) {
+                        Console.log(event);
                         event.preventDefault();
                         var id = $(".nav-tabs").children().length; //think about it ;)
                         var tabId = 'service_' + id;
