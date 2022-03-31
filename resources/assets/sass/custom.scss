@@ -41,6 +41,7 @@
 }
 .services > li {
     position:relative;
+    padding-right:30px
 }
 .services > li > a {
     display:inline-block;
@@ -49,9 +50,10 @@
     display:none;
     cursor:pointer;
     position:absolute;
-    right: 6px;
+    right: 15px;
     top: 8px;
     color: red;
+    font-size:16px;
 }
 .services > li:hover > span {
     display: inline-block;

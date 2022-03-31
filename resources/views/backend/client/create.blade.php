@@ -198,7 +198,7 @@
 
 @section('after-scripts')
      <script type="text/javascript">
-        $(".nav-tabs").on("click", "span", function () {
+        $(".services").on("click", "span", function () {
           var anchor = $(this).siblings('a');
           $(anchor.attr('href')).remove();
           $(this).parent().remove();
