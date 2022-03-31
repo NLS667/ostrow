@@ -136,28 +136,9 @@
                   </div>
                 </div>
               </div>
-              {{-- Associated Services --}}
-              <div class="row">
-                <label class="col-sm-1 col-form-label" for="status">Przypisane Usługi</label>
-                <div class="col-sm-11">
-                  <div class="form-group">
-                      @if (count($services) > 0)
-                      <select name="associated_services[]" class="form-control select2" style="width: 100%" multiple="multiple">
-                      @foreach($services as $service)
-                        <option value="{{ $service->id }}">{{ $service->name }}</option>
-                      @endforeach
-                      </select>
-                      @else
-                      Brak zdefiniowanych Usług.
-                      @endif
-                  </div><!--form control-->
-                </div>
-              </div> 
-              <div class="card-footer">
-                <button type="submit" class="btn btn-fill btn-success">Dodaj</button>
-              </div>
             </div>
           </div>
+          {{-- Associated Services --}}
           <div class="card">
             <div class="card-header card-header-icon card-header-primary">
               <div class="col-md-6">
@@ -173,7 +154,7 @@
                 <li class="nav-item">
                   <div class="form-group" data-toggle="tab" href="#tab1" role="tablist">
                       @if (count($services) > 0)
-                      <select name="add-service" class="form-control add-service selectpicker" data-placeholder="Dodaj Usługę">
+                      <select name="add-service" class="form-control add-service select2" data-placeholder="Dodaj Usługę">
                       @foreach($services as $service)
                         <option value="{{ $service->id }}">{{ $service->name }}</option>
                       @endforeach
@@ -188,6 +169,7 @@
               <div id="tab-content" class="tab-content">
               </div>
             </div>
+            <button type="submit" class="btn btn-fill btn-success">Dodaj</button>
           </div>
         </form>
       </div>
