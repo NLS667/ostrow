@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Client;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Http\Requests\Backend\Client\CreateClientRequest;
 use App\Http\Requests\Backend\Client\DeleteClientRequest;
 use App\Http\Requests\Backend\Client\EditClientRequest;
@@ -137,7 +138,7 @@ class ClientController extends Controller
      *
      * @return \App\Http\Responses\RedirectResponse
      */
-    public function getServiceForm($request)
+    public function getServiceForm(Request $request)
     {
         $service = $this->services->where('id', $request->service)->first();
         return view('backend.includes.partials.client-add-service', ['service' => $service]);
