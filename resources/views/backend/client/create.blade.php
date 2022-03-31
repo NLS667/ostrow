@@ -182,7 +182,7 @@
         $(".services").on("click", "a.tab", function (e) {
             e.preventDefault();
             $(this).tab('show');
-            $("select.add-service").val("").trigger('change');
+            $("select.add-service").val("").selectpicker("refresh");;
         })
         .on("click", "span", function () {
           var anchor = $(this).siblings('a');
