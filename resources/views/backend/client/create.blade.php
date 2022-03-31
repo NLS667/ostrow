@@ -68,7 +68,7 @@
                 <div class="col-md-6">
                   <div class="row">
                     {{-- Address Street --}}
-                    <div class="col-sm-8 form-group bmd-form-group {{ $errors->has('adr_street') ? ' has-danger' : '' }}">
+                    <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('adr_street') ? ' has-danger' : '' }}">
                       <label class="bmd-label-floating">Ulica</label>
                       <input class="form-control" name="adr_street" id="input-adr_street" type="text" value="{{ old('adr_street') }}" />
                       @if ($errors->has('adr_street'))
@@ -77,8 +77,8 @@
                       @endif
                     </div>
                     {{-- Address Street Number--}}
-                    <div class="col-sm-2 form-group bmd-form-group {{ $errors->has('adr_street_nr') ? ' has-danger' : '' }}">
-                      <label class="bmd-label-floating">Numer domu</label>
+                    <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('adr_street_nr') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Nr domu</label>
                       <input class="form-control" name="adr_street_nr" id="input-adr_street_nr" type="text" value="{{ old('adr_street_nr') }}" />
                       @if ($errors->has('adr_street_nr'))
                       <span class="material-icons form-control-feedback">clear</span>
@@ -86,8 +86,8 @@
                       @endif
                     </div>
                     {{-- Address Home Number--}}
-                    <div class="col-sm-2 form-group bmd-form-group {{ $errors->has('adr_home_nr') ? ' has-danger' : '' }}">
-                      <label class="bmd-label-floating">Numer mieszkania</label>
+                    <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('adr_home_nr') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Nr mieszkania</label>
                       <input class="form-control" name="adr_home_nr" id="input-adr_home_nr" type="text" value="{{ old('adr_home_nr') }}" />
                       @if ($errors->has('adr_home_nr'))
                       <span class="material-icons form-control-feedback">clear</span>
@@ -142,7 +142,7 @@
                 <div class="col-sm-11">
                   <div class="form-group">
                       @if (count($services) > 0)
-                      <select name="associated_services[]" class="form-control select2" style="width: 50%" multiple="multiple">
+                      <select name="associated_services[]" class="form-control select2" style="width: 100%" multiple="multiple">
                       @foreach($services as $service)
                         <option value="{{ $service->id }}">{{ $service->name }}</option>
                       @endforeach
