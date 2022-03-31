@@ -481,7 +481,7 @@ var Backend = {}; // common variable used in all the files of the backend
         Clients: {
             selectors: {
                 select2: $(".select2"),
-                addService: $(".add-service"),
+                addService: document.querySelector("select[name='add_service']",
             },
             init: function (page) {
                 this.setSelectors();
