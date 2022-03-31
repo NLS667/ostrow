@@ -44,7 +44,11 @@
 }
 .services > li > a {
     display:inline-block;
-    padding-right:30px;
+    padding-right:30px !important;
+
+    &:not(.active) > span {
+      color: #555;
+    }
 }
 .services > li > span {
     display:none;
@@ -52,7 +56,7 @@
     position:absolute;
     right: 15px;
     top: 8px;
-    color: red;
+    color: white;
     font-size:16px;
 }
 .services > li:hover > span {
