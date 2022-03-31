@@ -130,4 +130,15 @@ class ClientController extends Controller
 
         return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.clients.deleted')]);
     }
+
+    /**
+     * @param \App\Models\Access\Client\Client                             $client
+     * @param \App\Http\Requests\Backend\Client\DeleteClientRequest $request
+     *
+     * @return \App\Http\Responses\RedirectResponse
+     */
+    public function getServiceForm()
+    {
+        return view('backend.includes.partials.client-add-service');
+    }
 }
