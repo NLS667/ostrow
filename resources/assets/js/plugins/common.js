@@ -498,7 +498,7 @@ var Backend = {}; // common variable used in all the files of the backend
                         //event.preventDefault();                     
                         var name = $( ".add-service option:selected" ).text();
                         var id = $( ".add-service option:selected" ).val();                        
-                        var count = $(".services").children().length - 1;
+                        var count = $(".services").children().length;
                         var tabId = 'service_' + id;
                         if(!$('#serviceTab_' + id ).length){
                             $(this).closest('li').before('<li id="serviceTab_' + id + '" class="nav-item"><a href="#service_' + id + '" class="nav-link" data-toggle="tab" role="tablist">' + name + '</a> <span> x </span></li>');
