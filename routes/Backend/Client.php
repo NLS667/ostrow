@@ -37,6 +37,10 @@
                 Route::get('delete', [ClientStatusController::class, 'delete'])->name('client.delete-permanently')->withTrashed();
                 Route::get('restore', [ClientStatusController::class, 'restore'])->name('client.restore')->withTrashed();
             });
+
+            Route::get('client/getserviceform', function () {
+                return view('backend.includes.partials.client-add-service');
+            });
         });
     });
 ?>
