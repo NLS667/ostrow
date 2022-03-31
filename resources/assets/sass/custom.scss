@@ -39,13 +39,13 @@
     width: 100%;
     z-index:10000;
 }
-.services .nav-tabs > li {
+.services > li {
     position:relative;
 }
-.services .nav-tabs > li > a {
+.services > li > a {
     display:inline-block;
 }
-.services .nav-tabs > li > span {
+.services > li > span {
     display:none;
     cursor:pointer;
     position:absolute;
@@ -53,6 +53,6 @@
     top: 8px;
     color: red;
 }
-.services .nav-tabs > li:hover > span {
+.services > li:hover > span {
     display: inline-block;
 }
