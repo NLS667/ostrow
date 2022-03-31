@@ -184,7 +184,7 @@
         $(".services").on("click", "a", function (e) {
             e.preventDefault();
             $(this).tab('show');
-            $(".add-service").val("");
+            $(".add-service").val("").trigger('change');
         })
         .on("click", "span", function () {
           var anchor = $(this).siblings('a');

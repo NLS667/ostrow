@@ -495,15 +495,18 @@ var Backend = {}; // common variable used in all the files of the backend
                 this.setSelectors();
                 this.selectors.addService.forEach(function (element) {
                     element.onchange = function (event) {   
-                        //event.preventDefault();                     
-                        var name = $( ".add-service option:selected" ).text();
-                        var id = $( ".add-service option:selected" ).val();                        
-                        var count = $(".services").children().length;
-                        var tabId = 'service_' + id;
-                        if(!$('#serviceTab_' + id ).length){
-                            $(this).closest('li').before('<li id="serviceTab_' + id + '" class="nav-item"><a href="#service_' + id + '" class="nav-link" data-toggle="tab" role="tablist">' + name + '</a> <span> x </span></li>');
-                            $('.tab-content').append('<div class="tab-pane" id="' + tabId + '">Nowa usługa ' + name + ' o ID: ' + id + '</div>');
-                            $('.services li:nth-child(' + count + ') a').click();
+                        //event.preventDefault();
+                        var id = $( ".add-service option:selected" ).val();
+                        if(id > 0){
+                            var name = $( ".add-service option:selected" ).text();
+                            var id = $( ".add-service option:selected" ).val();                        
+                            var count = $(".services").children().length;
+                            var tabId = 'service_' + id;
+                            if(!$('#serviceTab_' + id ).length){
+                                $(this).closest('li').before('<li id="serviceTab_' + id + '" class="nav-item"><a href="#service_' + id + '" class="nav-link" data-toggle="tab" role="tablist">' + name + '</a> <span> x </span></li>');
+                                $('.tab-content').append('<div class="tab-pane" id="' + tabId + '">Nowa usługa ' + name + ' o ID: ' + id + '</div>');
+                                $('.services li:nth-child(' + count + ') a').click();
+                            }
                         }
                     };
                 });
