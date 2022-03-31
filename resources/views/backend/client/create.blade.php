@@ -178,6 +178,7 @@
 
 @section('after-scripts')
      <script type="text/javascript">
+        /**
         $(".services").on("click", "a", function (e) {
             e.preventDefault();
             $(this).tab('show');
@@ -189,7 +190,7 @@
           $(this).parent().remove();
           $(".services li").children('a').first().click();
         });
-
+        */
         Backend.Utils.documentReady(function(){
             Backend.Clients.init();
         });
