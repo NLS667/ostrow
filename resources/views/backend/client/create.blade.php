@@ -154,7 +154,7 @@
                 <li class="nav-item">
                   @if (count($services) > 0)
                   <select name="add-service" class="form-control add-service select2">
-                    <option value="-1">Wybierz Usługę</option>
+                    <option></option>
                     @foreach($services as $service)
                      <option value="{{ $service->id }}">{{ $service->name }}</option>
                     @endforeach
