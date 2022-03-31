@@ -183,9 +183,7 @@
      <script type="text/javascript">
         $(".services").on("click", "a", function (e) {
             e.preventDefault();
-            if (!$(this).hasClass('add')) {
-                $(this).tab('show');
-            }
+            $(this).tab('show');
             $(".add-service").val("");
         })
         .on("click", "span", function () {
