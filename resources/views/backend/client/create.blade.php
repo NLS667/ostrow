@@ -168,9 +168,9 @@
               <!-- Tab panes -->
               <div id="tab-content" class="tab-content">
               </div>
-            </div>
-            <button type="submit" class="btn btn-fill btn-success">Dodaj</button>
+            </div>            
           </div>
+          <button type="submit" class="btn btn-fill btn-success">Dodaj</button>
         </form>
       </div>
     </div>    
