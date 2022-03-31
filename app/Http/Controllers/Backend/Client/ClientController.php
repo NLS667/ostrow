@@ -140,7 +140,7 @@ class ClientController extends Controller
      */
     public function getServiceForm(Request $request)
     {
-        $service = $this->services->find($request->service)->first();
+        $service = $this->services->find($request->service);
         return view('backend.includes.partials.client-add-service', ['service' => $service]);
     }
 }
