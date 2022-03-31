@@ -491,8 +491,8 @@ var Backend = {}; // common variable used in all the files of the backend
             windowloadhandler: function () {
                 this.setSelectors();
                 this.selectors.addService.forEach(function (element) {
-                    element.on('changed.bs.select', function (event) {   
-                        //event.preventDefault();
+                    element.onchange = function (event) {   
+                        event.preventDefault();
                         var id = $( ".add-service option:selected" ).val();
                         if(id > 0){
                             var name = $( ".add-service option:selected" ).text();
@@ -505,7 +505,7 @@ var Backend = {}; // common variable used in all the files of the backend
                                 $('.services li:nth-child(' + count + ') a').click();
                             }
                         }
-                    });
+                    };
                 });
             }
         },
