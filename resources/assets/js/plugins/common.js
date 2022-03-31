@@ -498,11 +498,21 @@ var Backend = {}; // common variable used in all the files of the backend
                         var name = $( ".add-service option:selected" ).text();
                         console.log(name);
                         //event.preventDefault();
-                        var id = $( ".add-service option:selected" ).val();
+                        var count = $(".nav-tabs").children().length;
                         var tabId = 'service_' + id;
                         $(this).closest('li').before('<li><a href="#service_' + id + '">' + name + '</a> <span> x </span></li>');
                         $('.tab-content').append('<div class="tab-pane" id="' + tabId + '">Nowa usługa ' + id + '</div>');
                         $('.nav-tabs li:nth-child(' + id + ') a').click();
+                    };
+                    element.onchange = function (event) {   
+                        //event.preventDefault();                     
+                        var name = $( ".add-service option:selected" ).text();
+                        var id = $( ".add-service option:selected" ).val();                        
+                        var count = $(".nav-tabs").children().length;
+                        var tabId = 'service_' + id;
+                        $(this).closest('li').before('<li class="nav-item"><a href="#service_' + id + '" class="nav-link" data-toggle="tab" role="tablist">' + name + '</a> <span> x </span></li>');
+                        $('.tab-content').append('<div class="tab-pane" id="' + tabId + '">Nowa usługa ' + id + '</div>');
+                        $('.nav-tabs li:nth-child(' + count + ') a').click();
                     };
                 });
             }
