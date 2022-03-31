@@ -495,8 +495,8 @@ var Backend = {}; // common variable used in all the files of the backend
                 this.setSelectors();
                 this.selectors.addService.forEach(function (element) {
                     element.onchange = function (event) {
-                        Console.log(event);
-                        event.preventDefault();
+                        console.log(event);
+                        //event.preventDefault();
                         var id = $(".nav-tabs").children().length; //think about it ;)
                         var tabId = 'service_' + id;
                         $(this).closest('li').before('<li><a href="#service_' + id + '">{{ $service->name }}</a> <span> x </span></li>');
