@@ -153,7 +153,7 @@
               <ul class="nav nav-pills nav-pills-warning services" role="tablist">
                 <li class="nav-item">
                   @if (count($services) > 0)
-                  <select name="add-service" class="form-control add-service select2">
+                  <select name="add-service" class="form-control add-service selectpicker">
                     <option></option>
                     @foreach($services as $service)
                      <option value="{{ $service->id }}">{{ $service->name }}</option>
