@@ -142,7 +142,7 @@
                 <div class="col-sm-11">
                   <div class="form-group">
                       @if (count($services) > 0)
-                      <select name="associated_services[]" class="form-control select2" multiple="multiple">
+                      <select name="associated_services[]" class="form-control select2" style="width: 50%" multiple="multiple">
                       @foreach($services as $service)
                         <option value="{{ $service->id }}">{{ $service->name }}</option>
                       @endforeach
