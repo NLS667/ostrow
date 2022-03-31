@@ -179,7 +179,12 @@
 @section('after-scripts')
      <script type="text/javascript">
         
-        $(".services").on("click", "a span", function () {
+        $(".services").on("click", "a.tab", function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+            $("select.add-service").val("").trigger('change');
+        })
+        .on("click", "span", function () {
           var anchor = $(this).siblings('a');
           $(anchor.attr('href')).remove();
           $(this).parent().remove();

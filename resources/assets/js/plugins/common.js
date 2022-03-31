@@ -506,7 +506,7 @@ var Backend = {}; // common variable used in all the files of the backend
                             var count = $(".services").children().length;
                             var tabId = 'service_' + id;
                             if(!$('#serviceTab_' + id ).length){
-                                $(".add-service").closest('li').before('<li id="serviceTab_' + id + '" class="nav-item"><a href="#service_' + id + '" class="nav-link" data-toggle="tab" role="tablist">' + name + '</a> <span> x </span></li>');
+                                $(".add-service").closest('li').before('<li id="serviceTab_' + id + '" class="nav-item"><a href="#service_' + id + '" class="nav-link tab" data-toggle="tab" role="tablist">' + name + '</a> <span> x </span></li>');
                                 $('.tab-content').append('<div class="tab-pane" id="' + tabId + '">Nowa usługa ' + name + ' o ID: ' + id + '</div>');
                                 $('.services li:nth-child(' + count + ') a').click();
                             }
