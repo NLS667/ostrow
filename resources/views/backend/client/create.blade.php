@@ -155,6 +155,7 @@
                   <div class="form-group" data-toggle="tab" href="#tab1" role="tablist">
                       @if (count($services) > 0)
                       <select name="add-service" class="form-control add-service select2" data-placeholder="Dodaj Usługę">
+                        <option></option>
                       @foreach($services as $service)
                         <option value="{{ $service->id }}">{{ $service->name }}</option>
                       @endforeach
