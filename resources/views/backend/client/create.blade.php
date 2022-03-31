@@ -198,13 +198,7 @@
 
 @section('after-scripts')
      <script type="text/javascript">
-        $(".nav-tabs").on("click", "a", function (e) {
-          e.preventDefault();
-          if (!$(this).hasClass('add-contact')) {
-              $(this).tab('show');
-          }
-        })
-        .on("click", "span", function () {
+        $(".nav-tabs").on("click", "span", function () {
           var anchor = $(this).siblings('a');
           $(anchor.attr('href')).remove();
           $(this).parent().remove();
