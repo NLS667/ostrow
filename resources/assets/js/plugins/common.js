@@ -483,18 +483,16 @@ var Backend = {}; // common variable used in all the files of the backend
                 select2: $(".select2"),
                 addService: document.querySelector("select[name='add-service']"),
             },
-            init: function (page) {
+            init: function () {
                 this.setSelectors();
-                this.addHandlers(page);
+                this.selectors.select2.select2();
             },
             setSelectors: function () {
                 this.selectors.select2 = $(".select2");
                 this.selectors.addService = document.querySelector("select[name='add-service']");
             },
-            addHandlers: function (page) {
-                this.selectors.select2.select2();
-            },
             windowloadhandler: function () {
+                this.setSelectors();
                 this.selectors.addService.forEach(function (element) {
                     element.onchange = function (event) {
                         Console.log(event);

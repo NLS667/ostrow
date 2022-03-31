@@ -212,7 +212,7 @@
         });
 
         Backend.Utils.documentReady(function(){
-            Backend.Clients.init("create");
+            Backend.Clients.init();
         });
 
         window.onload = function () {
