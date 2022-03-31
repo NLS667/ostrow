@@ -188,7 +188,7 @@
           var anchor = $(this).siblings('a');
           $(anchor.attr('href')).remove();
           $(this).parent().remove();
-          $(".services li").children('a').first().click();
+          $(".services li").children('a.tab').first().click();
         });
         
         Backend.Utils.documentReady(function(){
