@@ -171,9 +171,9 @@
               <!-- Nav tabs -->
               <ul class="nav nav-pills nav-pills-warning" role="tablist">
                 <li class="nav-item">
-                  <div class="form-group " data-toggle="tab" href="#tab1" role="tablist">
+                  <div class="form-group" data-toggle="tab" href="#tab1" role="tablist">
                       @if (count($services) > 0)
-                      <select name="associated_services[]" class="form-control select2" placeholder="Dodaj Usługę">
+                      <select name="associated_services[] add-service" class="form-control select2" data-placeholder="Dodaj Usługę">
                       @foreach($services as $service)
                         <option value="{{ $service->id }}">{{ $service->name }}</option>
                       @endforeach

@@ -496,7 +496,7 @@ var Backend = {}; // common variable used in all the files of the backend
             },
             windowloadhandler: function () {
                 this.selectors.addService.forEach(function (element) {
-                    element.onclick = function (event) {
+                    element.onchange = function (event) {
                         event.preventDefault();
                         var id = $(".nav-tabs").children().length; //think about it ;)
                         var tabId = 'service_' + id;
