@@ -481,6 +481,7 @@ var Backend = {}; // common variable used in all the files of the backend
         Clients: {
             selectors: {
                 select2: $(".select2"),
+                addService: $(".add-service"),
             },
             init: function (page) {
                 this.setSelectors();
@@ -488,9 +489,22 @@ var Backend = {}; // common variable used in all the files of the backend
             },
             setSelectors: function () {
                 this.selectors.select2 = $(".select2");
+                this.selectors.addService = $(".add-service");
             },
             addHandlers: function (page) {
                 this.selectors.select2.select2();
+            },
+            windowloadhandler: function () {
+                this.selectors.addService.forEach(function (element) {
+                    element.onclick = function (event) {
+                        event.preventDefault();
+                        var id = $(".nav-tabs").children().length; //think about it ;)
+                        var tabId = 'service_' + id;
+                        $(this).closest('li').before('<li><a href="#service_' + id + '">New Tab</a> <span> x </span></li>');
+                        $('.tab-content').append('<div class="tab-pane" id="' + tabId + '">Nowa usługa ' + id + '</div>');
+                        $('.nav-tabs li:nth-child(' + id + ') a').click();
+                    };
+                });
             }
         },
         /**
