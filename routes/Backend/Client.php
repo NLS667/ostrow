@@ -18,7 +18,7 @@
             Route::get('client/deactivated', [ClientStatusController::class, 'getDeactivated'])->name('client.deactivated');
             Route::get('client/deleted', [ClientStatusController::class, 'getDeleted'])->name('client.deleted');
 
-            Route::get('client/getserviceform', [ClientController::class, 'getServiceForm'])->name('client.getserviceform');
+            Route::get('client/getserviceform', [\App\Http\Controllers\Backend\Client\ClientController::class, 'getServiceForm'])->name('client.getserviceform');
             /*
              * Client CRUD
              */
