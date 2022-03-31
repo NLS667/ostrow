@@ -169,7 +169,7 @@
             </div>
             <div class="card-body">              
               <!-- Nav tabs -->
-              <ul class="nav nav-pills nav-pills-warning" role="tablist">
+              <ul class="nav nav-pills nav-pills-warning services" role="tablist">
                 <li class="nav-item">
                   <div class="form-group" data-toggle="tab" href="#tab1" role="tablist">
                       @if (count($services) > 0)
