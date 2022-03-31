@@ -504,9 +504,8 @@ var Backend = {}; // common variable used in all the files of the backend
                                 $(".add-service").closest('li').before('<li id="serviceTab_' + id + '" class="nav-item"><a href="#service_' + id + '" class="nav-link tab" data-toggle="tab" role="tablist">' + name + '</a> <span class="material-icons">clear</span></li>');
                                 $.get("getserviceform", function(data){
                                     $('.tab-content').append('<div class="tab-pane" id="' + tabId + '">' + data + '</div>');
+                                    $('.services li:nth-child(' + count + ') a').click();
                                 });
-                                //$('.tab-content').append('<div class="tab-pane active show" id="' + tabId + '">@include("backend.includes.partials.client-add-service")</div>');
-                                $('.services li:nth-child(' + count + ') a').click();
                             }
                         }
                     };
