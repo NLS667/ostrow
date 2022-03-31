@@ -480,24 +480,18 @@ var Backend = {}; // common variable used in all the files of the backend
          */
         Clients: {
             selectors: {
-                select2: $(".add-service.select2"),
                 addService: document.querySelectorAll("select[name='add-service']"),
             },
             init: function () {
                 this.setSelectors();
-                this.selectors.select2.select2({
-                    placeholder: "Wybierz Usługę",
-                    allowClear: true
-                });
             },
             setSelectors: function () {
-                this.selectors.select2 = $(".select2");
                 this.selectors.addService = document.querySelectorAll("select[name='add-service']");
             },
             windowloadhandler: function () {
                 this.setSelectors();
                 this.selectors.addService.forEach(function (element) {
-                    element.onchange = function (event) {   
+                    element.on('changed.bs.select', function (event) {   
                         //event.preventDefault();
                         var id = $( ".add-service option:selected" ).val();
                         if(id > 0){
@@ -511,7 +505,7 @@ var Backend = {}; // common variable used in all the files of the backend
                                 $('.services li:nth-child(' + count + ') a').click();
                             }
                         }
-                    };
+                    });
                 });
             }
         },
