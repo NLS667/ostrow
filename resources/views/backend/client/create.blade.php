@@ -178,19 +178,14 @@
 
 @section('after-scripts')
      <script type="text/javascript">
-        /**
-        $(".services").on("click", "a", function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-            $("select.add-service").val("").trigger('change');
-        })
-        .on("click", "span", function () {
+        
+        $(".services").on("click", "a span", function () {
           var anchor = $(this).siblings('a');
           $(anchor.attr('href')).remove();
           $(this).parent().remove();
           $(".services li").children('a').first().click();
         });
-        */
+        
         Backend.Utils.documentReady(function(){
             Backend.Clients.init();
         });
