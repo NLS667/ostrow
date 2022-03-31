@@ -18,6 +18,7 @@
             Route::get('client/deactivated', [ClientStatusController::class, 'getDeactivated'])->name('client.deactivated');
             Route::get('client/deleted', [ClientStatusController::class, 'getDeleted'])->name('client.deleted');
 
+            Route::get('client/getserviceform', [ClientController::class, 'getServiceForm'])->name('client.getserviceform');
             /*
              * Client CRUD
              */
@@ -26,9 +27,9 @@
             /*
              * Specific Client
              */
-            Route::group(['prefix' => 'client/{client}'], function () {
+            //Route::group(['prefix' => 'client/{client}'], function () {
 
-            });
+            //});
 
             /*
              * Deleted Client
@@ -37,8 +38,6 @@
                 Route::get('delete', [ClientStatusController::class, 'delete'])->name('client.delete-permanently')->withTrashed();
                 Route::get('restore', [ClientStatusController::class, 'restore'])->name('client.restore')->withTrashed();
             });
-
-            Route::get('client/getserviceform', [ClientController::class, 'getServiceForm'])->name('client.getserviceform');
         });
     });
 ?>
