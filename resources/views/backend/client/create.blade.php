@@ -159,15 +159,15 @@
             </div>
           </div>
           <div class="card">
-            <div class="card-body">
-              <div class="card-header card-header-icon card-header-primary">
-                <div class="col-md-6">
-                  <div class="card-icon">
-                    <i class="material-icons">handyman</i>
-                  </div>
-                  <h4 class="card-title">Przypisz Usługi</h4>
+            <div class="card-header card-header-icon card-header-primary">
+              <div class="col-md-6">
+                <div class="card-icon">
+                  <i class="material-icons">handyman</i>
                 </div>
+                <h4 class="card-title">Przypisz Usługi</h4>
               </div>
+            </div>
+            <div class="card-body">              
               <!-- Nav tabs -->
               <ul class="nav nav-pills nav-pills-warning" role="tablist">
                 <li class="nav-item">
