@@ -500,7 +500,7 @@ var Backend = {}; // common variable used in all the files of the backend
                         event.preventDefault();
                         var id = $(".nav-tabs").children().length; //think about it ;)
                         var tabId = 'service_' + id;
-                        $(this).closest('li').before('<li><a href="#service_' + id + '">New Tab</a> <span> x </span></li>');
+                        $(this).closest('li').before('<li><a href="#service_' + id + '">{{ $service->name }}</a> <span> x </span></li>');
                         $('.tab-content').append('<div class="tab-pane" id="' + tabId + '">Nowa usługa ' + id + '</div>');
                         $('.nav-tabs li:nth-child(' + id + ') a').click();
                     };
