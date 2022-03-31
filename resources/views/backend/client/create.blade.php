@@ -181,7 +181,7 @@
 
 @section('after-scripts')
      <script type="text/javascript">
-        $(".servicess").on("click", "a", function (e) {
+        $(".services").on("click", "a", function (e) {
             e.preventDefault();
             if (!$(this).hasClass('add')) {
                 $(this).tab('show');
