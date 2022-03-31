@@ -152,18 +152,16 @@
               <!-- Nav tabs -->
               <ul class="nav nav-pills nav-pills-warning services" role="tablist">
                 <li class="nav-item">
-                  <div class="form-group add">
-                      @if (count($services) > 0)
-                      <select name="add-service" class="form-control add-service select2" data-placeholder="Wybierz Usługę">
-                        <option></option>
-                      @foreach($services as $service)
-                        <option value="{{ $service->id }}">{{ $service->name }}</option>
-                      @endforeach
-                      </select>
-                      @else
-                      Brak zdefiniowanych Usług.
-                      @endif
-                  </div>
+                  @if (count($services) > 0)
+                  <select name="add-service" class="form-control add-service select2" data-placeholder="Wybierz Usługę">
+                    <option value="-1"></option>
+                    @foreach($services as $service)
+                     <option value="{{ $service->id }}">{{ $service->name }}</option>
+                    @endforeach
+                  </select>
+                  @else
+                  Brak zdefiniowanych Usług.
+                  @endif
                 </li>
               </ul>
               <!-- Tab panes -->
@@ -184,7 +182,7 @@
         $(".services").on("click", "a", function (e) {
             e.preventDefault();
             $(this).tab('show');
-            $(".add-service").val("").trigger('change');
+            $("select.add-service").val("").trigger('change');
         })
         .on("click", "span", function () {
           var anchor = $(this).siblings('a');
