@@ -498,9 +498,9 @@ var Backend = {}; // common variable used in all the files of the backend
                         var name = $( ".add-service option:selected" ).text();
                         console.log(name);
                         //event.preventDefault();
-                        var id = $(".nav-tabs").children().length; //think about it ;)
+                        var id = $( ".add-service option:selected" ).val();
                         var tabId = 'service_' + id;
-                        $(this).closest('li').before('<li><a href="#service_' + id + '">{{ $service->name }}</a> <span> x </span></li>');
+                        $(this).closest('li').before('<li><a href="#service_' + id + '">' + name + '</a> <span> x </span></li>');
                         $('.tab-content').append('<div class="tab-pane" id="' + tabId + '">Nowa usługa ' + id + '</div>');
                         $('.nav-tabs li:nth-child(' + id + ') a').click();
                     };
