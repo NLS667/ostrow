@@ -528,7 +528,10 @@ var Backend = {}; // common variable used in all the files of the backend
                 this.selectors.producer = $(".select2");
             },
             addHandlers: function(){
-                this.selectors.producer.select2();
+                this.selectors.producer.select2({
+                    placeholder: "Wybierz Producenta",
+                    theme: "material"
+                });
             }
         },
         /**
