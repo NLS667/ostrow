@@ -93,7 +93,7 @@
                 columns: [
                     {data: 'name', name: 'producers.name'},
                     {data: 'description', name: 'producers.description'},
-                    {data: 'models', name: 'producers.models'},
+                    {data: 'models', name: 'producers.modelCount'},
                     {data: 'created_at', name: 'producers.created_at'},
                     {data: 'updated_at', name: 'producers.updated_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
