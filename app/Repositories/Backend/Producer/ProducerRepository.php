@@ -20,12 +20,6 @@ class ProducerRepository extends BaseRepository
      * Associated Repository Model.
      */
     const MODEL = Producer::class;
-
-    /**
-     * @var Service Model
-     */
-    protected $model;
-
     /**
      * @var ProducerRepository
      */
@@ -34,9 +28,9 @@ class ProducerRepository extends BaseRepository
     /**
      * @param ProducerRepository $producer
      */
-    public function __construct(Producer $model)
+    public function __construct(Producer $producer)
     {
-        $this->model = $model;
+        $this->producer = $producer;
     }
 
     /**
