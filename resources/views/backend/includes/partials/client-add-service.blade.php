@@ -35,7 +35,8 @@
 	        <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('out_unit_sn') ? ' has-danger' : '' }}">
 	            <label class="bmd-label-floating">Numer Seryjny Jedn. zewn.</label>
 	            <input class="form-control" name="out_unit_sn" id="input-out_unit_sn" type="text" value="{{ old('out_unit_sn') }}" />
-	            if ($errors->has('out_unit_sn'))
+	            @if ($errors->has('out_unit_sn'))
+	            <span class="material-icons form-control-feedback">clear</span>
 	            <span id="out_unit_sn-error" class="error text-danger" for="input-out_unit_sn">{{ $errors->first('out_unit_sn') }}</span>
 	            @endif
 	        </div><!--form control-->
@@ -46,6 +47,7 @@
 	            <label class="bmd-label-floating">Jednostka wewnętrzna</label>
 	            <input class="form-control" name="in_unit" id="input-in_unit" type="text" value="{{ old('in_unit') }}" />
 	            @if ($errors->has('in_unit'))
+	            <span class="material-icons form-control-feedback">clear</span>
 	            <span id="in_unit-error" class="error text-danger" for="input-in_unit">{{ $errors->first('in_unit') }}</span>
 	            @endif
 	        </div><!--form control-->
@@ -54,6 +56,7 @@
 	            <label class="bmd-label-floating">Numer Seryjny Jedn. Wewn.</label>
 	            <input class="form-control" name="in_unit_sn" id="input-in_unit_sn" type="text" value="{{ old('in_unit_sn') }}" />
 	            @if ($errors->has('in_unit_sn'))
+	            <span class="material-icons form-control-feedback">clear</span>
 	            <span id="in_unit_sn-error" class="error text-danger" for="input-in_unit_sn">{{ $errors->first('in_unit_sn') }}</span>
 	            @endif
 	        </div><!--form control-->
