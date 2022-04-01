@@ -42,7 +42,7 @@
               </div>
               <div class="row">
                 {{-- Producer --}}
-                <label class="col-sm-10 col-form-label">Producent</label>
+                <label class="col-sm-2 col-form-label">Producent</label>
                 <div class="col-sm-10 form-group bmd-form-group {{ $errors->has('producer') ? ' has-danger' : '' }}">
                   @if ($producers->count())
                   <select name="producer" class="form-control select2">
