@@ -86,7 +86,7 @@
                 searching: true,
 
                 ajax: {
-                    url: '{{ route("admin.models.get") }}',
+                    url: '{{ route("admin.model.get") }}',
                     type: 'post',
                     data: {status: 1, trashed: false}
                 },
