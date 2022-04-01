@@ -518,14 +518,14 @@ var Backend = {}; // common variable used in all the files of the backend
          */
         Model: {
             selectors: {
-                producer: document.querySelector("select[name='producer']"),
+                producer: $(".select2"),
             },
             init: function () {
                 this.setSelectors();
                 this.addHandlers();                
             },
             setSelectors: function () {
-                this.selectors.producer = document.querySelector("select[name='producer']");
+                this.selectors.producer = $(".select2");
             },
             addHandlers: function(){
                 this.selectors.producer.select2();
