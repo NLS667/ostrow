@@ -5,9 +5,9 @@
     <span class="sr-only">Zwiń/Rozwiń</span>
   </button>
   <ul class="dropdown-menu dropdown-menu-right" role="menu">
-    <a href="{{route('admin.client.index')}}" class="dropdown-item"><span class="material-icons">list</span>Wszyscy Producenci</a>
+    <a href="{{route('admin.producer.index')}}" class="dropdown-item"><span class="material-icons">list</span>Wszyscy Producenci</a>
     @permission('create-producer')
-    <a href="{{route('admin.client.create')}}" class="dropdown-item"><span class="material-icons">add</span>Dodaj Producenta</a>
+    <a href="{{route('admin.producer.create')}}" class="dropdown-item"><span class="material-icons">add</span>Dodaj Producenta</a>
     @endauth
   </ul>
 </div>
