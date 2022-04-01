@@ -42,10 +42,9 @@
               </div>
               <div class="row">
                 {{-- Producer --}}
-                <label class="col-sm-2 col-form-label">Producent</label>
-                <div class="col-sm-10 form-group bmd-form-group {{ $errors->has('producer') ? ' has-danger' : '' }}">
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('producer') ? ' has-danger' : '' }}">
                   @if ($producers->count())
-                  <select name="producer" class="form-control select2">
+                  <select name="producer" class="form-control select2" data-placeholder="Wybierz Producenta">
                     @foreach ($producers as $producer)
                     <option value="{{$producer->id}}">{{ $producer->name }}</option>
                     @endforeach                  
