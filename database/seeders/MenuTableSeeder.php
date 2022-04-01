@@ -24,16 +24,46 @@ class MenuTableSeeder extends Seeder
                 "name":"Klienci",
                 "id":1,
                 "content":"Clients"
-            },
+            },            
             {
-                "view_permission_id":"view-services-management",
-                "icon":"handyman",
+                "view_permission_id":"view-dict-management",
+                "icon":"menu_book",
                 "open_in_new_tab":0,
                 "url_type":"route",
-                "url":"admin.service.index",
-                "name":"Usługi",
+                "url":"",
+                "name":"Słowniki",
                 "id":1,
-                "content":"Services"
+                "content":"Dictionaries",
+                "children":[{
+                    "view_permission_id":"view-services-management",
+                    "icon":"handyman",
+                    "open_in_new_tab":0,
+                    "url_type":"route",
+                    "url":"admin.service.index",
+                    "name":"Usługi",
+                    "id":2,
+                    "content":"Services"
+                },
+                {
+                    "view_permission_id":"view-producer-management",
+                    "icon":"engineering",
+                    "open_in_new_tab":0,
+                    "url_type":"route",
+                    "url":"admin.producer.index",
+                    "name":"Producenci",
+                    "id":3,
+                    "content":"Producers"
+                },
+                {
+                    "view_permission_id":"view-model-management",
+                    "icon":"inventory",
+                    "open_in_new_tab":0,
+                    "url_type":"route",
+                    "url":"admin.models.index",
+                    "name":"Modele Produktów",
+                    "id":4,
+                    "content":"Product-Models"
+                }]
             }]';
 
         $sysmenu = '[{
