@@ -63,6 +63,25 @@
         </div>
 	</div>
 	<div class="col-sm-6">
-		<p>{{ $service->name }}</p>
+		<div class="row">
+        	{{-- Offer Date --}}
+	        <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('offer_date') ? ' has-danger' : '' }}">
+	            <label class="bmd-label-floating">Data Oferty</label>
+	            <input class="form-control" name="offer_date" id="input-offer_date" type="text" value="{{ old('offer_date') }}" />
+	            @if ($errors->has('offer_date'))
+	            <span class="material-icons form-control-feedback">clear</span>
+	            <span id="offer_date-error" class="error text-danger" for="input-offer_date">{{ $errors->first('offer_date') }}</span>
+	            @endif
+	        </div><!--form control-->
+	        {{-- Deal Date --}}
+	        <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_date') ? ' has-danger' : '' }}">
+	            <label class="bmd-label-floating">Data Umowy</label>
+	            <input class="form-control" name="deal_date" id="input-deal_date" type="text" value="{{ old('deal_date') }}" />
+	            @if ($errors->has('deal_date'))
+	            <span class="material-icons form-control-feedback">clear</span>
+	            <span id="deal_date-error" class="error text-danger" for="input-deal_date">{{ $errors->first('deal_date') }}</span>
+	            @endif
+	        </div><!--form control-->
+        </div>
 	</div>
 </div>
