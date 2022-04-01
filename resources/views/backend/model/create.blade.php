@@ -45,7 +45,7 @@
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('producer') ? ' has-danger' : '' }}">
                   @if ($producers->count())
                   <label class="bmd-label-floating">Producent</label>
-                  <select name="producer" class="form-contro select2">
+                  <select name="producer" class="form-control select2">
                     @foreach ($producers as $producer)
                     <option value="{{$producer->id}}">{{ $producer->name }}</option>
                     @endforeach                  
