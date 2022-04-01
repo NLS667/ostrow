@@ -59,7 +59,7 @@ class MenuTableSeeder extends Seeder
                     "icon":"inventory",
                     "open_in_new_tab":0,
                     "url_type":"route",
-                    "url":"admin.models.index",
+                    "url":"admin.model.index",
                     "name":"Modele Produktów",
                     "id":4,
                     "content":"Product-Models"
