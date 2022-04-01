@@ -3,12 +3,11 @@
 namespace App\Http\Requests\Backend\Producer;
 
 use App\Http\Requests\Request;
-use Illuminate\Validation\Rule;
 
 /**
- * Class StoreProducerRequest.
+ * Class UpdateProducerRequest.
  */
-class StoreProducerRequest extends Request
+class UpdateProducerRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -17,7 +16,7 @@ class StoreProducerRequest extends Request
      */
     public function authorize()
     {
-        return access()->allow('create-producer');
+        return access()->allow('edit-producer');
     }
 
     /**
@@ -27,21 +26,16 @@ class StoreProducerRequest extends Request
      */
     public function rules()
     {
-        return [
-            'name'              => 'required|max:255',
-            'description'       => 'max:255',
+         return [
+            'name'          => 'required|max:255',
+            'description'   => 'max:255',
         ];
     }
 
-    /**
-     * Get the validation massages that apply to the rules.
-     *
-     * @return array
-     */
     public function messages()
     {
         return [
-            'name.required' => 'Musisz podać nazwę Producenta.',
+            'name.required' => 'Nazwa Producenta nie może być pusta.',
             'name.max' => 'Nazwa jest za długa (max 255 znaków).',
             'description.required' => 'Opis jest za długi (max 255 znaków).',
         ];
