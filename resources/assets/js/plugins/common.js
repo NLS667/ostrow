@@ -819,7 +819,7 @@ var Backend = {}; // common variable used in all the files of the backend
 
                 this.setSelectors();
 
-                this.setSelectors.divAlerts.delay(2000).fadeOut(800);
+                this.selector.divAlerts.delay(2000).fadeOut(800);
 
                 this.addHandlers(dataTable);
 
@@ -829,12 +829,12 @@ var Backend = {}; // common variable used in all the files of the backend
                 this.selector.columnSearchInput = document.querySelectorAll(".search-input-text");
                 this.selector.columnSelectInput = document.querySelectorAll(".search-input-select");
                 this.selector.restButton = document.querySelectorAll('.reset-data');
-                this.setSelectors.copyButton = document.getElementById("copyButton");
-                this.setSelectors.csvButton = document.getElementById("csvButton");
-                this.setSelectors.excelButton = document.getElementById("excelButton");
-                this.setSelectors.pdfButton = document.getElementById("pdfButton");
-                this.setSelectors.printButton = document.getElementById("printButton");
-                this.setSelectors.divAlerts = $('div.alert').not('.alert-important');
+                this.selector.copyButton = document.getElementById("copyButton");
+                this.selector.csvButton = document.getElementById("csvButton");
+                this.selector.excelButton = document.getElementById("excelButton");
+                this.selector.pdfButton = document.getElementById("pdfButton");
+                this.selector.printButton = document.getElementById("printButton");
+                this.selector.divAlerts = $('div.alert').not('.alert-important');
 
             },
             cloneElement: function (element, callback) {
@@ -893,28 +893,28 @@ var Backend = {}; // common variable used in all the files of the backend
                         };
                     });
                 }
-                if (this.setSelectors.copyButton.length >> 0) {
-                    this.setSelectors.copyButton.onclick = function (element) {
+                if (this.selector.copyButton.length >> 0) {
+                    this.selector.copyButton.onclick = function (element) {
                         document.querySelector(".copyButton").click();
                     };
                 }
-                if (this.setSelectors.csvButton.length >> 0) {
-                    this.setSelectors.csvButton.onclick = function (element) {
+                if (this.selector.csvButton.length >> 0) {
+                    this.selector.csvButton.onclick = function (element) {
                         document.querySelector(".csvButton").click();
                     };
                 }
-                if (this.setSelectors.excelButton.length >> 0) {
-                    this.setSelectors.excelButton.onclick = function (element) {
+                if (this.selector.excelButton.length >> 0) {
+                    this.selector.excelButton.onclick = function (element) {
                         document.querySelector(".excelButton").click();
                     };
                 }
-                if (this.setSelectors.pdfButton.length >> 0) {
-                    this.setSelectors.pdfButton.onclick = function (element) {
+                if (this.selector.pdfButton.length >> 0) {
+                    this.selector.pdfButton.onclick = function (element) {
                         document.querySelector(".pdfButton").click();
                     };
                 }
-                if (this.setSelectors.printButton.length >> 0) {
-                    this.setSelectors.printButton.onclick = function (element) {
+                if (this.selector.printButton.length >> 0) {
+                    this.selector.printButton.onclick = function (element) {
                         document.querySelector(".printButton").click();
                     };
                 }
