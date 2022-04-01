@@ -9,6 +9,7 @@ use App\Http\Requests\Backend\Model\EditModelRequest;
 use App\Http\Requests\Backend\Model\ManageModelRequest;
 use App\Http\Requests\Backend\Model\StoreModelRequest;
 use App\Http\Requests\Backend\Model\UpdateModelRequest;
+use App\Http\Responses\Backend\Model\CreateResponse;
 use App\Http\Responses\Backend\Model\EditResponse;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
