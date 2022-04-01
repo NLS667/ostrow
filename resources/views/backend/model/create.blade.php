@@ -17,7 +17,22 @@
                 <h4 class="card-title">Dodaj Model</h4>
               </div>
             </div>
-            <div class="card-body ">              
+            <div class="card-body "> 
+              <div class="row">
+                {{-- Producer --}}
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('producer') ? ' has-danger' : '' }}">
+                  @if ($producers->count())
+                  <select name="producer" class="form-control select2" data-placeholder="Wybierz Producenta">
+                    <option></option>
+                    @foreach ($producers as $producer)
+                    <option value="{{$producer->id}}">{{ $producer->name }}</option>
+                    @endforeach                  
+                  </select>
+                  @else
+                  <p>Brak dostępnych Producentów. {{ link_to_route('admin.producer.index', 'Dodaj ') }}nowego Producenta</p>
+                  @endif
+                </div>
+              </div>             
               <div class="row">
                 {{-- Name --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('name') ? ' has-danger' : '' }}">
@@ -37,21 +52,6 @@
                   @if ($errors->has('description'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="description-error" class="error text-danger" for="input-description">{{ $errors->first('description') }}</span>
-                  @endif
-                </div>
-              </div>
-              <div class="row">
-                {{-- Producer --}}
-                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('producer') ? ' has-danger' : '' }}">
-                  @if ($producers->count())
-                  <select name="producer" class="form-control select2" data-placeholder="Wybierz Producenta">
-                    <option></option>
-                    @foreach ($producers as $producer)
-                    <option value="{{$producer->id}}">{{ $producer->name }}</option>
-                    @endforeach                  
-                  </select>
-                  @else
-                  <p>Brak dostępnych Producentów. {{ link_to_route('admin.producer.index', 'Dodaj ') }}nowego Producenta</p>
                   @endif
                 </div>
               </div>
