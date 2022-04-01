@@ -86,7 +86,7 @@
                 searching: true,
 
                 ajax: {
-                    url: '{{ route("admin.service.get") }}',
+                    url: '{{ route("admin.producer.get") }}',
                     type: 'post',
                     data: {status: 1, trashed: false}
                 },
