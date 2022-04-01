@@ -137,38 +137,11 @@
                 </div>
               </div>
             </div>
-          </div>
-          {{-- Associated Services --}}
-          <div class="card">
-            <div class="card-header card-header-icon card-header-primary">
-              <div class="col-md-6">
-                <div class="card-icon">
-                  <i class="material-icons">handyman</i>
-                </div>
-                <h4 class="card-title">Przypisz Usługi</h4>
-              </div>
+            <div class="card-footer">
+              {{ link_to_route('admin.access.role.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
+              {{ Form::submit('Dodaj', ['class' => 'btn btn-success btn-md']) }}
             </div>
-            <div class="card-body">              
-              <!-- Nav tabs -->
-              <ul class="nav nav-pills nav-pills-warning services" role="tablist">
-                <li class="nav-item">
-                  @if (count($services) > 0)
-                  <select name="add-service" class="add-service selectpicker" title="Wybierz Usługę" data-style="btn btn-default btn-round">
-                    @foreach($services as $service)
-                     <option value="{{ $service->id }}">{{ $service->name }}</option>
-                    @endforeach
-                  </select>
-                  @else
-                  Brak zdefiniowanych Usług.
-                  @endif
-                </li>
-              </ul>
-              <!-- Tab panes -->
-              <div id="tab-content" class="tab-content">
-              </div>
-            </div>            
           </div>
-          <button type="submit" class="btn btn-fill btn-success">Dodaj</button>
         </form>
       </div>
     </div>    
@@ -178,18 +151,6 @@
 
 @section('after-scripts')
      <script type="text/javascript">
-        
-        $(".services").on("click", "a.tab", function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-            $("select.add-service").val("").selectpicker("refresh");;
-        })
-        .on("click", "span", function () {
-          var anchor = $(this).siblings('a');
-          $(anchor.attr('href')).remove();
-          $(this).parent().remove();
-          $(".services li").children('a.tab').first().click();
-        });
         
         Backend.Utils.documentReady(function(){
             Backend.Clients.init();
