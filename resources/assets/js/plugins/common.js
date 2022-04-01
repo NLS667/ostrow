@@ -513,6 +513,22 @@ var Backend = {}; // common variable used in all the files of the backend
             }
         },
         /**
+         * Model management
+         *
+         */
+        Model: {
+            selectors: {
+                producer: document.querySelectorAll("select[name='producer']"),
+            },
+            init: function () {
+                this.setSelectors();
+                this.selectors.producer.select2();
+            },
+            setSelectors: function () {
+                this.selectors.producer = document.querySelectorAll("select[name='producer']");
+            }
+        },
+        /**
          * Menu management
          *
          */
