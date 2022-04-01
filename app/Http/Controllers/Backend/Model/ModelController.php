@@ -14,6 +14,7 @@ use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Model\Model;
 use App\Repositories\Backend\Model\ModelRepository;
+use App\Repositories\Backend\Producer\ProducerRepository;
 
 /**
  * Class ModelController.
@@ -25,12 +26,16 @@ class ModelController extends Controller
      */
     protected $model;
 
+    protected $producers;
+
     /**
-     * @param \App\Repositories\Backend\Model\ModelRepository $model
+     * @param \App\Repositories\Backend\Model\ModelRepository       $model
+     * @param \App\Repositories\Backend\Producer\ProducerRepository $producers
      */
-    public function __construct(ModelRepository $model)
+    public function __construct(ModelRepository $model, ProducerRepository $producers)
     {
         $this->model = $model;
+        $this->producers = $producers;
     }
 
     /**
@@ -46,11 +51,11 @@ class ModelController extends Controller
     /**
      * @param \App\Http\Requests\Backend\Model\CreateModelRequest $request
      *
-     * @return \App\Http\Responses\ViewResponse
+     * @return \App\Http\Responses\Backend\Model\CreateResponse
      */
     public function create(CreateModelRequest $request)
     {
-        return new ViewResponse('backend.model.create');
+        return new CreateResponse($this->producers);
     }
 
     /**
