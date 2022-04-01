@@ -893,22 +893,31 @@ var Backend = {}; // common variable used in all the files of the backend
                         };
                     });
                 }
-
-                this.setSelectors.copyButton.onclick = function (element) {
-                    document.querySelector(".copyButton").click();
-                };
-                this.setSelectors.csvButton.onclick = function (element) {
-                    document.querySelector(".csvButton").click();
-                };
-                this.setSelectors.excelButton.onclick = function (element) {
-                    document.querySelector(".excelButton").click();
-                };
-                this.setSelectors.pdfButton.onclick = function (element) {
-                    document.querySelector(".pdfButton").click();
-                };
-                this.setSelectors.printButton.onclick = function (element) {
-                    document.querySelector(".printButton").click();
-                };
+                if (this.setSelectors.copyButton.length >> 0) {
+                    this.setSelectors.copyButton.onclick = function (element) {
+                        document.querySelector(".copyButton").click();
+                    };
+                }
+                if (this.setSelectors.csvButton.length >> 0) {
+                    this.setSelectors.csvButton.onclick = function (element) {
+                        document.querySelector(".csvButton").click();
+                    };
+                }
+                if (this.setSelectors.excelButton.length >> 0) {
+                    this.setSelectors.excelButton.onclick = function (element) {
+                        document.querySelector(".excelButton").click();
+                    };
+                }
+                if (this.setSelectors.pdfButton.length >> 0) {
+                    this.setSelectors.pdfButton.onclick = function (element) {
+                        document.querySelector(".pdfButton").click();
+                    };
+                }
+                if (this.setSelectors.printButton.length >> 0) {
+                    this.setSelectors.printButton.onclick = function (element) {
+                        document.querySelector(".printButton").click();
+                    };
+                }
             }
 
         },
