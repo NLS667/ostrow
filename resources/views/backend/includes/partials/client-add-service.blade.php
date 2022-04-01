@@ -24,7 +24,7 @@
         </div>
         <div class="row">
         	{{-- Outside Unit --}}
-	        <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('out_unit') ? ' has-danger' : '' }}">
+	        <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('out_unit') ? ' has-danger' : '' }}">
 	            <label class="bmd-label-floating">Jednostka zewnętrzna</label>
 	            <input class="form-control" name="out_unit" id="input-out_unit" type="text" value="{{ old('out_unit') }}" />
 	            @if ($errors->has('out_unit'))
@@ -32,7 +32,7 @@
 	            @endif
 	        </div><!--form control-->
 	        {{-- Outside Unit Serial Number--}}
-	        <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('out_unit_sn') ? ' has-danger' : '' }}">
+	        <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('out_unit_sn') ? ' has-danger' : '' }}">
 	            <label class="bmd-label-floating">Numer Seryjny Jedn. zewn.</label>
 	            <input class="form-control" name="out_unit_sn" id="input-out_unit_sn" type="text" value="{{ old('out_unit_sn') }}" />
 	            @if ($errors->has('out_unit_sn'))
@@ -43,7 +43,7 @@
         </div>
         <div class="row">
         	{{-- Inside Unit --}}
-	        <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('in_unit') ? ' has-danger' : '' }}">
+	        <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('in_unit') ? ' has-danger' : '' }}">
 	            <label class="bmd-label-floating">Jednostka wewnętrzna</label>
 	            <input class="form-control" name="in_unit" id="input-in_unit" type="text" value="{{ old('in_unit') }}" />
 	            @if ($errors->has('in_unit'))
@@ -52,7 +52,7 @@
 	            @endif
 	        </div><!--form control-->
 	        {{-- Inside Unit Serial Number--}}
-	        <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('in_unit_sn') ? ' has-danger' : '' }}">
+	        <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('in_unit_sn') ? ' has-danger' : '' }}">
 	            <label class="bmd-label-floating">Numer Seryjny Jedn. Wewn.</label>
 	            <input class="form-control" name="in_unit_sn" id="input-in_unit_sn" type="text" value="{{ old('in_unit_sn') }}" />
 	            @if ($errors->has('in_unit_sn'))
