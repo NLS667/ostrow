@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Models\Producer;
+namespace App\Models\Model;
 
-use App\Models\Producer\Traits\Attribute\ProducerAttribute;
-use App\Models\Producer\Traits\Relationship\ProducerRelationship;
+use App\Models\Model\Traits\Attribute\ModelAttribute;
+use App\Models\Model\Traits\Relationship\ModelRelationship;
 use App\Models\BaseModel;
 
 /**
- * Class Producer.
+ * Class Model.
  */
-class Producer extends BaseModel
+class Model extends BaseModel
 {
-    use ProducerAttribute,
-        ProducerRelationship;
+    use ModelAttribute,
+        ModelRelationship;
         
     /**
      * The database table used by the model.
@@ -39,6 +39,6 @@ class Producer extends BaseModel
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->table = config('producers.producers_table');
+        $this->table = config('models.models_table');
     }
 }
