@@ -893,27 +893,27 @@ var Backend = {}; // common variable used in all the files of the backend
                         };
                     });
                 }
-                if (this.selector.copyButton.length >> 0) {
+                if (this.selector.copyButton) {
                     this.selector.copyButton.onclick = function (element) {
                         document.querySelector(".copyButton").click();
                     };
                 }
-                if (this.selector.csvButton.length >> 0) {
+                if (this.selector.csvButton) {
                     this.selector.csvButton.onclick = function (element) {
                         document.querySelector(".csvButton").click();
                     };
                 }
-                if (this.selector.excelButton.length >> 0) {
+                if (this.selector.excelButton) {
                     this.selector.excelButton.onclick = function (element) {
                         document.querySelector(".excelButton").click();
                     };
                 }
-                if (this.selector.pdfButton.length >> 0) {
+                if (this.selector.pdfButton) {
                     this.selector.pdfButton.onclick = function (element) {
                         document.querySelector(".pdfButton").click();
                     };
                 }
-                if (this.selector.printButton.length >> 0) {
+                if (this.selector.printButton) {
                     this.selector.printButton.onclick = function (element) {
                         document.querySelector(".printButton").click();
                     };
