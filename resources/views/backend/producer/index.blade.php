@@ -91,11 +91,11 @@
                     data: {status: 1, trashed: false}
                 },
                 columns: [
-                    {data: 'name', name: 'services.name'},
-                    {data: 'description', name: 'services.description'},
-                    {data: 'models', name: 'services.clientCount'},
-                    {data: 'created_at', name: 'services.created_at'},
-                    {data: 'updated_at', name: 'services.updated_at'},
+                    {data: 'name', name: 'producers.name'},
+                    {data: 'description', name: 'producers.description'},
+                    {data: 'models', name: 'producers.models'},
+                    {data: 'created_at', name: 'producers.created_at'},
+                    {data: 'updated_at', name: 'producers.updated_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 order: [[3, "asc"]],
