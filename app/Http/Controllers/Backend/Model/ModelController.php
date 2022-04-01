@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Model\CreateModelRequest;
 use App\Http\Requests\Backend\Model\DeleteModelRequest;
 use App\Http\Requests\Backend\Model\EditModelRequest;
-use App\Http\Requests\Backend\Model\ManageModelrRequest;
+use App\Http\Requests\Backend\Model\ManageModelRequest;
 use App\Http\Requests\Backend\Model\StoreModelRequest;
 use App\Http\Requests\Backend\Model\UpdateModelRequest;
 use App\Http\Responses\Backend\Model\EditResponse;
