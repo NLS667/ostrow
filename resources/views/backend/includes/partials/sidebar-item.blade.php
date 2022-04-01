@@ -4,7 +4,7 @@
             <i class="material-icons">{{ @$item->icon }}</i>
             <p>{{ $item->name }}<b class="caret"></b></p>
         </a>
-        <div class="collapse" id="{{ $item->content }}">
+        <div class="collapse {{ active_class(isActiveMenuItem($item), 'show') }}" id="{{ $item->content }}">
             <ul class="nav">
                 {{ renderMenuItems($item->children, 'backend.includes.partials.sidebar-children') }}
             </ul>
