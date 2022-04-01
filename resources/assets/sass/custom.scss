@@ -104,6 +104,10 @@
 
 .select2-container--material .select2-selection--single .select2-selection__rendered {
   float: left;
+  line-height: 1.4;
+  font-weight: 400;
+  font-size: .875rem;
+  color: #aaa;
 }
 
 .select2-container--material .select2-selection--single .select2-selection__arrow {
