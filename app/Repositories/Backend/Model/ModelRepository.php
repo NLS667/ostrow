@@ -8,6 +8,7 @@ use App\Events\Model\ModelUpdated;
 use App\Exceptions\GeneralException;
 use App\Models\Model\Model;
 use App\Repositories\BaseRepository;
+use App\Repositories\Backend\Producer\ProducerRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
