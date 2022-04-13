@@ -48,7 +48,7 @@ class ModelRepository extends BaseRepository
     {
         return $this->query()
             ->leftJoin('producer_model', 'producer_model.model_id', '=', 'models.id')
-            ->leftJoin('producers', 'producer_model.producer_id', '=', 'rproducers.id')
+            ->leftJoin('producers', 'producer_model.producer_id', '=', 'producers.id')
             ->select([
                 config('models.models_table').'.id',
                 config('models.models_table').'.name',
