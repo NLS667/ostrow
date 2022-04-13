@@ -12,12 +12,14 @@ class EditResponse implements Responsable
     protected $model;
 
 
+
     /**
      * @param \App\Models\Model\Model $model
      */
-    public function __construct($model)
+    public function __construct($model, $producer)
     {
         $this->model = $model;
+        $this->producer = $producer;
     }
 
     /**
@@ -31,6 +33,8 @@ class EditResponse implements Responsable
     {
         return view('backend.model.edit')->with([
             'model'            => $this->model,
+            'modelProducer'    => $this->model->producers->pluck('id')->all(),
+            'producers'        => $this->producers,
         ]);
     }
 }
