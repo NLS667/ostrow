@@ -74,14 +74,8 @@ class ModelRepository extends BaseRepository
         $producer = $request->get('producer');
         //$tasks = $request->get('tasks');
         //$client = $this->createClientStub($data);
-        DB::transaction(function () use ($request) {
-
-            $model = self::MODEL;
-            $model = new $model();
-            $model->name = $request['name'];
-            $model->description = $request['description'];
-
-            $model->created_by = access()->user()->id;
+        $model = $this->createModelStub($data);
+        DB::transaction(function () use ($model, $data, $producer) {
 
             if ($model->save()) {
 
@@ -142,6 +136,22 @@ class ModelRepository extends BaseRepository
         }
 
         throw new GeneralException(trans('exceptions.backend.models.delete_error'));
+    }
+
+    /**
+     * @param  $request
+     *
+     * @return mixed
+     */
+    protected function createModelStub($request)
+    {
+        $model = self::MODEL;
+        $model = new $model();
+        $model->name = $request['name'];
+        $model->description = $request['description'];
+        $model->created_by = access()->user()->id;
+
+        return $model;
     }
 
 }
