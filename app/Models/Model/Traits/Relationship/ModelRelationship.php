@@ -14,7 +14,7 @@ trait ModelRelationship
      */
     public function producers()
     {
-        return $this->belongsTo(Producer::class, config('producer.producer_model_table'), 'producer_id', 'model_id');
+        return $this->belongsTo(Producer::class, config('producers.producer_model_table'), 'producer_id', 'model_id');
     }
 
 }
