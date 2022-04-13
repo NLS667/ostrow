@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/png" href="{{ asset('material') }}/img/favicon.png">
 
     <!-- Title -->
     <title>@yield('title', app_name())</title> 
@@ -19,7 +20,7 @@
 
     <!-- Styles -->
     @yield('before-styles')
-    {{ Html::style(mix('css/front.css')) }}
+    {{ Html::style(mix('css/app.css')) }}
     @yield('after-styles')
  
     <!-- Scripts -->
@@ -37,7 +38,7 @@
 
     <!-- Scripts -->
     @yield('before-scripts')
-    {!! Html::script(mix('js/front.js')) !!} 
+    {!! Html::script(mix('js/app.js')) !!} 
     @yield('after-scripts')
     
 </body>
