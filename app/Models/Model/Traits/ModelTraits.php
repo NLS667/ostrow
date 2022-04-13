@@ -8,7 +8,7 @@ namespace App\Models\Model\Traits;
 trait ModelTraits
 {
     /**
-     * Alias to eloquent many-to-many relation's attach() method.
+     * Alias to eloquent belongs-to relation's associate() method.
      *
      * @param mixed $producer
      *
@@ -23,7 +23,7 @@ trait ModelTraits
         if (is_array($producer)) {
             $producer = $producer['id'];
         }
-
+        \Log::info($producer);
         $this->producers()->associate($producer);
     }
 }

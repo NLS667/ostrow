@@ -72,14 +72,12 @@ class ModelRepository extends BaseRepository
 
         $data = $request->except('producer');
         $producer = $request->get('producer');
-        //$tasks = $request->get('tasks');
-        //$client = $this->createClientStub($data);
         $model = $this->createModelStub($data);
         DB::transaction(function () use ($model, $data, $producer) {
 
             if ($model->save()) {
 
-                //Attach new roles
+                //Attach new producer
                 $model->attachProducer($producer);
 
                 event(new ModelCreated($model));
