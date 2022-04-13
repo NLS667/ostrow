@@ -1,63 +1,85 @@
 @extends('layouts.front')
 
 @section('content')
-<div class="wrapper">
-    <div class="page-header">
-        <div class="filter"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 offset-lg-4 col-sm-6 offset-sm-3">
-                    <div class="card card-register">
-                        <h3 class="card-title">Logowanie do CRM</h3>
-                        {{ Form::open(['route' => 'auth.login', 'class' => 'register-form']) }}
-                        <label for="email">E-mail</label>
-                        <div class="input-group form-group-no-border">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="nc-icon nc-email-85"></i>
-                                </span>
-                            </div> 
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="e-mail">
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+<div class="wrapper wrapper-full-page">
+    <div class="page-header login-page header-filter" filter-color="black" style="background-image: url('/img/login.jpg'); background-size: cover; background-position: top center;align-items: center;" data-color="purple">
+        <div class="container" style="height: auto;">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+                    {{ Form::open(['route' => 'auth.login', 'class' => 'form']) }}
+                    <div class="card card-login card-hidden mb-3">
+                        <div class="card-header card-header-primary text-center">
+                            <h4 class="card-title"><strong>Logowanie do CRM</strong></h4>
                         </div>
-                        <label for="password">Hasło</label>
-                        <div class="input-group form-group-no-border">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="nc-icon nc-key-25"></i>
-                                </span>
+                        <div class="card-body">
+                            <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">email</i>
+                                        </span>
+                                    </div>
+                                    <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
+                                </div>
+                                @if ($errors->has('email'))
+                                <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </div>
+                                @endif
                             </div>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="new-password" placeholder="hasło">
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                    </div>
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Hasło" value="{{ !$errors->has('password') ? 'secret' : '' }}" required>
+                                </div>
+                                @if ($errors->has('password'))
+                                <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </div>
+                                @endif
+                            </div>
+                            <div class="form-check mr-auto ml-3 mt-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Zapamiętaj mnie
+                                        <span class="form-check-sign"><span class="check"></span></span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <label class="form-check-label">                                
-                                <input id="remember" type="checkbox" class="form-check-input @error('remember') is-invalid @enderror" name="remember" value="0">
-                                <span class="form-check-sign"></span>
-                                <small>Zapamiętaj mnie</small>                                
-                            </label>
+                        <div class="card-footer justify-content-center">
+                            {{ Form::submit('Zaloguj', ['class' => 'btn btn-primary btn-link btn-lg']) }}
                         </div>
                         
-                        {{ Form::submit('Zaloguj', ['class' => 'btn btn-primary-blue btn-block btn-round']) }}
-                        {{ Form::close() }}
+                        
+                        
+                        
                         <div class="forgot">
                             {{ link_to_route('auth.password.reset', 'Nie pamiętam hasła', [], ['class' => 'btn btn-link btn-primary-blue']) }}
                         </div>
                     </div>
+                    {{ Form::close() }}
+                    <div class="row">
+                        <div class="col-6">
+                            @if (Route::has('auth.password.reset'))
+                                <a href="{{ route('auth.password.reset') }}" class="text-light">
+                                    <small>Nie pamiętam hasła</small>
+                                </a>
+                            @endif
+                        </div>                        
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer register-footer text-center">
-            <h6>© 2022, wykonano z <i class="fa fa-heart heart"></i> przez RAD</h6>
-        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="copyright float-right">
+                    © 2022, wykonano z <i class="material-icons">favorite</i> przez <a href="https://radspzoo.pl" target="_blank">RAD</a>
+                </div>
+            </div>            
+        </footer>
     </div>
 </div>
 @endsection
