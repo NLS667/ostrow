@@ -3,7 +3,6 @@
 namespace App\Http\Responses\Backend\Model;
 
 use Illuminate\Contracts\Support\Responsable;
-use 
 
 class CreateResponse implements Responsable
 {
