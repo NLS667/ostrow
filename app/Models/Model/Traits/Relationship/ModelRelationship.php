@@ -12,9 +12,9 @@ trait ModelRelationship
     /**
      * @return mixed
      */
-    public function producers()
+    public function model()
     {
-        return $this->belongsTo(Producer::class, config('producers.producer_model_table'), 'producer_id', 'model_id');
+        return $this->belongsTo(Producer::class,  'id');
     }
 
 }

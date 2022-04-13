@@ -24,6 +24,6 @@ trait ModelTraits
             $producer = $producer['id'];
         }
         \Log::info($producer);
-        $this->producers()->associate($producer);
+        $this->model()->associate($producer);
     }
 }

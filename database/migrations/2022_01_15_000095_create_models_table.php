@@ -17,6 +17,7 @@ class CreateModelsTable extends Migration
             $table->increments('id');
             $table->string('name', 191);
             $table->string('description', 191);
+            $table->integer('producer_id')->unsigned()->nullable();
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
