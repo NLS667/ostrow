@@ -35,7 +35,7 @@ class ModelTableController extends Controller
             ->addColumn('description', function ($model) {
                 return $model->description;
             })
-            ->addColumn('producer', function ($user) {
+            ->addColumn('producer', function ($model) {
                 return $model->producer;
             })
             ->addColumn('created_at', function ($model) {
