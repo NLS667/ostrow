@@ -52,13 +52,6 @@
                         <div class="card-footer justify-content-center">
                             {{ Form::submit('Zaloguj', ['class' => 'btn btn-primary btn-link btn-lg']) }}
                         </div>
-                        
-                        
-                        
-                        
-                        <div class="forgot">
-                            {{ link_to_route('auth.password.reset', 'Nie pamiętam hasła', [], ['class' => 'btn btn-link btn-primary-blue']) }}
-                        </div>
                     </div>
                     {{ Form::close() }}
                     <div class="row">
