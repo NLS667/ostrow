@@ -12,10 +12,9 @@ class CreateResponse implements Responsable
     protected $producers;
 
     /**
-     * @param \App\Repositories\Backend\Access\Permission\PermissionRepository $permissions
-     * @param \App\Repositories\Backend\Access\Role\RoleRepository             $roles
+     * @param \App\Repositories\Backend\Producer\ProducerRepository $producers
      */
-    public function __construct($producers)
+    public function __construct(ProducerRepository $producers)
     {
         $this->producers = $producers;
     }
@@ -29,6 +28,8 @@ class CreateResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.model.create')->withProducers($this->producers->getAll());
+        return view('backend.model.create')->with([
+            'producers' => $this->producers,
+        ]);
     }
 }
