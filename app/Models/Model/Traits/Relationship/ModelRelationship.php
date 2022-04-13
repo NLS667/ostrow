@@ -10,7 +10,7 @@ trait ModelRelationship
     /**
      * @return mixed
      */
-    public function models()
+    public function producers()
     {
         return $this->belongsTo(Producer::class, config('producer.producer_model_table'), 'producer_id', 'model_id');
     }
