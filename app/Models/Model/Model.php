@@ -4,6 +4,7 @@ namespace App\Models\Model;
 
 use App\Models\Model\Traits\Attribute\ModelAttribute;
 use App\Models\Model\Traits\Relationship\ModelRelationship;
+use App\Models\Model\Traits\ModelTraits;
 use App\Models\BaseModel;
 
 /**
@@ -12,7 +13,8 @@ use App\Models\BaseModel;
 class Model extends BaseModel
 {
     use ModelAttribute,
-        ModelRelationship;
+        ModelRelationship,
+        ModelTraits;
         
     /**
      * The database table used by the model.

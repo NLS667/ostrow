@@ -26,11 +26,18 @@ class ModelRepository extends BaseRepository
     protected $model;
 
     /**
+     * @var ProducerRepository
+     */
+    protected $producer;
+
+
+    /**
      * @param ModelRepository $model
      */
-    public function __construct(Model $model)
+    public function __construct(Model $model, ProducerRepository $producer)
     {
         $this->model = $model;
+        $this->producer = $producer;
     }
 
     /**
@@ -39,12 +46,15 @@ class ModelRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
+            ->leftJoin('producer_model', 'producer_model.model_id', '=', 'models.id')
+            ->leftJoin('producers', 'producer_model.producer_id', '=', 'rproducers.id')
             ->select([
                 config('models.models_table').'.id',
                 config('models.models_table').'.name',
                 config('models.models_table').'.description',
                 config('models.models_table').'.created_at',
                 config('models.models_table').'.updated_at',
+                DB::raw('GROUP_CONCAT(producers.name) as producer'),
             ]);
     }
 
@@ -59,8 +69,8 @@ class ModelRepository extends BaseRepository
             throw new GeneralException(trans('exceptions.backend.models.already_exists'));
         }
 
-        //$data = $request->except('services', 'tasks');
-        //$services = $request->get('services');
+        $data = $request->except('producer');
+        $producer = $request->get('producer');
         //$tasks = $request->get('tasks');
         //$client = $this->createClientStub($data);
         DB::transaction(function () use ($request) {
@@ -73,6 +83,9 @@ class ModelRepository extends BaseRepository
             $model->created_by = access()->user()->id;
 
             if ($model->save()) {
+
+                //Attach new roles
+                $model->attachProducer($producer);
 
                 event(new ModelCreated($model));
 

@@ -56,7 +56,8 @@ class ModelController extends Controller
      */
     public function create(CreateModelRequest $request)
     {
-        return new CreateResponse($this->producers);
+        $producers = $this->producers->getAll();
+        return new CreateResponse($producers);
     }
 
     /**
@@ -66,7 +67,7 @@ class ModelController extends Controller
      */
     public function store(StoreModelRequest $request)
     {
-        $this->model->create($request->all());
+        $this->model->create($request);
 
         return new RedirectResponse(route('admin.model.index'), ['flash_success' => trans('alerts.backend.models.created')]);
     }

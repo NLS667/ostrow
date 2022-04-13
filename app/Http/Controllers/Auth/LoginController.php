@@ -139,7 +139,7 @@ class LoginController extends Controller
     {
         //If for some reason route is getting hit without someone already logged in
         if (!access()->user()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('index');
         }
 
         //If admin id is set, relogin
@@ -160,7 +160,7 @@ class LoginController extends Controller
             //Otherwise logout and redirect to login
             access()->logout();
 
-            return redirect()->route('auth.login');
+            return redirect()->route('index');
         }
     }
 }
