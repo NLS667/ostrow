@@ -25,17 +25,17 @@ class ModelController extends Controller
     /**
      * @var \App\Repositories\Backend\Model\ModelRepository
      */
-    protected $model;
+    protected $models;
 
     protected $producers;
 
     /**
-     * @param \App\Repositories\Backend\Model\ModelRepository       $model
+     * @param \App\Repositories\Backend\Model\ModelRepository       $models
      * @param \App\Repositories\Backend\Producer\ProducerRepository $producers
      */
-    public function __construct(ModelRepository $model, ProducerRepository $producers)
+    public function __construct(ModelRepository $models, ProducerRepository $producers)
     {
-        $this->model = $model;
+        $this->models = $models;
         $this->producers = $producers;
     }
 
@@ -67,7 +67,7 @@ class ModelController extends Controller
      */
     public function store(StoreModelRequest $request)
     {
-        $this->model->create($request);
+        $this->models->create($request);
 
         return new RedirectResponse(route('admin.model.index'), ['flash_success' => trans('alerts.backend.models.created')]);
     }
@@ -91,7 +91,7 @@ class ModelController extends Controller
      */
     public function update(Model $model, UpdateModelRequest $request)
     {
-        $this->model->update($model, $request->all());
+        $this->models->update($model, $request->all());
 
         return new RedirectResponse(route('admin.model.index'), ['flash_success' => trans('alerts.backend.models.updated')]);
     }
@@ -104,7 +104,7 @@ class ModelController extends Controller
      */
     public function destroy(Model $model, DeleteModelRequest $request)
     {
-        $this->model->delete($model);
+        $this->models->delete($model);
 
         return new RedirectResponse(route('admin.model.index'), ['flash_success' => trans('alerts.backend.models.deleted')]);
     }
