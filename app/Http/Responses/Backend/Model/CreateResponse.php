@@ -3,6 +3,7 @@
 namespace App\Http\Responses\Backend\Model;
 
 use Illuminate\Contracts\Support\Responsable;
+use 
 
 class CreateResponse implements Responsable
 {
@@ -14,7 +15,7 @@ class CreateResponse implements Responsable
     /**
      * @param \App\Repositories\Backend\Producer\ProducerRepository $producers
      */
-    public function __construct(ProducerRepository $producers)
+    public function __construct($producers)
     {
         $this->producers = $producers;
     }
