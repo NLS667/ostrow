@@ -61,7 +61,6 @@ class ServiceCategoryRepository extends BaseRepository
                 DB::raw('(SELECT COUNT(service_client.id) FROM service_client LEFT JOIN clients ON service_client.client_id = clients.id WHERE service_client.servicecat_id = service_categories.id AND clients.deleted_at IS NULL) AS clientCount'),
                 config('service.servicecategory_table').'.created_at',
                 config('service.servicecategory_table').'.updated_at',
-                DB::raw('GROUP_CONCAT(services.name) as services'),
             ])
             ->groupBy('services.id');
     }
