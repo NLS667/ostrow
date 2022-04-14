@@ -70,6 +70,8 @@
                 </div>
               </div>
             </div>
+            {{ $model->name }}
+            {{ $model->description }}
           </form>
         </div>
       </div>
