@@ -58,7 +58,7 @@ class ServiceCategoryController extends Controller
      *
      * @return mixed
      */
-    public function store(StoreServiceRequest $request)
+    public function store(StoreServiceCatRequest $request)
     {
         $this->serviceCategory->create($request->all());
 
