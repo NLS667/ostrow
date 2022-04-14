@@ -11,7 +11,7 @@ use App\Events\Client\ClientRestored;
 use App\Events\Client\ClientUpdated;
 use App\Exceptions\GeneralException;
 use App\Models\Client\Client;
-use App\Repositories\Backend\Service\ServiceRepository;
+use App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -32,17 +32,17 @@ class ClientRepository extends BaseRepository
     protected $model;
 
     /**
-     * @var ServiceRepository
+     * @var ServiceCategoryRepository
      */
-    protected $service;
+    protected $aerviceCategories;
 
     /**
-     * @param ServiceRepository $service
+     * @param ServiceCategoryRepository $aerviceCategories
      */
-    public function __construct(Client $model, ServiceRepository $service)
+    public function __construct(Client $model, ServiceCategoryRepository $aerviceCategories)
     {
         $this->model = $model;
-        $this->service = $service;
+        $this->aerviceCategories = $aerviceCategories;
     }
 
     /**
@@ -59,7 +59,7 @@ class ClientRepository extends BaseRepository
          */
         $dataTableQuery = $this->query()
             ->leftJoin('service_client', 'service_client.client_id', '=', 'clients.id')
-            ->leftJoin('services', 'service_client.service_id', '=', 'services.id')
+            ->leftJoin('service_categories', 'service_client.servicecat_id', '=', 'service_categories.id')
             ->select([
                 config('clients.clients_table').'.id',
                 config('clients.clients_table').'.first_name',
@@ -69,7 +69,7 @@ class ClientRepository extends BaseRepository
                 config('clients.clients_table').'.created_at',
                 config('clients.clients_table').'.updated_at',
                 config('clients.clients_table').'.deleted_at',
-                DB::raw('GROUP_CONCAT(services.name) as services'),
+                DB::raw('GROUP_CONCAT(service_categories.name) as services'),
             ])
             ->groupBy('clients.id');
 
