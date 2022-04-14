@@ -53,12 +53,12 @@ class ServiceCategoryRepository extends BaseRepository
          * be able to differentiate what buttons to show for each row.
          */
         return $this->query()
-            ->leftJoin('service_client', 'service_client.service_id', '=', 'services.id')
+            ->leftJoin('service_client', 'service_client.servicecat_id', '=', 'service_categories.id')
             ->select([
                 config('service.servicecategory_table').'.id',
                 config('service.servicecategory_table').'.name',
                 config('service.servicecategory_table').'.description',
-                DB::raw('(SELECT COUNT(service_client.id) FROM service_client LEFT JOIN clients ON service_client.client_id = clients.id WHERE service_client.service_id = services.id AND clients.deleted_at IS NULL) AS clientCount'),
+                DB::raw('(SELECT COUNT(service_client.id) FROM service_client LEFT JOIN clients ON service_client.client_id = clients.id WHERE service_client.servicecat_id = service_categories.id AND clients.deleted_at IS NULL) AS clientCount'),
                 config('service.servicecategory_table').'.created_at',
                 config('service.servicecategory_table').'.updated_at',
                 DB::raw('GROUP_CONCAT(services.name) as services'),
