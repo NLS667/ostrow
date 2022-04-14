@@ -2,6 +2,8 @@
 
 namespace App\Models\Producer\Traits\Relationship;
 
+use App\Models\Model\Model;
+
 /**
  * Class ProducerRelationship.
  */
