@@ -30,7 +30,7 @@
                     <select name="producer" class="form-control select2" data-placeholder="Wybierz Producenta">
                       <option></option>
                       @foreach ($producers as $producer)
-                        @if (old('producer') == $producer->id)
+                        @if ($modelProducer == $producer->id)
                           <option value="{{$producer->id}}" selected>{{ $producer->name }}</option>
                         @else
                           <option value="{{$producer->id}}">{{ $producer->name }}</option>
@@ -46,7 +46,7 @@
                   {{-- Name --}}
                   <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('name') ? ' has-danger' : '' }}">
                     <label class="bmd-label-floating">Nazwa</label>
-                    <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="input-name" type="text" value="{{ old('name') }}" />
+                    <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="input-name" type="text" value="{{ old('name'), $model->name }}" />
                     @if ($errors->has('name'))
                     <span class="material-icons form-control-feedback">clear</span>
                     <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
@@ -57,7 +57,7 @@
                   {{-- Description --}}
                   <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('description') ? ' has-danger' : '' }}">
                     <label class="bmd-label-floating">Opis</label>
-                    <input class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" id="input-description" type="text" value="{{ old('description') }}" />
+                    <input class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" id="input-description" type="text" value="{{ old('description'), $model->description }}" />
                     @if ($errors->has('description'))
                     <span class="material-icons form-control-feedback">clear</span>
                     <span id="description-error" class="error text-danger" for="input-description">{{ $errors->first('description') }}</span>
