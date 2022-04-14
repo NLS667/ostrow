@@ -42,7 +42,7 @@ class ProducerRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
-            ->leftJoin('models', 'models.producer_id', '=', 'producer.id')
+            ->leftJoin('models', 'models.producer_id', '=', 'producers.id')
             ->select([
                 config('producers.producers_table').'.id',
                 config('producers.producers_table').'.name',
