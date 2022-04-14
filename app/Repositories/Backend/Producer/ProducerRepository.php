@@ -41,8 +41,7 @@ class ProducerRepository extends BaseRepository
      */
     public function getForDataTable()
     {
-        //$models = $this->producer->models()->count();
-        $data = $this->query()
+        return $this->query()
             ->leftJoin('models', 'models.producer_id', '=', 'producers.id')
             ->select([
                 config('producers.producers_table').'.id',
@@ -51,8 +50,6 @@ class ProducerRepository extends BaseRepository
                 config('producers.producers_table').'.created_at',
                 config('producers.producers_table').'.updated_at',
             ]);
-        \Log::info(json_encode($data));
-        return $data;
     }
 
     /**
