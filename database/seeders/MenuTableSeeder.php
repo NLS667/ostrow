@@ -35,14 +35,14 @@ class MenuTableSeeder extends Seeder
                 "id":1,
                 "content":"Dictionaries",
                 "children":[{
-                    "view_permission_id":"view-services-management",
+                    "view_permission_id":"view-servicecat-management",
                     "icon":"handyman",
                     "open_in_new_tab":0,
                     "url_type":"route",
                     "url":"admin.service.index",
-                    "name":"Usługi",
+                    "name":"Kategorie Usług",
                     "id":2,
-                    "content":"Services"
+                    "content":"Service Categories"
                 },
                 {
                     "view_permission_id":"view-producer-management",
