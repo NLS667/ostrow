@@ -49,7 +49,7 @@ class ProducerRepository extends BaseRepository
                 config('producers.producers_table').'.description',
                 config('producers.producers_table').'.created_at',
                 config('producers.producers_table').'.updated_at',
-                DB::raw('(SELECT COUNT(models.id) FROM models LEFT JOIN producers ON models.producer_id = producers.id WHERE models.producer_id = producers.id AS modelCount'),
+                DB::raw('(SELECT COUNT(models.id) FROM models LEFT JOIN producers ON models.producer_id = producers.id WHERE models.producer_id = producers.id) AS modelCount'),
             ]);
     }
 
