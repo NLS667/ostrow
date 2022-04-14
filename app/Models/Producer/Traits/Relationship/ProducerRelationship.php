@@ -12,7 +12,7 @@ trait ProducerRelationship
      */
     public function models()
     {
-        return $this->hasMany(Model::class, config('producer.producer_model_table'), 'producer_id', 'model_id');
+        return $this->hasMany(Model::class, 'producer_id', 'id');
     }
 
 }
