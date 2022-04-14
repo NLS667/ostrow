@@ -14,7 +14,7 @@ trait ModelTraits
      *
      * @return void
      */
-    public function attachProducer($producer)
+    public function associateProducer($producer)
     {
         if (is_object($producer)) {
             $producer = $producer->getKey();
@@ -24,6 +24,6 @@ trait ModelTraits
             $producer = $producer['id'];
         }
         \Log::info($producer);
-        $this->model()->associate($producer);
+        $this->producer()->associate($producer);
     }
 }

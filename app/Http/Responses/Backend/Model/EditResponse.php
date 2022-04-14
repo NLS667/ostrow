@@ -33,7 +33,7 @@ class EditResponse implements Responsable
     {
         return view('backend.model.edit')->with([
             'model'            => $this->model,
-            'modelProducer'    => $this->model->model->pluck('id')->all(),
+            'modelProducer'    => $this->model->producer->pluck('id')->all(),
             'producers'        => $this->producers,
         ]);
     }
