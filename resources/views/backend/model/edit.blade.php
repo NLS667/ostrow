@@ -30,7 +30,7 @@
                     <select name="producer" class="form-control select2" data-placeholder="Wybierz Producenta">
                       <option></option>
                       @foreach ($producers as $producer)
-                        @if (Input::old('producer') == $producer->id)
+                        @if (old('producer') == $producer->id)
                           <option value="{{$producer->id}}" selected>{{ $producer->name }}</option>
                         @else
                           <option value="{{$producer->id}}">{{ $producer->name }}</option>
