@@ -70,7 +70,9 @@
                 </div>
               </div>
             </div>
-            {{ $modelProducer }}
+            @php
+              var_dump($modelProducer);
+            @endphp
           </form>
         </div>
       </div>
