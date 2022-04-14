@@ -69,15 +69,10 @@ class ModelRepository extends BaseRepository
             throw new GeneralException(trans('exceptions.backend.models.already_exists'));
         }
 
-        $data = $request->except('producer');
-        $producer = $request->get('producer');
-        $model = $this->createModelStub($data);
-        DB::transaction(function () use ($model, $data, $producer) {
+        $model = $this->createModelStub($request);
+        DB::transaction(function () use ($model) {
 
             if ($model->save()) {
-
-                //Attach new producer
-                $model->attachProducer($producer);
 
                 event(new ModelCreated($model));
 
@@ -146,6 +141,7 @@ class ModelRepository extends BaseRepository
         $model = new $model();
         $model->name = $request['name'];
         $model->description = $request['description'];
+        $model->producer_id = $request['producer'];
         $model->created_by = access()->user()->id;
 
         return $model;

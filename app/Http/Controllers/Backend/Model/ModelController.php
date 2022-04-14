@@ -80,7 +80,8 @@ class ModelController extends Controller
      */
     public function edit(Model $model, EditModelRequest $request)
     {
-        return new EditResponse($model);
+        $producers = $this->producers->getAll();
+        return new EditResponse($model, $producers);
     }
 
     /**
