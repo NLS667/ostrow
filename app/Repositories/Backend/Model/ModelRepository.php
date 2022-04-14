@@ -52,9 +52,9 @@ class ModelRepository extends BaseRepository
                 config('models.models_table').'.id',
                 config('models.models_table').'.name',
                 config('models.models_table').'.description',
+                config('producers.producers_table').'.name as producer',
                 config('models.models_table').'.created_at',
                 config('models.models_table').'.updated_at',
-                DB::raw('GROUP_CONCAT(producers.name) as producer'),
             ]);
     }
 
