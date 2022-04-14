@@ -35,6 +35,9 @@ class ProducerTableController extends Controller
             ->addColumn('description', function ($producer) {
                 return $producer->description;
             })
+            ->addColumn('modelCount', function ($producer) {
+                return $producer->models()->count();
+            })
             ->addColumn('created_at', function ($producer) {
                 return Carbon::parse($producer->created_at)->toDateString();
             })
