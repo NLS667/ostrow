@@ -17,7 +17,7 @@ use App\Http\Responses\Backend\Client\ShowResponse;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Client\Client;
-use App\Repositories\Backend\Service\ServiceRepository;
+use App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository;
 use App\Repositories\Backend\Client\ClientRepository;
 
 /**
@@ -33,16 +33,16 @@ class ClientController extends Controller
     /**
      * @var \App\Repositories\Backend\Service\ServiceRepository
      */
-    protected $services;
+    protected $serviceCategories;
 
     /**
-     * @param \App\Repositories\Backend\Client\ClientRepository $clients
-     * @param \App\Repositories\Backend\Service\ServiceRepository $services
+     * @param \App\Repositories\Backend\Client\ClientRepository                   $clients
+     * @param \App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository $serviceCategories
      */
-    public function __construct(ClientRepository $clients, ServiceRepository $services)
+    public function __construct(ClientRepository $clients, ServiceCategoryRepository $serviceCategories)
     {
         $this->clients = $clients;
-        $this->services = $services;
+        $this->serviceCategories = $serviceCategories;
     }
 
     /**
@@ -62,9 +62,9 @@ class ClientController extends Controller
      */
     public function create(CreateClientRequest $request)
     {
-        $services = $this->services->getAll();
+        $serviceCategories = $this->serviceCategories->getAll();
 
-        return new CreateResponse($services);
+        return new CreateResponse($serviceCategories);
     }
 
     /**
@@ -100,10 +100,10 @@ class ClientController extends Controller
      */
     public function edit(Client $client, EditClientRequest $request)
     {
-        $services = $this->services->getAll();
+        $serviceCategories = $this->serviceCategories->getAll();
         $tasks = Task::getSelectData('name');
 
-        return new EditResponse($client, $services, $tasks);
+        return new EditResponse($client, $serviceCategories, $tasks);
     }
 
     /**
@@ -130,17 +130,5 @@ class ClientController extends Controller
         $this->clients->delete($client);
 
         return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.clients.deleted')]);
-    }
-
-    /**
-     * @param \App\Models\Access\Client\Client                             $client
-     * @param \App\Http\Requests\Backend\Client\DeleteClientRequest $request
-     *
-     * @return \App\Http\Responses\RedirectResponse
-     */
-    public function getServiceForm(Request $request)
-    {
-        $service = $this->services->find($request->service);
-        return view('backend.includes.partials.client-add-service', ['service' => $service]);
     }
 }
