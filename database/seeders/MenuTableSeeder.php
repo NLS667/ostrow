@@ -39,7 +39,7 @@ class MenuTableSeeder extends Seeder
                     "icon":"handyman",
                     "open_in_new_tab":0,
                     "url_type":"route",
-                    "url":"admin.service.index",
+                    "url":"admin.serviceCategory.index",
                     "name":"Kategorie Usług",
                     "id":2,
                     "content":"Service Categories"
