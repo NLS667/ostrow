@@ -51,7 +51,7 @@ class ProducerRepository extends BaseRepository
                 config('producers.producers_table').'.created_at',
                 config('producers.producers_table').'.updated_at',
             ]);
-        \LOG::info($data);
+        \Log::info($data);
         return $data;
     }
 
