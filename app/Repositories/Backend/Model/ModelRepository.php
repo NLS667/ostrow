@@ -97,6 +97,7 @@ class ModelRepository extends BaseRepository
     public function update($model, $request)
     {
         DB::transaction(function () use ($model, $request) {
+            $model->producer_id = $request['producer'];
             if ($model->update($request)) {
                 
                 $model->save();
