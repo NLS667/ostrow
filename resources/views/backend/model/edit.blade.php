@@ -70,8 +70,7 @@
                 </div>
               </div>
             </div>
-            {{ $model->name }}
-            {{ $model->description }}
+            {{ $modelProducer }}
           </form>
         </div>
       </div>
