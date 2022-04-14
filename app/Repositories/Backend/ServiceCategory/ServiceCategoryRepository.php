@@ -62,7 +62,7 @@ class ServiceCategoryRepository extends BaseRepository
                 config('service.servicecategory_table').'.created_at',
                 config('service.servicecategory_table').'.updated_at',
             ])
-            ->groupBy('services.id');
+            ->groupBy('service_categories.id');
     }
 
     /**
