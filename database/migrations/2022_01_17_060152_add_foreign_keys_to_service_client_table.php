@@ -14,7 +14,7 @@ class AddForeignKeysToServiceClientTable extends Migration
     public function up()
     {
         Schema::table('service_client', function (Blueprint $table) {
-            $table->foreign('service_id')->references('id')->on('services')->onUpdate('RESTRICT')->onDelete('CASCADE');
+            $table->foreign('servicecat_id')->references('id')->on('service_categories')->onUpdate('RESTRICT')->onDelete('CASCADE');
             $table->foreign('client_id')->references('id')->on('clients')->onUpdate('RESTRICT')->onDelete('CASCADE');
         });
     }
@@ -27,7 +27,7 @@ class AddForeignKeysToServiceClientTable extends Migration
     public function down()
     {
         Schema::table('service_client', function (Blueprint $table) {
-            $table->dropForeign('service_client_service_id_foreign');
+            $table->dropForeign('service_client_servicecat_id_foreign');
             $table->dropForeign('service_client_client_id_foreign');
         });
     }
