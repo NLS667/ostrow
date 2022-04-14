@@ -16,10 +16,10 @@ class EditResponse implements Responsable
     /**
      * @param \App\Models\Model\Model $model
      */
-    public function __construct($model, $producer)
+    public function __construct($model, $producers)
     {
         $this->model = $model;
-        $this->producer = $producer;
+        $this->producers = $producers;
     }
 
     /**
@@ -33,7 +33,7 @@ class EditResponse implements Responsable
     {
         return view('backend.model.edit')->with([
             'model'            => $this->model,
-            'modelProducer'    => $this->model->producer->pluck('id')->all(),
+            'modelProducer'    => $this->model->model->pluck('id')->all(),
             'producers'        => $this->producers,
         ]);
     }
