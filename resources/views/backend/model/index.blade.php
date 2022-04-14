@@ -50,7 +50,12 @@
                                             </div>
                                         </th>
                                         <th></th>
-                                        <th></th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('producer', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Producent']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
                                         <th></th>
                                         <th></th>
                                         <th></th>
