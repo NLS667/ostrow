@@ -36,7 +36,7 @@ class ModelTableController extends Controller
                 return $model->description;
             })
             ->addColumn('producer_id', function ($model) {
-                return $model->producer->name;
+                return $model->producer;
             })
             ->addColumn('created_at', function ($model) {
                 return Carbon::parse($model->created_at)->toDateString();
