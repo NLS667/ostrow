@@ -42,7 +42,7 @@ class ProducerRepository extends BaseRepository
     public function getForDataTable()
     {
         //$models = $this->producer->models()->count();
-        return $this->query()
+        $data = $this->query()
             ->leftJoin('models', 'models.producer_id', '=', 'producers.id')
             ->select([
                 config('producers.producers_table').'.id',
@@ -50,8 +50,9 @@ class ProducerRepository extends BaseRepository
                 config('producers.producers_table').'.description',
                 config('producers.producers_table').'.created_at',
                 config('producers.producers_table').'.updated_at',
-                DB::raw('(SELECT COUNT(models.id) FROM models JOIN producers ON models.producer_id = producers.id) AS modelCount'),
             ]);
+        /LOG::info($data);
+        return $data;
     }
 
     /**
