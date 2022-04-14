@@ -138,7 +138,7 @@
               </div>
             </div>
             <div class="card-footer">
-              {{ link_to_route('admin.access.role.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
+              {{ link_to_route('admin.client.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
               {{ Form::submit('Dodaj', ['class' => 'btn btn-success btn-md']) }}
             </div>
           </div>
