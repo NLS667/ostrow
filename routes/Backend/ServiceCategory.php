@@ -10,12 +10,12 @@
         	/*
              * For DataTables
              */
-            Route::post('serviceCategory/get', ServiceTableController::class)->name('serviceCategory.get');
+            Route::post('serviceCategory/get', ServiceCategoryTableController::class)->name('serviceCategory.get');
 
             /*
              * Service Category CRUD
              */
-            Route::resource('serviceCategory', ServiceController::class);
+            Route::resource('serviceCategory', ServiceCategoryController::class);
 
             /*
              * Specific Service Category
