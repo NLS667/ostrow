@@ -36,7 +36,7 @@ class UpdateModelRequest extends Request
     public function messages()
     {
         return [
-            'producer.required' = 'Musisz wybrać Producenta.',
+            'producer.required' => 'Musisz wybrać Producenta.',
             'name.required' => 'Nazwa Modelu nie może być pusta.',
             'name.max' => 'Nazwa jest za długa (max 255 znaków).',
             'description.required' => 'Opis jest za długi (max 255 znaków).',
