@@ -100,7 +100,7 @@ class ClientRepository extends BaseRepository
                 //}
 
                 //Attach new roles
-                $client->attachService($services);
+                //$client->attachService($services);
 
                 // Attach New Permissions
                 //$client->attachTasks($tasks);
