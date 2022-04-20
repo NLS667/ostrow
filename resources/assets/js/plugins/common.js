@@ -514,8 +514,8 @@ var Backend = {}; // common variable used in all the files of the backend
                                 if (request.status >= 200 && request.status < 400) {
                                     //Success
                                     var json = JSON.parse(request.responseText);
-                                    this.selectors.latField.value = json[0].lat;
-                                    this.selectors.lonField.value = json[0].lon;
+                                    Backend.Clients.selectors.latField.value = json[0].lat;
+                                    Backend.Clients.selectors.lonField.value = json[0].lon;
                                 }
                                 else {
                                     // We reached our target server, but it returned an error
