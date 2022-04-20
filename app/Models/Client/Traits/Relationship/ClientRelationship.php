@@ -15,18 +15,18 @@ trait ClientRelationship
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function services()
-    {
-        return $this->belongsToMany(Service::class, config('access.service_client_table'), 'client_id', 'service_id');
-    }
+    //public function services()
+    //{
+    //    return $this->hasMany(Service::class, config('access.service_client_table'), 'client_id', 'service_id');
+    //}
 
     /**
      * Many-to-Many relations with Task.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function tasks()
-    {
-        return $this->belongsToMany(Task::class, config('access.task_client_table'), 'client_id', 'task_id');
-    }
+    //public function tasks()
+    //{
+    //    return $this->hasMany(Task::class, config('access.task_client_table'), 'client_id', 'task_id');
+    //}
 }
