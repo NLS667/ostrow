@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\Http\Requests\Backend\Client\CreateClientRequest;
 use App\Http\Requests\Backend\Client\DeleteClientRequest;
 use App\Http\Requests\Backend\Client\EditClientRequest;
@@ -11,6 +12,7 @@ use App\Http\Requests\Backend\Client\ManageClientRequest;
 use App\Http\Requests\Backend\Client\ShowClientRequest;
 use App\Http\Requests\Backend\Client\StoreClientRequest;
 use App\Http\Requests\Backend\Client\UpdateClientRequest;
+use App\Http\Requests\Backend\Client\ClientCoordsRequest;
 use App\Http\Responses\Backend\Client\CreateResponse;
 use App\Http\Responses\Backend\Client\EditResponse;
 use App\Http\Responses\Backend\Client\ShowResponse;
@@ -132,7 +134,7 @@ class ClientController extends Controller
         return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.clients.deleted')]);
     }
 
-    public function getCoordinates(Request $request){
+    public function getCoordinates(ClientCoordsRequest $request){
         return; 
     }
 }
