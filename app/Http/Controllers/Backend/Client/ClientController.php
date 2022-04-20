@@ -135,6 +135,10 @@ class ClientController extends Controller
     }
 
     public function getCoordinates(ClientCoordsRequest $request){
+        \Log::info(json_encode($request));
+        $address = "59+Andriollego+Otwock+Polska";
+        $response = Http::get("https://nominatim.openstreetmap.org/search.php?q=".$address."&limit=1&format=xml");
+        \Log::info($response);
         return; 
     }
 }
