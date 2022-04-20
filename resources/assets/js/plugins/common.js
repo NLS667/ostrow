@@ -492,14 +492,22 @@ var Backend = {}; // common variable used in all the files of the backend
             },
             addHandlers: function () {
                 /**
-                 * This function is used to get clinet address and return coordinates
+                 * This function is used to get client address and return coordinates
                  */
 
                 this.selectors.coordinates.forEach(function (element) {
                     element.onclick = function (event) {
                         callback = {
                             success: function (request) {
-                                
+                                if (request.status >= 200 && request.status < 400) {
+                                    //Success
+                                    var response = JSON.parse(request.responseText);
+                                    console.log(response);
+                                }
+                                else {
+                                    // We reached our target server, but it returned an error
+                                    console.log("Nie udało się połączyć z serwere Geokodowania.");
+                                }
                             },
                             error: function () {
                                 
