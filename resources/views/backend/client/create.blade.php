@@ -151,9 +151,11 @@
                       <span id="adr_longitude-error" class="error text-danger" for="input-adr_longitude">{{ $errors->first('adr_longitude') }}</span>
                       @endif
                     </div>
-                    <button class="col-sm-4 btn btn-primary btn-round">
-                      <i class="material-icons">travel_explore</i> Szukaj koordynatów
-                    </button>
+                    <div class="col-sm-4 form-group bmd-form-group">
+                      <button class="btn btn-primary btn-round btn-block">
+                        <i class="material-icons">travel_explore</i> Szukaj koordynatów
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
