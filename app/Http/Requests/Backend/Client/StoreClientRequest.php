@@ -39,6 +39,8 @@ class StoreClientRequest extends Request
             'adr_street'        => 'nullable|max:191',
             'adr_street_nr'     => 'nullable|max:5',
             'adr_home_nr'       => 'nullable|max:5',
+            'adr_lattitude'     => 'nullable',
+            'adr_longitude'     => 'nullable',
         ];
     }
 

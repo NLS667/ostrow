@@ -134,10 +134,10 @@ class ClientRepository extends BaseRepository
         $tasks = $request->get('tasks');
 
         DB::transaction(function () use ($client, $data, $services, $tasks) {
-            if ($user->update($data)) {
-                $user->status = isset($data['status']) && $data['status'] == '1' ? 1 : 0;
+            if ($client->update($data)) {
+                $client->status = isset($data['status']) && $data['status'] == '1' ? 1 : 0;
                 
-                $user->save();
+                $client->save();
 
                 event(new ClientUpdated($client));
 
@@ -261,6 +261,8 @@ class ClientRepository extends BaseRepository
         $client->adr_street = $input['adr_street'];
         $client->adr_street_nr = $input['adr_street_nr'];
         $client->adr_home_nr = $input['adr_home_nr'];
+        $client->adr_lattitude = $input['adr_lattitude'];
+        $client->adr_longitude = $input['adr_longitude'];
         $client->status = 1;
         $client->created_by = access()->user()->id;
 
