@@ -481,6 +481,8 @@ var Backend = {}; // common variable used in all the files of the backend
         Clients: {
             selectors: {
                 coordinates: document.querySelectorAll(".coordinates"),
+                latField: document.getElementById("input-adr_lattitude"),
+                lonField: document.getElementById("input-adr_longitude"),
                 coordinatesURL: "",
             },
             init: function () {
@@ -512,10 +514,8 @@ var Backend = {}; // common variable used in all the files of the backend
                                 if (request.status >= 200 && request.status < 400) {
                                     //Success
                                     var json = JSON.parse(request.responseText);
-                                    let lattitude = json[0].lat;
-                                    let longitude = json[0].lon;
-                                    console.log(json);
-                                    console.log(lattitude+" "+longitude);
+                                    this.selectors.latField.value = json[0].lat;
+                                    this.selectors.lonField.value = json[0].lon;
                                 }
                                 else {
                                     // We reached our target server, but it returned an error
