@@ -17,7 +17,7 @@ use App\Http\Controllers\Backend\Client\ClientStatusController;
             /*
              * For Geocoding 
              */
-            Route::post('client/getcoordinates', [\App\Http\Controllers\Backend\Client\ClientController::class, 'getCoordinates'])->name('client.get.coordinates');
+            Route::get('client/getcoordinates', [\App\Http\Controllers\Backend\Client\ClientController::class, 'getCoordinates'])->name('client.get.coordinates');
 
             /*
              * Client Status'
