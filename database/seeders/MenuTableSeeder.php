@@ -35,16 +35,6 @@ class MenuTableSeeder extends Seeder
                 "id":1,
                 "content":"Dictionaries",
                 "children":[{
-                    "view_permission_id":"view-servicecat-management",
-                    "icon":"handyman",
-                    "open_in_new_tab":0,
-                    "url_type":"route",
-                    "url":"admin.serviceCategory.index",
-                    "name":"Kategorie Usług",
-                    "id":2,
-                    "content":"Service Categories"
-                },
-                {
                     "view_permission_id":"view-producer-management",
                     "icon":"engineering",
                     "open_in_new_tab":0,
@@ -63,6 +53,16 @@ class MenuTableSeeder extends Seeder
                     "name":"Modele Produktów",
                     "id":4,
                     "content":"Product-Models"
+                },
+                {
+                    "view_permission_id":"view-servicecat-management",
+                    "icon":"handyman",
+                    "open_in_new_tab":0,
+                    "url_type":"route",
+                    "url":"admin.serviceCategory.index",
+                    "name":"Kategorie Usług",
+                    "id":2,
+                    "content":"Service Categories"
                 }]
             }]';
 
