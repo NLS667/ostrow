@@ -65,6 +65,7 @@ class ClientRepository extends BaseRepository
                 config('clients.clients_table').'.first_name',
                 config('clients.clients_table').'.last_name',
                 config('clients.clients_table').'.email',
+                config('clients.clients_table').'.phone_nr',
                 config('clients.clients_table').'.status',
                 config('clients.clients_table').'.created_at',
                 config('clients.clients_table').'.updated_at',
