@@ -516,8 +516,8 @@ var Backend = {}; // common variable used in all the files of the backend
                                     var json = JSON.parse(request.responseText);
                                     Backend.Clients.selectors.latField.value = json[0].lat;
                                     Backend.Clients.selectors.lonField.value = json[0].lon;
-                                    Backend.Clients.selectors.latField.classList.add("is-filled");
-                                    Backend.Clients.selectors.lonField.classList.add("is-filled");
+                                    Backend.Clients.selectors.latField.parent.classList.add("is-filled");
+                                    Backend.Clients.selectors.lonField.parent.classList.add("is-filled");
                                 }
                                 else {
                                     // We reached our target server, but it returned an error
