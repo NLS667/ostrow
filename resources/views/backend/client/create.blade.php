@@ -134,6 +134,27 @@
                       @endif
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('adr_lattitude') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Szer. geo.</label>
+                      <input class="form-control" name="adr_lattitude" id="input-adr_lattitude" type="text" value="{{ old('adr_lattitude') }}" />
+                      @if ($errors->has('adr_lattitude'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="adr_lattitude-error" class="error text-danger" for="input-adr_lattitude">{{ $errors->first('adr_lattitude') }}</span>
+                      @endif
+                    </div>
+                    <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('adr_longitude') ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Dług. geo.</label>
+                      <input class="form-control" name="adr_longitude" id="input-adr_longitude" type="text" value="{{ old('adr_longitude') }}" />
+                      @if ($errors->has('adr_longitude'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="adr_longitude-error" class="error text-danger" for="input-adr_longitude">{{ $errors->first('adr_longitude') }}</span>
+                      @endif
+                    </div>
+                    <button class="col-sm-4 btn btn-primary btn-round">
+                      <i class="material-icons">travel_explore</i> Szukaj koordynatów
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
