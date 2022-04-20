@@ -512,7 +512,9 @@ var Backend = {}; // common variable used in all the files of the backend
                                 if (request.status >= 200 && request.status < 400) {
                                     //Success
                                     var response = JSON.parse(request.responseText);
-                                    console.log(response);
+                                    lattitude = response.lat;
+                                    longitude = response.lon;
+                                    console.log(lattitude+" "+longitude);
                                 }
                                 else {
                                     // We reached our target server, but it returned an error
