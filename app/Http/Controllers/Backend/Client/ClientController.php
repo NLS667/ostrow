@@ -137,9 +137,9 @@ class ClientController extends Controller
     public function getCoordinates(Request $request){
         $address = $request->get('address');
         \Log::info(json_encode($request));
-        \Log::info($address);
+        //\Log::info($address);
         $response = Http::get("https://nominatim.openstreetmap.org/search.php?".$address."&limit=1&format=xml");
-        \Log::info($response);
+        //\Log::info($response);
         return; 
     }
 }
