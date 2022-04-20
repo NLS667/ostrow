@@ -31,7 +31,7 @@ class ClientController extends Controller
     protected $clients;
 
     /**
-     * @var \App\Repositories\Backend\Service\ServiceRepository
+     * @var \App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository
      */
     protected $serviceCategories;
 

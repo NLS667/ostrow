@@ -480,36 +480,40 @@ var Backend = {}; // common variable used in all the files of the backend
          */
         Clients: {
             selectors: {
-                addService: document.querySelectorAll("select[name='add-service']"),
+                coordinates: document.querySelectorAll(".coordinates"),
+                coordinatesURL: "",
             },
             init: function () {
                 this.setSelectors();
+                this.addHandlers();
             },
             setSelectors: function () {
-                this.selectors.addService = document.querySelectorAll("select[name='add-service']");
+                this.selectors.coordinates = document.querySelectorAll(".coordinates");
+            },
+            addHandlers: function () {
+                /**
+                 * This function is used to get clinet address and return coordinates
+                 */
+
+                this.selectors.coordinates.forEach(function (element) {
+                    element.onclick = function (event) {
+                        callback = {
+                            success: function (request) {
+                                
+                            },
+                            error: function () {
+                                
+                            }
+                        };
+
+                        Backend.Utils.ajaxrequest(Backend.Clients.selectors.coordinatesURL, "post", {
+                            address: event.target.value
+                        }, Backend.Utils.csrf, callback);
+                    };
+                });
             },
             windowloadhandler: function () {
                 this.setSelectors();
-                this.selectors.addService.forEach(function (element) {
-                    element.onchange = function (event) {   
-                        event.preventDefault();
-                        var id = $( ".add-service option:selected" ).val();
-                        if(id > 0){
-                            var name = $( ".add-service option:selected" ).text();
-                            var id = $( ".add-service option:selected" ).val();                        
-                            var count = $(".services").children().length;
-                            var tabId = 'service_' + id;
-                            
-                            if(!$('#serviceTab_' + id ).length){
-                                $(".add-service").closest('li').before('<li id="serviceTab_' + id + '" class="nav-item"><a href="#service_' + id + '" class="nav-link tab" data-toggle="tab" role="tablist">' + name + '</a> <span class="material-icons">clear</span></li>');
-                                $.get("getserviceform", { service: id }).done(function(data){
-                                    $('.tab-content').append('<div class="tab-pane active show" id="' + tabId + '">' + data + '</div>');
-                                    $('.services li:nth-child(' + count + ') a').click();
-                                });
-                            }
-                        }
-                    };
-                });
             }
         },
         /**

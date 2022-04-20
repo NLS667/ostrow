@@ -152,7 +152,7 @@
                       @endif
                     </div>
                     <div class="col-sm-4 form-group bmd-form-group">
-                      <button class="btn btn-primary btn-round btn-block">
+                      <button class="coordinates btn btn-primary btn-round btn-block">
                         <i class="material-icons">travel_explore</i> Szukaj koordynatów
                       </button>
                     </div>
@@ -176,7 +176,12 @@
      <script type="text/javascript">
         
         Backend.Utils.documentReady(function(){
-            Backend.Clients.init();
+          Backend.Clients.selectors.coordinatesURL = "{{ route('admin.client.get.coordinates') }}";
+          Backend.Clients.init();
+        });
+
+        Backend.Utils.documentReady(function(){
+            Backend.Users.init("create");
         });
 
         window.onload = function () {
