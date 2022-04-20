@@ -15,6 +15,11 @@ use App\Http\Controllers\Backend\Client\ClientStatusController;
             Route::post('client/get', ClientTableController::class)->name('client.get');
 
             /*
+             * For Geocoding 
+             */
+            Route::get('client/getcoordinates', [\App\Http\Controllers\Backend\Client\ClientController::class, 'getCoordinates'])->name('client.get.coordinates');
+
+            /*
              * Client Status'
              */
             Route::get('client/deactivated', [ClientStatusController::class, 'getDeactivated'])->name('client.deactivated');

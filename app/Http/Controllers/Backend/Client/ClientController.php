@@ -131,4 +131,8 @@ class ClientController extends Controller
 
         return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.clients.deleted')]);
     }
+
+    public function getCoordinates(Request $request){
+        return; 
+    }
 }
