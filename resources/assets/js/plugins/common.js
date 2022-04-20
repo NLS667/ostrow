@@ -498,6 +498,15 @@ var Backend = {}; // common variable used in all the files of the backend
                 this.selectors.coordinates.forEach(function (element) {
                     element.onclick = function (event) {
                         event.preventDefault();
+
+                        let road = $("input[name=adr_street]").val();
+                        let house_number = $("input[name=adr_street_nr]").val();
+                        let town = $("input[name=adr_city]").val();
+                        let state = $("input[name=adr_region]").val();
+                        let country = $("input[name=adr_country]").val();
+
+                        let searchString = "street="+house_number+" "+road+"&city="+town+"&state="+state+"&country="+country;
+
                         callback = {
                             success: function (request) {
                                 if (request.status >= 200 && request.status < 400) {
@@ -517,7 +526,7 @@ var Backend = {}; // common variable used in all the files of the backend
                         };
 
                         Backend.Utils.ajaxrequest(Backend.Clients.selectors.coordinatesURL, "post", {
-                            address: event.target.value
+                            address: searchString
                         }, Backend.Utils.csrf, callback);
                     };
                 });
