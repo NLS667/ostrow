@@ -514,6 +514,7 @@ var Backend = {}; // common variable used in all the files of the backend
                                     var json = JSON.parse(request.responseText);
                                     let lattitude = json.lat;
                                     let longitude = json.lon;
+                                    console.log(json);
                                     console.log(lattitude+" "+longitude);
                                 }
                                 else {
