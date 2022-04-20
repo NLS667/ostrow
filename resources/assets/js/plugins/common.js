@@ -497,6 +497,7 @@ var Backend = {}; // common variable used in all the files of the backend
 
                 this.selectors.coordinates.forEach(function (element) {
                     element.onclick = function (event) {
+                        event.preventDefault();
                         callback = {
                             success: function (request) {
                                 if (request.status >= 200 && request.status < 400) {
@@ -506,8 +507,9 @@ var Backend = {}; // common variable used in all the files of the backend
                                 }
                                 else {
                                     // We reached our target server, but it returned an error
-                                    console.log("Nie udało się połączyć z serwere Geokodowania.");
+                                    console.log("Nie udało się połączyć z serwerem Geokodowania.");
                                 }
+
                             },
                             error: function () {
                                 
