@@ -180,10 +180,6 @@
           Backend.Clients.init();
         });
 
-        Backend.Utils.documentReady(function(){
-            Backend.Users.init("create");
-        });
-
         window.onload = function () {
             Backend.Clients.windowloadhandler();
         };
