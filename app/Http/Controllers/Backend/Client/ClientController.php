@@ -134,10 +134,9 @@ class ClientController extends Controller
         return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.clients.deleted')]);
     }
 
-    public function getCoordinates(ClientCoordsRequest $request, $address){
-        \Log::info(json_encode($request));
-        \Log::info(json_encode($address));
-        $response = Http::get("https://nominatim.openstreetmap.org/search.php?q=".$address."&limit=1&format=xml");
+    public function getCoordinates($address){
+        \Log::info($address);
+        $response = Http::get("https://nominatim.openstreetmap.org/search.php?".$address."&limit=1&format=xml");
         \Log::info($response);
         return; 
     }
