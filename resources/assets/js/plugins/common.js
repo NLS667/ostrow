@@ -525,7 +525,7 @@ var Backend = {}; // common variable used in all the files of the backend
                             }
                         };
 
-                        Backend.Utils.ajaxrequest(Backend.Clients.selectors.coordinatesURL, "get", {
+                        Backend.Utils.ajaxrequest(Backend.Clients.selectors.coordinatesURL, "post", {
                             address: searchString
                         }, Backend.Utils.csrf, callback);
                     };
