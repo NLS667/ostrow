@@ -50,6 +50,12 @@
                 this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
+                let DefaultIcon = L.icon({
+                    iconUrl: 'images/marker-icon.png',
+                    shadowUrl: 'images/marker-shadow.png',
+                });
+                L.Marker.prototype.options.icon = DefaultIcon;
+                
                 this.markers.forEach((marker) => {
                     marker.leafletObject = L.marker(marker.coords).bindPopup(marker.name);
                     marker.leafletObject.addTo(this.clients_map);
