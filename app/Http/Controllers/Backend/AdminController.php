@@ -18,7 +18,23 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('backend.index');
+        $clients = Client::all();
+        $map_data = [];
+
+        if($clients->count() > 0)
+        {
+            $map_data['markers'] = [];
+
+            foreach($clients as $client)
+            {
+                $map_data['markers'][] = (object)[
+                    'name' => $client->name,
+                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                ];
+            }   
+        }
+
+        return view('backend.index')->with('map_data', $map_data);
     }
 
     /**

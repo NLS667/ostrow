@@ -80,7 +80,7 @@
               </div>
             </div>
             <div class="card-body ">
-              <clientsmap></clientsmap>
+              <clientsmap :data='{!! json_encode($map_data) !!}'></clientsmap>
             </div>
           </div>
         </div>
