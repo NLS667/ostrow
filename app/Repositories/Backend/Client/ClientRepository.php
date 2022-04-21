@@ -34,15 +34,15 @@ class ClientRepository extends BaseRepository
     /**
      * @var ServiceCategoryRepository
      */
-    protected $aerviceCategories;
+    protected $serviceCategories;
 
     /**
-     * @param ServiceCategoryRepository $aerviceCategories
+     * @param ServiceCategoryRepository $serviceCategories
      */
-    public function __construct(Client $model, ServiceCategoryRepository $aerviceCategories)
+    public function __construct(Client $model, ServiceCategoryRepository $serviceCategories)
     {
         $this->model = $model;
-        $this->aerviceCategories = $aerviceCategories;
+        $this->serviceCategories = $serviceCategories;
     }
 
     /**

@@ -22,6 +22,8 @@ class AdminController extends Controller
         $clients = Client::all();
         $map_data = [];
 
+        \Log::info($clients);
+
         if($clients->count() > 0)
         {
             $map_data['markers'] = [];
@@ -34,7 +36,7 @@ class AdminController extends Controller
                 ];
             }   
         }
-
+        \Log::info($map_data);
         return view('backend.index')->with('map_data', $map_data);
     }
 
