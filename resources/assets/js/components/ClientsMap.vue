@@ -48,7 +48,7 @@
                 this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
-                this.markers.forEach((marker) => {
+                data.markers.forEach((marker) => {
                     marker.leafletObject = L.marker(marker.coords).bindPopup(marker.name);
                     marker.leafletObject.addTo(this.clients_map);
                 })                
