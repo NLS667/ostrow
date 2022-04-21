@@ -14,7 +14,7 @@
             }
         },
         mounted() {
-        	$("#leaflet-map").height(600);
+        	$("#leaflet-map").height(900);
         	var lf = this;
         	if ($('#leaflet-map').length) {
         		lf.initMap();
