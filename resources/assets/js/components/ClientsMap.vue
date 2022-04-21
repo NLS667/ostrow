@@ -33,6 +33,9 @@
 			}
         },
         methods: {
+            log(message){
+                console.log(message);
+            },
             initMap() {
                 this.clients_map = L.map('leaflet-map', {
                     sleep: true,
