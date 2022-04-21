@@ -53,5 +53,6 @@ mix.autoload({
         'resources/assets/js/plugins/material-dashboard.js',
         'resources/assets/js/plugins/settings.js',
     ], 'public/js/app-custom.js')
+    .copyDirectory('node_modules/leaflet/dist/images', 'public/js/plugin/leaflet/images')
     .vue()
     .version();
