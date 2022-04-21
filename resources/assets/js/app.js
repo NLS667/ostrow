@@ -21,6 +21,8 @@ import 'datatables.net-buttons/js/buttons.print.js';
 //Import chart.js
 window.Chart = require('chart.js/auto').default;
 
+require('leaflet/dist/leaflet.js');
+
 //Import Select2
 //window.select2 = require('select2');
 //import select2 from 'select2';
