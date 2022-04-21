@@ -8,6 +8,7 @@ use App\Models\Access\Permission\Permission;
 use App\Models\Access\Role\Role;
 use App\Models\Device\Device;
 use App\Models\Access\User\User;
+use App\Models\Client\Client;
 
 class AdminController extends Controller
 {
