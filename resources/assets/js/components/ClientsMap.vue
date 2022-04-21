@@ -28,7 +28,7 @@
                     hoverToWake: true,
                     sleepNote: false,
                     sleepOpacity: 1
-                }).setView([51.919438, 19.145136], 9);
+                }).setView([51.919438, 19.145136], 7);
                 this.tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     maxZoom: 17,
                     attribution: 'Tiles courtesy of <a href="http://openstreetmap.org/" target="_blank">OpenStreetMap</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
