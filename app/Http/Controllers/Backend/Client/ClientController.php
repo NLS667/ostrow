@@ -141,7 +141,9 @@ class ClientController extends Controller
         return $response; 
     }
 
-    public function getLocations(){
-        return "It's working";
+    public function getLocations(Request $request){
+        echo "It's working";
+        //echo json_encode($passArray);
+        die;
     }
 }

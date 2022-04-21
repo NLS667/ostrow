@@ -29,6 +29,7 @@
         	if ($('#leaflet-map').length) {
         		lf.initMap();
             	lf.initMarkers();
+                lf.getAllClients();
 			}
         },
         methods: {
@@ -51,9 +52,10 @@
             initMarkers() {
                 this.markers.forEach((marker) => {
                     marker.leafletObject = L.marker(marker.coords).bindPopup(marker.name);
+                    marker.leafletObject.addTo(this.clients_map);
                 })                
             },
-            getClients() {
+            getAllClients() {
                 $.ajax({
                   type:'get',
                   async:false,
