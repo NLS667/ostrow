@@ -20,9 +20,6 @@
                 }
         },
         mounted() {
-            this.markers.forEach((marker) => {
-                this.pins.push(marker);
-            })
         	$("#leaflet-map").height(900);
         	var lf = this;
         	if ($('#leaflet-map').length) {
@@ -52,6 +49,9 @@
                 this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
+                this.markers.forEach((marker) => {
+                    this.pins.push(marker);
+                })
                 this.pins.forEach((pin) => {
                     pin.leafletObject = L.marker(pin.coords).bindPopup(pin.name);
                     pin.leafletObject.addTo(this.clients_map);
