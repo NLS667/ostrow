@@ -81,7 +81,7 @@
             </div>
             <div class="card-body ">
               <h4 class="card-title"></h4>
-              <div id="mapa"></div>
+              <ClientsMap></ClientsMap>
             </div>
           </div>
         </div>

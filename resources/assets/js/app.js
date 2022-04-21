@@ -53,7 +53,7 @@ window.flash = function(message, type) {
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('flash', require('./components/Flash.vue').default);
-
+Vue.component('clientsMap', require('./components/ClientsMap.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
