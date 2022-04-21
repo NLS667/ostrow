@@ -25,9 +25,11 @@
             initMap() {
                 this.clients_map = L.map('leaflet-map', {
                     sleep: true,
-                    hoverToWake: true,
-                    sleepNote: false,
-                    sleepOpacity: 1
+                    hoverToWake: false,
+                    sleepNote: true,
+                    wakeMessage: 'Kliknij',
+                    sleepButton: L.Control.sleepMapControl,
+                    sleepOpacity: .7
                 }).setView([51.919438, 19.145136], 7);
                 this.tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     maxZoom: 17,
