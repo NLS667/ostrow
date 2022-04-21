@@ -15,35 +15,11 @@
         },
         data() {
                 return {
-                    map: null,
-                    currentTab : 0,
-                    name: 'leaflet',
-                    tileLayer: null,
-                    vehicleCount: this.data['Vnum'],
-                    driverCount: this.data['Dnum'],
-                    loggedUser: this.data['user'],
                     markers: [
                     {
                         id: 0,
-                        name: 'Cars',
-                        position: 'top',
-                        icon: 'fas fa-car',
-                        vehicles: this.data['vehicles'],
-                        locations: this.data['locations']
-                    },
-                    {
-                        id: 1,
-                        name: 'Drivers',
-                        position: 'top',
-                        icon: 'fas fa-users',
-                        drivers: this.data['drivers']
-                    },
-                    {
-                        id: 2,
-                        name: 'Settings',
-                        position: 'bottom',
-                        icon: 'fas fa-cog',
-                        settings: this.data['settings']
+                        name: 'Marker Test',
+                        coords: [51.919438, 19.145136],
                     }],
                 }
         },
@@ -73,16 +49,9 @@
                 this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
-
                 this.markers.forEach((marker) => {
-                	if(layer.features){
-	                    const markerFeatures = layer.features.filter(feature => feature.type === 'marker');
-	                    markerFeatures.forEach((feature) => {
-	                        feature.leafletObject = L.marker(feature.coords).bindPopup(feature.name);
-	                    });
-	                }
-                })
-                
+                    marker.leafletObject = L.marker(marker.coords).bindPopup(marker.name);
+                })                
             },
             getClients() {
                 $.ajax({
