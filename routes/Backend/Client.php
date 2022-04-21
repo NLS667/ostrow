@@ -19,6 +19,8 @@ use App\Http\Controllers\Backend\Client\ClientStatusController;
              */
             Route::post('client/getcoordinates', [\App\Http\Controllers\Backend\Client\ClientController::class, 'getCoordinates'])->name('client.get.coordinates');
 
+            Route::get('client/getclientslocations', [\App\Http\Controllers\Backend\Client\ClientController::class, 'getLocations'])->name('client.get.locations');
+
             /*
              * Client Status'
              */

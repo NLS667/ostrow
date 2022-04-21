@@ -13,12 +13,46 @@
                 type: Object
             }
         },
+        data() {
+                return {
+                    map: null,
+                    currentTab : 0,
+                    name: 'leaflet',
+                    tileLayer: null,
+                    vehicleCount: this.data['Vnum'],
+                    driverCount: this.data['Dnum'],
+                    loggedUser: this.data['user'],
+                    markers: [
+                    {
+                        id: 0,
+                        name: 'Cars',
+                        position: 'top',
+                        icon: 'fas fa-car',
+                        vehicles: this.data['vehicles'],
+                        locations: this.data['locations']
+                    },
+                    {
+                        id: 1,
+                        name: 'Drivers',
+                        position: 'top',
+                        icon: 'fas fa-users',
+                        drivers: this.data['drivers']
+                    },
+                    {
+                        id: 2,
+                        name: 'Settings',
+                        position: 'bottom',
+                        icon: 'fas fa-cog',
+                        settings: this.data['settings']
+                    }],
+                }
+        },
         mounted() {
         	$("#leaflet-map").height(900);
         	var lf = this;
         	if ($('#leaflet-map').length) {
         		lf.initMap();
-            	//lf.initLayers();
+            	//lf.initMarkers();
 			}
         },
         methods: {
@@ -38,9 +72,9 @@
 
                 this.tileLayer.addTo(this.clients_map);
             },
-            initLayers() {
+            initMarkers() {
 
-                this.layers.forEach((layer) => {
+                this.markers.forEach((marker) => {
                 	if(layer.features){
 	                    const markerFeatures = layer.features.filter(feature => feature.type === 'marker');
 	                    markerFeatures.forEach((feature) => {
@@ -50,14 +84,17 @@
                 })
                 
             },
-            layerChanged(layerId, active) {
-                const layer = this.layers.find(layer => layer.id === layerId);
-                layer.features.forEach((feature) => {
-                    if (active) {
-                        feature.leafletObject.addTo(this.clients_map);
-                    } else {
-                        feature.leafletObject.removeFrom(this.clients_map);
-                    }
+            getClients() {
+                $.ajax({
+                  type:'get',
+                  async:false,
+                  dataType: "JSON",
+                  //data: {alarm_id: this.data.vehicles},
+                  url:'admin/client/getclientslocations',
+                  success: function(result){
+                      //$('h3.counter').text(result.players);
+                      this.log('testowo:', result);
+                  }
                 });
             },
         },        
