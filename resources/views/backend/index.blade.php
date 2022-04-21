@@ -80,8 +80,7 @@
               </div>
             </div>
             <div class="card-body ">
-              <h4 class="card-title"></h4>
-              <ClientsMap></ClientsMap>
+              <clientsmap></clientsmap>
             </div>
           </div>
         </div>
