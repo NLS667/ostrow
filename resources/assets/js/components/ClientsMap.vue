@@ -15,12 +15,7 @@
         },
         data() {
                 return {
-                    markers: [
-                    {
-                        id: 0,
-                        name: 'Marker Test',
-                        coords: [51.919438, 19.145136],
-                    }],
+                    markers: [{}],
                 }
         },
         mounted() {
