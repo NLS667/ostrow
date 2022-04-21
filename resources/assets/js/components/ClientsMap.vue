@@ -20,7 +20,9 @@
                 }
         },
         mounted() {
-            this.pins.add(this.markers);
+            this.markers.forEach((marker) => {
+                this.pins.push(marker);
+            })
         	$("#leaflet-map").height(900);
         	var lf = this;
         	if ($('#leaflet-map').length) {
