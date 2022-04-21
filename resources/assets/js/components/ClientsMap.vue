@@ -67,7 +67,7 @@
                   url:'admin/client/getclientslocations',
                   success: function(result){
                       //$('h3.counter').text(result.players);
-                      this.log('testowo:', result);
+                      this.log('testowo:'+result);
                   }
                 });
             },
