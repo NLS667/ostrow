@@ -22,6 +22,7 @@ import 'datatables.net-buttons/js/buttons.print.js';
 window.Chart = require('chart.js/auto').default;
 
 require('leaflet/dist/leaflet.js');
+require('leaflet-sleep');
 
 //Import Select2
 //window.select2 = require('select2');

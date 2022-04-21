@@ -51,8 +51,7 @@ mix.autoload({
         'resources/assets/js/plugins/chartist.min.js',
         'resources/assets/js/plugins/bootstrap-notify.js',
         'resources/assets/js/plugins/material-dashboard.js',
-        'resources/assets/js/plugins/settings.js',        
-        'node_modules/leaflet-sleep/Leaflet.Sleep.js',
+        'resources/assets/js/plugins/settings.js',
     ], 'public/js/app-custom.js')
     .vue()
     .version();
