@@ -169,3 +169,17 @@
     </div>
   </div>
 @endsection
+
+@section('after-scripts')
+     <script type="text/javascript">
+        
+        Backend.Utils.documentReady(function(){
+          Backend.Clients.selectors.coordinatesURL = "{{ route('admin.client.get.coordinates') }}";
+          Backend.Clients.init();
+        });
+
+        window.onload = function () {
+            Backend.Clients.windowloadhandler();
+        };
+    </script>
+@endsection
