@@ -30,7 +30,7 @@ class EditResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.access.clients.edit')->with([
+        return view('backend.client.edit')->with([
             'client'                => $this->client,
             'serviceCategories'     => $this->serviceCategories,
         ]);
