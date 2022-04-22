@@ -30,7 +30,7 @@
               </div>
             </div>
             <div class="card-body ">
-              <clientsmap :data=''></clientsmap>
+              <clientsmap :data='{!! json_encode($map_data) !!}'></clientsmap>
             </div>
           </div>
         </div>

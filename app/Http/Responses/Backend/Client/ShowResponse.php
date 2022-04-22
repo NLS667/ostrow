@@ -28,6 +28,11 @@ class ShowResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.client.show')->withClient($this->client);
+        $map_data = [];
+        $map_data['markers'][] = (object)[
+            'name' => $this->$client->name,
+            'coords' => [$this->$client->adr_lattitude, $this->$client->adr_longitude],
+        ];
+        return view('backend.client.show')->withClient($this->client)->with('map_data', $map_data);
     }
 }
