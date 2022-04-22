@@ -25,10 +25,10 @@
                 		Dane Podstawowe
             		</div>
 	            	<div class="card-body ">
-                		<h4 class="card-title">{{ $client->first_name }}&nbsc;{{ $client->last_name }}</h4>
+                		<h4 class="card-title">{{ $client->first_name }}&nbsp;{{ $client->last_name }}</h4>
                 		<p class="card-text">
-                			{{$client->adr_street}}&nbsc;{{$client->adr_street_nr}}</br>
-                			{{$client->adr_zipcode}}&nbsc;{{$client->adr_city}}</br>
+                			{{$client->adr_street}}&nbsp;{{$client->adr_street_nr}}</br>
+                			{{$client->adr_zipcode}}&nbsp;{{$client->adr_city}}</br>
                 			{{$client->adr_region}}</br>
                 			{{$client->adr_country}}</br></br>
                 			{{$client->email}}</br>
