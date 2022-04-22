@@ -30,8 +30,8 @@ class ShowResponse implements Responsable
     {
         $map_data = [];
         $map_data['markers'][] = (object)[
-            'name' => $this->$client->name,
-            'coords' => [$this->$client->adr_lattitude, $this->$client->adr_longitude],
+            'name' => $this->client->name,
+            'coords' => [$this->client->adr_lattitude, $this->client->adr_longitude],
         ];
         return view('backend.client.show')->withClient($this->client)->with('map_data', $map_data);
     }
