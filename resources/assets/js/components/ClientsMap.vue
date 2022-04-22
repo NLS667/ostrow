@@ -20,7 +20,7 @@
                 }
         },
         mounted() {
-        	$("#leaflet-map").height(900);
+        	$("#leaflet-map").height(this.data.mapHeight);
         	var lf = this;
         	if ($('#leaflet-map').length) {
         		lf.initMap();
@@ -40,7 +40,7 @@
                     wakeMessage: 'Kliknij',
                     sleepButton: L.Control.sleepMapControl,
                     sleepOpacity: .7
-                }).setView([51.919438, 19.145136], 7);
+                }).setView([51.919438, 19.145136], this.data.mapZoom);
                 this.tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     maxZoom: 17,
                     attribution: 'Tiles courtesy of <a href="http://openstreetmap.org/" target="_blank">OpenStreetMap</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',

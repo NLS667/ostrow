@@ -29,6 +29,8 @@ class ShowResponse implements Responsable
     public function toResponse($request)
     {
         $map_data = [];
+        $map_data['mapHeight'] = 600;
+        $map_data['mapZoom'] = 15;
         $map_data['markers'][] = (object)[
             'name' => $this->client->name,
             'coords' => [$this->client->adr_lattitude, $this->client->adr_longitude],
