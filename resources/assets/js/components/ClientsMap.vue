@@ -16,7 +16,7 @@
         data() {
                 return {
                     map: null,
-                    pins: [{}],
+                    pins: {},
                 }
         },
         mounted() {
