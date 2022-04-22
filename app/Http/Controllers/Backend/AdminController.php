@@ -24,6 +24,7 @@ class AdminController extends Controller
 
         if($clients->count() > 0)
         {
+            $map_data['mapMode'] = 'large';
             $map_data['mapHeight'] = 900;
             $map_data['mapZoom'] = 7;
             $map_data['markers'] = [];

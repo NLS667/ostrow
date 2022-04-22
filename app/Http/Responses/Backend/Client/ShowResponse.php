@@ -29,6 +29,7 @@ class ShowResponse implements Responsable
     public function toResponse($request)
     {
         $map_data = [];
+        $map_data['mapMode'] = 'small';
         $map_data['mapHeight'] = 600;
         $map_data['mapZoom'] = 15;
         $map_data['markers'][] = (object)[

@@ -52,11 +52,14 @@
                 this.data.markers.forEach((marker) => {
                     this.pins.push(marker);
                 })
-                this.log(this.pins);
+
                 this.pins.forEach((pin) => {
                     pin.leafletObject = L.marker(pin.coords).bindPopup(pin.name);
                     pin.leafletObject.addTo(this.clients_map);
-                })                
+                    if(this.data.mapMode == 'small'){
+                        this.centerLeafletMapOnMarker(this.clients_map, pin.leafletObject)
+                    } 
+                })        
             },
             getAllClients() {
                 $.ajax({
@@ -70,6 +73,11 @@
                       this.log('testowo:'+result);
                   }
                 });
+            },
+            centerLeafletMapOnMarker(map, marker){
+                var latLngs = [ marker.getLatLng() ];
+                var markerBounds = L.latLngBounds(latLngs);
+                map.fitBounds(markerBounds);
             },
         },        
 	}
