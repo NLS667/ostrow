@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Responsable;
 
 class EditResponse implements Responsable
 {
+    protected $client;
     /**
      * @var \App\Models\Access\ServiceCategory\ServiceCategory
      */
@@ -14,8 +15,9 @@ class EditResponse implements Responsable
     /**
      * @param \App\Models\Access\Client\Client $client
      */
-    public function __construct($serviceCategories)
+    public function __construct($client, $serviceCategories)
     {
+        $this->client = $client;
         $this->serviceCategories = $serviceCategories;
     }
 
@@ -29,7 +31,8 @@ class EditResponse implements Responsable
     public function toResponse($request)
     {
         return view('backend.access.clients.edit')->with([
-            'serviceCategories'          => $this->serviceCategories,
+            'client'                => $this->client,
+            'serviceCategories'     => $this->serviceCategories,
         ]);
     }
 }

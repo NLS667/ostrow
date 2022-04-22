@@ -103,9 +103,8 @@ class ClientController extends Controller
     public function edit(Client $client, EditClientRequest $request)
     {
         $serviceCategories = $this->serviceCategories->getAll();
-        $tasks = Task::getSelectData('name');
 
-        return new EditResponse($client, $serviceCategories, $tasks);
+        return new EditResponse($client, $serviceCategories);
     }
 
     /**
