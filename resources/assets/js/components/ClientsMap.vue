@@ -49,8 +49,7 @@
                 this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
-                this.log(this.markers);
-                this.markers.forEach((marker) => {
+                this.data.markers.forEach((marker) => {
                     this.pins.push(marker);
                 })
                 this.log(this.pins);
