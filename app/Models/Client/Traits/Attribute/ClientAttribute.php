@@ -56,7 +56,7 @@ trait ClientAttribute
      */
     public function getDeleteButtonAttribute($class)
     {
-        if ($this->id != access()->id() && access()->allow('delete-client')) {
+        if (access()->allow('delete-client')) {
             $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
             return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.client.destroy', $this).'"
