@@ -28,6 +28,6 @@ class ShowResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.clients.show')->withClient($this->client);
+        return view('backend.client.show')->withClient($this->client);
     }
 }
