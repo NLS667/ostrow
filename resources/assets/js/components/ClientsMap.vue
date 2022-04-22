@@ -49,9 +49,11 @@
                 this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
+                this.log(this.markers);
                 this.markers.forEach((marker) => {
                     this.pins.push(marker);
                 })
+                this.log(this.pins);
                 this.pins.forEach((pin) => {
                     pin.leafletObject = L.marker(pin.coords).bindPopup(pin.name);
                     pin.leafletObject.addTo(this.clients_map);
