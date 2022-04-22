@@ -7,28 +7,16 @@ use Illuminate\Contracts\Support\Responsable;
 class EditResponse implements Responsable
 {
     /**
-     * @var \App\Models\Access\Client\Client
+     * @var \App\Models\Access\ServiceCategory\ServiceCategory
      */
-    protected $client;
-
-    /**
-     * @var \App\Models\Access\Task\Task
-     */
-    protected $tasks;
-
-    /**
-     * @var \App\Models\Access\Service\Service
-     */
-    protected $services;
+    protected $serviceCategories;
 
     /**
      * @param \App\Models\Access\Client\Client $client
      */
-    public function __construct($client, $services, $tasks)
+    public function __construct($serviceCategories)
     {
-        $this->client = $client;
-        $this->services = $services;
-        $this->tasks = $tasks;
+        $this->serviceCategories = $serviceCategories;
     }
 
     /**
@@ -40,15 +28,8 @@ class EditResponse implements Responsable
      */
     public function toResponse($request)
     {
-        $tasks = $this->tasks;
-        $clientTasks = $this->client->tasks()->get()->pluck('id')->toArray();
-
         return view('backend.access.clients.edit')->with([
-            'client'            => $this->client,
-            'clientServices'    => $this->client->services->pluck('id')->all(),
-            'services'          => $this->services,
-            'clientTasks'       => $clientTasks,
-            'permissions'       => $tasks,
+            'serviceCategories'          => $this->serviceCategories,
         ]);
     }
 }
