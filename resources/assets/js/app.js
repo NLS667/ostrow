@@ -24,11 +24,11 @@ window.Chart = require('chart.js/auto').default;
 require('leaflet/dist/leaflet.js');
 require('leaflet-sleep');
 
-L.Icon.Default.imagePath = '/images/';
+L.Icon.Default.imagePath = '/images';
 L.Icon.Default.mergeOptions({
-    iconRetinaUrl: '/images/marker-icon-2x.png',
-    iconUrl: '/images/marker-icon.png',
-    shadowUrl: '/images/marker-shadow.png',
+    iconRetinaUrl: '/marker-icon-2x.png',
+    iconUrl: '/marker-icon.png',
+    shadowUrl: '/marker-shadow.png',
 });
 //Import Select2
 //window.select2 = require('select2');
