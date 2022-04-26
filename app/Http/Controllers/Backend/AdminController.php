@@ -20,13 +20,15 @@ class AdminController extends Controller
     public function index()
     {
         $clients = Client::all();
+        $data['clientCount'] = $clients->count();
+
         $map_data = [];
+        $map_data['mapMode'] = 'large';
+        $map_data['mapHeight'] = 900;
+        $map_data['mapZoom'] = 7;       
 
         if($clients->count() > 0)
         {
-            $map_data['mapMode'] = 'large';
-            $map_data['mapHeight'] = 900;
-            $map_data['mapZoom'] = 7;
             $map_data['markers'] = [];
 
             foreach($clients as $client)
@@ -37,7 +39,7 @@ class AdminController extends Controller
                 ];
             }   
         }
-        return view('backend.index')->with('map_data', $map_data);
+        return view('backend.index')->with('map_data', $map_data)->with('data', $data);
     }
 
     /**
