@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Map;
+namespace App\Http\Controllers\Backend\Map;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
