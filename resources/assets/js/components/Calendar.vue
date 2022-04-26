@@ -31,17 +31,23 @@ export default {
             interactionPlugin,
             listPlugin
           ],
+          headerToolbar : {
+            start: 'prev,next today',
+            center: 'title',
+            end: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+          },
           initialView: 'dayGridMonth',
+          weekends: true,
           dayMaxEventRows: true,
           views: {
             timeGrid: {
-              eventLimit: 4
+              eventMaxStack: 4
             },
             monthGrid: {
-              eventLimit: 4
+              eventMaxStack: 4
             },
             dayGrid: {
-              eventLimit: 4,
+              dayMaxEvents: 4,
             }
           }
         }
