@@ -35,9 +35,9 @@ export default {
             bootstrapPlugin
           ],
           headerToolbar : {
-            start: 'prev,next today',
+            start: 'prev next today',
             center: 'title',
-            end: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            end: 'dayGridMonth timeGridWeek timeGridDay listWeek'
           },
           initialView: 'dayGridMonth',
           weekends: true,
