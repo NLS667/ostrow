@@ -9,7 +9,6 @@
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
           }"
-        :plugins="calendarPlugins"
         :weekends="calendarWeekends"
         :events="calendarEvents"
         @dateClick="handleDateClick"
@@ -56,6 +55,7 @@ export default {
           },
         locale: plLocale,
         calendarOptions: {
+            plugins: calendarPlugins,
             dayMaxEventRows: true,
             views: {
                 timeGrid: {
