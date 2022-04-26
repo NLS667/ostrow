@@ -21,6 +21,24 @@ import 'datatables.net-buttons/js/buttons.print.js';
 //Import chart.js
 window.Chart = require('chart.js/auto').default;
 
+//Import FullCallendar
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
+
+let calendar = new Calendar(calendarEl, {
+  plugins: [ dayGridPlugin, timeGridPlugin, listPlugin ],
+  initialView: 'dayGridMonth',
+  headerToolbar: {
+    left: 'prev,next today',
+    center: 'title',
+    right: 'dayGridMonth,timeGridWeek,listWeek'
+  }
+});
+
+//Import Leaflet
+
 require('leaflet/dist/leaflet.js');
 require('leaflet-sleep');
 
@@ -30,14 +48,13 @@ L.Icon.Default.mergeOptions({
     iconUrl: '/marker-icon.png',
     shadowUrl: '/marker-shadow.png',
 });
+
+
 //Import Select2
 //window.select2 = require('select2');
 //import select2 from 'select2';
 
 //import 'bootstrap-notify';
-
-//import * as mdb from 'mdb-ui-kit';
-//window.mdb = require('mdb-ui-kit').default;
 
 window.Vue = require('vue').default;
 
