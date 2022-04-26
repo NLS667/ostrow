@@ -9,6 +9,7 @@ import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
 import listPlugin from "@fullcalendar/list"
 import plLocale from '@fullcalendar/core/locales/pl';
+import bootstrapPlugin from '@fullcalendar/bootstrap';
 
 import "@fullcalendar/common/main.css"
 import "@fullcalendar/daygrid/main.css"
@@ -25,11 +26,13 @@ export default {
       return {        
         calendarOptions: {
           locale: plLocale,
+          themeSystem: 'bootstrap',
           plugins: [
             dayGridPlugin,
             timeGridPlugin,
             interactionPlugin,
-            listPlugin
+            listPlugin,
+            bootstrapPlugin
           ],
           headerToolbar : {
             start: 'prev,next today',
