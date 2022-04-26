@@ -17,22 +17,22 @@ class MenuTableSeeder extends Seeder
 
         $mainmenu = '[{
                 "view_permission_id":"view-map",
-                "icon":"face",
+                "icon":"map",
                 "open_in_new_tab":0,
                 "url_type":"route",
                 "url":"admin.map.index",
                 "name":"Mapa",
                 "id":1,
-                "content":"Clients"
+                "content":"Map"
             },{
                 "view_permission_id":"view-callendar",
-                "icon":"face",
+                "icon":"event",
                 "open_in_new_tab":0,
                 "url_type":"route",
                 "url":"admin.callendar.index",
-                "name":"Klienci",
+                "name":"Kalendarz",
                 "id":2,
-                "content":"Kalendarz"
+                "content":"Callendar"
             },
             {
                 "view_permission_id":"view-clients-management",
