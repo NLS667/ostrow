@@ -1,6 +1,6 @@
 <?php
 
-//use App\Http\Controllers\Backend\Map\MapController;
+use App\Http\Controllers\Backend\Map\MapController;
 
 /**
  * All route names are prefixed with 'admin.'.
