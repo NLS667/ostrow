@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Callendar;
+namespace App\Http\Controllers\Backend\Calendar;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Client\Client;
 
-class CallendarController extends Controller
+class CalendarController extends Controller
 {
 	/**
      * Show the application dashboard.
@@ -16,8 +16,8 @@ class CallendarController extends Controller
     public function index()
     {
         $clients = Client::all();
-        $callendar_data = [];
+        $calendar_data = [];
 
-        return view('backend.callendar.index')->with('callendar_data', $callendar_data);
+        return view('backend.calendar.index')->with('calendar_data', $calendar_data);
     }
 }

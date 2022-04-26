@@ -1,4 +1,4 @@
-@extends('backend.layouts.app', ['activePage' => 'callendar', 'titlePage' => 'Kalendarz'])
+@extends('backend.layouts.app', ['activePage' => 'calendar', 'titlePage' => 'Kalendarz'])
 
 @section('content')
   <div class="content">

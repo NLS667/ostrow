@@ -24,15 +24,16 @@ class MenuTableSeeder extends Seeder
                 "name":"Mapa",
                 "id":1,
                 "content":"Map"
-            },{
-                "view_permission_id":"view-callendar",
+            },
+            {
+                "view_permission_id":"view-calendar",
                 "icon":"event",
                 "open_in_new_tab":0,
                 "url_type":"route",
-                "url":"admin.callendar.index",
+                "url":"admin.calendar.index",
                 "name":"Kalendarz",
                 "id":2,
-                "content":"Callendar"
+                "content":"Calendar"
             },
             {
                 "view_permission_id":"view-clients-management",
