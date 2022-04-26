@@ -29,6 +29,7 @@ import dayGridPlugin from "@fullcalendar/daygrid"
 import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
 import listPlugin from "@fullcalendar/list"
+import plLocale from '@fullcalendar/core/locales/pl';
 
 import "@fullcalendar/common/main.css"
 import "@fullcalendar/daygrid/main.css"
@@ -53,7 +54,7 @@ export default {
           {
             url: '/tasks/filter'
           },
-        locale: itLocale,
+        locale: plLocale,
         calendarOptions: {
             eventLimit: true,
             views: {
