@@ -28,11 +28,12 @@ import FullCalendar from "@fullcalendar/vue"
 import dayGridPlugin from "@fullcalendar/daygrid"
 import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
-import Noty from 'noty'
+import listPlugin from "@fullcalendar/list"
 
-import "@fullcalendar/core/main.css"
+import "@fullcalendar/commoc/main.css"
 import "@fullcalendar/daygrid/main.css"
 import "@fullcalendar/timegrid/main.css"
+import "@fullcalendar/list/main.css"
 
 export default {
     name: 'Calendar',
@@ -44,7 +45,8 @@ export default {
         calendarPlugins: [
             dayGridPlugin,
             timeGridPlugin,
-            interactionPlugin
+            interactionPlugin,
+            listPlugin
         ],
         calendarWeekends: true,
         calendarEvents:
