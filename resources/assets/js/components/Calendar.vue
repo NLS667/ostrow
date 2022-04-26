@@ -31,7 +31,7 @@ export default {
             interactionPlugin,
             listPlugin
           ],
-          initialView: timeGridDay,
+          initialView: 'timeGridDay',
           dayMaxEventRows: true,
           views: {
             timeGrid: {
