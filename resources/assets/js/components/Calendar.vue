@@ -20,11 +20,11 @@ export default {
     components: {
         FullCalendar
     },
-    data(){
+    data() {
       /* Full Calendar Options Start */
       return {        
-        locale: plLocale,
         calendarOptions: {
+          locale: plLocale,
           plugins: [
             dayGridPlugin,
             timeGridPlugin,
