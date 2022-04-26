@@ -30,7 +30,7 @@ import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
 import listPlugin from "@fullcalendar/list"
 
-import "@fullcalendar/commoc/main.css"
+import "@fullcalendar/common/main.css"
 import "@fullcalendar/daygrid/main.css"
 import "@fullcalendar/timegrid/main.css"
 import "@fullcalendar/list/main.css"
