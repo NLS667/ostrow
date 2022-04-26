@@ -56,7 +56,7 @@ export default {
           },
         locale: plLocale,
         calendarOptions: {
-            eventLimit: true,
+            dayMaxEventRows: true,
             views: {
                 timeGrid: {
                     eventLimit: 4
