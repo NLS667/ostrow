@@ -1,25 +1,5 @@
 <template>
-<div>
-    <FullCalendar
-        ref="fullCalendar"
-        defaultView="timeGridDay"
-        :options="calendarOptions"
-        :header="{
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-          }"
-        :weekends="calendarWeekends"
-        :events="calendarEvents"
-        @dateClick="handleDateClick"
-        @eventDrop="handleEventDrop"
-        @eventClick="handleEventClick"
-        @eventResize="eventResize"
-        :editable="true"
-        navLinks="true"
-        timeZone="UTC"
-    />
-</div>
+    <FullCalendar :options="calendarOptions"/>
 </template>
 
 <script>
@@ -42,20 +22,15 @@ export default {
     },
     data: () => ({
         /* Full Calendar Options Start */
-        calendarPlugins: [
-            dayGridPlugin,
-            timeGridPlugin,
-            interactionPlugin,
-            listPlugin
-        ],
-        calendarWeekends: true,
-        calendarEvents:
-          {
-            url: '/tasks/filter'
-          },
         locale: plLocale,
         calendarOptions: {
-            plugins: calendarPlugins,
+            plugins: [
+              dayGridPlugin,
+              timeGridPlugin,
+              interactionPlugin,
+              listPlugin
+            ],
+            initialView: timeGridDay,
             dayMaxEventRows: true,
             views: {
                 timeGrid: {
