@@ -17,14 +17,13 @@ class MapController extends Controller
     {
         $clients = Client::all();
         $map_data = [];
+		$map_data['mapMode'] = 'large';
+        $map_data['mapHeight'] = 900;
+        $map_data['mapZoom'] = 7;
+        $map_data['markers'] = [];
 
         if($clients->count() > 0)
         {
-            $map_data['mapMode'] = 'large';
-            $map_data['mapHeight'] = 900;
-            $map_data['mapZoom'] = 7;
-            $map_data['markers'] = [];
-
             foreach($clients as $client)
             {
                 $map_data['markers'][] = (object)[
@@ -32,7 +31,7 @@ class MapController extends Controller
                     'coords' => [$client->adr_lattitude, $client->adr_longitude],
                 ];
             }   
-        }
+        } 
         return view('backend.map.index')->with('map_data', $map_data);
     }
 }
