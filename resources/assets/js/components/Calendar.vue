@@ -20,33 +20,33 @@ export default {
     components: {
         FullCalendar
     },
-    data: () => ({
-        /* Full Calendar Options Start */
+    data(){
+      /* Full Calendar Options Start */
+      return {        
         locale: plLocale,
         calendarOptions: {
-            plugins: [
-              dayGridPlugin,
-              timeGridPlugin,
-              interactionPlugin,
-              listPlugin
-            ],
-            initialView: timeGridDay,
-            dayMaxEventRows: true,
-            views: {
-                timeGrid: {
-                    eventLimit: 4
-                },
-                monthGrid: {
-                    eventLimit: 4
-                },
-                dayGrid: {
-                    eventLimit: 4,
-                }
+          plugins: [
+            dayGridPlugin,
+            timeGridPlugin,
+            interactionPlugin,
+            listPlugin
+          ],
+          initialView: timeGridDay,
+          dayMaxEventRows: true,
+          views: {
+            timeGrid: {
+              eventLimit: 4
             },
-        },
-        /* Full Calendar Options End */
-    }),
-
+            monthGrid: {
+              eventLimit: 4
+            },
+            dayGrid: {
+              eventLimit: 4,
+            }
+          }
+        }
+      }
+    },
     methods: {
         handleDateClick(e) {
             this.new_event_modal_open = true
