@@ -16,13 +16,32 @@ class MenuTableSeeder extends Seeder
         DB::table(config('access.menus_table'))->truncate();
 
         $mainmenu = '[{
+                "view_permission_id":"view-map",
+                "icon":"face",
+                "open_in_new_tab":0,
+                "url_type":"route",
+                "url":"admin.map.index",
+                "name":"Mapa",
+                "id":1,
+                "content":"Clients"
+            },{
+                "view_permission_id":"view-callendar",
+                "icon":"face",
+                "open_in_new_tab":0,
+                "url_type":"route",
+                "url":"admin.callendar.index",
+                "name":"Klienci",
+                "id":2,
+                "content":"Kalendarz"
+            },
+            {
                 "view_permission_id":"view-clients-management",
                 "icon":"face",
                 "open_in_new_tab":0,
                 "url_type":"route",
                 "url":"admin.client.index",
                 "name":"Klienci",
-                "id":1,
+                "id":3,
                 "content":"Clients"
             },            
             {
@@ -32,7 +51,7 @@ class MenuTableSeeder extends Seeder
                 "url_type":"route",
                 "url":"",
                 "name":"Słowniki",
-                "id":1,
+                "id":4,
                 "content":"Dictionaries",
                 "children":[{
                     "view_permission_id":"view-producer-management",
@@ -41,7 +60,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.producer.index",
                     "name":"Producenci",
-                    "id":3,
+                    "id":5,
                     "content":"Producers"
                 },
                 {
@@ -51,7 +70,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.model.index",
                     "name":"Modele Produktów",
-                    "id":4,
+                    "id":6,
                     "content":"Product-Models"
                 },
                 {
@@ -61,7 +80,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.serviceCategory.index",
                     "name":"Kategorie Usług",
-                    "id":2,
+                    "id":7,
                     "content":"Service Categories"
                 }]
             }]';
@@ -73,7 +92,7 @@ class MenuTableSeeder extends Seeder
                 "url_type":"route",
                 "url":"",
                 "name":"Ustawienia Dostępu",
-                "id":2,
+                "id":8,
                 "content":"Access-Management",
                 "children":[{
                     "view_permission_id":"view-user-management",
@@ -82,7 +101,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.access.user.index",
                     "name":"Użytkownicy",
-                    "id":3,
+                    "id":9,
                     "content":"User-Management"
                 },
                 {
@@ -92,7 +111,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.access.role.index",
                     "name":"Role",
-                    "id":4,
+                    "id":10,
                     "content":"Role-Management"
                 },
                 {
@@ -102,7 +121,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.access.permission.index",
                     "name":"Uprawnienia",
-                    "id":5,
+                    "id":11,
                     "content":"Permission-Management"
                 }]
             },
@@ -113,7 +132,7 @@ class MenuTableSeeder extends Seeder
                 "url_type":"route",
                 "url":"admin.menus.index",
                 "name":"Ustawienia Menu",
-                "id":6,
+                "id":12,
                 "content":"Menus"
             }]';
 
