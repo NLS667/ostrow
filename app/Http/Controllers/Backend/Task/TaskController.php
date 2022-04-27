@@ -138,6 +138,8 @@ class TaskController extends Controller
                   ->where('user_id', auth()->user()->id)
                   ->get();
         }
+
+        \Log::info(json_encode($tasks));
         return response()->json($tasks);
     }
 }
