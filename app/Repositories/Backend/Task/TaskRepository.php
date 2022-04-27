@@ -22,22 +22,14 @@ class TaskRepository extends BaseRepository
     const MODEL = Task::class;
 
     /**
-     * @var Client Model
+     * @var Task Model
      */
     protected $model;
 
-    /**
-     * @var ServiceRepository
-     */
-    protected $task;
-
-    /**
-     * @param ServiceRepository $service
-     */
+    
     public function __construct(Task $model)
     {
         $this->model = $model;
-        //$this->service = $service;
     }
 
     /**
@@ -56,39 +48,33 @@ class TaskRepository extends BaseRepository
             ->leftJoin('service_client', 'service_client.client_id', '=', 'clients.id')
             ->leftJoin('services', 'service_client.service_id', '=', 'services.id')
             ->select([
-                config('client.clients_table').'.id',
-                config('client.clients_table').'.first_name',
-                config('client.clients_table').'.last_name',
-                config('client.clients_table').'.email',
-                config('client.clients_table').'.status',
-                config('client.clients_table').'.created_at',
-                config('client.clients_table').'.updated_at',
-                config('client.clients_table').'.deleted_at',
-                DB::raw('GROUP_CONCAT(services.name) as services'),
-            ])
-            ->groupBy('clients.id');
+                config('task.tasks_table').'.id',
+                config('task.tasks_table').'.title',
+                config('task.tasks_table').'.description',
+                config('task.tasks_table').'.created_at',
+                config('task.tasks_table').'.updated_at',
+            ]);
 
         if ($trashed == 'true') {
             return $dataTableQuery->onlyTrashed();
         }
 
-        // active() is a scope on the ClientScope trait
-        return $dataTableQuery->active($status);
+        return $dataTableQuery;
     }
 
     /**
-     * Create Client.
+     * Create Task.
      *
      * @param Model $request
      */
     public function create($request)
     {
-        $data = $request->except('services', 'tasks');
-        $services = $request->get('services');
-        $tasks = $request->get('tasks');
-        $client = $this->createClientStub($data);
+        //$data = $request->except('services', 'tasks');
+        //$services = $request->get('services');
+        //$tasks = $request->get('tasks');
+        //$client = $this->createClientStub($data);
         DB::transaction(function () use ($client, $data, $services, $tasks) {
-            if ($user->save()) {
+            if ($task->save()) {
 
                 //Client Created, Validate Roles
                 //if (!count($roles)) {
@@ -96,116 +82,71 @@ class TaskRepository extends BaseRepository
                 //}
 
                 //Attach new roles
-                $client->attachServices($services);
+                //$client->attachServices($services);
 
                 // Attach New Permissions
-                $client->attachTasks($tasks);
+                //$client->attachTasks($tasks);
 
                 //Send confirmation email if requested and account approval is off
                 //if (isset($data['confirmation_email']) && $user->confirmed == 0) {
                  //   $user->notify(new UserNeedsConfirmation($user->confirmation_code));
                 //}
 
-                \Event::dispatch(new ClientCreated($client));
+                \Event::dispatch(new TaskCreated($task));
 
                 return true;
             }
 
-            throw new GeneralException(trans('exceptions.backend.clients.create_error'));
+            throw new GeneralException(trans('exceptions.backend.tasks.create_error'));
         });
     }
 
     /**
-     * @param Model $client
+     * @param Model $task
      * @param $request
      *
      * @throws GeneralException
      *
      * @return bool
      */
-    public function update($client, $request)
+    public function update($task, $request)
     {
-        $data = $request->except('services', 'tasks');
-        $services = $request->get('services');
-        $tasks = $request->get('tasks');
+        //$data = $request->except('services', 'tasks');
+        //$services = $request->get('services');
+        //$tasks = $request->get('tasks');
 
         DB::transaction(function () use ($client, $data, $services, $tasks) {
-            if ($user->update($data)) {
-                $user->status = isset($data['status']) && $data['status'] == '1' ? 1 : 0;
+            if ($task->update($data)) {
                 
-                $user->save();
+                $task->save();
 
-                event(new ClientUpdated($client));
+                event(new TaskUpdated($task));
 
                 return true;
             }
 
-            throw new GeneralException(trans('exceptions.backend.clients.update_error'));
+            throw new GeneralException(trans('exceptions.backend.tasks.update_error'));
         });
     }
 
     /**
-     * Delete Client.
+     * Delete Task.
      *
-     * @param Model $client
+     * @param Model $task
      *
      * @throws GeneralException
      *
      * @return bool
      */
-    public function delete($client)
+    public function delete($task)
     {
-        if ($client->delete()) {
-            event(new ClientDeleted($client));
+        if ($task->delete()) {
+            event(new TaskDeleted($task));
 
             return true;
         }
 
-        throw new GeneralException(trans('exceptions.backend.clients.delete_error'));
-    }
-
-    /**
-     * @param $client
-     *
-     * @throws GeneralException
-     */
-    public function forceDelete($client)
-    {
-        if (is_null($client->deleted_at)) {
-            throw new GeneralException(trans('exceptions.backend.clients.delete_first'));
-        }
-
-        DB::transaction(function () use ($client) {
-            if ($client->forceDelete()) {
-                event(new ClientPermanentlyDeleted($client));
-
-                return true;
-            }
-
-            throw new GeneralException(trans('exceptions.backend.clients.delete_error'));
-        });
-    }
-
-    /**
-     * @param $client
-     *
-     * @throws GeneralException
-     *
-     * @return bool
-     */
-    public function restore($client)
-    {
-        if (is_null($client->deleted_at)) {
-            throw new GeneralException(trans('exceptions.backend.clients.cant_restore'));
-        }
-
-        if ($client->restore()) {
-            event(new ClientRestored($client));
-
-            return true;
-        }
-
-        throw new GeneralException(trans('exceptions.backend.clients.restore_error'));
+        throw new GeneralException(trans('exceptions.backend.tasks.delete_error'));
     }
 
     /**
@@ -216,25 +157,33 @@ class TaskRepository extends BaseRepository
      *
      * @return bool
      */
-    public function mark($client, $status)
+    public function mark($task, $status)
     {
-        $client->status = $status;
+        $task->status = $status;
 
         switch ($status) {
             case 0:
-                event(new ClientDeactivated($client));
+                event(new TaskSoon($task));
             break;
 
             case 1:
-                event(new ClientReactivated($client));
+                event(new TaskPending($task));
+            break;
+
+            case 2:
+                event(new TaskFinished($task));
+            break;
+
+            case 3:
+                event(new TaskLate($task));
             break;
         }
 
-        if ($client->save()) {
+        if ($task->save()) {
             return true;
         }
 
-        throw new GeneralException(trans('exceptions.backend.clients.mark_error'));
+        throw new GeneralException(trans('exceptions.backend.tasks.mark_error'));
     }
 
     /**
@@ -242,17 +191,17 @@ class TaskRepository extends BaseRepository
      *
      * @return mixed
      */
-    protected function createClientStub($input)
+    protected function createTaskStub($input)
     {
-        $user = self::MODEL;
-        $user = new $user();
-        $user->first_name = $input['first_name'];
-        $user->last_name = $input['last_name'];
-        $user->email = $input['email'];
-        $user->status = isset($input['status']) ? 1 : 0;
-        $user->created_by = access()->user()->id;
+        $task = self::MODEL;
+        $task = new $task();
+        $task->title = $input['title'];
+        $task->last_name = $input['last_name'];
+        $task->email = $input['email'];
+        $task->status = isset($input['status']) ? $input['status'] : 0;
+        $task->created_by = access()->user()->id;
 
-        return $user;
+        return $task;
     }
 
     /**
