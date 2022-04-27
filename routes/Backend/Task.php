@@ -1,14 +1,22 @@
 <?php
-
 /*
- * For DataTables
- */
-Route::post('task/get', TaskTableController::class)->name('task.get');
+     * Client Management
+     */
+    Route::group([
+        'middleware' => 'access.routeNeedsPermission:view-task-management',
+    ], function () {
+        Route::group(['namespace' => 'Task'], function () {
+            /*
+             * For DataTables
+             */
+            Route::post('task/get', TaskTableController::class)->name('task.get');
 
-/*
- * Task CRUD
- */
-Route::resource('task', TaskController::class);
+            /*
+             * Task CRUD
+             */
+            Route::resource('task', TaskController::class);
 
 
-Route::get('task/filter', 'TaskController@filter');
+            Route::get('task/filter', 'TaskController@filter');
+        });
+    });
