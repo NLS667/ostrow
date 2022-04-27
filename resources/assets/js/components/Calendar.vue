@@ -54,7 +54,7 @@ export default {
             }
           },
           events: {
-            url: '/task/filter',
+            url: '/admin/task/filter',
             method: 'GET',
             failure: function() {
               alert('there was an error while fetching events!');
