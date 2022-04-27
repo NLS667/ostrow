@@ -17,6 +17,6 @@
             Route::resource('task', TaskController::class);
 
 
-            Route::get('task/filter', 'TaskController@filter');
+            Route::get('task/filter', [TaskController::class, 'filter'])->name('task.filter');
         });
     });

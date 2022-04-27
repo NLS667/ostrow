@@ -38,15 +38,13 @@ class TaskRepository extends BaseRepository
      *
      * @return mixed
      */
-    public function getForDataTable($status = 1, $trashed = false)
+    public function getForDataTable($status = 0)
     {
         /**
          * Note: You must return deleted_at or the User getActionButtonsAttribute won't
          * be able to differentiate what buttons to show for each row.
          */
         $dataTableQuery = $this->query()
-            ->leftJoin('service_client', 'service_client.client_id', '=', 'clients.id')
-            ->leftJoin('services', 'service_client.service_id', '=', 'services.id')
             ->select([
                 config('task.tasks_table').'.id',
                 config('task.tasks_table').'.title',
@@ -54,10 +52,6 @@ class TaskRepository extends BaseRepository
                 config('task.tasks_table').'.created_at',
                 config('task.tasks_table').'.updated_at',
             ]);
-
-        if ($trashed == 'true') {
-            return $dataTableQuery->onlyTrashed();
-        }
 
         return $dataTableQuery;
     }
@@ -69,11 +63,11 @@ class TaskRepository extends BaseRepository
      */
     public function create($request)
     {
-        //$data = $request->except('services', 'tasks');
+        //$data = $request;
         //$services = $request->get('services');
         //$tasks = $request->get('tasks');
-        //$client = $this->createClientStub($data);
-        DB::transaction(function () use ($client, $data, $services, $tasks) {
+        $task = $this->createTaskStub($data);
+        DB::transaction(function () use ($task, $request) {
             if ($task->save()) {
 
                 //Client Created, Validate Roles
