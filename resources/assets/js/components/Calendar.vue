@@ -52,7 +52,8 @@ export default {
             dayGrid: {
               dayMaxEvents: 4,
             }
-          }
+          },
+          eventSources: ['/task/filter'],
         }
       }
     },
