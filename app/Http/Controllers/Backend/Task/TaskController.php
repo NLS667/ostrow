@@ -130,7 +130,7 @@ class TaskController extends Controller
     {
         if (auth()->user()->isAdmin) {
           return Task::whereBetween('start', [$request->start, $request->end])
-                  ->with('user:id,name,lastname')
+                  ->with('user:id,first_name,last_name')
                   ->get();
         } else {
           return Task::whereBetween('start', [$request->start, $request->end])
