@@ -53,7 +53,15 @@ export default {
               dayMaxEvents: 4,
             }
           },
-          eventSources: ['/task/filter'],
+          events: {
+            url: '/task/filter',
+            method: 'GET',
+            failure: function() {
+              alert('there was an error while fetching events!');
+            },
+            color: 'yellow',
+            textColor: 'black'
+          },
         }
       }
     },

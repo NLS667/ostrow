@@ -128,14 +128,16 @@ class TaskController extends Controller
      */
     public function filter(Request $request)
     {
+        $tasks = [];
         if (auth()->user()->isAdmin) {
-          return Task::whereBetween('start', [$request->start, $request->end])
+          $tasks = Task::whereBetween('start', [$request->start, $request->end])
                   ->with('user:id,first_name,last_name')
                   ->get();
         } else {
-          return Task::whereBetween('start', [$request->start, $request->end])
+          $tasks = Task::whereBetween('start', [$request->start, $request->end])
                   ->where('user_id', auth()->user()->id)
                   ->get();
         }
+        return $tasks;
     }
 }
