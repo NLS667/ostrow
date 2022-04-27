@@ -17,6 +17,6 @@
             Route::resource('task', TaskController::class);
 
 
-            Route::get('task/filter', [TaskController::class, 'filter'])->name('task.filter');
+            Route::get('task/filter', [\App\Http\Controllers\Backend\Task\TaskController::class, 'filter'])->name('task.filter');
         });
     });
