@@ -129,7 +129,7 @@ class TaskController extends Controller
     public function filter(Request $request)
     {
         $tasks = [];
-        if (auth()->user()->isAdmin) {
+        if (auth()->user()->isAdmin()) {
           $tasks = Task::whereBetween('start', [$request->start, $request->end])
                   ->with('user:id,first_name,last_name')
                   ->get();
@@ -140,6 +140,6 @@ class TaskController extends Controller
         }
 
         \Log::info(json_encode($tasks));
-        return response()->json($tasks);
+        return response()->json(["events" => $tasks]);
     }
 }

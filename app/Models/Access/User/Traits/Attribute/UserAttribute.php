@@ -24,6 +24,13 @@ trait UserAttribute
     }
 
     /**
+     * @return bool
+     */
+    public function isAdmin() {
+       return $this->roles()->where('id','<' 2)->exists();
+    }
+
+    /**
      * @return string
      */
     public function getStatusLabelAttribute()
