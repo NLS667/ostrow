@@ -25,8 +25,8 @@ trait ClientRelationship
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    //public function tasks()
-    //{
-    //    return $this->hasMany(Task::class, config('access.task_client_table'), 'client_id', 'task_id');
-    //}
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }

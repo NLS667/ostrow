@@ -21,6 +21,8 @@ class Task extends BaseModel
      */
     protected $table;
 
+    protected $guarded = ['id'];
+
     /**
      * The attributes that are mass assignable.
      *
