@@ -49,6 +49,7 @@ class TaskRepository extends BaseRepository
                 config('task.tasks_table').'.id',
                 config('task.tasks_table').'.title',
                 config('task.tasks_table').'.description',
+                config('task.tasks_table').'.start',
                 config('task.tasks_table').'.created_at',
                 config('task.tasks_table').'.updated_at',
             ]);

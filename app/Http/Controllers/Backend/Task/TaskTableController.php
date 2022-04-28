@@ -38,21 +38,21 @@ class TaskTableController extends Controller
             ->addColumn('title', function ($task) {
                 return $task->title;
             })
-            ->editColumn('start', function ($client) {
-                return Carbon::parse($client->start)->toDateString();
+            ->editColumn('start', function ($task) {
+                return Carbon::parse($task->start)->toDateString();
             })
-            ->addColumn('created_at', function ($client) {
-                return Carbon::parse($client->created_at)->toDateString();
+            ->addColumn('created_at', function ($task) {
+                return Carbon::parse($task->created_at)->toDateString();
             })
-            ->addColumn('updated_at', function ($client) {
-                if(isset($client->updated_at)){
-                    return Carbon::parse($client->updated_at)->toDateString();
+            ->addColumn('updated_at', function ($task) {
+                if(isset($task->updated_at)){
+                    return Carbon::parse($task->updated_at)->toDateString();
                 } else {
                     return 'Nigdy';
                 }
             })
-            ->addColumn('actions', function ($client) {
-                return $client->action_buttons;
+            ->addColumn('actions', function ($task) {
+                return $task->action_buttons;
             })
             ->make(true);
     }
