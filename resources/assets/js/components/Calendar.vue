@@ -18,7 +18,9 @@ import "@fullcalendar/list/main.css"
 
 export default {
     name: 'Calendar',
-    props: ['filterRoute'],
+    props: {
+      filterRoute: String
+    },
     components: {
         FullCalendar
     },
