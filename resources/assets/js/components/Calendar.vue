@@ -58,7 +58,7 @@ export default {
           },
           events: {
             url: this.filterRoute,
-            method: 'POST',
+            method: 'GET',
             failure: function() {
               alert('there was an error while fetching events!');
             },
