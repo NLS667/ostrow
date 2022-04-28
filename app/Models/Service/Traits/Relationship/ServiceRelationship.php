@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Producer\Traits\Relationship;
+namespace App\Models\Service\Traits\Relationship;
 
 use App\Models\ServiceCategory\ServiceCategory;
 use App\Models\Client\Client;
