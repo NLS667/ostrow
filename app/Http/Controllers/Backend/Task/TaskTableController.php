@@ -39,7 +39,7 @@ class TaskTableController extends Controller
                 return $task->title;
             })
             ->editColumn('start', function ($task) {
-                return Carbon::parse($task->start)->toDateString();
+                return Carbon::parse($task->start)->toDateTimeString();
             })
             ->addColumn('created_at', function ($task) {
                 return Carbon::parse($task->created_at)->toDateString();
