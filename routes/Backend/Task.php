@@ -18,7 +18,12 @@
              */
             Route::resource('task', TaskController::class);
 
+            /*
+             * Specific Task
+             */
+            Route::group(['prefix' => 'task/{task}'], function () {
 
+            });
             
         });
     });

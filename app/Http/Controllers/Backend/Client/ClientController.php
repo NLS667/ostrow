@@ -139,10 +139,4 @@ class ClientController extends Controller
         $response = Http::get("https://nominatim.openstreetmap.org/search?".$address."&limit=1&format=json&addressdetails=1");
         return $response; 
     }
-
-    public function getLocations(Request $request){
-        echo "It's working";
-        //echo json_encode($passArray);
-        die;
-    }
 }
