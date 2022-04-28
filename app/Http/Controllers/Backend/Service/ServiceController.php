@@ -15,6 +15,9 @@ use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Service\Service;
 use App\Repositories\Backend\Service\ServiceRepository;
+use App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository;
+use App\Repositories\Backend\Client\ClientRepository;
+use App\Repositories\Backend\Model\ModelRepository;
 
 /**
  * Class ServiceController.
