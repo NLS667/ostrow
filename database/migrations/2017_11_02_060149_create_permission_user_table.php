@@ -15,8 +15,8 @@ class CreatePermissionUserTable extends Migration
     {
         Schema::create('permission_user', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('permission_id')->unsigned()->index('permission_user_permission_id_foreign');
-            $table->integer('user_id')->unsigned()->index('permission_user_user_id_foreign');
+            $table->foreignId('permission_id')->constrained('permissions')->onUpdate('RESTRICT')->onDelete('CASCADE');
+            $table->foreignId('user_id')->constrained('users')->onUpdate('RESTRICT')->onDelete('CASCADE');
         });
     }
 

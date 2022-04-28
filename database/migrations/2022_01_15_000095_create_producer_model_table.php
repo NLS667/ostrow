@@ -15,8 +15,8 @@ class CreateProducerModelTable extends Migration
     {
         Schema::create('producer_model', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('producer_id')->unsigned()->index('producer_model_producer_id_foreign');
-            $table->integer('model_id')->unsigned()->index('producer_model_model_id_foreign');
+            $table->foreignId('producer_id')->constrained('producers')->onUpdate('RESTRICT')->onDelete('CASCADE');
+            $table->foreignId('model_id')->constrained('models')->onUpdate('RESTRICT')->onDelete('CASCADE');
         });
     }
 

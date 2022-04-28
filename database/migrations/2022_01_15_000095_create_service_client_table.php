@@ -15,8 +15,8 @@ class CreateServiceClientTable extends Migration
     {
         Schema::create('service_client', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('client_id')->unsigned()->index('service_client_client_id_foreign');
-            $table->integer('servicecat_id')->unsigned()->index('service_client_servicecat_id_foreign');
+            $table->foreignId('client_id')->constrained('clients')->onUpdate('RESTRICT')->onDelete('CASCADE');
+            $table->foreignId('servicecat_id')->constrained('service_categories')->onUpdate('RESTRICT')->onDelete('CASCADE');
         });
     }
 
