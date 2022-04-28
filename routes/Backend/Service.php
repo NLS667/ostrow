@@ -10,7 +10,7 @@
         	/*
              * For DataTables
              */
-            Route::post('service/get', ServiceTableController::class)->name('prserviceoducer.get');
+            Route::post('service/get', ServiceTableController::class)->name('service.get');
 
             /*
              * Producer CRUD
