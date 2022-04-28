@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Models\ServiceCategory\Traits\Attribute;
+namespace App\Models\Service\Traits\Attribute;
 
 /**
- * Class ServiceCategoryAttribute.
+ * Class ServiceAttribute.
  */
-trait ServiceCategoryAttribute
+trait ServiceAttribute
 {
     /**
      * @return string
      */
     public function getEditButtonAttribute($class)
     {
-        if (access()->allow('edit-servicecat')) {
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.serviceCategory.edit', $this).'">
+        if (access()->allow('edit-service')) {
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.service.edit', $this).'">
             <span class="material-icons">edit</span>
             </a>';
         }
@@ -24,10 +24,10 @@ trait ServiceCategoryAttribute
      */
     public function getDeleteButtonAttribute($class)
     {
-        if (access()->allow('delete-servicecat')) {
+        if (access()->allow('delete-service')) {
             $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.serviceCategory.destroy', $this).'"
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.service.destroy', $this).'"
             data-method="delete"
             data-trans-button-cancel="Anuluj"
             data-trans-button-confirm="Usuń"
@@ -94,12 +94,12 @@ trait ServiceCategoryAttribute
         $class = ($counter <= 3) ? 'btn btn-primary btn-flat' : '';
 
         switch ($permissionName) {
-            case 'edit-servicecat':
+            case 'edit-service':
             $button = ($counter <= 3) ? $this->getEditButtonAttribute($class) : '<li>'
             .$this->getEditButtonAttribute($class).
             '</li>';
             break;
-            case 'delete-servicecat':
+            case 'delete-service':
             if (access()->user()->id != $this->id) {
                 $button = ($counter <= 3) ? $this->getDeleteButtonAttribute($class) : '<li>'
                 .$this->getDeleteButtonAttribute($class).
