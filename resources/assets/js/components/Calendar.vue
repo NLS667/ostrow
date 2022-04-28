@@ -19,7 +19,7 @@ import "@fullcalendar/list/main.css"
 export default {
     name: 'Calendar',
     props: {
-      filterRoute: String
+      filterroute: String
     },
     components: {
         FullCalendar
