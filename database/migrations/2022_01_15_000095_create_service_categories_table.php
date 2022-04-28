@@ -14,7 +14,7 @@ class CreateServiceCategoriesTable extends Migration
     public function up()
     {
         Schema::create('service_categories', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name', 191);
             $table->string('description', 191);
             $table->integer('created_by')->unsigned();

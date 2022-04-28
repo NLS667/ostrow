@@ -14,7 +14,7 @@ class CreateServiceClientTable extends Migration
     public function up()
     {
         Schema::create('service_client', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->integer('client_id')->unsigned()->index('service_client_client_id_foreign');
             $table->integer('servicecat_id')->unsigned()->index('service_client_servicecat_id_foreign');
         });

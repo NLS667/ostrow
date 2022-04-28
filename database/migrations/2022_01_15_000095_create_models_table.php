@@ -14,7 +14,7 @@ class CreateModelsTable extends Migration
     public function up()
     {
         Schema::create('models', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name', 191);
             $table->string('description', 191);
             $table->integer('producer_id')->unsigned()->nullable();

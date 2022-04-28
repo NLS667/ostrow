@@ -13,7 +13,7 @@ class CreateModulesTable extends Migration
     public function up()
     {
         Schema::create('modules', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('view_permission_id', 191);
             $table->string('name', 191);
             $table->string('url', 191)->nullable()->comment('view_route');

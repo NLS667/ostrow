@@ -13,7 +13,7 @@ class CreateNotificationsTable extends Migration
     public function up()
     {
         Schema::create('notifications', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('message', 191);
             $table->integer('user_id')->unsigned()->index('notifications_user_id_foreign');
             $table->boolean('type')->default(1)->comment('1 - Dashboard , 2 - Email , 3 - Both');
