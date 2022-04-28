@@ -17,7 +17,7 @@ class ClientDeleted
     public $client;
 
     /**
-     * @param $user
+     * @param $client
      */
     public function __construct($client)
     {

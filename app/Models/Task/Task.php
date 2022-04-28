@@ -29,15 +29,11 @@ class Task extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'name',
+        'title',
+        'description',
         'created_by',
         'updated_by',
     ];
-
-    /**
-     * @var array
-     */
-    protected $dates = ['deleted_at'];
 
     /**
      * @param array $attributes

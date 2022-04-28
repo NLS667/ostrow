@@ -12,7 +12,7 @@ class PermissionUpdated
     use SerializesModels;
 
     /**
-     * @var
+     * @var object $permission
      */
     public $permission;
 

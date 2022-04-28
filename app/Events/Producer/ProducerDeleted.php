@@ -17,7 +17,7 @@ class ProducerDeleted
     public $producer;
 
     /**
-     * @param $user
+     * @param $producer
      */
     public function __construct($producer)
     {

@@ -105,7 +105,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'show-user';
-        $permModel->display_name = 'Zobacz Szczegóły Użytkownika';
+        $permModel->display_name = 'Oglądanie Szczegółów Użytkownika';
         $permModel->sort = 7;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -116,7 +116,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'create-user';
-        $permModel->display_name = 'Utwórz Użytkownika';
+        $permModel->display_name = 'Tworzenie Użytkownika';
         $permModel->sort = 8;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -127,7 +127,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'edit-user';
-        $permModel->display_name = 'Edytuj Użytkownika';
+        $permModel->display_name = 'Edycja Użytkownika';
         $permModel->sort = 9;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -138,7 +138,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'delete-user';
-        $permModel->display_name = 'Usuń Użytkownika';
+        $permModel->display_name = 'Usuwanie Użytkownika';
         $permModel->sort = 10;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -149,7 +149,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'activate-user';
-        $permModel->display_name = 'Aktywuj Użytkownika';
+        $permModel->display_name = 'Aktywacja Użytkownika';
         $permModel->sort = 11;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -160,7 +160,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'deactivate-user';
-        $permModel->display_name = 'Deaktywuj Użytkownika';
+        $permModel->display_name = 'Deaktywacja Użytkownika';
         $permModel->sort = 12;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -171,7 +171,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'login-as-user';
-        $permModel->display_name = 'LZaloguj jako Użytkownik';
+        $permModel->display_name = 'Logowanie jako Użytkownik';
         $permModel->sort = 13;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -182,7 +182,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'clear-user-session';
-        $permModel->display_name = 'Wyczyść Sesję Użytkownika';
+        $permModel->display_name = 'Czyszczenie Sesji Użytkownika';
         $permModel->sort = 14;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -207,7 +207,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'create-role';
-        $permModel->display_name = 'Utwórz Rolę';
+        $permModel->display_name = 'Tworzenie Roli';
         $permModel->sort = 16;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -218,7 +218,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'edit-role';
-        $permModel->display_name = 'Edytuj Rolę';
+        $permModel->display_name = 'Edycja Roli';
         $permModel->sort = 17;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -229,7 +229,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'delete-role';
-        $permModel->display_name = 'Usuń Rolę';
+        $permModel->display_name = 'Usuwanie Roli';
         $permModel->sort = 18;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -254,7 +254,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'create-permission';
-        $permModel->display_name = 'Utwórz Uprawnienie';
+        $permModel->display_name = 'Tworzenie Uprawnień';
         $permModel->sort = 20;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -265,7 +265,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'edit-permission';
-        $permModel->display_name = 'Edytuj Uprawnienie';
+        $permModel->display_name = 'Edycja Uprawnień';
         $permModel->sort = 21;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -276,7 +276,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'delete-permission';
-        $permModel->display_name = 'Usuń Uprawnienie';
+        $permModel->display_name = 'Usuwanie Uprawnień';
         $permModel->sort = 22;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -301,7 +301,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'show-client';
-        $permModel->display_name = 'Zobacz Szczegóły Klienta';
+        $permModel->display_name = 'Oglądanie Szczegółów Klienta';
         $permModel->sort = 24;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -312,7 +312,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'create-client';
-        $permModel->display_name = 'Utwórz Klienta';
+        $permModel->display_name = 'Tworzenie Klienta';
         $permModel->sort = 25;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -323,7 +323,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'edit-client';
-        $permModel->display_name = 'Edytuj Klienta';
+        $permModel->display_name = 'Edycja Klienta';
         $permModel->sort = 26;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -334,7 +334,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'activate-client';
-        $permModel->display_name = 'Aktywuj Klienta';
+        $permModel->display_name = 'Aktywacja Klienta';
         $permModel->sort = 27;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -345,7 +345,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'deactivate-client';
-        $permModel->display_name = 'Deaktywuj Klienta';
+        $permModel->display_name = 'Deaktywacja Klienta';
         $permModel->sort = 28;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -356,7 +356,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'delete-client';
-        $permModel->display_name = 'Usuń Klienta';
+        $permModel->display_name = 'Usuwanie Klienta';
         $permModel->sort = 29;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -376,12 +376,12 @@ class PermissionTableSeeder extends Seeder
         $permModel->save();
 
         /**
-         * Service Category Management.
+         * Service Management.
          */
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
-        $permModel->name = 'view-servicecat-management';
-        $permModel->display_name = 'Dostęp do zarządzania Kategoriami Usług';
+        $permModel->name = 'view-service-management';
+        $permModel->display_name = 'Dostęp do zarządzania Usługami';
         $permModel->sort = 31;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -391,8 +391,8 @@ class PermissionTableSeeder extends Seeder
 
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
-        $permModel->name = 'create-servicecat';
-        $permModel->display_name = 'Utwórz Kategorię Usług';
+        $permModel->name = 'create-service';
+        $permModel->display_name = 'Tworzenie Usług';
         $permModel->sort = 32;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -402,8 +402,8 @@ class PermissionTableSeeder extends Seeder
 
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
-        $permModel->name = 'edit-servicecat';
-        $permModel->display_name = 'Edytuj Kategorię Usług';
+        $permModel->name = 'edit-service';
+        $permModel->display_name = 'Edycja Usług';
         $permModel->sort = 33;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
@@ -413,9 +413,56 @@ class PermissionTableSeeder extends Seeder
 
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
-        $permModel->name = 'delete-servicecat';
-        $permModel->display_name = 'Usuń Kategorię Usług';
+        $permModel->name = 'delete-service';
+        $permModel->display_name = 'Usuwanie Usług';
         $permModel->sort = 34;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        /**
+         * Service Category Management.
+         */
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'view-servicecat-management';
+        $permModel->display_name = 'Dostęp do zarządzania Kategoriami Usług';
+        $permModel->sort = 35;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'create-servicecat';
+        $permModel->display_name = 'Tworzenie Kategorii Usług';
+        $permModel->sort = 36;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'edit-servicecat';
+        $permModel->display_name = 'Edycja Kategorii Usług';
+        $permModel->sort = 37;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'delete-servicecat';
+        $permModel->display_name = 'Usuwanie Kategorii Usług';
+        $permModel->sort = 38;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -429,7 +476,7 @@ class PermissionTableSeeder extends Seeder
         $permModel = new $permission_model();
         $permModel->name = 'view-producer-management';
         $permModel->display_name = 'Dostęp do zarządzania Producentami';
-        $permModel->sort = 35;
+        $permModel->sort = 39;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -439,8 +486,8 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'create-producer';
-        $permModel->display_name = 'Utwórz Producenta';
-        $permModel->sort = 36;
+        $permModel->display_name = 'Tworzenie Producentów';
+        $permModel->sort = 40;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -450,8 +497,8 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'edit-producer';
-        $permModel->display_name = 'Edytuj Producenta';
-        $permModel->sort = 37;
+        $permModel->display_name = 'Edycja Producentów';
+        $permModel->sort = 41;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -461,8 +508,8 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'delete-producer';
-        $permModel->display_name = 'Usuń Producenta';
-        $permModel->sort = 38;
+        $permModel->display_name = 'Usuwanie Producentów';
+        $permModel->sort = 42;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -470,13 +517,13 @@ class PermissionTableSeeder extends Seeder
         $permModel->save();
 
         /**
-         * Producer Management.
+         * Model Management.
          */
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'view-model-management';
         $permModel->display_name = 'Dostęp do zarządzania Modelami';
-        $permModel->sort = 35;
+        $permModel->sort = 43;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -486,8 +533,8 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'create-model';
-        $permModel->display_name = 'Utwórz Model';
-        $permModel->sort = 36;
+        $permModel->display_name = 'Tworzenie Modeli';
+        $permModel->sort = 44;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -497,8 +544,8 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'edit-model';
-        $permModel->display_name = 'Edytuj Model';
-        $permModel->sort = 37;
+        $permModel->display_name = 'Edycja Modeli';
+        $permModel->sort = 45;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -508,8 +555,8 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'delete-model';
-        $permModel->display_name = 'Usuń Model';
-        $permModel->sort = 38;
+        $permModel->display_name = 'Usuwanie Modeli';
+        $permModel->sort = 46;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -523,7 +570,7 @@ class PermissionTableSeeder extends Seeder
         $permModel = new $permission_model();
         $permModel->name = 'view-task-management';
         $permModel->display_name = 'Dostęp do zarządzania Zadaniami';
-        $permModel->sort = 39;
+        $permModel->sort = 47;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -533,8 +580,8 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'create-task';
-        $permModel->display_name = 'Utwórz Zadanie';
-        $permModel->sort = 40;
+        $permModel->display_name = 'Tworzenie Zadań';
+        $permModel->sort = 48;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -544,8 +591,8 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'edit-task';
-        $permModel->display_name = 'Edytuj Zadanie';
-        $permModel->sort = 41;
+        $permModel->display_name = 'Edycja Zadań';
+        $permModel->sort = 49;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -555,8 +602,8 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'delete-task';
-        $permModel->display_name = 'Usuń Zadanie';
-        $permModel->sort = 42;
+        $permModel->display_name = 'Usuwanie Zadań';
+        $permModel->sort = 50;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -570,7 +617,7 @@ class PermissionTableSeeder extends Seeder
         $permModel = new $permission_model();
         $permModel->name = 'view-map';
         $permModel->display_name = 'Dostęp do Mapy';
-        $permModel->sort = 43;
+        $permModel->sort = 51;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -584,7 +631,7 @@ class PermissionTableSeeder extends Seeder
         $permModel = new $permission_model();
         $permModel->name = 'view-calendar';
         $permModel->display_name = 'Dostęp do Kalendarza';
-        $permModel->sort = 44;
+        $permModel->sort = 52;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -650,7 +697,7 @@ class PermissionTableSeeder extends Seeder
         $permModel = new $permission_model();
         $permModel->name = 'view-menu';
         $permModel->display_name = 'Zarządzanie Menu';
-        $permModel->sort = 45;
+        $permModel->sort = 53;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -661,7 +708,7 @@ class PermissionTableSeeder extends Seeder
         $permModel = new $permission_model();
         $permModel->name = 'create-menu';
         $permModel->display_name = 'Tworzenie Menu';
-        $permModel->sort = 46;
+        $permModel->sort = 54;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -672,7 +719,7 @@ class PermissionTableSeeder extends Seeder
         $permModel = new $permission_model();
         $permModel->name = 'edit-menu';
         $permModel->display_name = 'Edycja Menu';
-        $permModel->sort = 47;
+        $permModel->sort = 55;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -683,7 +730,7 @@ class PermissionTableSeeder extends Seeder
         $permModel = new $permission_model();
         $permModel->name = 'delete-menu';
         $permModel->display_name = 'Usuwanie Menu';
-        $permModel->sort = 48;
+        $permModel->sort = 56;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();
@@ -696,8 +743,8 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
         $permModel->name = 'edit-settings';
-        $permModel->display_name = 'Edytuj Konfigurację';
-        $permModel->sort = 49;
+        $permModel->display_name = 'Edycja Konfiguracji';
+        $permModel->sort = 57;
         $permModel->created_by = 1;
         $permModel->updated_by = null;
         $permModel->created_at = Carbon::now();

@@ -17,7 +17,7 @@ class ClientCreated
     public $client;
 
     /**
-     * @param $service
+     * @param $client
      */
     public function __construct($client)
     {

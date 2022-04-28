@@ -46,6 +46,16 @@ class MenuTableSeeder extends Seeder
                 "content":"Clients"
             },
             {
+                "view_permission_id":"view-service-management",
+                "icon":"settings_suggest",
+                "open_in_new_tab":0,
+                "url_type":"route",
+                "url":"admin.service.index",
+                "name":"Usługi",
+                "id":4,
+                "content":"Services"
+            },
+            {
                 "view_permission_id":"view-tasks-management",
                 "icon":"task_alt",
                 "open_in_new_tab":0,

@@ -12,7 +12,7 @@ class PermissionDeleted
     use SerializesModels;
 
     /**
-     * @var
+     * @var object $permission
      */
     public $permission;
 
