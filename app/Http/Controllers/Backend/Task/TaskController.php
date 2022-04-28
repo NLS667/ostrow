@@ -141,6 +141,6 @@ class TaskController extends Controller
         }
         
         \Log::info($tasks);
-        return response()->json(["events" => $tasks]);
+        return response()->json($tasks);
     }
 }
