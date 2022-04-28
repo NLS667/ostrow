@@ -14,8 +14,8 @@ class CreateHistoryTable extends Migration
     {
         Schema::create('history', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('type_id')->unsigned()->index('history_type_id_foreign');
-            $table->integer('user_id')->unsigned()->index('history_user_id_foreign');
+            $table->foreignId('type_id')->constrained('history_types');
+            $table->foreignId('user_id')->constrained('users');
             $table->integer('entity_id')->unsigned()->nullable();
             $table->string('icon', 191)->nullable();
             $table->string('class', 191)->nullable();
