@@ -18,6 +18,7 @@ import "@fullcalendar/list/main.css"
 
 export default {
     name: 'Calendar',
+    props: ['filterRoute'],
     components: {
         FullCalendar
     },
@@ -54,7 +55,7 @@ export default {
             }
           },
           events: {
-            url: '/admin/task/filter',
+            url: this.filterRoute,
             method: 'POST',
             failure: function() {
               alert('there was an error while fetching events!');
