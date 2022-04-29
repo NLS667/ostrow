@@ -21,7 +21,7 @@
               <div class="row">
                 {{-- Client --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('client_id') ? ' has-danger' : '' }}">
-                  @if ($clients->getCount())
+                  @if ($clients->count())
                   <select name="client_id" class="form-control select2" data-placeholder="Wybierz Klienta">
                     <option></option>
                     @foreach ($clients as $client)
@@ -36,7 +36,7 @@
               <div class="row">
                 {{-- Service Category --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('service_cat_id') ? ' has-danger' : '' }}">
-                  @if ($serviceCategories->getCount())
+                  @if ($serviceCategories->count())
                   <select name="service_cat_id" class="form-control select2" data-placeholder="Wybierz Typ Usługi">
                     <option></option>
                     @foreach ($serviceCategories as $category)
@@ -51,7 +51,7 @@
               <div class="row">
                 {{-- Model --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('model_id') ? ' has-danger' : '' }}">
-                  @if ($models->getCount())
+                  @if ($models->count())
                   <select name="model_id" class="form-control select2" data-placeholder="Wybierz Model Urządzenia">
                     <option></option>
                     @foreach ($models as $model)
