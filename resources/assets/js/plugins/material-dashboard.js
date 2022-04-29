@@ -302,6 +302,7 @@ md = {
         close: 'fa fa-remove'
       }
     }).on('changeDate', function(e){   
+      console.log('date and time changed');
         $(this).parent().addClass('is-filled'); 
     });
 
@@ -319,7 +320,8 @@ md = {
         clear: 'fa fa-trash',
         close: 'fa fa-remove'
       }
-    }).on('changeDate', function(e){   
+    }).on('changeDate', function(e){
+      console.log('date changed');
         $(this).parent().addClass('is-filled'); 
     });
 
@@ -339,7 +341,8 @@ md = {
         close: 'fa fa-remove'
 
       }
-    }).on('changeDate', function(e){  
+    }).on('changeDate', function(e){
+      console.log('time changed');
         $(this).parent().addClass('is-filled'); 
     });
 
