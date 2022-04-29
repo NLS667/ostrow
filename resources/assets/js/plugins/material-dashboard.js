@@ -289,7 +289,8 @@ md = {
 
   initFormExtendedDatetimepickers: function() {
     $('.datetimepicker').datetimepicker({
-      locale: 'pl',
+      autoclose: true,
+      language: 'pl',
       icons: {
         time: "fa fa-clock-o",
         date: "fa fa-calendar",
@@ -306,7 +307,8 @@ md = {
     });
 
     $('.datepicker').datetimepicker({
-      locale: 'pl',
+      autoclose: true,
+      language: 'pl',
       format: 'MM/DD/YYYY',
       icons: {
         time: "fa fa-clock-o",
@@ -324,7 +326,8 @@ md = {
     });
 
     $('.timepicker').datetimepicker({
-      locale: 'pl',
+      autoclose: true,
+      language: 'pl',
       format: 'H:mm',    // use this format if you want the 24hours timepicker
       //format: 'h:mm A',// use this format if you want the 12hours timpiecker with AM/PM toggle
       icons: {
