@@ -19,6 +19,7 @@
             </div>
             <div class="card-body ">              
               <div class="row">
+                {{ $clients }}
                 {{-- Client --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('client_id') ? ' has-danger' : '' }}">
                   @if ($clients->count())

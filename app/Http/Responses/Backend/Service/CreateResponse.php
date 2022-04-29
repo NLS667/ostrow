@@ -3,6 +3,10 @@
 namespace App\Http\Responses\Backend\Service;
 
 use Illuminate\Contracts\Support\Responsable;
+use App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository;
+use App\Repositories\Backend\Client\ClientRepository;
+use App\Repositories\Backend\Model\ModelRepository;
+
 
 class CreateResponse implements Responsable
 {
@@ -22,7 +26,7 @@ class CreateResponse implements Responsable
     protected $models;
 
     /**
-     * @param \App\Repositories\Backend\ServiceCategory\ProducerRepository $serviceCategories
+     * @param \App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository $serviceCategories
      * @param \App\Repositories\Backend\Client\ClientRepository $clients
      * @param \App\Repositories\Backend\Model\ModelRepository $models
      */

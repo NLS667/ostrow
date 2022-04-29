@@ -72,7 +72,6 @@ class ServiceController extends Controller
      */
     public function create(CreateServiceRequest $request)
     {
-        $services = $this->services;
         $serviceCategories = $this->serviceCategories;
         $clients = $this->clients;
         $models = $this->models;
