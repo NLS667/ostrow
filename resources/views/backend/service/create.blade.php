@@ -54,7 +54,7 @@
               <div class="row">
                 {{-- Model --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('model_id') ? ' has-danger' : '' }}">
-                  @if ($smodels->getCount())
+                  @if ($models->getCount())
                   <select name="model_id" class="form-control select2" data-placeholder="Wybierz Model Urządzenia">
                     <option></option>
                     @foreach ($models as $model)
