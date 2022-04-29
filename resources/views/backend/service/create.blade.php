@@ -39,7 +39,7 @@
               <div class="row">
                 {{-- Service Category --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('service_cat_id') ? ' has-danger' : '' }}">
-                  @if ($serviceCategories->count())
+                  @if ($serviceCategories->getCount())
                   <select name="service_cat_id" class="form-control select2" data-placeholder="Wybierz Typ Usługi">
                     <option></option>
                     @foreach ($serviceCategories as $category)
@@ -54,7 +54,7 @@
               <div class="row">
                 {{-- Model --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('model_id') ? ' has-danger' : '' }}">
-                  @if ($smodels->count())
+                  @if ($smodels->getCount())
                   <select name="model_id" class="form-control select2" data-placeholder="Wybierz Model Urządzenia">
                     <option></option>
                     @foreach ($models as $model)
