@@ -73,11 +73,9 @@ class ServiceController extends Controller
      */
     public function create(CreateServiceRequest $request)
     {
-        $serviceCategories = $this->serviceCategories;
-        $clients = $this->clients;
-        $models = $this->models;
-
-        \Log::info(json_encode($clients));
+        $serviceCategories = $this->serviceCategories->getAll();
+        $clients = $this->clients->getAll();
+        $models = $this->models->getAll();
 
         return new CreateResponse($serviceCategories, $clients, $models);
     }
