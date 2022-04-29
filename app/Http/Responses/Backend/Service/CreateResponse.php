@@ -28,7 +28,6 @@ class CreateResponse implements Responsable
      */
     public function __construct($serviceCategories, $clients, $models)
     {
-        \Log::info(json_encode($clients));
         $this->serviceCategories = $serviceCategories;
         $this->clients = $clients;
         $this->models = $models;

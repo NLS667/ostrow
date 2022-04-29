@@ -49,6 +49,7 @@ class ServiceController extends Controller
      */
     public function __construct(ServiceRepository $services, ServiceCategoryRepository $serviceCategories, ClientRepository $clients, ModelRepository $models)
     {
+
         $this->services = $services;
         $this->serviceCategories = $serviceCategories;
         $this->clients = $clients;
@@ -75,6 +76,8 @@ class ServiceController extends Controller
         $serviceCategories = $this->serviceCategories;
         $clients = $this->clients;
         $models = $this->models;
+
+        \Log::info(json_encode($clients));
 
         return new CreateResponse($serviceCategories, $clients, $models);
     }
