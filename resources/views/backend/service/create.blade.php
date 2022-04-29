@@ -25,7 +25,7 @@
                   <select name="client_id" class="form-control select2 client-select" data-placeholder="Wybierz Klienta">
                     <option></option>
                     @foreach ($clients as $client)
-                    <option value="{{$client->client_id}}">{{ $client->first_name.' '.$client->last_name }}</option>
+                    <option value="{{$client->client_id}}">{{ $client->first_name $client->last_name }}</option>
                     @endforeach                  
                   </select>
                   @else
