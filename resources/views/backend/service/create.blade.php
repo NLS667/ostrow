@@ -73,7 +73,29 @@
                   <span id="offered_at-error" class="error text-danger" for="input-offered_at">{{ $errors->first('offered_at') }}</span>
                   @endif
                 </div>
-              </div>              
+              </div>
+              <div class="row">
+                {{-- Deal Date --}}
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('signed_at') ? ' has-danger' : '' }}">
+                  <label class="bmd-label-floating">Data Umowy</label>
+                  <input class="form-control datepicker" name="offered_at" id="input-signed_at" type="text" value="{{ old('signed_at') }}" />
+                  @if ($errors->has('signed_at'))
+                  <span class="material-icons form-control-feedback">clear</span>
+                  <span id="signed_at-error" class="error text-danger" for="input-signed_at">{{ $errors->first('signed_at') }}</span>
+                  @endif
+                </div>
+              </div>
+              <div class="row">
+                {{-- Montage Date --}}
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('installed_at') ? ' has-danger' : '' }}">
+                  <label class="bmd-label-floating">Data Montażu</label>
+                  <input class="form-control datepicker" name="offered_at" id="input-installed_at" type="text" value="{{ old('installed_at') }}" />
+                  @if ($errors->has('installed_at'))
+                  <span class="material-icons form-control-feedback">clear</span>
+                  <span id="installed_at-error" class="error text-danger" for="input-installed_at">{{ $errors->first('installed_at') }}</span>
+                  @endif
+                </div>
+              </div>          
             </div>
             <div class="card-footer">
               {{ link_to_route('admin.service.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
