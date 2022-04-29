@@ -55,7 +55,7 @@
                   <select name="model_id" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia">
                     <option></option>
                     @foreach ($models as $model)
-                    <option value="{{$model->id}}">{{ $model->name.' '.$model->producer->name}}</option>
+                    <option value="{{$model->id}}">{{ $model->producer->name.' '.$model->name}}</option>
                     @endforeach                  
                   </select>
                   @else
