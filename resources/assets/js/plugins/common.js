@@ -547,7 +547,7 @@ var Backend = {}; // common variable used in all the files of the backend
         Service: {
             selectors: {
                 client: $(".select2.client-select"),
-                serviceCat: $(".select2.serviceCat-select"),
+                servicecat: $(".select2.servicecat-select"),
                 model: $(".select2.model-select"),
             },
             init: function () {
@@ -556,7 +556,7 @@ var Backend = {}; // common variable used in all the files of the backend
             },
             setSelectors: function () {
                 this.selectors.client = $(".select2.client-select");
-                this.selectors.serviceCat = $(".select2.serviceCat-select");
+                this.selectors.servicecat = $(".select2.servicecat-select");
                 this.selectors.model = $(".select2.model-select");
             },
             addHandlers: function(){
@@ -564,7 +564,7 @@ var Backend = {}; // common variable used in all the files of the backend
                     placeholder: "Wybierz Klienta",
                     theme: "material"
                 });
-                this.selectors.serviceCat.select2({
+                this.selectors.servicecat.select2({
                     placeholder: "Wybierz Typ Usługi",
                     theme: "material"
                 });
