@@ -33,6 +33,9 @@ L.Icon.Default.mergeOptions({
     shadowUrl: '/marker-shadow.png',
 });
 
+//Import DateTimePicker
+
+window.datetimepicker = require('eonasdan-bootstrap-datetimepicker').default;
 
 //Import Select2
 //window.select2 = require('select2');
