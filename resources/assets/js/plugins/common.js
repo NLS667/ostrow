@@ -541,6 +541,40 @@ var Backend = {}; // common variable used in all the files of the backend
             }
         },
         /**
+         * Service management
+         *
+         */
+        Service: {
+            selectors: {
+                client: $(".select2.client-select"),
+                serviceCat: $(".select2.serviceCat-select"),
+                model: $(".select2.model-select"),
+            },
+            init: function () {
+                this.setSelectors();
+                this.addHandlers();                
+            },
+            setSelectors: function () {
+                this.selectors.client = $(".select2.client-select");
+                this.selectors.serviceCat = $(".select2.serviceCat-select");
+                this.selectors.model = $(".select2.model-select");
+            },
+            addHandlers: function(){
+                this.selectors.client.select2({
+                    placeholder: "Wybierz Klienta",
+                    theme: "material"
+                });
+                this.selectors.serviceCat.select2({
+                    placeholder: "Wybierz Typ Usługi",
+                    theme: "material"
+                });
+                this.selectors.model.select2({
+                    placeholder: "Wybierz Model",
+                    theme: "material"
+                });
+            }
+        },
+        /**
          * Model management
          *
          */

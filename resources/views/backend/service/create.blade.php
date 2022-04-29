@@ -22,7 +22,7 @@
                 {{-- Client --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('client_id') ? ' has-danger' : '' }}">
                   @if ($clients->count())
-                  <select name="client_id" class="form-control select2" data-placeholder="Wybierz Klienta">
+                  <select name="client_id" class="form-control select2 client-select" data-placeholder="Wybierz Klienta">
                     <option></option>
                     @foreach ($clients as $client)
                     <option value="{{$client->client_id}}">{{ $client->first_name.' '.$client->last_name }}</option>
@@ -37,7 +37,7 @@
                 {{-- Service Category --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('service_cat_id') ? ' has-danger' : '' }}">
                   @if ($serviceCategories->count())
-                  <select name="service_cat_id" class="form-control select2" data-placeholder="Wybierz Typ Usługi">
+                  <select name="service_cat_id" class="form-control select2 servicecat-select" data-placeholder="Wybierz Typ Usługi">
                     <option></option>
                     @foreach ($serviceCategories as $category)
                     <option value="{{$category->id}}">{{ $category->name }}</option>
@@ -52,7 +52,7 @@
                 {{-- Model --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('model_id') ? ' has-danger' : '' }}">
                   @if ($models->count())
-                  <select name="model_id" class="form-control select2" data-placeholder="Wybierz Model Urządzenia">
+                  <select name="model_id" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia">
                     <option></option>
                     @foreach ($models as $model)
                     <option value="{{$model->id}}">{{ $model->name }}</option>
@@ -85,4 +85,13 @@
     </div>    
   </div>
 </div>
+@endsection
+@section('after-scripts')
+     <script type="text/javascript">
+        
+        Backend.Utils.documentReady(function(){
+            Backend.Service.init();
+        });
+
+    </script>
 @endsection
