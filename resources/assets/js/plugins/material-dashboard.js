@@ -300,6 +300,9 @@ md = {
         clear: 'fa fa-trash',
         close: 'fa fa-remove'
       }
+    }).on('changeDate', function(e){
+        // this next line fixed the floating label issue for me     
+        $(this).parent('.form-group').addClass('is-filled'); 
     });
 
     $('.datepicker').datetimepicker({
@@ -315,6 +318,9 @@ md = {
         clear: 'fa fa-trash',
         close: 'fa fa-remove'
       }
+    }).on('changeDate', function(e){
+        // this next line fixed the floating label issue for me     
+        $(this).parent('.form-group').addClass('is-filled'); 
     });
 
     $('.timepicker').datetimepicker({
@@ -332,7 +338,12 @@ md = {
         close: 'fa fa-remove'
 
       }
+    }).on('changeDate', function(e){
+        // this next line fixed the floating label issue for me     
+        $(this).parent('.form-group').addClass('is-filled'); 
     });
+
+
   },
 
 
