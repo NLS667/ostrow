@@ -3,10 +3,6 @@
 namespace App\Http\Responses\Backend\Service;
 
 use Illuminate\Contracts\Support\Responsable;
-use App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository;
-use App\Repositories\Backend\Client\ClientRepository;
-use App\Repositories\Backend\Model\ModelRepository;
-
 
 class CreateResponse implements Responsable
 {
@@ -46,6 +42,7 @@ class CreateResponse implements Responsable
      */
     public function toResponse($request)
     {
+        \Log::info(json_encode($this->clients));
         return view('backend.service.create')->with([
             'serviceCategories' => $this->serviceCategories,
             'clients' => $this->clients,
