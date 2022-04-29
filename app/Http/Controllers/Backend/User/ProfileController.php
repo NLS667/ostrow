@@ -39,7 +39,7 @@ class ProfileController extends Controller
         if (is_array($output) && $output['email_changed']) {
             access()->logout();
 
-            return redirect()->route('backend.auth.login')->withFlashInfo(trans('strings.backend.user.email_changed_notice'));
+            return redirect()->route('index')->withFlashInfo(trans('strings.backend.user.email_changed_notice'));
         }
 
         return redirect()->route('backend.user.account')->withFlashSuccess(trans('strings.backend.user.profile_updated'));
