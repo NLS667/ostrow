@@ -11,7 +11,6 @@ use App\Events\Client\ClientRestored;
 use App\Events\Client\ClientUpdated;
 use App\Exceptions\GeneralException;
 use App\Models\Client\Client;
-use App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -29,20 +28,14 @@ class ClientRepository extends BaseRepository
     /**
      * @var Client Model
      */
-    protected $model;
-
-    /**
-     * @var ServiceCategoryRepository
-     */
-    protected $serviceCategories;
+    protected $client;
 
     /**
      * @param ServiceCategoryRepository $serviceCategories
      */
-    public function __construct(Client $model, ServiceCategoryRepository $serviceCategories)
+    public function __construct(Client $client)
     {
-        $this->model = $model;
-        $this->serviceCategories = $serviceCategories;
+        $this->client = $client;
     }
 
     /**
@@ -90,9 +83,8 @@ class ClientRepository extends BaseRepository
     public function create($request)
     {
         $data = $request->except('services');
-        $services = $request->get('services');
         $client = $this->createClientStub($data);
-        DB::transaction(function () use ($client, $data, $services) {
+        DB::transaction(function () use ($client, $data) {
             if ($client->save()) {
 
                 //Client Created, Validate Roles

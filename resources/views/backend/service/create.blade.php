@@ -24,7 +24,7 @@
                 @endphp
                 {{-- Client --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('client_id') ? ' has-danger' : '' }}">
-                  @if ($clients->count())
+                  @if ($clients->getCount())
                   <select name="client_id" class="form-control select2" data-placeholder="Wybierz Klienta">
                     <option></option>
                     @foreach ($clients as $client)
