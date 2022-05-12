@@ -301,7 +301,7 @@ md = {
         clear: 'fa fa-trash',
         close: 'fa fa-remove'
       }
-    }).on('dp.change', function(e){   
+    }).on('dp.hide', function(e){   
       console.log('date and time changed');
         $(this).parent().addClass('is-filled'); 
     });
