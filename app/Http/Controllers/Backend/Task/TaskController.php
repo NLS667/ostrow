@@ -19,6 +19,8 @@ use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Task\Task;
 use App\Repositories\Backend\Task\TaskRepository;
+use App\Repositories\Backend\Service\ServiceRepository;
+use App\Repositories\Backend\Client\ClientRepository;
 
 /**
  * Class TaskController.
@@ -33,8 +35,10 @@ class TaskController extends Controller
     /**
      * @param \App\Repositories\Backend\Task\TaskRepository                   $tasks
      */
-    public function __construct(TaskRepository $tasks)
+    public function __construct(TaskRepository $tasks, ServiceRepository $services, ClientRepository $clients)
     {
+        $this->services = $services;
+        $this->clients = $clients;
         $this->tasks = $tasks;
     }
 
@@ -55,7 +59,9 @@ class TaskController extends Controller
      */
     public function create(CreateTaskRequest $request)
     {
-        return new CreateResponse();
+        $services = $this->services->getAll();
+        $clients = $this->clients->getAll();
+        return new CreateResponse($services, $clients);
     }
 
     /**
