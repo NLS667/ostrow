@@ -91,7 +91,8 @@
                 columns: [
                     {data: 'category', name: 'service_categories.name'},
                     {data: 'client', render: function ( data, type, row ) {
-                        return  row[1] + ' ' +row[2];
+                                                return  row[1] + ' ' +row[2];
+                                            }
                     },
                     {data: 'model', name: 'models.name'},
                     {data: 'offered_at', name: 'services.offered_at'},
