@@ -43,14 +43,13 @@ class ServiceRepository extends BaseRepository
             ->leftJoin('models', 'models.id', '=', 'services.model_id')
             ->leftJoin('clients', 'clients.id', '=', 'services.client_id')
             ->select([
-                config('service.services_table').'.id',
-                config('service.services_table').'.client_id',
-                config('service.services_table').'.service_cat_id',
-                config('service.services_table').'.model_id',
-                config('service.services_table').'.offered_at',
-                config('service.services_table').'.signed_at',
-                config('service.services_table').'.installed_at',
-                DB::raw('GROUP_CONCAT(service_categories.name) as categories'),
+                'services.id',
+                'clients.first_name',
+                'service_categories.name',
+                'models.name',
+                'services.offered_at',
+                'services.signed_at',
+                'services.installed_at',
             ]);
     }
 
