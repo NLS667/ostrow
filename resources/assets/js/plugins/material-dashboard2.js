@@ -315,6 +315,7 @@ md = {
 
     $('.datepicker').datetimepicker({
       format: 'DD/MM/YYYY',
+      keepOpen: true,
       icons: {
         time: "fa fa-clock-o",
         date: "fa fa-calendar",
@@ -327,6 +328,9 @@ md = {
         close: 'fa fa-remove'
       }
     });
+    $('.datepicker').on("dp.change", function (e) {
+      console.log('dp changed');
+    }
 
     $('.timepicker').datetimepicker({
       //          format: 'H:mm',    // use this format if you want the 24hours timepicker
