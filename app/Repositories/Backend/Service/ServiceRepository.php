@@ -39,6 +39,9 @@ class ServiceRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
+            ->leftJoin('service_categories', 'service_categories.id', '=', 'services.service_cat_id')
+            ->leftJoin('models', 'models.id', '=', 'services.model_id')
+            ->leftJoin('clients', 'client.id', '=', 'services.client_id')
             ->select([
                 config('service.services_table').'.id',
                 config('service.services_table').'.client_id',

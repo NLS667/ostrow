@@ -29,6 +29,7 @@
                                         <th>Data oferty</th>
                                         <th>Data umowy</th>
                                         <th>Data Instalacji</th>
+                                        <th>Akcje</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -39,10 +40,12 @@
                                         <th>Data oferty</th>
                                         <th>Data umowy</th>
                                         <th>Data Instalacji</th>
+                                        <th class="text-right">Akcje</th>
                                     </tr>
                                 </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
+                                        <th></th>
                                         <th></th>
                                         <th></th>
                                         <th></th>
@@ -86,12 +89,13 @@
                     data: {status: 1, trashed: false}
                 },
                 columns: [
-                    {data: 'service_cat_id', name: 'services.service_cat_id'},
-                    {data: 'client_id', name: 'services.client_id'},
-                    {data: 'model_id', name: 'services.model_id'},
+                    {data: 'service_cat_id', name: 'service_categories.name'},
+                    {data: 'client_id', name: 'clients.first_name'.' '.'clients.last_name'},
+                    {data: 'model_id', name: 'models.name'},
                     {data: 'offered_at', name: 'services.offered_at'},
                     {data: 'signed_at', name: 'services.signed_at'},
                     {data: 'installed_at', name: 'services.installed_at'},
+                    {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 order: [[3, "asc"]],
                 searchDelay: 500,
