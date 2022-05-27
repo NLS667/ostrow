@@ -48,9 +48,9 @@ class StoreServiceRequest extends Request
             'client_id.required'    => 'Musisz wybrać Klienta.',
             'service_cat_id.required' => 'Musisz wybrać rodzaj Usługi.',
             'model_id.required' => 'Musisz wybrać Model urządzenia.',
-            'offered_at.datetime' => 'Musisz podać prawidłową datę.',
-            'signed_at.datetime' => 'Musisz podać prawidłową datę.',
-            'installed_at.datetime' => 'Musisz podać prawidłową datę.',
+            'offered_at.date' => 'Musisz podać prawidłową datę.',
+            'signed_at.date' => 'Musisz podać prawidłową datę.',
+            'installed_at.date' => 'Musisz podać prawidłową datę.',
         ];
     }
 }
