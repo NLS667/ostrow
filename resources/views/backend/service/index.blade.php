@@ -89,9 +89,9 @@
                     data: {status: 1, trashed: false}
                 },
                 columns: [
-                    {data: 'categories', name: 'service_categories.name'},
-                    {data: 'client_id', name: 'clients.first_name'},
-                    {data: 'model_id', name: 'models.name'},
+                    {data: 'name', name: 'service_categories.name'},
+                    {data: 'client', name: 'clients.first_name'},
+                    {data: 'model', name: 'models.name'},
                     {data: 'offered_at', name: 'services.offered_at'},
                     {data: 'signed_at', name: 'services.signed_at'},
                     {data: 'installed_at', name: 'services.installed_at'},
