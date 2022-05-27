@@ -24,8 +24,9 @@
                   @if ($clients->count())
                   <select name="client_id" class="form-control select2 client-select" data-placeholder="Wybierz Klienta">
                     <option></option>
+
                     @foreach ($clients as $client)
-                    <option value="{{$client->id}}">{{ $client->first_name.' '.$client->last_name }}</option>
+                    <option value="{{$client->id}}" {{ old('client_id') == $client->id ? "selected":"" }}>{{ $client->first_name.' '.$client->last_name }}</option>
                     @endforeach                  
                   </select>
                   @else
