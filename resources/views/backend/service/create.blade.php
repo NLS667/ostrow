@@ -41,7 +41,7 @@
                   <select name="service_cat_id" class="form-control select2 servicecat-select" data-placeholder="Wybierz Typ Usługi">
                     <option></option>
                     @foreach ($serviceCategories as $category)
-                    <option value="{{$category->id}}">{{ $category->name }}</option>
+                    <option value="{{$category->id}}" {{ old('service_cat_id') == $category->id ? "selected":"" }}>{{ $category->name }}</option>
                     @endforeach                  
                   </select>
                   @else
@@ -56,7 +56,7 @@
                   <select name="model_id" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia">
                     <option></option>
                     @foreach ($models as $model)
-                    <option value="{{$model->id}}">{{ $model->producer->name.' '.$model->name}}</option>
+                    <option value="{{$model->id}}" {{ old('model_id') == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
                     @endforeach                  
                   </select>
                   @else
