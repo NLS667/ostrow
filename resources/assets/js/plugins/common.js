@@ -575,6 +575,34 @@ var Backend = {}; // common variable used in all the files of the backend
             }
         },
         /**
+         * Task management
+         *
+         */
+        Service: {
+            selectors: {
+                service: $(".select2.service-select"),
+                assignee: $(".select2.assignee-select"),
+            },
+            init: function () {
+                this.setSelectors();
+                this.addHandlers();                
+            },
+            setSelectors: function () {
+                this.selectors.service = $(".select2.service-select");
+                this.selectors.assignee = $(".select2.assignee-select");
+            },
+            addHandlers: function(){
+                this.selectors.service.select2({
+                    placeholder: "Wybierz Usługę",
+                    theme: "material"
+                });
+                this.selectors.assignee.select2({
+                    placeholder: "Wybierz Pracownika",
+                    theme: "material"
+                });
+            }
+        },
+        /**
          * Model management
          *
          */
