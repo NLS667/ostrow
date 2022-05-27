@@ -31,7 +31,9 @@ class StoreServiceRequest extends Request
             'client_id'         => 'required',
             'service_cat_id'    => 'required',
             'model_id'          => 'required',
-            'offered_at'        => 'required',
+            'offered_at'        => 'required|date',
+            'signed_at'         => 'nullable|date',
+            'installed_at'      => 'nullable|date',
         ];
     }
 
@@ -47,6 +49,9 @@ class StoreServiceRequest extends Request
             'service_cat_id.required' => 'Musisz wybrać rodzaj Usługi.',
             'model_id.required' => 'Musisz wybrać Model urządzenia.',
             'offered_at.required' => 'Musisz podać datę złożenia oferty.',
+            'offered_at.date' => 'Musisz podać prawidłową datę.',
+            'signed_at.date' => 'Musisz podać prawidłową datę.',
+            'installed_at.date' => 'Musisz podać prawidłową datę.',
         ];
     }
 }
