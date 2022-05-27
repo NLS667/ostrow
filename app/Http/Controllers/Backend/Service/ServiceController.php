@@ -115,7 +115,7 @@ class ServiceController extends Controller
      */
     public function update(Service $service, UpdateServiceRequest $request)
     {
-        $this->service->update($service, $request->all());
+        $this->services->update($service, $request->all());
 
         return new RedirectResponse(route('admin.service.index'), ['flash_success' => trans('alerts.backend.services.updated')]);
     }
