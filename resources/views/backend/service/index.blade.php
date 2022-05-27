@@ -89,7 +89,7 @@
                     data: {status: 1, trashed: false}
                 },
                 columns: [
-                    {data: 'service_cat_id', name: 'service_categories.name'},
+                    {data: 'categories', name: 'service_categories.name'},
                     {data: 'client_id', name: 'clients.first_name'},
                     {data: 'model_id', name: 'models.name'},
                     {data: 'offered_at', name: 'services.offered_at'},

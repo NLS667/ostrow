@@ -50,7 +50,7 @@ class ServiceRepository extends BaseRepository
                 config('service.services_table').'.offered_at',
                 config('service.services_table').'.signed_at',
                 config('service.services_table').'.installed_at',
-                config('service.services_table').'.created_at',
+                DB::raw('GROUP_CONCAT(service_categories.name) as categories'),
             ]);
     }
 
