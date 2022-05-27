@@ -11,16 +11,16 @@ class CreateResponse implements Responsable
      */
     protected $services;
 
-    protected $clients;
+    protected $assignees;
 
     /**
      * @param \Illuminate\Database\Eloquent\Collection $services
      */
-    public function __construct($services, $clients)
+    public function __construct($services, $users)
     {
         $this->services = $services;
 
-        $this->clients = $clients;
+        $this->assignees = $users;
     }
 
     /**
@@ -34,7 +34,7 @@ class CreateResponse implements Responsable
     {
         return view('backend.task.create')->with([
             'services' => $this->services,
-            'clients' => $this->clients,
+            'assignees' => $this->assignees,
         ]);
     }
 }
