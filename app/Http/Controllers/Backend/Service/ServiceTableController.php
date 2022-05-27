@@ -42,13 +42,28 @@ class ServiceTableController extends Controller
                 return $service->model_id;
             })
             ->addColumn('offered_at', function ($service) {
-                return Carbon::parse($service->offered_at)->toDateString();
+                if(isset($service->offered_at))
+                {
+                    return Carbon::parse($service->offered_at)->toDateString();                    
+                } else {
+                    return 'Nie złożono';
+                }
             })
             ->addColumn('signed_at', function ($service) {
-                return Carbon::parse($service->signed_at)->toDateString();
+                if(isset($service->signed_at))
+                {
+                    return Carbon::parse($service->signed_at)->toDateString();                    
+                } else {
+                    return 'Nie podpisano';
+                }
             })
             ->addColumn('installed_at', function ($service) {
-                return Carbon::parse($service->installed_at)->toDateString();
+                if(isset($service->installed_at))
+                {
+                    return Carbon::parse($service->installed_at)->toDateString();                    
+                } else {
+                    return 'Nie zainstalowano';
+                }
             })
             ->addColumn('created_at', function ($service) {
                 return Carbon::parse($service->created_at)->toDateString();
