@@ -31,12 +31,24 @@ class ServiceTableController extends Controller
     public function __invoke(ManageServiceRequest $request)
     {
         return Datatables::make($this->services->getForDataTable())
-            ->escapeColumns(['name'])
-            ->addColumn('description', function ($service) {
-                return $service->description;
+            ->escapeColumns(['id'])
+            ->addColumn('client_id', function ($service) {
+                return $service->client_id;
             })
-            ->addColumn('modelCount', function ($service) {
-                return $service->models()->count();
+            ->addColumn('service_cat_id', function ($service) {
+                return $service->service_cat_id;
+            })
+            ->addColumn('model_id', function ($service) {
+                return $service->model_id;
+            })
+            ->addColumn('offered_at', function ($service) {
+                return Carbon::parse($service->offered_at)->toDateString();
+            })
+            ->addColumn('signed_at', function ($service) {
+                return Carbon::parse($service->signed_at)->toDateString();
+            })
+            ->addColumn('installed_at', function ($service) {
+                return Carbon::parse($service->installed_at)->toDateString();
             })
             ->addColumn('created_at', function ($service) {
                 return Carbon::parse($service->created_at)->toDateString();

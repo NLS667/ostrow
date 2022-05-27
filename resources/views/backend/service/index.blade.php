@@ -23,32 +23,27 @@
                             <table id="services-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th>Nazwa</th>
-                                        <th>Opis</th>
-                                        <th>Modeli</th>
-                                        <th>Utworzony</th>
-                                        <th>Zmieniony</th>
-                                        <th>Akcje</th>
+                                        <th>Typ Usługi</th>
+                                        <th>Klient</th>
+                                        <th>Model</th>
+                                        <th>Data oferty</th>
+                                        <th>Data umowy</th>
+                                        <th>Data Instalacji</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Nazwa</th>
-                                        <th>Opis</th>
-                                        <th>Modeli</th>
-                                        <th>Utworzony</th>
-                                        <th>Zmieniony</th>
-                                        <th class="text-right">Akcje</th>
+                                        <th>Typ Usługi</th>
+                                        <th>Klient</th>
+                                        <th>Model</th>
+                                        <th>Data oferty</th>
+                                        <th>Data umowy</th>
+                                        <th>Data Instalacji</th>
                                     </tr>
                                 </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
-                                        <th>
-                                            <div class="input-group position-relative">
-                                                {!! Form::text('name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Nazwa']) !!}
-                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
-                                            </div>
-                                        </th>
+                                        <th></th>
                                         <th></th>
                                         <th></th>
                                         <th></th>
@@ -91,12 +86,12 @@
                     data: {status: 1, trashed: false}
                 },
                 columns: [
-                    {data: 'name', name: 'services.name'},
-                    {data: 'description', name: 'services.description'},
-                    {data: 'modelCount', name: 'services.modelCount'},
-                    {data: 'created_at', name: 'services.created_at'},
-                    {data: 'updated_at', name: 'services.updated_at'},
-                    {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
+                    {data: 'service_cat_id', name: 'services.service_cat_id'},
+                    {data: 'client_id', name: 'services.client_id'},
+                    {data: 'model_id', name: 'services.model_id'},
+                    {data: 'offered_at', name: 'services.offered_at'},
+                    {data: 'signed_at', name: 'services.signed_at'},
+                    {data: 'installed_at', name: 'services.installed_at'},
                 ],
                 order: [[3, "asc"]],
                 searchDelay: 500,
