@@ -24,12 +24,12 @@ class TaskRepository extends BaseRepository
     /**
      * @var Task Model
      */
-    protected $model;
+    protected $task;
 
     
-    public function __construct(Task $model)
+    public function __construct(Task $task)
     {
-        $this->model = $model;
+        $this->task = $task;
     }
 
     /**
@@ -47,9 +47,12 @@ class TaskRepository extends BaseRepository
         $dataTableQuery = $this->query()
             ->select([
                 config('task.tasks_table').'.id',
-                config('task.tasks_table').'.title',
-                config('task.tasks_table').'.description',
+                config('task.tasks_table').'.name',
+                config('task.tasks_table').'.assignee_id',
+                config('task.tasks_table').'.service_id',
+                config('task.tasks_table').'.status',
                 config('task.tasks_table').'.start',
+                config('task.tasks_table').'.end',
                 config('task.tasks_table').'.created_at',
                 config('task.tasks_table').'.updated_at',
             ]);
