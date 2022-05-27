@@ -7,7 +7,7 @@
       <div class="col-md-12">
         <form method="post" action="{{ route('admin.service.update', $service) }}" autocomplete="off" class="form-horizontal">
           @csrf
-          @method('post')
+          @method('put')
           <div class="card ">
             <div class="card-header card-header-icon card-header-primary">
               <div class="col-md-6">
