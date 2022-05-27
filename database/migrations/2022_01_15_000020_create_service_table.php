@@ -20,6 +20,9 @@ class CreateServiceTable extends Migration
             $table->foreignId('client_id')->constrained('clients');
             $table->foreignId('service_cat_id')->constrained('service_categories');
             $table->foreignId('model_id')->constrained('models');
+            $table->date('offered_at')->nullable();
+            $table->date('signed_at')->nullable();
+            $table->date('installed_at')->nullable();
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

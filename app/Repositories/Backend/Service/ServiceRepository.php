@@ -41,10 +41,10 @@ class ServiceRepository extends BaseRepository
         return $this->query()
             ->select([
                 config('service.services_table').'.id',
-                config('service.services_table').'.name',
-                config('service.services_table').'.description',
+                config('service.services_table').'.offered_at',
+                config('service.services_table').'.signed_at',
+                config('service.services_table').'.installed_at',
                 config('service.services_table').'.created_at',
-                config('service.services_table').'.updated_at',
             ]);
     }
 
@@ -63,8 +63,12 @@ class ServiceRepository extends BaseRepository
 
             $service = self::MODEL;
             $service = new $service();
-            $service->name = $request['name'];
-            $service->description = $request['description'];
+            $service->client_id = $request['client_id'];
+            $service->service_cat_id = $request['service_cat_id'];
+            $service->model_id = $request['model_id'];
+            $service->offered_at = $request['offered_at'];
+            $service->offered_at = $request['signed_at'];
+            $service->offered_at = $request['installed_at'];
 
             $service->created_by = access()->user()->id;
 

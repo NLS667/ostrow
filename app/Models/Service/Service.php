@@ -27,11 +27,12 @@ class Service extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'name',
-        'description',
         'client_id',
         'model_id',
         'service_cat_id',
+        'offered_at',
+        'signed_at',
+        'installed_at',
         'created_by',
         'updated_by',
     ];

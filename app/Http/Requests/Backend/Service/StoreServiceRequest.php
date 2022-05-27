@@ -28,8 +28,10 @@ class StoreServiceRequest extends Request
     public function rules()
     {
         return [
-            'name'              => 'required|max:255',
-            'description'       => 'max:255',
+            'client_id'         => 'required',
+            'service_cat_id'    => 'required',
+            'model_id'          => 'required',
+            'offered_at'        => 'required',
         ];
     }
 
@@ -41,9 +43,10 @@ class StoreServiceRequest extends Request
     public function messages()
     {
         return [
-            'name.required' => 'Musisz podać nazwę Usługi.',
-            'name.max' => 'Nazwa jest za długa (max 255 znaków).',
-            'description.required' => 'Opis jest za długi (max 255 znaków).',
+            'client_id.required'    => 'Musisz wybrać Klienta.',
+            'service_cat_id.required' => 'Musisz wybrać rodzaj Usługi.',
+            'model_id.required' => 'Musisz wybrać Model urządzenia.',
+            'offered_at.required' => 'Musisz podać datę złożenia oferty.',
         ];
     }
 }
