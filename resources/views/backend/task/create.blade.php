@@ -64,7 +64,7 @@
      <script type="text/javascript">
         
         Backend.Utils.documentReady(function(){
-            Backend.Service.init();
+            Backend.Task.init();
             md.initFormExtendedDatetimepickers();
         });
 
