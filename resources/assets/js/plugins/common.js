@@ -578,7 +578,7 @@ var Backend = {}; // common variable used in all the files of the backend
          * Task management
          *
          */
-        Service: {
+        Task: {
             selectors: {
                 service: $(".select2.service-select"),
                 assignee: $(".select2.assignee-select"),
