@@ -322,7 +322,7 @@ md = {
         close: 'fa fa-remove'
       }
     });
-    $('.datepicker').on('changeDate', function(e){
+    $('.datepicker').on('dp.change', function(e){
       console.log('date changed');
         console.log('date changed');
         $(this).parent().addClass('is-filled'); 
