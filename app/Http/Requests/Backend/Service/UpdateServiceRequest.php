@@ -26,18 +26,25 @@ class UpdateServiceRequest extends Request
      */
     public function rules()
     {
-         return [
-            'name'          => 'required|max:255',
-            'description'   => 'max:255',
+        return [
+            'client_id'         => 'required',
+            'service_cat_id'    => 'required',
+            'model_id'          => 'required',
+            'offered_at'        => 'nullable|date:d/m/Y',
+            'signed_at'         => 'nullable|date:d/m/Y',
+            'installed_at'      => 'nullable|date:d/m/Y',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Nazwa Usługi nie może być pusta.',
-            'name.max' => 'Nazwa jest za długa (max 255 znaków).',
-            'description.required' => 'Opis jest za długi (max 255 znaków).',
+            'client_id.required'    => 'Musisz wybrać Klienta.',
+            'service_cat_id.required' => 'Musisz wybrać rodzaj Usługi.',
+            'model_id.required' => 'Musisz wybrać Model urządzenia.',
+            'offered_at.date' => 'Musisz podać prawidłową datę.',
+            'signed_at.date' => 'Musisz podać prawidłową datę.',
+            'installed_at.date' => 'Musisz podać prawidłową datę.',
         ];
     }
 }
