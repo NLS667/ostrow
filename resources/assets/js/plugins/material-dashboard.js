@@ -302,14 +302,13 @@ md = {
         close: 'fa fa-remove'
       }
     });
-    $('.datetimepicker').on('dp.hide', function(e){   
-      console.log('date and time changed');
-        $(this).parent().addClass('is-filled'); 
+    $('.datetimepicker').on('dp.change', function(e){   
+      $(this).parent().addClass('is-filled'); 
     });
 
     $('.datepicker').datetimepicker({
       locale: 'pl',
-      format: 'DD/MM/YYYY',
+      format: 'DD-MM-YYYY',
       icons: {
         time: "fa fa-clock-o",
         date: "fa fa-calendar",
@@ -324,7 +323,6 @@ md = {
     });
     $('.datepicker').on('dp.change', function(e){
       console.log('date changed');
-        console.log('date changed');
         $(this).parent().addClass('is-filled'); 
     });
 
@@ -345,8 +343,7 @@ md = {
 
       }
     })
-    $('.timepicker').on('changeDate', function(e){
-      console.log('time changed');
+    $('.timepicker').on('dp.change', function(e){
         $(this).parent().addClass('is-filled'); 
     });
 
