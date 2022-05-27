@@ -100,7 +100,11 @@ class ServiceController extends Controller
      */
     public function edit(Service $service, EditServiceRequest $request)
     {
-        return new EditResponse($service);
+        $serviceCategories = $this->serviceCategories->getAll();
+        $clients = $this->clients->getAll();
+        $models = $this->models->getAll();
+
+        return new EditResponse($service, $serviceCategories, $clients, $models);
     }
 
     /**
