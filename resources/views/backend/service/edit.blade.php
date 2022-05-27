@@ -94,7 +94,7 @@
             </div>
             <div class="card-footer">
               {{ link_to_route('admin.service.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
-              {{ Form::submit('Dodaj', ['class' => 'btn btn-success btn-md']) }}
+              {{ Form::submit('Zmień', ['class' => 'btn btn-success btn-md']) }}
             </div>
           </div>
         </form>
