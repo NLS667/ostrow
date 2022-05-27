@@ -20,7 +20,7 @@ use App\Http\Responses\ViewResponse;
 use App\Models\Task\Task;
 use App\Repositories\Backend\Task\TaskRepository;
 use App\Repositories\Backend\Service\ServiceRepository;
-use App\Repositories\Backend\Client\ClientRepository;
+use App\Repositories\Backend\Access\User\UserRepository;
 
 /**
  * Class TaskController.
@@ -35,10 +35,10 @@ class TaskController extends Controller
     /**
      * @param \App\Repositories\Backend\Task\TaskRepository                   $tasks
      */
-    public function __construct(TaskRepository $tasks, ServiceRepository $services, ClientRepository $clients)
+    public function __construct(TaskRepository $tasks, ServiceRepository $services, UserRepository $users)
     {
         $this->services = $services;
-        $this->clients = $clients;
+        $this->users = $users;
         $this->tasks = $tasks;
     }
 
@@ -60,8 +60,8 @@ class TaskController extends Controller
     public function create(CreateTaskRequest $request)
     {
         $services = $this->services->getAll();
-        $clients = $this->clients->getAll();
-        return new CreateResponse($services, $clients);
+        $users = $this->users->getAll();
+        return new CreateResponse($services, $users);
     }
 
     /**
