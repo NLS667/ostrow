@@ -31,7 +31,7 @@ class StoreServiceRequest extends Request
             'client_id'         => 'required',
             'service_cat_id'    => 'required',
             'model_id'          => 'required',
-            'offered_at'        => 'required|date',
+            'offered_at'        => 'required|date:DD/MM/YYYY',
             'signed_at'         => 'nullable|date',
             'installed_at'      => 'nullable|date',
         ];
