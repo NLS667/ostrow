@@ -87,7 +87,6 @@ class ServiceController extends Controller
      */
     public function store(StoreServiceRequest $request)
     {
-        \Log::info(json_encode($request));
         $this->services->create($request->all());
 
         return new RedirectResponse(route('admin.service.index'), ['flash_success' => trans('alerts.backend.services.created')]);

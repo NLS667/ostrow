@@ -2,9 +2,9 @@
 
 namespace App\Repositories\Backend\Service;
 
-use App\Events\Service\ProducerCreated;
-use App\Events\Service\ProducerDeleted;
-use App\Events\Service\ProducerUpdated;
+use App\Events\Service\ServiceCreated;
+use App\Events\Service\ServiceDeleted;
+use App\Events\Service\ServiceUpdated;
 use App\Exceptions\GeneralException;
 use App\Models\Service\Service;
 use App\Repositories\BaseRepository;
