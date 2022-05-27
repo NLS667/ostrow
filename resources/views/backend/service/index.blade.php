@@ -92,7 +92,7 @@
                     {data: 'category', name: 'service_categories.name'},
                     {data: 'client', render: function ( data, type, row ) {
                                                 console.log(row);
-                                                return data + ' ' +row.clients.last_name;
+                                                return data + ' ' +row.last_name;
                                             },
                                             targets: 1,
                     },
