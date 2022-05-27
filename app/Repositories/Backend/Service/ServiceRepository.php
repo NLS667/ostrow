@@ -44,7 +44,7 @@ class ServiceRepository extends BaseRepository
             ->leftJoin('clients', 'clients.id', '=', 'services.client_id')
             ->select([
                 'services.id',
-                'clients.first_name',
+                'clients.first_name AS client',
                 'clients.last_name',
                 'service_categories.name AS category',
                 'models.name AS model',
