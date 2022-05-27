@@ -37,6 +37,14 @@ class Service extends BaseModel
         'updated_by',
     ];
 
+    protected $dates = [
+        'offered_at',
+        'signed_at',
+        'installed_at',
+        'created_at',
+        'updated_at'
+    ];
+
     /**
      * @param array $attributes
      */
