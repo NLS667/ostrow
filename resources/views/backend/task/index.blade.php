@@ -23,9 +23,10 @@
                             <table id="tasks-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th>Nazwa</th>
-                                        <th>Opis</th>
+                                        <th>Usługa</th>
+                                        <th>Pracownik</th>
                                         <th>Data rozpoczęcia</th>
+                                        <th>Data zakończenia</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>
                                         <th>Akcje</th>
@@ -33,9 +34,10 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Nazwa</th>
-                                        <th>Opis</th>
+                                        <th>Usługa</th>
+                                        <th>Pracownik</th>
                                         <th>Data rozpoczęcia</th>
+                                        <th>Data zakończenia</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>
                                         <th class="text-right">Akcje</th>
@@ -43,12 +45,7 @@
                                 </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
-                                        <th>
-                                            <div class="input-group position-relative">
-                                                {!! Form::text('title', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Nazwa']) !!}
-                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
-                                            </div>
-                                        </th>
+                                        <th></th>
                                         <th></th>
                                         <th></th>
                                         <th></th>
@@ -91,9 +88,11 @@
                     data: {status: 0}
                 },
                 columns: [
-                    {data: 'title', name: 'tasks.title'},
-                    {data: 'description', name: 'tasks.description'},
+                    {data: 'assignee_id', name: 'tasks.assignee_id'},
+                    {data: 'service_id', name: 'tasks.service_id'},
+                    {data: 'status', name: 'tasks.status'},
                     {data: 'start', name: 'tasks.start'},
+                    {data: 'end', name: 'tasks.end'},
                     {data: 'created_at', name: 'tasks.created_at'},
                     {data: 'updated_at', name: 'tasks.updated_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}

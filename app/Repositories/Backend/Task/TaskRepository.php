@@ -48,7 +48,6 @@ class TaskRepository extends BaseRepository
         $dataTableQuery = $this->query()
             ->select([
                 config('task.tasks_table').'.id',
-                config('task.tasks_table').'.name',
                 config('task.tasks_table').'.assignee_id',
                 config('task.tasks_table').'.service_id',
                 config('task.tasks_table').'.status',

@@ -35,11 +35,17 @@ class TaskTableController extends Controller
     {
         return Datatables::make($this->tasks->getForDataTable($request->get('status')))
             ->escapeColumns('id')
-            ->addColumn('title', function ($task) {
-                return $task->title;
+            ->addColumn('assignee_id', function ($task) {
+                return $task->assignee_id;
+            })
+            ->addColumn('service_id', function ($task) {
+                return $task->service_id;
             })
             ->editColumn('start', function ($task) {
                 return Carbon::parse($task->start)->toDateTimeString();
+            })
+            ->editColumn('end', function ($task) {
+                return Carbon::parse($task->end)->toDateTimeString();
             })
             ->addColumn('created_at', function ($task) {
                 return Carbon::parse($task->created_at)->toDateString();

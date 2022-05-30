@@ -29,11 +29,11 @@ class Task extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'name',
         'assignee_id',
         'service_id',
         'status',
         'start',
+        'end',
         'created_by',
         'updated_by',
     ];
