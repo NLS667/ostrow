@@ -45,7 +45,7 @@ class ClientStatusController extends Controller
      */
     public function getDeleted(ManageDeletedRequest $request)
     {
-        return view('backend.aclient.deleted');
+        return view('backend.client.deleted');
     }
 
     /**
