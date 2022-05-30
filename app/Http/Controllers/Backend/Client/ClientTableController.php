@@ -42,7 +42,7 @@ class ClientTableController extends Controller
                     return 'Brak';
                 }
             })
-            ->editColumn('status', function ($client) {
+            ->addColumn('status', function ($client) {
                 return $client->status;
             })
             ->addColumn('created_at', function ($client) {
