@@ -136,11 +136,11 @@
                 dom: "<'row'<'col-sm-12 col-md-2'l><'col-sm-12 col-md-8'B><'col-sm-12 col-md-2'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
                 buttons: {
                     buttons: [
-                        { extend: 'copyHtml5', className: 'copyButton hidden',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6, 7 ]  }},
-                        { extend: 'csvHtml5', className: 'csvButton hidden',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6 ,7 ]  }},
-                        { extend: 'excelHtml5', className: 'excelButton hidden',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6, 7 ]  }},
-                        { extend: 'pdfHtml5', className: 'pdfButton hidden',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6, 7 ]  }},
-                        { extend: 'print', className: 'printButton hidden',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6, 7 ]  }}
+                        { extend: 'copyHtml5', className: 'copyButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6, 7 ]  }},
+                        { extend: 'csvHtml5', className: 'csvButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6 ,7 ]  }},
+                        { extend: 'excelHtml5', className: 'excelButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6, 7 ]  }},
+                        { extend: 'pdfHtml5', className: 'pdfButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6, 7 ]  }},
+                        { extend: 'print', className: 'printButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6, 7 ]  }}
                     ]
                 },
                 language: {
