@@ -48,6 +48,28 @@
                   @endif
                 </div>
               </div>
+              <div class="row">
+                {{-- Start Date --}}
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('start') ? ' has-danger' : '' }}">
+                  <label class="bmd-label-floating">Data rozpoczęcia zadania</label>
+                  <input class="form-control datetimepicker" name="start" id="input-start" type="text" value="{{ old('start') }}" />
+                  @if ($errors->has('start'))
+                  <span class="material-icons form-control-feedback">clear</span>
+                  <span id="start-error" class="error text-danger" for="input-start">{{ $errors->first('start') }}</span>
+                  @endif
+                </div>
+              </div>
+              <div class="row">
+                {{-- End Date --}}
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('end') ? ' has-danger' : '' }}">
+                  <label class="bmd-label-floating">Data zakończenia zadania</label>
+                  <input class="form-control dateptimeicker" name="end" id="input-end" type="text" value="{{ old('end') }}" />
+                  @if ($errors->has('end'))
+                  <span class="material-icons form-control-feedback">clear</span>
+                  <span id="end-error" class="error text-danger" for="input-end">{{ $errors->first('end') }}</span>
+                  @endif
+                </div>
+              </div>
             </div>
             <div class="card-footer">
               {{ link_to_route('admin.task.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}

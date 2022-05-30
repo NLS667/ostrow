@@ -7,7 +7,7 @@ use Illuminate\Contracts\Support\Responsable;
 class CreateResponse implements Responsable
 {
     /**
-     * @var \App\Models\Access\Service\Service
+     * @var \App\Models\Service\Service
      */
     protected $services;
 
