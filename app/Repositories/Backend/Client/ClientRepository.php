@@ -50,7 +50,7 @@ class ClientRepository extends BaseRepository
          * Note: You must return deleted_at or the User getActionButtonsAttribute won't
          * be able to differentiate what buttons to show for each row.
          */
-        \Debugbar::info($status);
+        \Debugbar::error($status);
         $dataTableQuery = $this->query()
             ->leftJoin('service_client', 'service_client.client_id', '=', 'clients.id')
             ->leftJoin('service_categories', 'service_client.servicecat_id', '=', 'service_categories.id')
