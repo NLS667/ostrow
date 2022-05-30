@@ -34,9 +34,11 @@ use App\Http\Controllers\Backend\Client\ClientStatusController;
             /*
              * Specific Client
              */
-            //Route::group(['prefix' => 'client/{client}'], function () {
+            Route::group(['prefix' => 'client/{client}'], function () {
 
-            //});
+                // Status
+                Route::get('mark/{status}', [ClientStatusController::class, 'mark'])->name('client.mark')->where(['status' => '[0,1]']);
+            });
 
             /*
              * Deleted Client
