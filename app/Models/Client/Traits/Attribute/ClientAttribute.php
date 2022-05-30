@@ -188,6 +188,24 @@ trait ClientAttribute
     }
 
     /**
+     * Get logged in user permission related to user management grid.
+     *
+     * @return array
+     */
+    public function getUserPermission()
+    {
+        $userPermission = [];
+        $attributePermission = ['24', '26', '27', '28', '29'];
+        foreach (access()->user()->permissions as $permission) {
+            if (in_array($permission->id, $attributePermission)) {
+                $userPermission[] = $permission->name;
+            }
+        }
+
+        return $userPermission;
+    }
+
+    /**
      * Alias to eloquent many-to-many relation's attach() method.
      *
      * @param mixed $service
