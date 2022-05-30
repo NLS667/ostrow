@@ -63,7 +63,7 @@
                 {{-- End Date --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('end') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Data zakończenia zadania</label>
-                  <input class="form-control dateptimeicker" name="end" id="input-end" type="text" value="{{ old('end') }}" />
+                  <input class="form-control datetimepicker" name="end" id="input-end" type="text" value="{{ old('end') }}" />
                   @if ($errors->has('end'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="end-error" class="error text-danger" for="input-end">{{ $errors->first('end') }}</span>
