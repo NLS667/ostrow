@@ -28,9 +28,10 @@ class StoreTaskRequest extends Request
     public function rules()
     {
         return [
-            'title'              => 'required|max:191',
-            'description'        => 'nullable|max:191',
-            'start'              => 'required'
+            'service_id'         => 'required',
+            'assignee_id'        => 'required',
+            'start'              => 'required',
+            'end'                => 'nullable'
         ];
     }
 
@@ -42,10 +43,9 @@ class StoreTaskRequest extends Request
     public function messages()
     {
         return [
-            'title.required'        => 'To pole jest wymagane.',
-            'title.max'             => 'Długość max. 191 znaków.',
-            'description.max'       => 'Długość max. 191 znaków.',
-            'start.required'        => 'Musisz podać datę rozpoczęcia zadania.',
+            'service_id.required'        => 'Musisz wybrać uslugę.',
+            'assignee_id.required'       => 'Musisz wybrać pracownika.',
+            'start.required '            => 'Musisz podać datę rozpoczęcia zadania.'
         ];
     }
 }

@@ -193,10 +193,15 @@ class TaskRepository extends BaseRepository
     {
         $task = self::MODEL;
         $task = new $task();
-        $task->title = $input['title'];
-        $task->last_name = $input['last_name'];
-        $task->email = $input['email'];
+        $task->service_id = $input['service_id'];
+        $task->assignee_id = $input['assignee_id'];
         $task->status = isset($input['status']) ? $input['status'] : 0;
+        $task->start = $input['start'];
+
+        $enddate = new DateTime($input['start']);
+        $enddate->add(new DateInterval('P3H'));
+        $enddate = $enddate->format('Y-m-d ') . "\n";
+        $task->end = isset($input['end']) ? $input['end'] : $enddate;
         $task->created_by = access()->user()->id;
 
         return $task;
