@@ -120,6 +120,7 @@
                     {data: 'email', name: 'clients.email'},
                     {data: 'phone_nr', name: 'clients.phone_nr', sortable: false},                
                     {data: 'status', className: 'text-center', name: 'clients.status', render: function ( data, type, row, meta ) {
+                        console.log(data);
                         if(data=1) {
                             return '<span class="badge badge-success">Tak</a>';
                         } else {
