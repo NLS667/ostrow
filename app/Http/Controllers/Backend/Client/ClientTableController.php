@@ -33,6 +33,7 @@ class ClientTableController extends Controller
      */
     public function __invoke(ManageClientRequest $request)
     {
+        \Log::info("request status was: ".$request->get('status'));
         return Datatables::make($this->clients->getForDataTable($request->get('status'), $request->get('trashed')))
             ->escapeColumns(['id', 'email'])
             ->editColumn('phone_nr', function ($client) {
@@ -43,6 +44,7 @@ class ClientTableController extends Controller
                 }
             })
             ->addColumn('status', function ($client) {
+                \Log::info("client status was: ".$client->status);
                 return $client->status;
             })
             ->addColumn('created_at', function ($client) {
