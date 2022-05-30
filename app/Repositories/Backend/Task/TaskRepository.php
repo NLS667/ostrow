@@ -67,7 +67,7 @@ class TaskRepository extends BaseRepository
      */
     public function create($request)
     {
-        //$data = $request;
+        $data = $request;
         //$services = $request->get('services');
         //$tasks = $request->get('tasks');
         $task = $this->createTaskStub($data);
