@@ -76,7 +76,7 @@ trait ClientAttribute
     {
         switch ($this->status) {
             case 0:
-            if (access()->allow('activate-user')) {
+            if (access()->allow('activate-client')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Aktywuj' : '';
 
                 return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Aktywuj" href="'.route('admin.client.mark', [$this, 1]).'"><span class="material-icons">lock_open</span>'.$name.'</a>';
@@ -84,7 +84,7 @@ trait ClientAttribute
             break;
 
             case 1:
-            if (access()->allow('deactivate-user')) {
+            if (access()->allow('deactivate-client')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Deaktywuj' : '';
 
                 return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Deaktywuj" href="'.route('admin.client.mark', [$this, 0]).'"><span class="material-icons">lock</span>'.$name.'</a>';
