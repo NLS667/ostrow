@@ -43,7 +43,7 @@ class ClientTableController extends Controller
                 }
             })
             ->editColumn('status', function ($client) {
-                return $client->confirmed_label;
+                return $client->status;
             })
             ->addColumn('created_at', function ($client) {
                 return Carbon::parse($client->created_at)->toDateString();
