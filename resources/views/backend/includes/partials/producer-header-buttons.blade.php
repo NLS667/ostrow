@@ -1,4 +1,8 @@
 <!--Action Button-->
+    @if(Active::checkUriPattern('admin/producer'))
+        @include('backend.includes.partials.header-export')
+    @endif
+<!--Action Button-->
 <div class="btn-group">
   <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">Działania
     <span class="caret"></span>
