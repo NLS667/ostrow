@@ -83,7 +83,7 @@ class ClientStatusController extends Controller
      */
     public function restore(Client $deletedClient, DeleteClientRequest $request)
     {
-        $this->users->restore($deletedClient);
+        $this->clients->restore($deletedClient);
 
         return redirect()->route('admin.client.index')->withFlashSuccess(trans('alerts.backend.clients.restored'));
     }
