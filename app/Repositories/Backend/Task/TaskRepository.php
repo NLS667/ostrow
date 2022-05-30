@@ -198,9 +198,8 @@ class TaskRepository extends BaseRepository
         $task->status = isset($input['status']) ? $input['status'] : 0;
         $task->start = $input['start'];
 
-        $enddate = new DateTime($input['start']);
-        $enddate->add(new DateInterval('P3H'));
-        $enddate = $enddate->format('Y-m-d ') . "\n";
+        $enddate = Carbon::parse($input['start']);
+        $enddate->addHours(3);
         $task->end = isset($input['end']) ? $input['end'] : $enddate;
         $task->created_by = access()->user()->id;
 
