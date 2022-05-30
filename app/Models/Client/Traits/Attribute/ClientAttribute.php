@@ -3,7 +3,7 @@
 namespace App\Models\Client\Traits\Attribute;
 
 /**
- * Class ClientAttribute.
+ * Class ClientAttribute. 
  */
 trait ClientAttribute
 {
@@ -64,6 +64,35 @@ trait ClientAttribute
                  data-trans-button-cancel="Anuluj"
                  data-trans-button-confirm="Usuń"
                  data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</a>';
+        }
+
+        return '';
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatusButtonAttribute($class)
+    {
+        switch ($this->status) {
+            case 0:
+            if (access()->allow('activate-user')) {
+                $name = ($class == '' || $class == 'dropdown-item') ? 'Aktywuj' : '';
+
+                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Aktywuj" href="'.route('admin.client.mark', [$this, 1]).'"><span class="material-icons">lock_open</span>'.$name.'</a>';
+            }
+            break;
+
+            case 1:
+            if (access()->allow('deactivate-user')) {
+                $name = ($class == '' || $class == 'dropdown-item') ? 'Deaktywuj' : '';
+
+                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Deaktywuj" href="'.route('admin.client.mark', [$this, 0]).'"><span class="material-icons">lock</span>'.$name.'</a>';
+            }
+            break;
+
+            default:
+            return '';
         }
 
         return '';
