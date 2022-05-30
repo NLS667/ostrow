@@ -122,7 +122,7 @@
                     {data: 'status', className: 'text-center', name: 'clients.status', render: function ( data, type, row, meta ) {
                         console.log(data);
                         if(data=1) {
-                            return '<span class="badge badge-success">Tak</a>';
+                            return '<span class="badge badge-success">Tak</a>'+data;
                         } else {
                             return '<span class="badge badge-danger">Nie</a>';
                         }
