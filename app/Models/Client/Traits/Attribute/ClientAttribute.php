@@ -205,6 +205,23 @@ trait ClientAttribute
         return $userPermission;
     }
 
+    public function checkAdmin()
+    {
+        if ($this->id != 1) {
+            return '<div class="btn-group dropup">
+                        <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">
+                            <span class="material-icons">settings</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            '.$this->getStatusButtonAttribute('dropdown-item').'
+                            '.$this->getClearSessionButtonAttribute('dropdown-item').'
+                            '.$this->getDeleteButtonAttribute('dropdown-item').'
+                            '.$this->getLoginAsButtonAttribute('dropdown-item').'
+                        </div>
+                    </div>';
+        }
+    }
+
     /**
      * Alias to eloquent many-to-many relation's attach() method.
      *
@@ -262,7 +279,15 @@ trait ClientAttribute
             return '<div class="btn-group action-btn">
                     '.$this->getShowButtonAttribute('btn btn-info btn-flat').'
                     '.$this->getEditButtonAttribute('btn btn-success btn-flat').'
-                    '.$this->getDeleteButtonAttribute('btn btn-danger btn-flat').'
+                    <div class="btn-group dropup">
+                        <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">
+                            <span class="material-icons">settings</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            '.$this->getDeleteButtonAttribute('dropdown-item').'                        
+                            '.$this->getStatusButtonAttribute('dropdown-item').'
+                        </div>
+                    </div>
                 </div>';
         } else {
             $userPermission = $this->getUserPermission();
