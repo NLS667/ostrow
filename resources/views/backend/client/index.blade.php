@@ -133,7 +133,7 @@
                 ],
                 order: [[5, "asc"]],
                 searchDelay: 500,
-                dom: "<'row'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'B><'col-sm-12 col-md-4'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                dom: "<'row'<'col-sm-12 col-md-2'l><'col-sm-12 col-md-8'><'col-sm-12 col-md-2'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
                 buttons: {
                     buttons: [
                         { extend: 'copyHtml5', className: 'copyButton',  exportOptions: {columns: [ 0, 1, 2, 3, 5, 6, 7 ]  }},
