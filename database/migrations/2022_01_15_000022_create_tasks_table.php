@@ -20,7 +20,7 @@ class CreateTasksTable extends Migration
             $table->foreignId('service_id')->constrained('services');
             $table->integer('status')->default(0);
             $table->dateTime('start');
-            $table->dateTime('end'); 
+            $table->dateTime('end')->nullable(); 
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();           
             $table->timestamps();

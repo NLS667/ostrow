@@ -200,6 +200,7 @@ class TaskRepository extends BaseRepository
         $task->start = $input['start'];
 
         $enddate = Carbon::parse($input['start']);
+        \Log::info($enddate);
         $enddate->addHours(3);
         $task->end = isset($input['end']) ? $input['end'] : $enddate;
         $task->created_by = access()->user()->id;
