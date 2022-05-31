@@ -38,7 +38,7 @@ class TaskTableController extends Controller
             ->addColumn('assignee_id', function ($task) {
                 return $task->assignee_name;
             })
-            ->addColumn('service_name', function ($task) {
+            ->addColumn('service_id', function ($task) {
                 return $task->service_name;
             })
             ->addColumn('status', function ($task) {

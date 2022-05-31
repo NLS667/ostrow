@@ -53,12 +53,7 @@ class TaskRepository extends BaseRepository
             ->select([
                 config('task.tasks_table').'.id',
                 config('task.tasks_table').'.assignee_id',
-                'users.first_name AS assignee_name',
-                'users.last_name AS assignee_surname',
                 config('task.tasks_table').'.service_id',
-                'service_categories.name as service_name',
-                'clients.first_name as client_name',
-                'clients.last_name as client_surname',
                 config('task.tasks_table').'.status',
                 config('task.tasks_table').'.start',
                 config('task.tasks_table').'.end',
