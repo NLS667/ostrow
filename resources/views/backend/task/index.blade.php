@@ -92,8 +92,14 @@
                     data: {status: 0, trashed: false}
                 },
                 columns: [
-                    {data: 'assignee_id', name: 'tasks.assignee_id'},
-                    {data: 'service_id', name: 'tasks.service_id'},                    
+                    {data: 'assignee_id', render: function ( data, type, row ) {
+                                                return data + ' ' +row.assignee_surname;
+                                            },
+                                            targets: 0,},
+                    {data: 'service_name', render: function ( data, type, row ) {
+                                                return data + ' - ' +row.client_name+' '+row.client_surname;
+                                            },
+                                            targets: 1,},                    
                     {data: 'start', name: 'tasks.start'},
                     {data: 'end', name: 'tasks.end'},
                     {data: 'status', name: 'tasks.status'},

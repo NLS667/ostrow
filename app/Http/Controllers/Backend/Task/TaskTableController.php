@@ -35,7 +35,7 @@ class TaskTableController extends Controller
     {
         return Datatables::make($this->tasks->getForDataTable($request->get('status'), $request->get('trashed')))
             ->escapeColumns('id')
-            ->addColumn('assignee', function ($task) {
+            ->addColumn('assignee_id', function ($task) {
                 return $task->assignee_id;
             })
             ->addColumn('service_name', function ($task) {
