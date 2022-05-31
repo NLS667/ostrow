@@ -146,7 +146,7 @@ class TaskController extends Controller
                   ->get();
         }
 
-        $tasks->makeHidden(['created_at', 'updated_at', 'user_id', 'client_id']);
+        $tasks->makeHidden(['created_at', 'updated_at']);
         
         \Log::info($tasks);
         return response()->json($tasks);
