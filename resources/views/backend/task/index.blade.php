@@ -23,8 +23,8 @@
                             <table id="tasks-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th>Usługa</th>
                                         <th>Pracownik</th>
+                                        <th>Usługa</th>
                                         <th>Data rozpoczęcia</th>
                                         <th>Data zakończenia</th>
                                         <th>Status</th>
@@ -35,8 +35,8 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Usługa</th>
                                         <th>Pracownik</th>
+                                        <th>Usługa</th>                                        
                                         <th>Data rozpoczęcia</th>
                                         <th>Data zakończenia</th>
                                         <th>Status</th>
