@@ -53,7 +53,7 @@ trait TaskAttribute
 
     public function getAssigneeNameAttribute()
     {
-        $user = User::where('id', $this->assignee_id);
+        $user = User::where('id', $this->assignee_id)->get();
         \Log::info(json_encode($user));
         $assignee_name = $user->first_name.' '.$user->last_name;
         return $assignee_name;
@@ -61,9 +61,9 @@ trait TaskAttribute
 
     public function getServiceNameAttribute()
     {
-        $service = \Service::where('id', $this->service_id);
-        $client = \Client::where('id', $service->client_id);
-        $service_type = \ServiceCategory::where('id', $service->service_cat_id);
+        $service = \Service::where('id', $this->service_id)->get();;
+        $client = \Client::where('id', $service->client_id)->get();;
+        $service_type = \ServiceCategory::where('id', $service->service_cat_id)->get();;
         $service_name = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
         return $service_name;
     }
