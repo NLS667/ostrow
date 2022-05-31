@@ -49,12 +49,19 @@ trait TaskAttribute
         return '';
     }
 
-    public function getNameAttribute()
+    public function getAssigneeNameAttribute()
+    {
+        $user = \User::where('id', $this->assignee_id);
+        $assignee_name = $user->first_name.' '.$user->last_name;
+        return $assignee_name;
+    }
+
+    public function getServiceNameAttribute()
     {
         $service = \Service::where('id', $this->service_id);
         $client = \Client::where('id', $service->client_id);
         $service_type = \ServiceCategory::where('id', $service->service_cat_id);
-        $name = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
-        return $name;
+        $service_name = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
+        return $service_name;
     }
 }
