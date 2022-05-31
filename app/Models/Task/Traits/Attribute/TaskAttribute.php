@@ -2,6 +2,8 @@
 
 namespace App\Models\Task\Traits\Attribute;
 
+use App\Models\Access\User\User;
+
 /**
  * Class TaskAttribute.
  */
@@ -51,7 +53,7 @@ trait TaskAttribute
 
     public function getAssigneeNameAttribute()
     {
-        $user = \User::where('id', $this->assignee_id);
+        $user = User::where('id', $this->assignee_id);
         $assignee_name = $user->first_name.' '.$user->last_name;
         return $assignee_name;
     }
