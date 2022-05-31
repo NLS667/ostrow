@@ -41,6 +41,9 @@ class TaskTableController extends Controller
             ->addColumn('service_id', function ($task) {
                 return $task->service_id;
             })
+            ->addColumn('status', function ($task) {
+                return $task->status;
+            })
             ->editColumn('start', function ($task) {
                 return Carbon::parse($task->start)->toDateTimeString();
             })
