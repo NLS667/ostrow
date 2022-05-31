@@ -13,6 +13,7 @@ import interactionPlugin from "@fullcalendar/interaction"
 import listPlugin from "@fullcalendar/list"
 import plLocale from '@fullcalendar/core/locales/pl';
 import bootstrapPlugin from '@fullcalendar/bootstrap';
+import ShowTaskModal from './ShowTaskModal'
 
 import "@fullcalendar/common/main.css"
 import "@fullcalendar/daygrid/main.css"
