@@ -54,6 +54,7 @@ class TaskRepository extends BaseRepository
                 config('task.tasks_table').'.id',
                 config('task.tasks_table').'.assignee_id',
                 config('task.tasks_table').'.service_id',
+                config('task.tasks_table').'.title',
                 config('task.tasks_table').'.status',
                 config('task.tasks_table').'.start',
                 config('task.tasks_table').'.end',
@@ -198,10 +199,15 @@ class TaskRepository extends BaseRepository
         $task = self::MODEL;
         $task = new $task();
         $task->service_id = $input['service_id'];
+        $service = \Service::where('id', $input['service_id'])->first();
+        $service_type = \ServiceCategory::where('id', $service->service_cat_id)->first();
+        $client = \Client::where('id', $service->client_id)->first();
+        $task->title = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
         $task->assignee_id = $input['assignee_id'];
+        //$assignee = \User::where('id', $input['assignee_id'])->first();
         $task->status = isset($input['status']) ? $input['status'] : 0;
-        $task->start = Carbon::parse($input['start']);
 
+        $task->start = Carbon::parse($input['start']);
         $enddate = Carbon::parse($input['start']);
         $enddate->addHours(3);
         \Log::info($enddate);
