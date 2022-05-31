@@ -48,7 +48,7 @@ class TaskRepository extends BaseRepository
         $dataTableQuery = $this->query()
             ->leftJoin('users', 'users.id', '=', 'assignee_id')
             ->leftJoin('services', 'services.id', '=', 'service_id')
-            ->leftJoin('service_categories', 'service_categories.id', '=', 'services.service_at_id')
+            ->leftJoin('service_categories', 'service_categories.id', '=', 'services.service_cat_id')
             ->leftJoin('clients', 'clients.id', '=', 'services.client_id')
             ->select([
                 config('task.tasks_table').'.id',
