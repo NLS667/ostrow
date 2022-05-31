@@ -11,7 +11,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">task_alt</i>
                             </div>
-                            <h4 class="card-title">Zadania</h4>
+                            <h4 class="card-title">Wszystkie Zadania</h4>
                         </div>
                         <div class="card-tools">
                             @include('backend.includes.partials.task-header-buttons')
