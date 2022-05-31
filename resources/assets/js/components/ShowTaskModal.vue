@@ -66,19 +66,19 @@ export default{
 	        }
 	    },
 
-	    mounted() {
+	    //mounted() {
 	        // I absctracted my API calls, this would be the same as:
 	        // axios.get('/users').then( .... ) ...
-	        this.$api.services.index()
-	            .then(({
-	                data
-	            }) => {
-	                this.services = data
-	            })
-	            .catch(error => {
-	                this.services = []
-	                this.event.assignee = null
-	            })
-	    }
+	        //this.$api.services.index()
+	        //    .then(({
+	        //        data
+	        //    }) => {
+	        //        this.services = data
+	        //    })
+	        //    .catch(error => {
+	        //        this.services = []
+	        //        this.event.assignee = null
+	        //   })
+	    //}
 	}
 </script>
