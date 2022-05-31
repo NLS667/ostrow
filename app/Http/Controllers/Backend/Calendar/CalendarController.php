@@ -15,7 +15,6 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
         $calendar_data = [];
 
         return view('backend.calendar.index')->with('calendar_data', $calendar_data);
