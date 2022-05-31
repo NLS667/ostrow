@@ -33,13 +33,13 @@ class TaskTableController extends Controller
      */
     public function __invoke(ManageTaskRequest $request)
     {
-        return Datatables::make($this->tasks->getForDataTable($request->get('status'), $request->get('trashed')))
+        return Datatables::make($this->tasks->getForDataTable())
             ->escapeColumns('id')
             ->addColumn('assignee_id', function ($task) {
                 return $task->assignee_id;
             })
             ->addColumn('service_name', function ($task) {
-                return $task->name;
+                return $task->service_id;
             })
             ->addColumn('status', function ($task) {
                 return $task->status;

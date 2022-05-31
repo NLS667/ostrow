@@ -39,25 +39,26 @@ class TaskRepository extends BaseRepository
      *
      * @return mixed
      */
-    public function getForDataTable($status = 0)
+    public function getForDataTable()
     {
         /**
          * Note: You must return deleted_at or the User getActionButtonsAttribute won't
          * be able to differentiate what buttons to show for each row.
          */
         $dataTableQuery = $this->query()
-            ->leftJoin('users', 'users.id', '=', 'assignee_id')
-            ->leftJoin('services', 'services.id', '=', 'service_id')
+            ->leftJoin('users', 'users.id', '=', 'tasks.assignee_id')
+            ->leftJoin('services', 'services.id', '=', 'tasks.service_id')
             ->leftJoin('service_categories', 'service_categories.id', '=', 'services.service_cat_id')
             ->leftJoin('clients', 'clients.id', '=', 'services.client_id')
             ->select([
                 config('task.tasks_table').'.id',
+                config('task.tasks_table').'.assignee_id',
                 'users.first_name AS assignee_name',
                 'users.last_name AS assignee_surname',
+                config('task.tasks_table').'.service_id',
                 'service_categories.name as service_name',
                 'clients.first_name as client_name',
                 'clients.last_name as client_surname',
-                config('task.tasks_table').'.service_id',
                 config('task.tasks_table').'.status',
                 config('task.tasks_table').'.start',
                 config('task.tasks_table').'.end',
