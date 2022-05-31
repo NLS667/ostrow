@@ -1,6 +1,8 @@
 <template>
+  <div>
     <FullCalendar :options="calendarOptions" @eventClick="handleEventClick" />
     <show-task-modal :show="show_task_details_modal" :event="current_task" @close="show_task_details_modal = false" />
+  </div>
 </template>
 
 <script>
