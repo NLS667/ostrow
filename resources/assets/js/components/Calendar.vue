@@ -26,7 +26,8 @@ export default {
       filterRoute: String
     },
     components: {
-        FullCalendar
+        FullCalendar,
+        ShowTaskModal
     },
     data() {
       return {
