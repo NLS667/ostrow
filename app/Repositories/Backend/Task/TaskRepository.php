@@ -203,9 +203,9 @@ class TaskRepository extends BaseRepository
         $task = self::MODEL;
         $task = new $task();
         $task->service_id = $input['service_id'];
-        $service = \Service::where('id', $input['service_id'])->first();
-        $service_type = \ServiceCategory::where('id', $service->service_cat_id)->first();
-        $client = \Client::where('id', $service->client_id)->first();
+        $service = Service::where('id', $input['service_id'])->first();
+        $service_type = ServiceCategory::where('id', $service->service_cat_id)->first();
+        $client = Client::where('id', $service->client_id)->first();
         $task->title = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
         $task->assignee_id = $input['assignee_id'];
         //$assignee = \User::where('id', $input['assignee_id'])->first();
