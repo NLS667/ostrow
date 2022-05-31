@@ -54,7 +54,7 @@ trait TaskAttribute
         $service = \Service::where('id', $this->service_id);
         $client = \Client::where('id', $service->client_id);
         $service_type = \ServiceCategory::where('id', $service->service_cat_id);
-        $name = $service_type->name.' - '.$client->first_name.' '.$client->last_name
+        $name = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
         return $name;
     }
 }
