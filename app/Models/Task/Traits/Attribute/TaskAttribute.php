@@ -57,7 +57,6 @@ trait TaskAttribute
     public function getAssigneeNameAttribute()
     {
         $user = User::where('id', $this->assignee_id)->first();
-        \Log::info(json_encode($user));
         $assignee_name = $user->first_name.' '.$user->last_name;
         return $assignee_name;
     }
