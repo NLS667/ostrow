@@ -93,11 +93,11 @@
                 },
                 columns: [
                     {data: 'assignee_id', render: function ( data, type, row ) {
-                                                return data + ' ' +row.assignee_surname;
+                                                return data;
                                             },
                                             targets: 0,},
-                    {data: 'service_name', render: function ( data, type, row ) {
-                                                return data + ' - ' +row.client_name+' '+row.client_surname;
+                    {data: 'service_id', render: function ( data, type, row ) {
+                                                return data;
                                             },
                                             targets: 1,},                    
                     {data: 'start', name: 'tasks.start'},
