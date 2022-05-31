@@ -27,6 +27,7 @@
                                         <th>Pracownik</th>
                                         <th>Data rozpoczęcia</th>
                                         <th>Data zakończenia</th>
+                                        <th>Status</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>
                                         <th>Akcje</th>
@@ -38,6 +39,7 @@
                                         <th>Pracownik</th>
                                         <th>Data rozpoczęcia</th>
                                         <th>Data zakończenia</th>
+                                        <th>Status</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>
                                         <th class="text-right">Akcje</th>
@@ -45,6 +47,7 @@
                                 </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
+                                        <th></th>
                                         <th></th>
                                         <th></th>
                                         <th></th>
@@ -90,10 +93,10 @@
                 },
                 columns: [
                     {data: 'assignee_id', name: 'tasks.assignee_id'},
-                    {data: 'service_id', name: 'tasks.service_id'},
-                    {data: 'status', name: 'tasks.status'},
+                    {data: 'service_id', name: 'tasks.service_id'},                    
                     {data: 'start', name: 'tasks.start'},
                     {data: 'end', name: 'tasks.end'},
+                    {data: 'status', name: 'tasks.status'},
                     {data: 'created_at', name: 'tasks.created_at'},
                     {data: 'updated_at', name: 'tasks.updated_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
