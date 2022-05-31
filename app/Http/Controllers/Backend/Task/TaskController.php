@@ -138,7 +138,7 @@ class TaskController extends Controller
         
         if (auth()->user()->isAdmin()) {
           $tasks = Task::whereBetween('start', [$request->start, $request->end])
-                  ->with('assignee:first_name,last_name')
+                  ->with('assignee:id,first_name,last_name')
                   ->get();
         } else {
           $tasks = Task::whereBetween('start', [$request->start, $request->end])
@@ -146,7 +146,7 @@ class TaskController extends Controller
                   ->get();
         }
 
-        $tasks->makeHidden(['created_at', 'updated_at']);
+        $tasks->makeHidden(['created_at', 'updated_at','created_by','updated_by']);
         
         \Log::info($tasks);
         return response()->json($tasks);

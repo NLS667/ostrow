@@ -11,10 +11,10 @@ use App\Models\Service\Service;
 trait TaskRelationship
 {
     public function assignee() {
-      return $this->belongsTo(User::class);
+      return $this->belongsTo(User::class, 'assignee_id', 'id');
     }
 
     public function service() {
-      return $this->belongsTo(Service::class);
+      return $this->belongsTo(Service::class, 'service_id', 'id');
     }
 }
