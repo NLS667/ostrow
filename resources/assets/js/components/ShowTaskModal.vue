@@ -43,7 +43,7 @@ export default{
 	            assignee: 'nobody',
 	            note: null
 	        },
-	        users: []
+	        services: []
 	    }),
 
 	    methods: {
