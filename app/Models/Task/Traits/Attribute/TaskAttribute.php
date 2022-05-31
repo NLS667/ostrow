@@ -3,6 +3,9 @@
 namespace App\Models\Task\Traits\Attribute;
 
 use App\Models\Access\User\User;
+use App\Models\Service\Service;
+use App\Models\ServiceCategory\ServiceCategory;
+use App\Models\Client\Client;
 
 /**
  * Class TaskAttribute.
@@ -61,9 +64,9 @@ trait TaskAttribute
 
     public function getServiceNameAttribute()
     {
-        $service = \Service::where('id', $this->service_id)->first();
-        $client = \Client::where('id', $service->client_id)->first();
-        $service_type = \ServiceCategory::where('id', $service->service_cat_id)->first();
+        $service = Service::where('id', $this->service_id)->first();
+        $client = Client::where('id', $service->client_id)->first();
+        $service_type = ServiceCategory::where('id', $service->service_cat_id)->first();
         $service_name = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
         return $service_name;
     }
