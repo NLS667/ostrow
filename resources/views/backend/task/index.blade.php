@@ -92,8 +92,8 @@
                     data: {status: 0, trashed: false}
                 },
                 columns: [
-                    {data: 'assignee_id', name: 'tasks.assignee_id'},
-                    {data: 'service_id', name: 'tasks.service_id'},                    
+                    {data: 'assignee', name: 'tasks.assignee_id'},
+                    {data: 'service_name', name: 'tasks.service_id'},                    
                     {data: 'start', name: 'tasks.start'},
                     {data: 'end', name: 'tasks.end'},
                     {data: 'status', name: 'tasks.status'},
