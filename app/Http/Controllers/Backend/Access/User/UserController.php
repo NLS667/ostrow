@@ -52,9 +52,6 @@ class UserController extends Controller
      */
     public function index(ManageUserRequest $request)
     {
-        $test = $this->roles->where('id', '>', 1);
-
-        \Log::info(json_encode($test));
         return new ViewResponse('backend.access.users.index');
     }
 
@@ -65,7 +62,7 @@ class UserController extends Controller
      */
     public function create(CreateUserRequest $request)
     {
-        $roles = $this->roles->getAll();
+        $roles = $this->roles->getUsable();;
 
         return new CreateResponse($roles);
     }
@@ -101,7 +98,11 @@ class UserController extends Controller
      */
     public function edit(User $user, EditUserRequest $request)
     {
-        $roles = $this->roles->getAll();
+        if($user->id = 1){
+            $roles = $this->roles->getAll();
+        } else {
+            $roles = $this->roles->getUsable();
+        }
         $permissions = Permission::getSelectData('display_name');
 
         return new EditResponse($user, $roles, $permissions);

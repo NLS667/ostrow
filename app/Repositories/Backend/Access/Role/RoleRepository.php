@@ -35,6 +35,21 @@ class RoleRepository extends BaseRepository
     }
 
     /**
+     * @param string $order_by
+     * @param string $sort
+     *
+     * @return mixed
+     */
+    public function getUsable($order_by = 'sort', $sort = 'asc')
+    {
+        return $this->query()
+            ->where('id', '>', 1)
+            ->with('users', 'permissions')
+            ->orderBy($order_by, $sort)
+            ->get();
+    }
+
+    /**
      * @return mixed
      */
     public function getForDataTable()
