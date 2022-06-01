@@ -52,11 +52,10 @@ class UserController extends Controller
      */
     public function index(ManageUserRequest $request)
     {
-        return new ViewResponse('backend.access.users.index');
-
         $test = $this->roles->where('id', '>', 1);
 
         \Log::info(json_encode($test));
+        return new ViewResponse('backend.access.users.index');
     }
 
     /**
