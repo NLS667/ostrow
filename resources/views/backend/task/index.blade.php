@@ -63,6 +63,21 @@
                 </div><!--card-->
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12"> 
+                <div class="card">
+                    <div class="card-header card-header-success d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">Historia</h4>
+                        <div class="card-tools">
+                            <button class="btn btn-primary btn-round" data-toggle="collapse"  data-target="#collapseBody"><i class="fa fa-minus"></i></button>
+                        </div><!-- /.card tools -->
+                    </div><!-- /.card-header -->
+                    <div id="collapseBody" class="card-body">
+                        {!! history()->renderType('Zadanie') !!}
+                    </div><!-- /.card-body -->
+                </div><!--card box-info-->
+            </div>
+        </div>
     </div>
 </div>
 @endsection
