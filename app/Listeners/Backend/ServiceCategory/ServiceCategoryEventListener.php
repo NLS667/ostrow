@@ -23,7 +23,7 @@ class ServiceCategoryEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->serviceCategory->id)
-            ->withText('trans("history.backend.services.category.created") <strong>{serviceCategory}</strong>')
+            ->withText('trans("history.backend.services.category.created") <strong>'.$event->serviceCategory->name.'</strong>')
             ->withIcon('person_add')
             ->withClass('success')
             ->log();
@@ -36,7 +36,7 @@ class ServiceCategoryEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->serviceCategory->id)
-            ->withText('trans("history.backend.services.category.updated") <strong>{serviceCategory}</strong>')
+            ->withText('trans("history.backend.services.category.updated") <strong>'.$event->serviceCategory->name.'</strong>')
             ->withIcon('manage_accounts')
             ->withClass('info')
             ->log();
@@ -49,7 +49,7 @@ class ServiceCategoryEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->serviceCategory->id)
-            ->withText('trans("history.backend.services.category.deleted") <strong>{serviceCategory}</strong>')
+            ->withText('trans("history.backend.services.category.deleted") <strong>'.$event->serviceCategory->name.'</strong>')
             ->withIcon('person_remove')
             ->withClass('danger')
             ->log();

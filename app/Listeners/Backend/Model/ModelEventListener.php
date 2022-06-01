@@ -23,7 +23,7 @@ class ModelEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->model->id)
-            ->withText('trans("history.backend.models.created") <strong>{model}</strong>')
+            ->withText('trans("history.backend.models.created") <strong>'.$event->model->name.'</strong>')
             ->withIcon('person_add')
             ->withClass('success')
             ->log();
@@ -36,7 +36,7 @@ class ModelEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->model->id)
-            ->withText('trans("history.backend.models.updated") <strong>{model}</strong>')
+            ->withText('trans("history.backend.models.updated") <strong>'.$event->model->name.'</strong>')
             ->withIcon('manage_accounts')
             ->withClass('info')
             ->log();
@@ -49,7 +49,7 @@ class ModelEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->model->id)
-            ->withText('trans("history.backend.models.deleted") <strong>{model}</strong>')
+            ->withText('trans("history.backend.models.deleted") <strong>'.$event->model->name.'</strong>')
             ->withIcon('person_remove')
             ->withClass('danger')
             ->log();

@@ -23,7 +23,7 @@ class TaskEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->task->id)
-            ->withText('trans("history.backend.tasks.created") <strong>{task}</strong>')
+            ->withText('trans("history.backend.tasks.created")')
             ->withIcon('person_add')
             ->withClass('success')
             ->log();
@@ -36,7 +36,7 @@ class TaskEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->task->id)
-            ->withText('trans("history.backend.tasks.updated") <strong>{task}</strong>')
+            ->withText('trans("history.backend.tasks.updated")')
             ->withIcon('manage_accounts')
             ->withClass('info')
             ->log();
@@ -49,7 +49,7 @@ class TaskEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->task->id)
-            ->withText('trans("history.backend.tasks.deleted") <strong>{task}</strong>')
+            ->withText('trans("history.backend.tasks.deleted")')
             ->withIcon('person_remove')
             ->withClass('danger')
             ->log();

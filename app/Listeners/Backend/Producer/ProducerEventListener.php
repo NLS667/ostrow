@@ -23,7 +23,7 @@ class ProducerEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->producer->id)
-            ->withText('trans("history.backend.producers.created") <strong>{producer}</strong>')
+            ->withText('trans("history.backend.producers.created") <strong>'.$event->producer->name.'</strong>')
             ->withIcon('person_add')
             ->withClass('success')
             ->log();
@@ -36,7 +36,7 @@ class ProducerEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->producer->id)
-            ->withText('trans("history.backend.producers.updated") <strong>{producer}</strong>')
+            ->withText('trans("history.backend.producers.updated") <strong>'.$event->producer->name.'</strong>')
             ->withIcon('manage_accounts')
             ->withClass('info')
             ->log();
@@ -49,7 +49,7 @@ class ProducerEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->producer->id)
-            ->withText('trans("history.backend.producers.deleted") <strong>{producer}</strong>')
+            ->withText('trans("history.backend.producers.deleted") <strong>'.$event->producer->name.'</strong>')
             ->withIcon('person_remove')
             ->withClass('danger')
             ->log();
