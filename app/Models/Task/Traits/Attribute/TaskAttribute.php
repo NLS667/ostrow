@@ -11,19 +11,7 @@ use App\Models\Client\Client;
  * Class TaskAttribute.
  */
 trait TaskAttribute
-{    
-    /**
-     * @return string
-     */
-    public function getShowButtonAttribute($class)
-    {
-        if (access()->allow('show-task')) {
-            return '<a class="'.$class.'"  data-toggle="tooltip" data-placement="top" title="Zobacz" href="'.route('admin.task.show', $this).'">
-                        <span class="material-icons">visibility</span>
-                    </a>';
-        }
-    }
-
+{  
     /**
      * @return string
      */
@@ -41,7 +29,7 @@ trait TaskAttribute
      */
     public function getDeleteButtonAttribute($class)
     {
-        if ($this->id != access()->id() && access()->allow('delete-task')) {
+        if (access()->allow('delete-task')) {
             $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
             return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.task.destroy', $this).'"
@@ -111,12 +99,12 @@ trait TaskAttribute
         $class = ($counter <= 3) ? 'btn btn-primary btn-flat' : '';
 
         switch ($permissionName) {
-            case 'edit-service':
+            case 'edit-task':
             $button = ($counter <= 3) ? $this->getEditButtonAttribute($class) : '<li>'
             .$this->getEditButtonAttribute($class).
             '</li>';
             break;
-            case 'delete-service':
+            case 'delete-task':
             if (access()->user()->id != $this->id) {
                 $button = ($counter <= 3) ? $this->getDeleteButtonAttribute($class) : '<li>'
                 .$this->getDeleteButtonAttribute($class).
