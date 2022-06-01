@@ -27,6 +27,11 @@ trait ClientAttribute
         return $this->status == 1;
     }
 
+    public function getFullNameAttribute()
+    {
+        return $this->first_name.' '.$this->last_name;
+    }
+
     /**
      * @return string
      */

@@ -21,16 +21,6 @@
     <!-- Right navbar links -->
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
-            <i class="material-icons">messages</i>
-            <span class="notification messages-counter">0</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <span class="dropdown-header">{{ trans_choice('strings.backend.general.you_have.messages', 0, ['number' => 0]) }}</span>
-            <div class="dropdown-divider"></div>
-          </div>
-        </li>
         <li class="nav-item dropdown notifications-menu">
           <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">notifications</i>
