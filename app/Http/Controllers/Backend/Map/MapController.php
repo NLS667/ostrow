@@ -15,7 +15,7 @@ class MapController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::where('status', 1)->get();
         $map_data = [];
 		$map_data['mapMode'] = 'large';
         $map_data['mapHeight'] = 900;
