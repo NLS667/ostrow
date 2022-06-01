@@ -27,7 +27,7 @@ class MapController extends Controller
             foreach($clients as $client)
             {
                 $map_data['markers'][] = (object)[
-                    'name' => $client->name,
+                    'content' => view('backend.map.popup'),
                     'coords' => [$client->adr_lattitude, $client->adr_longitude],
                 ];
             }   
