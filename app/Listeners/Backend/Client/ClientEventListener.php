@@ -31,7 +31,7 @@ class ClientEventListener
             ->withIcon('person_add')
             ->withClass('success')
             ->withAssets([
-                'user_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
+                'client_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
             ])
             ->log();
     }
@@ -47,7 +47,7 @@ class ClientEventListener
             ->withIcon('manage_accounts')
             ->withClass('info')
             ->withAssets([
-                'user_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
+                'client_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
             ])
             ->log();
     }
@@ -63,7 +63,7 @@ class ClientEventListener
             ->withIcon('person_remove')
             ->withClass('danger')
             ->withAssets([
-                'user_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
+                'client_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
             ])
             ->log();
     }
@@ -79,7 +79,7 @@ class ClientEventListener
             ->withIcon('person_add_alt_1')
             ->withClass('info')
             ->withAssets([
-                'user_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
+                'client_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
             ])
             ->log();
     }
@@ -108,7 +108,7 @@ class ClientEventListener
             ->withIcon('person_off')
             ->withClass('warning')
             ->withAssets([
-                'user_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
+                'client_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
             ])
             ->log();
     }
@@ -124,7 +124,7 @@ class ClientEventListener
             ->withIcon('person')
             ->withClass('success')
             ->withAssets([
-                'user_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
+                'client_link' => ['admin.client.show', $event->client->full_name, $event->client->id],
             ])
             ->log();
     }
