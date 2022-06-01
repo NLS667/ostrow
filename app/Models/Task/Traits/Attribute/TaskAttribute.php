@@ -54,6 +54,85 @@ trait TaskAttribute
         return '';
     }
 
+    /**
+     * @return string
+     */
+    
+    public function getActionButtonsAttribute()
+    {
+        // Check if role have all permission
+        if (access()->user()->roles[0]->all) {
+            return '<div class="btn-group action-btn">
+            '.$this->getEditButtonAttribute('btn btn-success btn-flat').'
+            '.$this->getDeleteButtonAttribute('btn btn-danger btn-flat').'
+            </div>';
+        } else {
+            $userPermission = $this->getUserPermission();
+            $permissionCounter = count($userPermission);
+            $actionButton = '<div class="btn-group action-btn">';
+            $i = 1;
+
+            foreach ($userPermission as $value) {
+                if ($i != 3) {
+                    $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
+                }
+
+                if ($i == 3) {
+                    $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
+
+                    if ($permissionCounter > 3) {
+                        $actionButton = $actionButton.'
+                        <div class="btn-group dropup">
+                        <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-option-vertical"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">';
+                    }
+                }
+                $i++;
+            }
+            $actionButton .= '</ul></div></div>';
+
+            return $actionButton;
+        }
+    }
+
+    /**
+     * Get action button attribute by permission name.
+     *
+     * @param string $permissionName
+     * @param int    $counter
+     *
+     * @return string
+     */
+    public function getActionButtonsByPermissionName($permissionName, $counter)
+    {
+        // check if counter is less then 3 then apply button client
+        $class = ($counter <= 3) ? 'btn btn-primary btn-flat' : '';
+
+        switch ($permissionName) {
+            case 'edit-service':
+            $button = ($counter <= 3) ? $this->getEditButtonAttribute($class) : '<li>'
+            .$this->getEditButtonAttribute($class).
+            '</li>';
+            break;
+            case 'delete-service':
+            if (access()->user()->id != $this->id) {
+                $button = ($counter <= 3) ? $this->getDeleteButtonAttribute($class) : '<li>'
+                .$this->getDeleteButtonAttribute($class).
+                '</li>';
+            } else {
+                $button = '';
+            }
+            break;
+            default:
+            $button = '';
+            break;
+        }
+
+        return $button;
+    }
+
     public function getAssigneeNameAttribute()
     {
         $user = User::where('id', $this->assignee_id)->first();
