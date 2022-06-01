@@ -126,7 +126,7 @@
                             return '<span class="badge badge-danger">Nie</a>';
                         }
                     }},
-                    {data: 'services', name: '{{config('service.services_table')}}.name', sortable: false},
+                    {data: 'services', name: 'service_categories.name', sortable: false},
                     {data: 'created_at', name: 'clients.created_at'},
                     {data: 'updated_at', name: 'clients.updated_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
