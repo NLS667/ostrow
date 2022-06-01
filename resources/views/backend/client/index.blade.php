@@ -120,7 +120,7 @@
                     {data: 'email', name: 'clients.email'},
                     {data: 'phone_nr', name: 'clients.phone_nr', sortable: false},                
                     {data: 'status', className: 'text-center', name: 'clients.status', render: function ( data, type, row, meta ) {
-                        if(data=1) {
+                        if(data) {
                             return '<span class="badge badge-success">Tak</a>';
                         } else {
                             return '<span class="badge badge-danger">Nie</a>';

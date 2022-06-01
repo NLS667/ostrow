@@ -34,7 +34,7 @@ class ClientTableController extends Controller
     public function __invoke(ManageClientRequest $request)
     {
         return Datatables::make($this->clients->getForDataTable($request->get('status'), $request->get('trashed')))
-            ->escapeColumns(['id', 'email'])
+            ->escapeColumns(['id'])
             ->editColumn('phone_nr', function ($client) {
                 if(isset($client->phone_nr)){
                     return $client->phone_nr;

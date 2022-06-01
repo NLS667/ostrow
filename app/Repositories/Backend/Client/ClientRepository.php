@@ -51,8 +51,8 @@ class ClientRepository extends BaseRepository
          * be able to differentiate what buttons to show for each row.
          */
         $dataTableQuery = $this->query()
-            ->leftJoin('service_client', 'service_client.client_id', '=', 'clients.id')
-            ->leftJoin('service_categories', 'service_client.servicecat_id', '=', 'service_categories.id')
+            ->leftJoin('service', 'service.client_id', '=', 'clients.id')
+            ->leftJoin('service_categories', 'service.service_cat_id', '=', 'service_categories.id')
             ->select([
                 config('clients.clients_table').'.id',
                 config('clients.clients_table').'.first_name',
