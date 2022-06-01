@@ -63,7 +63,7 @@ class ClientRepository extends BaseRepository
                 config('clients.clients_table').'.created_at',
                 config('clients.clients_table').'.updated_at',
                 config('clients.clients_table').'.deleted_at',
-                DB::raw('GROUP_CONCAT(service_categories.name SEPARATOR ', ') as services'),
+                DB::raw('GROUP_CONCAT(service_categories.name SEPARATOR "<br>") as services'),
             ])
             ->groupBy('clients.id');
 
