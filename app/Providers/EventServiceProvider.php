@@ -7,6 +7,12 @@ use App\Listeners\Frontend\Auth\UserEventListener;
 use App\Listeners\Backend\Access\User\UserAccessEventListener;
 use App\Listeners\Backend\Access\Role\RoleEventListener;
 use App\Listeners\Backend\Access\Permission\PermissionEventListener;
+use App\Listeners\Backend\Client\ClientEventListener;
+use App\Listeners\Backend\Model\ModelEventListener;
+use App\Listeners\Backend\Producer\ProducerEventListener;
+use App\Listeners\Backend\Service\ServiceEventListener;
+use App\Listeners\Backend\ServiceCategory\ServiceCategoryEventListener;
+use App\Listeners\Backend\Task\TaskEventListener;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
@@ -38,6 +44,13 @@ class EventServiceProvider extends ServiceProvider
         UserAccessEventListener::class,
         RoleEventListener::class,
         PermissionEventListener::class,
+
+        ClientEventListener::class,
+        ModelEventListener::class,
+        ProducerEventListener::class,
+        ServiceEventListener::class,
+        ServiceCategoryEventListener::class,
+        TaskEventListener::class,
     ];
 
     /**
