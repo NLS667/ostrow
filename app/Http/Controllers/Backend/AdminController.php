@@ -19,8 +19,13 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::where('status', 1)->get();
         $data['clientCount'] = $clients->count();
+
+        $new_tasks = Task::where('status', 0)->where('created_at', '>=', Carbon::now()->subDay()->toDateTimeString())->get();
+        $finished_tasks = Task::where('status', 3)->where('updated_at', '>=', Carbon::now()->subDay()->toDateTimeString())->get();
+        $data['newTaskCount'] = $new_tasks->count();
+        $data['finishedTaskCount'] = $finished_tasks->count();
 
         $map_data = [];
         $map_data['mapMode'] = 'large';
@@ -34,7 +39,7 @@ class AdminController extends Controller
             foreach($clients as $client)
             {
                 $map_data['markers'][] = (object)[
-                    'name' => $client->name,
+                    'content' => view('backend.map.popup')->with('client', $client)->render(),
                     'coords' => [$client->adr_lattitude, $client->adr_longitude],
                 ];
             }   
