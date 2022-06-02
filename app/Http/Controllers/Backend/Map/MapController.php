@@ -26,16 +26,11 @@ class MapController extends Controller
         {
             foreach($clients as $client)
             {
-                $services = Service::where('client_id', $client->id);
-                foreach($services as $service)
-                {
-                    $type = ServiceCategory::where('id', $service->service_cat_id);
-                    $map_data['markers'][] = (object)[
-                        'content' => view('backend.map.popup')->with(['client'=>$client, 'service'=>$service])->render(),
-                        'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                    ];
-                }
-            }   
+                $map_data['markers'][] = (object)[
+                    'content' => view('backend.map.popup')->with('client', $client)->render(),
+                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                ];
+            }  
         } 
         return view('backend.map.index')->with('map_data', $map_data);
     }
