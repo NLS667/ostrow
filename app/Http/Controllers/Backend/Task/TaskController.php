@@ -110,7 +110,7 @@ class TaskController extends Controller
      */
     public function update(Task $task, UpdateTaskRequest $request)
     {
-        $this->tasks->update($task, $request);
+        $this->tasks->update($task, $request->all());
 
         return new RedirectResponse(route('admin.task.index'), ['flash_success' => trans('alerts.backend.tasks.updated')]);
     }
