@@ -85,8 +85,8 @@
             Backend.Task.init();
             md.initFormExtendedDatetimepickers();
 
-            $("#input-start").datepicker("setValue", task['start']);
-            $("#input-end").datepicker("setValue", task['end']);
+            $("#input-start").datetimepicker("setValue", task['start']);
+            $("#input-end").datetimepicker("setValue", task['end']);
         });
 
     </script>
