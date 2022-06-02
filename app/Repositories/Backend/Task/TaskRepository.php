@@ -208,14 +208,19 @@ class TaskRepository extends BaseRepository
         $client = Client::where('id', $service->client_id)->first();
         $task->title = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
         $task->assignee_id = $input['assignee_id'];
-        //$assignee = \User::where('id', $input['assignee_id'])->first();
-        $task->status = isset($input['status']) ? $input['status'] : 0;
-
+        
         $task->start = Carbon::parse($input['start']);
         $enddate = Carbon::parse($input['start']);
-        $enddate->addHours(3);
-        \Log::info($enddate);
+        $enddate->addHours(4);
         $task->end = isset($input['end']) ? Carbon::parse($input['end']) : $enddate;
+
+        if(Carbon::now() >= $task->start){
+            $task->status = 2;
+        } else if(Carbon::now() <= $task->start->subDays(30)){
+            $task->status = 0;
+        } else {
+            $task->status = 1;
+        }
         $task->created_by = access()->user()->id;
 
         return $task;
