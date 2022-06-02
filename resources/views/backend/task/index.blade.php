@@ -118,12 +118,16 @@
                     {data: 'start', name: 'tasks.start'},
                     {data: 'end', name: 'tasks.end'},
                     {data: 'status', render: function ( data, type, row, meta ) {
-                        if(data=1) {
-                            return '<span class="badge badge-warning">Nadchodzące</a>';
-                        } else if(data=2) {
-                            return '<span class="badge badge-danger">Po terminie</a>';
-                        } else {
-                            return '<span class="badge badge-success">Oczekujące</a>';
+                        switch (data) {
+                            case '0':
+                                output = '<span class="badge badge-success">Oczekujące</a>';
+                                break;
+                            case '1':
+                                output = '<span class="badge badge-warning">Nadchodzące</a>';
+                                break;
+                            case '2':
+                                output = '<span class="badge badge-danger">Po terminie</a>';
+                                break;
                         }
                     }},
                     {data: 'created_at', name: 'tasks.created_at'},
