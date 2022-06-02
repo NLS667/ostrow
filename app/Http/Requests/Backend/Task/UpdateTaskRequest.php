@@ -28,9 +28,10 @@ class UpdateTaskRequest extends Request
     public function rules()
     {
         return [
-            'title'              => 'required|max:191',
-            'description'        => 'nullable|max:191',
-            'start'              => 'required'
+            'service_id'         => 'required',
+            'assignee_id'        => 'required',
+            'start'              => 'required',
+            'end'                => 'nullable'
         ];
     }
 
