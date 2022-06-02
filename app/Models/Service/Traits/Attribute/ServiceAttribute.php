@@ -2,6 +2,9 @@
 
 namespace App\Models\Service\Traits\Attribute;
 
+use App\Models\Client\Client;
+use App\Models\ServiceCategory\ServiceCategory;
+
 /**
  * Class ServiceAttribute.
  */
