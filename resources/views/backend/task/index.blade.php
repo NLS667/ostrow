@@ -119,6 +119,7 @@
                     {data: 'end', name: 'tasks.end'},
                     {data: 'status', render: function ( data, type, row, meta ) {
                         let output = '';
+                        console.log(typeof data);
                         switch (data) {
                             case '0':
                                 output = '<span class="badge badge-success">Oczekujące</a>';
