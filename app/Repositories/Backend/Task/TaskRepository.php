@@ -170,7 +170,7 @@ class TaskRepository extends BaseRepository
 
         switch ($status) {
             case 0:
-                event(new TaskSoon($task));
+                event(new TaskPlanned($task));
             break;
 
             case 1:
@@ -178,12 +178,9 @@ class TaskRepository extends BaseRepository
             break;
 
             case 2:
-                event(new TaskFinished($task));
+                event(new TaskOvertime($task));
             break;
 
-            case 3:
-                event(new TaskLate($task));
-            break;
         }
 
         if ($task->save()) {
@@ -208,7 +205,7 @@ class TaskRepository extends BaseRepository
         $client = Client::where('id', $service->client_id)->first();
         $task->title = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
         $task->assignee_id = $input['assignee_id'];
-        
+
         $task->start = Carbon::parse($input['start']);
         $enddate = Carbon::parse($input['start']);
         $enddate->addHours(4);

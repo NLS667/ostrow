@@ -121,7 +121,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task, DeleteTaskRequest $request)
     {
-        $this->clients->delete($task);
+        $this->tasks->delete($task);
 
         return new RedirectResponse(route('admin.task.index'), ['flash_success' => trans('alerts.backend.tasks.deleted')]);
     }
