@@ -17,6 +17,7 @@
                 return {
                     map: null,
                     pins: [],
+                    layers: [],
                 }
         },
         mounted() {
@@ -24,6 +25,7 @@
         	var lf = this;
         	if ($('#leaflet-map').length) {
         		lf.initMap();
+                lf.createLayers();
             	lf.initMarkers();
 			}
         },
@@ -40,6 +42,7 @@
                     sleepButton: L.Control.sleepMapControl,
                     sleepOpacity: .7
                 }).setView([51.919438, 19.145136], this.data.mapZoom);
+
                 this.tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     maxZoom: 17,
                     attribution: 'Tiles courtesy of <a href="http://openstreetmap.org/" target="_blank">OpenStreetMap</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -52,6 +55,21 @@
                     this.pins.push(marker);
                 })
 
+                this.data.layers.forEach((layer) => {
+                    let data = [];
+                    layer.markers.forEach((marker) => {
+                        marker.leafletObject = L.marker(marker.coords).bindPopup(marker.content);
+                        data['markers'].push(marker);
+                    });
+                    data['name'] = layer.name
+                    this.layers.push(data);
+                })
+
+                this.layers.forEach((layer) => {
+                    var layerGroup = L.layerGroup(layer.markers);
+                    layerControl.addOverlay(layerGroup, layer.name);
+                })
+
                 this.pins.forEach((pin) => {
                     pin.leafletObject = L.marker(pin.coords).bindPopup(pin.content);
                     pin.leafletObject.addTo(this.clients_map);
@@ -59,6 +77,15 @@
                         this.centerLeafletMapOnMarker(this.clients_map, pin.leafletObject)
                     } 
                 })        
+            },
+            createLayers() {
+                this.data.layers.forEach((layer) => {
+                    this.layers.push(layer);
+                })
+
+                this.layers.forEach((layer) => {
+                    
+                }) 
             },
             centerLeafletMapOnMarker(map, marker){
                 var latLngs = [ marker.getLatLng() ];

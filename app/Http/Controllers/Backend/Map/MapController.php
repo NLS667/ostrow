@@ -21,17 +21,34 @@ class MapController extends Controller
         $map_data['mapHeight'] = 900;
         $map_data['mapZoom'] = 7;
         $map_data['markers'] = [];
+        $map_data['layers'] = [];
 
         if($clients->count() > 0)
         {
             foreach($clients as $client)
             {
+                $services = Service::where('client_id', $client->id);
+
+                foreach($services as $service){
+                    $key = $service->service_cat_id;
+                    $value = $service->service_type;
+                    $map_data['layers'][$key]['name'] = $value;
+
+                    if($client->id == $service->client_id){
+                        $map_data['layers'][$key]['markers'][] = (object)[
+                            'content' => view('backend.map.popup')->with('client', $client)->render(),
+                            'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                        ];
+                    }
+                }
+
                 $map_data['markers'][] = (object)[
                     'content' => view('backend.map.popup')->with('client', $client)->render(),
                     'coords' => [$client->adr_lattitude, $client->adr_longitude],
                 ];
             }  
         } 
+        \Log::info(json_encode($map_data));
         return view('backend.map.index')->with('map_data', $map_data);
     }
 }
