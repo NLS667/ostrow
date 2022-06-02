@@ -67,7 +67,7 @@ return [
             'deleted' => 'usunął producenta.',
             'updated' => 'zaktualizował producenta.',
         ],
-        'tasks_table' => [
+        'tasks' => [
             'created' => 'utworzył zadanie.',
             'deleted' => 'usunął zadanie.',
             'updated' => 'zaktualizował zadanie.',
