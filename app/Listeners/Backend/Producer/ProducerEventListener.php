@@ -32,7 +32,7 @@ class ProducerEventListener
     /**
      * @param $event
      */
-    public function onUpdated(ClientUpdated $event)
+    public function onUpdated(ProducerUpdated $event)
     {
         history()->withType($this->history_slug)
             ->withEntity($event->producer->id)

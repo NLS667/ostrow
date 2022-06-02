@@ -32,7 +32,7 @@ class ModelEventListener
     /**
      * @param $event
      */
-    public function onUpdated(ClientUpdated $event)
+    public function onUpdated(ModelUpdated $event)
     {
         history()->withType($this->history_slug)
             ->withEntity($event->model->id)

@@ -32,7 +32,7 @@ class ServiceCategoryEventListener
     /**
      * @param $event
      */
-    public function onUpdated(ClientUpdated $event)
+    public function onUpdated(ServiceCategoryUpdated $event)
     {
         history()->withType($this->history_slug)
             ->withEntity($event->serviceCategory->id)
