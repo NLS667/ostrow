@@ -290,16 +290,17 @@ md = {
   initFormExtendedDatetimepickers: function() {
     $('.datetimepicker').datetimepicker({
       locale: 'pl',
+      format: 'YYYY-MM-DD H:mm',
       icons: {
-        time: "fa fa-clock-o",
-        date: "fa fa-calendar",
-        up: "fa fa-chevron-up",
-        down: "fa fa-chevron-down",
-        previous: 'fa fa-chevron-left',
-        next: 'fa fa-chevron-right',
-        today: 'fa fa-screenshot',
-        clear: 'fa fa-trash',
-        close: 'fa fa-remove'
+        time: "fas fa-clock",
+        date: "fas fa-calendar",
+        up: "fas fa-chevron-up",
+        down: "fas fa-chevron-down",
+        previous: 'fas fa-chevron-left',
+        next: 'fas fa-chevron-right',
+        today: 'fas fa-crosshairs',
+        clear: 'fas fa-trash',
+        close: 'fas fa-times'
       }
     });
     $('.datetimepicker').on('dp.change', function(e){   
@@ -310,19 +311,18 @@ md = {
       locale: 'pl',
       format: 'DD-MM-YYYY',
       icons: {
-        time: "fa fa-clock-o",
-        date: "fa fa-calendar",
-        up: "fa fa-chevron-up",
-        down: "fa fa-chevron-down",
-        previous: 'fa fa-chevron-left',
-        next: 'fa fa-chevron-right',
-        today: 'fa fa-screenshot',
-        clear: 'fa fa-trash',
-        close: 'fa fa-remove'
+        time: "fas fa-clock",
+        date: "fas fa-calendar",
+        up: "fas fa-chevron-up",
+        down: "fas fa-chevron-down",
+        previous: 'fas fa-chevron-left',
+        next: 'fas fa-chevron-right',
+        today: 'fas fa-crosshairs',
+        clear: 'fas fa-trash',
+        close: 'fas fa-times'
       }
     });
     $('.datepicker').on('dp.change', function(e){
-      console.log('date changed');
         $(this).parent().addClass('is-filled'); 
     });
 
@@ -331,15 +331,15 @@ md = {
       format: 'H:mm',    // use this format if you want the 24hours timepicker
       //format: 'h:mm A',// use this format if you want the 12hours timpiecker with AM/PM toggle
       icons: {
-        time: "fa fa-clock-o",
-        date: "fa fa-calendar",
-        up: "fa fa-chevron-up",
-        down: "fa fa-chevron-down",
-        previous: 'fa fa-chevron-left',
-        next: 'fa fa-chevron-right',
-        today: 'fa fa-screenshot',
-        clear: 'fa fa-trash',
-        close: 'fa fa-remove'
+        time: "fas fa-clock",
+        date: "fas fa-calendar",
+        up: "fas fa-chevron-up",
+        down: "fas fa-chevron-down",
+        previous: 'fas fa-chevron-left',
+        next: 'fas fa-chevron-right',
+        today: 'fas fa-crosshairs',
+        clear: 'fas fa-trash',
+        close: 'fas fa-times'
 
       }
     })
