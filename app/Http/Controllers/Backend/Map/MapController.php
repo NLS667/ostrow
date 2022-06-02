@@ -46,16 +46,16 @@ class MapController extends Controller
 
                 foreach($services as $service){
                     $catid = $service->service_cat_id;
-                    $map_data['layers'][$catid]['markers'] = (object)[
+                    $map_data['layers'][$catid]->markers = (object)[
                         'content' => view('backend.map.popup')->with('client', $client)->render(),
                         'coords' => [$client->adr_lattitude, $client->adr_longitude],
                     ];
                 }
 
-                $map_data['markers'][] = (object)[
-                    'content' => view('backend.map.popup')->with('client', $client)->render(),
-                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                ];
+                //$map_data['markers'][] = (object)[
+                //    'content' => view('backend.map.popup')->with('client', $client)->render(),
+                //    'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                //];
             }  
         } 
         \Log::info(json_encode($map_data));
