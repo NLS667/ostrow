@@ -84,6 +84,9 @@
         Backend.Utils.documentReady(function(){
             Backend.Task.init();
             md.initFormExtendedDatetimepickers();
+
+            $("#input-start").datepicker("update");
+            $("#input-end").datepicker("update");
         });
 
     </script>
