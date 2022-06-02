@@ -12,9 +12,11 @@ class EditResponse implements Responsable
     /**
      * @param \App\Models\Task\Task $task
      */
-    public function __construct($task)
+    public function __construct($task, $services, $users)
     {
         $this->task = $task;
+        $this->services = $services;
+        $this->assignees = $users;
     }
 
     /**
@@ -28,6 +30,8 @@ class EditResponse implements Responsable
     {
         return view('backend.task.edit')->with([
             'task'                => $this->task,
+            'services'            => $this->services,
+            'assignees'           => $this->assignees,
         ]);
     }
 }

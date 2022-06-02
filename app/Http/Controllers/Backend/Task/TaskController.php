@@ -97,7 +97,9 @@ class TaskController extends Controller
      */
     public function edit(Task $task, EditTaskRequest $request)
     {
-        return new EditResponse($task);
+        $services = $this->services->getAll();
+        $users = $this->users->getAll();
+        return new EditResponse($task, $services, $users);
     }
 
     /**
