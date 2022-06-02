@@ -47,6 +47,7 @@ class MapController extends Controller
 
                 foreach($services as $service){
                     $catid = $service->service_cat_id;
+                    $client_markers = [];
                     $client_markers[] = (object)[
                         'content' => view('backend.map.popup')->with('client', $client)->render(),
                         'coords' => [$client->adr_lattitude, $client->adr_longitude],
