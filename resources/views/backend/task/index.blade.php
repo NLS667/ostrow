@@ -118,15 +118,16 @@
                     {data: 'start', name: 'tasks.start'},
                     {data: 'end', name: 'tasks.end'},
                     {data: 'status', render: function ( data, type, row, meta ) {
+                        let output = '';
                         switch (data) {
                             case '0':
-                                let output = '<span class="badge badge-success">Oczekujące</a>';
+                                output = '<span class="badge badge-success">Oczekujące</a>';
                                 break;
                             case '1':
-                                let output = '<span class="badge badge-warning">Nadchodzące</a>';
+                                output = '<span class="badge badge-warning">Nadchodzące</a>';
                                 break;
                             case '2':
-                                let output = '<span class="badge badge-danger">Po terminie</a>';
+                                output = '<span class="badge badge-danger">Po terminie</a>';
                                 break;
                         }
 
