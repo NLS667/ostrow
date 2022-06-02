@@ -51,7 +51,6 @@
                 this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
-                console.log(this.data.layers);
                 this.data.layers.forEach((layer) => {
                     this.layerData.push(layer);
                 })
@@ -66,15 +65,14 @@
                     });
 
                     layer_data.name = layerD.name;
-                    console.log(layer_data);
                     
                     this.layerMarkers.push(layer_data);
                 })
-
-                //this.layerMarkers.forEach((lm) => {
-                //    var layerGroup = L.layerGroup(lm.markers);
-                //    layerControl.addOverlay(layerGroup, lm.name);
-                //})
+                console.log(this.layerMarkers);
+                this.layerMarkers.forEach((lm) => {
+                    var layerGroup = L.layerGroup(lm.markers);
+                    layerControl.addOverlay(layerGroup, lm.name);
+                })
 
                 this.pins.forEach((pin) => {
                     pin.leafletObject = L.marker(pin.coords).bindPopup(pin.content);
