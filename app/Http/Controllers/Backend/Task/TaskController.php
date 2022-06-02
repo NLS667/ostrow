@@ -103,7 +103,7 @@ class TaskController extends Controller
     }
 
     /**
-     * @param \App\Models\Access\Task\Task                             $task
+     * @param \App\Models\Task\Task                             $task
      * @param \App\Http\Requests\Backend\Task\UpdateTaskRequest        $request
      *
      * @return \App\Http\Responses\RedirectResponse
@@ -116,7 +116,7 @@ class TaskController extends Controller
     }
 
     /**
-     * @param \App\Models\Access\Task\Task                             $task
+     * @param \App\Models\Task\Task                             $task
      * @param \App\Http\Requests\Backend\Task\DeleteTaskRequest        $request
      *
      * @return \App\Http\Responses\RedirectResponse
@@ -150,7 +150,6 @@ class TaskController extends Controller
 
         $tasks->makeHidden(['created_at', 'updated_at','created_by','updated_by']);
         
-        \Log::info($tasks);
         return response()->json($tasks);
     }
 }
