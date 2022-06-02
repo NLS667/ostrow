@@ -18,6 +18,7 @@
                     map: null,
                     pins: [],
                     layerData: [],
+                    layerMarkers: [],
                 }
         },
         mounted() {
@@ -59,17 +60,14 @@
                     layer_data.markers = [];
 
                     layerD.markers.forEach((marker) => {
-                        marker.leafletObject = L.marker(marker.coords).bindPopup(marker.content);
-                        
+                        marker.leafletObject = L.marker(marker.coords).bindPopup(marker.content);                        
                         layer_data.markers.push(marker);
-                        data.push(layer);
                     });
 
                     layer_data.name = layerD.name;
                     console.log(layer_data);
                     
-                //    data.name = layer.name;
-                //    this.layerMarkers.push(data);
+                    this.layerMarkers.push(layer_data);
                 })
 
                 //this.layerMarkers.forEach((lm) => {
