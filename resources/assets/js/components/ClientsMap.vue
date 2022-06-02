@@ -50,29 +50,26 @@
                 this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
-                this.data.markers.forEach((marker) => {
-                    this.pins.push(marker);
-                })
-
+                console.log(this.data);
                 this.data.layers.forEach((layer) => {
                     this.layerData.push(layer);
                 })
 
-                this.layerData.forEach((layerD) => {
-                    let data = [];
-                    console.log(layerD);
-                    layerD.markers.forEach((marker) => {
-                        marker.leafletObject = L.marker(marker.coords).bindPopup(marker.content);
-                        data['markers'].push(marker);
-                    });
-                    data['name'] = layer.name
-                    this.layerMarkers.push(data);
-                })
+                //this.layerData.forEach((layerD) => {
+                //    let data = [];
+                    
+                //    layerD.markers.forEach((marker) => {
+                //        marker.leafletObject = L.marker(marker.coords).bindPopup(marker.content);
+                //        data['markers'].push(marker);
+                //    });
+                //    data['name'] = layer.name
+                //    this.layerMarkers.push(data);
+                //})
 
-                this.layerMarkers.forEach((lm) => {
-                    var layerGroup = L.layerGroup(lm.markers);
-                    layerControl.addOverlay(layerGroup, lm.name);
-                })
+                //this.layerMarkers.forEach((lm) => {
+                //    var layerGroup = L.layerGroup(lm.markers);
+                //    layerControl.addOverlay(layerGroup, lm.name);
+                //})
 
                 this.pins.forEach((pin) => {
                     pin.leafletObject = L.marker(pin.coords).bindPopup(pin.content);
