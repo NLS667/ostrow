@@ -87,21 +87,13 @@ class ClientRepository extends BaseRepository
         DB::transaction(function () use ($client, $data) {
             if ($client->save()) {
 
-                //Client Created, Validate Roles
-                //if (!count($roles)) {
-                //    throw new GeneralException(trans('exceptions.backend.access.users.role_needed_create'));
-                //}
-
-                //Attach new roles
-                //$client->attachService($services);
-
-                // Attach New Permissions
-                //$client->attachTasks($tasks);
-
-                //Send confirmation email if requested and account approval is off
-                //if (isset($data['confirmation_email']) && $user->confirmed == 0) {
-                 //   $user->notify(new UserNeedsConfirmation($user->confirmation_code));
-                //}
+                //Create folder for client related files
+                $dir = storage_path('app/public/'.$client->full_name.'/');
+                
+                // Make sure the storage path exists and writeable
+                if (!is_writable($dir)) {
+                    mkdir($dir, 0644, true);
+                }
 
                 event(new ClientCreated($client));
 
