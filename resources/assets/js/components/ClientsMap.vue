@@ -55,15 +55,18 @@
                 })
                 
                 this.layerData.forEach((layerD) => {
-                    let data = {};
+                    let data = [];
                     
                     layerD.markers.forEach((marker) => {
                         marker.leafletObject = L.marker(marker.coords).bindPopup(marker.content);
-                        console.log(marker);
-                        //data['markers'].push(marker);
+                        
+                        let layer.markers.push(marker);
+                        layer.name = layerD.name;
+                        data.push(layer);
                     });
+                        console.log(data);
                     
-                //    data['name'] = layer.name
+                //    data.name = layer.name;
                 //    this.layerMarkers.push(data);
                 })
 
