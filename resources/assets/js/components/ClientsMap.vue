@@ -83,9 +83,13 @@
                     this.layerMarkers.push(layer_data);
                 })
                 console.log(this.layerMarkers);
-                this.layerMarkers.forEach((lm) => {
+                var first = true;
+                this.layerMarkers.forEach((lm) => {                    
                     var layerGroup = L.layerGroup(lm.markers);
-                    layerGroup.addTo(this.clients_map);
+                    if(first){
+                        layerGroup.addTo(this.clients_map);
+                        first = false;
+                    }                    
                     this.layerControl.addOverlay(layerGroup, lm.name);
                 })
 
