@@ -50,6 +50,7 @@ class MapController extends Controller
                         'content' => view('backend.map.popup')->with('client', $client)->render(),
                         'coords' => [$client->adr_lattitude, $client->adr_longitude],
                     ];
+                    \Log::info(json_encode($client_markers));
                     $map_data['layers'][$catid]->markers = $client_markers;
                 }
 
