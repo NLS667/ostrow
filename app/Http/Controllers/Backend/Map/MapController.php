@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Client\Client;
 use App\Models\Service\Service;
+use App\Models\ServiceCategory\ServiceCategory;
 
 class MapController extends Controller
 {
@@ -24,6 +25,19 @@ class MapController extends Controller
         $map_data['markers'] = [];
         $map_data['layers'] = [];
 
+        $serviceCategories = ServiceCategory::all();
+
+        if($serviceCategories->count() > 0)
+        {
+            foreach($serviceCategories as $category)
+            {
+                $map_data['layers'][$category->id] = (object)[
+                    'name' => $category->name,
+                    'markers' => [],
+                ];
+            }
+        }
+
         if($clients->count() > 0)
         {
             foreach($clients as $client)
@@ -31,12 +45,10 @@ class MapController extends Controller
                 $services = Service::where('client_id', $client->id);
 
                 foreach($services as $service){
-                    $key = $service->service_cat_id;
-                    $value = $service->service_type;
-                    $map_data['layers'][$key]['name'] = $value;
-
+                    $catid = $service->service_cat_id;
+                    
                     if($client->id == $service->client_id){
-                        $map_data['layers'][$key]['markers'][] = (object)[
+                        $map_data['layers'][$catid]['markers'][] = (object)[
                             'content' => view('backend.map.popup')->with('client', $client)->render(),
                             'coords' => [$client->adr_lattitude, $client->adr_longitude],
                         ];
