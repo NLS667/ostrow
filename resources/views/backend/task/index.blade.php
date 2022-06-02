@@ -120,13 +120,13 @@
                     {data: 'status', render: function ( data, type, row, meta ) {
                         switch (data) {
                             case '0':
-                                output = '<span class="badge badge-success">Oczekujące</a>';
+                                let output = '<span class="badge badge-success">Oczekujące</a>';
                                 break;
                             case '1':
-                                output = '<span class="badge badge-warning">Nadchodzące</a>';
+                                let output = '<span class="badge badge-warning">Nadchodzące</a>';
                                 break;
                             case '2':
-                                output = '<span class="badge badge-danger">Po terminie</a>';
+                                let output = '<span class="badge badge-danger">Po terminie</a>';
                                 break;
                         }
 
