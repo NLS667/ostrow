@@ -115,5 +115,13 @@ trait ServiceAttribute
 
         return $button;
     }
+
+    public function getServiceNameAttribute()
+    {
+        $client = Client::where('id', $this->client_id)->first();
+        $service_type = ServiceCategory::where('id', $this->service_cat_id)->first();
+        $service_name = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
+        return $service_name;
+    }
     
 }
