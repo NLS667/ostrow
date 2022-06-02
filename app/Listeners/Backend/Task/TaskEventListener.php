@@ -32,7 +32,7 @@ class TaskEventListener
     /**
      * @param $event
      */
-    public function onUpdated(ClientUpdated $event)
+    public function onUpdated(TaskUpdated $event)
     {
         history()->withType($this->history_slug)
             ->withEntity($event->task->id)
