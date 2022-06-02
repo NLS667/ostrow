@@ -48,7 +48,7 @@
                 {{-- Start Date --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('start') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Data rozpoczęcia zadania</label>
-                  <input class="form-control datetimepicker" name="start" id="input-start" type="text" value="{{ old('start', $task->start->format('Y.m.d H:mm');) }}" />
+                  <input class="form-control datetimepicker" name="start" id="input-start" type="text" value="{{ old('start', $task->start->format('Y.m.d H:mm')) }}" />
                   @if ($errors->has('start'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="start-error" class="error text-danger" for="input-start">{{ $errors->first('start') }}</span>
