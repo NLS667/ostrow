@@ -50,21 +50,20 @@
                 this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
-                console.log(this.data.layers);
                 this.data.layers.forEach((layer) => {
                     this.layerData.push(layer);
                 })
-                console.log(this.layerData);
-                //this.layerData.forEach((layerD) => {
+                
+                this.layerData.forEach((layerD) => {
                 //    let data = [];
-                    
+                        console.log(layerD);
                 //    layerD.markers.forEach((marker) => {
                 //        marker.leafletObject = L.marker(marker.coords).bindPopup(marker.content);
                 //        data['markers'].push(marker);
                 //    });
                 //    data['name'] = layer.name
                 //    this.layerMarkers.push(data);
-                //})
+                })
 
                 //this.layerMarkers.forEach((lm) => {
                 //    var layerGroup = L.layerGroup(lm.markers);
