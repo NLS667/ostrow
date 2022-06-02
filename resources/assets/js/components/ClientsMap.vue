@@ -68,7 +68,7 @@
 
                     layerD.markers.forEach((marker) => {
                         marker.leafletObject = L.marker(marker.coords).bindPopup(marker.content);                        
-                        layer_data.markers.push(marker);
+                        layer_data.markers.push(marker.leafletObject);
                     });
 
                     layer_data.name = layerD.name;
