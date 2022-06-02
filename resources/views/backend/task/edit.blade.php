@@ -48,7 +48,7 @@
                 {{-- Start Date --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('start') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Data rozpoczęcia zadania</label>
-                  <input class="form-control datetimepicker" name="start" id="input-start" type="text" value="{{ old('start', $task->start) }}" />
+                  <input class="form-control datetimepicker" name="start" id="input-start" type="text" value="{{ old('start', $task->start->toDateTimeString()) }}" />
                   @if ($errors->has('start'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="start-error" class="error text-danger" for="input-start">{{ $errors->first('start') }}</span>
@@ -59,7 +59,7 @@
                 {{-- End Date --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('end') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Data zakończenia zadania</label>
-                  <input class="form-control datetimepicker" name="end" id="input-end" type="text" value="{{ old('end', $task->end) }}" />
+                  <input class="form-control datetimepicker" name="end" id="input-end" type="text" value="{{ old('end', $task->end->toDateTimeString()) }}" />
                   @if ($errors->has('end'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="end-error" class="error text-danger" for="input-end">{{ $errors->first('end') }}</span>
