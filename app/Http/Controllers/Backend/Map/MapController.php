@@ -58,8 +58,7 @@ class MapController extends Controller
                 //    'coords' => [$client->adr_lattitude, $client->adr_longitude],
                 //];
             }  
-        } 
-        \Log::info(json_encode($map_data));
+        }
         return view('backend.map.index')->with('map_data', $map_data);
     }
 }

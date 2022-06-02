@@ -57,6 +57,7 @@
 
                 this.data.layers.forEach((layer) => {
                     let data = [];
+                    console.log(layer);
                     layer.markers.forEach((marker) => {
                         marker.leafletObject = L.marker(marker.coords).bindPopup(marker.content);
                         data['markers'].push(marker);
