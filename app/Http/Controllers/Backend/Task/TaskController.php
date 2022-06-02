@@ -99,6 +99,7 @@ class TaskController extends Controller
     {
         $services = $this->services->getAll();
         $users = $this->users->getAll();
+        \Log::info(json_encode($task));
         return new EditResponse($task, $services, $users);
     }
 
