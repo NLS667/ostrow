@@ -85,16 +85,17 @@
                 console.log(this.layerMarkers);
                 this.layerMarkers.forEach((lm) => {
                     var layerGroup = L.layerGroup(lm.markers);
+                    layerGroup.addTo(this.clients_map);
                     this.layerControl.addOverlay(layerGroup, lm.name);
                 })
 
-                this.pins.forEach((pin) => {
-                    pin.leafletObject = L.marker(pin.coords).bindPopup(pin.content);
-                    pin.leafletObject.addTo(this.clients_map);
-                    if(this.data.mapMode == 'small'){
-                        this.centerLeafletMapOnMarker(this.clients_map, pin.leafletObject)
-                    } 
-                })        
+                //this.pins.forEach((pin) => {
+                //    pin.leafletObject = L.marker(pin.coords).bindPopup(pin.content);
+                //    pin.leafletObject.addTo(this.clients_map);
+                //    if(this.data.mapMode == 'small'){
+                //        this.centerLeafletMapOnMarker(this.clients_map, pin.leafletObject)
+                //    } 
+                //})        
             },
             centerLeafletMapOnMarker(map, marker){
                 var latLngs = [ marker.getLatLng() ];
