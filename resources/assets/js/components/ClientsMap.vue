@@ -25,7 +25,6 @@
         	var lf = this;
         	if ($('#leaflet-map').length) {
         		lf.initMap();
-                lf.createLayers();
             	lf.initMarkers();
 			}
         },
@@ -78,15 +77,6 @@
                         this.centerLeafletMapOnMarker(this.clients_map, pin.leafletObject)
                     } 
                 })        
-            },
-            createLayers() {
-                this.data.layers.forEach((layer) => {
-                    this.layers.push(layer);
-                })
-
-                this.layers.forEach((layer) => {
-                    
-                }) 
             },
             centerLeafletMapOnMarker(map, marker){
                 var latLngs = [ marker.getLatLng() ];
