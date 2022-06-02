@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Map;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Client\Client;
+use App\Models\Service\Service;
 
 class MapController extends Controller
 {
