@@ -31,7 +31,8 @@ class MapController extends Controller
         {
             foreach($serviceCategories as $category)
             {
-                $map_data['layers'][$category->id] = (object)[
+                $map_data['layers'][] = (object)[
+                    'id' => $category->id,
                     'name' => $category->name,
                     'markers' => [],
                 ];
@@ -50,7 +51,12 @@ class MapController extends Controller
                         'content' => view('backend.map.popup')->with('client', $client)->render(),
                         'coords' => [$client->adr_lattitude, $client->adr_longitude],
                     ];
-                    $map_data['layers'][$catid]->markers = $client_markers;
+
+                    foreach($map_data['layers'] as $layer){
+                        if($layer->id == $catid){
+                            $layer->markers = $client_markers;
+                        }
+                    }
                 }
 
                 $map_data['markers'][] = (object)[
