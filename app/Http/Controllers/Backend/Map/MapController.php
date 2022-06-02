@@ -53,10 +53,10 @@ class MapController extends Controller
                     $map_data['layers'][$catid]->markers = $client_markers;
                 }
 
-                //$map_data['markers'][] = (object)[
-                //    'content' => view('backend.map.popup')->with('client', $client)->render(),
-                //    'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                //];
+                $map_data['markers'][] = (object)[
+                    'content' => view('backend.map.popup')->with('client', $client)->render(),
+                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                ];
             }  
         }
         return view('backend.map.index')->with('map_data', $map_data);
