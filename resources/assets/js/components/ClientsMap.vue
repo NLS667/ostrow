@@ -43,6 +43,13 @@
                     "OpenStreetMap": this.tileLayer
                 };
 
+                var overlays = {};
+
+                var options = {
+                    "collapsed": false,
+                    "hideSingleBase": true
+                };
+
                 this.clients_map = L.map('leaflet-map', {
                     sleep: true,
                     hoverToWake: false,
@@ -53,7 +60,7 @@
                     layers: [this.tileLayer]
                 }).setView([51.919438, 19.145136], this.data.mapZoom);
 
-                this.layerControl = L.control.layers(baseMaps,).addTo(this.clients_map);
+                this.layerControl = L.control.layers(baseMaps, overlays, options).addTo(this.clients_map);
 
                 //this.tileLayer.addTo(this.clients_map);
             },
