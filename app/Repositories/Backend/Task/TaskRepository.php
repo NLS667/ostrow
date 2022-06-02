@@ -118,10 +118,6 @@ class TaskRepository extends BaseRepository
      */
     public function update($task, $request)
     {
-        $data = $request->except('services', 'tasks');
-        //$services = $request->get('services');
-        //$tasks = $request->get('tasks');
-
         DB::transaction(function () use ($task, $request) {
             if ($task->update($request)) {
                 
