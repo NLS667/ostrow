@@ -80,13 +80,13 @@
 @endsection
 @section('after-scripts')
      <script type="text/javascript">
-        
+        var task = {!! json_encode($task->toArray()) !!};
         Backend.Utils.documentReady(function(){
             Backend.Task.init();
             md.initFormExtendedDatetimepickers();
 
-            $("#input-start").datepicker("update");
-            $("#input-end").datepicker("update");
+            $("#input-start").datepicker("setValue", task['start']);
+            $("#input-end").datepicker("setValue", task['end']);
         });
 
     </script>
