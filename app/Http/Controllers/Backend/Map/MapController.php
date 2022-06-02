@@ -33,7 +33,7 @@ class MapController extends Controller
             {
                 $map_data['layers'][$category->id] = (object)[
                     'name' => $category->name,
-                    'markers' => [],
+                    'markers' => (object)[],
                 ];
             }
         }
