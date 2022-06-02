@@ -51,6 +51,7 @@
                 this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
+                console.log(this.data.layers);
                 this.data.layers.forEach((layer) => {
                     this.layerData.push(layer);
                 })
