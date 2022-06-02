@@ -53,7 +53,7 @@
                     layers: [this.tileLayer]
                 }).setView([51.919438, 19.145136], this.data.mapZoom);
 
-                var layerControl = L.control.layers(baseMaps,).addTo(this.clients_map);
+                this.layerControl = L.control.layers(baseMaps,).addTo(this.clients_map);
 
                 //this.tileLayer.addTo(this.clients_map);
             },
@@ -78,7 +78,7 @@
                 console.log(this.layerMarkers);
                 this.layerMarkers.forEach((lm) => {
                     var layerGroup = L.layerGroup(lm.markers);
-                    layerControl.addOverlay(layerGroup, lm.name);
+                    this.layerControl.addOverlay(layerGroup, lm.name);
                 })
 
                 this.pins.forEach((pin) => {
