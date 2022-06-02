@@ -119,15 +119,14 @@
                     {data: 'end', name: 'tasks.end'},
                     {data: 'status', render: function ( data, type, row, meta ) {
                         let output = '';
-                        console.log(typeof data);
                         switch (data) {
-                            case '0':
+                            case 0:
                                 output = '<span class="badge badge-success">Oczekujące</a>';
                                 break;
-                            case '1':
+                            case 1:
                                 output = '<span class="badge badge-warning">Nadchodzące</a>';
                                 break;
-                            case '2':
+                            case 2:
                                 output = '<span class="badge badge-danger">Po terminie</a>';
                                 break;
                         }
