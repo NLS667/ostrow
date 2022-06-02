@@ -34,21 +34,28 @@
                 console.log(message);
             },
             initMap() {
+                this.tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 17,
+                    attribution: 'Tiles courtesy of <a href="http://openstreetmap.org/" target="_blank">OpenStreetMap</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                });
+
+                var baseMaps = {
+                    "OpenStreetMap": this.tileLayer
+                };
+
                 this.clients_map = L.map('leaflet-map', {
                     sleep: true,
                     hoverToWake: false,
                     sleepNote: true,
                     wakeMessage: 'Kliknij',
                     sleepButton: L.Control.sleepMapControl,
-                    sleepOpacity: .7
+                    sleepOpacity: .7,
+                    layers: [this.tileLayer]
                 }).setView([51.919438, 19.145136], this.data.mapZoom);
 
-                this.tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 17,
-                    attribution: 'Tiles courtesy of <a href="http://openstreetmap.org/" target="_blank">OpenStreetMap</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                });
+                var layerControl = L.control.layers(baseMaps,).addTo(this.clients_map);
 
-                this.tileLayer.addTo(this.clients_map);
+                //this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
                 this.data.layers.forEach((layer) => {
