@@ -129,6 +129,8 @@
                                 output = '<span class="badge badge-danger">Po terminie</a>';
                                 break;
                         }
+
+                        return output;
                     }},
                     {data: 'created_at', name: 'tasks.created_at'},
                     {data: 'updated_at', name: 'tasks.updated_at'},
