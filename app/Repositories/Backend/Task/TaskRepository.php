@@ -118,6 +118,7 @@ class TaskRepository extends BaseRepository
      */
     public function update($task, $request)
     {
+        \Log::info(json_encode($request));
         DB::transaction(function () use ($task, $request) {
             if ($task->update($request)) {
                 
