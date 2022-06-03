@@ -101,7 +101,7 @@ class ClientController extends Controller
      */
     public function show(Client $client, ShowClientRequest $request)
     {
-        $services = $this->services->query()->where('client_id', $client->id)->get();
+        $services = $this->services->query()->where('client_id', $client->id)->all();
         //$services = Service::where('client_id', $client->id)->get();
         \Log::info(json_encode($services));
         $serviceCatIds = [];
