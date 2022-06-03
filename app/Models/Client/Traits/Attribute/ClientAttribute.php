@@ -2,6 +2,9 @@
 
 namespace App\Models\Client\Traits\Attribute;
 
+use App\Models\Service\Service;
+use App\Models\Task\Task;
+
 /**
  * Class ClientAttribute. 
  */
