@@ -43,7 +43,7 @@ class ShowResponse implements Responsable
         {
             $client_data[] = (object)[
                 'category' => $category->name.' ('.$category->short_name.')',
-                'services' => Service::where('client_id', $this->client->id)->get(),
+                'services' => Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->get(),
             ];
         }
         return view('backend.client.show')
