@@ -28,8 +28,8 @@
                                         <th>Adres</th>
                                         <th>E-mail</th>
                                         <th>Nr telefonu</th>
-                                        <th>Serwis</th>
                                         <th>Usługi</th>
+                                        <th>Serwis</th>
                                         <th>Utworzony</th>
                                         <th>Akcje</th>
                                     </tr>
@@ -41,8 +41,8 @@
                                         <th>Adres</th>
                                         <th>E-mail</th>
                                         <th>Nr telefonu</th>
-                                        <th>Serwis</th>
                                         <th>Usługi</th>
+                                        <th>Serwis</th>
                                         <th>Utworzony</th>
                                         <th class="text-right">Akcje</th>
                                     </tr>
