@@ -99,7 +99,7 @@ class ClientController extends Controller
      */
     public function show(Client $client, ShowClientRequest $request)
     {
-        $services = $this->services->find('client_id', $client->id);
+        $services = $this->services->find('client_id', $client->id)->get();
         \Log::info(json_encode($services));
         $serviceCatIds = [];
         foreach($services as $service){
