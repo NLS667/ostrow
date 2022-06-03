@@ -55,13 +55,13 @@
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
-                                        <th></th>
                                         <th>
                                             <div class="input-group position-relative">
                                                 {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Nazwisko']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
+                                        <th></th>
                                         <th>
                                             <div class="input-group position-relative">
                                                 {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Email']) !!}
