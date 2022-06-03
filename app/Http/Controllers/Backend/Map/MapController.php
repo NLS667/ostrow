@@ -22,7 +22,6 @@ class MapController extends Controller
 		$map_data['mapMode'] = 'large';
         $map_data['mapHeight'] = 900;
         $map_data['mapZoom'] = 7;
-        $map_data['markers'] = [];
         $map_data['layers'] = [];
 
         $serviceCategories = ServiceCategory::all();
@@ -51,6 +50,7 @@ class MapController extends Controller
                     $client_markers[] = (object)[
                         'content' => view('backend.map.popup')->with('client', $client)->render(),
                         'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                        'title' => $service->service_name,
                     ];
 
                     foreach($map_data['layers'] as $layer){
@@ -59,11 +59,6 @@ class MapController extends Controller
                         }
                     }
                 }
-
-                $map_data['markers'][] = (object)[
-                    'content' => view('backend.map.popup')->with('client', $client)->render(),
-                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                ];
             }  
         }
         return view('backend.map.index')->with('map_data', $map_data);

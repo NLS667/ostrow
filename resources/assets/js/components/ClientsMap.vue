@@ -74,7 +74,10 @@
                     layer_data.markers = [];
 
                     layerD.markers.forEach((marker) => {
-                        marker.leafletObject = L.marker(marker.coords).bindPopup(marker.content);                        
+                        var markeOptions = {
+                            title: marker.title
+                        }
+                        marker.leafletObject = L.marker(marker.coords, markerOptions).bindPopup(marker.content);                        
                         layer_data.markers.push(marker.leafletObject);
                     });
 
