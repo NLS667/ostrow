@@ -37,10 +37,17 @@ class ShowResponse implements Responsable
         $map_data['markers'][] = (object)[
             'coords' => [$this->client->adr_lattitude, $this->client->adr_longitude],
         ];
+        $client_data = [];
+        foreach($serviceCategories as $category)
+        {
+            $client_data[] = [
+                'category' => $category->name.' ('.$category->short_name.')',
+                'services' => $this->services->query()->where('client_id', $this->client->id)->get();
+            ];
+        }
         return view('backend.client.show')
                 ->with('client', $this->client)
-                ->with('serviceCategories', $this->serviceCategories)
-                ->with('services', $this->services)
+                ->with('client_data', $client_data)
                 ->with('map_data', $map_data);
     }
 }
