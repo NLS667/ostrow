@@ -40,7 +40,7 @@
     						<div class="col-md-3">
     							<ul class="nav nav-pills nav-pills-primary flex-column">
     								@foreach ($client_data as $data)
-    									<li class="nav-item"><a class="nav-link @if ($loop->first) active @endif" href="#tab_{{ $data->name }}" data-toggle="tab">{{ $data->name }}</a></li>
+    									<li class="nav-item"><a class="nav-link @if ($loop->first) active @endif" href="#tab_{{ $data->category }}" data-toggle="tab">{{ $data->category }}</a></li>
     								@endforeach
 
 						        </ul>
@@ -48,7 +48,7 @@
     						<div class="col-md-9">
     							<div class="tab-content">
     								@foreach ($client_data as $data)
-    									<div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->name }}">{{ $data->services }}</div>
+    									<div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->category }}">{{ $data->services }}</div>
     								@endforeach
     							</div>
     						</div>
