@@ -25,12 +25,12 @@
                                     <tr role="row">
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
+                                        <th>Adres</th>
                                         <th>E-mail</th>
                                         <th>Nr telefonu</th>
                                         <th>Aktywny?</th>
                                         <th>Usługi</th>
                                         <th>Utworzony</th>
-                                        <th>Zmieniony</th>
                                         <th>Akcje</th>
                                     </tr>
                                 </thead>
@@ -38,12 +38,12 @@
                                     <tr>
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
+                                        <th>Adres</th>
                                         <th>E-mail</th>
                                         <th>Nr telefonu</th>
                                         <th>Aktywny?</th>
                                         <th>Usługi</th>
                                         <th>Utworzony</th>
-                                        <th>Zmieniony</th>
                                         <th class="text-right">Akcje</th>
                                     </tr>
                                 </tfoot>
@@ -55,21 +55,22 @@
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
+                                        <th></th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Nazwisko']) !!}
+                                                {!! Form::text('last_name', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Nazwisko']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Email']) !!}
+                                                {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Email']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('phone_nr', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Nr telefonu']) !!}
+                                                {!! Form::text('phone_nr', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Nr telefonu']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
@@ -132,6 +133,7 @@
                 columns: [
                     {data: 'first_name', name: 'clients.first_name'},
                     {data: 'last_name', name: 'clients.last_name'},
+                    {data: 'address', name: 'clients.address'},
                     {data: 'email', name: 'clients.email'},
                     {data: 'phone_nr', name: 'clients.phone_nr', sortable: false},                
                     {data: 'status', className: 'text-center', name: 'clients.status', render: function ( data, type, row, meta ) {
@@ -143,7 +145,6 @@
                     }},
                     {data: 'services', name: 'service_categories.name', sortable: false},
                     {data: 'created_at', name: 'clients.created_at'},
-                    {data: 'updated_at', name: 'clients.updated_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 order: [[5, "asc"]],

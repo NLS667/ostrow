@@ -192,6 +192,14 @@ trait ClientAttribute
         return $this->first_name.' '.$this->last_name;
     }
 
+    public function getAddressAttribute(){
+        $street = $this->adr_street.' '.$this->adr_street_nr;
+        if(isset($this->adr_home_nr)){
+            $street .= ' m.'.$this->adr_home_nr;
+        }
+        return $street.'<br>'.$this->adr_zipcode.' '.$this->adr_city;
+    }
+
     /**
      * Get logged in user permission related to user management grid.
      *
