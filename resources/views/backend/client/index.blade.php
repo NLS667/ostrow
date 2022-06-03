@@ -26,10 +26,10 @@
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
                                         <th>Adres</th>
-                                        <th>E-mail</th>
                                         <th>Nr telefonu</th>
-                                        <th>Usługi</th>
+                                        <th>E-mail</th>                                        
                                         <th>Serwis</th>
+                                        <th>Usługi</th>
                                         <th>Utworzony</th>
                                         <th>Akcje</th>
                                     </tr>
@@ -39,10 +39,10 @@
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
                                         <th>Adres</th>
-                                        <th>E-mail</th>
                                         <th>Nr telefonu</th>
-                                        <th>Usługi</th>
+                                        <th>E-mail</th>                                        
                                         <th>Serwis</th>
+                                        <th>Usługi</th>
                                         <th>Utworzony</th>
                                         <th class="text-right">Akcje</th>
                                     </tr>
@@ -133,10 +133,9 @@
                 columns: [
                     {data: 'first_name', name: 'clients.first_name'},
                     {data: 'last_name', name: 'clients.last_name'},
-                    {data: 'address', name: 'clients.address'},
-                    {data: 'email', name: 'clients.email'},
-                    {data: 'phone_nr', name: 'clients.phone_nr', sortable: false},
-                    {data: 'services', name: 'service_categories.name', sortable: false},                
+                    {data: 'address', name: 'clients.address'},                    
+                    {data: 'phone_nr', name: 'clients.phone_nr'},
+                    {data: 'email', name: 'clients.email'},              
                     {data: 'service_status', className: 'text-center', name: 'tasks.status', render: function ( data, type, row, meta ) {
                         switch(data){
                             case 0:
@@ -150,6 +149,7 @@
                                 break;
                         }
                     }},
+                    {data: 'services', name: 'service_categories.name', sortable: false},  
                     {data: 'created_at', name: 'clients.created_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
