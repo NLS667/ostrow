@@ -19,6 +19,8 @@ use App\Http\Responses\Backend\Client\ShowResponse;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Client\Client;
+use App\Models\Service\Service;
+use App\Models\ServiceCategory\ServiceCategory;
 use App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository;
 use App\Repositories\Backend\Service\ServiceRepository;
 use App\Repositories\Backend\Client\ClientRepository;
