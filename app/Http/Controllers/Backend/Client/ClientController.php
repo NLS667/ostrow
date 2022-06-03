@@ -20,6 +20,7 @@ use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Client\Client;
 use App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository;
+use App\Repositories\Backend\Service\ServiceRepository;
 use App\Repositories\Backend\Client\ClientRepository;
 
 /**
@@ -38,13 +39,20 @@ class ClientController extends Controller
     protected $serviceCategories;
 
     /**
+     * @var \App\Repositories\Backend\Service\ServiceRepository
+     */
+    protected $services;
+
+    /**
      * @param \App\Repositories\Backend\Client\ClientRepository                   $clients
      * @param \App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository $serviceCategories
+     * @param \App\Repositories\Backend\Service\ServiceRepository                 $services
      */
-    public function __construct(ClientRepository $clients, ServiceCategoryRepository $serviceCategories)
+    public function __construct(ClientRepository $clients, ServiceCategoryRepository $serviceCategories, ServiceRepository $services)
     {
         $this->clients = $clients;
         $this->serviceCategories = $serviceCategories;
+        $this->services = $services;
     }
 
     /**
@@ -91,7 +99,12 @@ class ClientController extends Controller
      */
     public function show(Client $client, ShowClientRequest $request)
     {
-        $serviceCategories = $this->serviceCategories->getAll();
+        $services = $this->services->where('client_id', $client->id);
+        $serviceCatIds = [];
+        foreach($services as $service){
+            $serviceCatIds[] = $service->service_cat_id;
+        }
+        $serviceCategories = $this->serviceCategories->where('id', $serviceCatIds);
         return new ShowResponse($client, $serviceCategories);
     }
 
