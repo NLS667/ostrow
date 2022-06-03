@@ -47,8 +47,7 @@
 
                 var options = {
                     "collapsed": false,
-                    "hideSingleBase": true,
-                    "hideMarkerOnCollapse": true
+                    "hideSingleBase": true
                 };
 
                 this.clients_map = L.map('leaflet-map', {
@@ -92,7 +91,7 @@
                     var layerGroup = L.layerGroup(lm.markers);
                     if(first){
                         layerGroup.addTo(this.clients_map);
-                        this.clients_map.addControl( new L.Control.Search({layer: layerGroup, propertyName: 'title',}) );
+                        this.clients_map.addControl( new L.Control.Search({layer: layerGroup, propertyName: 'title', hideMarkerOnCollapse: true}) );
                         first = false;
                     }                    
                     this.layerControl.addOverlay(layerGroup, lm.name);
