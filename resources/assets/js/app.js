@@ -25,6 +25,7 @@ window.Chart = require('chart.js/auto').default;
 
 require('leaflet/dist/leaflet.js');
 require('leaflet-sleep');
+require('leaflet-search');
 
 L.Icon.Default.imagePath = '/images';
 L.Icon.Default.mergeOptions({
