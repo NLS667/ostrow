@@ -23,9 +23,9 @@
 		                		</p>
 	            			</div>
 							<div class="col-md-4">
-								<h4 class="card-title">Email</h4><br>
+								<h4 class="card-title">Email</h4>
 								<a href="mailto:{{$client->email}}"><strong>{{$client->email}}</strong></a><br><br>
-								<h4 class="card-title">Telefon</h><br>
+								<h4 class="card-title">Telefon</h4>
 		                		<strong>{{$client->phone_nr}}</strong>
 							</div>
 	            			
