@@ -14,7 +14,7 @@
 	            	<div class="card-body ">
 	            		<div class="row">
 	            			<div class="col-md-4">
-	            				<h4 class="card-title">Adres</h>
+	            				<h4 class="card-title">Adres</h4>
 	            				<p class="card-text">
 		                			{{$client->adr_street}}&nbsp;{{$client->adr_street_nr}}<br>
 		                			{{$client->adr_zipcode}}&nbsp;{{$client->adr_city}}<br>
@@ -23,7 +23,7 @@
 		                		</p>
 	            			</div>
 							<div class="col-md-4">
-								<h4 class="card-title">Adres</h><br>
+								<h4 class="card-title">Email</h4><br>
 								<a href="mailto:{{$client->email}}"><strong>{{$client->email}}</strong></a><br><br>
 								<h4 class="card-title">Telefon</h><br>
 		                		<strong>{{$client->phone_nr}}</strong>
