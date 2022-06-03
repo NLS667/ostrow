@@ -99,12 +99,12 @@ class ClientController extends Controller
      */
     public function show(Client $client, ShowClientRequest $request)
     {
-        $services = $this->services->find($client->id);
+        $services = $this->services->query()->where('client_id', $client->id);
         $serviceCatIds = [];
         foreach($services as $service){
             $serviceCatIds[] = $service->service_cat_id;
         }
-        $serviceCategories = $this->serviceCategories->find($serviceCatIds);
+        $serviceCategories = $this->serviceCategories->query()->where('id', $serviceCatIds);
         return new ShowResponse($client, $serviceCategories);
     }
 
