@@ -48,7 +48,7 @@
     						<div class="col-md-9">
     							<div class="tab-content">
     								@foreach ($serviceCategories as $category)
-    									<div class="tab-pane active" id="tab_{{ $category->name }}">{{ $category->description }}</div>
+    									<div class="tab-pane {{$category->id == 1 ? 'active' : '' }}" id="tab_{{ $category->name }}">{{ $category->description }}</div>
     								@endforeach
     							</div>
     						</div>
