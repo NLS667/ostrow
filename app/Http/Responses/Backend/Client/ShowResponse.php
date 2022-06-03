@@ -38,7 +38,7 @@ class ShowResponse implements Responsable
             'coords' => [$this->client->adr_lattitude, $this->client->adr_longitude],
         ];
         $client_data = [];
-        foreach($serviceCategories as $category)
+        foreach($this->serviceCategories as $category)
         {
             $client_data[] = [
                 'category' => $category->name.' ('.$category->short_name.')',
