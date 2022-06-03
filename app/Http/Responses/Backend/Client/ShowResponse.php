@@ -48,7 +48,7 @@ class ShowResponse implements Responsable
             $producer = Producer::where('id', $model->id)->first();
             $client_data[] = (object)[
                 'category' => $category->name.' ('.$category->short_name.')',
-                'service' => ['offered_at' => $service->offered_at, 'signed_at' => $service->signed_at, 'installed_at' => $service->installed_at],
+                'service' => (object)['offered_at' => $service->offered_at, 'signed_at' => $service->signed_at, 'installed_at' => $service->installed_at],
                 'model' => $model->name,
                 'producer' => $producer->name,
             ];

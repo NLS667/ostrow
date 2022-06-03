@@ -49,7 +49,7 @@
     							<div class="tab-content">
     								@foreach ($client_data as $data)
     									<div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->category }}">
-    										{{ $data->service }}
+    										{{ $data->service->offered_at }}
     										{{ $data->model }}
     										{{ $data->producer }}
     									</div>
