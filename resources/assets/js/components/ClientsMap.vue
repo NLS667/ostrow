@@ -65,46 +65,53 @@
                 //this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
-                this.data.layers.forEach((layer) => {
-                    this.layerData.push(layer);
-                })
-                
-                this.layerData.forEach((layerD) => {
-                    const layer_data = new Object();
-                    layer_data.markers = [];
+                if(this.data.mapMode == 'small'){
+                    this.data.markers.forEach((marker) => {
+                        this.pins.push(marker);
+                    })
 
-                    layerD.markers.forEach((marker) => {
-                        var markerOptions = {
-                            title: marker.title
-                        }
-                        marker.leafletObject = L.marker(marker.coords, markerOptions).bindPopup(marker.content);                        
-                        layer_data.markers.push(marker.leafletObject);
-                    });
-
-                    layer_data.name = layerD.name;
+                    this.pins.forEach((pin) => {
+                        pin.leafletObject = L.marker(pin.coords);
+                        pin.leafletObject.addTo(this.clients_map);
+                        if(this.data.mapMode == 'small'){
+                            this.centerLeafletMapOnMarker(this.clients_map, pin.leafletObject)
+                        } 
+                    }) 
+                } else {
+                    this.data.layers.forEach((layer) => {
+                        this.layerData.push(layer);
+                    })
                     
-                    this.layerMarkers.push(layer_data);
-                })
-                console.log(this.layerMarkers);
-                var first = true;
-                this.layerMarkers.forEach((lm) => {
-                    var layerGroup = L.layerGroup(lm.markers);
-                    if(first){
-                        layerGroup.addTo(this.clients_map);
-                        this.clients_map.addControl( new L.Control.Search({layer: layerGroup, propertyName: 'title', hideMarkerOnCollapse: true}) );
-                        first = false;
-                    }                    
-                    this.layerControl.addOverlay(layerGroup, lm.name);
-                })
-                
+                    this.layerData.forEach((layerD) => {
+                        const layer_data = new Object();
+                        layer_data.markers = [];
 
-                //this.pins.forEach((pin) => {
-                //    pin.leafletObject = L.marker(pin.coords).bindPopup(pin.content);
-                //    pin.leafletObject.addTo(this.clients_map);
-                //    if(this.data.mapMode == 'small'){
-                //        this.centerLeafletMapOnMarker(this.clients_map, pin.leafletObject)
-                //    } 
-                //})        
+                        layerD.markers.forEach((marker) => {
+                            var markerOptions = {
+                                title: marker.title
+                            }
+                            marker.leafletObject = L.marker(marker.coords, markerOptions).bindPopup(marker.content);                        
+                            layer_data.markers.push(marker.leafletObject);
+                        });
+
+                        layer_data.name = layerD.name;
+                        
+                        this.layerMarkers.push(layer_data);
+                    })
+
+                    var first = true;
+                    
+                    this.layerMarkers.forEach((lm) => {
+                        var layerGroup = L.layerGroup(lm.markers);
+                        if(first){
+                            layerGroup.addTo(this.clients_map);
+                            this.clients_map.addControl( new L.Control.Search({layer: layerGroup, propertyName: 'title', hideMarkerOnCollapse: true}) );
+                            first = false;
+                            
+                        }                    
+                        this.layerControl.addOverlay(layerGroup, lm.name);
+                    })
+                }      
             },
             centerLeafletMapOnMarker(map, marker){
                 var latLngs = [ marker.getLatLng() ];
