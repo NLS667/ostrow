@@ -59,7 +59,7 @@ class ServiceCategoryRepository extends BaseRepository
                 config('service.servicecategory_table').'.name',
                 config('service.servicecategory_table').'.short_name',
                 config('service.servicecategory_table').'.description',
-                DB::raw('(SELECT COUNT(service_client.id) FROM service_client LEFT JOIN clients ON service_client.client_id = clients.id WHERE service_client.servicecat_id = service_categories.id AND clients.deleted_at IS NULL) AS clientCount'),
+                DB::raw('(SELECT COUNT(service.id) FROM services LEFT JOIN clients ON services.client_id = clients.id WHERE services.service_cat_id = service_categories.id AND clients.deleted_at IS NULL) AS clientCount'),
                 config('service.servicecategory_table').'.created_at',
                 config('service.servicecategory_table').'.updated_at',
             ])
@@ -82,7 +82,7 @@ class ServiceCategoryRepository extends BaseRepository
             $serviceCategory = self::MODEL;
             $serviceCategory = new $serviceCategory();
             $serviceCategory->name = $request['name'];
-            $serviceCategory->name = $request['short_name'];
+            $serviceCategory->short_name = $request['short_name'];
             $serviceCategory->description = $request['description'];
 
             $serviceCategory->created_by = access()->user()->id;
