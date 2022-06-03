@@ -133,7 +133,7 @@
                 columns: [
                     {data: 'first_name', name: 'clients.first_name'},
                     {data: 'last_name', name: 'clients.last_name'},
-                    {data: 'address', name: 'clients.address'},
+                    {data: 'address', name: 'clients.adr_street'},
                     {data: 'email', name: 'clients.email'},
                     {data: 'phone_nr', name: 'clients.phone_nr', sortable: false},
                     {data: 'services', name: 'service_categories.name', sortable: false},                
