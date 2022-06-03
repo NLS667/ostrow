@@ -37,10 +37,10 @@
 			        </div>
             		<div class="card-body">
             			<div class="row">
-    						<div class="col-md-4">
+    						<div class="col-md-3">
     							<ul class="nav nav-pills nav-pills-primary flex-column">
     								@foreach ($serviceCategories as $category)
-    									<li class="nav-item"><a class="nav-link @if($category->id == 1) 'active' : ''@endif " href="#tab_{{ $category->name }}" data-toggle="tab">{{ $category->name }}</a></li>
+    									<li class="nav-item"><a class="nav-link {{$category->id == 1 ? 'active' : '' }}" href="#tab_{{ $category->name }}" data-toggle="tab">{{ $category->name }}</a></li>
     								@endforeach
 
 						        </ul>
