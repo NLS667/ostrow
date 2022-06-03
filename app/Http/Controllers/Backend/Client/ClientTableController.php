@@ -42,7 +42,7 @@ class ClientTableController extends Controller
                     return 'Brak';
                 }
             })
-            ->addColumn('adr_street', function ($client) {
+            ->addColumn('address', function ($client) {
                 return $client->address;
             })
             ->addColumn('status', function ($client) {
