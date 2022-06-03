@@ -91,7 +91,8 @@ class ClientController extends Controller
      */
     public function show(Client $client, ShowClientRequest $request)
     {
-        return new ShowResponse($client);
+        $serviceCategories = $this->serviceCategories->getAll();
+        return new ShowResponse($client, $serviceCategories);
     }
 
     /**
