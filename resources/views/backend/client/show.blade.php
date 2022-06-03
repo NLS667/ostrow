@@ -48,7 +48,11 @@
     						<div class="col-md-9">
     							<div class="tab-content">
     								@foreach ($client_data as $data)
-    									<div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->category }}">{{ $data->services }}</div>
+    									<div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->category }}">
+    										{{ $data->service }}
+    										{{ $data->model }}
+    										{{ $data->producer }}
+    									</div>
     								@endforeach
     							</div>
     						</div>
