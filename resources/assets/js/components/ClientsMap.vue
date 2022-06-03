@@ -92,6 +92,7 @@
                     }                    
                     this.layerControl.addOverlay(layerGroup, lm.name);
                 })
+                this.clients_map.addControl( new L.Control.Search({layer: this.layerGroup}) );
 
                 //this.pins.forEach((pin) => {
                 //    pin.leafletObject = L.marker(pin.coords).bindPopup(pin.content);
