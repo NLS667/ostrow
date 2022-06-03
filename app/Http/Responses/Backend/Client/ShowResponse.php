@@ -3,6 +3,7 @@
 namespace App\Http\Responses\Backend\Client;
 
 use Illuminate\Contracts\Support\Responsable;
+use App\Models\Service\Service;
 
 class ShowResponse implements Responsable
 {
@@ -42,7 +43,7 @@ class ShowResponse implements Responsable
         {
             $client_data[] = [
                 'category' => $category->name.' ('.$category->short_name.')',
-                'services' => $this->services->query()->where('client_id', $this->client->id)->get(),
+                'services' => Service::where('client_id', $this->client->id)->get(),
             ];
         }
         return view('backend.client.show')
