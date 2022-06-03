@@ -63,7 +63,7 @@
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('address', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Adres']) !!}
+                                                {!! Form::text('adr_street', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Adres']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
