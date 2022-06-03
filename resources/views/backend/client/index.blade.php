@@ -28,8 +28,8 @@
                                         <th>Adres</th>
                                         <th>E-mail</th>
                                         <th>Nr telefonu</th>
+                                        <th>Serwis</th>
                                         <th>Usługi</th>
-                                        <th>Aktywny?</th>
                                         <th>Utworzony</th>
                                         <th>Akcje</th>
                                     </tr>
@@ -41,8 +41,8 @@
                                         <th>Adres</th>
                                         <th>E-mail</th>
                                         <th>Nr telefonu</th>
+                                        <th>Serwis</th>
                                         <th>Usługi</th>
-                                        <th>Aktywny?</th>
                                         <th>Utworzony</th>
                                         <th class="text-right">Akcje</th>
                                     </tr>
@@ -137,11 +137,17 @@
                     {data: 'email', name: 'clients.email'},
                     {data: 'phone_nr', name: 'clients.phone_nr', sortable: false},
                     {data: 'services', name: 'service_categories.name', sortable: false},                
-                    {data: 'status', className: 'text-center', name: 'clients.status', render: function ( data, type, row, meta ) {
-                        if(data) {
-                            return '<span class="badge badge-success">Tak</a>';
-                        } else {
-                            return '<span class="badge badge-danger">Nie</a>';
+                    {data: 'service_status', className: 'text-center', name: 'tasks.status', render: function ( data, type, row, meta ) {
+                        switch(data){
+                            case: 0
+                                return '<span class="badge badge-success">OK</a>';
+                                break;
+                            case: 1
+                                return '<span class="badge badge-warning">ZAPLANUJ</a>';
+                                break;
+                            case: 2
+                                return '<span class="badge badge-danger">PO TERMINIE</a>';
+                                break;
                         }
                     }},
                     {data: 'created_at', name: 'clients.created_at'},

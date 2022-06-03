@@ -45,6 +45,9 @@ class ClientTableController extends Controller
             ->addColumn('address', function ($client) {
                 return $client->address;
             })
+            ->addColumn('service_status', function ($client) {
+                return $client->service_status;
+            })
             ->addColumn('status', function ($client) {
                 return $client->status;
             })

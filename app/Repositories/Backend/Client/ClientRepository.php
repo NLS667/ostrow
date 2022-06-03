@@ -53,6 +53,7 @@ class ClientRepository extends BaseRepository
         $dataTableQuery = $this->query()
             ->leftJoin('services', 'services.client_id', '=', 'clients.id')
             ->leftJoin('service_categories', 'services.service_cat_id', '=', 'service_categories.id')
+            ->leftJoin('tasks', 'tasks.service_id', '=', 'service.id')
             ->select([
                 config('clients.clients_table').'.id',
                 config('clients.clients_table').'.first_name',
@@ -65,6 +66,7 @@ class ClientRepository extends BaseRepository
                 config('clients.clients_table').'.email',
                 config('clients.clients_table').'.phone_nr',
                 config('clients.clients_table').'.status',
+                config('tasks.tasks_table').'.status as service_status',
                 config('clients.clients_table').'.created_at',
                 config('clients.clients_table').'.updated_at',
                 config('clients.clients_table').'.deleted_at',
