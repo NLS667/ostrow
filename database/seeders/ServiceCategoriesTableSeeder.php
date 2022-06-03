@@ -27,6 +27,7 @@ class ServiceCategoriesTableSeeder extends Seeder
             [
                 'id'         => 1,
                 'name'       => 'Pompa ciepła',
+                'short_name' => 'PC',
                 'description' => 'Usługa/produkt o nazwie Pompa ciepła',
                 'created_by' => 1,
                 'created_at' => Carbon::now(),
@@ -35,6 +36,7 @@ class ServiceCategoriesTableSeeder extends Seeder
             [
                 'id'         => 2,
                 'name'       => 'Fotowoltaika',
+                'short_name' => 'PV',
                 'description' => 'Usługa/produkt o nazwie Fotowoltaika',
                 'created_by' => 1,
                 'created_at' => Carbon::now(),
@@ -43,6 +45,7 @@ class ServiceCategoriesTableSeeder extends Seeder
             [
                 'id'         => 3,
                 'name'       => 'Klimatyzacja',
+                'short_name' => 'AC',
                 'description' => 'Usługa/produkt o nazwie Klimatyzacja',
                 'created_by' => 1,
                 'created_at' => Carbon::now(),
@@ -51,6 +54,7 @@ class ServiceCategoriesTableSeeder extends Seeder
             [
                 'id'         => 4,
                 'name'       => 'Rekuperacja',
+                'short_name' => 'OP',
                 'description' => 'Usługa/produkt o nazwie Rekuperacja',
                 'created_by' => 1,
                 'created_at' => Carbon::now(),

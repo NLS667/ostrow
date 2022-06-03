@@ -16,6 +16,7 @@ class CreateServiceCategoriesTable extends Migration
         Schema::create('service_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 191);
+            $table->string('short_name', 5);
             $table->string('description', 191);
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
