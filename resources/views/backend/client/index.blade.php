@@ -139,13 +139,13 @@
                     {data: 'services', name: 'service_categories.name', sortable: false},                
                     {data: 'service_status', className: 'text-center', name: 'tasks.status', render: function ( data, type, row, meta ) {
                         switch(data){
-                            case: 0
+                            case 0:
                                 return '<span class="badge badge-success">OK</a>';
                                 break;
-                            case: 1
+                            case 1:
                                 return '<span class="badge badge-warning">ZAPLANUJ</a>';
                                 break;
-                            case: 2
+                            case 2:
                                 return '<span class="badge badge-danger">PO TERMINIE</a>';
                                 break;
                         }
