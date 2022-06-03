@@ -47,7 +47,8 @@
 
                 var options = {
                     "collapsed": false,
-                    "hideSingleBase": true
+                    "hideSingleBase": true,
+                    "hideMarkerOnCollapse": true
                 };
 
                 this.clients_map = L.map('leaflet-map', {
