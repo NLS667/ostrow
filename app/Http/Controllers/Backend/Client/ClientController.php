@@ -107,7 +107,7 @@ class ClientController extends Controller
         foreach($services as $service){
             array_push($serviceCatIds, $service->service_cat_id);
         }
-        $serviceCategories = ServiceCategory::where('id', $serviceCatIds)->get();
+        $serviceCategories = ServiceCategory::whereIn('id', $serviceCatIds)->get();
         \Log::info(json_encode($serviceCategories));
         return new ShowResponse($client, $serviceCategories);
     }
