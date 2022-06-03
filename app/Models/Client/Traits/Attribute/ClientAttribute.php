@@ -198,8 +198,23 @@ trait ClientAttribute
             $street .= ' m.'.$this->adr_home_nr;
         }
         $address = $street.'<br>'.$this->adr_zipcode.' '.$this->adr_city;
-        \Log::info($address);
         return $address;
+    }
+
+    public function getServiceStatusAttribute()
+    {
+        $services = Service::where('client_id', $this->id)->get();
+        $highest_status = 0;
+        foreach($services as $service){
+            $tasks = Task::where('service_id'. $service->id);
+            foreach($tasks as $task){
+                if($task->status > $highest_status){
+                    $highest_status = $task->status;
+                }
+            }            
+        }
+        $service_status = $highest_status;
+        return $service_status;
     }
 
     /**
