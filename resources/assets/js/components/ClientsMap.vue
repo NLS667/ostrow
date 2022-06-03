@@ -84,17 +84,18 @@
                 })
                 console.log(this.layerMarkers);
                 var first = true;
+                this.allGroups = new L.LayerGroup();
                 this.layerMarkers.forEach((lm) => {
                     var allGroups = new L.LayerGroup();          
                     var layerGroup = L.layerGroup(lm.markers);
-                    allGroups.addLayer(layerGroup);
+                    this.allGroups.addLayer(layerGroup);
                     if(first){
                         layerGroup.addTo(this.clients_map);
                         first = false;
                     }                    
                     this.layerControl.addOverlay(layerGroup, lm.name);
                 })
-                this.clients_map.addControl( new L.Control.Search({layer: allGroups}) );
+                this.clients_map.addControl( new L.Control.Search({layer: this.allGroups}) );
 
                 //this.pins.forEach((pin) => {
                 //    pin.leafletObject = L.marker(pin.coords).bindPopup(pin.content);
