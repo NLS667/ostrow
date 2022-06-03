@@ -43,7 +43,7 @@ class ShowResponse implements Responsable
         $client_data = [];
         foreach($this->serviceCategories as $category)
         {
-            $service = Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->get();
+            $service = Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->first();
             $model = Model::where('id', $service->model_id)->first();
             $producer = Producer::where('id', $model->id)->first();
             $client_data[] = (object)[
