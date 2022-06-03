@@ -52,7 +52,7 @@ class ClientTableController extends Controller
                 return $client->status;
             })
             ->addColumn('created_at', function ($client) {
-                return Carbon::parse($client->created_at)->format('Y')->toDateString();
+                return Carbon::parse($client->created_at)->format('Y');
             })
             ->addColumn('updated_at', function ($client) {
                 if(isset($client->updated_at)){
