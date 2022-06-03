@@ -48,9 +48,9 @@ class ShowResponse implements Responsable
             $producer = Producer::where('id', $model->id)->first();
             $client_data[] = (object)[
                 'category' => $category->name.' ('.$category->short_name.')',
-                'service' => $service,
-                'model' => $model,
-                'producer' => $producer,
+                'service' => ['offered_at' => $service->offered_at, 'signed_at' => $service->signed_at, 'installed_at' => $service->installed_at],
+                'model' => $model->name,
+                'producer' => $producer->name,
             ];
         }
         return view('backend.client.show')
