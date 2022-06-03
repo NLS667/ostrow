@@ -91,7 +91,7 @@
                     var layerGroup = L.layerGroup(lm.markers);
                     if(first){
                         layerGroup.addTo(this.clients_map);
-                        this.clients_map.addControl( new L.Control.Search({layer: layerGroup}) );
+                        this.clients_map.addControl( new L.Control.Search({layer: layerGroup, propertyName: 'title',}) );
                         first = false;
                     }                    
                     this.layerControl.addOverlay(layerGroup, lm.name);
