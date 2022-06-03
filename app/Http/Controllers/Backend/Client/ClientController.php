@@ -101,7 +101,7 @@ class ClientController extends Controller
      */
     public function show(Client $client, ShowClientRequest $request)
     {
-        $services = Service::where('client_id', $client->id)->get();
+        $services = Service::where('client_id', $client->id)->all();
         \Log::info(json_encode($services));
         $serviceCatIds = [];
         foreach($services as $service){
