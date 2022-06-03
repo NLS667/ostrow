@@ -43,8 +43,9 @@ class ClientTableController extends Controller
                 }
             })
             ->addColumn('address', function ($client) {
-                return $client->address;
+                
                 \Log::info($client->address);
+                return $client->address;
             })
             ->addColumn('status', function ($client) {
                 return $client->status;

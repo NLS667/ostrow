@@ -254,9 +254,7 @@ class UserRepository extends BaseRepository
         }
 
         DB::transaction(function () use ($user) {
-            \Log::error('forcedelete started');
             if ($user->forceDelete()) {
-                \Log::error('forcedelete true, firing event');
                 event(new UserPermanentlyDeleted($user));
 
                 return true;

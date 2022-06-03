@@ -42,7 +42,6 @@ class UserAccessEventListener
      */
     public function onUpdated(UserUpdated $event)
     {
-        \Log::error('User Updated: '.$event->user->first_name);
         history()->withType($this->history_slug)
             ->withEntity($event->user->id)
             ->withText('trans("history.backend.users.updated") <strong>{user}</strong>')
