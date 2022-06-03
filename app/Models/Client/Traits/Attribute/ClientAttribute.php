@@ -197,7 +197,7 @@ trait ClientAttribute
         if(isset($this->adr_home_nr)){
             $street .= ' m.'.$this->adr_home_nr;
         }
-        $address = $street.'<br>'.$this->adr_zipcode.' '.$this->adr_city
+        $address = $street.'<br>'.$this->adr_zipcode.' '.$this->adr_city;
         \Log::info($address);
         return $address;
     }
