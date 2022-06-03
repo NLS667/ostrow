@@ -138,9 +138,9 @@
                     {data: 'phone_nr', name: 'clients.phone_nr', sortable: false},
                     {data: 'services', name: 'service_categories.name', sortable: false},                
                     {data: 'service_status', className: 'text-center', name: 'tasks.status', render: function ( data, type, row, meta ) {
-                        $pieces = explode(",", $data);
-                        rsort($pieces);
-                        switch($pieces[0]){
+                        const pieces = data.split(',');
+                        pieces.sort(compareNumbers);
+                        switch(pieces[0]){
                             case 0:
                                 return '<span class="badge badge-success">OK</a>';
                                 break;
@@ -173,6 +173,11 @@
             });
 
             Backend.DataTableSearch.init(dataTable);
+
+            function compareNumbers(a, b) {
+               return a - b
+            }
+
             bootstrapClearButton();
     
         });
