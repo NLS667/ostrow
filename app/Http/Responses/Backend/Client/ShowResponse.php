@@ -41,7 +41,7 @@ class ShowResponse implements Responsable
         $client_data = [];
         foreach($this->serviceCategories as $category)
         {
-            $client_data[] = [
+            $client_data[] = (object)[
                 'category' => $category->name.' ('.$category->short_name.')',
                 'services' => Service::where('client_id', $this->client->id)->get(),
             ];
