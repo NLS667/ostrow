@@ -5,7 +5,7 @@
 	<div class="container-fluid">
   		<div class="row">
         	<div class="col-md-8">
-        		<div class="card card-nav-tabs">
+        		<div class="card">
             		<div class="card-header card-header-text card-header-rose">
 			            <div class="card-text">
 			            	<h3 class="card-title">{{ $client->first_name }}&nbsp;{{ $client->last_name }}</h3>
@@ -28,9 +28,15 @@
 								<h5 class="card-title"><strong>Telefon</strong></h5>
 		                		<p class="card-text">{{$client->phone_nr}}</p>
 							</div>
-	            			
 	            		</div>
-	            		<div class="row">
+                	</div>
+            	</div>
+            	<div class="card">
+            		<div class="card-header">
+			            <h4 class="card-title">Usługi wykonywane dla klienta</h4>
+			        </div>
+            		<div class="card-body">
+            			<div class="row">
     						<div class="col-md-4">
     							<ul class="nav nav-pills nav-pills-primary flex-column">
     								@foreach ($serviceCategories as $category)
@@ -47,7 +53,7 @@
     							</div>
     						</div>
 	            		</div>
-                	</div>
+            		</div>
             	</div>
         	</div>
         	<div class="col-md-4">
