@@ -30,7 +30,7 @@
                                         <th>E-mail</th>                                        
                                         <th>Serwis</th>
                                         <th>Usługi</th>
-                                        <th>Utworzony</th>
+                                        <th>Rok p.u.</th>
                                         <th>Akcje</th>
                                     </tr>
                                 </thead>
@@ -43,7 +43,7 @@
                                         <th>E-mail</th>                                        
                                         <th>Serwis</th>
                                         <th>Usługi</th>
-                                        <th>Utworzony</th>
+                                        <th>Rok p.u.</th>
                                         <th class="text-right">Akcje</th>
                                     </tr>
                                 </tfoot>
