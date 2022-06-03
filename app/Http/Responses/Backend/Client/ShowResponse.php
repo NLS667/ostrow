@@ -33,7 +33,6 @@ class ShowResponse implements Responsable
         $map_data['mapHeight'] = 600;
         $map_data['mapZoom'] = 12;
         $map_data['markers'][] = (object)[
-            'content' => view('backend.map.popup')->with('client', $this->client)->render(),
             'coords' => [$this->client->adr_lattitude, $this->client->adr_longitude],
         ];
         return view('backend.client.show')->withClient($this->client)->with('map_data', $map_data);
