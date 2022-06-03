@@ -111,7 +111,7 @@
                     {data: 'name', name: 'service_categories.name'},
                     {data: 'short_name', name: 'service_categories.short_name'},
                     {data: 'description', name: 'service_categories.description'},
-                    {data: 'clients', name: 'service_categories.clientCount'},
+                    {data: 'clients', name: 'clients'},
                     {data: 'created_at', name: 'service_categories.created_at'},
                     {data: 'updated_at', name: 'service_categories.updated_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
