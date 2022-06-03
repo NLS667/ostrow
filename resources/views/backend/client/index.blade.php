@@ -28,8 +28,8 @@
                                         <th>Adres</th>
                                         <th>E-mail</th>
                                         <th>Nr telefonu</th>
-                                        <th>Aktywny?</th>
                                         <th>Usługi</th>
+                                        <th>Aktywny?</th>
                                         <th>Utworzony</th>
                                         <th>Akcje</th>
                                     </tr>
@@ -41,8 +41,8 @@
                                         <th>Adres</th>
                                         <th>E-mail</th>
                                         <th>Nr telefonu</th>
-                                        <th>Aktywny?</th>
                                         <th>Usługi</th>
+                                        <th>Aktywny?</th>
                                         <th>Utworzony</th>
                                         <th class="text-right">Akcje</th>
                                     </tr>
@@ -135,7 +135,8 @@
                     {data: 'last_name', name: 'clients.last_name'},
                     {data: 'address', name: 'clients.address'},
                     {data: 'email', name: 'clients.email'},
-                    {data: 'phone_nr', name: 'clients.phone_nr', sortable: false},                
+                    {data: 'phone_nr', name: 'clients.phone_nr', sortable: false},
+                    {data: 'services', name: 'service_categories.name', sortable: false},                
                     {data: 'status', className: 'text-center', name: 'clients.status', render: function ( data, type, row, meta ) {
                         if(data) {
                             return '<span class="badge badge-success">Tak</a>';
@@ -143,7 +144,6 @@
                             return '<span class="badge badge-danger">Nie</a>';
                         }
                     }},
-                    {data: 'services', name: 'service_categories.name', sortable: false},
                     {data: 'created_at', name: 'clients.created_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
