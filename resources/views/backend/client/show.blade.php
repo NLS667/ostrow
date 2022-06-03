@@ -51,18 +51,18 @@
     									<div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->category }}">
     										<div class="row">
     											<div class="col-md-4">
-    												<h4 class="title">Producent</h4>
-    												<p>{{ $data->producer }}</p><br>
-    												<h4 class="title">Model</h4>
+    												<h6 class="title">Producent</h6>
+    												<p class="category">{{ $data->producer }}</p>
+    												<h6 class="title">Model</h6>
     												<p>{{ $data->model }}</p>
     											</div>
     											<div class="col-md-4"></div>
     											<div class="col-md-4">
-    												<h4 class="title">Data oferty</h4>
-    												<p>{{ $data->service->offered_at }}</p><br>
-    												<h4 class="title">Data podpisania Umowy</h4>
+    												<h6 class="title">Data oferty</h6>
+    												<p>{{ $data->service->offered_at }}</p>
+    												<h6 class="title">Data podpisania Umowy</h6>
     												<p>{{ $data->service->signed_at }}</p>
-    												<h4 class="title">Data montażu</h4>
+    												<h6 class="title">Data montażu</h6>
     												<p>{{ $data->service->installed_at }}</p>
     											</div>
     										</div>
