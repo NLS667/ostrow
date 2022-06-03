@@ -5,10 +5,10 @@
 	<div class="container-fluid">
   		<div class="row">
         	<div class="col-md-8">
-        		<div class="card card-nav-tabs text-center">
+        		<div class="card card-nav-tabs">
             		<div class="card-header card-header-text card-header-rose">
 			            <div class="card-text">
-			            	<h4 class="card-title">{{ $client->first_name }}&nbsp;{{ $client->last_name }}</h4>
+			            	<h3 class="card-title">{{ $client->first_name }}&nbsp;{{ $client->last_name }}</h3>
 			            </div>
 			        </div>
 	            	<div class="card-body ">
