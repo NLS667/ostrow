@@ -49,9 +49,23 @@
     							<div class="tab-content">
     								@foreach ($client_data as $data)
     									<div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->category }}">
-    										{{ $data->service->offered_at }}
-    										{{ $data->model }}
-    										{{ $data->producer }}
+    										<div class="row">
+    											<div class="col-md-4">
+    												<h4 class="title">Producent</h4>
+    												<p>{{ $data->producer }}</p><br>
+    												<h4 class="title">Model</h4>
+    												<p>{{ $data->model }}</p>
+    											</div>
+    											<div class="col-md-4"></div>
+    											<div class="col-md-4">
+    												<h4 class="title">Data oferty</h4>
+    												<p>{{ $data->service->offered_at }}</p><br>
+    												<h4 class="title">Data podpisania Umowy</h4>
+    												<p>{{ $data->service->signed_at }}</p>
+    												<h4 class="title">Data montażu</h4>
+    												<p>{{ $data->service->installed_at }}</p>
+    											</div>
+    										</div>
     									</div>
     								@endforeach
     							</div>
