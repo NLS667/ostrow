@@ -24,6 +24,7 @@
                                 <thead>
                                     <tr role="row">
                                         <th>Nazwa</th>
+                                        <th>Skrót</th>
                                         <th>Opis</th>
                                         <th>Klientów</th>
                                         <th>Utworzona</th>
@@ -33,7 +34,8 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Nazwa</th>
+                                        <th>Nazwa</th>                                        
+                                        <th>Skrót</th>
                                         <th>Opis</th>
                                         <th>Klientów</th>
                                         <th>Utworzona</th>
@@ -107,6 +109,7 @@
                 },
                 columns: [
                     {data: 'name', name: 'service_categories.name'},
+                    {data: 'short_name', name: 'service_categories.short_name'},
                     {data: 'description', name: 'service_categories.description'},
                     {data: 'clients', name: 'service_categories.clientCount'},
                     {data: 'created_at', name: 'service_categories.created_at'},

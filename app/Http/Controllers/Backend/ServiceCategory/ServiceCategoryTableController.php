@@ -32,6 +32,9 @@ class ServiceCategoryTableController extends Controller
     {
         return Datatables::make($this->serviceCategories->getForDataTable())
             ->escapeColumns(['name'])
+            ->addColumn('short_name', function ($serviceCategory) {
+                return $serviceCategory->description;
+            })
             ->addColumn('description', function ($serviceCategory) {
                 return $serviceCategory->description;
             })

@@ -57,6 +57,7 @@ class ServiceCategoryRepository extends BaseRepository
             ->select([
                 config('service.servicecategory_table').'.id',
                 config('service.servicecategory_table').'.name',
+                config('service.servicecategory_table').'.short_name',
                 config('service.servicecategory_table').'.description',
                 DB::raw('(SELECT COUNT(service_client.id) FROM service_client LEFT JOIN clients ON service_client.client_id = clients.id WHERE service_client.servicecat_id = service_categories.id AND clients.deleted_at IS NULL) AS clientCount'),
                 config('service.servicecategory_table').'.created_at',
@@ -76,15 +77,12 @@ class ServiceCategoryRepository extends BaseRepository
             throw new GeneralException(trans('exceptions.backend.service_cat.already_exists'));
         }
 
-        //$data = $request->except('services', 'tasks');
-        //$services = $request->get('services');
-        //$tasks = $request->get('tasks');
-        //$client = $this->createClientStub($data);
         DB::transaction(function () use ($request) {
 
             $serviceCategory = self::MODEL;
             $serviceCategory = new $serviceCategory();
             $serviceCategory->name = $request['name'];
+            $serviceCategory->name = $request['short_name'];
             $serviceCategory->description = $request['description'];
 
             $serviceCategory->created_by = access()->user()->id;
@@ -142,39 +140,5 @@ class ServiceCategoryRepository extends BaseRepository
         }
 
         throw new GeneralException(trans('exceptions.backend.service_cat.delete_error'));
-    }
-
-    /**
-     * @param $permissions
-     * @param string $by
-     *
-     * @return mixed
-     */
-    public function getByPermission($permissions, $by = 'name')
-    {
-        if (!is_array($permissions)) {
-            $permissions = [$permissions];
-        }
-
-        return $this->query()->whereHas('roles.permissions', function ($query) use ($permissions, $by) {
-            $query->whereIn('permissions.'.$by, $permissions);
-        })->get();
-    }
-
-    /**
-     * @param $roles
-     * @param string $by
-     *
-     * @return mixed
-     */
-    public function getByRole($roles, $by = 'name')
-    {
-        if (!is_array($roles)) {
-            $roles = [$roles];
-        }
-
-        return $this->query()->whereHas('roles', function ($query) use ($roles, $by) {
-            $query->whereIn('roles.'.$by, $roles);
-        })->get();
     }
 }

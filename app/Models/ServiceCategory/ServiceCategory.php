@@ -28,6 +28,7 @@ class ServiceCategory extends BaseModel
      */
     protected $fillable = [
         'name',
+        'short_name',
         'description',
         'created_by',
         'updated_by',

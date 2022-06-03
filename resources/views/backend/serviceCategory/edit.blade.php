@@ -32,6 +32,17 @@
                   </div>
                 </div>
                 <div class="row">
+                  <label class="col-sm-2 col-form-label">Skrót <small>(max. 5 liter)</small></label>
+                  <div class="col-sm-7">
+                    <div class="form-group{{ $errors->has('short_name') ? ' has-danger' : '' }}">
+                      <input class="form-control{{ $errors->has('short_name') ? ' is-invalid' : '' }}" name="short_name" id="input-short_name" type="text" placeholder="Skrót" value="{{ old('short_name', $serviceCategory->short_name) }}" required="true" aria-required="true"/>
+                      @if ($errors->has('short_name'))
+                        <span id="short_name-error" class="error text-danger" for="input-short_name">{{ $errors->first('short_name') }}</span>
+                      @endif
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
                   <label class="col-sm-2 col-form-label">Opis</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
