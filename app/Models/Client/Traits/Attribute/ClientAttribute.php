@@ -209,7 +209,7 @@ trait ClientAttribute
         $services = Service::where('client_id', $this->id)->get();
         $highest_status = 0;
         foreach($services as $service){
-            $tasks = Task::where('service_id'. $service->id);
+            $tasks = Task::where('service_id'. $service->id)->get();
             foreach($tasks as $task){
                 if($task->status > $highest_status){
                     $highest_status = $task->status;
