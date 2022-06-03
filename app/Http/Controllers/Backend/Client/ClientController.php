@@ -108,7 +108,7 @@ class ClientController extends Controller
             array_push($serviceCatIds, $service->service_cat_id);
         }
         $serviceCategories = ServiceCategory::whereIn('id', $serviceCatIds)->get();
-        return new ShowResponse($client, $serviceCategories);
+        return new ShowResponse($client, $serviceCategories, $services);
     }
 
     /**

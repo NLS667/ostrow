@@ -14,10 +14,11 @@ class ShowResponse implements Responsable
     /**
      * @param \App\Models\Access\Client\Client $client
      */
-    public function __construct($client, $serviceCategories)
+    public function __construct($client, $serviceCategories, $services)
     {
         $this->client = $client;
         $this->serviceCategories = $serviceCategories;
+        $this->services = $services;
     }
 
     /**
@@ -39,6 +40,7 @@ class ShowResponse implements Responsable
         return view('backend.client.show')
                 ->with('client', $this->client)
                 ->with('serviceCategories', $this->serviceCategories)
+                ->with('services', $this->services)
                 ->with('map_data', $map_data);
     }
 }
