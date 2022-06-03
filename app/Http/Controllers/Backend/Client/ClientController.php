@@ -103,7 +103,7 @@ class ClientController extends Controller
     {
         $services = $this->services->query()->where('client_id', $client->id)->get();
         //$services = Service::where('client_id', $client->id)->get();
-        \Log::info($this->services);
+        \Log::info(json_encode($this->services);
         $serviceCatIds = [];
         foreach($services as $service){
             array_push($serviceCatIds, $service->service_cat_id);
