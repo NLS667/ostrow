@@ -50,7 +50,7 @@ class MapController extends Controller
                     $client_markers[] = (object)[
                         'content' => view('backend.map.popup')->with('client', $client)->render(),
                         'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                        'title' => $service->service_name,
+                        'title' => $client->full_name,
                     ];
 
                     foreach($map_data['layers'] as $layer){
