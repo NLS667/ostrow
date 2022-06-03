@@ -69,13 +69,13 @@
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Email']) !!}
+                                                {!! Form::text('phone_nr', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Nr telefonu']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('phone_nr', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Nr telefonu']) !!}
+                                                {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 4, "placeholder" => 'Email']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
