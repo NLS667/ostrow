@@ -84,7 +84,7 @@ class FinanceTableController extends Controller
         $dtQuery = [];
         foreach($dataTableQuery as $clientsService){ 
             
-        \Log::info(json_encode($clientsService));
+        \Log::info(json_encode($clientsService->get()));
             $dtQuery[] = (object)[
                 'id' => $clientsService->id,
                 'first_name' => $clientsService->first_name,
