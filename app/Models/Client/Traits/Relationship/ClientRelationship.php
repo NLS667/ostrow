@@ -17,7 +17,7 @@ trait ClientRelationship
      */
     public function services()
     {
-        return $this->hasMany(Service::class, config('access.service_client_table'), 'client_id', 'service_id');
+        return $this->hasMany(Service::class, 'services');
     }
 
     /**
