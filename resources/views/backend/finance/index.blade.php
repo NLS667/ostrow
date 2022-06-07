@@ -32,8 +32,8 @@
                             </thead>
                             <tbody>
                                 @foreach($clients as $client)
-                                    <tr>
                                         @foreach($services as $service)   
+                                        <tr>
                                             @if ($loop->first)
                                             <td rowspan="{{ $services->count() }}">{{ $client->full_name }}</td>
                                             <td rowspan="{{ $services->count() }}">{!!html_entity_decode($client->address)!!}</td>
@@ -43,8 +43,8 @@
                                             <td>30000.00</td>
                                             <td>10000.00</td>
                                             <td></td>
+                                        </tr>
                                         @endforeach
-                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>                        
