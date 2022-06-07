@@ -77,8 +77,8 @@ class FinanceTableController extends Controller
             $services = $client->services;
             foreach($services as $service){
                 $client_services = (object)[
-                    'id' => $client->id,
-                    'short_name' => $service->service_type_short,
+                    'id' => $service->id,
+                    'short_name' => $service->short_name,
                     'deal_amount' => $service->deal_amount,
                     'deal_advance' => $service->deal_advance,
                 ];
