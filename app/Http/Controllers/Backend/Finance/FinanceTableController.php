@@ -72,7 +72,7 @@ class FinanceTableController extends Controller
                 config('clients.clients_table').'.adr_home_nr',
                 config('clients.clients_table').'.adr_zipcode',
                 config('clients.clients_table').'.adr_city',
-                DB::raw('GROUP_CONCAT(service_categories.short_name SEPARATOR " | ") as services'),
+                'service_categories.short_name',
                 'services.offered_at',
                 'services.signed_at',
                 'services.installed_at',
