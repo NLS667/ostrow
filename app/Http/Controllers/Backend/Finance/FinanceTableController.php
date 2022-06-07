@@ -88,7 +88,7 @@ class FinanceTableController extends Controller
                 'first_name' => $clientsService->first_name,
                 'adr_street' => $clientsService->adr_street,
                 'services' => $clientsService->services,
-            ]
+            ];
         }
         \Log::info(json_encode($dtQuery));
         // active() is a scope on the ClientScope trait
