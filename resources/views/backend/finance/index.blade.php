@@ -16,7 +16,37 @@
                     </div><!-- /.card-header --> 
 
                     <div class="card-body">
-                        
+                        <div class="row">
+                        @if ($clients->count())
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nazwa</th>
+                                    <th>Adres</th>
+                                    <th>Usługa</th>
+                                    <th>Wartość umowy</th>
+                                    <th>Wpłacona zaliczka</th>
+                                    <th>Pozostało do zapłaty</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($clients as $client)
+                                    <tr>
+                                        <td>$client->full_name</td>
+                                        <td>$client->address</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>                        
+                        @else
+
+                        @endif
+                        </div>
                     </div><!-- /.card-body -->
                 </div><!--card-->
             </div>
