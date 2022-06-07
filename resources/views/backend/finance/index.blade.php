@@ -195,6 +195,7 @@
                     {data: 'left_amount', "render": function ( data, type, row, meta ) {
 
                         return row;
+                        }
                     }, 
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
