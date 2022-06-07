@@ -17,7 +17,7 @@
 
                     <div class="card-body">
                         <div class="row">
-                        @if ($data->count())
+                        @if (count($data) > 0)
                         <table class="table">
                             <thead>
                                 <tr>
