@@ -105,7 +105,6 @@
                     {data: 'name'},
                     {data: 'address'}, 
                     {data: 'services', "render": function ( data, type, row, meta ) {
-                        console.log(data);
                         if(data==null) return "";
                         for(var i=0; i<data.length; i++) {
                             var service = data[i];
@@ -144,6 +143,8 @@
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 createdRow: function (row, data, index) {
+                    console.log(data[5]);
+                    console.log(typeof(data[5]));
                     if (data[5] == 0) {
                         $('td', row).eq(5).addClass('text-success');
                     } else {
