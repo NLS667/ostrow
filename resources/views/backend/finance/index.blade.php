@@ -69,10 +69,10 @@
               for (i=1; i<services.length; i++) {
                 var service = services[i];
                 if(service.left_amount > 0){
-                    var className = 'color: red;';
+                    var style = 'style="color: red;"';
                 } else 
                 {
-                    className = 'color: green;';
+                    style = 'style="color: green;"';
                 }
 
                 html += '<tr>'+
@@ -81,7 +81,7 @@
                     '<td>'+service.short_name+'</td>'+
                     '<td class="text-right">'+service.deal_amount+'</td>'+
                     '<td class="text-right">'+service.deal_advance+'</td>'+
-                    '<td class="text-right '+className+'">'+service.left_amount+'</td>'+
+                    '<td class="text-right" '+className+'>'+service.left_amount+'</td>'+
                     '<td></td>'+
                 '</tr>';
               }
