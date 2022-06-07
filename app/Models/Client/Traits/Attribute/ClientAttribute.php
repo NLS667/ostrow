@@ -238,88 +238,22 @@ trait ClientAttribute
         return $userPermission;
     }
 
-    public function checkAdmin()
-    {
-        if ($this->id != 1) {
-            return '<div class="btn-group dropup">
-                        <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">
-                            <span class="material-icons">settings</span>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            '.$this->getStatusButtonAttribute('dropdown-item').'
-                            '.$this->getClearSessionButtonAttribute('dropdown-item').'
-                            '.$this->getDeleteButtonAttribute('dropdown-item').'
-                            '.$this->getLoginAsButtonAttribute('dropdown-item').'
-                        </div>
-                    </div>';
-        }
-    }
-
-    /**
-     * Alias to eloquent many-to-many relation's attach() method.
-     *
-     * @param mixed $service
-     *
-     * @return void
-     */
-    public function attachService($service)
-    {
-        if (is_object($service)) {
-            $service = $service->getKey();
-        }
-
-        if (is_array($service)) {
-            $service = $service['id'];
-        }
-
-        $this->services()->attach($service);
-    }
-
-    /**
-     * Alias to eloquent many-to-many relation's detach() method.
-     *
-     * @param mixed $service
-     *
-     * @return void
-     */
-    public function detachService($service)
-    {
-        if (is_object($service)) {
-            $service = $service->getKey();
-        }
-
-        if (is_array($service)) {
-            $service = $service['id'];
-        }
-
-        $this->services()->detach($service);
-    }
-
     /**
      * @return string
      */
     public function getActionButtonsAttribute()
     {
         if ($this->trashed()) {
-            return '<div class="btn-group action-btn">
-                        '.$this->getRestoreButtonAttribute('btn btn-success btn-round').'
-                        '.$this->getDeletePermanentlyButtonAttribute('btn btn-danger btn-round').'
-                    </div>';
+            return $this->getRestoreButtonAttribute('btn btn-success btn-round').'
+                   '.$this->getDeletePermanentlyButtonAttribute('btn btn-danger btn-round');
         }
 
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
             return $this->getShowButtonAttribute('btn btn-info btn-round').'
                     '.$this->getEditButtonAttribute('btn btn-success btn-round').'
-                    <div class="btn-group dropup">
-                        <button type="button" class="btn btn-primary btn-round dropdown-toggle" data-toggle="dropdown">
-                            <span class="material-icons">settings</span>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            '.$this->getDeleteButtonAttribute('dropdown-item').'                        
-                            '.$this->getStatusButtonAttribute('dropdown-item').'
-                        </div>
-                    </div>';
+                    '.$this->getDeleteButtonAttribute('btn btn-danger btn-round').'                        
+                    '.$this->getStatusButtonAttribute('btn btn-warning btn-round');
         } else {
             $userPermission = $this->getUserPermission();
             $permissionCounter = count($userPermission);
