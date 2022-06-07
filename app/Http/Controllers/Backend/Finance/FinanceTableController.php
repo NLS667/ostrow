@@ -70,7 +70,8 @@ class FinanceTableController extends Controller
                 'services.offered_at',
                 'services.signed_at',
                 'services.installed_at',
-            ]);
+            ])
+            ->groupBy('clients.id');
         \Log::info(json_encode($dataTableQuery->get()));
         // active() is a scope on the ClientScope trait
         return $dataTableQuery->get();
