@@ -151,9 +151,25 @@
                         }
                         return "";
                         }
-                    },          
-                    {data: 'deal_amount', name: 'service.deal_amount', className: 'text-right', searchable: false, sortable: false},              
-                    {data: 'deal_advance', name: 'service.deal_advance', className: 'text-right', searchable: false, sortable: false},
+                    },
+                    {data: 'service', "render": function ( data, type, row, meta ) {
+                        if(data==null) return "";
+                        for(var i=0, num=data.length; i<num; i++) {
+                            var service = data[i];
+                            return service.deal_amount;
+                        }
+                        return "";
+                        }
+                    },
+                    {data: 'service', "render": function ( data, type, row, meta ) {
+                        if(data==null) return "";
+                        for(var i=0, num=data.length; i<num; i++) {
+                            var service = data[i];
+                            return service.deal_advance;
+                        }
+                        return "";
+                        }
+                    },
                     {data: 'left_amount', name: 'clients.left', className: 'text-right', searchable: false, sortable: false}, 
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
