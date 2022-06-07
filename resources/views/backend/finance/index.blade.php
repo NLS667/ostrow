@@ -64,7 +64,7 @@
             function displayServices(services) {
   
               var html = '';
-              let amountTotal = +services[0].deal_amount;
+              let amountTotal = parseFloat(+services[0].deal_amount);
               let advanceTotal = +services[0].deal_advance;
               let leftTotal = +services[0].left_amount;
 
