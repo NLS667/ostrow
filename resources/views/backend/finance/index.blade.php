@@ -123,7 +123,7 @@
                     data: {status: 1, trashed: false}
                 },
                 columns: [
-                    {data: 'name'},
+                    {data: 'name', className: 'font-weight-bold'},
                     {data: 'address'}, 
                     {data: 'services', "render": function ( data, type, row, meta ) {
                         if(data==null) return "";
