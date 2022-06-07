@@ -164,7 +164,7 @@
                 columns: [
                     {data: 'name'},
                     {data: 'address'}, 
-                    {data: 'service', "render": function ( data, type, row, meta ) {
+                    {data: 'services', "render": function ( data, type, row, meta ) {
                         if(data==null) return "";
                         for(var i=0, num=data.length; i<num; i++) {
                             var service = data[i];
@@ -173,7 +173,7 @@
                         return "";
                         }
                     },
-                    {data: 'service', "render": function ( data, type, row, meta ) {
+                    {data: 'services', "render": function ( data, type, row, meta ) {
                         if(data==null) return "";
                         for(var i=0, num=data.length; i<num; i++) {
                             var service = data[i];
@@ -182,7 +182,7 @@
                         return "";
                         }
                     },
-                    {data: 'service', "render": function ( data, type, row, meta ) {
+                    {data: 'services', "render": function ( data, type, row, meta ) {
                         if(data==null) return "";
                         for(var i=0, num=data.length; i<num; i++) {
                             var service = data[i];
