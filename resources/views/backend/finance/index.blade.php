@@ -24,9 +24,9 @@
                                     <th>Nazwa</th>
                                     <th>Adres</th>
                                     <th>Usługa</th>
-                                    <th>Wartość umowy</th>
-                                    <th>Wpłacona zaliczka</th>
-                                    <th>Pozostało do zapłaty</th>
+                                    <th class="text-right">Wartość umowy</th>
+                                    <th class="text-right">Wpłacona zaliczka</th>
+                                    <th class="text-right">Pozostało do zapłaty</th>
                                     <th></th>
                                 </tr>
                             </thead>
