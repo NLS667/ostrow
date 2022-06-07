@@ -69,6 +69,8 @@
               for (i=1; i<services.length; i++) {
                 var service = services[i];
                 var left = Number(service.left_amount);
+                console.log(typeof(left));
+                console.log(left);
                 if(left > 0){
                     var style = 'style="color: red;"';
                 } else {
