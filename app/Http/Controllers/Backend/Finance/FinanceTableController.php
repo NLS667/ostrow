@@ -45,6 +45,9 @@ class FinanceTableController extends Controller
             ->editColumn('services', function ($client) {
                 return $client->services;
             })
+            ->addColumn('left_amount', function ($client) {
+                return $client->name;
+            })
             ->addColumn('actions', function ($client) {
                 return '';
             })
