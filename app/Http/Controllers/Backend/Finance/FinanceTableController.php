@@ -87,7 +87,7 @@ class FinanceTableController extends Controller
                 'id' => $clientsService->id,
                 'first_name' => $clientsService->first_name,
                 'adr_street' => $clientsService->adr_street,
-                'services' => $clientsService->services;
+                'services' => $clientsService->services,
             ]
         }
         \Log::info(json_encode($dtQuery));
