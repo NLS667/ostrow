@@ -29,7 +29,6 @@ class StoreTaskRequest extends Request
     {
         return [
             'service_id'         => 'required',
-            'assignee_id'        => 'required',
             'start'              => 'required',
             'end'                => 'nullable'
         ];
@@ -44,7 +43,6 @@ class StoreTaskRequest extends Request
     {
         return [
             'service_id.required'        => 'Musisz wybrać uslugę.',
-            'assignee_id.required'       => 'Musisz wybrać pracownika.',
             'start.required '            => 'Musisz podać datę rozpoczęcia zadania.'
         ];
     }

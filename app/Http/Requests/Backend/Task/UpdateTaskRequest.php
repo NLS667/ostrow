@@ -29,7 +29,6 @@ class UpdateTaskRequest extends Request
     {
         return [
             'service_id'         => 'required',
-            'assignee_id'        => 'required',
             'start'              => 'required',
             'end'                => 'nullable'
         ];
@@ -43,10 +42,8 @@ class UpdateTaskRequest extends Request
     public function messages()
     {
         return [
-            'title.required'        => 'To pole jest wymagane.',
-            'title.max'             => 'Długość max. 191 znaków.',
-            'description.max'       => 'Długość max. 191 znaków.',
-            'start.required'        => 'Musisz podać datę rozpoczęcia zadania.',
+            'service_id.required'        => 'Musisz wybrać uslugę.',
+            'start.required '            => 'Musisz podać datę rozpoczęcia zadania.'
         ];
     }
 }
