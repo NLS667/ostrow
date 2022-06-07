@@ -15,10 +15,10 @@ trait ClientRelationship
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    //public function services()
-    //{
-    //    return $this->hasMany(Service::class, config('access.service_client_table'), 'client_id', 'service_id');
-    //}
+    public function services()
+    {
+        return $this->hasMany(Service::class, config('access.service_client_table'), 'client_id', 'service_id');
+    }
 
     /**
      * Many-to-Many relations with Task.
