@@ -17,7 +17,7 @@
 
                     <div class="card-body">
                         <div class="row">
-                        @if ($clients->count())
+                        @if ($data->count())
                         <table class="table">
                             <thead>
                                 <tr>
@@ -31,11 +31,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($clients as $client)
-                                        @foreach($services as $service)   
+                                @foreach($data as $client)
+                                        @foreach($client->services as $service)   
                                         <tr>
                                             @if ($loop->first)
-                                            <td class="align-top" rowspan="{{ $services->count() }}">{{ $client->full_name }}</td>
+                                            <td class="align-top" rowspan="{{ $services->count() }}">{{ $client->name }}</td>
                                             <td class="align-top" rowspan="{{ $services->count() }}">{!!html_entity_decode($client->address)!!}</td>
                                             @endif                                             
                                             <td>{{ $service->service_type_short }}</td>
