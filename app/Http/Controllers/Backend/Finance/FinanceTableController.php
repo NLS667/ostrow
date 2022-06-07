@@ -83,6 +83,7 @@ class FinanceTableController extends Controller
                     'short_name' => $service->service_type_short,
                     'deal_amount' => floatval($service->deal_amount),
                     'deal_advance' => floatval($service->deal_advance),
+                    'left_amount' => floatval($service->deal_amount) - floatval($service->deal_advance),
                 ];
                 array_push($client_data->services, $client_services);
             }

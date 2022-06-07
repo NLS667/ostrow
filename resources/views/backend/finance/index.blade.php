@@ -141,6 +141,7 @@
                     '<td>'+service.short_name+'</td>'+
                     '<td>'+service.deal_amount+'</td>'+
                     '<td>'+service.deal_advance+'</td>'+
+                    '<td>'+service.left_amount+'</td>'+
                     '<td></td>'+
                 '</tr>';
               }
@@ -192,11 +193,15 @@
                         return "";
                         }
                     },
-                    {data: 'left_amount', "render": function ( data, type, row, meta ) {
-                        var left = row[3] - row[4];
-                        return left;
+                    {data: 'services', "render": function ( data, type, row, meta ) {
+                        if(data==null) return "";
+                        for(var i=0, num=data.length; i<num; i++) {
+                            var service = data[i];
+                            return service.left_amount;
                         }
-                    }, 
+                        return "";
+                        }
+                    },
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 initComplete: function (settings, json) {
