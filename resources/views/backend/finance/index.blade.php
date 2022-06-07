@@ -35,8 +35,8 @@
                                         @foreach($services as $service)   
                                         <tr>
                                             @if ($loop->first)
-                                            <td rowspan="{{ $services->count() }}">{{ $client->full_name }}</td>
-                                            <td rowspan="{{ $services->count() }}">{!!html_entity_decode($client->address)!!}</td>
+                                            <td class="align-top" rowspan="{{ $services->count() }}">{{ $client->full_name }}</td>
+                                            <td class="align-top" rowspan="{{ $services->count() }}">{!!html_entity_decode($client->address)!!}</td>
                                             @endif                                             
                                             <td>{{ $service->service_type_short }}</td>
                                             <td>40000.00</td>
