@@ -77,8 +77,6 @@
                     style = 'text-danger';
                 }
 
-                var amountTotal
-
                 html += '<tr>'+
                     '<td></td>'+
                     '<td></td>'+
