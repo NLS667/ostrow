@@ -91,17 +91,6 @@
             var dataTable = $('#finance-table').dataTable({
                 columnDefs: [
                     {"className": "dt-center", "targets": "_all"},
-                    {"targets": "5",
-                        render: function ( data, type, row ) {
-                            console.log(data);
-                          if (data > 0) {
-                            var color = 'red';
-                          } else {
-                            color = 'green';
-                          }
-                          return '<span style="color:' + color + '">' + data + '</span>';
-                        }
-                    },
                 ],
                 processing: true,
                 serverSide: true,
@@ -146,7 +135,12 @@
                         if(data==null) return "";
                         for(var i=0, num=data.length; i<num; i++) {
                             var service = data[i];
-                            return service.left_amount;
+                            if (service.left_amount > 0) {
+                                var color = 'red';
+                              } else {
+                                color = 'green';
+                              }
+                          return '<span style="color:' + color + '">' + service.left_amount + '</span>';
                         }
                         return "";
                         }
