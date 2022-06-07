@@ -31,7 +31,7 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">date_range</i> Ostatnie 24 godziny
+                <i class="material-icons">date_range</i> Wszystkie w bazie
               </div>
             </div>
           </div>
@@ -42,12 +42,12 @@
               <div class="card-icon">
                 <i class="material-icons">done_all</i>
               </div>
-              <p class="card-category">Wykonane Zadania</p>
-              <h3 class="card-title">{{ $data['finishedTaskCount'] }}</h3>
+              <p class="card-category">Nadchodzące Zadania</p>
+              <h3 class="card-title">{{ $data['comingTaskCount'] }}</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">date_range</i> Ostatnie 24 godziny
+                <i class="material-icons">date_range</i> Najbliższy miesiąc
               </div>
             </div>
           </div>

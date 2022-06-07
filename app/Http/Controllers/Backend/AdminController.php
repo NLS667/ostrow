@@ -9,7 +9,9 @@ use App\Models\Access\Role\Role;
 use App\Models\Device\Device;
 use App\Models\Access\User\User;
 use App\Models\Client\Client;
+use App\Models\Service\Service;
 use App\Models\Task\Task;
+use App\Models\ServiceCategory\ServiceCategory;
 use Carbon\Carbon as Carbon;
 
 class AdminController extends Controller
@@ -24,26 +26,52 @@ class AdminController extends Controller
         $clients = Client::where('status', 1)->get();
         $data['clientCount'] = $clients->count();
 
-        $new_tasks = Task::where('status', 0)->where('created_at', '>=', Carbon::now()->subDay()->toDateTimeString())->get();
-        $finished_tasks = Task::where('status', 3)->where('updated_at', '>=', Carbon::now()->subDay()->toDateTimeString())->get();
+        $new_tasks = Task::where('status', 0)->get();
+        $coming_tasks = Task::where('status', 2)->get();
         $data['newTaskCount'] = $new_tasks->count();
-        $data['finishedTaskCount'] = $finished_tasks->count();
+        $data['comingTaskCount'] = $coming_tasks->count();
 
         $map_data = [];
         $map_data['mapMode'] = 'large';
         $map_data['mapHeight'] = 900;
-        $map_data['mapZoom'] = 7;       
+        $map_data['mapZoom'] = 7;        
+        $map_data['layers'] = [];
+
+        $serviceCategories = ServiceCategory::all();
+
+        if($serviceCategories->count() > 0)
+        {
+            foreach($serviceCategories as $category)
+            {
+                $map_data['layers'][] = (object)[
+                    'id' => $category->id,
+                    'name' => $category->name,
+                    'markers' => [],
+                ];
+            }
+        }
 
         if($clients->count() > 0)
         {
-            $map_data['markers'] = [];
-
             foreach($clients as $client)
             {
-                $map_data['markers'][] = (object)[
-                    'content' => view('backend.map.popup')->with('client', $client)->render(),
-                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                ];
+                $services = Service::where('client_id', $client->id)->get();
+
+                foreach($services as $service){
+                    $catid = $service->service_cat_id;
+                    $client_markers = [];
+                    $client_markers[] = (object)[
+                        'content' => view('backend.map.popup')->with('client', $client)->render(),
+                        'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                        'title' => $client->full_name,
+                    ];
+
+                    foreach($map_data['layers'] as $layer){
+                        if($layer->id == $catid){
+                            $layer->markers = $client_markers;
+                        }
+                    }
+                }
             }   
         }
         return view('backend.index')->with('map_data', $map_data)->with('data', $data);
