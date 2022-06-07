@@ -55,7 +55,9 @@
                     hoverToWake: false,
                     sleepNote: true,
                     wakeMessage: 'Kliknij',
-                    sleepButton: L.Control.sleepMapControl,
+                    sleepButton: function(){
+                        return new L.Control.SleepMapControl({ prompt: "Kliknij" });
+                    },
                     sleepOpacity: .7,
                     layers: [this.tileLayer]
                 }).setView([51.919438, 19.145136], this.data.mapZoom);
