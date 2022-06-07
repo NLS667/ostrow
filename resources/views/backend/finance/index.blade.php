@@ -68,13 +68,13 @@
               // i=1 - Skip the first house, its in the DT row.
               for (i=1; i<services.length; i++) {
                 var service = services[i];
-                var left = Number(service.left_amount);
+                var left = Number();
                 console.log(typeof(left));
                 console.log(left);
-                if(left > 0){
-                    var style = 'style="color: red;"';
+                if(service.left_amount = '0.00'){
+                    var style = 'style="color: green;"';
                 } else {
-                    style = 'style="color: green;"';
+                    style = 'style="color: red;"';
                 }
 
                 html += '<tr>'+
