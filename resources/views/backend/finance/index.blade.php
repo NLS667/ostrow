@@ -34,7 +34,7 @@
                                 @foreach($clients as $client)
                                     <tr>
                                         <td>{{ $client->full_name }}</td>
-                                        <td>{{ $client->address }}</td>
+                                        <td>{!!html_entity_decode($client->address)!!}</td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
