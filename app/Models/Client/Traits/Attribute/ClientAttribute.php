@@ -309,10 +309,10 @@ trait ClientAttribute
 
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
-            return $this->getShowButtonAttribute('btn btn-info btn-link btn-just-icon').'
-                    '.$this->getEditButtonAttribute('btn btn-success btn-link btn-just-icon').'
+            return $this->getShowButtonAttribute('btn btn-info btn-round').'
+                    '.$this->getEditButtonAttribute('btn btn-success btn-round').'
                     <div class="btn-group dropup">
-                        <button type="button" class="btn btn-primary btn-link btn-just-icon dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-primary btn-round dropdown-toggle" data-toggle="dropdown">
                             <span class="material-icons">settings</span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
