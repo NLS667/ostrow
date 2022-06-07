@@ -93,6 +93,7 @@
                     {"className": "dt-center", "targets": "_all"},
                     {"targets": "5",
                         render: function ( data, type, row ) {
+                            console.log(data);
                           if (data > 0) {
                             var color = 'red';
                           } else {
