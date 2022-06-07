@@ -302,17 +302,17 @@ trait ClientAttribute
     {
         if ($this->trashed()) {
             return '<div class="btn-group action-btn">
-                        '.$this->getRestoreButtonAttribute('btn btn-success btn-flat').'
-                        '.$this->getDeletePermanentlyButtonAttribute('btn btn-danger btn-flat').'
+                        '.$this->getRestoreButtonAttribute('btn btn-success btn-round').'
+                        '.$this->getDeletePermanentlyButtonAttribute('btn btn-danger btn-round').'
                     </div>';
         }
 
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
-            return $this->getShowButtonAttribute('btn btn-info btn-flat').'
-                    '.$this->getEditButtonAttribute('btn btn-success btn-flat').'
+            return $this->getShowButtonAttribute('btn btn-info btn-round').'
+                    '.$this->getEditButtonAttribute('btn btn-success btn-round').'
                     <div class="btn-group dropup">
-                        <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-primary btn-round dropdown-toggle" data-toggle="dropdown">
                             <span class="material-icons">settings</span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -348,7 +348,7 @@ trait ClientAttribute
                     if ($permissionCounter > 3) {
                         $actionButton = $actionButton.'
                             <div class="btn-group dropup">
-                            <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
+                            <button type="button" class="btn btn-default btn-round dropdown-toggle" data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-option-vertical"></span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right">';
