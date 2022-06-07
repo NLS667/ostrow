@@ -171,7 +171,7 @@
                     },
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
-                initComplete: function (settings, json) {
+                drawCallback: function (settings) {
                    var api = this.api();
                       
                     api.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
