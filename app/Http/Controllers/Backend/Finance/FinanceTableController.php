@@ -64,6 +64,32 @@ class FinanceTableController extends Controller
          * Note: You must return deleted_at or the User getActionButtonsAttribute won't
          * be able to differentiate what buttons to show for each row.
          */
+        $dtQuery = [];
+        $clients = $this->clients->query()->where('status', 1)->get();
+        foreach($clients as $client){ 
+            $client_data = (object)[
+                'id' => $client->id,
+                'name' => $client->name,
+                'address' => $clients->address,
+                'services' => [],
+            ];
+
+            $services = $client->services;
+            foreach($services as $service){
+                $client_services = (object)[
+                    'id' => $client->id,
+                    'short_name' => $service->type,
+                    'deal_amount' => $service->deal_amount,
+                    'deal_advance' => $service->deal_advance,
+                ];
+                $client_data->services = $client_services;
+            }
+
+            $dtQuery[] = $client_data;
+        }        
+
+        \Log::info(json_encode($dtQuery));
+
         $dataTableQuery = $this->clients->query()
             ->leftJoin('services', 'services.client_id', '=', 'clients.id')
             ->leftJoin('service_categories', 'services.service_cat_id', '=', 'service_categories.id')
@@ -80,17 +106,6 @@ class FinanceTableController extends Controller
                 'services.deal_amount as deal_amount',
                 'services.deal_advance as deal_advance',
             ]);
-
-        $dtQuery = [];
-        foreach($dataTableQuery->get() as $clientsService){ 
-
-        \Log::info(json_encode($clientsService));
-            $dtQuery[] = (object)[
-                'id' => $clientsService->id,
-                'first_name' => $clientsService->first_name,
-                'adr_street' => $clientsService->adr_street,
-                'services' => $clientsService->services,
-            ];
         }
         // active() is a scope on the ClientScope trait
         return $dataTableQuery->get();
