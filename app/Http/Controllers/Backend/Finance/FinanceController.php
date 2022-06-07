@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Finance;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Finance\ManageFinanceRequest;
 use App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository;
 use App\Repositories\Backend\Service\ServiceRepository;
