@@ -135,8 +135,7 @@
                         if(data==null) return "";
                         for(var i=0, num=data.length; i<num; i++) {
                             var service = data[i];
-                            console.log(typeof(service.left_amount));
-                            if (service.left_amount > 0) {
+                            if (+service.left_amount > 0) {
                                 var color = 'red';
                               } else {
                                 color = 'green';
