@@ -90,7 +90,17 @@
 
             var dataTable = $('#finance-table').dataTable({
                 columnDefs: [
-                    {"className": "dt-center", "targets": "_all"}
+                    {"className": "dt-center", "targets": "_all"},
+                    {"targets": "5",
+                        render: function ( data, type, row ) {
+                          if (data > 0) {
+                            var color = 'red';
+                          } else {
+                            color = 'green';
+                          }
+                          return '<span style="color:' + color + '">' + data + '</span>';
+                        }
+                    },
                 ],
                 processing: true,
                 serverSide: true,
@@ -142,15 +152,6 @@
                     },
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
-                createdRow: function (row, data, index) {
-                    console.log(data[5]);
-                    console.log(typeof(data[5]));
-                    if (data[5] == 0) {
-                        $('td', row).eq(5).addClass('text-success');
-                    } else {
-                        $('td', row).eq(5).addClass('text-danger');
-                    }
-                },
                 initComplete: function (settings, json) {
                    
                     var api = this.api();
