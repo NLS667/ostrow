@@ -36,13 +36,23 @@ class MenuTableSeeder extends Seeder
                 "content":"Calendar"
             },
             {
+                "view_permission_id":"view-finance-management",
+                "icon":"payments",
+                "open_in_new_tab":0,
+                "url_type":"route",
+                "url":"admin.finance.index",
+                "name":"Finanse",
+                "id":3,
+                "content":"Finance"
+            },
+            {
                 "view_permission_id":"view-clients-management",
                 "icon":"face",
                 "open_in_new_tab":0,
                 "url_type":"route",
                 "url":"admin.client.index",
                 "name":"Klienci",
-                "id":3,
+                "id":4,
                 "content":"Clients"
             },
             {
@@ -52,7 +62,7 @@ class MenuTableSeeder extends Seeder
                 "url_type":"route",
                 "url":"admin.service.index",
                 "name":"Usługi",
-                "id":4,
+                "id":5,
                 "content":"Services"
             },
             {
@@ -62,7 +72,7 @@ class MenuTableSeeder extends Seeder
                 "url_type":"route",
                 "url":"admin.task.index",
                 "name":"Zadania",
-                "id":5,
+                "id":6,
                 "content":"Tasks"
             },  
             {
@@ -72,7 +82,7 @@ class MenuTableSeeder extends Seeder
                 "url_type":"route",
                 "url":"",
                 "name":"Słowniki",
-                "id":6,
+                "id":7,
                 "content":"Dictionaries",
                 "children":[{
                     "view_permission_id":"view-producer-management",
@@ -81,7 +91,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.producer.index",
                     "name":"Producenci",
-                    "id":7,
+                    "id":8,
                     "content":"Producers"
                 },
                 {
@@ -91,7 +101,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.model.index",
                     "name":"Modele Produktów",
-                    "id":8,
+                    "id":9,
                     "content":"Product-Models"
                 },
                 {
@@ -101,7 +111,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.serviceCategory.index",
                     "name":"Kategorie Usług",
-                    "id":9,
+                    "id":10,
                     "content":"Service Categories"
                 }]
             }]';
