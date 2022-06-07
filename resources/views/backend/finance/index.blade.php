@@ -179,7 +179,7 @@
                         if(data==null) return "";
                         for(var i=0, num=data.length; i<num; i++) {
                             var service = data[i];
-                            return service.deal_amount;
+                            return service.deal_amount.toFixed(2);;
                         }
                         return "";
                         }
@@ -188,7 +188,7 @@
                         if(data==null) return "";
                         for(var i=0, num=data.length; i<num; i++) {
                             var service = data[i];
-                            return service.deal_advance;
+                            return service.deal_advance.toFixed(2);;
                         }
                         return "";
                         }
@@ -197,7 +197,7 @@
                         if(data==null) return "";
                         for(var i=0, num=data.length; i<num; i++) {
                             var service = data[i];
-                            return service.left_amount;
+                            return service.left_amount.toFixed(2);;
                         }
                         return "";
                         }
