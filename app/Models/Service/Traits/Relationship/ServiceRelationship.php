@@ -16,17 +16,17 @@ trait ServiceRelationship
      */
     public function type()
     {
-        return $this->belongsTo(ServiceCategory::class, 'service_cat_id', 'id');
+        return $this->belongsTo(ServiceCategory::class, 'service_cat_id');
     }
 
     public function client()
     {
-        return $this->belongsTo(Client::class, 'client_id', 'id');
+        return $this->belongsTo(Client::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 }
