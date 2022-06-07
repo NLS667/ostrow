@@ -51,6 +51,8 @@ class ServiceRepository extends BaseRepository
                 'services.offered_at',
                 'services.signed_at',
                 'services.installed_at',
+                'services.deal_amount',
+                'services.deal_advance',
             ]);
     }
 
@@ -75,6 +77,8 @@ class ServiceRepository extends BaseRepository
             $service->offered_at = $request['offered_at'];
             $service->signed_at = $request['signed_at'];
             $service->installed_at = $request['installed_at'];
+            $service->deal_amount = $request['deal_amount'];
+            $service->deal_advance = $request['deal_advance'];
 
             $service->created_by = access()->user()->id;
 

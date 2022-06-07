@@ -29,6 +29,8 @@
                                         <th>Data oferty</th>
                                         <th>Data umowy</th>
                                         <th>Data Instalacji</th>
+                                        <th>Wartość Umowy</th>
+                                        <th>Wpłacona zaliczka</th>
                                         <th>Akcje</th>
                                     </tr>
                                 </thead>
@@ -40,11 +42,15 @@
                                         <th>Data oferty</th>
                                         <th>Data umowy</th>
                                         <th>Data Instalacji</th>
+                                        <th>Wartość Umowy</th>
+                                        <th>Wpłacona zaliczka</th>
                                         <th class="text-right">Akcje</th>
                                     </tr>
                                 </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
+                                        <th></th>
+                                        <th></th>
                                         <th></th>
                                         <th></th>
                                         <th></th>
@@ -114,6 +120,8 @@
                     {data: 'offered_at', name: 'services.offered_at'},
                     {data: 'signed_at', name: 'services.signed_at'},
                     {data: 'installed_at', name: 'services.installed_at'},
+                    {data: 'deal_amount', name: 'services.deal_amount'},
+                    {data: 'deal_advance', name: 'services.deal_advance'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 order: [[3, "asc"]],

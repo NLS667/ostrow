@@ -68,12 +68,20 @@ class ServiceTableController extends Controller
             ->addColumn('created_at', function ($service) {
                 return Carbon::parse($service->created_at)->toDateString();
             })
-            ->addColumn('updated_at', function ($service) {
-                if(isset($service->updated_at))
+            ->addColumn('deal_amount', function ($service) {
+                if(isset($service->deal_amount))
                 {
-                    return Carbon::parse($service->updated_at)->toDateString();                    
+                    return $service->deal_amount;                    
                 } else {
-                    return 'Nigdy';
+                    return '--';
+                }
+            })
+            ->addColumn('deal_advance', function ($service) {
+                if(isset($service->deal_advance))
+                {
+                    return $service->deal_advance;                    
+                } else {
+                    return '--';
                 }
             })
             ->addColumn('actions', function ($service) {

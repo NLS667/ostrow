@@ -35,6 +35,8 @@ class Service extends BaseModel
         'installed_at',
         'created_by',
         'updated_by',
+        'deal_amount',
+        'deal_advance',
     ];
 
     protected $dates = [
