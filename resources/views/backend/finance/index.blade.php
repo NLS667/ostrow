@@ -193,7 +193,7 @@
                         }
                     },
                     {data: 'left_amount', "render": function ( data, type, row, meta ) {
-                        var left = Number(row[3]) - Number(row[4]);
+                        var left = row[3] ;
                         return left;
                         }
                     }, 
