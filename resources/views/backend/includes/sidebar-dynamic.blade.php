@@ -1,8 +1,8 @@
 <!-- Main Sidebar Container -->
 <div class="sidebar" data-color="orange" data-background-color="black" data-image="{{ asset('/img/sidebar-1.jpg') }}">
     <div class="logo">
-        <a href="#" class="simple-text logo-mini">O</a>
-        <a href="#" class="simple-text logo-normal">OSTR CRM</a>
+        <a href="#" class="simple-text logo-mini">B</a>
+        <a href="#" class="simple-text logo-normal">BIO-KLIM</a>
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
