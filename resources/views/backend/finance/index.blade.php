@@ -43,6 +43,11 @@
                                             <td class="text-right">30000.00</td>
                                             <td class="text-right">10000.00</td>
                                             <td></td>
+                                            @if ($loop->last)
+                                            <td>RAZEM</td>
+                                            <td class="text-right"">total</td>
+                                            <td class="text-right"">total</td>
+                                            <td></td>
                                         </tr>
                                         @endforeach
                                 @endforeach
