@@ -91,13 +91,18 @@
                 leftTotal += service.left_amount;
                 console.log(amountTotal);
               }
+              if(leftTotal == '0.00'){
+                    var newStyle = 'text-success';
+                } else {
+                    newStyle = 'text-danger';
+                }
               html += '<tr>'+
                     '<td></td>'+
                     '<td></td>'+
                     '<td>RAZEM</td>'+
                     '<td class="text-right">'+amountTotal.toFixed(2)+'</td>'+
                     '<td class="text-right">'+advanceTotal.toFixed(2)+'</td>'+
-                    '<td class="text-right '+style+'">'+leftTotal.toFixed(2)+'</td>'+
+                    '<td class="text-right '+newStyle+'">'+leftTotal.toFixed(2)+'</td>'+
                     '<td></td>'+
                 '</tr>';
               
