@@ -169,7 +169,7 @@
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 initComplete: function (settings, json) {
-                   
+                   $(".datatable thead tr td").removeClass("font-weight-bold");
                     var api = this.api();
                       
                     api.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
