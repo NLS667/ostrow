@@ -84,7 +84,7 @@ class FinanceTableController extends Controller
                 ];
                 $client_data->services = $client_services;
             }
-
+            \Log::info(json_encode($client_data));
             $dtQuery[] = $client_data;
         };
 
