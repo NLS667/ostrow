@@ -62,7 +62,7 @@ class FinanceTableController extends Controller
          */
         $dataTableQuery = $this->clients->query()
             ->leftJoin('services', 'services.client_id', '=', 'clients.id')
-            ->leftJoin('service_categories', 'services.client_id', '=', 'service_categories.id')
+            ->leftJoin('service_categories', 'services.service_cat_id', '=', 'service_categories.id')
             ->select([
                 config('clients.clients_table').'.id',
                 config('clients.clients_table').'.first_name',
