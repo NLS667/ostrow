@@ -69,7 +69,7 @@ class FinanceTableController extends Controller
             return $dataTableQuery->onlyTrashed();
         }
 
-        \Log::info(json_encode($dataTableQuery))
+        \Log::info(json_encode($dataTableQuery));
         // active() is a scope on the ClientScope trait
         return $dataTableQuery->active($status);
     }
