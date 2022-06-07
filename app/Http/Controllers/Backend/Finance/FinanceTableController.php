@@ -53,7 +53,7 @@ class FinanceTableController extends Controller
          * Note: You must return deleted_at or the User getActionButtonsAttribute won't
          * be able to differentiate what buttons to show for each row.
          */
-        $dataTableQuery = $this->query()
+        $dataTableQuery = $this->services->query()
             ->leftJoin('clients', 'services.client_id', '=', 'clients.id')
             ->leftJoin('tasks', 'tasks.service_id', '=', 'services.id')
             ->select([
