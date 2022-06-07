@@ -125,6 +125,7 @@
                 columns: [
                     {data: 'name', "render": function ( data, type, row, meta ) {
                         return '<strong>'+data+'</strong>';
+                        }
                     },
                     {data: 'address'}, 
                     {data: 'services', "render": function ( data, type, row, meta ) {
