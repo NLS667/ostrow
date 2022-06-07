@@ -849,7 +849,7 @@ var Backend = {}; // common variable used in all the files of the backend
         tinyMCE: {
             init: function (locale) {
                 tinymce.init({
-                    language: (locale === 'en_US' ? undefined : locale),
+                    language: (locale === 'pl_PL' ? undefined : locale),
                     path_absolute: "/",
                     selector: 'textarea',
                     height: 200,
