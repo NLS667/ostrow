@@ -41,9 +41,9 @@ trait ClientAttribute
     public function getShowButtonAttribute($class)
     {
         if (access()->allow('show-client')) {
-            return '<a class="'.$class.'"  data-toggle="tooltip" data-placement="top" title="Zobacz" href="'.route('admin.client.show', $this).'">
-                        <span class="material-icons">visibility</span>
-                    </a>';
+            return '<button class="'.$class.'" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Zobacz" href="'.route('admin.client.show', $this).'">
+                        <i class="material-icons">visibility</i>
+                    </button>';
         }
     }
 
@@ -53,9 +53,9 @@ trait ClientAttribute
     public function getEditButtonAttribute($class)
     {
         if (access()->allow('edit-client')) {
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.client.edit', $this).'">
+            return '<button class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.client.edit', $this).'">
                         <span class="material-icons">edit</span>
-                    </a>';
+                    </button>';
         }
     }
 
@@ -67,11 +67,11 @@ trait ClientAttribute
         if (access()->allow('delete-client')) {
             $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.client.destroy', $this).'"
+            return '<button class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.client.destroy', $this).'"
                  data-method="delete"
                  data-trans-button-cancel="Anuluj"
                  data-trans-button-confirm="Usuń"
-                 data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</a>';
+                 data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</button>';
         }
 
         return '';
@@ -87,7 +87,7 @@ trait ClientAttribute
             if (access()->allow('activate-client')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Aktywuj' : '';
 
-                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Aktywuj" href="'.route('admin.client.mark', [$this, 1]).'"><span class="material-icons">lock_open</span>'.$name.'</a>';
+                return '<button class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Aktywuj" href="'.route('admin.client.mark', [$this, 1]).'"><span class="material-icons">lock_open</span>'.$name.'</button>';
             }
             break;
 
@@ -95,7 +95,7 @@ trait ClientAttribute
             if (access()->allow('deactivate-client')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Deaktywuj' : '';
 
-                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Deaktywuj" href="'.route('admin.client.mark', [$this, 0]).'"><span class="material-icons">lock</span>'.$name.'</a>';
+                return '<button class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Deaktywuj" href="'.route('admin.client.mark', [$this, 0]).'"><span class="material-icons">lock</span>'.$name.'</button>';
             }
             break;
 
@@ -112,9 +112,9 @@ trait ClientAttribute
     public function getRestoreButtonAttribute($class)
     {
         if (access()->allow('delete-client')) {
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Przywróć Klienta" href="'.route('admin.client.restore', $this).'" name="restore_client">
+            return '<button class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Przywróć Klienta" href="'.route('admin.client.restore', $this).'" name="restore_client">
                         <span class="material-icons">sync_alt</span>
-                    </a>';
+                    </button>';
         }
     }
 
@@ -123,9 +123,9 @@ trait ClientAttribute
      */
     public function getDeletePermanentlyButtonAttribute($class)
     {
-        return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń permanetnie" href="'.route('admin.client.delete-permanently', $this).'" name="delete_client_perm">
+        return '<button class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń permanetnie" href="'.route('admin.client.delete-permanently', $this).'" name="delete_client_perm">
                     <span class="material-icons">delete</span>
-                </a>';
+                </button>';
     }
 
     /**
