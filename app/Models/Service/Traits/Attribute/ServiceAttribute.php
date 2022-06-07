@@ -132,5 +132,11 @@ trait ServiceAttribute
         $service_type = ServiceCategory::where('id', $this->service_cat_id)->first();
         return $service_type->name;
     }
+
+    public function getServiceTypeShortAttribute()
+    {
+        $service_type = ServiceCategory::where('id', $this->service_cat_id)->first();
+        return $service_type->short_name;
+    }
     
 }
