@@ -161,7 +161,7 @@
                     }},
                     {data: 'services', name: 'service_categories.name', sortable: false},  
                     {data: 'created_at', name: 'clients.created_at'},
-                    {data: 'actions', name: 'actions', className: 'text-center dt-actions', searchable: false, sortable: false}
+                    {data: 'actions', name: 'actions', className: 'text-center td-actions', searchable: false, sortable: false}
                 ],
                 order: [[5, "asc"]],
                 searchDelay: 500,
