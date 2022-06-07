@@ -73,9 +73,11 @@
                             <button class="btn btn-box-tool" data-toggle="collapse" data-target="#collapseBody"><i class="fa fa-minus"></i></button>
                         </div><!-- /.box tools -->
                     </div><!-- /.box-header -->
-                    <div id="collapseBody" class="card-body">
+                    <div id="collapseBody" class="collapse">
+                        <div class="card-body">
                         {!! history()->renderType('Rola') !!}
-                    </div><!-- /.box-body -->
+                        </div><!--card-body-->
+                    </div><!--collapse-->
                 </div><!--box box-info-->
             </div>
         </div>

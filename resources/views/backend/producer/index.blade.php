@@ -71,9 +71,11 @@
                             <button class="btn btn-primary btn-round" data-toggle="collapse"  data-target="#collapseBody"><i class="fa fa-minus"></i></button>
                         </div><!-- /.card tools -->
                     </div><!-- /.card-header -->
-                    <div id="collapseBody" class="card-body">
+                    <div id="collapseBody" class="collapse">
+                        <div class="card-body">
                         {!! history()->renderType('Producent') !!}
-                    </div><!-- /.card-body -->
+                        </div><!--card-body-->
+                    </div><!--collapse-->
                 </div><!--card box-info-->
             </div>
         </div>

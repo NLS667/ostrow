@@ -61,9 +61,11 @@
                             <button class="btn btn-box-tool" data-toggle="collapse" data-target="#collapseBody"><i class="fa fa-minus"></i></button>
                         </div><!-- /.box tools -->
                     </div><!-- /.box-header -->
-                    <div id="collapseBody" class="card-body">
-                        {{-- {!! history()->renderType('Menu') !!} --}}
-                    </div><!-- /.box-body -->
+                    <div id="collapseBody" class="collapse">
+                        <div class="card-body">
+                        {!! history()->renderType('Menu') !!}
+                        </div><!--card-body-->
+                    </div><!--collapse-->
                 </div><!--box box-success -->
             </div>
         </div>
