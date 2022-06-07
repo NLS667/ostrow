@@ -36,7 +36,7 @@ class FinanceTableController extends Controller
         return Datatables::make($this->getForDataTable($request->get('status'), $request->get('trashed')))
             ->escapeColumns(['id'])
             ->addColumn('actions', function ($service) {
-                return $client->action_buttons;
+                return $service->action_buttons;
             })
             ->make(true);
     }
