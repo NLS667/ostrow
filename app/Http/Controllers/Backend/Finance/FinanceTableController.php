@@ -33,8 +33,14 @@ class FinanceTableController extends Controller
      */
     public function __invoke(ManageFinanceRequest $request)
     {
-        return Datatables::make($this->getForDataTable($request->get('status'), $request->get('trashed')))
+        return Datatables::make($this->getForDataTable())
             ->escapeColumns(['id'])
+            ->editColumn('first_name', function ($service) {
+                return $service->full_name;
+            })
+            ->editColumn('adr_street', function ($service) {
+                return $service->address;
+            })
             ->addColumn('actions', function ($service) {
                 return $service->action_buttons;
             })
@@ -47,7 +53,7 @@ class FinanceTableController extends Controller
      *
      * @return mixed
      */
-    public function getForDataTable($status = 1, $trashed = false)
+    public function getForDataTable()
     {
         /**
          * Note: You must return deleted_at or the User getActionButtonsAttribute won't
@@ -55,11 +61,10 @@ class FinanceTableController extends Controller
          */
         $dataTableQuery = $this->services->query()
             ->leftJoin('clients', 'services.client_id', '=', 'clients.id')
-            ->leftJoin('tasks', 'tasks.service_id', '=', 'services.id')
             ->select([
                 'services.id',
-                'clients.full_name',
-                'services.service_type AS services',
+                'clients.first_name',
+                'services.service_type_short AS service',
                 'services.offered_at',
                 'services.signed_at',
                 'services.installed_at',

@@ -141,7 +141,7 @@
                     data: {status: 1, trashed: false}
                 },
                 columns: [
-                    {data: 'full_name', name: 'clients.full_name'},
+                    {data: 'first_name', name: 'clients.first_name'},
                     {data: 'adr_street', name: 'clients.adr_street'}, 
                     {data: 'services', name: 'service_categories.name', sortable: false}, 
                     {data: 'price', name: 'clients.price'},              
