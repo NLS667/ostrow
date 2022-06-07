@@ -40,74 +40,8 @@
                                         <th></th>
                                     </tr>
                                 </tfoot>
-                                <thead class="transparent-bg">
-                                    <tr>
-                                        <th>
-                                            <div class="input-group position-relative">
-                                                {!! Form::text('full_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Nazwa']) !!}
-                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
-                                            </div>
-                                        </th>
-                                        <th>
-                                            <div class="input-group position-relative">
-                                                {!! Form::text('address', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Adres']) !!}
-                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
-                                            </div>
-                                        </th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
                             </table>
                         </div><!--table-responsive-->
-                        <!--
-                        <div class="row">
-                        @if (count($data) > 0)
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Nazwa</th>
-                                    <th>Adres</th>
-                                    <th>Usługa</th>
-                                    <th class="text-right">Wartość umowy</th>
-                                    <th class="text-right">Wpłacona zaliczka</th>
-                                    <th class="text-right">Pozostało do zapłaty</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($data as $client)
-                                        @foreach($client->services as $service)   
-                                        <tr>
-                                            @if ($loop->first)
-                                            <td class="align-top" rowspan="{{ count($client->services)+1 }}">{{ $client->name }}</td>
-                                            <td class="align-top" rowspan="{{ count($client->services)+1 }}">{!!html_entity_decode($client->address)!!}</td>
-                                            @endif                                             
-                                            <td>{{ $service->service_type_short }}</td>
-                                            <td class="text-right">40000.00</td>
-                                            <td class="text-right">30000.00</td>
-                                            <td class="text-right">10000.00</td>
-                                            <td></td>
-                                        </tr>
-                                        @endforeach
-                                        <tr>
-                                            <td>RAZEM</td>
-                                            <td class="text-right">total</td>
-                                            <td class="text-right">total</td>
-                                            <td class="text-right">total</td>
-                                            <td></td> 
-                                        </tr>
-                                @endforeach
-                            </tbody>
-                        </table>                        
-                        @else
-
-                        @endif
-                        </div>
-                        -->                        
                     </div><!-- /.card-body -->
                 </div><!--card-->
             </div>
