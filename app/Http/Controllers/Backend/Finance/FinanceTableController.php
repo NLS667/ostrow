@@ -83,14 +83,15 @@ class FinanceTableController extends Controller
 
         $dtQuery = [];
         foreach($dataTableQuery as $clientsService){ 
+            
+        \Log::info(json_encode($clientsService));
             $dtQuery[] = (object)[
                 'id' => $clientsService->id,
                 'first_name' => $clientsService->first_name,
                 'adr_street' => $clientsService->adr_street,
-                'services' => $clientsService->services->get(),
+                'services' => $clientsService->services,
             ];
         }
-        \Log::info(json_encode($dtQuery));
         // active() is a scope on the ClientScope trait
         return $dataTableQuery;
     }
