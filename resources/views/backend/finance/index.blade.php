@@ -68,14 +68,20 @@
               // i=1 - Skip the first house, its in the DT row.
               for (i=1; i<services.length; i++) {
                 var service = services[i];
-                
+                if(service.left_amount > 0){
+                    var className = 'color: red;';
+                } else 
+                {
+                    className = 'color: green;';
+                }
+
                 html += '<tr>'+
                     '<td></td>'+
                     '<td></td>'+
                     '<td>'+service.short_name+'</td>'+
                     '<td class="text-right">'+service.deal_amount+'</td>'+
                     '<td class="text-right">'+service.deal_advance+'</td>'+
-                    '<td class="text-right">'+service.left_amount+'</td>'+
+                    '<td class="text-right '+className+'">'+service.left_amount+'</td>'+
                     '<td></td>'+
                 '</tr>';
               }
