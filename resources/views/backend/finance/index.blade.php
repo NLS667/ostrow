@@ -144,9 +144,9 @@
                     {data: 'first_name', name: 'clients.first_name'},
                     {data: 'adr_street', name: 'clients.adr_street'}, 
                     {data: 'service', name: 'service_categories.short_name', sortable: false}, 
-                    {data: 'price', name: 'clients.price'},              
-                    {data: 'payed', name: 'clients.payed'},
-                    {data: 'left', name: 'clients.left'}, 
+                    {data: 'deal_amount', name: 'service.deal_amount'},              
+                    {data: 'deal_advance', name: 'service.deal_advance'},
+                    {data: 'left_amount', name: 'clients.left'}, 
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 order: [[0, "asc"]],

@@ -42,6 +42,9 @@ class FinanceTableController extends Controller
             ->editColumn('adr_street', function ($client) {
                 return $client->address;
             })
+            ->addColumn('left_amount', function ($client) {
+                return '';
+            })
             ->addColumn('actions', function ($client) {
                 return '';
             })
@@ -73,9 +76,8 @@ class FinanceTableController extends Controller
                 config('clients.clients_table').'.adr_zipcode',
                 config('clients.clients_table').'.adr_city',
                 'service_categories.short_name as service',
-                'services.offered_at',
-                'services.signed_at',
-                'services.installed_at',
+                'services.deal_amount',
+                'services.deal_advance',
             ]);
         \Log::info(json_encode($dataTableQuery->get()));
         // active() is a scope on the ClientScope trait
