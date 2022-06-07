@@ -90,6 +90,28 @@
                   <span id="installed_at-error" class="error text-danger" for="input-installed_at">{{ $errors->first('installed_at') }}</span>
                   @endif
                 </div>
+              </div>
+              <div class="row">
+                {{-- Deal Amount --}}
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('deal_amount') ? ' has-danger' : '' }}">
+                  <label class="bmd-label-floating">Kwota Umowy</label>
+                  <input class="form-control{{ $errors->has('deal_amount') ? ' is-invalid' : '' }}" name="deal_amount" id="input-deal_amount" type="text" value="{{ old('deal_amount', $service->deal_amount) }}" />
+                  @if ($errors->has('deal_amount'))
+                  <span class="material-icons form-control-feedback">clear</span>
+                  <span id="deal_amount-error" class="error text-danger" for="input-deal_amount">{{ $errors->first('deal_amount') }}</span>
+                  @endif
+                </div>
+              </div>
+              <div class="row">
+                {{-- Deal Advance --}}
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('deal_advance') ? ' has-danger' : '' }}">
+                  <label class="bmd-label-floating">Wpłacona zaliczka</label>
+                  <input class="form-control{{ $errors->has('deal_advance') ? ' is-invalid' : '' }}" name="deal_advance" id="input-deal_advance" type="text" value="{{ old('deal_advance', $service->deal_advance) }}" />
+                  @if ($errors->has('deal_advance'))
+                  <span class="material-icons form-control-feedback">clear</span>
+                  <span id="deal_advance-error" class="error text-danger" for="input-deal_advance">{{ $errors->first('deal_advance') }}</span>
+                  @endif
+                </div>
               </div>          
             </div>
             <div class="card-footer">
