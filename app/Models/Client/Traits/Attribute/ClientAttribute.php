@@ -309,8 +309,7 @@ trait ClientAttribute
 
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
-            return '<div class="btn-group action-btn">
-                    '.$this->getShowButtonAttribute('btn btn-info btn-flat').'
+            return $this->getShowButtonAttribute('btn btn-info btn-flat').'
                     '.$this->getEditButtonAttribute('btn btn-success btn-flat').'
                     <div class="btn-group dropup">
                         <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">
@@ -320,12 +319,11 @@ trait ClientAttribute
                             '.$this->getDeleteButtonAttribute('dropdown-item').'                        
                             '.$this->getStatusButtonAttribute('dropdown-item').'
                         </div>
-                    </div>
-                </div>';
+                    </div>';
         } else {
             $userPermission = $this->getUserPermission();
             $permissionCounter = count($userPermission);
-            $actionButton = '<div class="btn-group action-btn">';
+            $actionButton = '';
             $i = 1;
 
             if (access()->user()->id == $this->id) {
@@ -358,7 +356,7 @@ trait ClientAttribute
                 }
                 $i++;
             }
-            $actionButton .= '</ul></div></div>';
+            $actionButton .= '</ul></div><';
 
             return $actionButton;
         }
