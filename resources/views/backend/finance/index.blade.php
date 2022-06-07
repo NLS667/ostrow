@@ -139,9 +139,9 @@
                     '<td></td>'+
                     '<td></td>'+
                     '<td>'+service.short_name+'</td>'+
-                    '<td class="text-right">'+service.deal_amount+'</td>'+
-                    '<td class="text-right">'+service.deal_advance+'</td>'+
-                    '<td class="text-right">'+service.left_amount+'</td>'+
+                    '<td class="text-right">'+floatval(service.deal_amount)+'</td>'+
+                    '<td class="text-right">'+floatval(service.deal_advance)+'</td>'+
+                    '<td class="text-right">'+floatval(service.left_amount)+'</td>'+
                     '<td></td>'+
                 '</tr>';
               }
