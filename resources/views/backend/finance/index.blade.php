@@ -143,7 +143,7 @@
                 columns: [
                     {data: 'first_name', name: 'clients.first_name'},
                     {data: 'adr_street', name: 'clients.adr_street'}, 
-                    {data: 'services', name: 'service_categories.name', sortable: false}, 
+                    {data: 'service', name: 'service_categories.short_name', sortable: false}, 
                     {data: 'price', name: 'clients.price'},              
                     {data: 'payed', name: 'clients.payed'},
                     {data: 'left', name: 'clients.left'}, 
