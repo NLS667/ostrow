@@ -135,13 +135,10 @@
                         if(data==null) return "";
                         for(var i=0, num=data.length; i<num; i++) {
                             var service = data[i];
-                            var left = +service.left_amount;
-                            console.log(typeof(left));
-                            console.log(left);
-                            if (left > 0) {
-                                var color = 'red';
+                            if (service.left_amount == '0.00') {
+                                var color = 'green';
                               } else {
-                                color = 'green';
+                                color = 'red';
                               }
                           return '<span style="color:' + color + '">' + service.left_amount + '</span>';
                         }
