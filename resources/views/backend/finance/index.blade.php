@@ -137,6 +137,7 @@
                             var service = data[i];
                             var left = +service.left_amount;
                             console.log(typeof(left));
+                            console.log(left);
                             if (left > 0) {
                                 var color = 'red';
                               } else {
