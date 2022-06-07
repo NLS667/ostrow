@@ -81,7 +81,7 @@
                     '<td>'+service.short_name+'</td>'+
                     '<td class="text-right">'+service.deal_amount+'</td>'+
                     '<td class="text-right">'+service.deal_advance+'</td>'+
-                    '<td class="text-right" '+className+'>'+service.left_amount+'</td>'+
+                    '<td class="text-right" '+style+'>'+service.left_amount+'</td>'+
                     '<td></td>'+
                 '</tr>';
               }
