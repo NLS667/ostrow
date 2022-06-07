@@ -123,7 +123,9 @@
                     data: {status: 1, trashed: false}
                 },
                 columns: [
-                    {data: 'name', className: 'font-weight-bold'},
+                    {data: 'name', "render": function ( data, type, row, meta ) {
+                        return '<strong>'+data+'</strong>';
+                    },
                     {data: 'address'}, 
                     {data: 'services', "render": function ( data, type, row, meta ) {
                         if(data==null) return "";
@@ -178,7 +180,6 @@
                             this.child( displayServices(data.services) ).show();
                         }
                     });
-                    $(".datatable thead tr th.font-weight-bold").removeClass("font-weight-bold");
                 },
                 order: [[0, "asc"]],
                 searchDelay: 500,
