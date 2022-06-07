@@ -165,8 +165,9 @@
                     {data: 'name'},
                     {data: 'address'}, 
                     {data: 'services', "render": function ( data, type, row, meta ) {
+                        console.log(data);
                         if(data==null) return "";
-                        for(var i=0, num=data.length; i<num; i++) {
+                        for(var i=0; i<data.length; i++) {
                             var service = data[i];
                             return service.short_name;
                         }
