@@ -46,7 +46,7 @@ class FinanceTableController extends Controller
                 return '';
             })
             ->addColumn('actions', function ($client) {
-                return '';
+                return $client->deal_amount - $client->deal_advance;
             })
             ->make(true);
     }
@@ -76,8 +76,8 @@ class FinanceTableController extends Controller
                 config('clients.clients_table').'.adr_zipcode',
                 config('clients.clients_table').'.adr_city',
                 'service_categories.short_name as service',
-                'services.deal_amount',
-                'services.deal_advance',
+                'services.deal_amount as deal_amount',
+                'services.deal_advance as deal_advance',
             ]);
         \Log::info(json_encode($dataTableQuery->get()));
         // active() is a scope on the ClientScope trait
