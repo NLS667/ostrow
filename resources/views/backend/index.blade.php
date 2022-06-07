@@ -26,7 +26,7 @@
               <div class="card-icon">
                 <i class="material-icons">add_task</i>
               </div>
-              <p class="card-category">Zlecone Zadania</p>
+              <p class="card-category">Nowe Zadania</p>
               <h3 class="card-title">{{ $data['newTaskCount'] }}</h3>
             </div>
             <div class="card-footer">
