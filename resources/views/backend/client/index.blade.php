@@ -147,10 +147,10 @@
                                 return '<span class="badge badge-default">BRAK ZADAŃ</a>';
                                 break;
                             case 1:
-                                return '<span class="badge badge-warning">OK</a>';
+                                return '<span class="badge badge-success">OK</a>';
                                 break;
                             case 2:
-                                return '<span class="badge badge-danger">ZAPLANUJ</a>';
+                                return '<span class="badge badge-warning">ZAPLANUJ</a>';
                                 break;
                             case 2:
                                 return '<span class="badge badge-danger">PO TERMINIE</a>';
