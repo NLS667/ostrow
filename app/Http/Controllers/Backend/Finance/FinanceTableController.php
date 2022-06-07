@@ -34,7 +34,7 @@ class FinanceTableController extends Controller
      */
     public function __invoke(ManageFinanceRequest $request)
     {
-        return Datatables::make($this->clients->getForDataTable())
+        return Datatables::make($this->getForDataTable())
             ->escapeColumns(['id'])
             ->editColumn('first_name', function ($client) {
                 return $client->name;
@@ -43,7 +43,7 @@ class FinanceTableController extends Controller
                 return $client->address;
             })
             ->addColumn('actions', function ($client) {
-                return $client->action_buttons;
+                return '';
             })
             ->make(true);
     }
