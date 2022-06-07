@@ -75,16 +75,16 @@ class FinanceTableController extends Controller
             ];
 
             $services = $client->services;
-            
+
             \Log::info(json_encode($services));
             foreach($services as $service){
                 $client_services = (object)[
                     'id' => $service->id,
-                    'short_name' => $service->short_name,
+                    'short_name' => $service->service_type_short,
                     'deal_amount' => $service->deal_amount,
                     'deal_advance' => $service->deal_advance,
                 ];
-                $client_data->services = $client_services;
+                array_push($client_data->services, $client_services);
             }
             $dtQuery[] = $client_data;
         };
