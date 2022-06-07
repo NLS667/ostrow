@@ -43,7 +43,7 @@ class FinanceTableController extends Controller
                 return $client->address;
             })
             ->addColumn('left_amount', function ($client) {
-                \Log::info(json_encode($client));
+                \Log::info(json_encode($client->services));
                 $amount_left =  $client->services->deal_amount - $client->services->deal_advance;
                 return number_format((float)$amount_left, 2, '.', '');
             })
