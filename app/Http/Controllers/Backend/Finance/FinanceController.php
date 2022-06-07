@@ -48,6 +48,10 @@ class FinanceController extends Controller
      */
     public function index(ManageFinanceRequest $request)
     {
-        return new ViewResponse('backend.finance.index', ['clients' => $this->clients, 'serviceCategories' => $this->serviceCategories, 'services' => $this->services]);
+    	$clients = $this->clients->getAll();
+        $serviceCategories = $this->serviceCategories->getAll();
+        $services = $this->services->getAll();
+
+        return new ViewResponse('backend.finance.index', ['clients' => $clients, 'serviceCategories' => $serviceCategories, 'services' => $services]);
     }
 }
