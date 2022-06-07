@@ -39,9 +39,9 @@
                                             <td class="align-top" rowspan="{{ count($client->services) }}">{!!html_entity_decode($client->address)!!}</td>
                                             @endif                                             
                                             <td>{{ $service->service_type_short }}</td>
-                                            <td>40000.00</td>
-                                            <td>30000.00</td>
-                                            <td>10000.00</td>
+                                            <td class="text-right">40000.00</td>
+                                            <td class="text-right">30000.00</td>
+                                            <td class="text-right">10000.00</td>
                                             <td></td>
                                         </tr>
                                         @endforeach
