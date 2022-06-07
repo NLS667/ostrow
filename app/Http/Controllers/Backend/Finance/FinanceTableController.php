@@ -74,7 +74,7 @@ class FinanceTableController extends Controller
                 'services' => [],
             ];
 
-            $services = $client->services->get();
+            $services = $client->services->query()->get();
             foreach($services as $service){
                 $client_services = (object)[
                     'id' => $service->id,
