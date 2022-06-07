@@ -99,10 +99,10 @@
               html += '<tr>'+
                     '<td></td>'+
                     '<td></td>'+
-                    '<td>RAZEM</td>'+
-                    '<td class="text-right">'+amountTotal.toFixed(2)+'</td>'+
-                    '<td class="text-right">'+advanceTotal.toFixed(2)+'</td>'+
-                    '<td class="text-right '+newStyle+'">'+leftTotal.toFixed(2)+'</td>'+
+                    '<td><strong>RAZEM</strong></td>'+
+                    '<td class="text-right"><strong>'+amountTotal.toFixed(2)+'</strong></td>'+
+                    '<td class="text-right"><strong>'+advanceTotal.toFixed(2)+'</strong></td>'+
+                    '<td class="text-right '+newStyle+'"><strong>'+leftTotal.toFixed(2)+'</strong></td>'+
                     '<td></td>'+
                 '</tr>';
               
