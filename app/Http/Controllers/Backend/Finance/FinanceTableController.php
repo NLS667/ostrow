@@ -71,6 +71,6 @@ class FinanceTableController extends Controller
             ]);
         \Log::info(json_encode($dataTableQuery));
         // active() is a scope on the ClientScope trait
-        return $dataTableQuery;
+        return $dataTableQuery->get();
     }
 }
