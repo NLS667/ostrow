@@ -69,13 +69,8 @@ class FinanceTableController extends Controller
                 'services.signed_at',
                 'services.installed_at',
             ]);
-
-        if ($trashed == 'true') {
-            return $dataTableQuery->onlyTrashed();
-        }
-
         \Log::info(json_encode($dataTableQuery));
         // active() is a scope on the ClientScope trait
-        return $dataTableQuery->active($status);
+        return $dataTableQuery;
     }
 }
