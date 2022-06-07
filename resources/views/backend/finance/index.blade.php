@@ -81,23 +81,23 @@
                     '<td></td>'+
                     '<td></td>'+
                     '<td>'+service.short_name+'</td>'+
-                    '<td class="text-right">'+service.deal_amount+'</td>'+
-                    '<td class="text-right">'+service.deal_advance+'</td>'+
-                    '<td class="text-right '+style+'">'+service.left_amount+'</td>'+
+                    '<td class="text-right">'+service.deal_amount.toFixed(2)+'</td>'+
+                    '<td class="text-right">'+service.deal_advance.toFixed(2)+'</td>'+
+                    '<td class="text-right '+style+'">'+service.left_amount.toFixed(2)+'</td>'+
                     '<td></td>'+
                 '</tr>';
-                amountTotal += +service.deal_amount;
-                advanceTotal += +service.deal_advance;
-                leftTotal += +service.left_amount;
+                amountTotal += service.deal_amount;
+                advanceTotal += service.deal_advance;
+                leftTotal += service.left_amount;
                 console.log(amountTotal);
               }
               html += '<tr>'+
                     '<td></td>'+
                     '<td></td>'+
                     '<td>RAZEM</td>'+
-                    '<td class="text-right">'+amountTotal+'</td>'+
-                    '<td class="text-right">'+advanceTotal+'</td>'+
-                    '<td class="text-right '+style+'">'+leftTotal+'</td>'+
+                    '<td class="text-right">'+amountTotal.toFixed(2)+'</td>'+
+                    '<td class="text-right">'+advanceTotal.toFixed(2)+'</td>'+
+                    '<td class="text-right '+style+'">'+leftTotal.toFixed(2)+'</td>'+
                     '<td></td>'+
                 '</tr>';
               
