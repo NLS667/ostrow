@@ -64,7 +64,10 @@
             function displayServices(services) {
   
               var html = '';
-              
+              var amountTotal = 0;
+              var advanceTotal = 0;
+              var leftTotal = 0;
+
               // i=1 - Skip the first house, its in the DT row.
               for (i=1; i<services.length; i++) {
                 var service = services[i];
@@ -73,6 +76,8 @@
                 } else {
                     style = 'text-danger';
                 }
+
+                var amountTotal
 
                 html += '<tr>'+
                     '<td></td>'+
@@ -83,7 +88,19 @@
                     '<td class="text-right '+style+'">'+service.left_amount+'</td>'+
                     '<td></td>'+
                 '</tr>';
+                amountTotal = amountTotal + service.deal_amount;
+                advanceTotal = advanceTotal + service.deal_advance;
+                leftTotal = leftTotal + service.left_amount;
               }
+              html += '<tr>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                    '<td>RAZEM</td>'+
+                    '<td class="text-right">'+amountTotal+'</td>'+
+                    '<td class="text-right">'+advanceTotal+'</td>'+
+                    '<td class="text-right '+style+'">'+leftTotal+'</td>'+
+                    '<td></td>'+
+                '</tr>';
               
               return $(html).toArray();
             }
