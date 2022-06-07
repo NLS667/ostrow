@@ -88,9 +88,9 @@
                     '<td class="text-right '+style+'">'+service.left_amount+'</td>'+
                     '<td></td>'+
                 '</tr>';
-                amountTotal = amountTotal + Number(service.deal_amount);
-                advanceTotal = advanceTotal + Number(service.deal_advance);
-                leftTotal = leftTotal + service.left_amount;
+                amountTotal += Number(service.deal_amount);
+                advanceTotal += Number(service.deal_advance);
+                leftTotal += Number(service.left_amount);
               }
               html += '<tr>'+
                     '<td></td>'+
