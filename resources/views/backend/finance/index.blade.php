@@ -33,12 +33,14 @@
                             <tbody>
                                 @foreach($clients as $client)
                                     <tr>
-                                        <td>{{ $client->full_name }}</td>
-                                        <td>{!!html_entity_decode($client->address)!!}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td rowspan="{{ services->count() }}">{{ $client->full_name }}</td>
+                                        <td rowspan="{{ services->count() }}">{!!html_entity_decode($client->address)!!}</td>
+                                            @foreach($services as $service)
+                                                <td>40000.00</td>
+                                                <td>30000.00</td>
+                                                <td>10000.00</td>
+                                                <td></td>
+                                            @endforeach
                                     </tr>
                                 @endforeach
                             </tbody>
