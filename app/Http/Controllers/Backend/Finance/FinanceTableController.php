@@ -43,11 +43,12 @@ class FinanceTableController extends Controller
                 return $client->address;
             })
             ->addColumn('left_amount', function ($client) {
-                return '';
-            })
-            ->addColumn('actions', function ($client) {
+                
                 $amount_left =  $client->deal_amount - $client->deal_advance;
                 return number_format((float)$amount_left, 2, '.', '');
+            })
+            ->addColumn('actions', function ($client) {
+                return '';
             })
             ->make(true);
     }
