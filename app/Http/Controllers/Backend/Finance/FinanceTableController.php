@@ -46,7 +46,8 @@ class FinanceTableController extends Controller
                 return '';
             })
             ->addColumn('actions', function ($client) {
-                return $client->deal_amount - $client->deal_advance;
+                $amount_left =  $client->deal_amount - $client->deal_advance;
+                return number_format((float)$amount_left, 2, '.', '');
             })
             ->make(true);
     }
