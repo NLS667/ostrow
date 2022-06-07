@@ -71,7 +71,7 @@
                 var left = Number();
                 console.log(typeof(left));
                 console.log(left);
-                if(service.left_amount = '0.00'){
+                if(service.left_amount == '0.00'){
                     var style = 'style="color: green;"';
                 } else {
                     style = 'style="color: red;"';
