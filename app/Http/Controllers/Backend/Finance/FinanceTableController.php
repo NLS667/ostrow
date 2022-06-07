@@ -106,8 +106,7 @@ class FinanceTableController extends Controller
                 'services.deal_amount as deal_amount',
                 'services.deal_advance as deal_advance',
             ]);
-        };
-        
+
         // active() is a scope on the ClientScope trait
         return $dataTableQuery->get();
     }
