@@ -58,7 +58,7 @@ class FinanceController extends Controller
 	    			'name' => $client->full_name,
 	                'address' => $client->address,
 	                'services' => $client_services,
-	    		]
+	    		];
     		}
     	}
 
