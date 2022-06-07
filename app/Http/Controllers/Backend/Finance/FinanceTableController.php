@@ -43,7 +43,6 @@ class FinanceTableController extends Controller
                 return $client->address;
             })
             ->addColumn('left_amount', function ($client) {
-                \Log::info(json_encode($client->services));
                 $amount_left =  $client->services->deal_amount - $client->services->deal_advance;
                 return number_format((float)$amount_left, 2, '.', '');
             })
@@ -87,9 +86,7 @@ class FinanceTableController extends Controller
             }
 
             $dtQuery[] = $client_data;
-        };        
-
-        \Log::info(json_encode($dtQuery));
+        };
 
         $dataTableQuery = $this->clients->query()
             ->leftJoin('services', 'services.client_id', '=', 'clients.id')
