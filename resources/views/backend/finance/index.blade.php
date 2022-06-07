@@ -144,10 +144,10 @@
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 createdRow: function (row, data, index) {
-                    if (data[5].replace(/[\$,]/g, '') * 1 > 0) {
-                        $('td', row).eq(5).addClass('text-danger');
-                    } else {
+                    if (data[5] == '0.00') {
                         $('td', row).eq(5).addClass('text-success');
+                    } else {
+                        $('td', row).eq(5).addClass('text-danger');
                     }
                 },
                 initComplete: function (settings, json) {
