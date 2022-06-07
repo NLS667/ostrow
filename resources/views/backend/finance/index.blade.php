@@ -141,12 +141,20 @@
                     data: {status: 1, trashed: false}
                 },
                 columns: [
-                    {data: 'first_name', name: 'clients.first_name'},
-                    {data: 'adr_street', name: 'clients.adr_street'}, 
-                    {data: 'service', name: 'service_categories.short_name', sortable: false}, 
-                    {data: 'deal_amount', name: 'service.deal_amount', className: 'text-right'},              
-                    {data: 'deal_advance', name: 'service.deal_advance', className: 'text-right'},
-                    {data: 'left_amount', name: 'clients.left', className: 'text-right'}, 
+                    {data: 'name'},
+                    {data: 'address'}, 
+                    {data: 'service', "render": function ( data, type, row, meta ) {
+                        if(data==null) return "";
+                        for(var i=0, num=data.length; i<num; i++) {
+                            var service = data[i];
+                            return service.short_name;
+                        }
+                        return "";
+                        }
+                    },          
+                    {data: 'deal_amount', name: 'service.deal_amount', className: 'text-right', searchable: false, sortable: false},              
+                    {data: 'deal_advance', name: 'service.deal_advance', className: 'text-right', searchable: false, sortable: false},
+                    {data: 'left_amount', name: 'clients.left', className: 'text-right', searchable: false, sortable: false}, 
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 order: [[0, "asc"]],
