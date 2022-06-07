@@ -121,12 +121,15 @@
                         let output = '';
                         switch (data) {
                             case 0:
-                                output = '<span class="badge badge-success">Oczekujące</a>';
+                                output = '<span class="badge badge-default">Nowe</a>';
                                 break;
                             case 1:
-                                output = '<span class="badge badge-warning">Nadchodzące</a>';
+                                output = '<span class="badge badge-success">Oczekujące</a>';
                                 break;
                             case 2:
+                                output = '<span class="badge badge-warning">Nadchodzące</a>';
+                                break;
+                            case 3:
                                 output = '<span class="badge badge-danger">Po terminie</a>';
                                 break;
                         }
