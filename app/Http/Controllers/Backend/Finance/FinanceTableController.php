@@ -70,7 +70,7 @@ class FinanceTableController extends Controller
             $client_data = (object)[
                 'id' => $client->id,
                 'name' => $client->name,
-                'address' => $clients->address,
+                'address' => $client->address,
                 'services' => [],
             ];
 
