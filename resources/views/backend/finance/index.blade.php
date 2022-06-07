@@ -178,7 +178,7 @@
                             this.child( displayServices(data.services) ).show();
                         }
                     });
-                    $(".datatable thead tr th:first-child").removeClass("font-weight-bold");
+                    $(".datatable thead tr th.font-weight-bold").removeClass("font-weight-bold");
                 },
                 order: [[0, "asc"]],
                 searchDelay: 500,
