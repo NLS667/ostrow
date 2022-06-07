@@ -68,13 +68,10 @@
               // i=1 - Skip the first house, its in the DT row.
               for (i=1; i<services.length; i++) {
                 var service = services[i];
-                var left = Number();
-                console.log(typeof(left));
-                console.log(left);
                 if(service.left_amount == '0.00'){
-                    var style = 'style="color: green;"';
+                    var style = 'text-success';
                 } else {
-                    style = 'style="color: red;"';
+                    style = 'text-danger';
                 }
 
                 html += '<tr>'+
@@ -83,7 +80,7 @@
                     '<td>'+service.short_name+'</td>'+
                     '<td class="text-right">'+service.deal_amount+'</td>'+
                     '<td class="text-right">'+service.deal_advance+'</td>'+
-                    '<td class="text-right" '+style+'>'+service.left_amount+'</td>'+
+                    '<td class="text-right '+style+'">'+service.left_amount+'</td>'+
                     '<td></td>'+
                 '</tr>';
               }
@@ -146,6 +143,13 @@
                     },
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
+                createdRow: function (row, data, index) {
+                    if (data[5].replace(/[\$,]/g, '') * 1 > 0) {
+                        $('td', row).eq(5).addClass('text-danger');
+                    } else {
+                        $('td', row).eq(5).addClass('text-success');
+                    }
+                },
                 initComplete: function (settings, json) {
                    
                     var api = this.api();
