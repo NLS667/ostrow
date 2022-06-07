@@ -11,7 +11,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">payments</i>
                             </div>
-                            <h4 class="card-title">Rozliczenia Klientów</h4>
+                            <h4 class="card-title">Finanse</h4>
                         </div>
                     </div><!-- /.card-header --> 
 
