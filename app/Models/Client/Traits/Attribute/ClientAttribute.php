@@ -41,9 +41,9 @@ trait ClientAttribute
     public function getShowButtonAttribute($class)
     {
         if (access()->allow('show-client')) {
-            return '<button class="'.$class.'" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Zobacz" href="'.route('admin.client.show', $this).'">
+            return '<a class="'.$class.'" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Zobacz" href="'.route('admin.client.show', $this).'">
                         <i class="material-icons">visibility</i>
-                    </button>';
+                    </a>';
         }
     }
 
@@ -123,9 +123,9 @@ trait ClientAttribute
      */
     public function getDeletePermanentlyButtonAttribute($class)
     {
-        return '<button class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń permanetnie" href="'.route('admin.client.delete-permanently', $this).'" name="delete_client_perm">
+        return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń permanetnie" href="'.route('admin.client.delete-permanently', $this).'" name="delete_client_perm">
                     <span class="material-icons">delete</span>
-                </button>';
+                </a>';
     }
 
     /**
