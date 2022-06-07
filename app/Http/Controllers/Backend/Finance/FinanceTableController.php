@@ -61,15 +61,16 @@ class FinanceTableController extends Controller
          */
         $dataTableQuery = $this->services->query()
             ->leftJoin('clients', 'services.client_id', '=', 'clients.id')
+            ->leftJoin('service_categories', 'services.client_id', '=', 'service_categories.id')
             ->select([
                 'services.id',
                 'clients.first_name',
-                'services.service_type_short AS service',
+                DB::raw('GROUP_CONCAT(service_categories.short_name SEPARATOR " | ") as services'),
                 'services.offered_at',
                 'services.signed_at',
                 'services.installed_at',
             ]);
-        \Log::info(json_encode($dataTableQuery));
+        \Log::info(json_encode($dataTableQuery->get()));
         // active() is a scope on the ClientScope trait
         return $dataTableQuery->get();
     }
