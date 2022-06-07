@@ -169,8 +169,7 @@
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 initComplete: function (settings, json) {
-                   $(".datatable thead tr th").removeClass("font-weight-bold");
-                    var api = this.api();
+                   var api = this.api();
                       
                     api.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
                         var data = this.data();
@@ -179,6 +178,7 @@
                             this.child( displayServices(data.services) ).show();
                         }
                     });
+                    $(".datatable thead tr th:first-child").removeClass("font-weight-bold");
                 },
                 order: [[0, "asc"]],
                 searchDelay: 500,
