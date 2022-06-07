@@ -79,7 +79,7 @@ class FinanceTableController extends Controller
                 'service_categories.short_name as service',
                 'services.deal_amount as deal_amount',
                 'services.deal_advance as deal_advance',
-            ])->get();
+            ]);
 
         $dtQuery = [];
         foreach($dataTableQuery as $clientsService){ 
@@ -93,6 +93,6 @@ class FinanceTableController extends Controller
             ];
         }
         // active() is a scope on the ClientScope trait
-        return $dataTableQuery;
+        return $dataTableQuery->get();
     }
 }
