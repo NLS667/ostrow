@@ -47,9 +47,9 @@
                                         @endforeach
                                         <tr>
                                             <td>RAZEM</td>
-                                            <td class="text-right"">total</td>
-                                            <td class="text-right"">total</td>
-                                            <td class="text-right"">total</td>
+                                            <td class="text-right">total</td>
+                                            <td class="text-right">total</td>
+                                            <td class="text-right">total</td>
                                             <td></td> 
                                         </tr>
                                 @endforeach
