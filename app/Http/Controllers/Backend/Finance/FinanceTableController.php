@@ -37,7 +37,7 @@ class FinanceTableController extends Controller
         return Datatables::make($this->getForDataTable())
             ->escapeColumns(['id'])
             ->editColumn('first_name', function ($service) {
-                return $service->client()->full_name;
+                return $service->client()->name;
             })
             ->editColumn('adr_street', function ($service) {
                 return $service->client()->address;
