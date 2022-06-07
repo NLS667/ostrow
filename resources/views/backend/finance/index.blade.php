@@ -16,6 +16,54 @@
                     </div><!-- /.card-header --> 
 
                     <div class="card-body">
+                        <div class="table-responsive data-table-wrapper">
+                            <table id="finance-table" class="table dataTable table-striped table-hover table-no-bordered dtr-inline" cellspacing="0" width="100%" style="width: 100%;">
+                                <thead>
+                                    <tr role="row">
+                                        <th>Nazwa</th>
+                                        <th>Adres</th>
+                                        <th>Usługa</th>
+                                        <th class="text-right">Wartość umowy</th>
+                                        <th class="text-right">Wpłacona zaliczka</th>
+                                        <th class="text-right">Pozostało do zapłaty</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nazwa</th>
+                                        <th>Adres</th>
+                                        <th>Usługa</th>
+                                        <th class="text-right">Wartość umowy</th>
+                                        <th class="text-right">Wpłacona zaliczka</th>
+                                        <th class="text-right">Pozostało do zapłaty</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <thead class="transparent-bg">
+                                    <tr>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('full_name', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Nazwa']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('address', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Adres']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div><!--table-responsive-->
+                        <!--
                         <div class="row">
                         @if (count($data) > 0)
                         <table class="table">
@@ -59,10 +107,68 @@
 
                         @endif
                         </div>
+                        -->                        
                     </div><!-- /.card-body -->
                 </div><!--card-->
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('after-scripts')
+    {{-- For DataTables --}}
+
+    <script>
+        $(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            var dataTable = $('#finance-table').dataTable({
+                columnDefs: [
+                    {"className": "dt-center", "targets": "_all"}
+                ],
+                processing: true,
+                serverSide: true,
+                searching: true,
+
+                ajax: {
+                    url: '{{ route("admin.finance.get") }}',
+                    type: 'post',
+                    data: {status: 1, trashed: false}
+                },
+                columns: [
+                    {data: 'full_name', name: 'clients.full_name'},
+                    {data: 'adr_street', name: 'clients.adr_street'}, 
+                    {data: 'services', name: 'service_categories.name', sortable: false}, 
+                    {data: 'price', name: 'clients.price'},              
+                    {data: 'payed', name: 'clients.payed'},
+                    {data: 'left', name: 'clients.left'}, 
+                    {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
+                ],
+                order: [[0, "asc"]],
+                searchDelay: 500,
+                dom: "<'row'<'col-sm-12 col-md-2'l><'col-sm-12 col-md-8'B><'col-sm-12 col-md-2'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                buttons: {
+                    buttons: [
+                        { extend: 'copyHtml5', className: 'copyButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3, 5 ]  }},
+                        { extend: 'csvHtml5', className: 'csvButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3, 5 ]  }},
+                        { extend: 'excelHtml5', className: 'excelButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3, 5 ]  }},
+                        { extend: 'pdfHtml5', className: 'pdfButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3, 5 ]  }},
+                        { extend: 'print', className: 'printButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3, 5 ]  }}
+                    ]
+                },
+                language: {
+                    @lang('datatable.strings')
+                }
+            });
+
+            Backend.DataTableSearch.init(dataTable);
+            bootstrapClearButton();
+    
+        });
+    </script>
 @endsection

@@ -12,7 +12,7 @@ use App\Http\Controllers\Backend\Finance\ClientStatusController;
         	/*
              * For DataTables
              */
-            //Route::post('client/get', ClientTableController::class)->name('client.get');
+            Route::post('finance/get', FinanceTableController::class)->name('finance.get');
 
             /*
              * For Geocoding 
