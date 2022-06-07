@@ -48,6 +48,7 @@
                                             <td class="text-right"">total</td>
                                             <td class="text-right"">total</td>
                                             <td></td>
+                                            @endif  
                                         </tr>
                                         @endforeach
                                 @endforeach
