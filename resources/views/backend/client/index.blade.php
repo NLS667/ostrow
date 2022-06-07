@@ -144,10 +144,13 @@
                     {data: 'service_status', className: 'text-center', name: 'tasks.status', render: function ( data, type, row, meta ) {
                         switch(data){
                             case 0:
-                                return '<span class="badge badge-success">OK</a>';
+                                return '<span class="badge badge-default">BRAK ZADAŃ</a>';
                                 break;
                             case 1:
-                                return '<span class="badge badge-warning">ZAPLANUJ</a>';
+                                return '<span class="badge badge-warning">OK</a>';
+                                break;
+                            case 2:
+                                return '<span class="badge badge-danger">ZAPLANUJ</a>';
                                 break;
                             case 2:
                                 return '<span class="badge badge-danger">PO TERMINIE</a>';
