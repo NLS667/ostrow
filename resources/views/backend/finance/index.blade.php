@@ -64,9 +64,9 @@
             function displayServices(services) {
   
               var html = '';
-              var amountTotal = 0;
-              var advanceTotal = 0;
-              var leftTotal = 0;
+              let amountTotal = 0;
+              let advanceTotal = 0;
+              let leftTotal = 0;
 
               // i=1 - Skip the first house, its in the DT row.
               for (i=1; i<services.length; i++) {
@@ -91,6 +91,7 @@
                 amountTotal += +service.deal_amount;
                 advanceTotal += +service.deal_advance;
                 leftTotal += +service.left_amount;
+                console.log(amountTotal);
               }
               html += '<tr>'+
                     '<td></td>'+
