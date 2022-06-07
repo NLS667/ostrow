@@ -42,8 +42,7 @@ class FinanceTableController extends Controller
             ->editColumn('adr_street', function ($client) {
                 return $client->address;
             })
-            ->addColumn('left_amount', function ($client) {
-                
+            ->addColumn('left_amount', function ($client) {                
                 $amount_left =  $client->deal_amount - $client->deal_advance;
                 return number_format((float)$amount_left, 2, '.', '');
             })
@@ -80,9 +79,19 @@ class FinanceTableController extends Controller
                 'service_categories.short_name as service',
                 'services.deal_amount as deal_amount',
                 'services.deal_advance as deal_advance',
-            ]);
-        \Log::info(json_encode($dataTableQuery->get()));
+            ])->get();
+
+        $dtQuery = [];
+        foreach($dataTableQuery as $clientsService){ 
+            $dtQuery[] = (object)[
+                'id' => $clientsService->id,
+                'first_name' => $clientsService->first_name,
+                'adr_street' => $clientsService->adr_street,
+                'services' => $clientsService->services;
+            ]
+        }
+        \Log::info(json_encode($dtQuery));
         // active() is a scope on the ClientScope trait
-        return $dataTableQuery->get();
+        return $dataTableQuery;
     }
 }

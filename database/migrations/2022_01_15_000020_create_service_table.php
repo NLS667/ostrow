@@ -21,8 +21,8 @@ class CreateServiceTable extends Migration
             $table->date('offered_at')->nullable();
             $table->date('signed_at')->nullable();
             $table->date('installed_at')->nullable();
-            $table->decimal('deal_amount', 10, 2);
-            $table->decimal('deal_advance', 10, 2);
+            $table->decimal('deal_amount', 10, 2)->nullable()->default('0.00');
+            $table->decimal('deal_advance', 10, 2)->nullable()->default('0.00');
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
