@@ -45,11 +45,6 @@ class FinanceTableController extends Controller
             ->editColumn('services', function ($client) {
                 return $client->services;
             })
-            ->addColumn('left_amount', function ($client) {
-                \Log::info(json_encode($client));
-                $amount_left = '0.00'; //$client->deal_amount - $client->deal_advance;
-                return number_format((float)$amount_left, 2, '.', '');
-            })
             ->addColumn('actions', function ($client) {
                 return '';
             })

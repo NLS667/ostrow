@@ -192,7 +192,10 @@
                         return "";
                         }
                     },
-                    {data: 'left_amount', name: 'clients.left', className: 'text-right', searchable: false, sortable: false}, 
+                    {data: 'left_amount', "render": function ( data, type, row, meta ) {
+
+                        return row;
+                    }, 
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 initComplete: function (settings, json) {
