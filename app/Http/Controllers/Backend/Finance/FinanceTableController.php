@@ -81,8 +81,8 @@ class FinanceTableController extends Controller
                 $client_services = (object)[
                     'id' => $service->id,
                     'short_name' => $service->service_type_short,
-                    'deal_amount' => $service->deal_amount,
-                    'deal_advance' => $service->deal_advance,
+                    'deal_amount' => floatval($service->deal_amount),
+                    'deal_advance' => floatval($service->deal_advance),
                 ];
                 array_push($client_data->services, $client_services);
             }
