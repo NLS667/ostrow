@@ -42,6 +42,9 @@ class FinanceTableController extends Controller
             ->editColumn('adr_street', function ($client) {
                 return $client->address;
             })
+            ->editColumn('services', function ($client) {
+                return $client->services;
+            })
             ->addColumn('left_amount', function ($client) {
                 $amount_left =  $client->services->deal_amount - $client->services->deal_advance;
                 return number_format((float)$amount_left, 2, '.', '');
