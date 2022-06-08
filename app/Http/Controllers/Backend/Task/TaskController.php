@@ -49,7 +49,7 @@ class TaskController extends Controller
      */
     public function index(ManageTaskRequest $request, $q_status = null)
     {
-        return new ViewResponse('backend.task.index', ['q_status' => $search]);
+        return new ViewResponse('backend.task.index', ['q_status' => $q_status]);
     }
 
     /**
