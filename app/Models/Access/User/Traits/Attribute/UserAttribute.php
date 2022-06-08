@@ -399,7 +399,7 @@ trait UserAttribute
 
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
-            return .$this->getShowButtonAttribute('btn btn-info btn-round').'
+            return $this->getShowButtonAttribute('btn btn-info btn-round').'
                     '.$this->getEditButtonAttribute('btn btn-success btn-round').'
                     '.$this->getChangePasswordButtonAttribute('btn btn-primary btn-round').'
                     '.$this->checkAdmin();
