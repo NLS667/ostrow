@@ -116,7 +116,7 @@
                     {data: 'clients', name: 'clients'},
                     {data: 'created_at', name: 'service_categories.created_at'},
                     {data: 'updated_at', name: 'service_categories.updated_at'},
-                    {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
+                    {data: 'actions', name: 'actions', className: 'text-center td-actions', searchable: false, sortable: false}
                 ],
                 order: [[3, "asc"]],
                 searchDelay: 500,
