@@ -47,7 +47,12 @@
                                 </tfoot>
                                 <thead class="transparent-bg">
                                     <tr>
-                                        <th></th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('assignee_id', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Pracownik']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
                                         <th></th>
                                         <th></th>
                                         <th></th>

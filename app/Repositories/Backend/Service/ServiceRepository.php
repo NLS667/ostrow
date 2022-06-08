@@ -91,7 +91,7 @@ class ServiceRepository extends BaseRepository
                 
                 // Make sure the storage path exists and writeable
                 if (!is_writable($dir)) {
-                    mkdir($dir, 0644, true);
+                    mkdir($dir, 0755, true);
                 }
 
                 event(new ServiceCreated($service));
