@@ -270,17 +270,10 @@ trait UserAttribute
     public function checkAdmin()
     {
         if ($this->id != 1) {
-            return '<div class="btn-group dropup">
-                        <button type="button" class="btn btn-primary btn-round dropdown-toggle" data-toggle="dropdown">
-                            <span class="material-icons">settings</span>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            '.$this->getStatusButtonAttribute('dropdown-item').'
-                            '.$this->getClearSessionButtonAttribute('dropdown-item').'
-                            '.$this->getDeleteButtonAttribute('dropdown-item').'
-                            '.$this->getLoginAsButtonAttribute('dropdown-item').'
-                        </div>
-                    </div>';
+            return $this->getStatusButtonAttribute('btn btn-warning btn-round').'
+                            '.$this->getClearSessionButtonAttribute('btn btn-rose btn-round').'
+                            '.$this->getDeleteButtonAttribute('btn btn-danger btn-round').'
+                            '.$this->getLoginAsButtonAttribute('btn btn-primary btn-round');
         }
     }
 
