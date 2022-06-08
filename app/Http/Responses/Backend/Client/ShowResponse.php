@@ -35,7 +35,7 @@ class ShowResponse implements Responsable
     {
         $map_data = [];
         $map_data['mapMode'] = 'small';
-        $map_data['mapHeight'] = 600;
+        $map_data['mapHeight'] = 500;
         $map_data['mapZoom'] = 12;
         $map_data['markers'][] = (object)[
             'coords' => [$this->client->adr_lattitude, $this->client->adr_longitude],
