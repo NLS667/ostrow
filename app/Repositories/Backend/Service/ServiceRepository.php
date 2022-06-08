@@ -84,6 +84,15 @@ class ServiceRepository extends BaseRepository
 
             if ($service->save()) {
 
+                $client = Client::where('id', $service->client_id)->first();
+                //Create folder for client related files
+                $dir = storage_path('app/public/'.$client->full_name.'/'.$service->service_type.'/');
+                
+                // Make sure the storage path exists and writeable
+                if (!is_writable($dir)) {
+                    mkdir($dir, 0644, true);
+                }
+
                 event(new ServiceCreated($service));
 
                 return true;
