@@ -56,10 +56,7 @@ class MapController extends Controller
                                 'title' => $client->full_name,
                                 ];
                             }
-                        }
                     }
-
-
                 }
             }  
         }
