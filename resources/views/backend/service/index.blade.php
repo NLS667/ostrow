@@ -44,7 +44,7 @@
                                         <th>Data Instalacji</th>
                                         <th>Wartość Umowy</th>
                                         <th>Wpłacona zaliczka</th>
-                                        <th class="text-right td-actions">Akcje</th>
+                                        <th class="text-right">Akcje</th>
                                     </tr>
                                 </tfoot>
                                 <thead class="transparent-bg">
@@ -124,7 +124,7 @@
                     {data: 'installed_at', name: 'services.installed_at'},
                     {data: 'deal_amount', name: 'services.deal_amount'},
                     {data: 'deal_advance', name: 'services.deal_advance'},
-                    {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
+                    {data: 'actions', name: 'actions', className: 'text-center td-actions', searchable: false, sortable: false}
                 ],
                 order: [[3, "asc"]],
                 searchDelay: 500,
