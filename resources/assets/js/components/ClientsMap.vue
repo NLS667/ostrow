@@ -51,6 +51,7 @@
                 };
 
                 this.clients_map = L.map('leaflet-map', {
+                    layers: [this.tileLayer],
                     sleep: true,
                     hoverToWake: false,
                     sleepNote: true,
@@ -58,8 +59,7 @@
                     sleepButton: function(){
                         return new L.Control.SleepMapControl({ prompt: "Kliknij" });
                     },
-                    sleepOpacity: .7,
-                    layers: [this.tileLayer]
+                    sleepOpacity: .7
                 }).setView([51.919438, 19.145136], this.data.mapZoom);
 
                 if(this.data.mapMode == 'large'){
