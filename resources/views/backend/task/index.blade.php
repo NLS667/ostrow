@@ -166,7 +166,7 @@
                     @lang('datatable.strings')
                 }
             });
-            var q_search = {{ $q_status->toJson() }};
+            var q_search = {{ $q_status }};
             console.log(q_search);
             if(q_search){
                 dataTable.columns( '.status' ).search( q_search ).draw();
