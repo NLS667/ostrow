@@ -119,7 +119,7 @@
                     data: {status: 0, trashed: false}
                 },
                 columns: [
-                    {data: 'assignee', name: 'tasks.assignee'},
+                    {data: 'assignee', name: 'users.name'},
                     {data: 'service', name: 'tasks.service'},                    
                     {data: 'start', name: 'start'},
                     {data: 'end', name: 'end'},
