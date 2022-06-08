@@ -165,15 +165,15 @@
                 language: {
                     @lang('datatable.strings')
                 }
-            });
+            });       
+
+            Backend.DataTableSearch.init(dataTable);
+            bootstrapClearButton();
+
             var q_search = '{{ $q_status }}';
             if(q_search){
                 dataTable.columns( 4 ).search( q_search ).draw();
             }
-            
-
-            Backend.DataTableSearch.init(dataTable);
-            bootstrapClearButton();
     
         });
     </script>
