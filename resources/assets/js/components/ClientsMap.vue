@@ -115,6 +115,7 @@
                         }                    
                         this.layerControl.addOverlay(layerGroup, lm.name);
                     })
+                    L.Map.Sleep.sleepMap();
                 }      
             },
             centerLeafletMapOnMarker(map, marker){
