@@ -56,6 +56,7 @@ mix.autoload({
     //Copying images of leaflet to public folder
     .copyDirectory('node_modules/leaflet/dist/images', 'public/images')
     //Copying all directories of tinymce to public folder
+    .copyDirectory('node_modules/tinymce/icons', 'public/js/icons')
     .copyDirectory('node_modules/tinymce/plugins', 'public/js/plugins')
     .copyDirectory('node_modules/tinymce/skins', 'public/js/skins')
     .copyDirectory('node_modules/tinymce/themes', 'public/js/themes')
