@@ -63,7 +63,7 @@
                                         <th></th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::select('status', [ 0 => 'Nowe', 1 => 'Oczekujące', 2 => 'Nadchodzące', 3 => 'Po terminie'], null, ["class" => "search-input-select form-control", "data-column" => 4, "placeholder" => 'Status']) !!}
+                                                {!! Form::select('status', [ 'Nowe' => 'Nowe', 'Oczekujące' => 'Oczekujące', 'Nadchodzące' => 'Nadchodzące', 'Po terminie' => 'Po terminie'], null, ["class" => "search-input-select form-control", "data-column" => 4, "placeholder" => 'Status']) !!}
                                             </div>
                                         </th>
                                         <th></th>
