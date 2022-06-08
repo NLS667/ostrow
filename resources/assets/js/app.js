@@ -27,6 +27,8 @@ require('leaflet/dist/leaflet.js');
 require('leaflet-search');
 require('leaflet-sleep');
 
+require('tinymce/tinymce');
+
 L.Icon.Default.imagePath = '/images';
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: '/marker-icon-2x.png',
