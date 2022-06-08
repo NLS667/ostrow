@@ -27,7 +27,7 @@ trait ServiceCategoryAttribute
         if (access()->allow('delete-servicecat')) {
             $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
-            return '<button type="button" classclass="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.serviceCategory.destroy', $this).'"
+            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.serviceCategory.destroy', $this).'"
             data-method="delete"
             data-trans-button-cancel="Anuluj"
             data-trans-button-confirm="Usuń"
