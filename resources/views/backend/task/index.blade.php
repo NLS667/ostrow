@@ -109,7 +109,7 @@
                 }
             });
 
-            var dataTable = $('#tasks-table').dataTable({
+            var dataTable = $('#tasks-table').DataTable({
                 columnDefs: [
                     {"className": "dt-center", "targets": "_all"}
                 ],
@@ -172,7 +172,7 @@
 
             var q_search = '{{ $q_status }}';
             if(q_search){
-                DataTable.columns( 4 ).search( q_search ).draw();
+                dataTable.columns( 4 ).search( q_search ).draw();
             }
     
         });
