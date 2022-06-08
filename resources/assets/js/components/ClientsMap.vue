@@ -62,9 +62,9 @@
                     sleepOpacity: .7
                 }).setView([51.919438, 19.145136], this.data.mapZoom);
 
-                //if(this.data.mapMode == 'large'){
-                //    this.layerControl = L.control.layers(baseMaps, overlays, options).addTo(this.clients_map);
-                //}
+                if(this.data.mapMode == 'large'){
+                    this.layerControl = L.control.layers(baseMaps, overlays, options).addTo(this.clients_map);
+                }
 
                 //this.tileLayer.addTo(this.clients_map);
             },
