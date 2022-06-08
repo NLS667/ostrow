@@ -10,8 +10,8 @@ trait ModelTrait
     public function getEditButtonAttribute($permission, $route)
     {
         if (access()->allow($permission)) {
-            return '<a href="'.route($route, $this).'" class="btn btn-flat btn-success">
-                    <i data-toggle="tooltip" data-placement="top" title="Edytuj" class="fas fa-pencil-alt"></i>
+            return '<a href="'.route($route, $this).'" data-toggle="tooltip" data-placement="top" title="Edytuj" class="btn btn-round btn-success">
+                    <span class="material-icons">edit</span>
                 </a>';
         }
     }
@@ -22,12 +22,12 @@ trait ModelTrait
     public function getDeleteButtonAttribute($permission, $route)
     {
         if (access()->allow($permission)) {
-            return '<a href="'.route($route, $this).'" 
-                    class="btn btn-flat btn-danger" data-method="delete"
+            return '<a href="'.route($route, $this).'" data-toggle="tooltip" data-placement="top" title="Usuń" 
+                    class="btn btn-round btn-danger" data-method="delete"
                     data-trans-button-cancel="Anuluj"
                     data-trans-button-confirm="Usuń"
                     data-trans-title="Czy jesteś pewny, że chcesz to zrobić ?">
-                        <i data-toggle="tooltip" data-placement="top" title="Usuń" class="fas fa-trash"></i>
+                        <span class="material-icons">delete</span>
                 </a>';
         }
     }

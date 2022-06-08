@@ -105,7 +105,7 @@
                     {data: 'name', name: '{{config('access.permissions_table')}}.name'},
                     {data: 'display_name', name: '{{config('access.permissions_table')}}.display_name', sortable: false},
                     {data: 'sort', name: '{{config('access.permissions_table')}}.sort'},
-                    {data: 'actions', name: 'actions', searchable: false, sortable: false}
+                    {data: 'actions', name: 'actions', className:'text-center td-actions', searchable: false, sortable: false}
                 ],
                 order: [[3, "asc"]],
                 searchDelay: 500,
