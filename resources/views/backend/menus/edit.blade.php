@@ -8,12 +8,17 @@
                 {{ Form::model($menu, ['route' => ['admin.menus.update', $menu], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'id' => 'edit-role', 'files' => true]) }}
 
                 <div class="card">
-                    <div class="card-header card-header-info d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">Edytuj Menu</h4>
+                    <div class="card-header card-header-icon card-header-info d-flex justify-content-between align-items-center">
+                        <div class="col-md-6">
+                            <div class="card-icon">
+                                <i class="material-icons">list</i>
+                            </div>
+                            <h4 class="card-title">Edytuj Menu</h4>
+                        </div>
                         <div class="card-tools">
                             @include('backend.menus.partials.header-buttons')
-                        </div><!--box-tools pull-right-->
-                    </div><!-- /.box-header -->
+                        </div>
+                    </div><!-- /.card-header -->
 
                     {{-- Including Form blade file --}}
                     <div class="card-body">
