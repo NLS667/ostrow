@@ -9,7 +9,7 @@
                     <div class="card-header card-header-icon card-header-info d-flex justify-content-between align-items-center">
                         <div class="col-md-6">
                             <div class="card-icon">
-                                <i class="material-icons">face</i>
+                                <i class="material-icons">people</i>
                             </div>
                             <h4 class="card-title">Aktywni Użytkownicy</h4>
                         </div>
