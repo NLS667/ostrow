@@ -118,9 +118,9 @@
                     {data: 'producer', name: 'models.producer'},
                     {data: 'created_at', name: 'models.created_at'},
                     {data: 'updated_at', name: 'models.updated_at'},
-                    {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
+                    {data: 'actions', name: 'actions', className: 'text-center td-actions', searchable: false, sortable: false}
                 ],
-                order: [[3, "asc"]],
+                order: [[0, "asc"]],
                 searchDelay: 500,
                 dom: "<'row'<'col-sm-12 col-md-2'l><'col-sm-12 col-md-8'B><'col-sm-12 col-md-2'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
                 buttons: {
