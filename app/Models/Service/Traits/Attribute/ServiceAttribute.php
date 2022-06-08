@@ -16,9 +16,9 @@ trait ServiceAttribute
     public function getEditButtonAttribute($class)
     {
         if (access()->allow('edit-service')) {
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.service.edit', $this).'">
+            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.service.edit', $this).'">
             <span class="material-icons">edit</span>
-            </a>';
+            </button>';
         }
     }
 
@@ -30,11 +30,11 @@ trait ServiceAttribute
         if (access()->allow('delete-service')) {
             $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.service.destroy', $this).'"
+            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.service.destroy', $this).'"
             data-method="delete"
             data-trans-button-cancel="Anuluj"
             data-trans-button-confirm="Usuń"
-            data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</a>';
+            data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</button>';
         }
 
         return '';
@@ -48,14 +48,12 @@ trait ServiceAttribute
     {
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
-            return '<div class="btn-group action-btn">
-            '.$this->getEditButtonAttribute('btn btn-success btn-flat').'
-            '.$this->getDeleteButtonAttribute('btn btn-danger btn-flat').'
-            </div>';
+            return $this->getEditButtonAttribute('btn btn-success btn-round').'
+            '.$this->getDeleteButtonAttribute('btn btn-danger btn-round');
         } else {
             $userPermission = $this->getUserPermission();
             $permissionCounter = count($userPermission);
-            $actionButton = '<div class="btn-group action-btn">';
+            $actionButton = '';
             $i = 1;
 
             foreach ($userPermission as $value) {
@@ -77,7 +75,7 @@ trait ServiceAttribute
                 }
                 $i++;
             }
-            $actionButton .= '</ul></div></div>';
+            $actionButton .= '</ul></div>';
 
             return $actionButton;
         }
@@ -94,7 +92,7 @@ trait ServiceAttribute
     public function getActionButtonsByPermissionName($permissionName, $counter)
     {
         // check if counter is less then 3 then apply button client
-        $class = ($counter <= 3) ? 'btn btn-primary btn-flat' : '';
+        $class = ($counter <= 3) ? 'btn btn-primary btn-round' : '';
 
         switch ($permissionName) {
             case 'edit-service':
