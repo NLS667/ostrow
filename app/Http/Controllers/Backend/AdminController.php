@@ -56,23 +56,22 @@ class AdminController extends Controller
             foreach($clients as $client)
             {
                 $services = Service::where('client_id', $client->id)->get();
+                $client_markers = [];
 
-                foreach($services as $service){
-                    $catid = $service->service_cat_id;
-                    $client_markers = [];
-                    $client_markers[] = (object)[
-                        'content' => view('backend.map.popup')->with('client', $client)->render(),
-                        'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                        'title' => $client->full_name,
-                    ];
+                foreach($map_data['layers'] as $layer){
 
-                    foreach($map_data['layers'] as $layer){
+                    foreach($services as $service){
+                        $catid = $service->service_cat_id;
                         if($layer->id == $catid){
-                            $layer->markers = $client_markers;
-                        }
+                            $layer->markers[]  = (object)[
+                                'content' => view('backend.map.popup')->with('client', $client)->render(),
+                                'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                                'title' => $client->full_name,
+                                ];
+                            }
                     }
                 }
-            }   
+            }  
         }
         return view('backend.index')->with('map_data', $map_data)->with('data', $data);
     }
