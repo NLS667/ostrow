@@ -21,8 +21,8 @@ trait RoleAttribute
     public function getEditButtonAttribute($class)
     {
         if (access()->allow('edit-role')) {
-            return '<a class="'.$class.'" href="'.route('admin.access.role.edit', $this).'">
-                    <i data-toggle="tooltip" data-placement="top" title="Edytuj" class="fas fa-pencil-alt"></i>
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.access.role.edit', $this).'">
+                    <span class="material-icons">edit</span>
                 </a>';
         }
     }
@@ -34,11 +34,11 @@ trait RoleAttribute
     {
         //Can't delete master admin role
         if ($this->id != 1 && access()->allow('delete-role')) {
-            return '<a class="'.$class.'" href="'.route('admin.access.role.destroy', $this).'" data-method="delete"
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.access.role.destroy', $this).'" data-method="delete"
                         data-trans-button-cancel="Anuluj"
                         data-trans-button-confirm="Usuń"
                         data-trans-title="Czy na pewno?">
-                            <i data-toggle="tooltip" data-placement="top" title="Usuń" class="fas fa-trash"></i>
+                            <span class="material-icons">delete</span>
                     </a>';
         }
 
