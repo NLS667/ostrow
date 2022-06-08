@@ -132,11 +132,14 @@
                     {data: 'first_name', name: '{{config('access.users_table')}}.first_name'},
                     {data: 'last_name', name: '{{config('access.users_table')}}.last_name'},
                     {data: 'email', name: '{{config('access.users_table')}}.email'},
-                    {data: 'confirmed', className: 'text-center', name: '{{config('access.users_table')}}.confirmed', render: function ( data, type, row, meta ) {
-                        if(data=1) {
-                            return '<span class="badge badge-success">Tak</a>';
-                        } else {
-                            return '<span class="badge badge-danger">Nie</a>';
+                    {data: 'status', className: 'text-center', name: '{{config('access.users_table')}}.status', render: function ( data, type, row, meta ) {
+                        switch(data){
+                            case 0:
+                                return '<span class="badge badge-danger">Nie</a>';
+                                break;
+                            case 1:
+                                return '<span class="badge badge-success">Tak</a>';
+                                break;
                         }
                     }},
                     {data: 'roles', name: '{{config('access.roles_table')}}.name', className: 'text-center', sortable: false},
