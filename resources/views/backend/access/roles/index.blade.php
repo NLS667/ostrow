@@ -103,7 +103,7 @@
 
             var dataTable = $('#roles-table').dataTable({
                 processing: true,
-                serverSide: true,
+                serverSide: false,
 
                 ajax: {
                     url: '{{ route("admin.access.role.get") }}',

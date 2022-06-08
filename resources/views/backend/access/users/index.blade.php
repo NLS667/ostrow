@@ -120,7 +120,7 @@
                     {"className": "dt-center", "targets": "_all"}
                 ],
                 processing: true,
-                serverSide: true,
+                serverSide: false,
                 searching: true,
 
                 ajax: {

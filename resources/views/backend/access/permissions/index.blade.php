@@ -100,7 +100,7 @@
 
             var dataTable = $('#permissions-table').dataTable({
                 processing: true,
-                serverSide: true,
+                serverSide: false,
                 ajax: {
                     url: '{{ route("admin.access.permission.get") }}',
                     type: 'post'

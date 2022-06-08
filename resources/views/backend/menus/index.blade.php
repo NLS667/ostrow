@@ -92,7 +92,7 @@
 
             var dataTable = $('#menus-table').dataTable({
                 processing: true,
-                serverSide: true,
+                serverSide: false,
                 ajax: {
                     url: '{{ route("admin.menus.get") }}',
                     type: 'post'
