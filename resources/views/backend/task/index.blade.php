@@ -166,6 +166,7 @@
                     @lang('datatable.strings')
                 }
             });
+            var q_search = "{{ $q_search }}";
             if(q_search){
                 console.log(q_search);
                 dataTable.columns( '.status' ).search( q_search ).draw();
