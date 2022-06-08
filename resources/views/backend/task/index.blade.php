@@ -114,7 +114,7 @@
                     data: {status: 0, trashed: false}
                 },
                 columns: [
-                    {data: 'assignee_id', render: function ( data, type, row ) {
+                    {data: 'assignee_id', name: 'assignee_id', render: function ( data, type, row ) {
                                                 return data;
                                             },
                                             targets: 0,},
