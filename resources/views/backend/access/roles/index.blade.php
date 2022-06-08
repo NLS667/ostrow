@@ -109,7 +109,7 @@
                     {data: 'permissions', name: '{{config('access.permissions_table')}}.display_name', sortable: false},
                     {data: 'users', name: 'users', searchable: false, sortable: false},
                     {data: 'sort', name: '{{config('access.roles_table')}}.sort'},
-                    {data: 'actions', name: 'actions', searchable: false, sortable: false}
+                    {data: 'actions', name: 'actions', className: 'text-center td-actions', searchable: false, sortable: false}
                 ],
                 order: [[3, "asc"]],
                 searchDelay: 500,
@@ -120,7 +120,7 @@
                         { extend: 'csvHtml5', className: 'csvButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
                         { extend: 'excelHtml5', className: 'excelButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
                         { extend: 'pdfHtml5', className: 'pdfButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
-                        { extend: 'printHtml5', className: 'printButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }}
+                        { extend: 'print', className: 'printButton d-none',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }}
                     ]
                 },
                 language: {
