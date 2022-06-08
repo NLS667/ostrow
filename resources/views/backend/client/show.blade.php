@@ -75,7 +75,7 @@
             	</div>
             	<div class="card">
             		<div class="card-body">
-            			<textarea name="content" class="form-control my-editor">{!! old('content', $content) !!}</textarea>
+            			<textarea name="content" class="form-control my-editor"></textarea>
             		</div>
             	</div>
         	</div>
