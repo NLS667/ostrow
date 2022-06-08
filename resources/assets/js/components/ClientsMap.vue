@@ -51,7 +51,7 @@
                 };
 
                 this.clients_map = L.map('leaflet-map', {
-                    layers: [this.tileLayer],
+                    //layers: [this.tileLayer],
                     sleep: true,
                     hoverToWake: false,
                     sleepNote: true,
