@@ -8,14 +8,17 @@
                 {{ Form::model($role, ['route' => ['admin.access.role.update', $role], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'id' => 'edit-role']) }}
 
                 <div class="card">
-                    <div class="card-header card-header-info d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">Edytuj Rolę</h4>
-                        <ul class="nav nav-tabs">
-                          <li class="nav-item">
-                            <a href="{{ route('admin.access.role.index') }}" class="nav-link btn btn-sm btn-default">Powrót do listy</a>
-                          </li>
-                        </ul>
-                    </div><!-- /.box-header -->
+                    <div class="card-header card-header-icon card-header-info d-flex justify-content-between align-items-center">
+                        <div class="col-md-6">
+                            <div class="card-icon">
+                                <i class="material-icons">assignment_ind</i>
+                            </div>
+                            <h4 class="card-title">Edytuj Rolę</h4>
+                        </div>
+                        <div class="card-tools">
+                            @include('backend.access.includes.partials.role-header-buttons')
+                        </div>
+                    </div><!-- /.card-header -->
 
                     <div class="card-body">
                         <div class="row">

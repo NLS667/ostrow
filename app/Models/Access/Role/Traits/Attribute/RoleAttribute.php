@@ -18,10 +18,10 @@ trait RoleAttribute
     /**
      * @return string
      */
-    public function getEditButtonAttribute()
+    public function getEditButtonAttribute($class)
     {
         if (access()->allow('edit-role')) {
-            return '<a class="btn btn-flat btn-success" href="'.route('admin.access.role.edit', $this).'">
+            return '<a class="'.$class.'" href="'.route('admin.access.role.edit', $this).'">
                     <i data-toggle="tooltip" data-placement="top" title="Edytuj" class="fas fa-pencil-alt"></i>
                 </a>';
         }
@@ -30,11 +30,11 @@ trait RoleAttribute
     /**
      * @return string
      */
-    public function getDeleteButtonAttribute()
+    public function getDeleteButtonAttribute($class)
     {
         //Can't delete master admin role
         if ($this->id != 1 && access()->allow('delete-role')) {
-            return '<a class="btn btn-flat btn-danger" href="'.route('admin.access.role.destroy', $this).'" data-method="delete"
+            return '<a class="'.$class.'" href="'.route('admin.access.role.destroy', $this).'" data-method="delete"
                         data-trans-button-cancel="Anuluj"
                         data-trans-button-confirm="Usuń"
                         data-trans-title="Czy na pewno?">
@@ -50,9 +50,7 @@ trait RoleAttribute
      */
     public function getActionButtonsAttribute()
     {
-        return '<div class="btn-group action-btn">
-                    '.$this->getEditButtonAttribute('edit-role', 'admin.access.role.edit').'
-                    '.$this->getDeleteButtonAttribute().'
-                </div>';
+        return $this->getEditButtonAttribute('btn btn-success btn-round').'
+                '.$this->getDeleteButtonAttribute('btn btn-danger btn-round');
     }
 }

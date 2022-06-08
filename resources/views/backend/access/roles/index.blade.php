@@ -6,8 +6,13 @@
         <div class="row">
             <div class="col-md-12"> 
                 <div class="card">
-                    <div class="card-header card-header-info d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">Wszystkie Role</h4>
+                    <div class="card-header card-header-icon card-header-info d-flex justify-content-between align-items-center">
+                        <div class="col-md-6">
+                            <div class="card-icon">
+                                <i class="material-icons">assignment_ind</i>
+                            </div>
+                            <h4 class="card-title">Wszystkie Role</h4>
+                        </div>
                         <div class="card-tools">
                             @include('backend.access.includes.partials.role-header-buttons')
                         </div>
