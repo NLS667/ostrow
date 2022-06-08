@@ -47,9 +47,9 @@ class TaskController extends Controller
      *
      * @return \App\Http\Responses\ViewResponse
      */
-    public function index(ManageTaskRequest $request, $q_status = '')
+    public function index(ManageTaskRequest $request)
     {
-        return new ViewResponse('backend.task.index', ['q_status' => $q_status]);
+        return new ViewResponse('backend.task.index', ['q_status' => $request->q_status]);
     }
 
     /**
