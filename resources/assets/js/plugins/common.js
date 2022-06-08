@@ -976,7 +976,7 @@ var Backend = {}; // common variable used in all the files of the backend
                             if (event.keyCode == 13) {
                                 var i = element.getAttribute("data-column"); // getting column index
                                 var v = element.value; // getting search input value
-                                dataTable.api().columns(i).search(v).draw();
+                                dataTable.columns(i).search(v).draw();
                             }
                         };
                     });
@@ -989,7 +989,7 @@ var Backend = {}; // common variable used in all the files of the backend
                         element.onchange = function (event) {
                             var i = element.getAttribute("data-column"); // getting column index
                             var v = element.value; // getting search input value
-                            dataTable.api().columns(i).search(v).draw();
+                            dataTable.columns(i).search(v).draw();
                         };
                     });
                 }
@@ -1001,7 +1001,7 @@ var Backend = {}; // common variable used in all the files of the backend
                             var inputelement = this.previousElementSibling;
                             var i = inputelement.getAttribute("data-column");
                             inputelement.value = "";
-                            dataTable.api().columns(i).search("").draw();
+                            dataTable.columns(i).search("").draw();
                         };
                     });
                 }
