@@ -113,7 +113,7 @@
                     {data: 'modelCount', name: 'producers.modelCount'},
                     {data: 'created_at', name: 'producers.created_at'},
                     {data: 'updated_at', name: 'producers.updated_at'},
-                    {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
+                    {data: 'actions', name: 'actions', className: 'text-center td-actions', searchable: false, sortable: false}
                 ],
                 order: [[3, "asc"]],
                 searchDelay: 500,
