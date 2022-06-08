@@ -109,7 +109,7 @@
                 }
             });
 
-            var dataTable = $('#tasks-table').DataTable({
+            var dataTable = $('#tasks-table').dataTable({
                 columnDefs: [
                     {"className": "dt-center", "targets": "_all"}
                 ],
