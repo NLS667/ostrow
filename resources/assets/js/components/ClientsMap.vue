@@ -26,7 +26,7 @@
         	var lf = this;
         	if ($('#leaflet-map').length) {
         		lf.initMap();
-            	//lf.initMarkers();
+            	lf.initMarkers();
 			}
         },
         methods: {
