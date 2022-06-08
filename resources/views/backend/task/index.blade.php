@@ -49,11 +49,16 @@
                                     <tr>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('assignee_id', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Pracownik']) !!}
+                                                {!! Form::text('assignee_id', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Pracownik']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
-                                        <th></th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('service_id', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Usługa']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
                                         <th></th>
                                         <th></th>
                                         <th></th>
