@@ -114,16 +114,10 @@
                     data: {status: 0, trashed: false}
                 },
                 columns: [
-                    {data: 'assignee_id', name: 'assignee_id', render: function ( data, type, row ) {
-                                                return data;
-                                            },
-                                            targets: 0,},
-                    {data: 'service_id', render: function ( data, type, row ) {
-                                                return data;
-                                            },
-                                            targets: 1,},                    
-                    {data: 'start', name: 'tasks.start'},
-                    {data: 'end', name: 'tasks.end'},
+                    {data: 'assignee_id', name: 'assignee_id'},
+                    {data: 'service_id', name: 'assignee_id'},                    
+                    {data: 'start', name: 'start'},
+                    {data: 'end', name: 'end'},
                     {data: 'status', render: function ( data, type, row, meta ) {
                         let output = '';
                         switch (data) {
@@ -143,8 +137,8 @@
 
                         return output;
                     }},
-                    {data: 'created_at', name: 'tasks.created_at'},
-                    {data: 'updated_at', name: 'tasks.updated_at'},
+                    {data: 'created_at', name: 'created_at'},
+                    {data: 'updated_at', name: 'updated_at'},
                     {data: 'actions', name: 'actions', className: 'text-center td-actions', searchable: false, sortable: false}
                 ],
                 order: [[5, "asc"]],
