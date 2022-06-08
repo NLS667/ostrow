@@ -114,9 +114,9 @@ trait UserAttribute
     public function getShowButtonAttribute($class)
     {
         if (access()->allow('show-user')) {
-            return '<button type="button" class="'.$class.'"  data-toggle="tooltip" data-placement="top" title="Zobacz" href="'.route('admin.access.user.show', $this).'">
+            return '<a class="'.$class.'"  data-toggle="tooltip" data-placement="top" title="Zobacz" href="'.route('admin.access.user.show', $this).'">
                         <span class="material-icons">visibility</span>
-                    </button>';
+                    </a>';
         }
     }
 
@@ -126,9 +126,9 @@ trait UserAttribute
     public function getEditButtonAttribute($class)
     {
         if (access()->allow('edit-user')) {
-            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.access.user.edit', $this).'">
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.access.user.edit', $this).'">
                         <span class="material-icons">edit</span>
-                    </button>';
+                    </a>';
         }
     }
 
@@ -138,9 +138,9 @@ trait UserAttribute
     public function getChangePasswordButtonAttribute($class)
     {
         if (access()->user()->id == $this->id && access()->allow('edit-user')) {
-            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Zmień Hasło" href="'.route('admin.access.user.change-password', $this).'">
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Zmień Hasło" href="'.route('admin.access.user.change-password', $this).'">
                         <span class="material-icons">sync</span>
-                    </button>';
+                    </a>';
         }
     }
 
@@ -155,7 +155,7 @@ trait UserAttribute
                     if (access()->allow('activate-user')) {
                         $name = ($class == '' || $class == 'dropdown-item') ? 'Aktywuj' : '';
 
-                        return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Aktywuj" href="'.route('admin.access.user.mark', [$this, 1]).'"><span class="material-icons">lock_open</span>'.$name.'</button>';
+                        return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Aktywuj" href="'.route('admin.access.user.mark', [$this, 1]).'"><span class="material-icons">lock_open</span>'.$name.'</a>';
                     }
                     break;
 
@@ -163,7 +163,7 @@ trait UserAttribute
                     if (access()->allow('deactivate-user')) {
                         $name = ($class == '' || $class == 'dropdown-item') ? 'Deaktywuj' : '';
 
-                        return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Deaktywuj" href="'.route('admin.access.user.mark', [$this, 0]).'"><span class="material-icons">lock</span>'.$name.'</button>';
+                        return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Deaktywuj" href="'.route('admin.access.user.mark', [$this, 0]).'"><span class="material-icons">lock</span>'.$name.'</a>';
                     }
                     break;
 
@@ -181,9 +181,9 @@ trait UserAttribute
     public function getConfirmedButtonAttribute($class)
     {
         if (!$this->isConfirmed() && access()->allow('edit-user')) {
-            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Wyślij ponownie" href="'.route('admin.access.user.account.confirm.resend', $this).'">
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Wyślij ponownie" href="'.route('admin.access.user.account.confirm.resend', $this).'">
                         <span class="material-icons">sync_alt</span>
-                    </button> ';
+                    </a> ';
         }
 
         return '';
@@ -197,11 +197,11 @@ trait UserAttribute
         if ($this->id != access()->id() && access()->allow('delete-user')) {
             $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
-            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.access.user.destroy', $this).'"
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.access.user.destroy', $this).'"
                  data-method="delete"
                  data-trans-button-cancel="Anuluj"
                  data-trans-button-confirm="Usuń"
-                 data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</button>';
+                 data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</a>';
         }
 
         return '';
@@ -213,9 +213,9 @@ trait UserAttribute
     public function getRestoreButtonAttribute($class)
     {
         if (access()->allow('delete-user')) {
-            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Przywróć Użytkownika" href="'.route('admin.access.user.restore', $this).'" name="restore_user">
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Przywróć Użytkownika" href="'.route('admin.access.user.restore', $this).'" name="restore_user">
                         <span class="material-icons">sync_alt</span>
-                    </button>';
+                    </a>';
         }
     }
 
@@ -224,9 +224,9 @@ trait UserAttribute
      */
     public function getDeletePermanentlyButtonAttribute($class)
     {
-        return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń permanetnie" href="'.route('admin.access.user.delete-permanently', $this).'" name="delete_user_perm">
+        return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń permanetnie" href="'.route('admin.access.user.delete-permanently', $this).'" name="delete_user_perm">
                     <span class="material-icons">delete</span>
-                </button>';
+                </a>';
     }
 
     /**
@@ -241,8 +241,8 @@ trait UserAttribute
         if (access()->allow('login-as-user') && (!session()->has('admin_user_id') || !session()->has('temp_user_id'))) {
             //Won't break, but don't let them "Login As" themselves
             if ($this->id != access()->id()) {
-                return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Zaloguj jako" href="'.route('admin.access.user.login-as',
-                    $this).'"><span class="material-icons">login</span>'.$name.'</button>';
+                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Zaloguj jako" href="'.route('admin.access.user.login-as',
+                    $this).'"><span class="material-icons">login</span>'.$name.'</a>';
             }
         }
 
@@ -257,11 +257,11 @@ trait UserAttribute
         $name = ($class == '' || $class == 'dropdown-item') ? 'Wyczyść Sesję' : '';
 
         if ($this->id != access()->id() && config('session.driver') == 'database' && access()->allow('clear-user-session')) {
-            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Wyczyść Sesję" href="'.route('admin.access.user.clear-session', $this).'"
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Wyczyść Sesję" href="'.route('admin.access.user.clear-session', $this).'"
 			 	 data-trans-button-cancel="Anuluj"
                  data-trans-button-confirm="Dalej"
                  data-trans-title="Czy na pewno ?"
-                 name="confirm_item"><span class="material-icons">clear</span>'.$name.'</button>';
+                 name="confirm_item"><span class="material-icons">clear</span>'.$name.'</a>';
         }
 
         return '';
@@ -431,9 +431,9 @@ trait UserAttribute
                     if ($permissionCounter > 3) {
                         $actionButton = $actionButton.'
                             <div class="btn-group dropup">
-                            <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
+                            <ba class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-option-vertical"></span>
-                            </button>
+                            </a>
                             <ul class="dropdown-menu dropdown-menu-right">';
                     }
                 }

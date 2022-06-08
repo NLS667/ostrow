@@ -13,9 +13,9 @@ trait ModelAttribute
     public function getEditButtonAttribute($class)
     {
         if (access()->allow('edit-model')) {
-            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.model.edit', $this).'">
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.model.edit', $this).'">
             <span class="material-icons">edit</span>
-            </button>';
+            </a>';
         }
     }
 
@@ -27,11 +27,11 @@ trait ModelAttribute
         if (access()->allow('delete-model')) {
             $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
-            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.model.destroy', $this).'"
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.model.destroy', $this).'"
             data-method="delete"
             data-trans-button-cancel="Anuluj"
             data-trans-button-confirm="Usuń"
-            data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</button>';
+            data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</a>';
         }
 
         return '';
@@ -64,9 +64,9 @@ trait ModelAttribute
                     if ($permissionCounter > 3) {
                         $actionButton = $actionButton.'
                         <div class="btn-group dropup">
-                        <button type="button" class="btn btn-default btn-round dropdown-toggle" data-toggle="dropdown">
+                        <a class="btn btn-default btn-round dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-option-vertical"></span>
-                        </button>
+                        </a>
                         <ul class="dropdown-menu dropdown-menu-right">';
                     }
                 }

@@ -18,9 +18,9 @@ trait TaskAttribute
     public function getEditButtonAttribute($class)
     {
         if (access()->allow('edit-task')) {
-            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.task.edit', $this).'">
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.task.edit', $this).'">
                         <span class="material-icons">edit</span>
-                    </button>';
+                    </a>';
         }
     }
 
@@ -32,11 +32,11 @@ trait TaskAttribute
         if (access()->allow('delete-task')) {
             $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
-            return '<button type="button" class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.task.destroy', $this).'"
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.task.destroy', $this).'"
                  data-method="delete"
                  data-trans-button-cancel="Anuluj"
                  data-trans-button-confirm="Usuń"
-                 data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</button>';
+                 data-trans-title="Czy na pewno?"><span class="material-icons">delete</span>'.$name.'</a>';
         }
 
         return '';
@@ -69,9 +69,9 @@ trait TaskAttribute
                     if ($permissionCounter > 3) {
                         $actionButton = $actionButton.'
                         <div class="btn-group dropup">
-                        <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
+                        <a class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-option-vertical"></span>
-                        </button>
+                        </a>
                         <ul class="dropdown-menu dropdown-menu-right">';
                     }
                 }

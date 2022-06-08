@@ -9,7 +9,7 @@
     <span class="sr-only">Zwiń/Rozwiń</span>
   </button>
   <ul class="dropdown-menu dropdown-menu-right" role="menu">
-    <a href="{{route('admin.access.user.index')}}" class="dropdown-item"><span class="material-icons">list</span>Wszyscy Użytkownicy</a>
+    <a href="{{route('admin.access.user.index')}}" class="dropdown-item"><span class="material-icons">list</span>Aktywni Użytkownicy</a>
     @permission('create-user')
     <a href="{{route('admin.access.user.create')}}" class="dropdown-item"><span class="material-icons">add</span>Dodaj Użytkownika</a>
     @endauth
