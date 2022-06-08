@@ -53,6 +53,11 @@ mix.autoload({
         'resources/assets/js/plugins/material-dashboard.js',
         'resources/assets/js/plugins/settings.js',
     ], 'public/js/app-custom.js')
+    //Copying images of leaflet to public folder
     .copyDirectory('node_modules/leaflet/dist/images', 'public/images')
+    //Copying all directories of tinymce to public folder
+    .copyDirectory('node_modules/tinymce/plugins', 'public/js/plugins')
+    .copyDirectory('node_modules/tinymce/skins', 'public/js/skins')
+    .copyDirectory('node_modules/tinymce/themes', 'public/js/themes')
     .vue()
     .version();
