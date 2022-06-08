@@ -6,13 +6,17 @@
         <div class="row">
             <div class="col-md-12"> 
                 <div class="card box-info">
-                    <div class="card-header card-header-info d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">Zarządzanie Uprawnieniami</h4>
-
+                    <div class="card-header card-header-icon card-header-info d-flex justify-content-between align-items-center">
+                        <div class="col-md-6">
+                            <div class="card-icon">
+                                <i class="material-icons">assignment_turned_in</i>
+                            </div>
+                            <h4 class="card-title">Wszystkie Uprawnienia</h4>
+                        </div>
                         <div class="card-tools">
                             @include('backend.access.includes.partials.permission-header-buttons')
                         </div>
-                    </div><!-- /.box-header -->
+                    </div><!-- /.card-header -->
 
                     <div class="card-body">
                         <div class="table-responsive data-table-wrapper">
