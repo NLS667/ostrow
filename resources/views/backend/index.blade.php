@@ -15,8 +15,9 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="fas fa-history"></i> Przed chwilą
+                <i class="material-icons">history</i> Przed chwilą
               </div>
+              <a href="{{ route('admin.client.index') }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
             </div>
           </div>
         </div>
