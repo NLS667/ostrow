@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
-            <div class="card-header card-header-danger card-header-icon">
+            <div class="card-header card-header-success card-header-icon">
               <div class="card-icon">
                 <i class="material-icons">add_task</i>
               </div>
@@ -33,15 +33,15 @@
               <div class="stats">
                 <i class="material-icons">date_range</i> Wszystkie w bazie
               </div>
-              <a href="{{ route('admin.task.index', ['search' => 'Nowe']) }}" class="btn btn-flat btn-info">Zobacz</a>
+              <a href="{{ route('admin.task.index', ['search' => 'Nowe']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
-            <div class="card-header card-header-success card-header-icon">
+            <div class="card-header card-header-danger card-header-icon">
               <div class="card-icon">
-                <i class="material-icons">done_all</i>
+                <i class="material-icons">alarm</i>
               </div>
               <p class="card-category">Nadchodzące Zadania</p>
               <h3 class="card-title">{{ $data['comingTaskCount'] }}</h3>
@@ -50,7 +50,7 @@
               <div class="stats">
                 <i class="material-icons">date_range</i> Najbliższy miesiąc
               </div>
-              <a href="{{ route('admin.task.index', ['search' => 'Nadchodzące']) }}" class="btn btn-flat btn-info">Zobacz</a>
+              <a href="{{ route('admin.task.index', ['search' => 'Nadchodzące']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
             </div>
           </div>
         </div>
