@@ -142,7 +142,7 @@
                     {data: 'roles', name: '{{config('access.roles_table')}}.name', className: 'text-center', sortable: false},
                     {data: 'created_at', name: '{{config('access.users_table')}}.created_at'},
                     {data: 'updated_at', name: '{{config('access.users_table')}}.updated_at'},
-                    {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
+                    {data: 'actions', name: 'actions', className: 'text-center td-actions', searchable: false, sortable: false}
                 ],
                 order: [[5, "asc"]],
                 searchDelay: 500,
