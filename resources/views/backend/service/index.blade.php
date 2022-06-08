@@ -44,7 +44,7 @@
                                         <th>Data Instalacji</th>
                                         <th>Wartość Umowy</th>
                                         <th>Wpłacona zaliczka</th>
-                                        <th class="text-right">Akcje</th>
+                                        <th class="text-right td-actions">Akcje</th>
                                     </tr>
                                 </tfoot>
                                 <thead class="transparent-bg">
