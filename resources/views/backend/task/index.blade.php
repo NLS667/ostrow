@@ -119,8 +119,8 @@
                     data: {status: 0, trashed: false}
                 },
                 columns: [
-                    {data: 'assignee_id', name: 'assignee_id'},
-                    {data: 'service_id', name: 'assignee_id'},                    
+                    {data: 'assignee', name: 'assignee_id'},
+                    {data: 'service', name: 'assignee_id'},                    
                     {data: 'start', name: 'start'},
                     {data: 'end', name: 'end'},
                     {data: 'status', render: function ( data, type, row, meta ) {
