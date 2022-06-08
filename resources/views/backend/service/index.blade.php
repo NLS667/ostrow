@@ -122,8 +122,8 @@
                     {data: 'offered_at', name: 'services.offered_at'},
                     {data: 'signed_at', name: 'services.signed_at'},
                     {data: 'installed_at', name: 'services.installed_at'},
-                    {data: 'deal_amount', name: 'services.deal_amount'},
-                    {data: 'deal_advance', name: 'services.deal_advance'},
+                    {data: 'deal_amount', name: 'services.deal_amount', className: 'text-right'},
+                    {data: 'deal_advance', name: 'services.deal_advance', className: 'text-right'},
                     {data: 'actions', name: 'actions', className: 'text-center td-actions', searchable: false, sortable: false}
                 ],
                 order: [[3, "asc"]],
