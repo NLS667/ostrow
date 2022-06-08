@@ -166,7 +166,7 @@
                     @lang('datatable.strings')
                 }
             });
-            if(isSet(q_search)){
+            if(q_search){
                 console.log(q_search);
                 dataTable.columns( '.status' ).search( q_search ).draw();
             }
