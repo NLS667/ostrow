@@ -51,7 +51,7 @@
                 };
 
                 this.clients_map = L.map('leaflet-map', {
-                    //layers: [this.tileLayer],
+                    layers: [this.tileLayer],
                     sleep: true,
                     hoverToWake: false,
                     sleepNote: true,
@@ -66,7 +66,7 @@
                 //    this.layerControl = L.control.layers(baseMaps, overlays, options).addTo(this.clients_map);
                 //}
 
-                this.tileLayer.addTo(this.clients_map);
+                //this.tileLayer.addTo(this.clients_map);
             },
             initMarkers() {
                 if(this.data.mapMode == 'small'){
