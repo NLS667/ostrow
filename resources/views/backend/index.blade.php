@@ -34,7 +34,7 @@
               <div class="stats">
                 <i class="material-icons">date_range</i> Wszystkie w bazie
               </div>
-              <a href="{{ route('admin.task.index', ['search' => 'Nowe']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
+              <a href="{{ route('admin.task.index', ['q_status' => 'Nowe']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
               <div class="stats">
                 <i class="material-icons">date_range</i> Najbliższy miesiąc
               </div>
-              <a href="{{ route('admin.task.index', ['search' => 'Nadchodzące']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
+              <a href="{{ route('admin.task.index', ['q_status' => 'Nadchodzące']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
             </div>
           </div>
         </div>
