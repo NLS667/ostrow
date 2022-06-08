@@ -109,7 +109,16 @@
                     {data: 'first_name', name: '{{config('access.users_table')}}.first_name'},
                     {data: 'last_name', name: '{{config('access.users_table')}}.last_name'},
                     {data: 'email', name: '{{config('access.users_table')}}.email'},
-                    {data: 'status', name: '{{config('access.users_table')}}.status'},
+                    {data: 'status', className: 'text-center', name: '{{config('access.users_table')}}.status', render: function ( data, type, row, meta ) {
+                        switch(data){
+                            case 0:
+                                return '<span class="badge badge-danger">Nie</a>';
+                                break;
+                            case 1:
+                                return '<span class="badge badge-success">Tak</a>';
+                                break;
+                        }
+                    }},
                     {data: 'roles', name: '{{config('access.roles_table')}}.name', sortable: false},
                     {data: 'created_at', name: '{{config('access.users_table')}}.created_at'},
                     {data: 'updated_at', name: '{{config('access.users_table')}}.updated_at'},
