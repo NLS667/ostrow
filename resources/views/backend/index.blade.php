@@ -50,6 +50,7 @@
               <div class="stats">
                 <i class="material-icons">date_range</i> Najbliższy miesiąc
               </div>
+              <a href="{{ route('admin.task.index', ['search' => 'Nadchodzące']) }}" class="btn btn-flat btn-info">Zobacz</a>
             </div>
           </div>
         </div>
