@@ -33,6 +33,7 @@
               <div class="stats">
                 <i class="material-icons">date_range</i> Wszystkie w bazie
               </div>
+              <a href="{{ route('admin/task', ['search' => 'Noww']) }}" class="btn btn-flat btn-info">Zobacz</a>
             </div>
           </div>
         </div>
