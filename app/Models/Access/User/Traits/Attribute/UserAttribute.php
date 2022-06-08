@@ -270,10 +270,10 @@ trait UserAttribute
     public function checkAdmin()
     {
         if ($this->id != 1) {
-            return $this->getStatusButtonAttribute('btn btn-warning btn-round').'
-                            '.$this->getClearSessionButtonAttribute('btn btn-rose btn-round').'
-                            '.$this->getDeleteButtonAttribute('btn btn-danger btn-round').'
-                            '.$this->getLoginAsButtonAttribute('btn btn-primary btn-round');
+            return $this->getDeleteButtonAttribute('btn btn-danger btn-round').'
+                   '.$this->getStatusButtonAttribute('btn btn-warning btn-round').'
+                   '.$this->getClearSessionButtonAttribute('btn btn-rose btn-round').'
+                   '.$this->getLoginAsButtonAttribute('btn btn-primary btn-round');
         }
     }
 
@@ -387,7 +387,7 @@ trait UserAttribute
     {
         if ($this->trashed()) {
             return $this->getRestoreButtonAttribute('btn btn-success btn-round').'
-                        '.$this->getDeletePermanentlyButtonAttribute('btn btn-danger btn-round');
+                '.$this->getDeletePermanentlyButtonAttribute('btn btn-danger btn-round');
         }
 
         // Check if role have all permission
