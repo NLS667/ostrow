@@ -383,8 +383,6 @@ class UserRepository extends BaseRepository
      */
     protected function createUserStub($input)
     {
-        \Log::info($input['password']);
-        \Log::info($input['email']);
         $user = self::MODEL;
         $user = new $user();
         $user->first_name = $input['first_name'];
@@ -396,7 +394,6 @@ class UserRepository extends BaseRepository
         $user->confirmed = 1;
         $user->created_by = access()->user()->id;
 
-        \Log::info($user->password);
         return $user;
     }
 

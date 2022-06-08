@@ -103,13 +103,13 @@ return [
         /*
          * The role the user is assigned to when they sign up from the frontend, not namespaced
          */
-        'default_role' => 'Użytkownik',
+        'default_role' => 'Pracownik',
         //'default_role' => 2,
 
         /*
          * Whether or not the user has to confirm their email when signing up
          */
-        'confirm_email' => true,
+        'confirm_email' => false,
 
         /*
          * Whether or not the users email can be changed on the edit profile screen
@@ -120,7 +120,7 @@ return [
          * Whether or not new users need to be approved by an administrator before logging in
          * If this is set to true, then confirm_email is not in effect
          */
-        'requires_approval' => env('REQUIRES_APPROVAL', false),
+        'requires_approval' => env('REQUIRES_APPROVAL', true),
     ],
 
     /*
