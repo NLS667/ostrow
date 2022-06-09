@@ -75,7 +75,9 @@
             	</div>
             	<div class="card">
             		<div class="card-body">
-            			<iframe src="/laravel-filemanager" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
+            			<div class="lfm-wrapper">
+            				@include('vendor.laravel-filemanager.show');
+            			</div>
             		</div>
             	</div>
         	</div>
