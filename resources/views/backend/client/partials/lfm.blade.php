@@ -20,21 +20,21 @@
     <div class="collapse navbar-collapse flex-grow-0" id="nav-buttons">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" data-display="grid">
+          <button class="nav-link btn btn-link btn-default" data-display="grid">
             <i class="fas fa-th-large fa-fw"></i>
             <span>{{ trans('laravel-filemanager::lfm.nav-thumbnails') }}</span>
-          </a>
+          </button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-display="list">
+          <button class="nav-link btn btn-link btn-default" data-display="list">
             <i class="fas fa-list-ul fa-fw"></i>
             <span>{{ trans('laravel-filemanager::lfm.nav-list') }}</span>
-          </a>
+          </button>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <button class="nav-link btn btn-link btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-sort fa-fw"></i>{{ trans('laravel-filemanager::lfm.nav-sort') }}
-          </a>
+          </button>
           <div class="dropdown-menu dropdown-menu-right border-0"></div>
         </li>
       </ul>
