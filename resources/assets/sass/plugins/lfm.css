@@ -339,6 +339,7 @@ time {
 }
 
 .fab-wrapper .fab-button {
+  position: static;
   background-color: #333844;
   width: 3.5rem;
   height: 3.5rem;
@@ -351,7 +352,7 @@ time {
 }
 
 .fab-wrapper .fab-toggle {
-  z-index: 1;
+  z-index: 10;
 }
 
 .fab-wrapper .fab-toggle i {
