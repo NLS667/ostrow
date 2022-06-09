@@ -13,6 +13,7 @@ class LfmConfigHandler extends \UniSharp\LaravelFilemanager\Handlers\ConfigHandl
         $currentURL = request()->headers->get('referer');
         $lastSegment = basename(parse_url($currentURL, PHP_URL_PATH));
         $client = Client::where('id', $lastSegment)->first();
+        \Log::info(json_encode($client));
         return $client->name;
     }
 }
