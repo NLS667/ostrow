@@ -76,7 +76,7 @@
             	<div class="card">
             		<div class="card-body">
             			<div class="lfm-wrapper">
-            				@include('vendor.laravel-filemanager.index');
+            				@include('backend.client.partials.lfm');
             			</div>
             		</div>
             	</div>
