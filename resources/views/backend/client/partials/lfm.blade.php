@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-success">
   <div class="container">
-    <button class="navbar-brand invisible-lg d-none d-lg-inline" id="to-previous">
+    <button class="navbar-brand btn btn-link btn-white d-lg-inline" id="to-previous">
       <i class="fas fa-arrow-left fa-fw"></i>
       <span class="d-none d-lg-inline">{{ trans('laravel-filemanager::lfm.nav-back') }}</span>
     </button>
