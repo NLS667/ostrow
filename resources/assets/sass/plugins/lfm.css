@@ -372,13 +372,13 @@ time {
 .fab-wrapper .fab-action {
   z-index: -1;
   margin-bottom: -3.5rem;
-  display:none;
+  opacity: 0;
   transition: margin-bottom 350ms, opacity 350ms;
 }
 
 .fab-wrapper.fab-expand .fab-action {
   margin-bottom: 1rem;
-  display:block;
+  opacity: 1;
   transition: margin-bottom 350ms, opacity 350ms;
 }
 
