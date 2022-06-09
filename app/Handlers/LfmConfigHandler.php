@@ -10,7 +10,7 @@ class LfmConfigHandler extends \UniSharp\LaravelFilemanager\Handlers\ConfigHandl
 {
     public function userField()
     {
-        if(Route::currentRouteName() == 'laravel-filemanager')){
+        if(Route::currentRouteName() == 'laravel-filemanager'){
             $refererURL = request()->headers->get('referer');
             \Log::info(json_encode($refererURL));
             $lastSegment = basename(parse_url($refererURL, PHP_URL_PATH));
