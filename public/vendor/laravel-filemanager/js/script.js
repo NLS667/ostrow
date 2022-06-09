@@ -541,6 +541,7 @@ function rename(item) {
 
 function trash(items) {
   notify(lang['message-delete'], function () {
+    console.log(items);
     performLfmRequest('delete', {
       items: items.map(function (item) { return item.name; })
     }).done(refreshFoldersAndItems)
