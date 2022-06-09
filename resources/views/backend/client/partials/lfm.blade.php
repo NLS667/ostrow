@@ -81,3 +81,84 @@
 
     <div id="fab"></div>
   </div>
+
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">{{ trans('laravel-filemanager::lfm.title-upload') }}</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aia-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <form action="{{ route('unisharp.lfm.upload') }}" role='form' id='uploadForm' name='uploadForm' method='post' enctype='multipart/form-data' class="dropzone">
+            <div class="form-group" id="attachment">
+              <div class="controls text-center">
+                <div class="input-group w-100">
+                  <a class="btn btn-primary w-100 text-white" id="upload-button">{{ trans('laravel-filemanager::lfm.message-choose') }}</a>
+                </div>
+              </div>
+            </div>
+            <input type='hidden' name='working_dir' id='working_dir'>
+            <input type='hidden' name='type' id='type' value='{{ request("type") }}'>
+            <input type='hidden' name='_token' value='{{csrf_token()}}'>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="notify" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
+          <button type="button" class="btn btn-primary w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-confirm') }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="dialog" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
+          <button type="button" class="btn btn-primary w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-confirm') }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="carouselTemplate" class="d-none carousel slide bg-light" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#previewCarousel" data-slide-to="0" class="active"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a class="carousel-label"></a>
+        <div class="carousel-image"></div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#previewCarousel" role="button" data-slide="prev">
+      <div class="carousel-control-background" aria-hidden="true">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <span class="sr-only">Poprzedni</span>
+    </a>
+    <a class="carousel-control-next" href="#previewCarousel" role="button" data-slide="next">
+      <div class="carousel-control-background" aria-hidden="true">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <span class="sr-only">Nastepny</span>
+    </a>
+  </div>
