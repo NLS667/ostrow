@@ -71,19 +71,16 @@ use UniSharp\LaravelFilemanager\Middlewares\MultiUser;
                         'as' => 'domove'
                     ]);
 
-                    // folders
                     Route::get('/newfolder', [
                         'uses' => 'FolderController@getAddfolder',
                         'as' => 'getAddfolder',
                     ]);
 
-                    // list folders
                     Route::get('/folders', [
                         'uses' => 'FolderController@getFolders',
                         'as' => 'getFolders',
                     ]);
 
-                    // crop
                     Route::get('/crop', [
                         'uses' => 'CropController@getCrop',
                         'as' => 'getCrop',
@@ -97,13 +94,11 @@ use UniSharp\LaravelFilemanager\Middlewares\MultiUser;
                         'as' => 'getCropnewimage',
                     ]);
 
-                    // rename
                     Route::get('/rename', [
                         'uses' => 'RenameController@getRename',
                         'as' => 'getRename',
                     ]);
 
-                    // scale/resize
                     Route::get('/resize', [
                         'uses' => 'ResizeController@getResize',
                         'as' => 'getResize',
@@ -113,13 +108,11 @@ use UniSharp\LaravelFilemanager\Middlewares\MultiUser;
                         'as' => 'performResize',
                     ]);
 
-                    // download
                     Route::get('/download', [
                         'uses' => 'DownloadController@getDownload',
                         'as' => 'getDownload',
                     ]);
 
-                    // delete
                     Route::get('/delete', [
                         'uses' => 'DeleteController@getDelete',
                         'as' => 'getDelete',
