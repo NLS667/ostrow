@@ -170,17 +170,17 @@ a {
 
 /* Sidebar */
 
-.nav-pills > .nav-item > .nav-link {
+.lfm-wrapper .nav-pills > .nav-item > .nav-link {
   display: flex;
   align-items: center;
 }
 
-.nav-pills > .sub-item > .nav-link {
+.lfm-wrapper .nav-pills > .sub-item > .nav-link {
   height: 3rem;
   padding-left: 3rem;
 }
 
-.nav-pills > li.active > a, .nav-pills > li:hover > a {
+.lfm-wrapper .nav-pills > li.active > a, .nav-pills > li:hover > a {
   background-color: #ddd;
   border-radius: 0;
   color: #333844;
