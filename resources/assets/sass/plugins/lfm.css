@@ -303,9 +303,11 @@ time {
   display: none;
 }
 
-.lfm-wrapper .info > * {
-  max-width: calc(100vw - 70px - 60px);
+.lfm-wrapper .info  {
+  margin: unset;
+  padding: unset;
 }
+
 
 /* Mime icon generator overwrite */
 
