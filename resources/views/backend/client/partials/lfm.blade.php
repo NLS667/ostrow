@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-primary" id="nav">
+<nav class="navbar navbar-expand-lg bg-success">
   <div class="container">
     <button class="navbar-brand invisible-lg d-none d-lg-inline" id="to-previous">
       <i class="fas fa-arrow-left fa-fw"></i>
@@ -43,44 +43,43 @@
   </div>
 </nav>
 
-  <nav class="bg-light fixed-bottom border-top d-none" id="actions">
-    <a data-action="open" data-multiple="false"><i class="fas fa-folder-open"></i>{{ trans('laravel-filemanager::lfm.btn-open') }}</a>
-    <a data-action="preview" data-multiple="true"><i class="fas fa-images"></i>{{ trans('laravel-filemanager::lfm.menu-view') }}</a>
-    <a data-action="use" data-multiple="true"><i class="fas fa-check"></i>{{ trans('laravel-filemanager::lfm.btn-confirm') }}</a>
-  </nav>
+<nav class="bg-light fixed-bottom border-top d-none" id="actions">
+  <a data-action="open" data-multiple="false"><i class="fas fa-folder-open"></i>{{ trans('laravel-filemanager::lfm.btn-open') }}</a>
+  <a data-action="preview" data-multiple="true"><i class="fas fa-images"></i>{{ trans('laravel-filemanager::lfm.menu-view') }}</a>
+  <a data-action="use" data-multiple="true"><i class="fas fa-check"></i>{{ trans('laravel-filemanager::lfm.btn-confirm') }}</a>
+</nav>
 
-  <div class="d-flex flex-row">
-    <div id="tree"></div>
+<div class="d-flex flex-row">
+  <div id="tree"></div>
 
-    <div id="main">
-      <div id="alerts"></div>
+  <div id="main">
+    <div id="alerts"></div>
 
-      <nav aria-label="breadcrumb" class="d-none d-lg-block" id="breadcrumbs">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item invisible">Home</li>
-        </ol>
-      </nav>
+    <nav aria-label="breadcrumb" class="d-none d-lg-block" id="breadcrumbs">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item invisible">Home</li>
+      </ol>
+    </nav>
 
-      <div id="empty" class="d-none">
-        <i class="far fa-folder-open"></i>
-        {{ trans('laravel-filemanager::lfm.message-empty') }}
-      </div>
-
-      <div id="content"></div>
-      <div id="pagination"></div>
-
-      <a id="item-template" class="d-none">
-        <div class="square"></div>
-
-        <div class="info">
-          <div class="item_name text-truncate"></div>
-          <time class="text-muted font-weight-light text-truncate"></time>
-        </div>
-      </a>
+    <div id="empty" class="d-none">
+      <i class="far fa-folder-open"></i>
+      {{ trans('laravel-filemanager::lfm.message-empty') }}
     </div>
 
-    <div id="fab"></div>
+    <div id="content"></div>
+    <div id="pagination"></div>
+
+    <a id="item-template" class="d-none">
+      <div class="square"></div>
+      <div class="info">
+        <div class="item_name text-truncate"></div>
+         <time class="text-muted font-weight-light text-truncate"></time>
+      </div>
+    </a>
   </div>
+
+  <div id="fab"></div>
+</div>
 
 <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -94,7 +93,7 @@
             <div class="form-group" id="attachment">
               <div class="controls text-center">
                 <div class="input-group w-100">
-                  <a class="btn btn-primary w-100 text-white" id="upload-button">{{ trans('laravel-filemanager::lfm.message-choose') }}</a>
+                  <a class="btn btn-warning w-100 text-white" id="upload-button">{{ trans('laravel-filemanager::lfm.message-choose') }}</a>
                 </div>
               </div>
             </div>
@@ -104,7 +103,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
+          <button type="button" class="btn btn-danger w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
         </div>
       </div>
     </div>
@@ -115,8 +114,8 @@
       <div class="modal-content">
         <div class="modal-body"></div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
-          <button type="button" class="btn btn-primary w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-confirm') }}</button>
+          <button type="button" class="btn btn-danger w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
+          <button type="button" class="btn btn-success w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-confirm') }}</button>
         </div>
       </div>
     </div>
@@ -132,8 +131,8 @@
           <input type="text" class="form-control">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
-          <button type="button" class="btn btn-primary w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-confirm') }}</button>
+          <button type="button" class="btn btn-danger w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
+          <button type="button" class="btn btn-success w-100" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-confirm') }}</button>
         </div>
       </div>
     </div>
