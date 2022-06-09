@@ -87,7 +87,7 @@
             	</div>
             	<div class="card">
             		<div class="card-body">
-            			<div class="lfm-wrapper">
+            			<div class="lfm-wrapper" style="position:relative;">
             				@include('backend.client.partials.lfm');
             			</div>
             		</div>
