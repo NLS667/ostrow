@@ -9,7 +9,6 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('material') }}/img/apple-icon.png">
     <link rel="icon" type="image/png" href="{{ asset('material') }}/img/favicon.png">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-    @stack('styles')
     @yield('meta')
 
     <!-- Styles -->
@@ -17,6 +16,7 @@
     {{ Html::style(mix('css/app.css')) }}
     {{ Html::style(mix('css/app-custom.css')) }}
     @yield('after-styles')
+    @stack('styles')
 
     <!-- Scripts -->
     <script>
