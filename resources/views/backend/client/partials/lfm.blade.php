@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-primary" id="nav">
+  <div class="container">
     <button class="navbar-brand invisible-lg d-none d-lg-inline" id="to-previous">
       <i class="fas fa-arrow-left fa-fw"></i>
       <span class="d-none d-lg-inline">{{ trans('laravel-filemanager::lfm.nav-back') }}</span>
@@ -39,7 +40,8 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <nav class="bg-light fixed-bottom border-top d-none" id="actions">
     <a data-action="open" data-multiple="false"><i class="fas fa-folder-open"></i>{{ trans('laravel-filemanager::lfm.btn-open') }}</a>
