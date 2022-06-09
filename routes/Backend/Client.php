@@ -35,13 +35,9 @@ use App\Http\Controllers\Backend\Client\ClientStatusController;
              * Specific Client
              */
             Route::group(['prefix' => 'client/{client}'], function () {
-
+                \UniSharp\LaravelFilemanager\Lfm::routes();
                 // Status
                 Route::get('mark/{status}', [ClientStatusController::class, 'mark'])->name('client.mark')->where(['status' => '[0,1]']);
-
-                Route::group(['prefix' => 'repository'], function () {
-                     \UniSharp\LaravelFilemanager\Lfm::routes();
-                 });
             });
 
             /*
