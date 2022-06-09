@@ -266,7 +266,7 @@ function performLfmRequest(url, parameter, type) {
     });
   }
   console.log('url : ' + lfm_route + '/' + url);
-  console.log('data : ' + data);
+  console.log('data : ' + JSON.stringify(data));
   return $.ajax({
     type: 'GET',
     beforeSend: function(request) {
