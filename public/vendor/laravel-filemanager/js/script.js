@@ -795,8 +795,8 @@ function notImp() {
 }
 
 function notify(body, callback) {
-  $('#notify').find('.btn-primary').toggle(callback !== undefined);
-  $('#notify').find('.btn-primary').unbind().click(callback);
+  $('#notify').find('.btn-success').toggle(callback !== undefined);
+  $('#notify').find('.btn-success').unbind().click(callback);
   $('#notify').modal('show').find('.modal-body').html(body);
 }
 
@@ -805,7 +805,7 @@ function dialog(title, value, callback) {
   $('#dialog').on('shown.bs.modal', function () {
     $('#dialog').find('input').focus();
   });
-  $('#dialog').find('.btn-primary').unbind().click(function (e) {
+  $('#dialog').find('.btn-success').unbind().click(function (e) {
     callback($('#dialog').find('input').val());
   });
   $('#dialog').modal('show').find('.modal-title').text(title);
