@@ -9,7 +9,7 @@ class LfmConfigHandler extends \UniSharp\LaravelFilemanager\Handlers\ConfigHandl
     public function userField()
     {
         $currentURL = URL::current();
-        \Log::info($currentURL);
+        \Debugbar::info($currentURL);
         return parent::userField();
     }
 }
