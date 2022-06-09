@@ -303,7 +303,7 @@ time {
   display: none;
 }
 
-.info > * {
+.lfm-wrapper .info > * {
   max-width: calc(100vw - 70px - 60px);
 }
 
