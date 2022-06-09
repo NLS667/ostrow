@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Backend\Client\ClientStatusController;
+use UniSharp\LaravelFilemanager\Middlewares\CreateDefaultFolder;
+use UniSharp\LaravelFilemanager\Middlewares\MultiUser;
 
 /*
      * Client Management
