@@ -35,7 +35,91 @@ use App\Http\Controllers\Backend\Client\ClientStatusController;
              * Specific Client
              */
             Route::group(['prefix' => 'client/{client}'], function () {
-                \UniSharp\LaravelFilemanager\Lfm::routes();
+
+                Route::group(compact([ CreateDefaultFolder::class, MultiUser::class ], 'unisharp.lfm.', '\\UniSharp\\LaravelFilemanager\\Controllers\\'), function () {
+                    // display integration error messages
+                    Route::get('/errors', [
+                        'uses' => 'LfmController@getErrors',
+                        'as' => 'getErrors',
+                    ]);
+
+                    // upload
+                    Route::any('/upload', [
+                        'uses' => 'UploadController@upload',
+                        'as' => 'upload',
+                    ]);
+
+                    // list images & files
+                    Route::get('/jsonitems', [
+                        'uses' => 'ItemsController@getItems',
+                        'as' => 'getItems',
+                    ]);
+
+                    Route::get('/move', [
+                        'uses' => 'ItemsController@move',
+                        'as' => 'move',
+                    ]);
+
+                    Route::get('/domove', [
+                        'uses' => 'ItemsController@domove',
+                        'as' => 'domove'
+                    ]);
+
+                    // folders
+                    Route::get('/newfolder', [
+                        'uses' => 'FolderController@getAddfolder',
+                        'as' => 'getAddfolder',
+                    ]);
+
+                    // list folders
+                    Route::get('/folders', [
+                        'uses' => 'FolderController@getFolders',
+                        'as' => 'getFolders',
+                    ]);
+
+                    // crop
+                    Route::get('/crop', [
+                        'uses' => 'CropController@getCrop',
+                        'as' => 'getCrop',
+                    ]);
+                    Route::get('/cropimage', [
+                        'uses' => 'CropController@getCropimage',
+                        'as' => 'getCropimage',
+                    ]);
+                    Route::get('/cropnewimage', [
+                        'uses' => 'CropController@getNewCropimage',
+                        'as' => 'getCropnewimage',
+                    ]);
+
+                    // rename
+                    Route::get('/rename', [
+                        'uses' => 'RenameController@getRename',
+                        'as' => 'getRename',
+                    ]);
+
+                    // scale/resize
+                    Route::get('/resize', [
+                        'uses' => 'ResizeController@getResize',
+                        'as' => 'getResize',
+                    ]);
+                    Route::get('/doresize', [
+                        'uses' => 'ResizeController@performResize',
+                        'as' => 'performResize',
+                    ]);
+
+                    // download
+                    Route::get('/download', [
+                        'uses' => 'DownloadController@getDownload',
+                        'as' => 'getDownload',
+                    ]);
+
+                    // delete
+                    Route::get('/delete', [
+                        'uses' => 'DeleteController@getDelete',
+                        'as' => 'getDelete',
+                    ]);
+                }
+
                 // Status
                 Route::get('mark/{status}', [ClientStatusController::class, 'mark'])->name('client.mark')->where(['status' => '[0,1]']);
             });
