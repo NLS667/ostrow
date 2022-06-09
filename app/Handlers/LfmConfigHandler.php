@@ -16,9 +16,7 @@ class LfmConfigHandler extends \UniSharp\LaravelFilemanager\Handlers\ConfigHandl
         $lastSegment = basename(parse_url($currentURL, PHP_URL_PATH));
         if(is_numeric($lastSegment)){
             $client = Client::where('id', $lastSegment)->first();
-            
-        }       
-
-        return $client->name;
+            return $client->name;
+        }
     }
 }
