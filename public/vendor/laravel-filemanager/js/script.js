@@ -265,7 +265,8 @@ function performLfmRequest(url, parameter, type) {
       data[key] = value;
     });
   }
-
+  console.log('url : ' + lfm_route + '/' + url);
+  console.log('data : ' + data);
   return $.ajax({
     type: 'GET',
     beforeSend: function(request) {
@@ -479,7 +480,6 @@ function loadItems(page) {
       $('#nav-buttons > ul').removeClass('d-none');
 
       $('#working_dir').val(working_dir);
-      console.log('Current working_dir : ' + working_dir);
       var breadcrumbs = [];
       var validSegments = working_dir.split('/').filter(function (e) { return e; });
       validSegments.forEach(function (segment, index) {
@@ -541,7 +541,6 @@ function rename(item) {
 
 function trash(items) {
   notify(lang['message-delete'], function () {
-    console.log(items);
     performLfmRequest('delete', {
       items: items.map(function (item) { return item.name; })
     }).done(refreshFoldersAndItems)
