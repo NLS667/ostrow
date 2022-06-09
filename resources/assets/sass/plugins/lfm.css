@@ -175,7 +175,8 @@ a {
   align-items: center;
 }
 .lfm-wrapper .nav-pills > .nav-item i {
-    padding: 0; 
+    font-size: 16px;
+    padding: 0;
 }
 .lfm-wrapper .nav-pills > .sub-item > .nav-link {
   height: 3rem;
