@@ -24,6 +24,7 @@ use App\Models\ServiceCategory\ServiceCategory;
 use App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository;
 use App\Repositories\Backend\Service\ServiceRepository;
 use App\Repositories\Backend\Client\ClientRepository;
+use UniSharp\LaravelFilemanager\Lfm;
 
 /**
  * Class ClientController.
@@ -64,7 +65,8 @@ class ClientController extends Controller
      */
     public function index(ManageClientRequest $request)
     {
-        return new ViewResponse('backend.client.index');
+        $helper = app(Lfm::class);
+        return new ViewResponse('backend.client.index', ['helper' => $helper]);
     }
 
     /**
