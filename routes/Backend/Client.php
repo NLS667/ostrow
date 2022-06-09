@@ -118,7 +118,7 @@ use App\Http\Controllers\Backend\Client\ClientStatusController;
                         'uses' => 'DeleteController@getDelete',
                         'as' => 'getDelete',
                     ]);
-                };
+                });
 
                 // Status
                 Route::get('mark/{status}', [ClientStatusController::class, 'mark'])->name('client.mark')->where(['status' => '[0,1]']);
