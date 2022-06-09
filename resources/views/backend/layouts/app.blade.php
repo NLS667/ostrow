@@ -12,11 +12,11 @@
     @yield('meta')
 
     <!-- Styles -->
+    @stack('styles')
     @yield('before-styles')
     {{ Html::style(mix('css/app.css')) }}
     {{ Html::style(mix('css/app-custom.css')) }}
     @yield('after-styles')
-    @stack('styles')
 
     <!-- Scripts -->
     <script>
