@@ -65,8 +65,7 @@ class ClientController extends Controller
      */
     public function index(ManageClientRequest $request)
     {
-        $helper = app(Lfm::class);
-        return new ViewResponse('backend.client.index', ['helper' => $helper]);
+        return new ViewResponse('backend.client.index');
     }
 
     /**
@@ -110,7 +109,10 @@ class ClientController extends Controller
             array_push($serviceCatIds, $service->service_cat_id);
         }
         $serviceCategories = ServiceCategory::whereIn('id', $serviceCatIds)->get();
-        return new ShowResponse($client, $serviceCategories, $services);
+
+        $helper = app(Lfm::class);
+        
+        return new ShowResponse($client, $serviceCategories, $services, $helper);
     }
 
     /**
