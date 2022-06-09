@@ -95,7 +95,7 @@ class ClientRepository extends BaseRepository
             if ($client->save()) {
 
                 //Create folder for client related files
-                $dir = storage_path('app/public/'.$client->full_name.'/');
+                $dir = storage_path('app/files/'.$client->full_name.'/');
                 
                 // Make sure the storage path exists and writeable
                 if (!is_writable($dir)) {
