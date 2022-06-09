@@ -39,8 +39,10 @@ use UniSharp\LaravelFilemanager\Middlewares\MultiUser;
             Route::group(['prefix' => 'client/{client}'], function () {
 
                 $middleware = [ CreateDefaultFolder::class, MultiUser::class ];
+                $as = 'unisharp.lfm.';
+                $namespace = '\\UniSharp\\LaravelFilemanager\\Controllers\\';
 
-                Route::group(compact('middleware', 'unisharp.lfm.', '\\UniSharp\\LaravelFilemanager\\Controllers\\'), function () {
+                Route::group(compact('middleware', 'as', 'namespace'), function () {
                     // display integration error messages
                     Route::get('/errors', [
                         'uses' => 'LfmController@getErrors',
