@@ -4,12 +4,6 @@
     <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/cropper.min.css') }}">
   	<link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/dropzone.min.css') }}">
   	<link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/mime-icons.min.css') }}">
-  	<style>{!! \File::get(base_path('vendor/unisharp/laravel-filemanager/public/css/lfm.css')) !!}</style>
-  	<style>
-  		.nav-pills > .nav-item > .nav-link {
-		    height: initial !important;
-		}
-	</style>
 @endpush
 
 @section('content')

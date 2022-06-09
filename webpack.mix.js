@@ -20,6 +20,7 @@ mix.autoload({
         //'resources/assets/sass/plugins/jquery.dataTables.min.css',
         //'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css',
         'resources/assets/sass/plugins/select2.css',
+        'resources/assets/sass/plugins/lfm.css',
         'resources/assets/sass/material/material-dashboard.css',
         'resources/assets/sass/custom.scss',
     ], 'public/css/app-custom.css')
