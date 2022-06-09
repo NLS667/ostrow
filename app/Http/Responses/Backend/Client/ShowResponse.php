@@ -58,6 +58,6 @@ class ShowResponse implements Responsable
                 ->with('client', $this->client)
                 ->with('client_data', $client_data)
                 ->with('map_data', $map_data)
-                ->with('helper', $helper);
+                ->with('helper', $this->helper);
     }
 }
