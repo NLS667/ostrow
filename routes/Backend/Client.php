@@ -38,6 +38,10 @@ use App\Http\Controllers\Backend\Client\ClientStatusController;
 
                 // Status
                 Route::get('mark/{status}', [ClientStatusController::class, 'mark'])->name('client.mark')->where(['status' => '[0,1]']);
+
+                Route::group(['prefix' => '/'], function () {
+                     \UniSharp\LaravelFilemanager\Lfm::routes();
+                 });
             });
 
             /*
