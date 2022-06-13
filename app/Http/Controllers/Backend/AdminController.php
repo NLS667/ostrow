@@ -67,8 +67,8 @@ class AdminController extends Controller
 
                     foreach($services as $service){
                         $catid = $service->service_cat_id;
-                        $service_tasks = $service->tasks()->where('start', '>', Carbon::now()->subMonths(6));
-
+                        $service_tasks = $service->tasks()->whereDate('start', '>', Carbon::now()->subMonths(6));
+                        \Log::info(json_encode($service_tasks));
                         foreach($service_tasks as $task){
                             if ($task->assignee_id == auth()->user()->id) {
                                 $allowed = true;
