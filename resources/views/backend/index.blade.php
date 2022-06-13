@@ -74,22 +74,6 @@
         </div>
       </div>
       @endauth
-      @permission('view-map')
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card ">
-            <div class="card-header card-header-text card-header-rose">
-              <div class="card-text">
-                <h4 class="card-title">Mapa Klientów</h4>
-              </div>
-            </div>
-            <div class="card-body ">
-              <clientsmap :data='{!! json_encode($map_data) !!}'></clientsmap>
-            </div>
-          </div>
-        </div>
-      </div>
-      @endauth
       @permission('view-calendar')
       <div class="row">
         <div class="col-md-12">
@@ -101,6 +85,22 @@
             </div>
             <div class="card-body ">
               <calendar filter-route="{{ route('admin.task.filter') }}" />
+            </div>
+          </div>
+        </div>
+      </div>
+      @endauth
+      @permission('view-map')
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header card-header-text card-header-rose">
+              <div class="card-text">
+                <h4 class="card-title">Mapa Klientów</h4>
+              </div>
+            </div>
+            <div class="card-body ">
+              <clientsmap :data='{!! json_encode($map_data) !!}'></clientsmap>
             </div>
           </div>
         </div>
