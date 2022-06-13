@@ -88,6 +88,22 @@
         </div>
       </div>
       @endauth
+      @permission('view-calendar')
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header card-header-text card-header-rose">
+              <div class="card-text">
+                <h4 class="card-title">Harmonogram</h4>
+              </div>
+            </div>
+            <div class="card-body ">
+              <calendar filter-route="{{ route('admin.task.filter') }}" />
+            </div>
+          </div>
+        </div>
+      </div>
+      @endauth
     </div>
   </div>
 @endsection
