@@ -30,7 +30,7 @@ class PermissionRoleSeeder extends Seeder
         /*
          *  Assign permissions to employee role
         */
-        $employee = [1, 24, 52, 53];
+        $employee = [1, 24, 48, 52, 53];
 
         Role::find(2)->permissions()->sync($administrator);
         Role::find(3)->permissions()->sync($employee);
