@@ -28,8 +28,10 @@ class AdminController extends Controller
 
         $new_tasks = Task::where('status', 0)->get();
         $coming_tasks = Task::where('status', 2)->get();
+        $overdue_tasks = Task::where('status', 3)->get();
         $data['newTaskCount'] = $new_tasks->count();
         $data['comingTaskCount'] = $coming_tasks->count();
+        $data['overdueTaskCount'] = $overdue_tasks->count();
 
         $map_data = [];
         $map_data['mapMode'] = 'large';
