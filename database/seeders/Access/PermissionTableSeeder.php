@@ -749,12 +749,12 @@ class PermissionTableSeeder extends Seeder
         $permModel->save();
 
         /**
-         * Settings.
+         * History.
          */
         $permission_model = config('access.permission');
         $permModel = new $permission_model();
-        $permModel->name = 'edit-settings';
-        $permModel->display_name = 'Edycja Konfiguracji';
+        $permModel->name = 'view-history';
+        $permModel->display_name = 'Dostęp do historii zdarzeń';
         $permModel->sort = 58;
         $permModel->created_by = 1;
         $permModel->updated_by = null;

@@ -155,16 +155,6 @@ class MenuTableSeeder extends Seeder
                     "id":13,
                     "content":"Permission-Management"
                 }]
-            },
-            {
-                "view_permission_id":"view-menu",
-                "icon":"list",
-                "open_in_new_tab":0,
-                "url_type":"route",
-                "url":"admin.menus.index",
-                "name":"Ustawienia Menu",
-                "id":14,
-                "content":"Menus"
             }]';
 
         $menu = [
