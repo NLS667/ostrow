@@ -4,7 +4,7 @@ namespace App\Models\Service\Traits\Relationship;
 
 use App\Models\ServiceCategory\ServiceCategory;
 use App\Models\Client\Client;
-use App\Models\Access\User\User;
+use App\Models\Task\Task;
 
 /**
  * Class ServiceRelationship.
