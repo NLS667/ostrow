@@ -23,6 +23,8 @@ class AdminController extends Controller
      */
     public function index()
     {
+
+
         $clients = Client::where('status', 1)->get();
         $data['clientCount'] = $clients->count();
 
@@ -59,18 +61,28 @@ class AdminController extends Controller
             {
                 $services = Service::where('client_id', $client->id)->get();
                 $client_markers = [];
+                $allowed = false;
 
                 foreach($map_data['layers'] as $layer){
 
                     foreach($services as $service){
                         $catid = $service->service_cat_id;
+                        $service_tasks = $service->tasks()->where('start', '>', Carbon::now()->subMonths(6));
+
+                        foreach($service_tasks as $task){
+                            if ($task->assignee_id == auth()->user()->id) {
+                                $allowed = true;
+                            }
+                        }
                         if($layer->id == $catid){
-                            $layer->markers[]  = (object)[
-                                'content' => view('backend.map.popup')->with('client', $client)->render(),
-                                'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                                'title' => $client->full_name,
+                            if($allowed){
+                                $layer->markers[]  = (object)[
+                                    'content' => view('backend.map.popup')->with('client', $client)->render(),
+                                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                                    'title' => $client->full_name,
                                 ];
                             }
+                        }
                     }
                 }
             }  

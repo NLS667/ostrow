@@ -24,9 +24,9 @@ trait ServiceRelationship
         return $this->belongsTo(Client::class);
     }
 
-    public function user()
+    public function tasks()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->hasMany(Task::class);
     }
 
 }
