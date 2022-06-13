@@ -45,17 +45,34 @@ class MapController extends Controller
                 $services = Service::where('client_id', $client->id)->get();
                 $client_markers = [];
 
+                if(auth()->user()->hasRole('Pracownik'))
+                {                    
+                    $allowed = false;
+                } else {
+                    $allowed = true;
+                }
+
                 foreach($map_data['layers'] as $layer){
 
                     foreach($services as $service){
                         $catid = $service->service_cat_id;
+                        $service_tasks = $service->tasks()->whereDate('start', '>', Carbon::now()->subMonths(6))->get();
+
+                        foreach($service_tasks as $task){
+                            if ($task->assignee_id == auth()->user()->id) {
+                                $allowed = true;
+                            }
+                        }
+
                         if($layer->id == $catid){
-                            $layer->markers[]  = (object)[
-                                'content' => view('backend.map.popup')->with('client', $client)->render(),
-                                'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                                'title' => $client->full_name,
+                            if($allowed){
+                                $layer->markers[]  = (object)[
+                                    'content' => view('backend.map.popup')->with('client', $client)->render(),
+                                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                                    'title' => $client->full_name,
                                 ];
                             }
+                        }
                     }
                 }
             }  

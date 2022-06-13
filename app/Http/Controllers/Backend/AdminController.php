@@ -61,19 +61,27 @@ class AdminController extends Controller
             {
                 $services = Service::where('client_id', $client->id)->get();
                 $client_markers = [];
-                $allowed = false;
+
+                if(auth()->user()->hasRole('Pracownik'))
+                {                    
+                    $allowed = false;
+                } else {
+                    $allowed = true;
+                }
+
 
                 foreach($map_data['layers'] as $layer){
 
                     foreach($services as $service){
                         $catid = $service->service_cat_id;
                         $service_tasks = $service->tasks()->whereDate('start', '>', Carbon::now()->subMonths(6))->get();
-                        \Log::info(json_encode($service_tasks));
+                        
                         foreach($service_tasks as $task){
                             if ($task->assignee_id == auth()->user()->id) {
                                 $allowed = true;
                             }
                         }
+
                         if($layer->id == $catid){
                             if($allowed){
                                 $layer->markers[]  = (object)[
