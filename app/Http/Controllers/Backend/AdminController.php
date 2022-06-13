@@ -75,7 +75,7 @@ class AdminController extends Controller
                 }
             }  
         }
-        if(Auth::user()->hasRole('Pracownik'))
+        if(auth()->user()->hasRole('Pracownik'))
         {
             return view('backend.index')->with('data', $data);
         } else {
