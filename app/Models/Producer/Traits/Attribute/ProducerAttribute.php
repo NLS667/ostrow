@@ -111,18 +111,14 @@ trait ProducerAttribute
 
         switch ($permissionName) {
             case 'edit-producer':
-            $button = ($counter <= 3) ? $this->getEditButtonAttribute($class) : '<li>'
+            $button = ($counter <= 3) ? $this->getEditButtonAttribute('btn btn-success btn-round') : '<li>'
             .$this->getEditButtonAttribute($class).
             '</li>';
             break;
             case 'delete-producer':
-            if (access()->user()->id != $this->id) {
-                $button = ($counter <= 3) ? $this->getDeleteButtonAttribute($class) : '<li>'
-                .$this->getDeleteButtonAttribute($class).
-                '</li>';
-            } else {
-                $button = '';
-            }
+            $button = ($counter <= 3) ? $this->getDeleteButtonAttribute('btn btn-danger btn-round') : '<li>'
+            .$this->getDeleteButtonAttribute($class).
+            '</li>';
             break;
             default:
             $button = '';
