@@ -116,13 +116,9 @@ trait ModelAttribute
             '</li>';
             break;
             case 'delete-model':
-            if (access()->user()->id != $this->id) {
-                $button = ($counter <= 3) ? $this->getDeleteButtonAttribute('btn btn-danger btn-round') : '<li>'
-                .$this->getDeleteButtonAttribute($class).
-                '</li>';
-            } else {
-                $button = '';
-            }
+            $button = ($counter <= 3) ? $this->getDeleteButtonAttribute('btn btn-danger btn-round') : '<li>'
+            .$this->getDeleteButtonAttribute($class).
+            '</li>';
             break;
             default:
             $button = '';
