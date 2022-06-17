@@ -138,9 +138,6 @@ trait ClientAttribute
      */
     public function getActionButtonsByPermissionName($permissionName, $counter)
     {
-        // check if counter is less then 3 then apply button client
-        $class = ($counter <= 3) ? 'btn btn-primary btn-flat' : '';
-
         switch ($permissionName) {
             case 'show-client':
                 $button = $this->getShowButtonAttribute('btn btn-info btn-round');
@@ -163,11 +160,7 @@ trait ClientAttribute
                 }
                 break;
             case 'delete-client':
-                if (access()->user()->id != $this->id) {
-                    $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
-                } else {
-                    $button = '';
-                }
+                $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
                 break;
             default:
                 $button = '';
@@ -260,11 +253,11 @@ trait ClientAttribute
 
             foreach ($userPermission as $value) {
                 if ($i != 3) {
-                    $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
+                    $actionButton = $actionButton.' '.$this->getActionButtonsByPermissionName($value, $i);
                 }
-
+                /**
                 if ($i == 3) {
-                    $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
+                    $actionButton = $actionButton.' '.$this->getActionButtonsByPermissionName($value, $i);
 
                     if ($permissionCounter > 3) {
                         $actionButton = $actionButton.'
@@ -274,7 +267,7 @@ trait ClientAttribute
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right">';
                     }
-                }
+                }*/
                 $i++;
             }
             $actionButton .= '</ul></div><';
