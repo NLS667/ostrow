@@ -30,8 +30,8 @@ class AppServiceProvider extends ServiceProvider
          * setLocale to use Carbon source locales. Enables diffForHumans() localized
          */
         Carbon::setLocale(config('app.locale'));
-         // Force SSL
-        URL::forceScheme('https');
+         // Force SSL uncomment on protected locations
+        //URL::forceScheme('https');
 
         // Set the default string length for Laravel5.4
         // https://laravel-news.com/laravel-5-4-key-too-long-error
