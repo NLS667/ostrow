@@ -46,7 +46,7 @@ class MenuTableSeeder extends Seeder
                 "content":"Finance"
             },
             {
-                "view_permission_id":"view-clients-management",
+                "view_permission_id":"view-client-management",
                 "icon":"face",
                 "open_in_new_tab":0,
                 "url_type":"route",
@@ -66,7 +66,7 @@ class MenuTableSeeder extends Seeder
                 "content":"Services"
             },
             {
-                "view_permission_id":"view-tasks-management",
+                "view_permission_id":"view-task-management",
                 "icon":"task_alt",
                 "open_in_new_tab":0,
                 "url_type":"route",
