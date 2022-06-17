@@ -43,6 +43,24 @@ trait TaskAttribute
     }
 
     /**
+     * Get logged in user permission related to user management grid.
+     *
+     * @return array
+     */
+    public function getUserPermission()
+    {
+        $userPermission = [];
+        $attributePermission = ['50', '51'];
+        foreach (access()->user()->permissions as $permission) {
+            if (in_array($permission->id, $attributePermission)) {
+                $userPermission[] = $permission->name;
+            }
+        }
+
+        return $userPermission;
+    }
+
+    /**
      * @return string
      */
     
@@ -59,22 +77,7 @@ trait TaskAttribute
             $i = 1;
 
             foreach ($userPermission as $value) {
-                if ($i != 3) {
-                    $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
-                }
-
-                if ($i == 3) {
-                    $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
-
-                    if ($permissionCounter > 3) {
-                        $actionButton = $actionButton.'
-                        <div class="btn-group dropup">
-                        <a class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-option-vertical"></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right">';
-                    }
-                }
+                $actionButton = $actionButton.' '.$this->getActionButtonsByPermissionName($value, $i);
                 $i++;
             }
             $actionButton .= '</ul></div>';
@@ -93,23 +96,12 @@ trait TaskAttribute
      */
     public function getActionButtonsByPermissionName($permissionName, $counter)
     {
-        // check if counter is less then 3 then apply button client
-        $class = ($counter <= 3) ? 'btn btn-primary btn-round' : '';
-
         switch ($permissionName) {
             case 'edit-task':
-            $button = ($counter <= 3) ? $this->getEditButtonAttribute($class) : '<li>'
-            .$this->getEditButtonAttribute($class).
-            '</li>';
+            $button = $this->getEditButtonAttribute('btn btn-success btn-round');
             break;
             case 'delete-task':
-            if (access()->user()->id != $this->id) {
-                $button = ($counter <= 3) ? $this->getDeleteButtonAttribute($class) : '<li>'
-                .$this->getDeleteButtonAttribute($class).
-                '</li>';
-            } else {
-                $button = '';
-            }
+            $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
             break;
             default:
             $button = '';
