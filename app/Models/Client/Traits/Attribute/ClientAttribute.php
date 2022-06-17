@@ -208,7 +208,7 @@ trait ClientAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['26', '27', '28', '29', '30', '31'];
+        $attributePermission = ['24', '26', '27', '28', '29', '30', '31'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
