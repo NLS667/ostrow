@@ -45,7 +45,7 @@ trait ProducerAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['40', '41', '42', '43'];
+        $attributePermission = ['42', '43'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
