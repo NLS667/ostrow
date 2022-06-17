@@ -143,41 +143,29 @@ trait ClientAttribute
 
         switch ($permissionName) {
             case 'show-client':
-                $button = ($counter <= 3) ? $this->getShowButtonAttribute($class) : '<li>'
-                    .$this->getShowButtonAttribute($class).
-                    '</li>';
+                $button = $this->getShowButtonAttribute('btn btn-info btn-round');
                 break;
             case 'edit-client':
-                $button = ($counter <= 3) ? $this->getEditButtonAttribute($class) : '<li>'
-                    .$this->getEditButtonAttribute($class).
-                    '</li>';
-                $button .= ($counter <= 3) ? $this->getChangePasswordButtonAttribute($class) : '<li>'
-                    .$this->getChangePasswordButtonAttribute($class).
-                    '</li>';
+                $button = $this->getEditButtonAttribute('btn btn-success btn-round');
+                $button .= $this->getChangePasswordButtonAttribute('btn btn-primary btn-round');
                 break;
             case 'activate-client':
                 if (\Route::currentRouteName() == 'admin.client.deactivated.get') {
-                    $button = ($counter <= 3) ? $this->getStatusButtonAttribute($class) : '<li>'
-                    .$this->getStatusButtonAttribute($class).
-                    '</li>';
+                    $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
                 } else {
                     $button = '';
                 }
                 break;
             case 'deactivate-client':
                 if (\Route::currentRouteName() == 'admin.client.get') {
-                    $button = ($counter <= 3) ? $this->getStatusButtonAttribute($class) : '<li>'
-                    .$this->getStatusButtonAttribute($class).
-                    '</li>';
+                    $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
                 } else {
                     $button = '';
                 }
                 break;
             case 'delete-client':
                 if (access()->user()->id != $this->id) {
-                    $button = ($counter <= 3) ? $this->getDeleteButtonAttribute($class) : '<li>'
-                        .$this->getDeleteButtonAttribute($class).
-                        '</li>';
+                    $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
                 } else {
                     $button = '';
                 }
@@ -228,7 +216,7 @@ trait ClientAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['24', '26', '27', '28', '29'];
+        $attributePermission = ['26', '27', '28', '29', '30', '31'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
