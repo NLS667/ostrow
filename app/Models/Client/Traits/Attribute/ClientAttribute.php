@@ -147,7 +147,6 @@ trait ClientAttribute
                 break;
             case 'edit-client':
                 $button = $this->getEditButtonAttribute('btn btn-success btn-round');
-                $button .= $this->getChangePasswordButtonAttribute('btn btn-primary btn-round');
                 break;
             case 'activate-client':
                 if (\Route::currentRouteName() == 'admin.client.deactivated.get') {
