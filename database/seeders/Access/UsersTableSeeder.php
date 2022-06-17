@@ -49,6 +49,20 @@ class UsersTableSeeder extends Seeder
                 'updated_at'        => null,
                 'deleted_at'        => null,
             ],
+            [
+                'first_name'        => 'Przykładowy',
+                'last_name'         => 'Użytkownik',
+                'email'             => 'user@test.pl',
+                'email_verified_at' => now(),
+                'password'          => bcrypt('1234qwer'),
+                'confirmation_code' => md5(uniqid(mt_rand(), true)),
+                'confirmed'         => true,
+                'created_by'        => 1,
+                'updated_by'        => null,
+                'created_at'        => Carbon::now(),
+                'updated_at'        => null,
+                'deleted_at'        => null,
+            ],
         ];
 
         DB::table(config('access.users_table'))->insert($users);
