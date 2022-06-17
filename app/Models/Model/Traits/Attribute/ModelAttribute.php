@@ -38,6 +38,24 @@ trait ModelAttribute
     }
 
     /**
+     * Get logged in user permission related to user management grid.
+     *
+     * @return array
+     */
+    public function getUserPermission()
+    {
+        $userPermission = [];
+        $attributePermission = ['46', '47'];
+        foreach (access()->user()->permissions as $permission) {
+            if (in_array($permission->id, $attributePermission)) {
+                $userPermission[] = $permission->name;
+            }
+        }
+
+        return $userPermission;
+    }
+
+    /**
      * @return string
      */
     
@@ -93,13 +111,13 @@ trait ModelAttribute
 
         switch ($permissionName) {
             case 'edit-model':
-            $button = ($counter <= 3) ? $this->getEditButtonAttribute($class) : '<li>'
+            $button = ($counter <= 3) ? $this->getEditButtonAttribute('btn btn-success btn-round') : '<li>'
             .$this->getEditButtonAttribute($class).
             '</li>';
             break;
             case 'delete-model':
             if (access()->user()->id != $this->id) {
-                $button = ($counter <= 3) ? $this->getDeleteButtonAttribute($class) : '<li>'
+                $button = ($counter <= 3) ? $this->getDeleteButtonAttribute('btn btn-danger btn-round') : '<li>'
                 .$this->getDeleteButtonAttribute($class).
                 '</li>';
             } else {
