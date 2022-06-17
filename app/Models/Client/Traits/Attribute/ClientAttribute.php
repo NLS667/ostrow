@@ -270,7 +270,7 @@ trait ClientAttribute
                 }*/
                 $i++;
             }
-            $actionButton .= '</ul></div><';
+            //$actionButton .= '</ul></div>';
 
             return $actionButton;
         }
