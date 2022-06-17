@@ -45,7 +45,7 @@ trait ServiceCategoryAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['36', '37', '38', '39'];
+        $attributePermission = ['38', '39'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
@@ -111,13 +111,13 @@ trait ServiceCategoryAttribute
 
         switch ($permissionName) {
             case 'edit-servicecat':
-            $button = ($counter <= 3) ? $this->getEditButtonAttribute($class) : '<li>'
+            $button = ($counter <= 3) ? $this->getEditButtonAttribute('btn btn-success btn-round') : '<li>'
             .$this->getEditButtonAttribute($class).
             '</li>';
             break;
             case 'delete-servicecat':
             if (access()->user()->id != $this->id) {
-                $button = ($counter <= 3) ? $this->getDeleteButtonAttribute($class) : '<li>'
+                $button = ($counter <= 3) ? $this->getDeleteButtonAttribute('btn btn-danger btn-round') : '<li>'
                 .$this->getDeleteButtonAttribute($class).
                 '</li>';
             } else {
