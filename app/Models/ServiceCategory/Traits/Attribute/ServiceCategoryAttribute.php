@@ -72,22 +72,7 @@ trait ServiceCategoryAttribute
             $i = 1;
 
             foreach ($userPermission as $value) {
-                if ($i != 3) {
-                    $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
-                }
-
-                if ($i == 3) {
-                    $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
-
-                    if ($permissionCounter > 3) {
-                        $actionButton = $actionButton.'
-                        <div class="btn-group dropup">
-                        <a class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-option-vertical"></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right">';
-                    }
-                }
+                $actionButton = $actionButton.' '.$this->getActionButtonsByPermissionName($value, $i);
                 $i++;
             }
             $actionButton .= '</ul></div>';
@@ -106,19 +91,12 @@ trait ServiceCategoryAttribute
      */
     public function getActionButtonsByPermissionName($permissionName, $counter)
     {
-        // check if counter is less then 3 then apply button client
-        $class = ($counter <= 3) ? 'btn btn-primary btn-round' : '';
-
         switch ($permissionName) {
             case 'edit-servicecat':
-            $button = ($counter <= 3) ? $this->getEditButtonAttribute('btn btn-success btn-round') : '<li>'
-            .$this->getEditButtonAttribute($class).
-            '</li>';
+            $button = $this->getEditButtonAttribute('btn btn-success btn-round');
             break;
             case 'delete-servicecat':
-            $button = ($counter <= 3) ? $this->getDeleteButtonAttribute('btn btn-danger btn-round') : '<li>'
-            .$this->getDeleteButtonAttribute($class).
-            '</li>';
+            $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
             break;
             default:
             $button = '';
