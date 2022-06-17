@@ -38,6 +38,24 @@ trait ProducerAttribute
     }
 
     /**
+     * Get logged in user permission related to user management grid.
+     *
+     * @return array
+     */
+    public function getUserPermission()
+    {
+        $userPermission = [];
+        $attributePermission = ['40', '41', '42', '43'];
+        foreach (access()->user()->permissions as $permission) {
+            if (in_array($permission->id, $attributePermission)) {
+                $userPermission[] = $permission->name;
+            }
+        }
+
+        return $userPermission;
+    }
+
+    /**
      * @return string
      */
     
