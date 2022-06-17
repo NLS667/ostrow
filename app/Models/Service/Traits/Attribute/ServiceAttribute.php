@@ -75,7 +75,7 @@ trait ServiceAttribute
             $i = 1;
 
             foreach ($userPermission as $value) {
-                $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
+                $actionButton = $actionButton.' '.$this->getActionButtonsByPermissionName($value, $i);
                 $i++;
             }
             $actionButton .= '</ul></div>';
