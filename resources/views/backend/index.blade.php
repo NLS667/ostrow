@@ -69,6 +69,7 @@
               <div class="stats">
                 <i class="material-icons">history</i> Przed chwilą
               </div>
+              <a href="{{ route('admin.task.index', ['q_status' => 'Po Terminie']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
             </div>
           </div>
         </div>
