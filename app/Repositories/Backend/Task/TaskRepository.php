@@ -217,12 +217,14 @@ class TaskRepository extends BaseRepository
         $enddate->addHours(4);
         $task->end = isset($input['end']) ? Carbon::parse($input['end']) : $enddate;
 
-        if(Carbon::now() >= $task->start){
+        if($task->start <= Carbon::now()){
+            $task->status = 3;
+        } else if($task->start > Carbon::now()->subDays(30) && $task->start < Carbon::now()){
             $task->status = 2;
-        } else if(Carbon::now() <= $task->start->subDays(30)){
-            $task->status = 0;
-        } else {
+        } else if($task->start <= Carbon::now()->subDays(30)){
             $task->status = 1;
+        } else {
+            $task->status = 0;
         }
         $task->created_by = access()->user()->id;
 
