@@ -114,7 +114,7 @@ trait TaskAttribute
     public function getAssigneeNameAttribute()
     {
         $user = User::where('id', $this->assignee_id)->first();
-        if($user->count() > 0){
+        if(count($user) > 0){
             $assignee_name = $user->first_name.' '.$user->last_name;
             return $assignee_name;
         } else {
