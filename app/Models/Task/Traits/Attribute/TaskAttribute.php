@@ -115,11 +115,11 @@ trait TaskAttribute
     {
         $user = User::where('id', $this->assignee_id)->first();
 
-        if(is_null($user->first_name)){
-            return "Nie przypisano";            
-        } else {
+        if($user){
             $assignee_name = $user->first_name.' '.$user->last_name;
-            return $assignee_name;
+            return $assignee_name;           
+        } else {
+            return "Nie przypisano"; 
         }        
     }
 
