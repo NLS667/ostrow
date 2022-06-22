@@ -123,7 +123,13 @@
                     data: {status: 0, trashed: false}
                 },
                 columns: [
-                    {data: 'assignee', name: 'assignee_name'},
+                    {data: 'assignee', name: 'assignee_name', render: function ( data, type, row, meta ) {
+                        if(isset(data)){
+                            return data;
+                        } else {
+                            return "Nie przypisano";
+                        }
+                    }},
                     {data: 'service', name: 'title'},                    
                     {data: 'start', name: 'start'},
                     {data: 'end', name: 'end'},
