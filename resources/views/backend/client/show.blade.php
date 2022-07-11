@@ -126,16 +126,14 @@
                         <th scope="col">Usługa</th>
                         <th scope="col">Data</th>
                         <th scope="col">Pracownik</th>
-                        <th scope="col">Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach ($task_data as $task)
-                      <tr>
+                      <tr class="{{ $task->status }}">
                         <td>{{ $task->service }}</td>
                         <td>{{ $task->start }}</td>
                         <td>{{ $task->assignee }}</td>
-                        <td>{{ $task->status }}</td>
                       </tr>
                       @endforeach
                     </tbody>

@@ -59,11 +59,25 @@ class ShowResponse implements Responsable
             $tasks = Task::where('service_id', $service->id)->get();
             foreach($tasks as $task)
             {
+                $status = '';
+                switch($task->status){
+                    case 1:
+                        $status = 'bg-warning';
+                        break;
+                    case 2:
+                        $status = 'bg-danger';
+                        break;
+                    case 3:
+                        $status = 'bg-succes';
+                        break;
+                    default:
+                        break;
+                }
                 $task_data[] = (object)[
                     'service' => $service->service_type_short,
                     'start' => $task->start,
                     'assignee' => $task->assignee_name,
-                    'status' => $task->status,
+                    'status' => $status,
                 ];
             }
         }
