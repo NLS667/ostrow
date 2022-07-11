@@ -56,17 +56,20 @@
     								@foreach ($client_data as $data)
     									<div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->category }}">
                         <div class="row">
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <h6>Data oferty</h6>
                             <p>{{ $data->service->offered_at }}</p>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <h6>Data podpisania Umowy</h6>
                             <p>{{ $data->service->signed_at }}</p>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <h6>Data montażu</h6>
                             <p>{{ $data->service->installed_at }}</p>
+                          </div>
+                          <div class="col-md-3">
+                            <a class="btn btn-round btn-rose" href="admin/service/{{ $data->service->id}}/edit">Edytuj</a>
                           </div>
                         </div>
     										<div class="row">
@@ -89,7 +92,7 @@
                             <p>{{ $data->serial_number }}</p>    												
     											</div>
     										</div>
-                        
+
     									</div>
     								@endforeach
     							</div>
