@@ -113,7 +113,13 @@
             		<div class="card-body ">
               			<clientsmap :data='{!! json_encode($map_data) !!}'></clientsmap>
             		</div>
-          		</div>
+          	</div>
+            <div class="card">
+                <div class="card-body ">
+                    @foreach ($task_data as $task)
+                    @endforeach
+                </div>
+            </div>
         	</div>
     	</div>    		
   	</div>

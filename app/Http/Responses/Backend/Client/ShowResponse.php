@@ -42,6 +42,7 @@ class ShowResponse implements Responsable
             'coords' => [$this->client->adr_lattitude, $this->client->adr_longitude],
         ];
         $client_data = [];
+        $task_data = [];
         foreach($this->serviceCategories as $category)
         {
             $service = Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->first();
@@ -54,10 +55,23 @@ class ShowResponse implements Responsable
                 'serial_number' => $model->serial_number,
                 'producer' => $producer->name,
             ];
+            $tasks = Task::where('service_id', $service->id)->get();
+            foreach($tasks as $task)
+            {
+                $task_data[] = (object)[
+                    'service' => $service->short_name,
+                    'start' => $task->start,
+                    'assignee' => $task->assignee_name,
+                    'status' => $task->status,
+                ];
+            }
         }
+        
+        
         return view('backend.client.show')
                 ->with('client', $this->client)
                 ->with('client_data', $client_data)
+                ->with('task_data', $task_data)
                 ->with('map_data', $map_data)
                 ->with('helper', $this->helper);
     }
