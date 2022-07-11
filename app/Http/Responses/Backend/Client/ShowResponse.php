@@ -60,7 +60,7 @@ class ShowResponse implements Responsable
             foreach($tasks as $task)
             {
                 $task_data[] = (object)[
-                    'service' => $service->short_name,
+                    'service' => $service->service_type_short,
                     'start' => $task->start,
                     'assignee' => $task->assignee_name,
                     'status' => $task->status,
