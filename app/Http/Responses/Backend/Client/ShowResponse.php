@@ -51,6 +51,7 @@ class ShowResponse implements Responsable
                 'category' => $category->name.' ('.$category->short_name.')',
                 'service' => (object)['offered_at' => $service->offered_at, 'signed_at' => $service->signed_at, 'installed_at' => $service->installed_at],
                 'model' => $model->name,
+                'serial_number' => $model->serial_number,
                 'producer' => $producer->name,
             ];
         }
