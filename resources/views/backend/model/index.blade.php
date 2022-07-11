@@ -25,6 +25,7 @@
                                     <tr role="row">
                                         <th>Nazwa</th>
                                         <th>Opis</th>
+                                        <th>Numer Seryjny</th>
                                         <th>Producent</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>
@@ -35,6 +36,7 @@
                                     <tr>
                                         <th>Nazwa</th>
                                         <th>Opis</th>
+                                        <th>Numer Seryjny</th>
                                         <th>Producent</th>
                                         <th>Utworzony</th>
                                         <th>Zmieniony</th>
@@ -50,6 +52,12 @@
                                             </div>
                                         </th>
                                         <th></th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('serial_number', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'SN']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
                                         <th>
                                             <div class="input-group position-relative">
                                                 {!! Form::text('producer', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Producent']) !!}
@@ -115,6 +123,7 @@
                 columns: [
                     {data: 'name', name: 'models.name'},
                     {data: 'description', name: 'models.description'},
+                    {data: 'serial_number', name: 'models.serial_number'},
                     {data: 'producer', name: 'models.producer'},
                     {data: 'created_at', name: 'models.created_at'},
                     {data: 'updated_at', name: 'models.updated_at'},

@@ -27,8 +27,9 @@ class StoreModelRequest extends Request
     public function rules()
     {
         return [
-            'name'              => 'required|max:255',
-            'description'       => 'max:255',
+            'name'              => 'required|max:191',
+            'description'       => 'max:191',
+            'serial_number'     => 'max:191',
             'producer'          => 'required',
         ];
     }
@@ -41,10 +42,11 @@ class StoreModelRequest extends Request
     public function messages()
     {
         return [
-            'name.required' => 'Musisz podać nazwę Modelu.',
-            'name.max' => 'Nazwa jest za długa (max 255 znaków).',
-            'description.required' => 'Opis jest za długi (max 255 znaków).',
-            'producer.required' => 'Musisz wybrać Producenta Modelu.',
+            'producer.required' => 'Musisz wybrać Producenta.',
+            'name.required' => 'Nazwa Modelu nie może być pusta.',
+            'name.max' => 'Nazwa jest za długa (max 191 znaków).',
+            'description.max' => 'Opis jest za długi (max 191 znaków).',
+            'serial_number.max' => 'Numer seryjny jest za długi (max 191 znaków).',
         ];
     }
 }

@@ -120,7 +120,7 @@ trait TaskAttribute
             return $assignee_name;           
         } else {
             return "Nie przypisano"; 
-        }        
+        }
     }
 
     public function getServiceNameAttribute()
