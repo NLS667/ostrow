@@ -5,6 +5,7 @@ namespace App\Http\Responses\Backend\Client;
 use Illuminate\Contracts\Support\Responsable;
 use App\Models\Service\Service;
 use App\Models\Model\Model;
+use App\Models\Task\Task;
 use App\Models\Producer\Producer;
 
 class ShowResponse implements Responsable
