@@ -55,23 +55,41 @@
     							<div class="tab-content">
     								@foreach ($client_data as $data)
     									<div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->category }}">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <h6>Data oferty</h6>
+                            <p>{{ $data->service->offered_at }}</p>
+                          </div>
+                          <div class="col-md-4">
+                            <h6>Data podpisania Umowy</h6>
+                            <p>{{ $data->service->signed_at }}</p>
+                          </div>
+                          <div class="col-md-4">
+                            <h6>Data montażu</h6>
+                            <p>{{ $data->service->installed_at }}</p>
+                          </div>
+                        </div>
     										<div class="row">
+                          <div class="col-md-12">
+                            <h4>Urządzenia:</h4>
+                          </div>
+                        </div>
+
+                        <div class="row">
     											<div class="col-md-4">
     												<h6>Producent</h6>
-    												<p class="category">{{ $data->producer }}</p>
-    												<h6>Model</h6>
-    												<p>{{ $data->model }}</p>
+    												<p>{{ $data->producer }}</p>
     											</div>
-    											<div class="col-md-4"></div>
     											<div class="col-md-4">
-    												<h6>Data oferty</h6>
-    												<p>{{ $data->service->offered_at }}</p>
-    												<h6>Data podpisania Umowy</h6>
-    												<p>{{ $data->service->signed_at }}</p>
-    												<h6>Data montażu</h6>
-    												<p>{{ $data->service->installed_at }}</p>
+                            <h6>Model</h6>
+                            <p>{{ $data->model }}</p>           
+                          </div>
+    											<div class="col-md-4">										
+    												<h6>Numer Seryjny</h6>
+                            <p>{{ $data->serial_number }}</p>    												
     											</div>
     										</div>
+                        
     									</div>
     								@endforeach
     							</div>
