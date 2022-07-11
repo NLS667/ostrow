@@ -31,7 +31,9 @@ class AppServiceProvider extends ServiceProvider
          */
         Carbon::setLocale(config('app.locale'));
          // Force SSL uncomment on protected locations
-        //URL::forceScheme('https');
+        if(config('app.debug')){
+            URL::forceScheme('https');
+        }
 
         // Set the default string length for Laravel5.4
         // https://laravel-news.com/laravel-5-4-key-too-long-error
