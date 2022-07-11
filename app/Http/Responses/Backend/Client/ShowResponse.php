@@ -62,13 +62,13 @@ class ShowResponse implements Responsable
                 $status = '';
                 switch($task->status){
                     case 1:
-                        $status = 'bg-warning';
+                        $status = 'bg-success';
                         break;
                     case 2:
-                        $status = 'bg-danger';
+                        $status = 'bg-warning';
                         break;
                     case 3:
-                        $status = 'bg-succes';
+                        $status = 'bg-danger';
                         break;
                     default:
                         break;
