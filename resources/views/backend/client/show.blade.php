@@ -69,7 +69,7 @@
                             <p>{{ $data->service->installed_at }}</p>
                           </div>
                           <div class="col-md-3">
-                            <a class="btn btn-round btn-rose" href="{{ url('admin/service/'.$data->service->id.'/edit/') }}">Edytuj</a>
+                            <a class="btn btn-round btn-rose" href="{{ url('admin/service/'.$data->service->id.'/edit/') }}">Edytuj usługę</a>
                           </div>
                         </div>
     										<div class="row">
