@@ -114,12 +114,14 @@
               			<clientsmap :data='{!! json_encode($map_data) !!}'></clientsmap>
             		</div>
           	</div>
+            @if(!empty($task_data))
             <div class="card">
                 <div class="card-body ">
                     @foreach ($task_data as $task)
                     @endforeach
                 </div>
             </div>
+            @endif
         	</div>
     	</div>    		
   	</div>
