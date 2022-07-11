@@ -19,7 +19,7 @@ class ClientUpdated
     /**
      * @param $client
      */
-    public function __construct(client)
+    public function __construct($client)
     {
         $this->client = $client;
     }
