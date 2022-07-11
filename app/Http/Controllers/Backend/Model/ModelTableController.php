@@ -32,6 +32,9 @@ class ModelTableController extends Controller
     {
         return Datatables::make($this->models->getForDataTable())
             ->escapeColumns(['name'])
+            ->addColumn('serial_number', function ($model) {
+                return $model->serial_number;
+            })
             ->addColumn('description', function ($model) {
                 return $model->description;
             })

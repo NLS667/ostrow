@@ -17,6 +17,7 @@ class CreateModelsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 191);
             $table->string('description', 191);
+            $table->string('serial_number', 191);
             $table->foreignId('producer_id')->constrained('producers');
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();

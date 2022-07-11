@@ -54,6 +54,17 @@
                   </div>
                 </div>
                 <div class="row">
+                  {{-- Serial Number --}}
+                  <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('serial_number') ? ' has-danger' : '' }}">
+                    <label class="bmd-label-floating">Numer Seryjny</label>
+                    <input class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" name="serial_number" id="input-serial_number" type="text" value="{{ old('serial_number', $model->serial_number) }}" />
+                    @if ($errors->has('serial_number'))
+                    <span class="material-icons form-control-feedback">clear</span>
+                    <span id="name-error" class="error text-danger" for="input-serial_number">{{ $errors->first('serial_number') }}</span>
+                    @endif
+                  </div>
+                </div>
+                <div class="row">
                   {{-- Description --}}
                   <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('description') ? ' has-danger' : '' }}">
                     <label class="bmd-label-floating">Opis</label>
