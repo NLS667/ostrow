@@ -118,11 +118,9 @@ class TaskRepository extends BaseRepository
      */
     public function update($task, $request)
     {
-        \Log::info(json_encode($request));
-
         DB::transaction(function () use ($task, $request) {
             if ($task->update($request)) {
-                
+                \Log::info($task->start);
                 if($task->start <= Carbon::now()){
                     $task->status = 3;
                 } else if($task->start > Carbon::now()->subDays(30) && $task->start < Carbon::now()){
