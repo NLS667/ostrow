@@ -249,10 +249,15 @@
                         <span id="phones-error" class="error text-danger" for="input-phones">{{ $errors->first('phones') }}</span>
                         @endif
                       </div>
-
+                      @if($i == 0)
                       <div class="col-sm-2">
                         <button type="button" name="add_contact" id="add_contact" class="btn btn-primary">Dodaj kontakt</button>
                       </div>
+                      @else
+                      <div class="col-sm-2">
+                        <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove">X</button>
+                      </div>
+                      @endif
 
                     </div>
                     @endfor
