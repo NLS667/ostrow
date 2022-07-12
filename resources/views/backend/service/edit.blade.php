@@ -117,6 +117,11 @@
                 </div>
                 @endfor
               </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <h4 class="title">Urządzenia</h4>
+                </div>
+              </div>
               <div id="devices">
                 @php
                     $devices = json_decode($service->models);
