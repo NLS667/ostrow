@@ -47,14 +47,23 @@ class ShowResponse implements Responsable
         foreach($this->serviceCategories as $category)
         {
             $service = Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->first();
-            $model = Model::where('id', $service->model_id)->first();
-            $producer = Producer::where('id', $model->id)->first();
+            $models = json_decode($service->models);
+            for($i=0;$i<count($models);$i++){
+                $model = Model::where('id', ($models[$i])->first();
+                $modelObj = (object)[
+                    'name' => $model->name,
+                    'serial_number' => $model->serial_number,
+                    'producer' => $model->producer
+                ]
+            }
+            //$model = Model::where('id', $service->model_id)->first();
+            //$producer = Producer::where('id', $model->id)->first();
             $client_data[] = (object)[
                 'category' => $category->name.' ('.$category->short_name.')',
                 'service' => (object)['id' => $service->id, 'offered_at' => $service->offered_at, 'signed_at' => $service->signed_at, 'installed_at' => $service->installed_at],
-                'model' => $model->name,
-                'serial_number' => $model->serial_number,
-                'producer' => $producer->name,
+                'models' => $modelObj,
+                //'serial_number' => $model->serial_number,
+                //'producer' => $producer->name,
             ];
             $tasks = Task::where('service_id', $service->id)->get();
             foreach($tasks as $task)
