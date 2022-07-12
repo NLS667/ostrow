@@ -219,12 +219,11 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
-                    <h4 class="title">Notatki</h4>
+                    <h4 class="title">Dodatkowe uwagi</h4>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12 form-group bmd-form-group {{ $errors->has('extra_info') ? ' has-danger' : '' }}">
-                    <label class="bmd-label-floating">Notatki</label>
                     <textarea rows="8" cols="50" class="form-control" name="extra_info" id="input-extra_info" value="{{ old('extra_info') }}"></textarea>
                     @if ($errors->has('extra_info'))
                     <span class="material-icons form-control-feedback">clear</span>
