@@ -121,19 +121,30 @@
                 @php
                     $devices = json_decode($service->models);
                 @endphp
+                @for ($i = 0; $i < count($devices); $i++)
                 <div class="row">
                   {{-- Model --}}
-                  <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('model_id') ? ' has-danger' : '' }}">
+                  <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('models') ? ' has-danger' : '' }}">
                     @if ($models->count())
-                    <select name="model_id" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia">
+                    <select name="models[]" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia">
                       <option></option>
                       @foreach ($models as $model)
-                      <option value="{{$model->id}}" {{ $service->model_id == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
+                      <option value="{{$model->id}}" {{ $devices[$i] == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
                       @endforeach                  
                     </select>
                     @endif
                   </div>
+                  @if($i == 0)
+                  <div class="col-sm-6">
+                    <button type="button" name="add_device" id="add_device" class="btn btn-primary">Dodaj urządzenie</button>
+                  </div>
+                  @else
+                  <div class="col-sm-6">
+                    <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_dev">X</button>
+                  </div>
+                  @endif
                 </div>
+                @endfor
               </div> 
             </div>
             <div class="card-footer">
@@ -155,5 +166,34 @@
             md.initFormExtendedDatetimepickers();
         });
 
+        $(document).ready(function(){      
+          var i=1;
+          var y=1;
+
+          $('#add_advance').click(function(){  
+               i++;  
+               $('#advance').append('<div class="row dynamic-added" id="adv_row'+i+'"><div class="col-sm-6 form-group bmd-form-group"><label class="bmd-label-floating">Zaliczka</label><input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old("deal_advance['+i+']") }}" /></div><div class="col-sm-6"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove_adv">X</button></div></div>'); 
+          });
+
+          $('#add_device').click(function(){  
+               y++;  
+               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-6 form-group bmd-form-group"><select name="models[]" class="form-control select2 model-'+y+'-select" data-placeholder="Wybierz Model Urządzenia"><option></option>@foreach ($models as $model)<option value="{{$model->id}}" {{ old("models['+y+']") == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>@endforeach</select></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_dev">X</button></div></div>');
+
+               $(".select2.model-"+y+"-select").select2({
+                    placeholder: "Wybierz Model",
+                    theme: "material"
+                });
+          });
+
+          $(document).on('click', '.btn_remove_adv', function(){  
+            var button_id = $(this).attr("id");   
+            $('#adv_row'+button_id+'').remove();
+          }); 
+
+          $(document).on('click', '.btn_remove_dev', function(){  
+            var button_id = $(this).attr("id");   
+            $('#dev_row'+button_id+'').remove();
+          }); 
+        });
     </script>
 @endsection
