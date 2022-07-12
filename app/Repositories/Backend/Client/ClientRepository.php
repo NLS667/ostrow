@@ -130,7 +130,7 @@ class ClientRepository extends BaseRepository
         $data['emails'] = json_encode($request->get('emails'));
         $data['phones'] = json_encode($request->get('phones'));
 
-        DB::transaction(function () use ($client, $data, $services, $tasks) {
+        DB::transaction(function () use ($client, $data) {
             if ($client->update($data)) {
                 
                 $client->save();
