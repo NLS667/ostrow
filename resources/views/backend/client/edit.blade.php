@@ -48,7 +48,9 @@
                   </div>
                 </div>
                 <div class="row">
-                  <h4>Adres montażu</h4>
+                  <div class="col-md-12">
+                    <h4>Adres montażu</h4>
+                  </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
@@ -136,8 +138,82 @@
                       </div>
                       <div class="col-sm-4 form-group bmd-form-group">
                         <button class="coordinates btn btn-primary btn-round btn-block">
-                          <i class="material-icons">travel_explore</i> Zmień koordynaty
+                          <i class="material-icons">travel_explore</i> Znajdź koordynaty
                         </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4>Adres korespondencyjny</h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      {{-- Address Street --}}
+                      <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('comm_adr_street') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Ulica</label>
+                        <input class="form-control" name="comm_adr_street" id="input-comm_adr_street" type="text" value="{{ old('comm_adr_street', $client->comm_adr_street) }}" />
+                        @if ($errors->has('comm_adr_street'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="comm_adr_street-error" class="error text-danger" for="input-comm_adr_street">{{ $errors->first('comm_adr_street') }}</span>
+                        @endif
+                      </div>
+                      {{-- Address Street Number--}}
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('comm_adr_street_nr') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Nr domu</label>
+                        <input class="form-control" name="comm_adr_street_nr" id="input-comm_adr_street_nr" type="text" value="{{ old('comm_adr_street_nr', $client->comm_adr_street_nr) }}" />
+                        @if ($errors->has('comm_adr_street_nr'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="comm_adr_street_nr-error" class="error text-danger" for="input-comm_adr_street_nr">{{ $errors->first('comm_adr_street_nr') }}</span>
+                        @endif
+                      </div>
+                      {{-- Address Home Number--}}
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('comm_adr_home_nr') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Nr mieszkania</label>
+                        <input class="form-control" name="comm_adr_home_nr" id="input-comm_adr_home_nr" type="text" value="{{ old('comm_adr_home_nr', $client->comm_adr_home_nr) }}" />
+                        @if ($errors->has('comm_adr_home_nr'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="comm_adr_home_nr-error" class="error text-danger" for="input-comm_adr_home_nr">{{ $errors->first('comm_adr_home_nr') }}</span>
+                        @endif
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('comm_adr_zipcode') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Kod Pocztowy</label>
+                        <input class="form-control" name="comm_adr_zipcode" id="input-comm_adr_zipcode" type="text" value="{{ old('comm_adr_zipcode', $client->comm_adr_zipcode) }}" />
+                        @if ($errors->has('comm_adr_zipcode'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="comm_adr_zipcode-error" class="error text-danger" for="input-comm_adr_zipcode">{{ $errors->first('comm_adr_zipcode') }}</span>
+                        @endif
+                      </div>
+                      <div class="col-sm-8 form-group bmd-form-group {{ $errors->has('comm_adr_city') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Miasto</label>
+                        <input class="form-control" name="comm_adr_city" id="input-comm_adr_city" type="text" value="{{ old('comm_adr_city', $client->comm_adr_city) }}" />
+                        @if ($errors->has('comm_adr_city'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="comm_adr_city-error" class="error text-danger" for="input-comm_adr_city">{{ $errors->first('comm_adr_city') }}</span>
+                        @endif
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('comm_adr_region') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Województwo</label>
+                        <input class="form-control" name="comm_adr_region" id="input-comm_adr_region" type="text" value="{{ old('comm_adr_region', $client->comm_adr_region) }}" />
+                        @if ($errors->has('comm_adr_region'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="comm_adr_region-error" class="error text-danger" for="input-comm_adr_region">{{ $errors->first('comm_adr_region') }}</span>
+                        @endif
+                      </div>
+                      <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('comm_adr_country') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Kraj</label>
+                        <input class="form-control" name="comm_adr_country" id="input-comm_adr_country" type="text" value="{{ old('comm_adr_country', $client->comm_adr_country) }}"/>
+                        @if ($errors->has('comm_adr_country'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="comm_adr_country-error" class="error text-danger" for="input-comm_adr_country">{{ $errors->first('comm_adr_country') }}</span>
+                        @endif
                       </div>
                     </div>
                   </div>
