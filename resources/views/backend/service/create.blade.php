@@ -118,7 +118,7 @@
               <div id="devices">
                 <div class="row">
                   {{-- Model --}}
-                  <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('model_id') ? ' has-danger' : '' }}">
+                  <div class="col-sm-8 form-group bmd-form-group {{ $errors->has('model_id') ? ' has-danger' : '' }}">
                     @if ($models->count())
                     <select name="model_id" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia">
                       <option></option>
@@ -129,6 +129,9 @@
                     @else
                     <p>Brak dostępnych Modeli. {{ link_to_route('admin.model.index', 'Dodaj ') }}nowy Model</p>
                     @endif
+                  </div>
+                  <div class="col-sm-4">
+                    <button type="button" name="add_contact" id="add_contact" class="btn btn-primary">Dodaj urządzenie</button>
                   </div>
                 </div>
               </div>        
