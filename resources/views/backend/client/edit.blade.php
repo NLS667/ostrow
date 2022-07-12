@@ -245,14 +245,14 @@
                         @endif
                       </div>
                       <div class="col-sm-2">
-                        <button type="button" name="add_contact" id="add_contact" class="btn btn-success">Dodaj</button>
+                        <button type="button" name="add_contact" id="add_contact" class="btn btn-primary">Dodaj</button>
                       </div>
                     </div>
                   </div>
                 </div>              
                 <div class="edit-form-btn">
                   {{ link_to_route('admin.client.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
-                  {{ Form::submit('Zmień', ['class' => 'btn btn-primary btn-md']) }}
+                  {{ Form::submit('Zmień', ['class' => 'btn btn-success btn-md']) }}
                 </div>
               </div>
             </div>
