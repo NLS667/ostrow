@@ -127,7 +127,7 @@ use UniSharp\LaravelFilemanager\Middlewares\MultiUser;
              * Deleted Client
              */
             Route::group(['prefix' => 'client/{deletedClient}'], function () {
-                Route::get('delete', [ClientStatusController::class, 'delete'])->name('client.delete-permanently')->withTrashed();
+                Route::get('del', [ClientStatusController::class, 'delete'])->name('client.delete-permanently')->withTrashed();
                 Route::get('restore', [ClientStatusController::class, 'restore'])->name('client.restore')->withTrashed();
             });
         });
