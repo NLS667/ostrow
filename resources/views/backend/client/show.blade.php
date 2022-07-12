@@ -99,7 +99,11 @@
                             <h4>Urządzenia:</h4>
                           </div>
                         </div>
-                        
+                        @foreach($data->models as $model)
+                        <div class="row">
+    											
+    										</div>
+                        @endforeach
 
     									</div>
     								@endforeach
