@@ -25,12 +25,13 @@
                                     <tr role="row">
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
-                                        <th>E-mail</th>
+                                        <th>Adres montażu</th>
+                                        <th>Adres koresp.</th>
                                         <th>Nr telefonu</th>
-                                        <th>Aktywny?</th>
+                                        <th>E-mail</th>                                        
+                                        <th>Serwis</th>
                                         <th>Usługi</th>
-                                        <th>Utworzony</th>
-                                        <th>Zmieniony</th>
+                                        <th>Rok p.u.</th>
                                         <th>Akcje</th>
                                     </tr>
                                 </thead>
@@ -38,12 +39,13 @@
                                     <tr>
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
-                                        <th>E-mail</th>
+                                        <th>Adres montażu</th>
+                                        <th>Adres koresp.</th>
                                         <th>Nr telefonu</th>
-                                        <th>Aktywny?</th>
+                                        <th>E-mail</th>                                        
+                                        <th>Serwis</th>
                                         <th>Usługi</th>
-                                        <th>Utworzony</th>
-                                        <th>Zmieniony</th>
+                                        <th>Rok p.u.</th>
                                         <th class="text-right">Akcje</th>
                                     </tr>
                                 </tfoot>
@@ -63,13 +65,25 @@
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'email']) !!}
+                                                {!! Form::text('adr_street', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Adres montażu']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('comm_adr_street', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Adres koresp.']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
                                                 {!! Form::text('phone_nr', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Nr telefonu']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('email', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'email']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
@@ -111,18 +125,28 @@
                 columns: [
                     {data: 'first_name', name: 'clients.first_name'},
                     {data: 'last_name', name: 'clients.last_name'},
-                    {data: 'email', name: 'clients.email'},
-                    {data: 'phone_nr', name: 'clients.phone_nr', sortable: false},                
-                    {data: 'status', className: 'text-center', name: 'clients.status', render: function ( data, type, row, meta ) {
-                        if(data) {
-                            return '<span class="badge badge-success">Tak</a>';
-                        } else {
-                            return '<span class="badge badge-danger">Nie</a>';
+                    {data: 'adr_street', name: 'clients.adr_street'},
+                    {data: 'comm_adr_street', name: 'clients.comm_adr_street'},                    
+                    {data: 'phones', name: 'clients.phones'},
+                    {data: 'emails', name: 'clients.emails'},                  
+                    {data: 'service_status', className: 'text-center', name: 'tasks.status', render: function ( data, type, row, meta ) {
+                        switch(data){
+                            case 0:
+                                return '<span class="badge badge-default">BRAK ZADAŃ</a>';
+                                break;
+                            case 1:
+                                return '<span class="badge badge-success">OK</a>';
+                                break;
+                            case 2:
+                                return '<span class="badge badge-warning">ZAPLANUJ</a>';
+                                break;
+                            case 2:
+                                return '<span class="badge badge-danger">PO TERMINIE</a>';
+                                break;
                         }
                     }},
-                    {data: 'services', name: '{{config('service.services_table')}}.name', sortable: false},
+                    {data: 'services', name: 'service_categories.name', sortable: false},
                     {data: 'created_at', name: 'clients.created_at'},
-                    {data: 'updated_at', name: 'clients.updated_at'},
                     {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
                 ],
                 order: [[0, "asc"]],
