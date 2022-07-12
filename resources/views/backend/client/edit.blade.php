@@ -281,7 +281,12 @@
           $('#add_contact').click(function(){  
                i++;  
                $('#contacts').append('<div class="row dynamic-added" id="row'+i+'"><div class="col-sm-5 form-group bmd-form-group"><label class="bmd-label-floating">Email</label><input class="form-control" name="email[]" id="input-email-'+i+'" type="text" value="{{ old('emails[i]') }}" /></div><div class="col-sm-5 form-group bmd-form-group"><label class="bmd-label-floating">Nr telefonu</label><input class="form-control" name="phone[]" id="input-phone-'+i+'" type="text" value="{{ old('phones[i]') }}" /></div><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></div>'); 
-          });  
+          });
+
+          $(document).on('click', '.btn_remove', function(){  
+            var button_id = $(this).attr("id");   
+            $('#row'+button_id+'').remove();  
+          }); 
         }); 
     </script>
 @endsection
