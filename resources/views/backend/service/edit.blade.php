@@ -105,16 +105,16 @@
                     <span id="deal_advance-error" class="error text-danger" for="input-deal_advance">{{ $errors->first('deal_advance') }}</span>
                     @endif
                   </div>
+                  @if($i == 0)
+                  <div class="col-sm-6">
+                    <button type="button" name="add_advance" id="add_advance" class="btn btn-primary">Dodaj Zaliczkę</button>
+                  </div>
+                  @else
+                  <div class="col-sm-6">
+                    <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_adv">X</button>
+                  </div>
+                  @endif
                 </div>
-                @if($i == 0)
-                <div class="col-sm-6">
-                  <button type="button" name="add_advance" id="add_advance" class="btn btn-primary">Dodaj Zaliczkę</button>
-                </div>
-                @else
-                <div class="col-sm-6">
-                  <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_adv">X</button>
-                </div>
-                @endif
                 @endfor
               </div>
               <div id="devices">
