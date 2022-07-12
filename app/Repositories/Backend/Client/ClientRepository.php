@@ -94,7 +94,6 @@ class ClientRepository extends BaseRepository
      */
     public function create($request)
     {
-        \Log::info('create method from repo');
         $data = $request->except('services');
         $client = $this->createClientStub($data);
         DB::transaction(function () use ($client, $data) {
@@ -127,14 +126,17 @@ class ClientRepository extends BaseRepository
      */
     public function update($client, $request)
     {
-        $data = $request->except('services', 'tasks');
+        \Log::info('updating client');
+        $data = $request->except('services');
         $services = $request->get('services');
         $tasks = $request->get('tasks');
         $emails = $request->get('emails');
         $phones = $request->get('phones');
+        \Log::info($emails);
         $data->emails = json_encode($emails);
         $data->phones = json_encode($phones);
-
+        \Log::info($data->emails);
+        
         DB::transaction(function () use ($client, $data, $services, $tasks) {
             if ($client->update($data)) {
                 $client->status = isset($data['status']) && $data['status'] == '1' ? 1 : 0;
