@@ -165,7 +165,8 @@
 
           $(document).on('click', '.btn_remove_adv', function(){  
             var button_id = $(this).attr("id");   
-            $('#adv_row'+button_id+'').remove();  
+            $('#adv_row'+button_id+'').remove(); 
+            i--; 
           }); 
         });
     </script>
