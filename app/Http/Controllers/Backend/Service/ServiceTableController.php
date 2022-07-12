@@ -45,7 +45,7 @@ class ServiceTableController extends Controller
                 for($i=0;$i<count($devices);$i++)
                 {
                     $device = Model::where('id', $devices[$i])->first();
-                    $result .= $device->serial_number.', ';
+                    $result .= $device->serial_number.'<br/>';
                 }
                 return $result;
             })
