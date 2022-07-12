@@ -150,8 +150,8 @@
                     {data: 'last_name', name: 'clients.last_name'},
                     {data: 'adr_street', name: 'clients.adr_street'},
                     {data: 'comm_adr_street', name: 'clients.comm_adr_street'},                    
-                    {data: 'phone_nr', name: 'clients.phone_nr'},
-                    {data: 'email', name: 'clients.email'},              
+                    {data: 'phones', name: 'clients.phones'},
+                    {data: 'emails', name: 'clients.emails'},              
                     {data: 'service_status', className: 'text-center', name: 'tasks.status', render: function ( data, type, row, meta ) {
                         switch(data){
                             case 0:
