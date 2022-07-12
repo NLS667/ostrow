@@ -6,17 +6,14 @@ use Illuminate\Contracts\Support\Responsable;
 
 class CreateResponse implements Responsable
 {
-    /**
-     * @var \App\Models\Access\Service\Service
-     */
-    protected $services;
+    protected $serviceCategories;
 
     /**
-     * @param \Illuminate\Database\Eloquent\Collection $services
+     * @param \Illuminate\Database\Eloquent\Collection $serviceCategories
      */
-    public function __construct($services)
+    public function __construct($serviceCategories)
     {
-        $this->services = $services;
+        $this->serviceCategories = $serviceCategories;
     }
 
     /**
@@ -28,8 +25,6 @@ class CreateResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.client.create')->with([
-            'services' => $this->services,
-        ]);
+        return view('backend.client.create');
     }
 }
