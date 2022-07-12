@@ -71,6 +71,7 @@
                 advance = +advArr[i];
               }
               let advanceTotal = +advance;
+              console.log(advanceTotal);
               let leftTotal = +services[0].left_amount;
 
               // i=1 - Skip the first service, its in the DT row.
