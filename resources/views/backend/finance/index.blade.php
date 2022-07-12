@@ -66,8 +66,9 @@
               var html = '';
               let amountTotal = parseFloat(+services[0].deal_amount);
               const advArr = JSON.parse(services[0].deal_advance);
+              let advance = 0;
               for (i=1; i<advArr.length; i++) {
-                let advance = +advArr[i];
+                advance = +advArr[i];
               }
               let advanceTotal = +advance;
               let leftTotal = +services[0].left_amount;
