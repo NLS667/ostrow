@@ -224,7 +224,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-12" id="contacts">
                     <div class="row">
                       {{-- Contacts email --}}
                       <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
@@ -274,5 +274,14 @@
         window.onload = function () {
             Backend.Clients.windowloadhandler();
         };
+
+        $(document).ready(function(){      
+          var i=1;
+
+          $('#add_contact').click(function(){  
+               i++;  
+               $('#contacts').append('<div class="row dynamic-added" id="row'+i+'"><div class="col-sm-5 form-group bmd-form-group"><label class="bmd-label-floating">Email</label><input class="form-control" name="email[]" id="input-email-'+i+'" type="text" value="{{ old('emails[i]') }}" /></div><div class="col-sm-5 form-group bmd-form-group"><label class="bmd-label-floating">Nr telefonu</label><input class="form-control" name="phone[]" id="input-phone-'+i+'" type="text" value="{{ old('phones[i]') }}" /></div><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></div>'); 
+          });  
+        }); 
     </script>
 @endsection
