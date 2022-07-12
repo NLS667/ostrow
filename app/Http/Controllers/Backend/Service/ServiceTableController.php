@@ -38,8 +38,14 @@ class ServiceTableController extends Controller
             ->addColumn('service_cat_id', function ($service) {
                 return $service->service_cat_id;
             })
-            ->addColumn('model_id', function ($service) {
-                return $service->model_id;
+            ->editColumn('models', function ($service) {
+                $devices = json_decode($service->models);
+                $result = '';
+                for($i=0;$i<count($devices);$i++)
+                {
+                    $result .= $devices[$i].', ';
+                }
+                return $result;
             })
             ->addColumn('offered_at', function ($service) {
                 if(isset($service->offered_at))
@@ -79,7 +85,13 @@ class ServiceTableController extends Controller
             ->addColumn('deal_advance', function ($service) {
                 if(isset($service->deal_advance))
                 {
-                    return $service->deal_advance;                    
+                    $advance = json_decode($service->deal_advance);
+                    $adv_sum = 0;
+                    for($i=0;$i<count($advance);$i++)
+                    {
+                        $adv_sum += $advance[$i];
+                    }
+                    return $adv_sum;                    
                 } else {
                     return '--';
                 }

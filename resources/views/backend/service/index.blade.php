@@ -25,7 +25,7 @@
                                     <tr role="row">
                                         <th>Typ Usługi</th>
                                         <th>Klient</th>
-                                        <th>Model</th>
+                                        <th>Urządzenia</th>
                                         <th>Data oferty</th>
                                         <th>Data umowy</th>
                                         <th>Data Instalacji</th>
@@ -38,7 +38,7 @@
                                     <tr>
                                         <th>Typ Usługi</th>
                                         <th>Klient</th>
-                                        <th>Model</th>
+                                        <th>Urządzenia</th>
                                         <th>Data oferty</th>
                                         <th>Data umowy</th>
                                         <th>Data Instalacji</th>
@@ -118,7 +118,7 @@
                                             },
                                             targets: 1,
                     },
-                    {data: 'model', name: 'models.name'},
+                    {data: 'models', name: 'services.models'},
                     {data: 'offered_at', name: 'services.offered_at'},
                     {data: 'signed_at', name: 'services.signed_at'},
                     {data: 'installed_at', name: 'services.installed_at'},
