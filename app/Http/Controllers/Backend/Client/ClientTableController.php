@@ -35,15 +35,25 @@ class ClientTableController extends Controller
     {
         return Datatables::make($this->clients->getForDataTable($request->get('status'), $request->get('trashed')))
             ->escapeColumns(['id'])
-            ->editColumn('phone_nr', function ($client) {
-                if(isset($client->phone_nr)){
-                    return $client->phone_nr;
+            ->editColumn('phones', function ($client) {
+                if(isset($client->phones)){
+                    return $client->phones;
+                } else {
+                    return 'Brak';
+                }
+            })
+            ->editColumn('emails', function ($client) {
+                if(isset($client->emails)){
+                    return $client->emails;
                 } else {
                     return 'Brak';
                 }
             })
             ->editColumn('adr_street', function ($client) {
                 return $client->address;
+            })
+            ->editColumn('comm_adr_street', function ($client) {
+                return $client->comm_address;
             })
             ->addColumn('service_status', function ($client) {
                 return $client->service_status;

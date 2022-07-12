@@ -25,7 +25,8 @@
                                     <tr role="row">
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
-                                        <th>Adres</th>
+                                        <th>Adres montażu</th>
+                                        <th>Adres koresp.</th>
                                         <th>Nr telefonu</th>
                                         <th>E-mail</th>                                        
                                         <th>Serwis</th>
@@ -38,7 +39,8 @@
                                     <tr>
                                         <th>Imię</th>
                                         <th>Nazwisko</th>
-                                        <th>Adres</th>
+                                        <th>Adres montażu</th>
+                                        <th>Adres koresp.</th>
                                         <th>Nr telefonu</th>
                                         <th>E-mail</th>                                        
                                         <th>Serwis</th>
@@ -63,7 +65,13 @@
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('adr_street', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Adres']) !!}
+                                                {!! Form::text('adr_street', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Adres montażu']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('comm_adr_street', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Adres koresp.']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
@@ -140,7 +148,8 @@
                 columns: [
                     {data: 'first_name', name: 'clients.first_name'},
                     {data: 'last_name', name: 'clients.last_name'},
-                    {data: 'adr_street', name: 'clients.adr_street'},                    
+                    {data: 'adr_street', name: 'clients.adr_street'},
+                    {data: 'comm_adr_street', name: 'clients.comm_adr_street'},                    
                     {data: 'phone_nr', name: 'clients.phone_nr'},
                     {data: 'email', name: 'clients.email'},              
                     {data: 'service_status', className: 'text-center', name: 'tasks.status', render: function ( data, type, row, meta ) {
