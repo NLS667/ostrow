@@ -106,7 +106,7 @@
                     @endif
                   </div>
                   <div class="col-sm-6">
-                    <button type="button" name="add_contact" id="add_contact" class="btn btn-primary">Dodaj zaliczkę</button>
+                    <button type="button" name="add_advance" id="add_advance" class="btn btn-primary">Dodaj zaliczkę</button>
                   </div>
                 </div>
               </div>
@@ -120,7 +120,7 @@
                   {{-- Model --}}
                   <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('model_id') ? ' has-danger' : '' }}">
                     @if ($models->count())
-                    <select name="model_id" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia">
+                    <select name="models[]" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia">
                       <option></option>
                       @foreach ($models as $model)
                       <option value="{{$model->id}}" {{ old('model_id') == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
@@ -155,5 +155,18 @@
             md.initFormExtendedDatetimepickers();
         });
 
+        $(document).ready(function(){      
+          var i=1;
+
+          $('#add_advance').click(function(){  
+               i++;  
+               $('#advance').append('<div class="row dynamic-added" id="adv_row'+i+'"><div class="col-sm-6 form-group bmd-form-group"><select name="models[]" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia"><option></option>@foreach ($models as $model)<option value="{{$model->id}}" {{ old('model_id') == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>@endforeach</select></div><div class="col-sm-6"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove_adv">X</button></div></div>'); 
+          });
+
+          $(document).on('click', '.btn_remove_adv', function(){  
+            var button_id = $(this).attr("id");   
+            $('#adv_row'+button_id+'').remove();  
+          }); 
+        });
     </script>
 @endsection
