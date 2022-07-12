@@ -61,7 +61,7 @@
                   @endif
                 </div>
                 {{-- Deal Date --}}
-                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('signed_at') ? ' has-danger' : '' }}">
+                <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('signed_at') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Data Umowy</label>
                   <input class="form-control datepicker" name="signed_at" id="input-signed_at" type="text" value="{{ old('signed_at', $service->signed_at) }}" />
                   @if ($errors->has('signed_at'))
@@ -70,7 +70,7 @@
                   @endif
                 </div>
                 {{-- Montage Date --}}
-                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('installed_at') ? ' has-danger' : '' }}">
+                <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('installed_at') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Data Montażu</label>
                   <input class="form-control datepicker" name="installed_at" id="input-installed_at" type="text" value="{{ old('installed_at', $service->installed_at) }}" />
                   @if ($errors->has('installed_at'))
