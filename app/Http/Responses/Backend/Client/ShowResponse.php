@@ -48,9 +48,10 @@ class ShowResponse implements Responsable
         {
             $service = Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->first();
             $models = json_decode($service->models);
+            $modelsObj = [];
             for($i=0;$i<count($models);$i++){
                 $model = Model::where('id', ($models[$i]))->first();
-                $modelObj = (object)[
+                $modelsObj = (object)[
                     'name' => $model->name,
                     'serial_number' => $model->serial_number,
                     'producer' => $model->producer->name
@@ -61,7 +62,7 @@ class ShowResponse implements Responsable
             $client_data[] = (object)[
                 'category' => $category->name.' ('.$category->short_name.')',
                 'service' => (object)['id' => $service->id, 'offered_at' => $service->offered_at, 'signed_at' => $service->signed_at, 'installed_at' => $service->installed_at],
-                'models' => (object)$modelObj,
+                'models' => $modelsObj,
                 //'serial_number' => $model->serial_number,
                 //'producer' => $producer->name,
             ];
