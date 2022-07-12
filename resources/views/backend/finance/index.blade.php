@@ -62,11 +62,12 @@
             });
 
             function displayServices(services) {
-  
+            
+              console.log(services);
               var html = '';
               let amountTotal = parseFloat(+services[0].deal_amount);
               const advArr = JSON.parse(services[0].deal_advance);
-              
+
               console.log(services[0].deal_advance);
               let advance = 0;
               for (i=1; i<advArr.length; i++) {
