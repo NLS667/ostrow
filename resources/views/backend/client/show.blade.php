@@ -99,12 +99,11 @@
                             <h4>Urządzenia:</h4>
                           </div>
                         </div>
-                        {{ $data->models }}
                         @foreach($data->models as $model)
                         <div class="row">
     											<div class="col-md-4">
     												<h6>Producent</h6>
-    												<p>{{ $model->producer }}</p>
+    												<p></p>
     											</div>
     											<div class="col-md-4">
                             <h6>Model</h6>
