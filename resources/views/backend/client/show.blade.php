@@ -99,7 +99,7 @@
                             <h4>Urządzenia:</h4>
                           </div>
                         </div>
-                        @foreach($data['models'] as $model)
+                        @foreach($data->models as $model)
                         <div class="row">
     											<div class="col-md-4">
     												<h6>Producent</h6>
