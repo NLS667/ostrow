@@ -49,7 +49,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
-                    <h4>Adres montażu</h4>
+                    <h4 class="title">Adres montażu</h4>
                   </div>
                 </div>
                 <div class="row">
@@ -146,7 +146,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
-                    <h4>Adres korespondencyjny</h4>
+                    <h4 class="title">Adres korespondencyjny</h4>
                   </div>
                 </div>
                 <div class="row">
