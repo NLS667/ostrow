@@ -230,7 +230,7 @@
                     $phones = json_decode($client->phones);
                     @endphp
                     @for ($i = 0; $i < count($emails); $i++)
-                    <div class="row{{$i}}">
+                    <div class="row" id="row{{$i}}">
                       {{-- Contacts email --}}
                       <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Email</label>
