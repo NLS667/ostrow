@@ -94,6 +94,7 @@ class ClientRepository extends BaseRepository
      */
     public function create($request)
     {
+        \Log::info('create method from repo');
         $data = $request->except('services');
         $client = $this->createClientStub($data);
         DB::transaction(function () use ($client, $data) {
@@ -249,6 +250,7 @@ class ClientRepository extends BaseRepository
      */
     protected function createClientStub($input)
     {
+        \Log::info('creating stub');
         $client = self::MODEL;
         $client = new $client();
         $client->first_name = $input['first_name'];
