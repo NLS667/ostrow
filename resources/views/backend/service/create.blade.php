@@ -166,7 +166,12 @@
 
           $('#add_device').click(function(){  
                y++;  
-               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-6 form-group bmd-form-group"><select name="models[]" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia"><option></option>@foreach ($models as $model)<option value="{{$model->id}}" {{ old("models['+y+']") == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>@endforeach</select></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_dev">X</button></div></div>'); 
+               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-6 form-group bmd-form-group"><select name="models[]" class="form-control select2 model-'+y+'-select" data-placeholder="Wybierz Model Urządzenia"><option></option>@foreach ($models as $model)<option value="{{$model->id}}" {{ old("models['+y+']") == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>@endforeach</select></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_dev">X</button></div></div>');
+
+               $(".select2.model-"+y+"-select").select2({
+                    placeholder: "Wybierz Model",
+                    theme: "material"
+                });
           });
 
           $(document).on('click', '.btn_remove_adv', function(){  
