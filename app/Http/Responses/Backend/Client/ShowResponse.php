@@ -54,7 +54,7 @@ class ShowResponse implements Responsable
                     'name' => $model->name,
                     'serial_number' => $model->serial_number,
                     'producer' => $model->producer
-                ]
+                ];
             }
             //$model = Model::where('id', $service->model_id)->first();
             //$producer = Producer::where('id', $model->id)->first();
