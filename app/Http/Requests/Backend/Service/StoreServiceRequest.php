@@ -30,7 +30,7 @@ class StoreServiceRequest extends Request
         return [
             'client_id'         => 'required',
             'service_cat_id'    => 'required',
-            'model_id'          => 'required',
+            'models'            => 'nullable',
             'offered_at'        => 'nullable|date:d/m/Y',
             'signed_at'         => 'nullable|date:d/m/Y',
             'installed_at'      => 'nullable|date:d/m/Y',
@@ -47,7 +47,6 @@ class StoreServiceRequest extends Request
         return [
             'client_id.required'    => 'Musisz wybrać Klienta.',
             'service_cat_id.required' => 'Musisz wybrać rodzaj Usługi.',
-            'model_id.required' => 'Musisz wybrać Model urządzenia.',
             'offered_at.date' => 'Musisz podać prawidłową datę.',
             'signed_at.date' => 'Musisz podać prawidłową datę.',
             'installed_at.date' => 'Musisz podać prawidłową datę.',
