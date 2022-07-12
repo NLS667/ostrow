@@ -130,6 +130,10 @@ class ClientRepository extends BaseRepository
         $data = $request->except('services', 'tasks');
         $services = $request->get('services');
         $tasks = $request->get('tasks');
+        $emails = $request->get('emails');
+        $phones = $request->get('phones');
+        $data->emails = json_encode($emails);
+        $data->phones = json_encode($phones);
 
         DB::transaction(function () use ($client, $data, $services, $tasks) {
             if ($client->update($data)) {
