@@ -249,11 +249,11 @@
                       </div>
                     </div>
                   </div>
-                </div>              
-                <div class="edit-form-btn">
-                  {{ link_to_route('admin.client.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
-                  {{ Form::submit('Zmień', ['class' => 'btn btn-success btn-md']) }}
                 </div>
+              </div>              
+              <div class="card-footer">
+                {{ link_to_route('admin.client.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
+                {{ Form::submit('Zmień', ['class' => 'btn btn-success btn-md']) }}
               </div>
             </div>
           </form>
