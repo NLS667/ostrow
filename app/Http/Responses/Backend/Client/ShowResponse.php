@@ -47,9 +47,9 @@ class ShowResponse implements Responsable
         foreach($this->serviceCategories as $category)
         {
             $service = Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->first();
-            \Log::info($service->models);
             $models = json_decode($service->models);
             $modelsObj = [];
+            \Log::info(count($models));
             for($i=0;$i<count($models);$i++){
                 $model = Model::where('id', ($models[$i]))->first();
                 $modelsObj = (object)[
