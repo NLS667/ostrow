@@ -37,14 +37,16 @@ class ClientTableController extends Controller
             ->escapeColumns(['id'])
             ->editColumn('phones', function ($client) {
                 if(isset($client->phones)){
-                    return $client->phones;
+                    $phone_nrs = json_decode($client->phones);
+                    return $phone_nrs[0];
                 } else {
                     return 'Brak';
                 }
             })
             ->editColumn('emails', function ($client) {
                 if(isset($client->emails)){
-                    return $client->emails;
+                    $emails = json_decode($client->emails);
+                    return $emails[0];
                 } else {
                     return 'Brak';
                 }
