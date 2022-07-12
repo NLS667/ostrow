@@ -114,7 +114,7 @@
                             <p>{{ $model->serial_number }}</p>    												
     											</div>
     										</div>
-                        @andforeach
+                        @endforeach
 
     									</div>
     								@endforeach
