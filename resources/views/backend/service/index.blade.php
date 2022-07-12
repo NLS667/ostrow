@@ -30,7 +30,7 @@
                                         <th>Data umowy</th>
                                         <th>Data Instalacji</th>
                                         <th>Wartość Umowy</th>
-                                        <th>Wpłacona zaliczka</th>
+                                        <th>Wpłacone zaliczki</th>
                                         <th>Akcje</th>
                                     </tr>
                                 </thead>
@@ -43,7 +43,7 @@
                                         <th>Data umowy</th>
                                         <th>Data Instalacji</th>
                                         <th>Wartość Umowy</th>
-                                        <th>Wpłacona zaliczka</th>
+                                        <th>Wpłacone zaliczki</th>
                                         <th class="text-right">Akcje</th>
                                     </tr>
                                 </tfoot>
