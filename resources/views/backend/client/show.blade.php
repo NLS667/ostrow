@@ -38,10 +38,14 @@
                         </p>
                     </div>
       							<div class="col-md-4">
-      								<h6>Email</h5>
-      								<a href="mailto:{{$client->email}}">{{$client->email}}</a><br><br>
-      								<h6>Telefon</h6>
-      		                		<p class="card-text">{{$client->phone_nr}}</p>
+      								<h6>Kontakty</h5>
+                      @php
+                      $emails = json_decode($client->emails);
+                      $phones = json_decode($client->phones);
+                      @endphp
+                      @for(var $i; $i < count($emails); $i++)
+      								<p class="card-text">e-mail: <a href="mailto:{{$emails[$i]}}">{{$emails[$i]}}</a>; tel. {{$phones[$i]}}</p>
+                      @endfor
       							</div>
 	            		</div>
                 	</div>
