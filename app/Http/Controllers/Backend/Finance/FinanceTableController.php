@@ -79,6 +79,7 @@ class FinanceTableController extends Controller
             $services = $client->services;
             foreach($services as $service){
                 $advances = json_decode($service->deal_advance);
+                $totalAdv = 0;
                 for($i=0;$i<count($advances);$i++){
                     $totalAdv += $advances[$i];
                 }
