@@ -65,10 +65,14 @@
   
               var html = '';
               let amountTotal = parseFloat(+services[0].deal_amount);
-              let advanceTotal = +services[0].deal_advance;
+              const advArr = JSON.parse(services[0].deal_advance);
+              for (i=1; i<advArr.length; i++) {
+                let advance = +advArr[i];
+              }
+              let advanceTotal = +advance;
               let leftTotal = +services[0].left_amount;
 
-              // i=1 - Skip the first house, its in the DT row.
+              // i=1 - Skip the first service, its in the DT row.
               for (i=1; i<services.length; i++) {
                 var service = services[i];
                 if(service.left_amount == '0.00'){
