@@ -242,7 +242,7 @@
                       {{-- Contacts name --}}
                       <div class="col-sm-3 form-group bmd-form-group is-filled">
                         <label class="bmd-label-floating">Osoba</label>
-                        <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="Główny" disabled />
+                        <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="Główny" readonly />
                       </div>
                       {{-- Contacts email --}}
                       <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
