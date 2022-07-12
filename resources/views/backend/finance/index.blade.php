@@ -68,7 +68,7 @@
               const advArr = JSON.parse(services[0].deal_advance);
               let advance = 0;
               for (i=1; i<advArr.length; i++) {
-                advance = advance + advArr[i];
+                advance = +advArr[i];
               }
               let advanceTotal = +advance;
               console.log(advanceTotal);
@@ -95,7 +95,6 @@
                 amountTotal += service.deal_amount;
                 advanceTotal += service.deal_advance;
                 leftTotal += service.left_amount;
-                console.log(amountTotal);
               }
               if(leftTotal == '0.00'){
                     var newStyle = 'text-success';
