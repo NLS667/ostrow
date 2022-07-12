@@ -85,7 +85,7 @@
               </div>
               <div class="row">
                 {{-- Deal Amount --}}
-                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('deal_amount') ? ' has-danger' : '' }}">
+                <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_amount') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Kwota Umowy</label>
                   <input class="form-control{{ $errors->has('deal_amount') ? ' is-invalid' : '' }}" name="deal_amount" id="input-deal_amount" type="text" value="{{ old('deal_amount') }}" />
                   @if ($errors->has('deal_amount'))
@@ -97,7 +97,7 @@
               <div id="advance">
                 <div class="row">
                   {{-- Deal Advance --}}
-                  <div class="col-sm-8 form-group bmd-form-group {{ $errors->has('deal_advance') ? ' has-danger' : '' }}">
+                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_advance') ? ' has-danger' : '' }}">
                     <label class="bmd-label-floating">Wpłacona zaliczka</label>
                     <input class="form-control{{ $errors->has('deal_advance') ? ' is-invalid' : '' }}" name="deal_advance" id="input-deal_advance" type="text" value="{{ old('deal_advance') }}" />
                     @if ($errors->has('deal_advance'))
@@ -105,7 +105,7 @@
                     <span id="deal_advance-error" class="error text-danger" for="input-deal_advance">{{ $errors->first('deal_advance') }}</span>
                     @endif
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-sm-6">
                     <button type="button" name="add_contact" id="add_contact" class="btn btn-primary">Dodaj zaliczkę</button>
                   </div>
                 </div>
