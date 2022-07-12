@@ -217,7 +217,34 @@
                       </div>
                     </div>
                   </div>
-                </div>                
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      {{-- Contacts email --}}
+                      <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Email</label>
+                        <input class="form-control" name="email" id="input-emails" type="text" value="{{ old('emails[]', $client->emails) }}" />
+                        @if ($errors->has('emails'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="emails-error" class="error text-danger" for="input-emails">{{ $errors->first('emails') }}</span>
+                        @endif
+                      </div>
+                      {{-- Contacts phones --}}
+                      <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('phones') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Nr telefonu</label>
+                        <input class="form-control" name="phone" id="input-phones" type="text" value="{{ old('phones[]', $client->phones) }}" />
+                        @if ($errors->has('phones'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="phones-error" class="error text-danger" for="input-phones">{{ $errors->first('phones') }}</span>
+                        @endif
+                      </div>
+                      <div class="col-sm-2">
+                        <button type="button" name="add_contact" id="add_contact" class="btn btn-success">Dodaj</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>              
                 <div class="edit-form-btn">
                   {{ link_to_route('admin.client.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
                   {{ Form::submit('Zmień', ['class' => 'btn btn-primary btn-md']) }}
