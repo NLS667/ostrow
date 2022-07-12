@@ -234,7 +234,7 @@
                       {{-- Contacts email --}}
                       <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Email</label>
-                        <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails[{{ $i }}]', $emails[{{ $i }}]) }}" />
+                        <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails[$i]', $emails[$i]) }}" />
                         @if ($errors->has('emails'))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="emails-error" class="error text-danger" for="input-emails">{{ $errors->first('emails') }}</span>
@@ -243,7 +243,7 @@
                       {{-- Contacts phones --}}
                       <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('phones') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Nr telefonu</label>
-                        <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones[{{ $i }}]', $phones[{{ $i }}]) }}" />
+                        <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones[$i]', $phones[$i]) }}" />
                         @if ($errors->has('phones'))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="phones-error" class="error text-danger" for="input-phones">{{ $errors->first('phones') }}</span>
