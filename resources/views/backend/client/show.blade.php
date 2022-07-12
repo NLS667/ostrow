@@ -20,7 +20,7 @@
 	            	<div class="card-body ">
 	            		<div class="row">
 	            			<div class="col-md-4">
-	            				<h6>Adres</h6>
+	            				<h6>Adres montażu</h6>
 	            				<p class="card-text">
 		                			{{$client->adr_street}}&nbsp;{{$client->adr_street_nr}}<br>
 		                			{{$client->adr_zipcode}}&nbsp;{{$client->adr_city}}<br>
@@ -28,12 +28,21 @@
 		                			{{$client->adr_country}}
 		                		</p>
 	            			</div>
-							<div class="col-md-4">
-								<h6>Email</h5>
-								<a href="mailto:{{$client->email}}">{{$client->email}}</a><br><br>
-								<h6>Telefon</h6>
-		                		<p class="card-text">{{$client->phone_nr}}</p>
-							</div>
+                    <div class="col-md-4">
+                      <h6>Adres korespondencyjny</h6>
+                      <p class="card-text">
+                          {{$client->comm_adr_street}}&nbsp;{{$client->comm_adr_street_nr}}<br>
+                          {{$client->comm_adr_zipcode}}&nbsp;{{$client->comm_adr_city}}<br>
+                          {{$client->comm_adr_region}}<br>
+                          {{$client->comm_adr_country}}
+                        </p>
+                    </div>
+      							<div class="col-md-4">
+      								<h6>Email</h5>
+      								<a href="mailto:{{$client->email}}">{{$client->email}}</a><br><br>
+      								<h6>Telefon</h6>
+      		                		<p class="card-text">{{$client->phone_nr}}</p>
+      							</div>
 	            		</div>
                 	</div>
             	</div>
