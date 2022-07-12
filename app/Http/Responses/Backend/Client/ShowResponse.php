@@ -61,7 +61,7 @@ class ShowResponse implements Responsable
             $client_data[] = (object)[
                 'category' => $category->name.' ('.$category->short_name.')',
                 'service' => (object)['id' => $service->id, 'offered_at' => $service->offered_at, 'signed_at' => $service->signed_at, 'installed_at' => $service->installed_at],
-                'models' => $modelObj,
+                'models' => (object)$modelObj,
                 //'serial_number' => $model->serial_number,
                 //'producer' => $producer->name,
             ];
