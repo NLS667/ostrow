@@ -47,7 +47,6 @@ class ServiceRepository extends BaseRepository
                 'clients.first_name AS client',
                 'clients.last_name',
                 'service_categories.name AS category',
-                'models.name AS model',
                 'services.models',
                 'services.offered_at',
                 'services.signed_at',
