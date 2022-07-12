@@ -101,7 +101,18 @@
                         </div>
                         @foreach($data->models as $model)
                         <div class="row">
-    											{{ $model }}
+    											<div class="col-md-4">
+    												<h6>Producent</h6>
+    												<p>{{ $model[2] }}</p>
+    											</div>
+    											<div class="col-md-4">
+                            <h6>Model</h6>
+                            <p>{{ $model[0] }}</p>           
+                          </div>
+    											<div class="col-md-4">										
+    												<h6>Numer Seryjny</h6>
+                            <p>{{ $model[1] }}</p>    												
+    											</div>
     										</div>
                         @endforeach
 
