@@ -103,15 +103,15 @@
                         <div class="row">
     											<div class="col-md-4">
     												<h6>Producent</h6>
-    												<p>{{ $model }}</p>
+    												<p>{{ $model->producer }}</p>
     											</div>
     											<div class="col-md-4">
                             <h6>Model</h6>
-                            <p>{{ $model }}</p>           
+                            <p>{{ $model->name }}</p>           
                           </div>
     											<div class="col-md-4">										
     												<h6>Numer Seryjny</h6>
-                            <p>{{ $model}}</p>    												
+                            <p>{{ $model->serial_number }}</p>    												
     											</div>
     										</div>
                         @endforeach
