@@ -32,6 +32,8 @@
                         @endif
                       </div>
                     </div>
+                  </div>
+                  <div class="col-md-6">
                     <div class="row">
                       {{-- Last Name --}}
                       <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('last_name') ? ' has-danger' : '' }}">
@@ -43,30 +45,13 @@
                         @endif
                       </div>
                     </div>
-                    <div class="row">
-                      {{-- Email --}}
-                      <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('email') ? ' has-danger' : '' }}">
-                        <label class="bmd-label-floating">E-mail</label>
-                        <input class="form-control" name="email" id="input-email" type="text" value="{{ old('email', $client->email) }}"/>
-                        @if ($errors->has('email'))
-                        <span class="material-icons form-control-feedback">clear</span>
-                        <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
-                        @endif
-                      </div>
-                    </div>
-                    <div class="row">
-                      {{-- Phone --}}
-                      <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('phone_nr') ? ' has-danger' : '' }}">
-                        <label class="bmd-label-floating">Nr telefonu</label>
-                        <input class="form-control" name="phone_nr" id="input-phone_nr" type="text" value="{{ old('phone_nr', $client->phone_nr) }}"/>
-                        @if ($errors->has('phone_nr'))
-                        <span class="material-icons form-control-feedback">clear</span>
-                        <span id="phone_nr-error" class="error text-danger" for="input-phone_nr">{{ $errors->first('phone_nr') }}</span>
-                        @endif
-                      </div>
-                    </div>
                   </div>
-                  <div class="col-md-6">
+                </div>
+                <div class="row">
+                  <h4>Adres montażu</h4>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
                     <div class="row">
                       {{-- Address Street --}}
                       <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('adr_street') ? ' has-danger' : '' }}">
@@ -156,7 +141,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>                
                 <div class="edit-form-btn">
                   {{ link_to_route('admin.client.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
                   {{ Form::submit('Zmień', ['class' => 'btn btn-primary btn-md']) }}
