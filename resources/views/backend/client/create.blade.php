@@ -225,10 +225,10 @@
                 <div class="row">
                   <div class="col-md-12 form-group bmd-form-group {{ $errors->has('extra_info') ? ' has-danger' : '' }}">
                     <label class="bmd-label-floating">Notatki</label>
-                    <textarea class="form-control" name="extra_info" id="input-extra_info" value="{{ old('extra_info') }}" />
+                    <textarea class="form-control" name="extra_info" id="input-extra_info" value="{{ old('extra_info') }}"></textarea>
                     @if ($errors->has('extra_info'))
-                        <span class="material-icons form-control-feedback">clear</span>
-                        <span id="extra_info-error" class="error text-danger" for="input-extra_info">{{ $errors->first('extra_info') }}</span>
+                    <span class="material-icons form-control-feedback">clear</span>
+                    <span id="extra_info-error" class="error text-danger" for="input-extra_info">{{ $errors->first('extra_info') }}</span>
                     @endif
                   </div>
                 </div>
