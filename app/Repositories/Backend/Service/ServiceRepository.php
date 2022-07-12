@@ -74,12 +74,12 @@ class ServiceRepository extends BaseRepository
             $service = new $service();
             $service->client_id = $request['client_id'];
             $service->service_cat_id = $request['service_cat_id'];
-            $service->models = $request['models'];
+            $service->models = json_encode($request['models']);
             $service->offered_at = $request['offered_at'];
             $service->signed_at = $request['signed_at'];
             $service->installed_at = $request['installed_at'];
             $service->deal_amount = $request['deal_amount'];
-            $service->deal_advance = $request['deal_advance'];
+            $service->deal_advance = json_encode($request['deal_advance']);
 
             $service->created_by = access()->user()->id;
 
