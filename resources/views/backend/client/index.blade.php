@@ -132,7 +132,7 @@
                 }
             });
 
-            var dataTable = $('#clients-table').dataTable({
+            var dataTable = $('#clients-table').DataTable({
                 columnDefs: [
                     {"className": "dt-center", "targets": "_all"}
                 ],
