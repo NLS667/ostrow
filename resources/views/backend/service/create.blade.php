@@ -110,6 +110,11 @@
                   </div>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <h4 class="title">Urządzenia</h4>
+                </div>
+              </div>
               <div id="devices">
                 <div class="row">
                   {{-- Model --}}
