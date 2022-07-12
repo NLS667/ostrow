@@ -63,8 +63,13 @@ class ClientRepository extends BaseRepository
                 config('clients.clients_table').'.adr_home_nr',
                 config('clients.clients_table').'.adr_zipcode',
                 config('clients.clients_table').'.adr_city',
-                config('clients.clients_table').'.email',
-                config('clients.clients_table').'.phone_nr',
+                config('clients.clients_table').'.comm_adr_street',
+                config('clients.clients_table').'.comm_adr_street_nr',
+                config('clients.clients_table').'.comm_adr_home_nr',
+                config('clients.clients_table').'.comm_adr_zipcode',
+                config('clients.clients_table').'.comm_adr_city',
+                config('clients.clients_table').'.emails',
+                config('clients.clients_table').'.phones',
                 config('clients.clients_table').'.status',
                 config('task.tasks_table').'.status as service_status',
                 config('clients.clients_table').'.created_at',
@@ -244,8 +249,8 @@ class ClientRepository extends BaseRepository
         $client = new $client();
         $client->first_name = $input['first_name'];
         $client->last_name = $input['last_name'];
-        $client->email = $input['email'];
-        $client->phone_nr = $input['phone_nr'];
+        $client->emails = $input['emails'];
+        $client->phones = $input['phones'];
         $client->adr_country = $input['adr_country'];
         $client->adr_region = $input['adr_region'];
         $client->adr_zipcode = $input['adr_zipcode'];
@@ -255,6 +260,14 @@ class ClientRepository extends BaseRepository
         $client->adr_home_nr = $input['adr_home_nr'];
         $client->adr_lattitude = $input['adr_lattitude'];
         $client->adr_longitude = $input['adr_longitude'];
+        $client->comm_adr_country = $input['comm_adr_country'];
+        $client->comm_adr_region = $input['comm_adr_region'];
+        $client->comm_adr_zipcode = $input['comm_adr_zipcode'];
+        $client->comm_adr_city = $input['comm_adr_city'];
+        $client->comm_adr_street = $input['comm_adr_street'];
+        $client->comm_adr_street_nr = $input['comm_adr_street_nr'];
+        $client->comm_adr_home_nr = $input['comm_adr_home_nr'];
+        $client->extra_info = $input['extra_info'];
         $client->status = 1;
         $client->created_by = access()->user()->id;
 

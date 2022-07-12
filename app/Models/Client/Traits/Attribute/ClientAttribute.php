@@ -183,6 +183,14 @@ trait ClientAttribute
         $address = $street.'<br>'.$this->adr_zipcode.' '.$this->adr_city;
         return $address;
     }
+    public function getCommAddressAttribute(){
+        $street = $this->comm_adr_street.' '.$this->comm_adr_street_nr;
+        if(isset($this->comm_adr_home_nr)){
+            $street .= ' m.'.$this->comm_adr_home_nr;
+        }
+        $address = $street.'<br>'.$this->comm_adr_zipcode.' '.$this->comm_adr_city;
+        return $address;
+    }
 
     public function getServiceStatusAttribute()
     {
