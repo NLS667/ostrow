@@ -24,7 +24,7 @@
                                         <th>Adres</th>
                                         <th>Usługa</th>
                                         <th class="text-right">Wartość umowy</th>
-                                        <th class="text-right">Wpłacona zaliczka</th>
+                                        <th class="text-right">Wpłacone zaliczki</th>
                                         <th class="text-right">Pozostało do zapłaty</th>
                                         <th></th>
                                     </tr>
@@ -35,7 +35,7 @@
                                         <th>Adres</th>
                                         <th>Usługa</th>
                                         <th class="text-right">Wartość umowy</th>
-                                        <th class="text-right">Wpłacona zaliczka</th>
+                                        <th class="text-right">Wpłacone zaliczki</th>
                                         <th class="text-right">Pozostało do zapłaty</th>
                                         <th></th>
                                     </tr>
