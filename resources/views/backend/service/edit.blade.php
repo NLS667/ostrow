@@ -127,7 +127,7 @@
                     $devices = json_decode($service->models);
                 @endphp
                 @for ($i = 0; $i < count($devices); $i++)
-                <div class="row">
+                <div class="row" id="dev_row{{$i}}">
                   {{-- Model --}}
                   <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('models') ? ' has-danger' : '' }}">
                     @if ($models->count())
