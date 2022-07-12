@@ -62,19 +62,10 @@
             });
 
             function displayServices(services) {
-            
-              console.log(services);
+  
               var html = '';
               let amountTotal = parseFloat(+services[0].deal_amount);
-              const advArr = JSON.parse(services[0].deal_advance);
-
-              console.log(services[0].deal_advance);
-              let advance = 0;
-              for (i=1; i<advArr.length; i++) {
-                advance = +advArr[i];
-              }
-              let advanceTotal = +advance;
-              console.log(advanceTotal);
+              let advanceTotal = +services[0].deal_advance;
               let leftTotal = +services[0].left_amount;
 
               // i=1 - Skip the first service, its in the DT row.
@@ -98,6 +89,7 @@
                 amountTotal += service.deal_amount;
                 advanceTotal += service.deal_advance;
                 leftTotal += service.left_amount;
+                console.log(amountTotal);
               }
               if(leftTotal == '0.00'){
                     var newStyle = 'text-success';
