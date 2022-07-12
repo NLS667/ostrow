@@ -278,7 +278,7 @@
 
           $('#add_contact').click(function(){  
                i++;  
-               $('#contacts').append('<div class="row dynamic-added" id="row'+i+'"><div class="col-sm-5 form-group bmd-form-group"><label class="bmd-label-floating">Email</label><input class="form-control" name="emails[]" id="input-email-'+i+'" type="text" value="{{ old('emails[i]') }}" /></div><div class="col-sm-5 form-group bmd-form-group"><label class="bmd-label-floating">Nr telefonu</label><input class="form-control" name="phones[]" id="input-phone-'+i+'" type="text" value="{{ old('phones[i]') }}" /></div><div class="col-sm-2"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></div></div>'); 
+               $('#contacts').append('<div class="row dynamic-added" id="row'+i+'"><div class="col-sm-5 form-group bmd-form-group"><label class="bmd-label-floating">Email</label><input class="form-control" name="emails[]" id="input-email-'+i+'" type="text" value="{{ old("emails['+i+']") }}" /></div><div class="col-sm-5 form-group bmd-form-group"><label class="bmd-label-floating">Nr telefonu</label><input class="form-control" name="phones[]" id="input-phone-'+i+'" type="text" value="{{ old("phones['+i+']") }}" /></div><div class="col-sm-2"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></div></div>'); 
           });
 
           $(document).on('click', '.btn_remove', function(){  
