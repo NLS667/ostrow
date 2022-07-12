@@ -30,6 +30,7 @@ class StoreClientRequest extends Request
         return [
             'first_name'        => 'required|max:191',
             'last_name'         => 'required|max:191',
+            'contacts'          => 'nullable',
             'emails'            => 'nullable',
             'phones'            => 'nullable',
             'adr_country'       => 'nullable|max:191',

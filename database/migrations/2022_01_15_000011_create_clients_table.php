@@ -17,6 +17,7 @@ class CreateClientsTable extends Migration
             $table->bigIncrements('id');
             $table->string('first_name', 191);
             $table->string('last_name', 191);
+            $table->longText('contacts')->nullable();
             $table->longText('emails')->nullable();
             $table->longText('phones', 191)->nullable();
             $table->string('adr_country', 191)->nullable();

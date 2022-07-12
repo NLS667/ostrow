@@ -33,6 +33,7 @@ class Client extends BaseModel
     protected $fillable = [
         'first_name',
         'last_name',
+        'contacts',
         'emails',
         'phones',
         'adr_country',

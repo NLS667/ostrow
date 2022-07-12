@@ -29,6 +29,7 @@ class UpdateClientRequest extends Request
         return [
             'first_name'        => 'required|max:191',
             'last_name'         => 'required|max:191',
+            'contacts'          => 'nullable',
             'emails'            => 'nullable',
             'phones'            => 'nullable',
             'adr_country'       => 'nullable|max:191',
@@ -55,10 +56,6 @@ class UpdateClientRequest extends Request
             'first_name.max'             => 'Długość max. 191 znaków.',
             'last_name.required'         => 'To pole jest wymagane.',
             'last_name.max'              => 'Długość max. 191 znaków.',
-            'email.required'             => 'To pole jest wymagane.',
-            'email.email'                => 'Podaj prawidłowy adres email.',
-            'phone_nr.max'               => 'Długość max. 12 znaków.',
-            'phone_nr.regex'             => 'To nie jest prawidłowy numer telefonu.',
             'adr_country.max'            => 'Długość max. 191 znaków.',
             'adr_region.max'             => 'Długość max. 191 znaków.',
             'adr_zipcode.regex'          => 'To nie jest prawidłowy kod pocztowy.',

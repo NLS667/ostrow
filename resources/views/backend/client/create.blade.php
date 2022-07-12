@@ -239,8 +239,13 @@
                 <div class="row">
                   <div class="col-md-12" id="contacts">
                     <div class="row">
+                      {{-- Contacts name --}}
+                      <div class="col-sm-3 form-group bmd-form-group is-filled">
+                        <label class="bmd-label-floating">Osoba</label>
+                        <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="Główny" disabled />
+                      </div>
                       {{-- Contacts email --}}
-                      <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Email</label>
                         <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails[0]') }}" />
                         @if ($errors->has('emails'))
@@ -249,7 +254,7 @@
                         @endif
                       </div>
                       {{-- Contacts phones --}}
-                      <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('phones') ? ' has-danger' : '' }}">
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('phones') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Nr telefonu</label>
                         <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones[0]') }}" />
                         @if ($errors->has('phones'))
@@ -257,7 +262,7 @@
                         <span id="phones-error" class="error text-danger" for="input-phones">{{ $errors->first('phones') }}</span>
                         @endif
                       </div>
-                      <div class="col-sm-2">
+                      <div class="col-sm-3">
                         <button type="button" name="add_contact" id="add_contact" class="btn btn-primary">Dodaj kontakt</button>
                       </div>
                     </div>
@@ -292,7 +297,7 @@
 
           $('#add_contact').click(function(){  
                i++;  
-               $('#contacts').append('<div class="row dynamic-added" id="row'+i+'"><div class="col-sm-5 form-group bmd-form-group"><label class="bmd-label-floating">Email</label><input class="form-control" name="emails[]" id="input-email-'+i+'" type="text" value="{{ old("emails['+i+']") }}" /></div><div class="col-sm-5 form-group bmd-form-group"><label class="bmd-label-floating">Nr telefonu</label><input class="form-control" name="phones[]" id="input-phone-'+i+'" type="text" value="{{ old("phones['+i+']") }}" /></div><div class="col-sm-2"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></div></div>'); 
+               $('#contacts').append('<div class="row dynamic-added" id="row'+i+'"><div class="col-sm-3 form-group bmd-form-group"><label class="bmd-label-floating">Osoba</label><input class="form-control" name="contacts[]" id="input-contact-'+i+'" type="text" value="{{ old("contacts['+i+']") }}" /></div><div class="col-sm-3 form-group bmd-form-group"><label class="bmd-label-floating">Email</label><input class="form-control" name="emails[]" id="input-email-'+i+'" type="text" value="{{ old("emails['+i+']") }}" /></div><div class="col-sm-3 form-group bmd-form-group"><label class="bmd-label-floating">Nr telefonu</label><input class="form-control" name="phones[]" id="input-phone-'+i+'" type="text" value="{{ old("phones['+i+']") }}" /></div><div class="col-sm-3"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></div></div>'); 
           });
 
           $(document).on('click', '.btn_remove', function(){  

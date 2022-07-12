@@ -228,11 +228,21 @@
                     @php
                     $emails = json_decode($client->emails);
                     $phones = json_decode($client->phones);
+                    $contacts = json_decode($client->contacts);
                     @endphp
                     @for ($i = 0; $i < count($emails); $i++)
                     <div class="row" id="row{{$i}}">
+                      {{-- Contacts name --}}
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('contacts') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Osoba</label>
+                        <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="{{ old('contacts[$i]', $contacts[$i]) }}" />
+                        @if ($errors->has('contacts'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="contacts-error" class="error text-danger" for="input-contacts">{{ $errors->first('contacts') }}</span>
+                        @endif
+                      </div>
                       {{-- Contacts email --}}
-                      <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Email</label>
                         <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails[$i]', $emails[$i]) }}" />
                         @if ($errors->has('emails'))
@@ -241,7 +251,7 @@
                         @endif
                       </div>
                       {{-- Contacts phones --}}
-                      <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('phones') ? ' has-danger' : '' }}">
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('phones') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Nr telefonu</label>
                         <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones[$i]', $phones[$i]) }}" />
                         @if ($errors->has('phones'))
@@ -250,7 +260,7 @@
                         @endif
                       </div>
                       @if($i == 0)
-                      <div class="col-sm-2">
+                      <div class="col-sm-3">
                         <button type="button" name="add_contact" id="add_contact" class="btn btn-primary">Dodaj kontakt</button>
                       </div>
                       @else

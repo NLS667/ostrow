@@ -68,6 +68,7 @@ class ClientRepository extends BaseRepository
                 config('clients.clients_table').'.comm_adr_home_nr',
                 config('clients.clients_table').'.comm_adr_zipcode',
                 config('clients.clients_table').'.comm_adr_city',
+                config('clients.clients_table').'.contacts',
                 config('clients.clients_table').'.emails',
                 config('clients.clients_table').'.phones',
                 config('clients.clients_table').'.status',
@@ -127,6 +128,7 @@ class ClientRepository extends BaseRepository
     public function update($client, $request)
     {
         $data = $request->except('services');
+        $data['contacts'] = json_encode($request->get('contacts'));
         $data['emails'] = json_encode($request->get('emails'));
         $data['phones'] = json_encode($request->get('phones'));
 
@@ -249,6 +251,7 @@ class ClientRepository extends BaseRepository
         $client = new $client();
         $client->first_name = $input['first_name'];
         $client->last_name = $input['last_name'];
+        $client->contacts = json_encode($input['contacts']);
         $client->emails = json_encode($input['emails']);
         $client->phones = json_encode($input['phones']);
         $client->adr_country = $input['adr_country'];
