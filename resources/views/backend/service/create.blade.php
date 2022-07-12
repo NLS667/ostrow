@@ -98,7 +98,7 @@
                 <div class="row">
                   {{-- Deal Advance --}}
                   <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_advance') ? ' has-danger' : '' }}">
-                    <label class="bmd-label-floating">Zaliczka 1</label>
+                    <label class="bmd-label-floating">Zaliczka</label>
                     <input class="form-control{{ $errors->has('deal_advance') ? ' is-invalid' : '' }}" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old('deal_advance') }}" />
                     @if ($errors->has('deal_advance'))
                     <span class="material-icons form-control-feedback">clear</span>
@@ -160,13 +160,12 @@
 
           $('#add_advance').click(function(){  
                i++;  
-               $('#advance').append('<div class="row dynamic-added" id="adv_row'+i+'"><div class="col-sm-6 form-group bmd-form-group"><label class="bmd-label-floating">Zaliczka '+i+'</label><input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old("deal_advance['+i+']") }}" /></div><div class="col-sm-6"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove_adv">X</button></div></div>'); 
+               $('#advance').append('<div class="row dynamic-added" id="adv_row'+i+'"><div class="col-sm-6 form-group bmd-form-group"><label class="bmd-label-floating">Zaliczka</label><input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old("deal_advance['+i+']") }}" /></div><div class="col-sm-6"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove_adv">X</button></div></div>'); 
           });
 
           $(document).on('click', '.btn_remove_adv', function(){  
             var button_id = $(this).attr("id");   
-            $('#adv_row'+button_id+'').remove(); 
-            i--; 
+            $('#adv_row'+button_id+'').remove();
           }); 
         });
     </script>
