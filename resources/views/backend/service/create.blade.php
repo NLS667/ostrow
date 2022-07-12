@@ -160,7 +160,7 @@
 
           $('#add_advance').click(function(){  
                i++;  
-               $('#advance').append('<div class="row dynamic-added" id="adv_row'+i+'"><div class="col-sm-6 form-group bmd-form-group"><label class="bmd-label-floating">Zaliczka</label><input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old("deal_advance['+i+']") }}" /></div><div class="col-sm-6"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove_adv">X</button></div></div>'); 
+               $('#advance').append('<div class="row dynamic-added" id="adv_row'+i+'"><div class="col-sm-6 form-group bmd-form-group"><label class="bmd-label-floating">Zaliczka '+i+'</label><input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old("deal_advance['+i+']") }}" /></div><div class="col-sm-6"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove_adv">X</button></div></div>'); 
           });
 
           $(document).on('click', '.btn_remove_adv', function(){  
