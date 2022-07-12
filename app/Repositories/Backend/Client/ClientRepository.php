@@ -126,6 +126,7 @@ class ClientRepository extends BaseRepository
      */
     public function update($client, $request)
     {
+        \Log::info($request);
         $data = $request->except('services', 'tasks');
         $services = $request->get('services');
         $tasks = $request->get('tasks');
