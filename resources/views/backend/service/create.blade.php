@@ -166,7 +166,7 @@
 
           $('#add_device').click(function(){  
                y++;  
-               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-6 form-group bmd-form-group"></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_adv">X</button></div></div>'); 
+               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-6 form-group bmd-form-group"></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_dev">X</button></div></div>'); 
           });
 
           $(document).on('click', '.btn_remove_adv', function(){  
