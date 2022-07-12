@@ -101,7 +101,7 @@
                         </div>
                         @foreach($data->models as $model)
                         <div class="row">
-    											
+    											{{ $model }}
     										</div>
                         @endforeach
 
