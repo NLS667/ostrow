@@ -98,7 +98,7 @@
                 }
             });
 
-            var dataTable = $('#permissions-table').dataTable({
+            var dataTable = $('#permissions-table').DataTable({
                 processing: true,
                 serverSide: false,
                 ajax: {

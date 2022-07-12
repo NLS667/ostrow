@@ -101,7 +101,7 @@
                 }
             });
 
-            var dataTable = $('#roles-table').dataTable({
+            var dataTable = $('#roles-table').DataTable({
                 processing: true,
                 serverSide: false,
 

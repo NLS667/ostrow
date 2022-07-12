@@ -94,7 +94,7 @@
                 }
             });
 
-            var dataTable = $('#producers-table').dataTable({
+            var dataTable = $('#producers-table').DataTable({
                 columnDefs: [
                     {"className": "dt-center", "targets": "_all"}
                 ],

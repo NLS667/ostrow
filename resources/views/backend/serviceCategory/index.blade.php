@@ -96,7 +96,7 @@
                 }
             });
 
-            var dataTable = $('#service-category-table').dataTable({
+            var dataTable = $('#service-category-table').DataTable({
                 columnDefs: [
                     {"className": "dt-center", "targets": "_all"}
                 ],
