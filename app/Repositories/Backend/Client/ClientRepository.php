@@ -126,7 +126,6 @@ class ClientRepository extends BaseRepository
      */
     public function update($client, $request)
     {
-        \Log::info($request);
         $data = $request->except('services', 'tasks');
         $services = $request->get('services');
         $tasks = $request->get('tasks');
@@ -254,8 +253,8 @@ class ClientRepository extends BaseRepository
         $client = new $client();
         $client->first_name = $input['first_name'];
         $client->last_name = $input['last_name'];
-        $client->emails = $input['emails'];
-        $client->phones = $input['phones'];
+        $client->emails = json_encode($input['emails']);
+        $client->phones = json_encode($input['phones']);
         $client->adr_country = $input['adr_country'];
         $client->adr_region = $input['adr_region'];
         $client->adr_zipcode = $input['adr_zipcode'];
