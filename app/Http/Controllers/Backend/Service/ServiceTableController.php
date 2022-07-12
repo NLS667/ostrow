@@ -91,7 +91,7 @@ class ServiceTableController extends Controller
                     {
                         $adv_sum += $advance[$i];
                     }
-                    return number_format($adv_sum, 2);                    
+                    return number_format($adv_sum, 2, ".", "");                    
                 } else {
                     return '--';
                 }
