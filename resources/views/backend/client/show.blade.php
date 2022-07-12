@@ -51,10 +51,18 @@
 	            		</div>
                 	</div>
             	</div>
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Notatki / Dodatkowe informacje</h4>
+                </div>
+                <div class="card-body">
+                  <p>{{$client->extra_info}}</p>
+                </div>
+              </div>
             	<div class="card">
             		<div class="card-header">
 			            <h4 class="card-title">Usługi wykonywane dla klienta</h4>
-			        </div>
+			          </div>
             		<div class="card-body">
             			<div class="row">
     						<div class="col-md-3">
