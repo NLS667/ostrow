@@ -229,7 +229,7 @@
                       {{-- Contacts email --}}
                       <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Email</label>
-                        <input class="form-control" name="email" id="input-emails" type="text" value="{{ old('emails[]', $client->emails) }}" />
+                        <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails[]', $client->emails) }}" />
                         @if ($errors->has('emails'))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="emails-error" class="error text-danger" for="input-emails">{{ $errors->first('emails') }}</span>
@@ -238,7 +238,7 @@
                       {{-- Contacts phones --}}
                       <div class="col-sm-5 form-group bmd-form-group {{ $errors->has('phones') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Nr telefonu</label>
-                        <input class="form-control" name="phone" id="input-phones" type="text" value="{{ old('phones[]', $client->phones) }}" />
+                        <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones[]', $client->phones) }}" />
                         @if ($errors->has('phones'))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="phones-error" class="error text-danger" for="input-phones">{{ $errors->first('phones') }}</span>
