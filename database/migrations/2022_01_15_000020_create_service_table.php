@@ -17,12 +17,12 @@ class CreateServiceTable extends Migration
             $table->bigIncrements('id');
             $table->foreignId('client_id')->constrained('clients');
             $table->foreignId('service_cat_id')->constrained('service_categories');
-            $table->foreignId('model_id')->constrained('models');
+            $table->longText('models')->nullable();
             $table->date('offered_at')->nullable();
             $table->date('signed_at')->nullable();
             $table->date('installed_at')->nullable();
             $table->decimal('deal_amount', 10, 2)->nullable()->default('0.00');
-            $table->decimal('deal_advance', 10, 2)->nullable()->default('0.00');
+            $table->longText('deal_advance')->nullable();
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

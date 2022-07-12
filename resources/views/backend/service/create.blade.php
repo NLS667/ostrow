@@ -99,7 +99,7 @@
                   {{-- Deal Advance --}}
                   <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_advance') ? ' has-danger' : '' }}">
                     <label class="bmd-label-floating">Zaliczka</label>
-                    <input class="form-control{{ $errors->has('deal_advance') ? ' is-invalid' : '' }}" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old('deal_advance') }}" />
+                    <input class="form-control{{ $errors->has('deal_advance') ? ' is-invalid' : '' }}" name="deal_advance[0]" id="input-deal_advance" type="text" value="{{ old('deal_advance') }}" />
                     @if ($errors->has('deal_advance'))
                     <span class="material-icons form-control-feedback">clear</span>
                     <span id="deal_advance-error" class="error text-danger" for="input-deal_advance">{{ $errors->first('deal_advance') }}</span>

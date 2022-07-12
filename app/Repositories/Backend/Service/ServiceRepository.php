@@ -41,7 +41,7 @@ class ServiceRepository extends BaseRepository
     {
         return $this->query()
             ->leftJoin('service_categories', 'service_categories.id', '=', 'services.service_cat_id')
-            ->leftJoin('models', 'models.id', '=', 'services.model_id')
+            ->leftJoin('models', 'models.id', '=', 'services.models')
             ->leftJoin('clients', 'clients.id', '=', 'services.client_id')
             ->select([
                 'services.id',
@@ -74,7 +74,7 @@ class ServiceRepository extends BaseRepository
             $service = new $service();
             $service->client_id = $request['client_id'];
             $service->service_cat_id = $request['service_cat_id'];
-            $service->model_id = $request['model_id'];
+            $service->models = $request['models'];
             $service->offered_at = $request['offered_at'];
             $service->signed_at = $request['signed_at'];
             $service->installed_at = $request['installed_at'];
