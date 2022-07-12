@@ -29,8 +29,8 @@ class UpdateClientRequest extends Request
         return [
             'first_name'        => 'required|max:191',
             'last_name'         => 'required|max:191',
-            'email'             => 'required|email',
-            'phone_nr'          => ['nullable', 'max:12', 'regex:/(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/'],
+            'emails'            => 'nullable',
+            'phones'            => 'nullable',
             'adr_country'       => 'nullable|max:191',
             'adr_region'        => 'nullable|max:191',
             'adr_zipcode'       => 'nullable|regex:/[0-9]{2}-[0-9]{3}/',
