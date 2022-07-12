@@ -53,7 +53,7 @@ class ShowResponse implements Responsable
                 $modelObj = (object)[
                     'name' => $model->name,
                     'serial_number' => $model->serial_number,
-                    'producer' => $model->producer
+                    'producer' => $model->producer->name
                 ];
             }
             //$model = Model::where('id', $service->model_id)->first();
