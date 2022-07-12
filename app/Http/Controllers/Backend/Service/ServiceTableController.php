@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Service;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Service\ManageServiceRequest;
 use App\Repositories\Backend\Service\ServiceRepository;
+use App\Models\Model\Model;
 use Carbon\Carbon;
 use Yajra\DataTables\Facades\DataTables;
 
