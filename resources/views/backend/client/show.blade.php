@@ -42,9 +42,10 @@
                       @php
                       $emails = json_decode($client->emails);
                       $phones = json_decode($client->phones);
+                      $contacts = json_decode($client->contacts);
                       @endphp
-                      @for($i = 0; $i < count($emails); $i++)
-      								<p class="card-text">e-mail: <a href="mailto:{{$emails[$i]}}">{{$emails[$i]}}</a>; tel. {{$phones[$i]}}</p>
+                      @for($i = 0; $i < count($contacts); $i++)
+      								<p class="card-text"><b>{{$contacts[$i]}}</b>: <a href="mailto:{{$emails[$i]}}">{{$emails[$i]}}</a>; tel. {{$phones[$i]}}</p>
                       @endfor
       							</div>
 	            		</div>

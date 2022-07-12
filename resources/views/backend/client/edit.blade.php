@@ -230,12 +230,12 @@
                     $phones = json_decode($client->phones);
                     $contacts = json_decode($client->contacts);
                     @endphp
-                    @for ($i = 0; $i < count($emails); $i++)
+                    @for ($i = 0; $i < count($contacts); $i++)
                     <div class="row" id="row{{$i}}">
                       {{-- Contacts name --}}
                       <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('contacts') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Osoba</label>
-                        <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="{{ old('contacts[$i]', $contacts[$i]) }}" />
+                        <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="{{ old('contacts[$i]', $contacts[$i]) }}" readonly/>
                         @if ($errors->has('contacts'))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="contacts-error" class="error text-danger" for="input-contacts">{{ $errors->first('contacts') }}</span>
