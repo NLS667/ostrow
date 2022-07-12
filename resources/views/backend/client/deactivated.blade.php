@@ -114,7 +114,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            var dataTable = $('#clients-table').dataTable({
+            var dataTable = $('#clients-table').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: {

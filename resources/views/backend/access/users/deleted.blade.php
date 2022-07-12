@@ -97,7 +97,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-                var dataTable = $('#users-table').dataTable({
+                var dataTable = $('#users-table').DataTable({
                     processing: true,
                     serverSide: true,
                     ajax: {
