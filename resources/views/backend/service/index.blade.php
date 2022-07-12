@@ -50,8 +50,18 @@
                                 <thead class="transparent-bg">
                                     <tr>
                                         <th></th>
-                                        <th></th>
-                                        <th></th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('client', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Klient']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('models', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'SN']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
                                         <th></th>
                                         <th></th>
                                         <th></th>
