@@ -96,7 +96,7 @@
               </div>
               <div id="advance">
                 <div class="row">
-                  {{-- Deal Advance --}}
+                  {{-- Deal Advance --}} 
                   <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_advance') ? ' has-danger' : '' }}">
                     <label class="bmd-label-floating">Zaliczka</label>
                     <input class="form-control{{ $errors->has('deal_advance') ? ' is-invalid' : '' }}" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old('deal_advance[0]') }}" />
