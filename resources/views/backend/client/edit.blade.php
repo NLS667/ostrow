@@ -245,7 +245,7 @@
                         @endif
                       </div>
                       <div class="col-sm-2">
-                        <button type="button" name="add_contact" id="add_contact" class="btn btn-primary">Dodaj</button>
+                        <button type="button" name="add_contact" id="add_contact" class="btn btn-primary">Dodaj kontakt</button>
                       </div>
                     </div>
                   </div>
