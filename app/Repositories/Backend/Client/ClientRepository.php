@@ -126,18 +126,12 @@ class ClientRepository extends BaseRepository
      */
     public function update($client, $request)
     {
-        \Log::info('updating client');
         $data = $request->except('services');
-        $services = $request->get('services');
-        $tasks = $request->get('tasks');
-        $emails = $request->get('emails');
-        $phones = $request->get('phones');
-        $data['emails'] = json_encode($emails);
-        $data['phones'] = json_encode($phones);
+        $data['emails'] = json_encode($request->get('emails'));
+        $data['phones'] = json_encode($request->get('phones'));
 
         DB::transaction(function () use ($client, $data, $services, $tasks) {
             if ($client->update($data)) {
-                $client->status = isset($data['status']) && $data['status'] == '1' ? 1 : 0;
                 
                 $client->save();
 
