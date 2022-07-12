@@ -49,7 +49,7 @@ class ShowResponse implements Responsable
             $service = Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->first();
             $models = json_decode($service->models);
             for($i=0;$i<count($models);$i++){
-                $model = Model::where('id', ($models[$i])->first();
+                $model = Model::where('id', ($models[$i]))->first();
                 $modelObj = (object)[
                     'name' => $model->name,
                     'serial_number' => $model->serial_number,
