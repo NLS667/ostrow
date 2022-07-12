@@ -132,11 +132,11 @@ class ClientRepository extends BaseRepository
         $tasks = $request->get('tasks');
         $emails = $request->get('emails');
         $phones = $request->get('phones');
-        \Log::info($emails);
+        \Log::info(json_encode($data));
         $data->emails = json_encode($emails);
         $data->phones = json_encode($phones);
         \Log::info($data->emails);
-        
+
         DB::transaction(function () use ($client, $data, $services, $tasks) {
             if ($client->update($data)) {
                 $client->status = isset($data['status']) && $data['status'] == '1' ? 1 : 0;
