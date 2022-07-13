@@ -77,7 +77,7 @@ export default {
             textColor: 'black'
           },
           eventResize: function(e) {
-            alert(e.event.title + " end is now " + e.event.end.toISOString());
+            alert(e.event.title + " end is now " + e.event.end);
 
             if (!confirm("is this okay?")) {
               e.revert();
