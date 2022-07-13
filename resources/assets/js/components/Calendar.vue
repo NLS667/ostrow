@@ -79,6 +79,11 @@ export default {
           eventResize: function(e) {
             alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
 
+            let updatedEventData = {
+              start: e.event.start,
+              end: e.event.end
+            }
+
             if (!confirm("Na pewno?")) {
               e.revert();
             }
@@ -86,9 +91,19 @@ export default {
           eventDrop: function(e) {
             alert("Zadanie " + e.event.title + " zacznie się " + e.event.start);
 
+            let updatedEventData = {
+              start: e.event.start,
+              end: e.event.end
+            }
+
             if (!confirm("Na pewno?")) {
               e.revert();
+
             }
+          },
+          eventClick: function (e) {
+            this.current_task = e.event
+            this.show_task_details_modal = true
           }
         }
       }
