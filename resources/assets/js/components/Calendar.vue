@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FullCalendar :options="calendarOptions" @eventClick="handleEventClick" @eventResize="eventResize" />
+    <FullCalendar :options="calendarOptions" />
     <show-task-modal :show="show_task_details_modal" :event="current_task" @close="show_task_details_modal = false" />
   </div>
 </template>
@@ -76,18 +76,7 @@ export default {
             color: 'yellow',
             textColor: 'black'
           },
-          eventResize: function(e) {
-            alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
-            
-            let updatedEventData = {
-              start: e.event.start,
-              end: e.event.end
-            }
-
-            if (!confirm("Na pewno?")) {
-              e.revert();
-            }
-          },
+          eventResize: this.handleEventResize,
           eventDrop: this.handleEventDrop,
           eventClick: this.handleEventClick
         }
