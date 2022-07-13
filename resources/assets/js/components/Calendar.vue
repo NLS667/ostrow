@@ -79,7 +79,7 @@ export default {
           eventResize: function(e) {
             alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
 
-            let updatedEventData = {
+            let updatedTaskData = {
               start: e.event.start,
               end: e.event.end
             }
@@ -91,7 +91,7 @@ export default {
           eventDrop: function(e) {
             alert("Zadanie " + e.event.title + " zacznie się " + e.event.start);
 
-            let updatedEventData = {
+            let updatedTaskData = {
               start: e.event.start,
               end: e.event.end
             }
@@ -102,7 +102,7 @@ export default {
             }
           },
           eventClick: function (e) {
-            alert('this: ' + this.show_task_details_modal);
+            alert('this: ' + this[data].current_task);
             this.current_task = e.event
             this.show_task_details_modal = true
           }
