@@ -101,16 +101,13 @@ export default {
 
             }
           },
-          eventClick: function (e) {
-            alert('this: ' + this.data.current_task);
-            this.current_task = e.event
-            this.show_task_details_modal = true
-          }
+          eventClick: this.handleEventClick
         }
       }
     },
     methods: {
         handleEventClick(e) {
+            alert('this: ' + this.current_task);
             this.current_task = e.event
             this.show_task_details_modal = true
         },
