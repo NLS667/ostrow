@@ -76,48 +76,30 @@ export default {
             color: 'yellow',
             textColor: 'black'
           },
-          eventResize: function(e) {
-            alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
-
-            let updatedTaskData = {
-              start: e.event.start,
-              end: e.event.end
-            }
-
-            if (!confirm("Na pewno?")) {
-              e.revert();
-            }
-          },
-          eventDrop: function(e) {
-            alert("Zadanie " + e.event.title + " zacznie się " + e.event.start);
-
-            let updatedTaskData = {
-              start: e.event.start,
-              end: e.event.end
-            }
-
-            if (!confirm("Na pewno?")) {
-              e.revert();
-
-            }
-          },
+          eventResize: this.handleEventResize,
+          eventDrop: this.handleEventDrop,
           eventClick: this.handleEventClick
         }
       }
     },
     methods: {
         handleEventClick(e) {
-            alert('this: ' + this.current_task);
             this.current_task = e.event
             this.show_task_details_modal = true
         },
-
-        eventResize(e) {
+        handleEventResize(e) {
+          alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
+          
           let updatedEventData = {
             start: e.event.start,
             end: e.event.end
           }
 
+          if (!confirm("Na pewno?")) {
+            e.revert();
+          }
+
+          /*
           this.$api.appointments.update(e.event.id, updatedEventData)
             .then( ({data}) => {
               new Noty({
@@ -134,8 +116,21 @@ export default {
                 type: 'error'
               }).show()
             })
+            */
         },
+        handleEventDrop(e) {
+          alert("Zadanie " + e.event.title + " zacznie się " + e.event.start);
 
+            let updatedTaskData = {
+              start: e.event.start,
+              end: e.event.end
+            }
+
+            if (!confirm("Na pewno?")) {
+              e.revert();
+
+            }
+        },
         formatDate(date) {
           return moment.utc(date).format('DD/MM/YY HH:mm')
         },
