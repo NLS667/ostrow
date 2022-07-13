@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FullCalendar :options="calendarOptions" @eventClick="handleEventClick" />
+    <FullCalendar :options="calendarOptions" @eventClick="handleEventClick" @eventResize="eventResize" />
     <show-task-modal :show="show_task_details_modal" :event="current_task" @close="show_task_details_modal = false" />
   </div>
 </template>
@@ -83,6 +83,30 @@ export default {
         handleEventClick(e) {
             this.current_task = e.event
             this.show_task_details_modal = true
+        },
+
+        eventResize(e) {
+          let updatedEventData = {
+            start: e.event.start,
+            end: e.event.end
+          }
+          
+          this.$api.appointments.update(e.event.id, updatedEventData)
+            .then( ({data}) => {
+              new Noty({
+                text: `Appointment duration updated.`,
+                timeout: 1000,
+                type: 'success'
+              }).show()
+            })
+            .catch( error => {
+              e.revert()
+              new Noty({
+                text: `Oooops, couldn't update appointment duration. Sorry.`,
+                timeout: 1000,
+                type: 'error'
+              }).show()
+            })
         },
 
         formatDate(date) {
