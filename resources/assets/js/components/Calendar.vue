@@ -76,11 +76,11 @@ export default {
             color: 'yellow',
             textColor: 'black'
           },
-          eventResize: function(event) {
-            alert(info.event.title + " end is now " + info.event.end.toISOString());
+          eventResize: function(e) {
+            alert(e.event.title + " end is now " + e.event.end.toISOString());
 
             if (!confirm("is this okay?")) {
-              info.revert();
+              e.revert();
             }
           }
         }
