@@ -54,6 +54,7 @@ export default {
           },
           initialView: 'dayGridMonth',
           weekends: true,
+          editable: true,
           dayMaxEventRows: true,
           views: {
             timeGrid: {
