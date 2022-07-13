@@ -76,6 +76,13 @@ export default {
             color: 'yellow',
             textColor: 'black'
           },
+          eventResize: function(event) {
+            alert(info.event.title + " end is now " + info.event.end.toISOString());
+
+            if (!confirm("is this okay?")) {
+              info.revert();
+            }
+          }
         }
       }
     },
@@ -90,7 +97,7 @@ export default {
             start: e.event.start,
             end: e.event.end
           }
-          
+
           this.$api.appointments.update(e.event.id, updatedEventData)
             .then( ({data}) => {
               new Noty({
