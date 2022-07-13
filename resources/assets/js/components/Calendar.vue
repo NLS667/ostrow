@@ -98,25 +98,6 @@ export default {
           if (!confirm("Na pewno?")) {
             e.revert();
           }
-
-          /*
-          this.$api.appointments.update(e.event.id, updatedEventData)
-            .then( ({data}) => {
-              new Noty({
-                text: `Appointment duration updated.`,
-                timeout: 1000,
-                type: 'success'
-              }).show()
-            })
-            .catch( error => {
-              e.revert()
-              new Noty({
-                text: `Oooops, couldn't update appointment duration. Sorry.`,
-                timeout: 1000,
-                type: 'error'
-              }).show()
-            })
-            */
         },
         handleEventDrop(e) {
           alert("Zadanie " + e.event.title + " zacznie się " + e.event.start);
