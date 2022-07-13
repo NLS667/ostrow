@@ -76,7 +76,18 @@ export default {
             color: 'yellow',
             textColor: 'black'
           },
-          eventResize: this.handleEventResize,
+          eventResize: function(e) {
+            alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
+            
+            let updatedEventData = {
+              start: e.event.start,
+              end: e.event.end
+            }
+
+            if (!confirm("Na pewno?")) {
+              e.revert();
+            }
+          },
           eventDrop: this.handleEventDrop,
           eventClick: this.handleEventClick
         }
@@ -86,18 +97,6 @@ export default {
         handleEventClick(e) {
             this.current_task = e.event
             this.show_task_details_modal = true
-        },
-        handleEventResize(e) {
-          alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
-          
-          let updatedEventData = {
-            start: e.event.start,
-            end: e.event.end
-          }
-
-          if (!confirm("Na pewno?")) {
-            e.revert();
-          }
         },
         handleEventDrop(e) {
           alert("Zadanie " + e.event.title + " zacznie się " + e.event.start);
