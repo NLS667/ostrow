@@ -103,7 +103,8 @@ export default {
           },
           eventClick: function (e) {
             alert('Event: ' + e.event.title);
-            alert('this: ' + this);
+            alert('this: ' + this.data);
+            alert('data: ' + data);
             this.current_task = e.event
             this.show_task_details_modal = true
           }
