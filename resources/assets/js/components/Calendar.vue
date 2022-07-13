@@ -77,9 +77,16 @@ export default {
             textColor: 'black'
           },
           eventResize: function(e) {
-            alert(e.event.title + " end is now " + e.event.end);
+            alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
 
-            if (!confirm("is this okay?")) {
+            if (!confirm("Na pewno?")) {
+              e.revert();
+            }
+          },
+          eventDrop: function(e) {
+            alert("Zadanie " + e.event.title + " zacznie się " + e.event.start);
+
+            if (!confirm("Na pewno?")) {
               e.revert();
             }
           }
