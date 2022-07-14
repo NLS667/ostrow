@@ -33,7 +33,7 @@
 		            <!-- Modal footer -->
 		            <div class="modal-footer">
 		                <button type="button" class="btn btn-danger" @click="closeModal" data-dismiss="modal">Zamknij</button>
-		                <a v-bind:href='/task/' + task.publicId + '/edit' class="btn btn-info" data-dismiss="modal">Przejdź do edycji</a>
+		                <a v-bind:href="'/task/' + task.publicId + '/edit'" class="btn btn-info" data-dismiss="modal">Przejdź do edycji</a>
 		            </div>
 
 		        </div>
