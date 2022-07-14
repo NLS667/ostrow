@@ -70,7 +70,8 @@ export default{
 	        },
 
 	        formatDate(date, format = 'DD/MM/YYYY HH:mm') {
-	            return moment.utc(date).tz("Europe/Warsaw").format(format)
+	        	var d = moment.tz(date, "Europe/Warsaw");
+	            return d.format(format)
 	        }
 
 	    },
