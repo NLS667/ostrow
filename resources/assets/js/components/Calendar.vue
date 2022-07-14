@@ -1,7 +1,7 @@
 <template>
   <div>
     <FullCalendar :options="calendarOptions" />
-    <show-task-modal :show="show_task_details_modal" :task="current_task" @close="show_task_details_modal = false" />
+    <show-task-modal :show="show_task_details_modal" :task="current_task" :client="task_client_id" @close="show_task_details_modal = false" />
   </div>
 </template>
 
@@ -33,6 +33,7 @@ export default {
       return {
         task_detail_modal_open: false,
         current_task: null,
+        task_client_id: null,
         show_task_details_modal: false,
 
         /* Full Calendar Options Start */     
@@ -85,6 +86,7 @@ export default {
     methods: {
         handleEventClick(e) {
             this.current_task = e.event
+            this.task_client_id = e.event.extendedProps.service.client_id;
             this.show_task_details_modal = true
         },
         handleEventDrop(e) {

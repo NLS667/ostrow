@@ -51,14 +51,14 @@
 
 <script>
 export default{
-	props: ['show', 'task'],
+	props: ['show', 'task', 'client'],
 	    data: () => ({
 	        event: {
 	            title: null,
 	            assignee: 'nobody',
 	            note: null
 	        },
-	        client: []
+	        service: []
 	    }),
 
 	    methods: {
