@@ -31,7 +31,7 @@
 		                            <strong>Zespół:</strong> {{ task.extendedProps.team }}
 		                        </li>
 		                        <li class="list-group-item">
-		                            <strong>Uwagi:</strong> {{  }}
+		                            <strong>Uwagi:</strong> {{ task.extendedProps.note }}
 		                        </li>
 		                	</ul>
 		                </div>
@@ -85,7 +85,7 @@ export default{
 	        // I absctracted my API calls, this would be the same as:
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
-	        
+
 	        axios.post('/admin/client/getinfo', { params: { clientId: this.client } })
 	            .then(({
 	                data
