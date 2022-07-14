@@ -92,9 +92,14 @@ export default {
             end: e.event.end
           }
 
-          if (!confirm("Na pewno?")) {
-            e.revert();
-          }
+          axios.post('/admin/task/updateDates', { params: { data: updatedEventData } })
+            .then( ({data}) => {
+              
+            })
+            .catch( error => {
+              e.revert()
+              
+            })
         },
         handleEventClick(e) {
             this.current_task = e.event
