@@ -119,7 +119,8 @@ export default {
             axios.post('/admin/task/updateDates', { data: updatedEventData })
             .then( ({data}) => {
               Swal.fire({
-                  title: "Zadanie " + e.event.title + " zacznie się " + e.event.start,
+                  title: "Zmiana daty",
+                  text: "Zadanie " + e.event.title + " zacznie się " + this.formatDate(e.event.start, 'DD/MM/YYYY HH:mm'),
                   type: "info",
                   showCancelButton: false,
                   confirmButtonColor: "#3C8DBC",
