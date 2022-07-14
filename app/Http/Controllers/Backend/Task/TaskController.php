@@ -156,8 +156,9 @@ class TaskController extends Controller
         return response()->json($tasks);
     }
 
-    public function updateDates(UpdateTaskRequest $request)
-    {   
+    public function updateDates(Request $request)
+    { 
+        \Log::info(json_encode($request));  
         $taskId = $request->get('id');
 
         $taskToUpdate = Task::where('id', $taskId)->get();
