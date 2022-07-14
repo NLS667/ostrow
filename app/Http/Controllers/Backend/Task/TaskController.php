@@ -141,9 +141,12 @@ class TaskController extends Controller
         if (auth()->user()->isAdmin()) {
           $tasks = Task::whereBetween('start', [$request->start, $request->end])
                   ->with('assignee:id,first_name,last_name')
+                  ->with('service:id,extra_info')
                   ->get();
         } else {
           $tasks = Task::whereBetween('start', [$request->start, $request->end])
+                  ->with('assignee:id,first_name,last_name')
+                  ->with('service:id,extra_info')
                   ->where('assignee_id', auth()->user()->id)
                   ->get();
         }
