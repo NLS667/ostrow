@@ -20,7 +20,7 @@ trait TaskRelationship
     }
 
     public function client() {
-      \LOG::info(json_encode($this->service));
+      \Log::info(json_encode($this->service));
       return $this->belongsTo(Client::class, $this->service->client_id, 'id');
     }
 }
