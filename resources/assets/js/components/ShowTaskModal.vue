@@ -85,7 +85,7 @@ export default{
 	        // I absctracted my API calls, this would be the same as:
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
-	        axios.get('/admin/services/get')
+	        axios.get('/admin/service/get')
 	            .then(({
 	                data
 	            }) => {
