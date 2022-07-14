@@ -93,7 +93,7 @@ export default {
             end: e.event.end
           }
 
-          axios.post('/admin/task/updateDates', { params: { data: updatedEventData } })
+          axios.post('/admin/task/updateDates', { data: updatedEventData })
             .then( ({data}) => {
               
             })
