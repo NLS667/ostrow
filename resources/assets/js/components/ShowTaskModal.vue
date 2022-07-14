@@ -58,7 +58,7 @@ export default{
 	            assignee: 'nobody',
 	            note: null
 	        },
-	        clientInfo: []
+	        clientInfo: this.client
 	    }),
 
 	    methods: {
@@ -86,7 +86,7 @@ export default{
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
 
-	        axios.post('/admin/client/getinfo', { params: { clientId: this.client } })
+	        axios.post('/admin/client/getinfo', { params: { clientId: this.$prop.client } })
 	            .then(({
 	                data
 	            }) => {
