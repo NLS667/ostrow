@@ -142,12 +142,14 @@ class TaskController extends Controller
           $tasks = Task::whereBetween('start', [$request->start, $request->end])
                   ->with('assignee:id,first_name,last_name')
                   ->with('service:id,client_id')
+                  ->with('client:id')
                   ->get();
         } else {
           $tasks = Task::whereBetween('start', [$request->start, $request->end])
+                  ->where('assignee_id', auth()->user()->id)
                   ->with('assignee:id,first_name,last_name')
                   ->with('service:id,client_id')
-                  ->where('assignee_id', auth()->user()->id)
+                  ->with('client:id')
                   ->get();
         }
 
