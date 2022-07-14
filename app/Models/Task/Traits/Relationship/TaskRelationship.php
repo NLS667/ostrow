@@ -18,9 +18,4 @@ trait TaskRelationship
     public function service() {
       return $this->belongsTo(Service::class, 'service_id', 'id');
     }
-
-    public function client() {
-
-      return $this->hasOneThrough(Client::class, Service::class, 'client_id', 'service_id', 'id', 'id');
-    }
 }
