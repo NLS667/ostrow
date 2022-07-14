@@ -19,6 +19,11 @@
             Route::resource('task', TaskController::class);
 
             /*
+             * For Calendar
+             */
+            Route::post('task/updateDates', [\App\Http\Controllers\Backend\Task\TaskController::class, 'updateDates'])->name('task.updateDates');
+
+            /*
              * Specific Task
              */
             Route::group(['prefix' => 'task/{task}'], function () {

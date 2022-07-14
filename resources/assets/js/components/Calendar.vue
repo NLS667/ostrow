@@ -88,6 +88,7 @@ export default {
           alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
           
           let updatedEventData = {
+            id: e.event.id,
             start: e.event.start,
             end: e.event.end
           }
