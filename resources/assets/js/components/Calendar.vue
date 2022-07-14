@@ -85,8 +85,6 @@ export default {
     },
     methods: {        
         handleEventResize(e) {
-          alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
-          
           let updatedEventData = {
             id: e.event.id,
             start: this.formatDate(e.event.start, 'YYYY/MM/DD HH:mm'),
@@ -94,27 +92,27 @@ export default {
           }
 
           axios.post('/admin/task/updateDates', { data: updatedEventData })
-            .then( ({data}) => {
-              Swal.fire({
-                  title: "Zmiana daty",
-                  text: "Zadanie " + e.event.title + " zacznie się " + this.formatDate(e.event.start, 'DD/MM/YYYY HH:mm'),
-                  type: "info",
-                  showCancelButton: false,
-                  confirmButtonColor: "#3C8DBC",
-                  confirmButtonText: "OK"
-              })
+          .then( ({data}) => {
+            Swal.fire({
+              title: "Zmiana daty",
+              text: "Zadanie " + e.event.title + " zacznie się " + this.formatDate(e.event.start, 'DD/MM/YYYY HH:mm'),
+              type: "info",
+              showCancelButton: false,
+              confirmButtonColor: "#3C8DBC",
+              confirmButtonText: "OK"
             })
-            .catch( error => {
-              e.revert()
-              Swal.fire({
-                  title: "Błąd",
-                  text: "Nie udalo się zmienić daty zadania",
-                  type: "error",
-                  showCancelButton: false,
-                  confirmButtonColor: "#3C8DBC",
-                  confirmButtonText: "OK"
-              })
+          })
+          .catch( error => {
+            e.revert()
+            Swal.fire({
+              title: "Błąd",
+              text: "Nie udalo się zmienić daty zadania",
+              type: "error",
+              showCancelButton: false,
+              confirmButtonColor: "#3C8DBC",
+              confirmButtonText: "OK"
             })
+          })
         },
         handleEventClick(e) {
             this.current_task = e.event
@@ -122,36 +120,34 @@ export default {
             this.show_task_details_modal = true
         },
         handleEventDrop(e) {
-          alert("Zadanie " + e.event.title + " zacznie się " + e.event.start);
+          let updatedEventData = {
+            id: e.event.id,
+            start: this.formatDate(e.event.start, 'YYYY/MM/DD HH:mm'),
+            end: this.formatDate(e.event.end, 'YYYY/MM/DD HH:mm')
+          }
 
-            let updatedEventData = {
-              id: e.event.id,
-              start: this.formatDate(e.event.start, 'YYYY/MM/DD HH:mm'),
-              end: this.formatDate(e.event.end, 'YYYY/MM/DD HH:mm')
-            }
-
-            axios.post('/admin/task/updateDates', { data: updatedEventData })
-            .then( ({data}) => {
-              Swal.fire({
-                  title: "Zmiana daty",
-                  text: "Zadanie " + e.event.title + " zacznie się " + this.formatDate(e.event.start, 'DD/MM/YYYY HH:mm'),
-                  type: "info",
-                  showCancelButton: false,
-                  confirmButtonColor: "#3C8DBC",
-                  confirmButtonText: "OK"
-              })
+          axios.post('/admin/task/updateDates', { data: updatedEventData })
+          .then( ({data}) => {
+            Swal.fire({
+              title: "Zmiana daty",
+              text: "Zadanie " + e.event.title + " zacznie się " + this.formatDate(e.event.start, 'DD/MM/YYYY HH:mm'),
+              type: "info",
+              showCancelButton: false,
+              confirmButtonColor: "#3C8DBC",
+              confirmButtonText: "OK"
             })
-            .catch( error => {
-              e.revert()
-              Swal.fire({
-                  title: "Błąd",
-                  text: "Nie udalo się zmienić daty zadania",
-                  type: "error",
-                  showCancelButton: false,
-                  confirmButtonColor: "#3C8DBC",
-                  confirmButtonText: "OK"
-              })
+          })
+          .catch( error => {
+            e.revert()
+            Swal.fire({
+              title: "Błąd",
+              text: "Nie udalo się zmienić daty zadania",
+              type: "error",
+              showCancelButton: false,
+              confirmButtonColor: "#3C8DBC",
+              confirmButtonText: "OK"
             })
+          })
         },
         formatDate(date, format = 'DD/MM/YYYY HH:mm') {
           return moment(date).format(format)
