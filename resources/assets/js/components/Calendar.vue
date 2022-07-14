@@ -125,6 +125,9 @@ export default {
                   cancelButtonText: "Anuluj",
                   confirmButtonColor: "#3C8DBC",
                   confirmButtonText: "OK"
+              }, function(confirmed) {
+                  if (!confirmed)
+                      e.revert()
               });
             })
             .catch( error => {
