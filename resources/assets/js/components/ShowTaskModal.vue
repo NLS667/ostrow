@@ -52,40 +52,38 @@
 <script>
 export default{
 	props: ['show', 'task', 'client'],
-	    data: () => ({
-	        clientInfo: this.client
-	    }),
+	data() {
+		return {
+		    clientInfo: this.client
+		}
+	},
 
-	    methods: {
-	        closeModal() {
-	            this.$emit('close')
-	        },
-
-	        formatDate(date, format = 'DD/MM/YYYY HH:mm') {
-	            return moment(date).format(format)
-	        }
-
+	methods: {
+	    closeModal() {
+	        this.$emit('close')
 	    },
-	    computed: {
-	    	clientID() {
-		      return this.client
-		    }
-	    },
-	    mounted() {
-	        // I absctracted my API calls, this would be the same as:
-	        // axios.get('/users').then( .... ) ...
-	        //this.$api.services.index()
 
-	        axios.post('/admin/client/getinfo', { params: { clientId: this.clientID() } })
-	            .then(({
-	                data
-	            }) => {
-	                this.clientInfo = data
-	            })
-	            .catch(error => {
+	    formatDate(date, format = 'DD/MM/YYYY HH:mm') {
+	        return moment(date).format(format)
+	    }
+	},
+	computed: {
+	    clientID() {
+		    return this.client
+		}
+	},
+	mounted() {
+	    
+	    axios.post('/admin/client/getinfo', { params: { clientId: this.clientID() } })
+	        .then(({
+	            data
+	        }) => {
+	            this.clientInfo = data
+	        })
+	        .catch(error => {
 	                this.clientInfo = []
 	                this.event.assignee = null
-	           })
-	    }
+	    })
 	}
+}
 </script>
