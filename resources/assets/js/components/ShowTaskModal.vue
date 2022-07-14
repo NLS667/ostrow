@@ -58,7 +58,7 @@ export default{
 	            assignee: 'nobody',
 	            note: null
 	        },
-	        clients: []
+	        client: []
 	    }),
 
 	    methods: {
@@ -85,14 +85,14 @@ export default{
 	        // I absctracted my API calls, this would be the same as:
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
-	        axios.get('/admin/client/getlist')
+	        axios.get('/admin/client/getlist', { params: { clientId: task.extendedProps.service.client_id } })
 	            .then(({
 	                data
 	            }) => {
-	                this.clients = data
+	                this.client = data
 	            })
 	            .catch(error => {
-	                this.clients = []
+	                this.client = []
 	                this.event.assignee = null
 	           })
 	    }
