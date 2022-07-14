@@ -17,7 +17,6 @@
 		                	<ul class="list-group list-group-flush">
 		                		<li class="list-group-item">
 		                            <i class="material-icons">event</i>
-		                            {{ formatDate(date.start) }}
 		                        </li>
 		                	</ul>
 		                </div>
