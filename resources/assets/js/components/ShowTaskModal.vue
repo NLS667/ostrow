@@ -31,9 +31,9 @@
 		                </div>
 		            </div>
 		            <!-- Modal footer -->
-		            <div class="modal-footer">
+		            <div class="modal-footer" :id="{{ task.publicId }}">
 		                <button type="button" class="btn btn-danger" @click="closeModal" data-dismiss="modal">Zamknij</button>
-		                <a v-bind:href="'/admin/task/' + {{ task.publicId }} + '/edit'" class="btn btn-info" data-dismiss="modal">Przejdź do edycji</a>
+		                <a v-bind:href="'/admin/task/' + id + '/edit'" class="btn btn-info" data-dismiss="modal">Przejdź do edycji</a>
 		            </div>
 
 		        </div>
