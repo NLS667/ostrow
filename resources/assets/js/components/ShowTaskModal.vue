@@ -19,7 +19,7 @@
 		                            <strong>Adres Montażu:</strong> {{  }}
 		                        </li>
 		                		<li class="list-group-item">
-		                            <strong>Data rozpoczęcia:</strong> {{ formatDate(task.start) }}
+		                            <strong>Data rozpoczęcia:</strong> {{ task.start }}
 		                        </li>
 		                        <li class="list-group-item">
 		                            <strong>Data zakończenia:</strong> {{ formatDate(task.end) }}
