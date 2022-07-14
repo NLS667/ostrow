@@ -71,19 +71,6 @@ export default{
 	    clientID() {
 		    return this.client
 		}
-	},
-	mounted() {
-	    
-	    axios.post('/admin/client/getinfo', { params: { clientId: clientID } })
-	        .then(({
-	            data
-	        }) => {
-	            this.clientInfo = data
-	        })
-	        .catch(error => {
-	                this.clientInfo = []
-	                this.event.assignee = null
-	    })
 	}
 }
 </script>
