@@ -100,8 +100,8 @@ export default {
 
             }
         },
-        formatDate(date) {
-          return moment.utc(date).format('DD/MM/YY HH:mm')
+        formatDate(date, format = 'DD/MM/YYYY HH:mm') {
+          return moment(date).format(format)
         },
 
         rerenderCalendar() {
