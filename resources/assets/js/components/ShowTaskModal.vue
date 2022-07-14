@@ -24,7 +24,6 @@
 		            <!-- Modal footer -->
 		            <div class="modal-footer">
 		                <button type="button" class="btn btn-danger" @click="closeModal" data-dismiss="modal">Zamknij</button>
-		                <button type="button" class="btn btn-success" @click="saveTask" :disabled="!validTaskData">Zapisz</button>
 		            </div>
 		        </div>
 		    </div>
