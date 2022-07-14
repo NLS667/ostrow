@@ -124,7 +124,7 @@ export default {
                   showCancelButton: false,
                   confirmButtonColor: "#3C8DBC",
                   confirmButtonText: "OK"
-              };
+              })
             })
             .catch( error => {
               e.revert()
