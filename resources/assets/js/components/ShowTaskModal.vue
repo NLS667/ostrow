@@ -16,7 +16,14 @@
 		                <div class="p-2">
 		                	<ul class="list-group list-group-flush">
 		                		<li class="list-group-item">
-		                            <i class="material-icons">event</i>{{ task.title }}
+		                            <h4>{{ task.title }}</h4>
+		                        </li>
+		                        <li class="list-group-item">
+		                            <i class="material-icons">event</i>
+		                            {{ formatDate(task.start) }}
+		                        </li>
+		                        <li class="list-group-item">
+		                            {{ formatDate(task.service_id) }}
 		                        </li>
 		                	</ul>
 		                </div>
