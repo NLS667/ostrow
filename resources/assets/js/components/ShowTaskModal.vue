@@ -70,7 +70,7 @@ export default{
 	        },
 
 	        formatDate(date, format = 'DD/MM/YYYY HH:mm') {
-	            return moment.tz(date, "Europe\Warsaw").format(format)
+	            return moment(date).format(format)
 	        }
 
 	    },
