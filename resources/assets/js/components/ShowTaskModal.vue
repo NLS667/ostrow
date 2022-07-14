@@ -34,7 +34,7 @@
 
 <script>
 export default{
-	props: ['show', 'event'],
+	props: ['show', 'task'],
 	    data: () => ({
 	        event: {
 	            title: null,

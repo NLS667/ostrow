@@ -1,7 +1,7 @@
 <template>
   <div>
     <FullCalendar :options="calendarOptions" />
-    <show-task-modal :show="show_task_details_modal" :event="current_task" @close="show_task_details_modal = false" />
+    <show-task-modal :show="show_task_details_modal" :task="current_task" @close="show_task_details_modal = false" />
   </div>
 </template>
 
