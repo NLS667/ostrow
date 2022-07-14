@@ -19,7 +19,7 @@
 		                            <strong>Adres Montażu:</strong> {{  }}
 		                        </li>
 		                		<li class="list-group-item">
-		                            <strong>Data rozpoczęcia:</strong> {{ task.start }}
+		                            <strong>Data rozpoczęcia:</strong> {{ formatDate(task.start) }}
 		                        </li>
 		                        <li class="list-group-item">
 		                            <strong>Data zakończenia:</strong> {{ formatDate(task.end) }}
@@ -70,8 +70,7 @@ export default{
 	        },
 
 	        formatDate(date, format = 'DD/MM/YYYY HH:mm') {
-	        	var d = moment.tz(date, "Europe/Warsaw");
-	            return d.format(format)
+	            return moment.tz(date, "Europe\Warsaw").format(format)
 	        }
 
 	    },
