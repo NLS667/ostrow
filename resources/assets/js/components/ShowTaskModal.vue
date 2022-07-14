@@ -18,8 +18,14 @@
 		                		<li class="list-group-item">
 		                            <strong>Data rozpoczęcia:</strong> {{ formatDate(task.start) }}
 		                        </li>
-		                         <li class="list-group-item">
+		                        <li class="list-group-item">
+		                            <strong>Data zakończenia:</strong> {{ formatDate(task.end) }}
+		                        </li>
+		                        <li class="list-group-item">
 		                            <strong>Przydzielony pracownik:</strong> {{ task.extendedProps.assignee.first_name }} {{ task.extendedProps.assignee.last_name }}
+		                        </li>
+		                        <li class="list-group-item">
+		                            <strong>Zespół:</strong> {{ task.extendedProps.team }}
 		                        </li>
 		                	</ul>
 		                </div>
@@ -27,7 +33,9 @@
 		            <!-- Modal footer -->
 		            <div class="modal-footer">
 		                <button type="button" class="btn btn-danger" @click="closeModal" data-dismiss="modal">Zamknij</button>
+		                <a type="button" href=""class="btn btn-info" data-dismiss="modal">Przejdź do edycji</a>
 		            </div>
+
 		        </div>
 		    </div>
 		</div>
