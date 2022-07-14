@@ -23,7 +23,7 @@
 		                            {{ formatDate(task.start) }}
 		                        </li>
 		                        <li class="list-group-item">
-		                            {{ formatDate(task.service_id) }}
+		                            {{ task.service_id }}
 		                        </li>
 		                	</ul>
 		                </div>
@@ -59,7 +59,7 @@ export default{
 	            this.$emit('close')
 	        },
 
-	        formatDate(date, format = 'DD/MM/YY HH:mm') {
+	        formatDate(date, format = 'DD/MM/YYYY HH:mm') {
 	            return moment.utc(date).format(format)
 	        }
 
