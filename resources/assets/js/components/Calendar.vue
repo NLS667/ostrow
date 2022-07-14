@@ -89,8 +89,8 @@ export default {
           
           let updatedEventData = {
             id: e.event.id,
-            start: e.event.start,
-            end: e.event.end
+            start: formatDate(e.event.start),
+            end: formatDate(e.event.end)
           }
 
           axios.post('/admin/task/updateDates', { data: updatedEventData })
