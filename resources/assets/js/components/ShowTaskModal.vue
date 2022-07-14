@@ -5,7 +5,7 @@
 		        <div class="modal-content">
 		            <!-- Modal Header -->
 		            <div class="modal-header">
-		                <h4 class="modal-title">Opis Zadania</h4>
+		                <h4 class="modal-title" id="ShowTaskModal">Opis Zadania</h4>
 		                <button type="button" class="close" @click="closeModal" aria-label="Close">
 		                	<span aria-hidden="true">×</span>
 		                </button>
