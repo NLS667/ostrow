@@ -22,7 +22,7 @@
 		                            <strong>Przydzielony pracownik:</strong> {{ task.extendedProps.assignee.first_name  task.extendedProps.assignee.last_name}}
 		                        </li>
 		                        <li class="list-group-item">
-		                            <strong>Przydzielony pracownik:</strong> {{ task.extendedProps.assignee.first_name  task.extendedProps.assignee.last_name}}
+		                            <strong>Przydzielony pracownik:</strong> {{ task.extendedProps.assignee.first_name }} {{ task.extendedProps.assignee.last_name }}
 		                        </li>
 		                	</ul>
 		                </div>
