@@ -134,7 +134,7 @@ export default {
                   showCancelButton: false,
                   confirmButtonColor: "#3C8DBC",
                   confirmButtonText: "OK"
-              });
+              })
             })
         },
         formatDate(date, format = 'DD/MM/YYYY HH:mm') {
