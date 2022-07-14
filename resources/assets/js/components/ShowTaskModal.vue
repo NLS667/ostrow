@@ -54,11 +54,11 @@ export default{
 	props: ['show', 'task'],
 	    data: () => ({
 	        event: {
-	            title: null,
+	            title: task.title,
 	            assignee: 'nobody',
 	            note: null
 	        },
-	        services: []
+	        clients: []
 	    }),
 
 	    methods: {
@@ -85,14 +85,14 @@ export default{
 	        // I absctracted my API calls, this would be the same as:
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
-	        axios.get('/admin/service/getlist')
+	        axios.get('/admin/client/getlist')
 	            .then(({
 	                data
 	            }) => {
-	                this.services = data
+	                this.clients = data
 	            })
 	            .catch(error => {
-	                this.services = []
+	                this.clients = []
 	                this.event.assignee = null
 	           })
 	    }
