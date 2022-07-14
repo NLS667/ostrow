@@ -85,7 +85,7 @@ export default{
 	        // I absctracted my API calls, this would be the same as:
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
-	        console.log(this);
+	        
 	        axios.post('/admin/client/getinfo', { params: { clientId: this.client } })
 	            .then(({
 	                data
@@ -93,7 +93,7 @@ export default{
 	                this.clientInfo = data
 	            })
 	            .catch(error => {
-	                this.client = []
+	                this.clientInfo = []
 	                this.event.assignee = null
 	           })
 	    }

@@ -164,7 +164,7 @@ class ClientController extends Controller
     public function getInfo(Request $request)
     {
         $id = $request->get('clientId');
-        $client = $this->clients->query()->where('id', $id)->get();
+        $client = $this->clients->query()->where('id', $id)->first();
         return json_encode($client);
     }
 }
