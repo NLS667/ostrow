@@ -66,13 +66,17 @@ export default{
 	        }
 
 	    },
-
+	    computed: {
+	    	clientID() {
+		      return this.client
+		    }
+	    },
 	    mounted() {
 	        // I absctracted my API calls, this would be the same as:
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
 
-	        axios.post('/admin/client/getinfo', { params: { clientId: this.client } })
+	        axios.post('/admin/client/getinfo', { params: { clientId: this.clientID() } })
 	            .then(({
 	                data
 	            }) => {
