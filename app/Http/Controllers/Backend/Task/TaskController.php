@@ -158,8 +158,8 @@ class TaskController extends Controller
 
     public function updateDates(Request $request)
     { 
-        $data = $request->data;
-        $taskToUpdate = $this->tasks->find($data->id);
+        $data = $request->all();
+        //$taskToUpdate = $this->tasks->find($data->id);
 
         \Log::info(json_encode($data));
 
