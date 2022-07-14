@@ -18,9 +18,4 @@ trait TaskRelationship
     public function service() {
       return $this->belongsTo(Service::class, 'service_id', 'id');
     }
-
-    public function client() {
-      \Log::info(json_encode($this->service));
-      return $this->belongsTo(Client::class, $this->service->client_id, 'id');
-    }
 }
