@@ -161,8 +161,7 @@ class TaskController extends Controller
         $data = $request->all();
         $taskToUpdate = $this->tasks->find($data['data']['id']);
 
-        $this->tasks->update($taskToUpdate, $data['data']['start']);
-        $this->tasks->update($taskToUpdate, $data['data']['end']);
+        $this->tasks->update($taskToUpdate, $data);
 
         return true;
     }
