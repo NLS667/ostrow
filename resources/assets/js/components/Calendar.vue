@@ -118,11 +118,25 @@ export default {
 
             axios.post('/admin/task/updateDates', { data: updatedEventData })
             .then( ({data}) => {
-              
+              Swal.fire({
+                  title: "Zadanie " + e.event.title + " zacznie się " + e.event.start,
+                  type: "info",
+                  showCancelButton: true,
+                  cancelButtonText: "Anuluj",
+                  confirmButtonColor: "#3C8DBC",
+                  confirmButtonText: "OK"
+              });
             })
             .catch( error => {
               e.revert()
-              
+              Swal.fire({
+                  title: "Nie udalo się zmienić daty zadania",
+                  type: "error",
+                  showCancelButton: false,
+                  cancelButtonText: "Anuluj",
+                  confirmButtonColor: "#3C8DBC",
+                  confirmButtonText: "OK"
+              });
             })
         },
         formatDate(date, format = 'DD/MM/YYYY HH:mm') {
