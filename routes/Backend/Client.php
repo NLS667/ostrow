@@ -19,7 +19,7 @@ use UniSharp\LaravelFilemanager\Middlewares\MultiUser;
             /*
              * For Calendar
              */
-            Route::post('client/getlist', [\App\Http\Controllers\Backend\Client\ClientController::class, 'getList'])->name('client.getlist');
+            Route::post('client/getinfo', [\App\Http\Controllers\Backend\Client\ClientController::class, 'getInfo'])->name('client.getinfo');
 
             /*
              * For Geocoding 
