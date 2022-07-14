@@ -58,7 +58,7 @@ export default{
 	            assignee: 'nobody',
 	            note: null
 	        },
-	        service: []
+	        clientInfo: []
 	    }),
 
 	    methods: {
@@ -90,7 +90,7 @@ export default{
 	            .then(({
 	                data
 	            }) => {
-	                this.client = data
+	                this.clientInfo = data
 	            })
 	            .catch(error => {
 	                this.client = []
