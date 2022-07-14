@@ -86,7 +86,7 @@ export default{
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
 	        console.log(this);
-	        axios.post('/admin/client/getinfo', { params: { clientId: 1 } })
+	        axios.post('/admin/client/getinfo', { params: { clientId: this.client } })
 	            .then(({
 	                data
 	            }) => {
