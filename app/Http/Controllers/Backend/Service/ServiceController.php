@@ -135,6 +135,6 @@ class ServiceController extends Controller
 
     public function getList()
     {
-        return $this->services;
+        return json_encode($this->services);
     }
 }
