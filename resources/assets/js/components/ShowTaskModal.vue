@@ -74,7 +74,7 @@ export default{
 	},
 	mounted() {
 	    
-	    axios.post('/admin/client/getinfo', { params: { clientId: this.clientID() } })
+	    axios.post('/admin/client/getinfo', { params: { clientId: this.clientID } })
 	        .then(({
 	            data
 	        }) => {
