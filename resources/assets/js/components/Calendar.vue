@@ -110,15 +110,20 @@ export default {
         handleEventDrop(e) {
           alert("Zadanie " + e.event.title + " zacznie się " + e.event.start);
 
-            let updatedTaskData = {
-              start: e.event.start,
-              end: e.event.end
+            let updatedEventData = {
+              id: e.event.id,
+              start: this.formatDate(e.event.start, 'YYYY/MM/DD HH:mm'),
+              end: this.formatDate(e.event.end, 'YYYY/MM/DD HH:mm')
             }
 
-            if (!confirm("Na pewno?")) {
-              e.revert();
-
-            }
+            axios.post('/admin/task/updateDates', { data: updatedEventData })
+            .then( ({data}) => {
+              
+            })
+            .catch( error => {
+              e.revert()
+              
+            })
         },
         formatDate(date, format = 'DD/MM/YYYY HH:mm') {
           return moment(date).format(format)
