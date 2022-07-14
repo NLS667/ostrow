@@ -161,7 +161,7 @@ class TaskController extends Controller
         \Log::info(json_encode($request));  
         $taskId = $request->get('id');
 
-        $taskToUpdate = Task::where('id', $taskId)->get();
+        $taskToUpdate = $this->tasks->query()->where('client_id', $client->id);
         $this->tasks->update($taskToUpdate, $request->get('start'));
         $this->tasks->update($taskToUpdate, $request->get('end'));
     }
