@@ -20,7 +20,8 @@ trait TaskRelationship
     }
 
     public function client() {
-      $client_id = $this->service->client_id;
+      $service = $this->service->first();
+      $client_id = $service->client_id;
 
       return $this->belongsTo(Client::class, $client_id, 'id');
     }
