@@ -48,7 +48,7 @@
                 {{-- Start Date --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('start') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Data rozpoczęcia zadania</label>
-                  <input class="form-control datetimepicker" name="start" id="input-start" type="text" value="{{ $task->start }}" />
+                  <input class="form-control datetimepicker" name="start" id="input-start" type="text" value="{{ old('start', $task->start) }}" />
                   @if ($errors->has('start'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="start-error" class="error text-danger" for="input-start">{{ $errors->first('start') }}</span>
@@ -59,10 +59,32 @@
                 {{-- End Date --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('end') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Data zakończenia zadania</label>
-                  <input class="form-control datetimepicker" name="end" id="input-end" type="text" value="{{ $task->end }}" />
+                  <input class="form-control datetimepicker" name="end" id="input-end" type="text" value="{{ old('end', $task->end) }}" />
                   @if ($errors->has('end'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="end-error" class="error text-danger" for="input-end">{{ $errors->first('end') }}</span>
+                  @endif
+                </div>
+              </div>
+              <div class="row">
+                {{-- Team --}}
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('team') ? ' has-danger' : '' }}">
+                  <label class="bmd-label-floating">Wyznaczeni współpracownicy</label>
+                  <textarea rows="8" cols="50" class="form-control" name="team" id="input-team" value="{{ old('team', $task->team) }}"></textarea>
+                  @if ($errors->has('team'))
+                  <span class="material-icons form-control-feedback">clear</span>
+                  <span id="team-error" class="error text-danger" for="input-team">{{ $errors->first('team') }}</span>
+                  @endif
+                </div>
+              </div>
+              <div class="row">
+                {{-- Note --}}
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('note') ? ' has-danger' : '' }}">
+                  <label class="bmd-label-floating">Notatki \ Uwagi</label>
+                  <textarea rows="8" cols="50" class="form-control" name="note" id="input-note" value="{{ old('note', $task->note) }}"></textarea>
+                  @if ($errors->has('note'))
+                  <span class="material-icons form-control-feedback">clear</span>
+                  <span id="note-error" class="error text-danger" for="input-note">{{ $errors->first('note') }}</span>
                   @endif
                 </div>
               </div>

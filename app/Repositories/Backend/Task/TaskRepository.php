@@ -211,6 +211,9 @@ class TaskRepository extends BaseRepository
         $task->title = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
         $task->assignee_id = $input['assignee_id'];
 
+        $task->team = $input['team'];
+        $task->note = $input['note'];
+
         $task->start = Carbon::parse($input['start']);
         $enddate = Carbon::parse($input['start']);
         $enddate->addHours(4);
