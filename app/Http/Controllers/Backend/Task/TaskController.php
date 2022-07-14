@@ -162,6 +162,7 @@ class TaskController extends Controller
         $taskToUpdate = $this->tasks->find($data['data']['id']);
 
         \Log::info(json_encode($taskToUpdate));
+        \Log::info(json_encode($data));
 
         $this->tasks->update($taskToUpdate, $data);
         //$this->tasks->update($taskToUpdate, $request->get('end'));
