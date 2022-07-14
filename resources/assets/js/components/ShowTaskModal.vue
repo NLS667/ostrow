@@ -85,7 +85,8 @@ export default{
 	        // I absctracted my API calls, this would be the same as:
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
-	        axios.get('/admin/client/getlist', { params: { clientId: task.extendedProps.service.client_id } })
+	        console.log(this);
+	        axios.get('/admin/client/getlist', { params: { clientId: this.task.extendedProps.service.client_id } })
 	            .then(({
 	                data
 	            }) => {
