@@ -83,7 +83,19 @@ export default {
         }
       }
     },
-    methods: {
+    methods: {        
+        handleEventResize(e) {
+          alert("Zadanie " + e.event.title + " będzie się kończyć " + e.event.end);
+          
+          let updatedEventData = {
+            start: e.event.start,
+            end: e.event.end
+          }
+
+          if (!confirm("Na pewno?")) {
+            e.revert();
+          }
+        },
         handleEventClick(e) {
             this.current_task = e.event
             this.task_client_id = e.event.extendedProps.service.client_id;
