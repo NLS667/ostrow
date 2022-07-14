@@ -34,7 +34,7 @@
 
 <script>
 export default{
-	props: ['show', 'date'],
+	props: ['show', 'event'],
 	    data: () => ({
 	        event: {
 	            title: null,
