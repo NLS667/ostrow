@@ -19,6 +19,6 @@ trait TaskRelationship
     }
 
     public function client() {
-      return $this->service->client;
+      return $this->service()->client;
     }
 }
