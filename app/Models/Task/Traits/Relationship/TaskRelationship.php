@@ -20,11 +20,7 @@ trait TaskRelationship
     }
 
     public function client() {
-      
-      $service = $this->service();
-      \Log::info(json_encode($this));
-      $client_id = $service->client_id;
 
-      return $this->belongsTo(Client::class, $client_id, 'id');
+      return $this->hasOneThrough(Client::class, Service::class);
     }
 }
