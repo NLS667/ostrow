@@ -220,6 +220,20 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
+                    <h4 class="title">Dodatkowe uwagi</h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group bmd-form-group {{ $errors->has('extra_info') ? ' has-danger' : '' }}">
+                    <textarea rows="8" cols="50" class="form-control" name="extra_info" id="input-extra_info">{{ old('extra_info', $client->extra_info) }}</textarea>
+                    @if ($errors->has('extra_info'))
+                    <span class="material-icons form-control-feedback">clear</span>
+                    <span id="extra_info-error" class="error text-danger" for="input-extra_info">{{ $errors->first('extra_info') }}</span>
+                    @endif
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
                     <h4 class="title">Dane kontaktowe</h4>
                   </div>
                 </div>

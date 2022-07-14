@@ -70,7 +70,7 @@
                 {{-- Team --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('team') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Wyznaczeni współpracownicy</label>
-                  <textarea rows="8" cols="50" class="form-control" name="team" id="input-team" value="{{ old('team', $task->team) }}"></textarea>
+                  <textarea rows="8" cols="50" class="form-control" name="team" id="input-team">{{ old('team', $task->team) }}</textarea>
                   @if ($errors->has('team'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="team-error" class="error text-danger" for="input-team">{{ $errors->first('team') }}</span>
@@ -81,7 +81,7 @@
                 {{-- Note --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('note') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Notatki \ Uwagi</label>
-                  <textarea rows="8" cols="50" class="form-control" name="note" id="input-note" value="{{ old('note', $task->note) }}"></textarea>
+                  <textarea rows="8" cols="50" class="form-control" name="note" id="input-note">{{ old('note', $task->note) }}</textarea>
                   @if ($errors->has('note'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="note-error" class="error text-danger" for="input-note">{{ $errors->first('note') }}</span>
