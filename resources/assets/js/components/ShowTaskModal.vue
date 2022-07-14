@@ -5,7 +5,7 @@
 		        <div class="modal-content">
 		            <!-- Modal Header -->
 		            <div class="modal-header">
-		                <h4 class="modal-title" id="ShowTaskModal">Opis Zadania</h4>
+		                <h5 class="modal-title" id="ShowTaskModal">{{ task.title }}</h5>
 		                <button type="button" class="close" @click="closeModal" aria-label="Close">
 		                	<span aria-hidden="true">×</span>
 		                </button>
@@ -16,11 +16,8 @@
 		                <div class="p-2">
 		                	<ul class="list-group list-group-flush">
 		                		<li class="list-group-item">
-		                            <h4>{{ task.title }}</h4>
-		                        </li>
-		                        <li class="list-group-item">
 		                            <i class="material-icons">event</i>
-		                            {{ formatDate(task.start) }}
+		                            Data rozpoczęcia zadania: {{ formatDate(task.start) }}
 		                        </li>
 		                        <li class="list-group-item">
 		                            {{ task.service_id }}
