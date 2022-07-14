@@ -121,14 +121,10 @@ export default {
               Swal.fire({
                   title: "Zadanie " + e.event.title + " zacznie się " + e.event.start,
                   type: "info",
-                  showCancelButton: true,
-                  cancelButtonText: "Anuluj",
+                  showCancelButton: false,
                   confirmButtonColor: "#3C8DBC",
                   confirmButtonText: "OK"
-              }, function(confirmed) {
-                  if (!confirmed)
-                      e.revert()
-              });
+              };
             })
             .catch( error => {
               e.revert()
@@ -136,7 +132,6 @@ export default {
                   title: "Nie udalo się zmienić daty zadania",
                   type: "error",
                   showCancelButton: false,
-                  cancelButtonText: "Anuluj",
                   confirmButtonColor: "#3C8DBC",
                   confirmButtonText: "OK"
               });
