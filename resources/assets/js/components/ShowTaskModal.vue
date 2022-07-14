@@ -86,7 +86,7 @@ export default{
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
 	        console.log(this);
-	        axios.get('/admin/client/getlist', { params: { clientId: this.task.extendedProps.service.client_id } })
+	        axios.get('/admin/client/getlist', { params: { clientId: 1 } })
 	            .then(({
 	                data
 	            }) => {
