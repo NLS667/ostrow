@@ -16,24 +16,24 @@
 		                <div class="p-2">
 		                	<ul class="list-group list-group-flush">
 		                		<li class="list-group-item">
-		                            <strong>Adres Montażu:</strong> 
+		                            <strong>Adres Montażu:</strong><br/>
 		                            {{ task.extendedProps.service.client.adr_street }} {{ task.extendedProps.service.client.adr_street_nr }} {{ task.extendedProps.service.client.adr_home_nr }}<br/>
 		                            {{ task.extendedProps.service.client.adr_zipcode }} {{ task.extendedProps.service.client.adr_city }}
 		                        </li>
 		                		<li class="list-group-item">
-		                            <strong>Data rozpoczęcia:</strong> {{ formatDate(task.start) }}
+		                            <strong>Data rozpoczęcia:</strong><br/> {{ formatDate(task.start) }}
 		                        </li>
 		                        <li class="list-group-item">
-		                            <strong>Data zakończenia:</strong> {{ formatDate(task.end) }}
+		                            <strong>Data zakończenia:</strong><br/> {{ formatDate(task.end) }}
 		                        </li>
 		                        <li class="list-group-item">
-		                            <strong>Przydzielony pracownik:</strong> {{ task.extendedProps.assignee.first_name }} {{ task.extendedProps.assignee.last_name }}
+		                            <strong>Przydzielony pracownik:</strong><br/> {{ task.extendedProps.assignee.first_name }} {{ task.extendedProps.assignee.last_name }}
 		                        </li>
 		                        <li class="list-group-item">
-		                            <strong>Zespół:</strong> {{ task.extendedProps.team }}
+		                            <strong>Zespół:</strong><br/> {{ task.extendedProps.team }}
 		                        </li>
 		                        <li class="list-group-item">
-		                            <strong>Uwagi:</strong> {{ task.extendedProps.note }}
+		                            <strong>Uwagi:</strong><br/> {{ task.extendedProps.note }}
 		                        </li>
 		                	</ul>
 		                </div>
