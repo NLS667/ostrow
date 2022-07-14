@@ -16,7 +16,9 @@
 		                <div class="p-2">
 		                	<ul class="list-group list-group-flush">
 		                		<li class="list-group-item">
-		                            <strong>Adres Montażu:</strong> {{  }}
+		                            <strong>Adres Montażu:</strong> 
+		                            {{ task.extendedProps.service.client.adr_street }} {{ task.extendedProps.service.client.adr_street_nr }} {{ task.extendedProps.service.client.adr_home_nr }}<br/>
+		                            {{ task.extendedProps.service.client.adr_zipcode }} {{ task.extendedProps.service.client.adr_city }}
 		                        </li>
 		                		<li class="list-group-item">
 		                            <strong>Data rozpoczęcia:</strong> {{ formatDate(task.start) }}
