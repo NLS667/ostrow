@@ -16,6 +16,9 @@
 		                <div class="p-2">
 		                	<ul class="list-group list-group-flush">
 		                		<li class="list-group-item">
+		                            <strong>Adres Montażu:</strong> {{ task.extendedProps.client.address }}
+		                        </li>
+		                		<li class="list-group-item">
 		                            <strong>Data rozpoczęcia:</strong> {{ formatDate(task.start) }}
 		                        </li>
 		                        <li class="list-group-item">
@@ -26,6 +29,9 @@
 		                        </li>
 		                        <li class="list-group-item">
 		                            <strong>Zespół:</strong> {{ task.extendedProps.team }}
+		                        </li>
+		                        <li class="list-group-item">
+		                            <strong>Uwagi:</strong> {{ task.extra_info }}
 		                        </li>
 		                	</ul>
 		                </div>
