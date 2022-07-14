@@ -53,19 +53,11 @@
 export default{
 	props: ['show', 'task', 'client'],
 	    data: () => ({
-	        event: {
-	            title: null,
-	            assignee: 'nobody',
-	            note: null
-	        },
 	        clientInfo: this.client
 	    }),
 
 	    methods: {
 	        closeModal() {
-	            this.event.title = null
-	            this.event.assignee = 'nobody'
-	            this.event.note = null
 	            this.$emit('close')
 	        },
 
@@ -75,18 +67,12 @@ export default{
 
 	    },
 
-	    computed: {
-	        validEventData() {
-	            return !!(this.event.title && this.event.assignee != 'nobody')
-	        }
-	    },
-
 	    mounted() {
 	        // I absctracted my API calls, this would be the same as:
 	        // axios.get('/users').then( .... ) ...
 	        //this.$api.services.index()
 
-	        axios.post('/admin/client/getinfo', { params: { clientId: this.$prop.client } })
+	        axios.post('/admin/client/getinfo', { params: { clientId: this.client } })
 	            .then(({
 	                data
 	            }) => {
