@@ -1,6 +1,6 @@
 <template>
 	<div v-if="show">
-		<div class="modal fade show display" id="task-edit" v-cloak tabindex="-1" role="dialog" aria-labelledby="ShowTaskModal" aria-hidden="true">
+		<div class="modal fade show" id="task-edit" v-cloak tabindex="-1" role="dialog" aria-labelledby="ShowTaskModal" aria-hidden="true">
 		    <div class="modal-dialog modal-dialog-centered" role="document">
 		        <div class="modal-content">
 		            <!-- Modal Header -->
