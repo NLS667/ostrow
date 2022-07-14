@@ -132,9 +132,4 @@ class ServiceController extends Controller
 
         return new RedirectResponse(route('admin.service.index'), ['flash_success' => trans('alerts.backend.services.deleted')]);
     }
-
-    public function getList()
-    {
-        return json_encode($this->services->getAll());
-    }
 }

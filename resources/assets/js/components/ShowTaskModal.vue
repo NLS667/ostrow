@@ -54,7 +54,7 @@ export default{
 	props: ['show', 'task'],
 	    data: () => ({
 	        event: {
-	            title: task.title,
+	            title: null,
 	            assignee: 'nobody',
 	            note: null
 	        },
