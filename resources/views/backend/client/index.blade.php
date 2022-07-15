@@ -163,7 +163,7 @@
                             case 2:
                                 return '<span class="badge badge-warning">ZAPLANUJ</a>';
                                 break;
-                            case 2:
+                            case 3:
                                 return '<span class="badge badge-danger">PO TERMINIE</a>';
                                 break;
                         }
