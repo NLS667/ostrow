@@ -32,6 +32,10 @@
                   @else
                   <p>Brak dostępnych Klientów. {{ link_to_route('admin.client.index', 'Dodaj ') }}nowego Klienta</p>
                   @endif
+                  @if ($errors->has('client_id'))
+                    <span class="material-icons form-control-feedback">clear</span>
+                    <span id="client_id-error" class="error text-danger" for="input-client_id">{{ $errors->first('client_id') }}</span>
+                  @endif
                 </div>
               </div>
               <div class="row">
