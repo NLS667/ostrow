@@ -242,7 +242,7 @@
                       {{-- Contacts name --}}
                       @if(old('emails.*'))
                       @php
-                      echo count(old(emails));
+                      echo count(old('emails'));
                       @endphp
                       @endif
                       <div class="col-sm-3 form-group bmd-form-group is-filled {{ $errors->has('contacts.0') ? ' has-danger' : '' }}">
