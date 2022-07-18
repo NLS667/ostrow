@@ -180,8 +180,12 @@
         });
 
         $(document).ready(function(){      
-          var i=1;
-          var y=1;
+
+          var adv_count = {{ $adv_counter }};
+          var i=adv_count-1;
+
+          var dev_count = {{ $dev_counter }};
+          var y=dev_count-1;
 
           $('#add_advance').click(function(){  
                i++;  

@@ -340,7 +340,7 @@
         };
         $(document).ready(function(){
           var count = {{ $counter }};
-          var i=count;
+          var i=count-1;
 
           $('#add_contact').click(function(){  
                i++;  
