@@ -32,7 +32,7 @@ class StoreServiceRequest extends Request
             'service_cat_id'    => 'required',
             'models.*'          => 'filled',
             'deal_amount'       => 'required',
-            'advance_date.*'    => 'required|date'
+            'advance_date.*'    => 'required|date',
             'deal_advance.*'    => 'required|filled',
             'offered_at'        => 'required|date:d/m/Y',
             'signed_at'         => 'required|date:d/m/Y',
