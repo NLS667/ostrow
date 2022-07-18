@@ -159,12 +159,12 @@
                       <option value="{{$model->id}}" {{ old('models.0') == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
                       @endforeach                  
                     </select>
+                    @else
+                    <p>Brak dostępnych Modeli. {{ link_to_route('admin.model.index', 'Dodaj ') }}nowy Model</p>
+                    @endif
                     @if ($errors->has('models.0'))
                       <span class="material-icons form-control-feedback">clear</span>
                       <span id="models-error" class="error text-danger" for="input-models">{{ $errors->first('models.0') }}</span>
-                    @endif
-                    @else
-                    <p>Brak dostępnych Modeli. {{ link_to_route('admin.model.index', 'Dodaj ') }}nowy Model</p>
                     @endif
                   </div>
                   <div class="col-sm-6">
