@@ -288,7 +288,7 @@
                       <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('emails.'.$i) ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Email</label>
                         <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails.'.$i) }}" />
-                        @if ($errors->has('emails.'.$i)
+                        @if ($errors->has('emails.'.$i))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="emails-error" class="error text-danger" for="input-emails">{{ $errors->first('emails.'.$i) }}</span>
                         @endif
