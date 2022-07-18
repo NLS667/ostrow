@@ -20,8 +20,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('task:cron')
-        ->everyMinute();
-        //->dailyAt('18:00');
+        //->everyMinute();
+        ->dailyAt('17:00');
     }
 
     /**
