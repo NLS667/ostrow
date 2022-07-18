@@ -339,9 +339,7 @@
             Backend.Clients.windowloadhandler();
         };
         $(document).ready(function(){
-          var count = {{ $counter }};
-          console.log(count); 
-          var i=1;
+          var i=count;
 
           $('#add_contact').click(function(){  
                i++;  
