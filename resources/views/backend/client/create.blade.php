@@ -240,7 +240,7 @@
                   <div class="col-md-12" id="contacts">
                     <div class="row">
                       {{-- Contacts name --}}
-                      <div class="col-sm-3 form-group bmd-form-group is-filled {{ $errors->has('contacts') ? ' has-danger' : '' }}">
+                      <div class="col-sm-3 form-group bmd-form-group is-filled {{ $errors->has('contacts[]') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Osoba</label>
                         <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="Główny" readonly />
                         @if ($errors->has('contacts'))
@@ -249,7 +249,7 @@
                         @endif
                       </div>
                       {{-- Contacts email --}}
-                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('emails[]') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Email</label>
                         <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails[0]') }}" />
                         @if ($errors->has('emails'))
@@ -258,7 +258,7 @@
                         @endif
                       </div>
                       {{-- Contacts phones --}}
-                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('phones') ? ' has-danger' : '' }}">
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('phones[]') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Nr telefonu</label>
                         <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones[0]') }}" />
                         @if ($errors->has('phones'))
