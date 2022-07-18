@@ -103,7 +103,7 @@
                   {{-- Deal Advance Date--}} 
                   <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('advance_date.'.$i) ? ' has-danger' : '' }}">
                       <label class="bmd-label-floating">Data Zaliczki</label>
-                      <input class="form-control datepicker" name="advance_date[]" id="input-advance_date" type="text" value="{{ old('advance_date.'.$i, $dates[$y] ) }}" />
+                      <input class="form-control datepicker" name="advance_date[]" id="input-advance_date" type="text" value="{{ old('advance_date.'.$i, $dates[$i] ) }}" />
                       @if ($errors->has('advance_date.'.$i))
                       <span class="material-icons form-control-feedback">clear</span>
                       <span id="advance_date-error" class="error text-danger" for="input-advance_date">{{ $errors->first('advance_date.'.$i) }}</span>
