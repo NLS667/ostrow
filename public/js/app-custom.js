@@ -24978,7 +24978,7 @@ md = {
 
     $('.datepicker').datetimepicker({
       locale: 'pl',
-      format: 'DD-MM-YYYY',
+      format: 'YYYY-MM-DD',
       icons: {
         time: "fas fa-clock",
         date: "fas fa-calendar",

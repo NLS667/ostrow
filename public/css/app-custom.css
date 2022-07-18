@@ -25348,9 +25348,9 @@ select.bs-select-hidden,select.selectpicker {
 }
 #message {
     position: fixed;
-    bottom: 50px;
-    left: 0;
-    width: 100%;
+    top: 16px;
+    right: 30px;
+    width: 65%;
     z-index:10000;
 }
 
