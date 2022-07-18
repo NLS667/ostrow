@@ -30,7 +30,7 @@ class StoreServiceRequest extends Request
         return [
             'client_id'         => 'required',
             'service_cat_id'    => 'required',
-            'models.*'          => 'filled',
+            'models.*'          => 'required|filled',
             'deal_amount'       => 'required',
             'advance_date.*'    => 'required|date',
             'deal_advance.*'    => 'required|filled',
@@ -57,6 +57,7 @@ class StoreServiceRequest extends Request
             'deal_advance.*.required' => 'Musisz podać kwotę zaliczki.',
             'deal_advance.*.filled' => 'Kwota zaliczki nie może być pusta.',
             'models.*.filled' => 'Musisz wybrać jakieś urządzenie.',
+            'models.*.required' => 'Musisz wybrać jakieś urządzenie.',
             'signed_at.date' => 'Musisz podać prawidłową datę.',
             'installed_at.date' => 'Musisz podać prawidłową datę.',
         ];
