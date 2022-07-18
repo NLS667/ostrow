@@ -106,6 +106,9 @@
                 </div>
               </div>
               <div id="advance">
+                @php
+                $adv_counter = 0;
+                @endphp
                 @if(old('advance_date'))
                 @for ($i = 0; $i < count(old('advance_date')); $i++)
                 <div class="row dynamic-added" id="adv_row{{$i}}">
@@ -131,6 +134,9 @@
                     <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_adv">X</button>
                   </div>
                 </div>
+                @php
+                  $adv_counter++;
+                @endphp
                 @endfor
                 @endif
               </div>
@@ -184,8 +190,7 @@
           var adv_count = {{ $adv_counter }};
           var i=adv_count-1;
 
-          var dev_count = {{ $dev_counter }};
-          var y=dev_count-1;
+          var y=1;
 
           $('#add_advance').click(function(){  
                i++;  
