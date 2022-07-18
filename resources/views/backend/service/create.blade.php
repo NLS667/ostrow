@@ -146,16 +146,23 @@
                 </div>
               </div>
               <div id="devices">
+                @php
+                $dev_counter = 1;
+                @endphp
                 <div class="row">
                   {{-- Model --}}
-                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('model_id') ? ' has-danger' : '' }}">
+                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('models.0') ? ' has-danger' : '' }}">
                     @if ($models->count())
                     <select name="models[]" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia">
                       <option></option>
                       @foreach ($models as $model)
-                      <option value="{{$model->id}}" {{ old('model_id') == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
+                      <option value="{{$model->id}}" {{ old('models.0') == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
                       @endforeach                  
                     </select>
+                    @if ($errors->has('models.0'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="models-error" class="error text-danger" for="input-models">{{ $errors->first('models.0') }}</span>
+                    @endif
                     @else
                     <p>Brak dostępnych Modeli. {{ link_to_route('admin.model.index', 'Dodaj ') }}nowy Model</p>
                     @endif
@@ -164,6 +171,23 @@
                     <button type="button" name="add_device" id="add_device" class="btn btn-primary">Dodaj urządzenie</button>
                   </div>
                 </div>
+                @if(old('models'))
+                @for ($y = 0; $y < count(old('models')); $y++)
+                <div class="row dynamic-added" id="dev_row{{$y}}">
+                  <div class="col-sm-6 form-group bmd-form-group">
+                    <select name="models[]" class="form-control select2 model-{{$y}}-select" data-placeholder="Wybierz Model Urządzenia">
+                      <option></option>
+                      @foreach ($models as $model)
+                      <option value="{{$model->id}}" {{ old("models.".$y) == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <div class="col-sm-6">
+                    <button type="button" name="remove" id="{{$y}}" class="btn btn-danger btn_remove_dev">X</button>
+                  </div>
+                </div>
+                @endfor
+                @endif
               </div>        
             </div>
             <div class="card-footer">
