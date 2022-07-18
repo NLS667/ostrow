@@ -36,6 +36,7 @@ class Service extends BaseModel
         'created_by',
         'updated_by',
         'deal_amount',
+        'advance_date',
         'deal_advance',
     ];
 
