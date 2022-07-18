@@ -240,7 +240,7 @@
                   <div class="col-md-12" id="contacts">
                     <div class="row">
                       {{-- Contacts name --}}
-                      @if(old('emails.*'))
+                      @if(old('emails'))
                       @php
                       echo count(old('emails'));
                       @endphp
