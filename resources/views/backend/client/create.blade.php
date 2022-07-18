@@ -240,6 +240,11 @@
                   <div class="col-md-12" id="contacts">
                     <div class="row">
                       {{-- Contacts name --}}
+                      @if(old('emails.*'))
+                      @php
+                      echo count(old.emails);
+                      @endphp
+                      @endif
                       <div class="col-sm-3 form-group bmd-form-group is-filled {{ $errors->has('contacts.0') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Osoba</label>
                         <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="Główny" readonly />
@@ -251,7 +256,7 @@
                       {{-- Contacts email --}}
                       <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('emails.0') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Email</label>
-                        <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails[0]') }}" />
+                        <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails.0') }}" />
                         @if ($errors->has('emails.0'))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="emails-error" class="error text-danger" for="input-emails">{{ $errors->first('emails.0') }}</span>
