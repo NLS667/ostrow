@@ -172,7 +172,7 @@
                   </div>
                 </div>
                 @if(old('models'))
-                @for ($y = 0; $y < count(old('models')); $y++)
+                @for ($y = 1; $y < count(old('models')); $y++)
                 <div class="row dynamic-added" id="dev_row{{$y}}">
                   <div class="col-sm-6 form-group bmd-form-group">
                     <select name="models[]" class="form-control select2 model-{{$y}}-select" data-placeholder="Wybierz Model Urządzenia">
