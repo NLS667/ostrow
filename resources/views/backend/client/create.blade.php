@@ -294,12 +294,12 @@
                         @endif
                       </div>
                       {{-- Contacts phones --}}
-                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('phones.'+$i) ? ' has-danger' : '' }}">
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('phones.'.$i) ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Nr telefonu</label>
-                        <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones.'+$i) }}" />
-                        @if ($errors->has('phones.'+$i))
+                        <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones.'.$i) }}" />
+                        @if ($errors->has('phones.'.$i))
                         <span class="material-icons form-control-feedback">clear</span>
-                        <span id="phones-error" class="error text-danger" for="input-phones">{{ $errors->first('phones.'+$i) }}</span>
+                        <span id="phones-error" class="error text-danger" for="input-phones">{{ $errors->first('phones.'.$i) }}</span>
                         @endif
                       </div>
                       <div class="col-sm-3">
