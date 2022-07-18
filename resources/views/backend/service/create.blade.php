@@ -218,7 +218,7 @@
           var i=adv_count;
 
           var dev_count = {{ $dev_counter }};
-          var y=dev_counter-1;
+          var y=dev_count-1;
 
           $('#add_advance').click(function(){  
                i++;  
