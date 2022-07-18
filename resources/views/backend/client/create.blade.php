@@ -238,6 +238,9 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12" id="contacts">
+                    @php
+                    var $counter = 1;
+                    @endphp
                     <div class="row">
                       {{-- Contacts name --}}
                       <div class="col-sm-3 form-group bmd-form-group is-filled {{ $errors->has('contacts.0') ? ' has-danger' : '' }}">
@@ -304,6 +307,9 @@
                             <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove">X</button>
                           </div>
                         </div>
+                        @php
+                        $counter++;
+                        @endphp
                       @endfor
                     @endif
                   </div>
@@ -333,8 +339,8 @@
             Backend.Clients.windowloadhandler();
         };
         $(document).ready(function(){
-          var counter = {!! $i !!};
-          console.log(counter); 
+          var count = {{ $counter }};
+          console.log(count); 
           var i=1;
 
           $('#add_contact').click(function(){  
