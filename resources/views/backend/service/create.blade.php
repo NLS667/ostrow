@@ -186,6 +186,26 @@
           $('#add_advance').click(function(){  
                i++;  
                $('#advance').append('<div class="row dynamic-added" id="adv_row'+i+'"><div class="col-sm-3 form-group bmd-form-group"><label class="bmd-label-floating">Data Zaliczki</label><input class="form-control datepicker" name="advance_date[]" id="input-advance_date" type="text" value="{{ old("advance_date['+i+']") }}" /></div><div class="col-sm-3 form-group bmd-form-group"><label class="bmd-label-floating">Kwota Zaliczki</label><input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old("deal_advance['+i+']") }}" /></div><div class="col-sm-6"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove_adv">X</button></div></div>'); 
+
+               $('#adv_row'+i+' datepicker').datetimepicker({
+                  locale: 'pl',
+                  format: 'DD-MM-YYYY',
+                  icons: {
+                    time: "fas fa-clock",
+                    date: "fas fa-calendar",
+                    up: "fas fa-chevron-up",
+                    down: "fas fa-chevron-down",
+                    previous: 'fas fa-chevron-left',
+                    next: 'fas fa-chevron-right',
+                    today: 'fas fa-crosshairs',
+                    clear: 'fas fa-trash',
+                    close: 'fas fa-times'
+                  }
+                });
+
+              $('#adv_row'+i+' datepicker').on('dp.change', function(e){
+                  $(this).parent().addClass('is-filled'); 
+              });
           });
 
           $('#add_device').click(function(){  
