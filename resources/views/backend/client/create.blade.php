@@ -274,11 +274,11 @@
                 </div>
                 @if(old('emails'))
                 @for ($i = 1; $i < count(old('emails')); $i++)
-                <div class="row">
+                <div class="row dynamic-added" id="row{{$i}}">
                       {{-- Contacts name --}}
                       <div class="col-sm-3 form-group bmd-form-group is-filled {{ $errors->has('contacts.$i') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Osoba</label>
-                        <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="Główny" readonly />
+                        <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="{{ old('contacts.$i') }}" />
                         @if ($errors->has('contacts.$i'))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="contacts-error" class="error text-danger" for="input-contacts">{{ $errors->first('contacts.$i') }}</span>
