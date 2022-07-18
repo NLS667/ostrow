@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('task:cron')
         //->everyMinute();
-        ->dailyAt('17:00');
+        ->dailyAt('04:00');
     }
 
     /**
