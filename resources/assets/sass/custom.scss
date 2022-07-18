@@ -34,9 +34,9 @@
 }
 #message {
     position: fixed;
-    bottom: 50px;
-    left: 0;
-    width: 100%;
+    top: 30px;
+    margin: auto;
+    max-width: 50%;
     z-index:10000;
 }
 
