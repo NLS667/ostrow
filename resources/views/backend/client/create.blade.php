@@ -239,7 +239,7 @@
                 <div class="row">
                   <div class="col-md-12" id="contacts">
                     @php
-                    var $counter = 1;
+                    $counter = 1;
                     @endphp
                     <div class="row">
                       {{-- Contacts name --}}
