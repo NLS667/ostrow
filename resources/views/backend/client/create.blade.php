@@ -240,9 +240,13 @@
                   <div class="col-md-12" id="contacts">
                     <div class="row">
                       {{-- Contacts name --}}
-                      <div class="col-sm-3 form-group bmd-form-group is-filled">
+                      <div class="col-sm-3 form-group bmd-form-group is-filled {{ $errors->has('contacts') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Osoba</label>
                         <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="Główny" readonly />
+                        @if ($errors->has('contacts'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="contacts-error" class="error text-danger" for="input-contacts">{{ $errors->first('contacts') }}</span>
+                        @endif
                       </div>
                       {{-- Contacts email --}}
                       <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('emails') ? ' has-danger' : '' }}">
