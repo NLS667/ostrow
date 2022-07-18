@@ -181,6 +181,10 @@
                       <option value="{{$model->id}}" {{ old("models.".$y) == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
                       @endforeach
                     </select>
+                    @if ($errors->has('models.'.$y))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="models-error" class="error text-danger" for="input-models">{{ $errors->first('models.'.$y) }}</span>
+                    @endif
                   </div>
                   <div class="col-sm-6">
                     <button type="button" name="remove" id="{{$y}}" class="btn btn-danger btn_remove_dev">X</button>
@@ -220,6 +224,8 @@
 
           var dev_count = {{ $dev_counter }};
           var y=dev_count-1;
+
+
 
           $('#add_advance').click(function(){  
                i++;  
