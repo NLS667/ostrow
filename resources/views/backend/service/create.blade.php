@@ -199,6 +199,7 @@
             </div>
           </div>
         </form>
+        {{ $errors }}
       </div>
     </div>    
   </div>
