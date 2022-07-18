@@ -306,6 +306,7 @@
                         <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove">X</button>
                       </div>
                     </div>
+                  @endfor
                 @endif
               </div>
             <div class="card-footer">
