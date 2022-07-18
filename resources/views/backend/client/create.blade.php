@@ -240,11 +240,6 @@
                   <div class="col-md-12" id="contacts">
                     <div class="row">
                       {{-- Contacts name --}}
-                      @if(old('emails'))
-                      @php
-                      echo count(old('emails'));
-                      @endphp
-                      @endif
                       <div class="col-sm-3 form-group bmd-form-group is-filled {{ $errors->has('contacts.0') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Osoba</label>
                         <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="Główny" readonly />
@@ -277,6 +272,41 @@
                     </div>
                   </div>
                 </div>
+                @if(old('emails'))
+                @for ($i = 1; $i < count(old('emails'); $i++)
+                <div class="row">
+                      {{-- Contacts name --}}
+                      <div class="col-sm-3 form-group bmd-form-group is-filled {{ $errors->has('contacts.$i') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Osoba</label>
+                        <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="Główny" readonly />
+                        @if ($errors->has('contacts.$i'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="contacts-error" class="error text-danger" for="input-contacts">{{ $errors->first('contacts.$i') }}</span>
+                        @endif
+                      </div>
+                      {{-- Contacts email --}}
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('emails.$i') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Email</label>
+                        <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails.$i') }}" />
+                        @if ($errors->has('emails.$i'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="emails-error" class="error text-danger" for="input-emails">{{ $errors->first('emails.$i') }}</span>
+                        @endif
+                      </div>
+                      {{-- Contacts phones --}}
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('phones.$i') ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Nr telefonu</label>
+                        <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones.$i') }}" />
+                        @if ($errors->has('phones.$i'))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="phones-error" class="error text-danger" for="input-phones">{{ $errors->first('phones.$i') }}</span>
+                        @endif
+                      </div>
+                      <div class="col-sm-3">
+                        <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove">X</button>
+                      </div>
+                    </div>
+                @endif
               </div>
             <div class="card-footer">
               {{ link_to_route('admin.client.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
