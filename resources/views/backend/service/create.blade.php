@@ -225,7 +225,12 @@
           var dev_count = {{ $dev_counter }};
           var y=dev_count-1;
 
-
+          for (let z = 1; z < dev_count; z++) {
+              $(".select2.model-"+z+"-select").select2({
+                    placeholder: "Wybierz Model",
+                    theme: "material"
+                });
+          }
 
           $('#add_advance').click(function(){  
                i++;  
