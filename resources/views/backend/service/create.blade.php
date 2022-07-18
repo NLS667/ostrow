@@ -51,6 +51,10 @@
                   @else
                   <p>Brak dostępnych Kategorii Usług. {{ link_to_route('admin.serviceCategory.index', 'Dodaj ') }}nową Kategorię Usług</p>
                   @endif
+                  @if ($errors->has('service_cat_id'))
+                    <span class="material-icons form-control-feedback">clear</span>
+                    <span id="service_cat_id-error" class="error text-danger" for="input-service_cat_id">{{ $errors->first('service_cat_id') }}</span>
+                  @endif
                 </div>
               </div>              
               <div class="row">
