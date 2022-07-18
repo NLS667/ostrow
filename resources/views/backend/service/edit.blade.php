@@ -81,13 +81,16 @@
               </div>
               <div class="row">
                 {{-- Deal Amount --}}
-                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('deal_amount') ? ' has-danger' : '' }}">
+                <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_amount') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Kwota Umowy</label>
                   <input class="form-control{{ $errors->has('deal_amount') ? ' is-invalid' : '' }}" name="deal_amount" id="input-deal_amount" type="text" value="{{ old('deal_amount', $service->deal_amount) }}" />
                   @if ($errors->has('deal_amount'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="deal_amount-error" class="error text-danger" for="input-deal_amount">{{ $errors->first('deal_amount') }}</span>
                   @endif
+                </div>
+                <div class="col-sm-6">
+                  <button type="button" name="add_advance" id="add_advance" class="btn btn-primary">Dodaj Zaliczkę</button>
                 </div>
               </div>
               <div id="advance">
@@ -96,24 +99,27 @@
                 @endphp
                 @for ($i = 0; $i < count($advances); $i++)
                 <div class="row" id="adv_row{{$i}}">
-                  {{-- Deal Advance --}}
-                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_advance') ? ' has-danger' : '' }}">
+                  {{-- Deal Advance Date--}} 
+                  <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('advance_date.'.$i) ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Data Zaliczki</label>
+                      <input class="form-control datepicker" name="advance_date[]" id="input-advance_date" type="text" value="{{ old('advance_date.'.$i) }}" />
+                      @if ($errors->has('advance_date.'.$i))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="advance_date-error" class="error text-danger" for="input-advance_date">{{ $errors->first('advance_date.'.$i) }}</span>
+                      @endif
+                  </div>
+                  {{-- Deal Advance Value--}}
+                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_advance.'.$i) ? ' has-danger' : '' }}">
                     <label class="bmd-label-floating">Zaliczka</label>
-                    <input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old('deal_advance[$i]', $advances[$i]) }}" />
-                    @if ($errors->has('deal_advance'))
+                    <input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old('deal_advance.'.$i, $advances[$i]) }}" />
+                    @if ($errors->has('deal_advance.'.$i))
                     <span class="material-icons form-control-feedback">clear</span>
-                    <span id="deal_advance-error" class="error text-danger" for="input-deal_advance">{{ $errors->first('deal_advance') }}</span>
+                    <span id="deal_advance-error" class="error text-danger" for="input-deal_advance">{{ $errors->first('deal_advance.'.$i) }}</span>
                     @endif
-                  </div>
-                  @if($i == 0)
-                  <div class="col-sm-6">
-                    <button type="button" name="add_advance" id="add_advance" class="btn btn-primary">Dodaj Zaliczkę</button>
-                  </div>
-                  @else
+                  </div>                  
                   <div class="col-sm-6">
                     <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_adv">X</button>
                   </div>
-                  @endif
                 </div>
                 @endfor
               </div>
@@ -126,17 +132,21 @@
                 @php
                     $devices = json_decode($service->models);
                 @endphp
-                @for ($i = 0; $i < count($devices); $i++)
-                <div class="row" id="dev_row{{$i}}">
+                @for ($y = 0; $y < count($devices); $y++)
+                <div class="row" id="dev_row{{$y}}">
                   {{-- Model --}}
-                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('models') ? ' has-danger' : '' }}">
+                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('models.'.$y) ? ' has-danger' : '' }}">
                     @if ($models->count())
-                    <select name="models[]" class="form-control select2 model-select" data-placeholder="Wybierz Model Urządzenia">
+                    <select name="models[]" class="form-control select2 model-{{$y}}-select" data-placeholder="Wybierz Model Urządzenia">
                       <option></option>
                       @foreach ($models as $model)
                       <option value="{{$model->id}}" {{ $devices[$i] == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
                       @endforeach                  
                     </select>
+                    @endif
+                    @if ($errors->has('models.'.$y))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="models-error" class="error text-danger" for="input-models">{{ $errors->first('models.'.$y) }}</span>
                     @endif
                   </div>
                   @if($i == 0)
