@@ -4,6 +4,7 @@ namespace App\Console\Commands;
    
 use Illuminate\Console\Command;
 use App\Models\Task\Task;
+use Illuminate\Support\Facades\Log;
 use Carbon\Carbon as Carbon;
    
 class TaskCron extends Command
@@ -55,6 +56,6 @@ class TaskCron extends Command
                 $task->save();
         }
         */
-        \Log::info(Carbon::now().': Statusy zadań zaktualizowane.');
+        Log::debug(Carbon::now().': Statusy zadań zaktualizowane.');
     }
 }
