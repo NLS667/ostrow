@@ -273,7 +273,7 @@
                   </div>
                 </div>
                 @if(old('emails'))
-                @for ($i = 1; $i < count(old('emails'); $i++)
+                @for ($i = 1; $i < count(old('emails')); $i++)
                 <div class="row">
                       {{-- Contacts name --}}
                       <div class="col-sm-3 form-group bmd-form-group is-filled {{ $errors->has('contacts.$i') ? ' has-danger' : '' }}">
