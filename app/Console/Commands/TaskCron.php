@@ -39,8 +39,8 @@ class TaskCron extends Command
      */
     public function handle()
     {
-        $tasks = Task::all();
-        
+        //$tasks = Task::all();
+        /*
         foreach ($tasks as $task) {
             if(Carbon::parse($task->start)->lessThan(Carbon::now())){
                     $task->status = 3;
@@ -54,7 +54,7 @@ class TaskCron extends Command
 
                 $task->save();
         }
-
+        */
         \Log::info(Carbon::now().': Statusy zadań zaktualizowane.');
     }
 }
