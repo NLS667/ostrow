@@ -215,7 +215,7 @@
         $(document).ready(function(){      
 
           var adv_count = {{ $adv_counter }};
-          var i=adv_count;
+          var i=adv_count-1;
 
           var dev_count = {{ $dev_counter }};
           var y=dev_count-1;
