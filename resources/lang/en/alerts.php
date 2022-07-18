@@ -29,5 +29,35 @@ return [
 			"deleted" => "Menu zostało usunięte.",
 			"updated" => "TMenu zostało zaktualizowane.",
 		],
+		"producers" => [
+			"created" => "Producent został utworzony.",
+			"deleted" => "Producent został usunięty.",
+			"updated" => "Producent został zaktualizowany.",
+		],
+		"clients" => [
+			"created" => "Klient został utworzony.",
+			"deleted" => "Klient został usunięty.",
+			"updated" => "Klient został zaktualizowany.",
+		],
+		"models" => [
+			"created" => "Model został utworzony.",
+			"deleted" => "Model został usunięty.",
+			"updated" => "Model został zaktualizowany.",
+		],
+		"services" => [
+			"created" => "Usługa została utworzona.",
+			"deleted" => "Usługa została usunięta.",
+			"updated" => "Usługa została zaktualizowana.",
+		],
+		"serviceCategory" => [
+			"created" => "Kategoria usług została utworzona.",
+			"deleted" => "Kategoria usług została usunięta.",
+			"updated" => "Kategoria usług została zaktualizowana.",
+		],
+		"tasks" => [
+			"created" => "Zadanie zostało utworzone.",
+			"deleted" => "Zadanie zostało usunięte.",
+			"updated" => "Zadanie zostało zaktualizowane.",
+		],
 	],
 ];
