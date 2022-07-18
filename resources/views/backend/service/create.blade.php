@@ -95,7 +95,7 @@
                 {{-- Deal Amount --}}
                 <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_amount') ? ' has-danger' : '' }}">
                   <label class="bmd-label-floating">Kwota Umowy</label>
-                  <input class="form-control{{ $errors->has('deal_amount') ? ' is-invalid' : '' }}" name="deal_amount" id="input-deal_amount" type="text" value="{{ old('deal_amount') }}" />
+                  <input class="form-control" name="deal_amount" id="input-deal_amount" type="text" value="{{ old('deal_amount') }}" />
                   @if ($errors->has('deal_amount'))
                   <span class="material-icons form-control-feedback">clear</span>
                   <span id="deal_amount-error" class="error text-danger" for="input-deal_amount">{{ $errors->first('deal_amount') }}</span>

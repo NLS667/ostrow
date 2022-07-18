@@ -32,6 +32,8 @@ class StoreServiceRequest extends Request
             'service_cat_id'    => 'required',
             'models.*'          => 'filled',
             'deal_amount'       => 'required',
+            'advance_date.*'    => 'required|date'
+            'deal_advance.*'    => 'required|filled',
             'offered_at'        => 'required|date:d/m/Y',
             'signed_at'         => 'required|date:d/m/Y',
             'installed_at'      => 'nullable|date:d/m/Y',
@@ -50,6 +52,11 @@ class StoreServiceRequest extends Request
             'service_cat_id.required' => 'Musisz wybrać rodzaj Usługi.',
             'offered_at.date' => 'Musisz podać prawidłową datę.',
             'deal_amount.required' => 'Musisz podać wartość umowy.',
+            'advance_date.*.required' => 'Musisz podać datę wpłacenia zaliczki.',
+            'advance_date.*.date' => 'Musisz podać prawidłową datę.',
+            'deal_advance.*.required' => 'Musisz podać kwotę zaliczki.',
+            'deal_advance.*.filled' => 'Kwota zaliczki nie może być pusta.',
+            'models.*.filled' => 'Musisz wybrać jakieś urządzenie.',
             'signed_at.date' => 'Musisz podać prawidłową datę.',
             'installed_at.date' => 'Musisz podać prawidłową datę.',
         ];
