@@ -101,22 +101,38 @@
                   <span id="deal_amount-error" class="error text-danger" for="input-deal_amount">{{ $errors->first('deal_amount') }}</span>
                   @endif
                 </div>
+                <div class="col-sm-6">
+                  <button type="button" name="add_advance" id="add_advance" class="btn btn-primary">Dodaj zaliczkę</button>
+                </div>
               </div>
               <div id="advance">
-                <div class="row">
-                  {{-- Deal Advance --}} 
-                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_advance') ? ' has-danger' : '' }}">
-                    <label class="bmd-label-floating">Zaliczka</label>
-                    <input class="form-control{{ $errors->has('deal_advance') ? ' is-invalid' : '' }}" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old('deal_advance[0]') }}" />
-                    @if ($errors->has('deal_advance'))
+                @if(old('advance_date'))
+                @for ($i = 0; $i < count(old('advance_date')); $i++)
+                <div class="row dynamic-added" id="adv_row{{$i}}">
+                    {{-- Deal Advance Date--}} 
+                  <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('advance_date.'.$i) ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Data Zaliczki</label>
+                      <input class="form-control datepicker" name="advance_date[]" id="input-advance_date" type="text" value="{{ old('advance_date.'.$i) }}" />
+                      @if ($errors->has('advance_date.'.$i))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="advance_date-error" class="error text-danger" for="input-advance_date">{{ $errors->first('advance_date.'.$i) }}</span>
+                      @endif
+                  </div>
+                  {{-- Deal Advance Value--}} 
+                  <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('deal_advance.'.$i) ? ' has-danger' : '' }}">
+                    <label class="bmd-label-floating">Kwota Zaliczki</label>
+                    <input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old('deal_advance.'.$i) }}" />
+                    @if ($errors->has('deal_advance.'.$i))
                     <span class="material-icons form-control-feedback">clear</span>
-                    <span id="deal_advance-error" class="error text-danger" for="input-deal_advance">{{ $errors->first('deal_advance') }}</span>
+                    <span id="deal_advance-error" class="error text-danger" for="input-deal_advance">{{ $errors->first('deal_advance.'.$i) }}</span>
                     @endif
                   </div>
                   <div class="col-sm-6">
-                    <button type="button" name="add_advance" id="add_advance" class="btn btn-primary">Dodaj zaliczkę</button>
+                    <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_adv">X</button>
                   </div>
                 </div>
+                @endfor
+                @endif
               </div>
               <div class="row">
                 <div class="col-md-12">
