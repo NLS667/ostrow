@@ -96,20 +96,21 @@
               <div id="advance">
                 @php
                     $advances = json_decode($service->deal_advance);
+                    $dates = json_decode($service->advance_date);
                 @endphp
                 @for ($i = 0; $i < count($advances); $i++)
                 <div class="row" id="adv_row{{$i}}">
                   {{-- Deal Advance Date--}} 
                   <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('advance_date.'.$i) ? ' has-danger' : '' }}">
                       <label class="bmd-label-floating">Data Zaliczki</label>
-                      <input class="form-control datepicker" name="advance_date[]" id="input-advance_date" type="text" value="{{ old('advance_date.'.$i) }}" />
+                      <input class="form-control datepicker" name="advance_date[]" id="input-advance_date" type="text" value="{{ old('advance_date.'.$i, $dates[$y] ) }}" />
                       @if ($errors->has('advance_date.'.$i))
                       <span class="material-icons form-control-feedback">clear</span>
                       <span id="advance_date-error" class="error text-danger" for="input-advance_date">{{ $errors->first('advance_date.'.$i) }}</span>
                       @endif
                   </div>
                   {{-- Deal Advance Value--}}
-                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_advance.'.$i) ? ' has-danger' : '' }}">
+                  <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('deal_advance.'.$i) ? ' has-danger' : '' }}">
                     <label class="bmd-label-floating">Zaliczka</label>
                     <input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old('deal_advance.'.$i, $advances[$i]) }}" />
                     @if ($errors->has('deal_advance.'.$i))
