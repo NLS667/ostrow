@@ -186,6 +186,9 @@
                     <button type="button" name="remove" id="{{$y}}" class="btn btn-danger btn_remove_dev">X</button>
                   </div>
                 </div>
+                @php
+                  $dev_counter++;
+                @endphp
                 @endfor
                 @endif
               </div>        
@@ -212,9 +215,10 @@
         $(document).ready(function(){      
 
           var adv_count = {{ $adv_counter }};
-          var i=adv_count-1;
+          var i=adv_count;
 
-          var y=1;
+          var dev_count = {{ $dev_counter }};
+          var y=dev_counter-1;
 
           $('#add_advance').click(function(){  
                i++;  
