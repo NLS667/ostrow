@@ -281,7 +281,7 @@
                         <input class="form-control" name="contacts[]" id="input-contacts" type="text" value="{{ old('contacts')[$i] }}" />
                         @if ($errors->has('contacts')[$i])
                         <span class="material-icons form-control-feedback">clear</span>
-                        <span id="contacts-error" class="error text-danger" for="input-contacts">{{ $errors->first('contacts')[$i] }}</span>
+                        <span id="contacts-error" class="error text-danger" for="input-contacts">{{ $errors->first('contacts.'+$i) }}</span>
                         @endif
                       </div>
                       {{-- Contacts email --}}
@@ -290,16 +290,16 @@
                         <input class="form-control" name="emails[]" id="input-emails" type="text" value="{{ old('emails')[$i] }}" />
                         @if ($errors->has('emails')[$i])
                         <span class="material-icons form-control-feedback">clear</span>
-                        <span id="emails-error" class="error text-danger" for="input-emails">{{ $errors->first('emails')[$i] }}</span>
+                        <span id="emails-error" class="error text-danger" for="input-emails">{{ $errors->first('emails.'+$i) }}</span>
                         @endif
                       </div>
                       {{-- Contacts phones --}}
-                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('phones')[$i] ? ' has-danger' : '' }}">
+                      <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('phones.'+$i) ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Nr telefonu</label>
-                        <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones')[$i] }}" />
-                        @if ($errors->has('phones')[$i])
+                        <input class="form-control" name="phones[]" id="input-phones" type="text" value="{{ old('phones.'+$i) }}" />
+                        @if ($errors->has('phones.'+$i))
                         <span class="material-icons form-control-feedback">clear</span>
-                        <span id="phones-error" class="error text-danger" for="input-phones">{{ $errors->first('phones')[$i] }}</span>
+                        <span id="phones-error" class="error text-danger" for="input-phones">{{ $errors->first('phones.'+$i) }}</span>
                         @endif
                       </div>
                       <div class="col-sm-3">
