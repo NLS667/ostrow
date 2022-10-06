@@ -141,7 +141,7 @@
                     <select name="models[]" class="form-control select2 model-{{$y}}-select" data-placeholder="Wybierz Model Urządzenia">
                       <option></option>
                       @foreach ($models as $model)
-                      <option value="{{$model->id}}" {{ $devices[$i] == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
+                      <option value="{{$model->id}}" {{ $devices[$y] == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
                       @endforeach                  
                     </select>
                     @endif
