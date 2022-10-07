@@ -169,7 +169,14 @@
                         return "";
                         }
                     },
-                    {data: 'actions', name: 'actions', className: 'text-center', searchable: false, sortable: false}
+                    {data: 'actions', name: 'actions', className: 'text-center', "render": function ( data, type, row, meta ) {
+                        if(data==null) return "";
+                        for(var i=0, num=data.length; i<num; i++) {
+                            return data[i];
+                        }
+                        return "";
+                        }
+                    }
                 ],
                 drawCallback: function (settings) {
                    var api = this.api();

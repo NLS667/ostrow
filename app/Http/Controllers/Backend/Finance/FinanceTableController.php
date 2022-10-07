@@ -49,7 +49,7 @@ class FinanceTableController extends Controller
                 return $client->name;
             })
             ->addColumn('actions', function ($client) {
-                return '';
+                return $client->finance_action_buttons;
             })
             ->make(true);
     }
