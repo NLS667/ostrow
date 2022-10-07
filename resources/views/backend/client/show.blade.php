@@ -149,7 +149,7 @@
                         <th scope="col">Usługa</th>
                         <th scope="col">Data</th>
                         <th scope="col">Pracownik</th>
-                        <th scope="col"></th>
+                        <th scope="col">Akcje</th>
                       </tr>
                     </thead>
                     <tbody>
