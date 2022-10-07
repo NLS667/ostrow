@@ -149,6 +149,7 @@
                         <th scope="col">Usługa</th>
                         <th scope="col">Data</th>
                         <th scope="col">Pracownik</th>
+                        <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -157,6 +158,7 @@
                         <td>{{ $task->service }}</td>
                         <td>{{ $task->start }}</td>
                         <td>{{ $task->assignee }}</td>
+                        <td>{{ $task->edit_button }}</td>
                       </tr>
                       @endforeach
                     </tbody>
