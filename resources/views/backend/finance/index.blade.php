@@ -171,9 +171,8 @@
                     },
                     {data: 'actions', name: 'actions', className: 'text-center', "render": function ( data, type, row, meta ) {
                         if(data==null) return "";
-                        console.log(data);
                         for(var i=0, num=data.length; i<num; i++) {
-                            var button = data[i];
+                            var button = data;
                             return button;
                         }
                         return "";
