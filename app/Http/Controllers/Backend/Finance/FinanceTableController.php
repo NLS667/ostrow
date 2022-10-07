@@ -74,7 +74,7 @@ class FinanceTableController extends Controller
                 'name' => $client->name,
                 'address' => $client->address,
                 'services' => [],
-                'finance_button' => $client->finance_button,
+                'finance_button' => $client->finance_action_button,
             ];
 
             $services = $client->services;
