@@ -88,6 +88,7 @@ class ShowResponse implements Responsable
                     'start' => $task->start,
                     'assignee' => $task->assignee_name,
                     'status' => $status,
+                    'edit_link' => $task->edit_link
                 ];
             }
         }

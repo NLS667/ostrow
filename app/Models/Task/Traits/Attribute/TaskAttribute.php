@@ -131,4 +131,8 @@ trait TaskAttribute
         $service_name = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
         return $service_name;
     }
+    public function getEditLinkAttribute()
+    {
+        return $this->getEditButtonAttribute('btn btn-success btn-round');
+    }
 }
