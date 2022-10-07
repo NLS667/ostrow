@@ -84,7 +84,7 @@
                     '<td class="text-right">'+service.deal_amount.toFixed(2)+'</td>'+
                     '<td class="text-right">'+service.deal_advance.toFixed(2)+'</td>'+
                     '<td class="text-right '+style+'">'+service.left_amount.toFixed(2)+'</td>'+
-                    '<td></td>'+
+                    '<td class="text-right">'+service.edit_link+'</td>'+
                 '</tr>';
                 amountTotal += service.deal_amount;
                 advanceTotal += service.deal_advance;
