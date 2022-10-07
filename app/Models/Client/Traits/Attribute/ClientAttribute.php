@@ -287,7 +287,7 @@ trait ClientAttribute
     /**
      * @return string
      */
-    public function getFinanceButtonsAttribute()
+    public function getFinanceButtonAttribute()
     {
         if (access()->allow('edit-service')) {
             return '<a class="btn btn-success btn-round" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.service.edit', 1).'">
