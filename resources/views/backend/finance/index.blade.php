@@ -174,7 +174,7 @@
                         console.log(data);
                         for(var i=0, num=data.length; i<num; i++) {
                             var button = data[i];
-                            return button;
+                            return button.edit_link;
                         }
                         return "";
                         }

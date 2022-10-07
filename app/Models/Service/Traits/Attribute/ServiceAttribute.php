@@ -129,4 +129,16 @@ trait ServiceAttribute
         return $service_type->short_name;
     }
     
+
+    /**
+     * @return string
+     */
+    public function getFinanceActionButtonAttribute()
+    {
+        if (access()->allow('edit-service')) {
+            return '<a class="btn btn-success btn-round" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.service.edit', $this).'">
+                        <span class="material-icons">edit</span>
+                    </a>';
+        }
+    }
 }

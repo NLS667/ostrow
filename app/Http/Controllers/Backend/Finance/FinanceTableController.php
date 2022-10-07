@@ -49,7 +49,7 @@ class FinanceTableController extends Controller
                 return $client->name;
             })
             ->addColumn('actions', function ($client) {
-                return $client->finance_button;
+                return $client->services;
             })
             ->make(true);
     }
@@ -73,8 +73,7 @@ class FinanceTableController extends Controller
                 'id' => $client->id,
                 'name' => $client->name,
                 'address' => $client->address,
-                'services' => [],
-                'finance_button' => $client->finance_action_button,
+                'services' => []
             ];
 
             $services = $client->services;
@@ -90,6 +89,7 @@ class FinanceTableController extends Controller
                     'deal_amount' => floatval($service->deal_amount),
                     'deal_advance' => floatval($totalAdv),
                     'left_amount' => floatval($service->deal_amount) - floatval($totalAdv),
+                    'edit_link' => $service->finance_action_button
                 ];
                 array_push($client_data->services, $client_services);
             }
