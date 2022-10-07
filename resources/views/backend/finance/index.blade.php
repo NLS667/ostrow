@@ -26,7 +26,7 @@
                                         <th class="text-right">Wartość umowy</th>
                                         <th class="text-right">Wpłacone zaliczki</th>
                                         <th class="text-right">Pozostało do zapłaty</th>
-                                        <th></th>
+                                        <th class="text-right">Akcje</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -37,7 +37,7 @@
                                         <th class="text-right">Wartość umowy</th>
                                         <th class="text-right">Wpłacone zaliczki</th>
                                         <th class="text-right">Pozostało do zapłaty</th>
-                                        <th></th>
+                                        <th class="text-right">Akcje</th>
                                     </tr>
                                 </tfoot>
                             </table>
