@@ -133,6 +133,10 @@ trait TaskAttribute
     }
     public function getEditLinkAttribute()
     {
-        return $this->getEditButtonAttribute('btn btn-success btn-round');
+        if (access()->allow('edit-task')) {
+            return '<a class="btn btn-success btn-round" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.task.edit', $this).'">
+                        <span class="material-icons">edit</span>
+                    </a>';
+        }
     }
 }
