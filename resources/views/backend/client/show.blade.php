@@ -158,7 +158,7 @@
                         <td>{{ $task->service }}</td>
                         <td>{{ $task->start }}</td>
                         <td>{{ $task->assignee }}</td>
-                        <td>{!! $task->edit_link !!}</td>
+                        <td class="td-actions">{!! $task->edit_link !!}</td>
                       </tr>
                       @endforeach
                     </tbody>
