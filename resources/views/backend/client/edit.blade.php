@@ -208,7 +208,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('comm_adr_region') ? ' has-danger' : '' }}">
+                      <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('comm_adr_region') ? ' has-danger' : '' }} {{ $client->comm_adr_region ? ' is-filled' : '' }}">
                         <label id="comm_adr_regionSelectLabel" class="bmd-label-floating">Województwo</label>
                         <select id="comm_adr_regionSelect" name="comm_adr_region" class="form-control select2" data-placeholder="Wybierz Województwo">
                           <option></option>
