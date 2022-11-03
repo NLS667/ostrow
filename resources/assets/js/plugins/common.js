@@ -524,8 +524,9 @@ var Backend = {}; // common variable used in all the files of the backend
                         let town = $("input[name=adr_city]").val();
                         let state = Backend.Clients.regions[$("select[name=adr_region]").val()];
                         let country = $("input[name=adr_country]").val();
+                        let postalcode = $("input[name=adr_zipcode]").val();
 
-                        let searchString = "street="+house_number+" "+road+"&city="+town+"&state="+state+"&country="+country;
+                        let searchString = "street="+house_number+" "+road+"&city="+town+"&state="+state+"&country="+country+"&postalcode="+postalcode;
 
                         callback = {
                             success: function (request) {
