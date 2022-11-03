@@ -102,8 +102,8 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('adr_region') ? ' has-danger' : '' }}">
-                        <label class="bmd-label-floating">Województwo</label>
-                        <select name="adr_region" class="form-control select2" data-placeholder="Wybierz Województwo">
+                        <label id="adr_regionSelectLabel" class="bmd-label-floating">Województwo</label>
+                        <select id="adr_regionSelect" name="adr_region" class="form-control select2" data-placeholder="Wybierz Województwo">
                           <option></option>
                           @foreach ($regions as $key => $value)
                           <option value="{{$key}}">{{ $value }}</option>
@@ -355,7 +355,11 @@
           $(document).on('click', '.btn_remove', function(){  
             var button_id = $(this).attr("id");   
             $('#row'+button_id+'').remove();  
-          }); 
+          });
+
+          $('#adr_regionSelect').on('change', function (e) {
+              $('#adr_regionSelectLabel').parentNode.classList.add('is-filled');
+          })
         });
     </script>
 @endsection
