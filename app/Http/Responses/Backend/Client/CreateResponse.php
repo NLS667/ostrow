@@ -14,6 +14,24 @@ class CreateResponse implements Responsable
     public function __construct($serviceCategories)
     {
         $this->serviceCategories = $serviceCategories;
+        $this->regions = (object)[
+            "02" => "dolnośląskie",
+            "04" => "kujawsko-pomorskie",
+            "06" => "lubelskie",
+            "08" => "lubuskie",
+            "10" => "łódzkie",
+            "12" => "małopolskie",
+            "14" => "mazowieckie",
+            "16" => "opolskie",
+            "18" => "podkarpackie",
+            "20" => "podlaskie",
+            "22" => "pomorskie",
+            "24" => "śląskie",
+            "26" => "świętokrzyskie",
+            "28" => "warmińsko-mazurskie",
+            "30" => "wielkopolskie",
+            "32" => "zachodniopomorskie"
+        ];
     }
 
     /**
@@ -25,6 +43,8 @@ class CreateResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.client.create');
+        return view('backend.client.create')->with([
+            'regions'               => $this->regions,
+        ]);
     }
 }
