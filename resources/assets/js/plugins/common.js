@@ -522,7 +522,7 @@ var Backend = {}; // common variable used in all the files of the backend
                         let road = $("input[name=adr_street]").val();
                         let house_number = $("input[name=adr_street_nr]").val();
                         let town = $("input[name=adr_city]").val();
-                        let state = this.regions[$("select[name=adr_region]").val()];
+                        let state = Backend.Client.regions[$("select[name=adr_region]").val()];
                         let country = $("input[name=adr_country]").val();
 
                         let searchString = "street="+house_number+" "+road+"&city="+town+"&state="+state+"&country="+country;
