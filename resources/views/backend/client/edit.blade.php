@@ -104,7 +104,16 @@
                     <div class="row">
                       <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('adr_region') ? ' has-danger' : '' }}">
                         <label class="bmd-label-floating">Województwo</label>
-                        <input class="form-control" name="adr_region" id="input-adr_region" type="text" value="{{ old('adr_region', $client->adr_region) }}" />
+                        <select name="producer" class="form-control select2" data-placeholder="Wybierz Województwo">
+                          <option></option>
+                          @foreach ($regions as $key => $value)
+                            @if ($client->adr_region == $key)
+                              <option value="{{$key}}" selected>{{ $value }}</option>
+                            @else
+                              <option value="{{$key}}">{{ $value }}</option>
+                            @endif
+                          @endforeach
+                        </select>
                         @if ($errors->has('adr_region'))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="adr_region-error" class="error text-danger" for="input-adr_region">{{ $errors->first('adr_region') }}</span>
