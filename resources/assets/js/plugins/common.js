@@ -485,10 +485,7 @@ var Backend = {}; // common variable used in all the files of the backend
                 lonField: document.getElementById("input-adr_longitude"),
                 coordinatesURL: "",
             },
-            init: function () {
-                this.setSelectors();
-                this.addHandlers();
-                const regions = {
+            regions: {
                     "02":"dolnośląskie",
                     "04":"kujawsko-pomorskie",
                     "06":"lubelskie",
@@ -505,7 +502,10 @@ var Backend = {}; // common variable used in all the files of the backend
                     "28":"warmińsko-mazurskie",
                     "30":"wielkopolskie",
                     "32":"zachodniopomorskie"
-                };
+            },
+            init: function () {
+                this.setSelectors();
+                this.addHandlers();
             },
             setSelectors: function () {
                 this.selectors.coordinates = document.querySelectorAll(".coordinates");
