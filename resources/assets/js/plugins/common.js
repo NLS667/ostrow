@@ -488,6 +488,24 @@ var Backend = {}; // common variable used in all the files of the backend
             init: function () {
                 this.setSelectors();
                 this.addHandlers();
+                const this.regions = {
+                    "02":"dolnośląskie",
+                    "04":"kujawsko-pomorskie",
+                    "06":"lubelskie",
+                    "08":"lubuskie",
+                    "10":"łódzkie",
+                    "12":"małopolskie",
+                    "14":"mazowieckie",
+                    "16":"opolskie",
+                    "18":"podkarpackie",
+                    "20":"podlaskie",
+                    "22":"pomorskie",
+                    "24":"śląskie",
+                    "26":"świętokrzyskie",
+                    "28":"warmińsko-mazurskie",
+                    "30":"wielkopolskie",
+                    "32":"zachodniopomorskie"
+                };
             },
             setSelectors: function () {
                 this.selectors.coordinates = document.querySelectorAll(".coordinates");
@@ -504,7 +522,7 @@ var Backend = {}; // common variable used in all the files of the backend
                         let road = $("input[name=adr_street]").val();
                         let house_number = $("input[name=adr_street_nr]").val();
                         let town = $("input[name=adr_city]").val();
-                        let state = $("input[name=adr_region]").val();
+                        let state = this.regions[$("input[name=adr_region]").val()];
                         let country = $("input[name=adr_country]").val();
 
                         let searchString = "street="+house_number+" "+road+"&city="+town+"&state="+state+"&country="+country;
