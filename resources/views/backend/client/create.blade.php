@@ -106,7 +106,7 @@
                         <select name="adr_region" class="form-control select2" data-placeholder="Wybierz Województwo">
                           <option></option>
                           @foreach ($regions as $key => $value)
-                          <option value="{{$key}}">{{ value }}</option>
+                          <option value="{{$key}}">{{ $value }}</option>
                           @endforeach      
                         </select>
                         @if ($errors->has('adr_region'))
