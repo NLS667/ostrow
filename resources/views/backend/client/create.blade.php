@@ -358,7 +358,7 @@
           });
 
           $('#adr_regionSelect').on('change', function (e) {
-              $('#adr_regionSelectLabel').parentNode.classList.add('is-filled');
+              $('#adr_regionSelectLabel').parent().addClass('is-filled');
           })
         });
     </script>
