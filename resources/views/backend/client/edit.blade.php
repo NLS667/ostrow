@@ -103,8 +103,8 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('adr_region') ? ' has-danger' : '' }}">
-                        <label class="bmd-label-floating">Województwo</label>
-                        <select name="producer" class="form-control select2" data-placeholder="Wybierz Województwo">
+                        <label id="adr_regionSelectLabel" class="bmd-label-floating">Województwo</label>
+                        <select id="adr_regionSelect" name="adr_region" class="form-control select2" data-placeholder="Wybierz Województwo">
                           <option></option>
                           @foreach ($regions as $key => $value)
                             @if ($client->adr_region == $key)
@@ -209,8 +209,17 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('comm_adr_region') ? ' has-danger' : '' }}">
-                        <label class="bmd-label-floating">Województwo</label>
-                        <input class="form-control" name="comm_adr_region" id="input-comm_adr_region" type="text" value="{{ old('comm_adr_region', $client->comm_adr_region) }}" />
+                        <label id="comm_adr_regionSelectLabel" class="bmd-label-floating">Województwo</label>
+                        <select id="comm_adr_regionSelect" name="comm_adr_region" class="form-control select2" data-placeholder="Wybierz Województwo">
+                          <option></option>
+                          @foreach ($regions as $key => $value)
+                            @if ($client->adr_region == $key)
+                              <option value="{{$key}}" selected>{{ $value }}</option>
+                            @else
+                              <option value="{{$key}}">{{ $value }}</option>
+                            @endif
+                          @endforeach
+                        </select>
                         @if ($errors->has('comm_adr_region'))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="comm_adr_region-error" class="error text-danger" for="input-comm_adr_region">{{ $errors->first('comm_adr_region') }}</span>
@@ -337,6 +346,14 @@
             var button_id = $(this).attr("id");   
             $('#row'+button_id+'').remove();  
           }); 
+
+          $('#adr_regionSelect').on('change', function (e) {
+              $('#adr_regionSelectLabel').parent().addClass('is-filled');
+          });
+          $('#comm_adr_regionSelect').on('change', function (e) {
+              $('#comm_adr_regionSelectLabel').parent().addClass('is-filled');
+          });
+
         }); 
     </script>
 @endsection
