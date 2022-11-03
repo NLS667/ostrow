@@ -204,8 +204,13 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('comm_adr_region') ? ' has-danger' : '' }}">
-                        <label class="bmd-label-floating">Województwo</label>
-                        <input class="form-control" name="comm_adr_region" id="input-comm_adr_region" type="text" value="{{ old('comm_adr_region') }}" />
+                        <label id="comm_adr_regionSelectLabel" class="bmd-label-floating">Województwo</label>
+                        <select id="comm_adr_regionSelect" name="comm_adr_region" class="form-control select2" data-placeholder="Wybierz Województwo">
+                          <option></option>
+                          @foreach ($regions as $key => $value)
+                          <option value="{{$key}}">{{ $value }}</option>
+                          @endforeach      
+                        </select>
                         @if ($errors->has('comm_adr_region'))
                         <span class="material-icons form-control-feedback">clear</span>
                         <span id="comm_adr_region-error" class="error text-danger" for="input-comm_adr_region">{{ $errors->first('comm_adr_region') }}</span>
@@ -359,7 +364,10 @@
 
           $('#adr_regionSelect').on('change', function (e) {
               $('#adr_regionSelectLabel').parent().addClass('is-filled');
-          })
+          });
+          $('#comm_adr_regionSelect').on('change', function (e) {
+              $('#comm_adr_regionSelectLabel').parent().addClass('is-filled');
+          });
         });
     </script>
 @endsection
