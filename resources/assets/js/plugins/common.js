@@ -488,7 +488,7 @@ var Backend = {}; // common variable used in all the files of the backend
             init: function () {
                 this.setSelectors();
                 this.addHandlers();
-                const this.regions = {
+                const regions = {
                     "02":"dolnośląskie",
                     "04":"kujawsko-pomorskie",
                     "06":"lubelskie",
