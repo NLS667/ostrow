@@ -110,6 +110,6 @@ class ShowResponse implements Responsable
                 ->with('task_data', $task_data)
                 ->with('map_data', $map_data)
                 ->with('helper', $this->helper)
-                ->with('notes', $notes);
+                ->with('notes', $note_data);
     }
 }
