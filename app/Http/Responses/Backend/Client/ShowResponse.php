@@ -93,6 +93,14 @@ class ShowResponse implements Responsable
                 ];
             }
             $notes = Note::where('client_id', $this->client->id)->get();
+            foreach($notes as $note)
+            {
+                $note_data[] = (object)[
+                    'content' => $note->content,
+                    'created_by' => $note->created_by,
+                    'created_at' => $note->created_at
+                ];
+            }
         }
         
         
