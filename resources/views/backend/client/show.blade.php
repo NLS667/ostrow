@@ -21,7 +21,7 @@
           </li>
       </ul>
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-general" role="tabpanel">
+        <div class="tab-pane active" id="nav-general" role="tabpanel">
           <div class="row">
             <div class="col-md-8">
               <div class="card">
@@ -153,7 +153,7 @@
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="nav-tasks" role="tabpanel">
+        <div class="tab-pane" id="nav-tasks" role="tabpanel">
           @if(!empty($task_data))
             <div class="card">
                 <div class="card-header">
@@ -184,7 +184,7 @@
             </div>
             @endif
         </div>
-        <div class="tab-pane fade" id="nav-notes" role="tabpanel">
+        <div class="tab-pane" id="nav-notes" role="tabpanel">
 
         </div>
       </div>
