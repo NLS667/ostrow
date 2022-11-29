@@ -66,14 +66,6 @@
                 </div>
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">Notatki / Dodatkowe informacje</h4>
-                  </div>
-                  <div class="card-body">
-                    <p>{{$client->extra_info}}</p>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header">
                     <h4 class="card-title">Usługi wykonywane dla klienta</h4>
                   </div>
                   <div class="card-body">
@@ -185,7 +177,14 @@
             @endif
         </div>
         <div class="tab-pane" id="nav-notes" role="tabpanel">
-
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Notatki / Dodatkowe informacje</h4>
+            </div>
+            <div class="card-body">
+              <p>{{$client->extra_info}}</p>
+            </div>
+          </div>
         </div>
       </div>
   	</div>
