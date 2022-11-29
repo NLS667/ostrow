@@ -36,7 +36,7 @@ class CreateClientsTable extends Migration
             $table->string('comm_adr_street', 191)->nullable();
             $table->string('comm_adr_street_nr', 191)->nullable();
             $table->string('comm_adr_home_nr', 191)->nullable();
-            $table->longText('extra_info');
+            $table->longText('extra_info')->nullable();
             $table->boolean('status')->default(1);
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
