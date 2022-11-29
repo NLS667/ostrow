@@ -146,12 +146,12 @@
           </div>
         </div>
         <div class="tab-pane" id="nav-tasks" role="tabpanel">
-          @if(!empty($task_data))
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Zadania przypisane do klienta</h4>
                 </div>
                 <div class="card-body ">
+                  @if(!empty($task_data))
                   <table class="table">
                     <thead>
                       <tr>
@@ -172,9 +172,9 @@
                       @endforeach
                     </tbody>
                   </table>
+                  @endif
                 </div>
             </div>
-            @endif
         </div>
         <div class="tab-pane" id="nav-notes" role="tabpanel">
           
