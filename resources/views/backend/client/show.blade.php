@@ -209,7 +209,7 @@
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <button type="button" name="add_note" id="add_note" class="btn btn-primary">Dodaj notatkę</button>
+                  <button type="button" name="add_note" id="add_note" class="btn btn-primary" data-toggle="modal" data-target="#newNoteModal">Dodaj notatkę</button>
                 </div>
               </div>
             </div>
@@ -217,6 +217,26 @@
         </div>
       </div>
   	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="newNoteModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Nowa notatka</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+        <button type="button" class="btn btn-primary">Zapisz</button>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection
 
