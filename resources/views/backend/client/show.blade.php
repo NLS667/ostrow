@@ -229,7 +229,7 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <textarea rows="8" cols="50" class="form-control" name="content" id="input-content"></textarea>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
