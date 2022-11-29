@@ -46,6 +46,7 @@ class ShowResponse implements Responsable
         $client_data = [];
         $task_data = [];
         $note_data = [];
+        
         foreach($this->serviceCategories as $category)
         {
             $service = Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->first();

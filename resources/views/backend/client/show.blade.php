@@ -183,9 +183,29 @@
               <h4 class="card-title">Notatki / Dodatkowe informacje</h4>
             </div>
             <div class="card-body">
-              <p>{{$note->content}}</p>
+              <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Notatka</th>
+                        <th scope="col">Data Utworzenia</th>
+                        <th scope="col">Utworzył/a</th>
+                        <th scope="col">Akcje</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($notes as $note)
+                      <tr>
+                        <td>{{ $note->content }}</td>
+                        <td>{{ $note->created_at }}</td>
+                        <td>{{ $note->created_by }}</td>
+                        <td class="td-actions"></td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
             </div>
           </div>
+          @endif
         </div>
       </div>
   	</div>
