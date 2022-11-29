@@ -9,13 +9,17 @@
 @section('content')
 <div class="content">
 	<div class="container-fluid">
-      <nav>
-        <div class="nav nav-pills nav-pills-primary flex-column" id="nav-tab" role="tablist">
-          <button class="nav-link active" id="nav-general-tab" data-toggle="tab" data-bs-target="#nav-general" type="button" role="tab">Ogólne</button>
-          <button class="nav-link" id="nav-tasks-tab" data-toggle="tab" data-bs-target="#nav-tasks" type="button" role="tab">Zadania</button>          
-          <button class="nav-link" id="nav-notes-tab" data-toggle="tab" data-bs-target="#nav-notes" type="button" role="tab">Notatki</button>
-        </div>
-      </nav>
+      <ul class="nav nav-pills" id="nav-tab" role="tablist">
+          <li class="nav-item">
+            <a href="#nav-general" class="nav-link active" id="nav-general-tab" data-toggle="tab" data-bs-target="#nav-general" type="button" role="tab">Ogólne</a>
+          </li>
+          <li class="nav-item">
+            <a href="#nav-tasks"  class="nav-link" id="nav-tasks-tab" data-toggle="tab" data-bs-target="#nav-tasks" type="button" role="tab">Zadania</a>
+          </li>
+          <li class="nav-item">          
+            <a href="#nav-notes"  class="nav-link" id="nav-notes-tab" data-toggle="tab" data-bs-target="#nav-notes" type="button" role="tab">Notatki</a>
+          </li>
+      </ul>
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-general" role="tabpanel">
           <div class="row">
