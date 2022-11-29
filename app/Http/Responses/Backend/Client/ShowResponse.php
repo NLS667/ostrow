@@ -101,7 +101,7 @@ class ShowResponse implements Responsable
                     'content' => $note->content,
                     'created_by' => $note->author,
                     'created_at' => $note->created_at,
-                    'action_buttons' => $note->action_buttons;
+                    'action_buttons' => $note->action_buttons
                 ];
             }
         }
