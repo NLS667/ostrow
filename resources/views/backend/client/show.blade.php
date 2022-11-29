@@ -177,17 +177,18 @@
             @endif
         </div>
         <div class="tab-pane" id="nav-notes" role="tabpanel">
-          @if(!empty($notes))
+          
           <div class="card">
             <div class="card-header">
               <h4 class="card-title">Notatki / Dodatkowe informacje</h4>
             </div>
             <div class="card-body">
+              @if(!empty($notes))
               <table class="table">
                     <thead>
                       <tr>
+                        <th scope="col">Data Utworzenia</th>                        
                         <th scope="col">Notatka</th>
-                        <th scope="col">Data Utworzenia</th>
                         <th scope="col">Utworzył/a</th>
                         <th scope="col">Akcje</th>
                       </tr>
@@ -195,17 +196,17 @@
                     <tbody>
                       @foreach ($notes as $note)
                       <tr>
-                        <td>{{ $note->content }}</td>
                         <td>{{ $note->created_at }}</td>
+                        <td>{{ $note->content }}</td>
                         <td>{{ $note->created_by }}</td>
-                        <td class="td-actions"></td>
+                        <td class="td-actions">{!! $task->actions !!}</td>
                       </tr>
                       @endforeach
                     </tbody>
-                  </table>
+              </table>
+              @endif
             </div>
           </div>
-          @endif
         </div>
       </div>
   	</div>

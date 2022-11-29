@@ -46,7 +46,7 @@ class ShowResponse implements Responsable
         $client_data = [];
         $task_data = [];
         $note_data = [];
-        
+
         foreach($this->serviceCategories as $category)
         {
             $service = Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->first();
@@ -99,7 +99,7 @@ class ShowResponse implements Responsable
             {
                 $note_data[] = (object)[
                     'content' => $note->content,
-                    'created_by' => $note->created_by,
+                    'created_by' => $note->author,
                     'created_at' => $note->created_at
                 ];
             }
