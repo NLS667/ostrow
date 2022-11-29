@@ -9,25 +9,34 @@
 @section('content')
 <div class="content">
 	<div class="container-fluid">
-  		<div class="row">
-        	<div class="col-md-8">
-        		<div class="card">
-            		<div class="card-header card-header-text card-header-rose">
-			            <div class="card-text">
-			            	<h3 class="card-title">{{ $client->first_name }}&nbsp;{{ $client->last_name }}</h3>
-			            </div>
-			        </div>
-	            	<div class="card-body ">
-	            		<div class="row">
-	            			<div class="col-md-4">
-	            				<h6>Adres montażu</h6>
-	            				<p class="card-text">
-		                			{{$client->adr_street}}&nbsp;{{$client->adr_street_nr}}<br>
-		                			{{$client->adr_zipcode}}&nbsp;{{$client->adr_city}}<br>
-		                			{{$client->adr_region}}<br>
-		                			{{$client->adr_country}}
-		                		</p>
-	            			</div>
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-general-tab" data-bs-toggle="tab" data-bs-target="#nav-general" type="button" role="tab" aria-controls="nav-general" aria-selected="true">Ogólne</button>
+          <button class="nav-link" id="nav-tasks-tab" data-bs-toggle="tab" data-bs-target="#nav-tasks" type="button" role="tab" aria-controls="nav-tasks" aria-selected="false">Zadania</button>          
+          <button class="nav-link" id="nav-notes-tab" data-bs-toggle="tab" data-bs-target="#nav-notes" type="button" role="tab" aria-controls="nav-notes" aria-selected="false">Notatki</button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-general" role="tabpanel" aria-labelledby="nav-general-tab">
+          <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+                <div class="card-header card-header-text card-header-rose">
+                  <div class="card-text">
+                    <h3 class="card-title">{{ $client->first_name }}&nbsp;{{ $client->last_name }}</h3>
+                  </div>
+              </div>
+                <div class="card-body ">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h6>Adres montażu</h6>
+                      <p class="card-text">
+                          {{$client->adr_street}}&nbsp;{{$client->adr_street_nr}}<br>
+                          {{$client->adr_zipcode}}&nbsp;{{$client->adr_city}}<br>
+                          {{$client->adr_region}}<br>
+                          {{$client->adr_country}}
+                        </p>
+                    </div>
                     <div class="col-md-4">
                       <h6>Adres korespondencyjny</h6>
                       <p class="card-text">
@@ -37,20 +46,20 @@
                           {{$client->comm_adr_country}}
                         </p>
                     </div>
-      							<div class="col-md-4">
-      								<h6>Kontakty</h5>
+                    <div class="col-md-4">
+                      <h6>Kontakty</h5>
                       @php
                       $emails = json_decode($client->emails);
                       $phones = json_decode($client->phones);
                       $contacts = json_decode($client->contacts);
                       @endphp
                       @for($i = 0; $i < count($contacts); $i++)
-      								<p class="card-text"><b>{{$contacts[$i]}}</b>: <a href="mailto:{{$emails[$i]}}">{{$emails[$i]}}</a>; tel. {{$phones[$i]}}</p>
+                      <p class="card-text"><b>{{$contacts[$i]}}</b>: <a href="mailto:{{$emails[$i]}}">{{$emails[$i]}}</a>; tel. {{$phones[$i]}}</p>
                       @endfor
-      							</div>
-	            		</div>
-                	</div>
-            	</div>
+                    </div>
+                  </div>
+                  </div>
+              </div>
               <div class="card">
                 <div class="card-header">
                   <h4 class="card-title">Notatki / Dodatkowe informacje</h4>
@@ -59,24 +68,24 @@
                   <p>{{$client->extra_info}}</p>
                 </div>
               </div>
-            	<div class="card">
-            		<div class="card-header">
-			            <h4 class="card-title">Usługi wykonywane dla klienta</h4>
-			          </div>
-            		<div class="card-body">
-            			<div class="row">
-    						<div class="col-md-3">
-    							<ul class="nav nav-pills nav-pills-primary flex-column">
-    								@foreach ($client_data as $data)
-    									<li class="nav-item"><a class="nav-link @if ($loop->first) active @endif" href="#tab_{{ $data->category }}" data-toggle="tab">{{ $data->category }}</a></li>
-    								@endforeach
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Usługi wykonywane dla klienta</h4>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                <div class="col-md-3">
+                  <ul class="nav nav-pills nav-pills-primary flex-column">
+                    @foreach ($client_data as $data)
+                      <li class="nav-item"><a class="nav-link @if ($loop->first) active @endif" href="#tab_{{ $data->category }}" data-toggle="tab">{{ $data->category }}</a></li>
+                    @endforeach
 
-						        </ul>
-    						</div>
-    						<div class="col-md-9">
-    							<div class="tab-content">
-    								@foreach ($client_data as $data)
-    									<div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->category }}">
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                  <div class="tab-content">
+                    @foreach ($client_data as $data)
+                      <div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $data->category }}">
                         <div class="row">
                           <div class="col-md-3">
                             <h6>Data oferty</h6>
@@ -94,50 +103,54 @@
                             <a class="btn btn-round btn-rose" href="{{ url('admin/service/'.$data->service->id.'/edit/') }}">Edytuj usługę</a>
                           </div>
                         </div>
-    										<div class="row">
+                        <div class="row">
                           <div class="col-md-12">
                             <h4>Urządzenia:</h4>
                           </div>
                         </div>
                         @foreach($data->models as $model)
                         <div class="row">
-    											<div class="col-md-4">
-    												<h6>Producent</h6>
-    												<p>{{ $model->producer }}</p>
-    											</div>
-    											<div class="col-md-4">
+                          <div class="col-md-4">
+                            <h6>Producent</h6>
+                            <p>{{ $model->producer }}</p>
+                          </div>
+                          <div class="col-md-4">
                             <h6>Model</h6>
                             <p>{{ $model->name }}</p>           
                           </div>
-    											<div class="col-md-4">										
-    												<h6>Numer Seryjny</h6>
-                            <p>{{ $model->serial_number }}</p>    												
-    											</div>
-    										</div>
+                          <div class="col-md-4">                    
+                            <h6>Numer Seryjny</h6>
+                            <p>{{ $model->serial_number }}</p>                            
+                          </div>
+                        </div>
                         @endforeach
 
-    									</div>
-    								@endforeach
-    							</div>
-    						</div>
-	            		</div>
-            		</div>
-            	</div>
-            	<div class="card">
-            		<div class="card-body">
-            			<div class="lfm-wrapper" style="position:relative;">
-            				@include('backend.client.partials.lfm');
-            			</div>
-            		</div>
-            	</div>
-        	</div>
-        	<div class="col-md-4">
-        		<div class="card ">
-            		<div class="card-body ">
-              			<clientsmap :data='{!! json_encode($map_data) !!}'></clientsmap>
-            		</div>
-          	</div>
-            @if(!empty($task_data))
+                      </div>
+                    @endforeach
+                  </div>
+                </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="lfm-wrapper" style="position:relative;">
+                    @include('backend.client.partials.lfm');
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card ">
+                <div class="card-body ">
+                    <clientsmap :data='{!! json_encode($map_data) !!}'></clientsmap>
+                </div>
+            </div>
+          </div>
+      </div>
+        </div>
+        <div class="tab-pane fade" id="nav-tasks" role="tabpanel" aria-labelledby="nav-tasks-tab">
+          @if(!empty($task_data))
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Zadania przypisane do klienta</h4>
@@ -166,8 +179,11 @@
                 </div>
             </div>
             @endif
-        	</div>
-    	</div>    		
+        </div>
+        <div class="tab-pane fade" id="nav-notes" role="tabpanel" aria-labelledby="nav-notes-tab">
+          
+        </div>
+      </div>
   	</div>
 </div>
 @endsection
