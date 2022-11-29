@@ -177,12 +177,13 @@
             @endif
         </div>
         <div class="tab-pane" id="nav-notes" role="tabpanel">
+          @if(!empty($notes))
           <div class="card">
             <div class="card-header">
               <h4 class="card-title">Notatki / Dodatkowe informacje</h4>
             </div>
             <div class="card-body">
-              <p>{{$client->extra_info}}</p>
+              <p>{{$note->content}}</p>
             </div>
           </div>
         </div>

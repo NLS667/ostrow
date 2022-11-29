@@ -91,6 +91,7 @@ class ShowResponse implements Responsable
                     'edit_link' => $task->edit_link
                 ];
             }
+            $notes = Note::where('client_id', $this->client->id)->get();
         }
         
         
@@ -99,6 +100,7 @@ class ShowResponse implements Responsable
                 ->with('client_data', $client_data)
                 ->with('task_data', $task_data)
                 ->with('map_data', $map_data)
-                ->with('helper', $this->helper);
+                ->with('helper', $this->helper)
+                ->with('notes', $notes);
     }
 }
