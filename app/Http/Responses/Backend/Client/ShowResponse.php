@@ -100,7 +100,8 @@ class ShowResponse implements Responsable
                 $note_data[] = (object)[
                     'content' => $note->content,
                     'created_by' => $note->author,
-                    'created_at' => $note->created_at
+                    'created_at' => $note->created_at,
+                    'action_buttons' => $note->action_buttons;
                 ];
             }
         }
