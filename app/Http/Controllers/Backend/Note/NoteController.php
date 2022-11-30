@@ -6,10 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Http\Requests\Backend\Note\CreateNoteRequest;
-use App\Http\Requests\Backend\Note\DeleteClientRequest;
-use App\Http\Requests\Backend\Note\EditClientRequest;
-use App\Http\Requests\Backend\Note\StoreClientRequest;
-use App\Http\Requests\Backend\Note\UpdateClientRequest;
+use App\Http\Requests\Backend\Note\DeleteNoteRequest;
+use App\Http\Requests\Backend\Note\EditNoteRequest;
+use App\Http\Requests\Backend\Note\StoreNoteRequest;
+use App\Http\Requests\Backend\Note\UpdateNoteRequest;
 use App\Http\Responses\Backend\Note\CreateResponse;
 use App\Http\Responses\Backend\Note\EditResponse;
 use App\Http\Responses\RedirectResponse;
@@ -60,7 +60,8 @@ class NoteController extends Controller
 
         $this->notes->create($request);
 
-        return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.notes.created')]);
+        return true;
+        //return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.notes.created')]);
     }
 
     /**
