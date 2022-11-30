@@ -2,7 +2,7 @@
 
 namespace App\Models\Note;
 
-//use App\Models\Note\Traits\Attribute\NoteAttribute;
+use App\Models\Note\Traits\Attribute\NoteAttribute;
 use App\Models\Note\Traits\Relationship\NoteRelationship;
 use App\Models\BaseModel;
 
