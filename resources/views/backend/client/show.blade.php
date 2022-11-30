@@ -345,7 +345,7 @@
     $('#SubmitForm').on('submit',function(e){
       e.preventDefault();
 
-      let content = $('#content').val();
+      let content = $('#input-content').val();
       
       $.ajax({
         url: "/admin/note/add-note",
