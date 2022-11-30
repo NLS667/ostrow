@@ -206,16 +206,16 @@ class TaskRepository extends BaseRepository
      *
      * @return bool
      */
-    public function markFinish($task, $status)
+    public function markFinish($task, $isFinished)
     {
-        $task->isFinished = $status;
+        $task->isFinished = $isFinished;
 
-        switch ($status) {
-            case 0:
+        switch ($isFinished) {
+            case 1:
                 event(new TaskFinished($task));
             break;
 
-            case 1:
+            case 0:
                 event(new TaskRestarted($task));
             break;
 
