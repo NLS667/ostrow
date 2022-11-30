@@ -63,8 +63,8 @@ class NoteController extends Controller
 
         $this->notes->create($request);
 
-        return true;
-        //return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.notes.created')]);
+        //return true;
+        return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.notes.created')]);
     }
 
     /**
