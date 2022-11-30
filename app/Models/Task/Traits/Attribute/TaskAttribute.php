@@ -19,14 +19,14 @@ trait TaskAttribute
     {
         \Log::info(json_encode($this->isFinished));
         switch ($this->isFinished) {
-            case 0:
+            case false:
             if (access()->allow('deactivate-task')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Zakończ' : '';
 
                 return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Zakończ" href="'.route('admin.task.mark', [$this, 1]).'"><span class="material-icons">lock</span>'.$name.'</a>';
             }
             break;
-            case 1:
+            case true:
             if (access()->allow('activate-task')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Wznów' : '';
 
