@@ -259,6 +259,7 @@ class TaskRepository extends BaseRepository
         } else {
             $task->status = 0;
         }
+        $task->isFinished = 0;
         $task->created_by = access()->user()->id;
 
         return $task;
