@@ -34,7 +34,7 @@ class TaskStatusController extends Controller
      */
     public function mark(Task $task, $status, EditTaskRequest $request)
     {
-        $this->tasks->mark($task, $status);
+        $this->tasks->markFinish($task, $status);
 
         return redirect()->route('admin.task.index')->withFlashSuccess(trans('alerts.backend.tasks.updated'));
     }

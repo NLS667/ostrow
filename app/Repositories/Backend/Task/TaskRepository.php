@@ -5,6 +5,9 @@ namespace App\Repositories\Backend\Task;
 use App\Events\Task\TaskCreated;
 use App\Events\Task\TaskDeleted;
 use App\Events\Task\TaskUpdated;
+use App\Events\Task\TaskFinished;
+use App\Events\Task\TaskRestarted;
+
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
 use App\Models\Task\Task;
@@ -184,6 +187,36 @@ class TaskRepository extends BaseRepository
 
             case 2:
                 event(new TaskOvertime($task));
+            break;
+
+        }
+
+        if ($task->save()) {
+            return true;
+        }
+
+        throw new GeneralException(trans('exceptions.backend.tasks.mark_error'));
+    }
+
+    /**
+     * @param $client
+     * @param $status
+     *
+     * @throws GeneralException
+     *
+     * @return bool
+     */
+    public function markFinish($task, $status)
+    {
+        $task->isFinished = $status;
+
+        switch ($status) {
+            case 0:
+                event(new TaskFinished($task));
+            break;
+
+            case 1:
+                event(new TaskRestarted($task));
             break;
 
         }
