@@ -118,7 +118,8 @@ trait TaskAttribute
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
             return $this->getEditButtonAttribute('btn btn-success btn-round').'
-            '.$this->getDeleteButtonAttribute('btn btn-danger btn-round');
+            '.$this->getDeleteButtonAttribute('btn btn-danger btn-round').'                        
+            '.$this->getStatusButtonAttribute('btn btn-warning btn-round');
         } else {
             $userPermission = $this->getUserPermission();
             $permissionCounter = count($userPermission);
