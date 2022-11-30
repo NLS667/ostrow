@@ -11,7 +11,7 @@ use App\Models\BaseModel;
  */
 class Note extends BaseModel
 {
-    use //NoteAttribute,
+    use NoteAttribute,
         NoteRelationship;
         
     /**
