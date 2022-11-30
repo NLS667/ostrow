@@ -15,6 +15,7 @@ use App\Http\Responses\Backend\Note\EditResponse;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Client\Client;
+use App\Models\Note\Note;
 use App\Repositories\Backend\Client\ClientRepository;
 use App\Repositories\Backend\Note\NoteRepository;
 
