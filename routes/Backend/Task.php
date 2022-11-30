@@ -28,6 +28,8 @@
              */
             Route::group(['prefix' => 'task/{task}'], function () {
 
+                // isFinished
+                Route::get('mark/{status}', [\App\Http\Controllers\Backend\Task\TaskStatusController::class, 'mark'])->name('task.mark')->where(['status' => '[0,1]']);
             });
             
         });
