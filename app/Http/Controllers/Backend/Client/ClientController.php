@@ -47,6 +47,11 @@ class ClientController extends Controller
     protected $services;
 
     /**
+     * @var \App\Repositories\Backend\Note\NoteRepository
+     */
+    protected $notes;
+
+    /**
      * @param \App\Repositories\Backend\Client\ClientRepository                   $clients
      * @param \App\Repositories\Backend\ServiceCategory\ServiceCategoryRepository $serviceCategories
      * @param \App\Repositories\Backend\Service\ServiceRepository                 $services

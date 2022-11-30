@@ -228,13 +228,16 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <textarea rows="8" cols="50" class="form-control" name="content" id="input-content"></textarea>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-        <button type="button" class="btn btn-primary">Zapisz</button>
-      </div>
+      <form id="SubmitForm">
+        <div class="modal-body">
+          <textarea rows="8" cols="50" class="form-control" name="content" id="input-content"></textarea>
+          <span class="text-danger" id="contentErrorMsg"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+          <button type="submit" class="btn btn-primary">Zapisz</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -336,5 +339,29 @@
       acceptedFiles: "{{ implode(',', $helper->availableMimeTypes()) }}",
       maxFilesize: ({{ $helper->maxUploadSize() }} / 1000)
     }
+  </script>
+  <script type="text/javascript">
+
+    $('#SubmitForm').on('submit',function(e){
+      e.preventDefault();
+
+      let content = $('#content').val();
+      
+      $.ajax({
+        url: "/client/add-note",
+        type:"POST",
+        data:{
+          "_token": "{{ csrf_token() }}",
+          content:content,
+        },
+        success:function(response){
+          //$('#successMsg').show();
+          console.log(response);
+        },
+        error: function(response) {
+          $('#contentErrorMsg').text(response.responseJSON.errors.name);
+        },
+      });
+    });
   </script>
   @endsection
