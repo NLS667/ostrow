@@ -47,7 +47,7 @@ trait NoteAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['61', '62', '63'];
+        $attributePermission = ['61', '63'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
@@ -65,8 +65,7 @@ trait NoteAttribute
     {
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
-            return $this->getEditButtonAttribute('btn btn-success btn-round').'
-            '.$this->getDeleteButtonAttribute('btn btn-danger btn-round');
+            return $this->getDeleteButtonAttribute('btn btn-danger btn-round');
         } else {
             $userPermission = $this->getUserPermission();
             $permissionCounter = count($userPermission);
