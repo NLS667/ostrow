@@ -211,14 +211,12 @@ class TaskRepository extends BaseRepository
         $task->isFinished = $isFinished;
 
         switch ($isFinished) {
-            case 1:
-                event(new TaskFinished($task));
-            break;
-
             case 0:
                 event(new TaskRestarted($task));
             break;
-
+            case 1:
+                event(new TaskFinished($task));
+            break;
         }
 
         if ($task->save()) {
