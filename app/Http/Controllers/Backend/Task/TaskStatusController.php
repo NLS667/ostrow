@@ -26,13 +26,13 @@ class TaskStatusController extends Controller
     }
 
     /**
-     * @param Client $client
+     * @param Task $task
      * @param $status
-     * @param ManageClientRequest $request
+     * @param EditTaskRequest $request
      *
      * @return mixed
      */
-    public function mark(Task $client, $status, EditTaskRequest $request)
+    public function mark(Task $task, $status, EditTaskRequest $request)
     {
         $this->tasks->mark($task, $status);
 
