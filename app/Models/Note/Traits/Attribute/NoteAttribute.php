@@ -15,7 +15,7 @@ trait NoteAttribute
     public function getEditButtonAttribute($class)
     {
         if (access()->allow('edit-note')) {
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.task.edit', $this).'">
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Edytuj" href="'.route('admin.note.edit', $this).'">
                         <span class="material-icons">edit</span>
                     </a>';
         }
@@ -29,7 +29,7 @@ trait NoteAttribute
         if (access()->allow('delete-note')) {
             $name = ($class == '' || $class == 'dropdown-item') ? 'Usuń' : '';
 
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.task.destroy', $this).'"
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Usuń" href="'.route('admin.note.destroy', $this).'"
                  data-method="delete"
                  data-trans-button-cancel="Anuluj"
                  data-trans-button-confirm="Usuń"
@@ -47,7 +47,7 @@ trait NoteAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['50', '51'];
+        $attributePermission = ['61', '62', '63'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
@@ -94,10 +94,10 @@ trait NoteAttribute
     public function getActionButtonsByPermissionName($permissionName, $counter)
     {
         switch ($permissionName) {
-            case 'edit-task':
+            case 'edit-note':
             $button = $this->getEditButtonAttribute('btn btn-success btn-round');
             break;
-            case 'delete-task':
+            case 'delete-note':
             $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
             break;
             default:
