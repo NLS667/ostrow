@@ -17,16 +17,16 @@ trait TaskAttribute
      */
     public function getStatusButtonAttribute($class)
     {
-        \Log::info(json_encode($this->isFinished));
+        \Log::info(json_encode($this));
         switch ($this->isFinished) {
-            case false:
+            case 0:
             if (access()->allow('deactivate-task')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Zakończ' : '';
 
                 return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Zakończ" href="'.route('admin.task.mark', [$this, 1]).'"><span class="material-icons">lock</span>'.$name.'</a>';
             }
             break;
-            case true:
+            case 1:
             if (access()->allow('activate-task')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Wznów' : '';
 
