@@ -200,7 +200,7 @@
                           <td>{{ $note->created_at }}</td>
                           <td>{{ $note->content }}</td>
                           <td>{{ $note->created_by }}</td>
-                          <td class="td-actions">{!! $task->action_buttons !!}</td>
+                          <td class="td-actions">{!! $note->action_buttons !!}</td>
                         </tr>
                         @endforeach
                       </tbody>
