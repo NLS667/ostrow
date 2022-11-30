@@ -348,7 +348,7 @@
       let content = $('#content').val();
       
       $.ajax({
-        url: "/client/add-note",
+        url: "/admin/note/add-note",
         type:"POST",
         data:{
           "_token": "{{ csrf_token() }}",
