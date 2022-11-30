@@ -42,7 +42,7 @@ trait TaskAttribute
             if (access()->allow('activate-task')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Wznów' : '';
 
-                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Wznów" href="'.route('admin.task.mark', [$this, 1]).'"><span class="material-icons">lock_open</span>'.$name.'</a>';
+                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Wznów" href="'.route('admin.task.mark', [$this, 0]).'"><span class="material-icons">lock_open</span>'.$name.'</a>';
             }
             break;
 
@@ -50,7 +50,7 @@ trait TaskAttribute
             if (access()->allow('deactivate-task')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Zakończ' : '';
 
-                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Zakończ" href="'.route('admin.task.mark', [$this, 0]).'"><span class="material-icons">lock</span>'.$name.'</a>';
+                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Zakończ" href="'.route('admin.task.mark', [$this, 1]).'"><span class="material-icons">lock</span>'.$name.'</a>';
             }
             break;
 
