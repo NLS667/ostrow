@@ -15,29 +15,9 @@ trait TaskAttribute
     /**
      * @return string
      */
-    public function getStatusLabelAttribute()
-    {
-        if ($this->isActive()) {
-            return "<label class='badge badge-success'>Aktywny</label>";
-        }
-
-        return "<label class='badge badge-danger'>Nieaktywny</label>";
-    }
-
-    /**
-     * @return bool
-     */
-    public function isActive()
-    {
-        return $this->isFinished == 0;
-    }
-
-    /**
-     * @return string
-     */
     public function getStatusButtonAttribute($class)
     {
-        \Log::info($this->isFinished);
+        \Log::info(json_encode($this->isFinished));
         switch ($this->isFinished) {
             case 0:
             if (access()->allow('deactivate-task')) {
