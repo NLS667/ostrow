@@ -34,9 +34,10 @@ class NoteController extends Controller
     /**
      * @param \App\Repositories\Backend\Client\ClientRepository                   $clients
      */
-    public function __construct(ClientRepository $clients)
+    public function __construct(ClientRepository $clients, NoteRepository $notes)
     {
         $this->clients = $clients;
+        $this->notes = $notes;
     }
 
     /**
