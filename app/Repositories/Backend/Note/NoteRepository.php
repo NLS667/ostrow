@@ -39,24 +39,6 @@ class NoteRepository extends BaseRepository
     }
 
     /**
-     * @return mixed
-     */
-    public function getForDataTable()
-    {
-        return $this->query()
-            ->leftJoin('producers', 'models.producer_id', '=', 'producers.id')
-            ->select([
-                config('models.models_table').'.id',
-                config('models.models_table').'.name',
-                config('models.models_table').'.description',
-                config('models.models_table').'.serial_number',
-                config('producers.producers_table').'.name as producer',
-                config('models.models_table').'.created_at',
-                config('models.models_table').'.updated_at',
-            ]);
-    }
-
-    /**
      * Create Note.
      *
      * @param $request
