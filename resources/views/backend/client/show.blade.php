@@ -346,6 +346,7 @@
       e.preventDefault();
 
       let content = $('#input-content').val();
+      let client_id = @json($client->id);
       
       $.ajax({
         url: "/admin/note/add-note",
@@ -353,6 +354,7 @@
         data:{
           "_token": "{{ csrf_token() }}",
           content:content,
+          client_id:client_id,
         },
         success:function(response){
           //$('#successMsg').show();
