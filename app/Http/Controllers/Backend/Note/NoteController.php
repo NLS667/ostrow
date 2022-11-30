@@ -16,6 +16,7 @@ use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Client\Client;
 use App\Repositories\Backend\Client\ClientRepository;
+use App\Repositories\Backend\Note\NoteRepository;
 
 /**
  * Class NoteController.
