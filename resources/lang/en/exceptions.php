@@ -57,6 +57,12 @@ return [
 			"not_found" => "That Module does not exist.",
 			"update_error" => "Wystąpił problem podczas aktualizacji Modułu. Spróbuj ponownie.",
 		],
+		"notes" => [
+			"create_error" => "Wystąpił problem podczas tworzenia Notatki. Spróbuj ponownie.",
+			"delete_error" => "Wystąpił problem podczas usuwania Notatki. Spróbuj ponownie.",
+			"not_found" => "That Module does not exist.",
+			"update_error" => "Wystąpił problem podczas aktualizacji Notatki. Spróbuj ponownie.",
+		],
 	],
 	"frontend" => [
 		"auth" => [
