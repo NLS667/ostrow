@@ -94,9 +94,6 @@ trait NoteAttribute
     public function getActionButtonsByPermissionName($permissionName, $counter)
     {
         switch ($permissionName) {
-            case 'edit-note':
-            $button = $this->getEditButtonAttribute('btn btn-success btn-round');
-            break;
             case 'delete-note':
             $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
             break;
