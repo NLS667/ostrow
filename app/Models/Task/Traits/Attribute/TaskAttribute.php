@@ -15,6 +15,55 @@ trait TaskAttribute
     /**
      * @return string
      */
+    public function getStatusLabelAttribute()
+    {
+        if ($this->isActive()) {
+            return "<label class='badge badge-success'>Aktywny</label>";
+        }
+
+        return "<label class='badge badge-danger'>Nieaktywny</label>";
+    }
+
+    /**
+     * @return bool
+     */
+    public function isActive()
+    {
+        return $this->isFinished == 1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatusButtonAttribute($class)
+    {
+        switch ($this->status) {
+            case 0:
+            if (access()->allow('activate-task')) {
+                $name = ($class == '' || $class == 'dropdown-item') ? 'Wznów' : '';
+
+                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Wznów" href="'.route('admin.task.mark', [$this, 1]).'"><span class="material-icons">lock_open</span>'.$name.'</a>';
+            }
+            break;
+
+            case 1:
+            if (access()->allow('deactivate-task')) {
+                $name = ($class == '' || $class == 'dropdown-item') ? 'Zakończ' : '';
+
+                return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Zakończ" href="'.route('admin.task.mark', [$this, 0]).'"><span class="material-icons">lock</span>'.$name.'</a>';
+            }
+            break;
+
+            default:
+            return '';
+        }
+
+        return '';
+    }
+
+    /**
+     * @return string
+     */
     public function getEditButtonAttribute($class)
     {
         if (access()->allow('edit-task')) {
@@ -50,7 +99,7 @@ trait TaskAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['50', '51'];
+        $attributePermission = ['50', '51', '64', '65'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
@@ -102,6 +151,12 @@ trait TaskAttribute
             break;
             case 'delete-task':
             $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
+            break;
+            case 'activate-task':
+            $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
+            break;
+            case 'deactivate-client':
+            $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
             break;
             default:
             $button = '';
