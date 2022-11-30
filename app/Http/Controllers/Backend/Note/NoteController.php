@@ -99,7 +99,7 @@ class NoteController extends Controller
      */
     public function destroy(Note $note, DeleteNoteRequest $request)
     {
-        $this->notes->delete($client);
+        $this->notes->delete($note);
 
         return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.notes.deleted')]);
     }
