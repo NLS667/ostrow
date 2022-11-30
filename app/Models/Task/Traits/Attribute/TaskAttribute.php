@@ -37,7 +37,7 @@ trait TaskAttribute
      */
     public function getStatusButtonAttribute($class)
     {
-        switch ($this->status) {
+        switch ($this->isFinished) {
             case 0:
             if (access()->allow('activate-task')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Wznów' : '';
