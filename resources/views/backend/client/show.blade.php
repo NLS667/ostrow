@@ -373,7 +373,7 @@
       let note_id = $(this).val();
 
       $.ajax({
-        url: "/admin/note/" + note_id + "/edit/",
+        url: {{URL("/admin/note/" + note_id + "/edit/")}},
         type:"GET",
         success:function(response){
           console.log(response);
