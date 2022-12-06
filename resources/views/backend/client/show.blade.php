@@ -260,7 +260,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-          <button type="submit" class="btn btn-primary">Zmień</button>
+          <button id="updateButton" type="submit" value="" class="btn btn-primary">Zmień</button>
         </div>
       </form>
     </div>
@@ -391,6 +391,32 @@
       });
     });
 
+    $('#UpdateForm').on('submit',function(e){
+      e.preventDefault();
+
+      let content = $('#input-update-content').val();
+
+      const note_id = $(this).val();
+      var url = "{{ URL('/admin/note/update/:note_id')}}";
+      url = url.replace(':note_id',note_id);
+      
+      $.ajax({
+        url: url,
+        type:"POST",
+        data:{
+          "_token": "{{ csrf_token() }}",
+          content:content,
+        },
+        success:function(response){
+          //$('#successMsg').show();
+          console.log(response);
+        },
+        error: function(response) {
+          $('#contentErrorMsg').text(response.responseJSON.errors.name);
+        },
+      });
+    });
+
     $(document).on("click", "#edit_note", function(e) {
       e.preventDefault();
 
@@ -404,6 +430,7 @@
         success:function(response){
           let data = JSON.parse(response);
           $('#input-update-content').val(data["content"]);
+          $('#updateButton').val(note_id);
         },
       })
     });
