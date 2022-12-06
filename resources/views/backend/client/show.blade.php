@@ -403,6 +403,7 @@
         type:"GET",
         success:function(response){
           $('#input-update-content').val(response.content);
+          console.log(response.content);
         },
       })
     });
