@@ -402,7 +402,7 @@
       
       $.ajax({
         url: "/admin/note/update/"+note_id,
-        type:"POST",
+        type:"PUT",
         data:{
           "_token": "{{ csrf_token() }}",
           content:content,
