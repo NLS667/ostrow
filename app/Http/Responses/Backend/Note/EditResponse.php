@@ -29,6 +29,6 @@ class EditResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return response()->json();
+        return $this->note->toJson();
     }
 }
