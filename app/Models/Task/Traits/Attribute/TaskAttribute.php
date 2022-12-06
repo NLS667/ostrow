@@ -17,7 +17,6 @@ trait TaskAttribute
      */
     public function getStatusButtonAttribute($class)
     {
-        \Log::info(json_encode($this));
         switch ($this->isFinished) {
             case 0:
             if (access()->allow('deactivate-task')) {

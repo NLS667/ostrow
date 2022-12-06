@@ -65,7 +65,8 @@ trait NoteAttribute
     {
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
-            return $this->getDeleteButtonAttribute('btn btn-danger btn-round');
+            return $this->getEditButtonAttribute('btn btn-success btn-round').'
+            '.$this->getDeleteButtonAttribute('btn btn-danger btn-round');
         } else {
             $userPermission = $this->getUserPermission();
             $permissionCounter = count($userPermission);
@@ -93,6 +94,9 @@ trait NoteAttribute
     public function getActionButtonsByPermissionName($permissionName, $counter)
     {
         switch ($permissionName) {
+            case 'edit-task':
+            $button = $this->getEditButtonAttribute('btn btn-success btn-round');
+            break;
             case 'delete-note':
             $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
             break;
