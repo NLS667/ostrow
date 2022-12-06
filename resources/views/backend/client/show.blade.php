@@ -398,6 +398,7 @@
 
       const note_id = $(this).val();
       var url = "https://ostrow.uroczysko.org/admin/note/:note_id";
+      console.log({{url("/admin/note/", [note_id])}});
       url = url.replace(':note_id',note_id);
       
       $.ajax({
