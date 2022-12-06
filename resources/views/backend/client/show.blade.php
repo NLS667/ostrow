@@ -370,7 +370,7 @@
     $(document).on("click", "#edit_note", function(e) {
       e.preventDefault();
 
-      let note_id = $(this).val();
+      const note_id = $(this).val();
 
       $.ajax({
         url: {{URL("/admin/note/" + note_id + "/edit/")}},
