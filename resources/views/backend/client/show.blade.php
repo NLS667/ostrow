@@ -397,12 +397,12 @@
       let content = $('#input-update-content').val();
 
       const note_id = $(this).val();
-      var url = "{{ URL('/admin/note/update/:note_id')}}";
+      var url = "{{ URL('/admin/note/:note_id')}}";
       url = url.replace(':note_id',note_id);
       
       $.ajax({
         url: url,
-        type:"POST",
+        type:"PATCH",
         data:{
           "_token": "{{ csrf_token() }}",
           content:content,
