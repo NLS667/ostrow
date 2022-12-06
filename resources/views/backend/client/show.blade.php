@@ -371,8 +371,14 @@
       e.preventDefault();
 
       let note_id = $(this).val();
-      var url = "/admin/note/edit/" + note_id;
-      console.log(url);
+
+      $.ajax({
+        url: "/admin/note/edit/" + note_id,
+        type:"GET",
+        success:function(response){
+          console.log(response);
+        },
+      })
     });
   </script>
   @endsection
