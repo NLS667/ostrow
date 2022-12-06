@@ -397,8 +397,6 @@
       let content = $('#input-update-content').val();
 
       let note_id = $(this).val();
-
-      console.log(url);
       
       $.ajax({
         url: "/admin/note/update/"+note_id,
