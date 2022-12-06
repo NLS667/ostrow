@@ -219,12 +219,12 @@
   	</div>
 </div>
 
-<!-- Modal -->
+<!-- Create Modal -->
 <div class="modal fade" id="newNoteModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Notatka</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Nowa Notatka</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -237,6 +237,30 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
           <button type="submit" class="btn btn-primary">Zapisz</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editNoteModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edytuj Notatkę</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="UpdateForm">
+        <div class="modal-body">
+          <textarea rows="8" cols="50" class="form-control" name="content" id="input-update-content"></textarea>
+          <span class="text-danger" id="contentErrorMsg"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+          <button type="submit" class="btn btn-primary">Zmień</button>
         </div>
       </form>
     </div>
@@ -378,7 +402,7 @@
         url: url,
         type:"GET",
         success:function(response){
-          $('#SubmitForm modal-body #input-content').val(response.content);
+          $('#input-update-content').val(response.content);
         },
       })
     });
