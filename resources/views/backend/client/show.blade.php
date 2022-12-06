@@ -224,7 +224,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nowa notatka</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Notatka</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -365,6 +365,14 @@
           $('#contentErrorMsg').text(response.responseJSON.errors.name);
         },
       });
+    });
+
+    $(document).on("click", "#edit_note", function(e) {
+      e.preventDefault();
+
+      let note_id = $(this).val();
+      var url = "{{URL('admin/note/edit/'"+note_id+")}}";
+      Console.log(json_encode(url));
     });
   </script>
   @endsection
