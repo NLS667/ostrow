@@ -378,9 +378,7 @@
         url: url,
         type:"GET",
         success:function(response){
-          $('#SubmitForm modal-body content').html(response.content);
-          
-          console.log(response);
+          $('#SubmitForm modal-body #input-content').html(response.content);
         },
       })
     });
