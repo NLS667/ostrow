@@ -371,9 +371,11 @@
       e.preventDefault();
 
       const note_id = $(this).val();
+      var url = "{{ URL('/admin/note/:note_id/edit/')}}";
+      url = url.replace(':note_id',note_id);
 
       $.ajax({
-        url: {{URL("/admin/note/${note_id}/edit/")}},
+        url: url,
         type:"GET",
         success:function(response){
           console.log(response);
