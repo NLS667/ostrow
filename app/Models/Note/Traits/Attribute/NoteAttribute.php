@@ -15,7 +15,7 @@ trait NoteAttribute
     public function getEditButtonAttribute($class)
     {
         if (access()->allow('edit-note')) {
-            return '<button class="'.$class.'" data-placement="top" title="Edytuj" data-toggle="modal" data-target="#newNoteModal">
+            return '<button class="'.$class.'" id="edit_note" value="'.$this->id.'"data-placement="top" title="Edytuj" data-toggle="modal" data-target="#newNoteModal">
                         <span class="material-icons">edit</span>
                     </button>';
         }
