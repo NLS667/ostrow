@@ -402,8 +402,8 @@
         url: url,
         type:"GET",
         success:function(response){
-          $('#input-update-content').val(response.content);
-          console.log(response);
+          let data = JSON.parse(response);
+          $('#input-update-content').val(data["content"]);
         },
       })
     });
