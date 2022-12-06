@@ -1,9 +1,9 @@
 <?php
 
 /*
-     * Producers Management
+     * Notes Management
      */
-    Route::group(['namespace' => 'Producer'], function () {
+    Route::group(['namespace' => 'Note'], function () {
 
 
             /*
