@@ -396,14 +396,12 @@
 
       let content = $('#input-update-content').val();
 
-      const note_id = $(this).val();
-      var url = "https://ostrow.uroczysko.org/admin/note/:note_id";
-      url = url.replace(':note_id',note_id);
+      let note_id = $(this).val();
 
       console.log(url);
       
       $.ajax({
-        url: url,
+        url: "/admin/note/update/"+note_id,
         type:"POST",
         data:{
           "_token": "{{ csrf_token() }}",
