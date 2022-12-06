@@ -370,8 +370,8 @@
     $(document).on("click", "#edit_note", function(e) {
       e.preventDefault();
 
-      const note_id = $(this).val();
-      var url = '{{URL("admin/note/edit/${note_id}")}}';
+      let note_id = $(this).val();
+      var url = "{{URL('admin/note/edit/" + note_id + "')}}";
       console.log(url);
     });
   </script>
