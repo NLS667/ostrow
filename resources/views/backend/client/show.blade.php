@@ -371,7 +371,7 @@
       e.preventDefault();
 
       let note_id = $(this).val();
-      var url = "{{URL('admin/note/edit/'.$note_id)}}";
+      var url = "{{URL('admin/note/edit/'.${note_id})}}";
       console.log(json_encode(url));
     });
   </script>
