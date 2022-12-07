@@ -33,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
          // Force SSL uncomment on protected locations
         if(config('app.debug')){
             URL::forceScheme('https');
+            $this->app['request']->server->set('HTTPS', true);
         }
 
         // Set the default string length for Laravel5.4
