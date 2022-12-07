@@ -20,6 +20,9 @@ use App\Http\Controllers\Backend\User\ProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+if(config('app.debug')){
+    URL::forceRootUrl('https://ostrow.uroczysko.org/');
+}
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 
