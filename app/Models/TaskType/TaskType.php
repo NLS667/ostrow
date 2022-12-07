@@ -2,8 +2,8 @@
 
 namespace App\Models\TaskType;
 
-use App\Models\TaskType\Traits\Attribute\TaskAttribute;
-use App\Models\TaskType\Traits\Relationship\TaskRelationship;
+use App\Models\TaskType\Traits\Attribute\TaskTypeAttribute;
+use App\Models\TaskType\Traits\Relationship\TaskTypeRelationship;
 use App\Models\BaseModel;
 
 /**
