@@ -68,7 +68,7 @@ class NoteRepository extends BaseRepository
      *
      * @return bool
      */
-    public function update($note, $request)
+    public function update(Note $note, $request)
     {
         DB::transaction(function () use ($note, $request) {
             if ($note->update($request)) {
