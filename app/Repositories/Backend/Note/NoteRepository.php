@@ -70,7 +70,7 @@ class NoteRepository extends BaseRepository
      */
     public function update($note, $request)
     {
-        \Log::info($note);
+        \Log::info($request);
         $note->updated_by = access()->user()->id;
         DB::transaction(function () use ($note, $request) {
             if ($note->update($request)) {
