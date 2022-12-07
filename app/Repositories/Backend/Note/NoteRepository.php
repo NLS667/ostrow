@@ -72,9 +72,10 @@ class NoteRepository extends BaseRepository
     {
         $note->content = $request['content'];
         $note->updated_by = access()->user()->id;
+        
         DB::transaction(function () use ($note) {
             if ($note->save()) {
-                
+
                 return true;
             }
 

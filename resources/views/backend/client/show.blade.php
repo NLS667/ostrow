@@ -381,9 +381,8 @@
           content:content,
           client_id:client_id,
         },
-        success:function(response){
-          //$('#successMsg').show();
-          console.log(response);
+        success:function(response){          
+          $('#editNoteModal').modal('hide');
         },
         error: function(response) {
           $('#contentErrorMsg').text(response.responseJSON.errors.name);
@@ -397,7 +396,6 @@
       let content = $('#input-update-content').val();
 
       let note_id = $('#updateButton').val();
-      console.log(note_id);
       var url = "/admin/note/:note_id/";
       url = url.replace(':note_id', note_id);
 
@@ -410,8 +408,7 @@
           content:content,
         },
         success:function(response){
-          //$('#successMsg').show();
-          console.log(response);
+          $('#editNoteModal').modal('hide');
         },
         error: function(response) {
           $('#contentErrorMsg').text(response.responseJSON.errors.name);
