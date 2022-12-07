@@ -53,6 +53,7 @@ class TaskTypeRepository extends BaseRepository
          * be able to differentiate what buttons to show for each row.
          */
         return $this->query()
+            ->leftJoin('tasks', 'tasks.type', '=', 'task_types.id')
             ->select([
                 'task_types.id',
                 'task_types.name',
