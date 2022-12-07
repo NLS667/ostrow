@@ -396,7 +396,7 @@
 
       let content = $('#input-update-content').val();
 
-      const note_id = $(this).val();
+      let note_id = $(this).val();
       var url = "/admin/note/:note_id/";
       url = url.replace(':note_id',note_id);
 
@@ -421,7 +421,7 @@
     $(document).on("click", "#edit_note", function(e) {
       e.preventDefault();
 
-      const note_id = $(this).val();
+      let note_id = $(this).val();
       var url = "{{ URL('/admin/note/:note_id/edit/')}}";
       url = url.replace(':note_id',note_id);
 
