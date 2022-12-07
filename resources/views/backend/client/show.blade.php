@@ -367,12 +367,14 @@
   </script>
   <script type="text/javascript">
     $(document).ready(function(){
-        $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
             localStorage.setItem('activeTab', $(e.target).attr('href'));
         });
+
         var activeTab = localStorage.getItem('activeTab');
+        
         if(activeTab){
-            $('#myTab a[href="' + activeTab + '"]').tab('show');
+            $('#nav-tab a[href="' + activeTab + '"]').tab('show');
         }
     });
     $('#SubmitForm').on('submit',function(e){
