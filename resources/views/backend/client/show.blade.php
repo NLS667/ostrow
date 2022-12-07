@@ -400,7 +400,7 @@
       var url = "/admin/note/:note_id/";
       url = url.replace(':note_id',note_id);
 
-      
+      console.log(url);
       $.ajax({
         url: url,
         type:"PUT",
