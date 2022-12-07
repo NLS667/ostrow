@@ -433,5 +433,9 @@
         },
       })
     });
+
+    $(document).ajaxSuccess(function(){
+        window.location.reload();
+    });
   </script>
   @endsection

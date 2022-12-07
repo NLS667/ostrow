@@ -88,7 +88,6 @@ class NoteController extends Controller
     {
         $this->notes->update($note, $request);
 
-        //return new RedirectResponse(route('admin.client.index'), ['flash_success' => trans('alerts.backend.notes.updated')]);
         return true;
     }
 
