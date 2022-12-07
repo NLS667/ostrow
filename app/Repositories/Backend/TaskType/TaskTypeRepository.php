@@ -58,7 +58,7 @@ class TaskTypeRepository extends BaseRepository
                 'task_types.id',
                 'task_types.name',
                 'task_types.description',
-                DB::raw('(SELECT COUNT(tasks.id) FROM tasks WHERE tasks.type_id == task_types.id AND tasks.isFinished == 0) AS taskCount'),
+                DB::raw('(SELECT COUNT(tasks.id) FROM tasks WHERE tasks.type_id = task_types.id AND tasks.isFinished = 0) AS taskCount'),
                 'task_types.created_at',
                 'task_types.updated_at',
             ])
