@@ -398,10 +398,10 @@
       let note_id = $('#updateButton').val();
       var url = "/admin/note/:note_id/";
       url = url.replace(':note_id', note_id);
-      
+
       $.ajax({
         url: url,
-        type:"PUT",
+        type:"PATCH",
         data:{
           "_token": "{{ csrf_token() }}",
           content:content,
