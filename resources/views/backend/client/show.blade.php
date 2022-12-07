@@ -401,7 +401,7 @@
 
       $.ajax({
         url: url,
-        type:"PATCH",
+        type:"PUT",
         data:{
           "_token": "{{ csrf_token() }}",
           content:content,
