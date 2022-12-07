@@ -396,10 +396,13 @@
 
       let content = $('#input-update-content').val();
 
-      let note_id = $(this).val();
+      const note_id = $(this).val();
+      var url = "/admin/note/:note_id/";
+      url = url.replace(':note_id',note_id);
+
       
       $.ajax({
-        url: "/admin/note/" + note_id + "/",
+        url: url,
         type:"PUT",
         data:{
           "_token": "{{ csrf_token() }}",
