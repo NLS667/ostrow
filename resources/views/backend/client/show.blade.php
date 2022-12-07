@@ -399,7 +399,7 @@
       let note_id = $(this).val();
       
       $.ajax({
-        url: "/admin/note/"+note_id,
+        url: "/admin/note/" + note_id + "/",
         type:"PUT",
         data:{
           "_token": "{{ csrf_token() }}",
