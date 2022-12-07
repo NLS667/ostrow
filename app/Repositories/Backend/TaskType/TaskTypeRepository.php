@@ -53,12 +53,12 @@ class TaskTypeRepository extends BaseRepository
          * be able to differentiate what buttons to show for each row.
          */
         return $this->query()
-            ->leftJoin('tasks', 'tasks.type', '=', 'task_types.id')
+            ->leftJoin('tasks', 'tasks.type_id', '=', 'task_types.id')
             ->select([
                 'task_types.id',
                 'task_types.name',
                 'task_types.description',
-                DB::raw('(SELECT COUNT(tasks.id) FROM tasks WHERE tasks.type = task_types.id) AS taskCount'),
+                DB::raw('(SELECT COUNT(tasks.id) FROM tasks WHERE tasks.type_id == task_types.id AND tasks.isFinished == 0) AS taskCount'),
                 'task_types.created_at',
                 'task_types.updated_at',
             ])

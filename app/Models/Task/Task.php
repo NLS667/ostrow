@@ -31,6 +31,7 @@ class Task extends BaseModel
     protected $fillable = [
         'assignee_id',
         'service_id',
+        'type_id',
         'status',
         'isFinished',
         'team',
