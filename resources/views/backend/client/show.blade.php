@@ -382,7 +382,7 @@
           client_id:client_id,
         },
         success:function(response){          
-          $('#editNoteModal').modal('hide');
+          $('#newNoteModal').modal('hide');
         },
         error: function(response) {
           $('#contentErrorMsg').text(response.responseJSON.errors.name);
@@ -398,8 +398,7 @@
       let note_id = $('#updateButton').val();
       var url = "/admin/note/:note_id/";
       url = url.replace(':note_id', note_id);
-
-      console.log(url);
+      
       $.ajax({
         url: url,
         type:"PUT",
@@ -408,6 +407,7 @@
           content:content,
         },
         success:function(response){
+          console.log(response);
           $('#editNoteModal').modal('hide');
         },
         error: function(response) {
