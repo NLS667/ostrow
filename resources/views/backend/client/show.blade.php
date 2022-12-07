@@ -407,7 +407,7 @@
           content:content,
         },
         success:function(response){
-          console.log(response);
+          window.location.reload();
           $('#editNoteModal').modal('hide');
         },
         error: function(response) {
@@ -432,10 +432,6 @@
           $('#updateButton').val(note_id);
         },
       })
-    });
-
-    $(document).ajaxSuccess(function(){
-        window.location.reload();
     });
   </script>
   @endsection
