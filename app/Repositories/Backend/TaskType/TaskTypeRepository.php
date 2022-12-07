@@ -55,14 +55,14 @@ class TaskTypeRepository extends BaseRepository
         return $this->query()
             ->leftJoin('service_client', 'service_client.servicecat_id', '=', 'service_categories.id')
             ->select([
-                config('task.servicecategory_table').'.id',
-                config('task.servicecategory_table').'.name',
-                config('task.servicecategory_table').'.description',
-                DB::raw('(SELECT COUNT(services.id) FROM services LEFT JOIN clients ON services.client_id = clients.id WHERE services.service_cat_id = service_categories.id AND clients.deleted_at IS NULL) AS taskCount'),
-                config('task.servicecategory_table').'.created_at',
-                config('task.servicecategory_table').'.updated_at',
+                'task_types.id',
+                'task_types.name',
+                'task_types.description',
+                DB::raw('(SELECT COUNT(tasks.id) FROM tasks WHERE tasks.type = task_types.id AS taskCount'),
+                'task_types.created_at',
+                'task_types.updated_at',
             ])
-            ->groupBy('service_categories.id');
+            ->groupBy('task_types.id');
     }
 
     /**

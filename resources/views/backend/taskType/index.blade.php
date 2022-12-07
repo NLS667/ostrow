@@ -11,7 +11,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">handyman</i>
                             </div>
-                            <h4 class="card-title">Rodzaje usług</h4>
+                            <h4 class="card-title">Rodzaje zadań</h4>
                         </div>
                         <div class="card-tools">
                             @include('backend.includes.partials.task-type-header-buttons')
