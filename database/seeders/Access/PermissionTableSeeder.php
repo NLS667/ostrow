@@ -848,6 +848,53 @@ class PermissionTableSeeder extends Seeder
         $permModel->updated_at = null;
         $permModel->save();
 
+        /**
+         * Task Type Management.
+         */
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'view-tasktype-management';
+        $permModel->display_name = 'Dostęp do zarządzania Rodzajami Zadań';
+        $permModel->sort = 66;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'create-tasktype';
+        $permModel->display_name = 'Tworzenie Rodzaju Zadań';
+        $permModel->sort = 67;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'edit-tasktype';
+        $permModel->display_name = 'Edycja Rodzaju Zadań';
+        $permModel->sort = 68;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'delete-tasktype';
+        $permModel->display_name = 'Usuwanie Rodzaju Zadań';
+        $permModel->sort = 69;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
         $this->enableForeignKeys();
     }
 }

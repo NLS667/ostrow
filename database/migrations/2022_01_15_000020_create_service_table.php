@@ -15,7 +15,8 @@ class CreateServiceTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('client_id')->constrained('clients');
+            $table->foreignId('client_id')->constrained('clients');            
+            $table->string('type')->default('extended');            
             $table->foreignId('service_cat_id')->constrained('service_categories');
             $table->longText('models')->nullable();
             $table->date('offered_at')->nullable();

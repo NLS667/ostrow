@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Requests\Backend\ServiceCategory;
+namespace App\Http\Requests\Backend\TaskType;
 
 use App\Http\Requests\Request;
 use Illuminate\Validation\Rule;
 
 /**
- * Class StoreServiceCatRequest.
+ * Class StoreTaskTypeRequest.
  */
-class StoreServiceCatRequest extends Request
+class StoreTaskTypeRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -17,7 +17,7 @@ class StoreServiceCatRequest extends Request
      */
     public function authorize()
     {
-        return access()->allow('create-servicecat');
+        return access()->allow('create-tasktype');
     }
 
     /**
@@ -29,7 +29,6 @@ class StoreServiceCatRequest extends Request
     {
         return [
             'name'              => 'required|max:255',
-            'short_name'        => 'required|max:5',
             'description'       => 'max:255',
         ];
     }
@@ -44,8 +43,6 @@ class StoreServiceCatRequest extends Request
         return [
             'name.required' => 'Musisz podać nazwę Usługi.',
             'name.max' => 'Nazwa jest za długa (max 255 znaków).',
-            'short_name.required' => 'Musisz podać nazwę skrótową.',
-            'short_name.max' => 'Skrót jest za długi (max 5 znaków).',
             'description.max' => 'Opis jest za długi (max 255 znaków).',
         ];
     }

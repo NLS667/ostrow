@@ -113,6 +113,16 @@ class MenuTableSeeder extends Seeder
                     "name":"Kategorie Usług",
                     "id":10,
                     "content":"Service Categories"
+                },
+                {
+                    "view_permission_id":"view-tasktype-management",
+                    "icon":"handyman",
+                    "open_in_new_tab":0,
+                    "url_type":"route",
+                    "url":"admin.taskType.index",
+                    "name":"Rodzaje Zadań",
+                    "id":11,
+                    "content":"Task Types"
                 }]
             }]';
 
@@ -123,7 +133,7 @@ class MenuTableSeeder extends Seeder
                 "url_type":"route",
                 "url":"",
                 "name":"Ustawienia Dostępu",
-                "id":10,
+                "id":12,
                 "content":"Access-Management",
                 "children":[{
                     "view_permission_id":"view-user-management",
@@ -132,7 +142,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.access.user.index",
                     "name":"Użytkownicy",
-                    "id":11,
+                    "id":13,
                     "content":"User-Management"
                 },
                 {
@@ -142,7 +152,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.access.role.index",
                     "name":"Role",
-                    "id":12,
+                    "id":14,
                     "content":"Role-Management"
                 },
                 {
@@ -152,7 +162,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.access.permission.index",
                     "name":"Uprawnienia",
-                    "id":13,
+                    "id":15,
                     "content":"Permission-Management"
                 }]
             }]';
