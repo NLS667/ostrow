@@ -73,7 +73,7 @@
                     </div><!-- /.card-header -->
                     <div id="collapseBody" class="collapse">
                         <div class="card-body">
-                        {!! history()->renderType('Rodzaje Zadań') !!}
+                        {!! history()->renderType('Rodzaj Zadania') !!}
                         </div><!--card-body-->
                     </div><!--collapse-->
                 </div><!--card box-info-->
