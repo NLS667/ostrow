@@ -287,7 +287,7 @@
             } else {
               $("#optional").show();
             }
-          }
+          });
         });
     </script>
 @endsection
