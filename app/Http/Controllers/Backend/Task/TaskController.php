@@ -21,6 +21,7 @@ use App\Models\Task\Task;
 use App\Repositories\Backend\Task\TaskRepository;
 use App\Repositories\Backend\Service\ServiceRepository;
 use App\Repositories\Backend\Access\User\UserRepository;
+use App\Repositories\Backend\TaskType\TaskTypeRepository;
 
 /**
  * Class TaskController.
@@ -35,11 +36,12 @@ class TaskController extends Controller
     /**
      * @param \App\Repositories\Backend\Task\TaskRepository                   $tasks
      */
-    public function __construct(TaskRepository $tasks, ServiceRepository $services, UserRepository $users)
+    public function __construct(TaskRepository $tasks, ServiceRepository $services, UserRepository $users, TaskTypeRepository $types)
     {
         $this->services = $services;
         $this->users = $users;
         $this->tasks = $tasks;
+        $this->types = $types;
     }
 
     /**
@@ -61,7 +63,8 @@ class TaskController extends Controller
     {
         $services = $this->services->getAll();
         $users = $this->users->getAll();
-        return new CreateResponse($services, $users);
+        $types = $this->types->getAll();
+        return new CreateResponse($services, $users, $types);
     }
 
     /**
@@ -99,7 +102,8 @@ class TaskController extends Controller
     {
         $services = $this->services->getAll();
         $users = $this->users->getAll();
-        return new EditResponse($task, $services, $users);
+        $types = $this->types->getAll();
+        return new EditResponse($task, $services, $users, $types);
     }
 
     /**

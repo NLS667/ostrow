@@ -12,11 +12,12 @@ class EditResponse implements Responsable
     /**
      * @param \App\Models\Task\Task $task
      */
-    public function __construct($task, $services, $users)
+    public function __construct($task, $services, $users, $taskTypes)
     {
         $this->task = $task;
         $this->services = $services;
         $this->assignees = $users;
+        $this->taskType = $taskTypes;
     }
 
     /**
@@ -32,6 +33,7 @@ class EditResponse implements Responsable
             'task'                => $this->task,
             'services'            => $this->services,
             'assignees'           => $this->assignees,
+            'taskType'            => $this->taskType,
         ]);
     }
 }
