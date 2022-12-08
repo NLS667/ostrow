@@ -5,7 +5,6 @@ namespace App\Models\Service;
 use App\Models\Service\Traits\Attribute\ServiceAttribute;
 use App\Models\Service\Traits\Relationship\ServiceRelationship;
 use App\Models\BaseModel;
-use App\Enums\ServiceTypeEnum;
 
 /**
  * Class Service.
@@ -29,7 +28,6 @@ class Service extends BaseModel
      */
     protected $fillable = [
         'client_id',
-        'type',
         'models',
         'service_cat_id',
         'offered_at',
@@ -48,10 +46,6 @@ class Service extends BaseModel
         'installed_at',
         'created_at',
         'updated_at'
-    ];
-
-    protected $casts = [
-        'type' => ServiceTypeEnum::class
     ];
 
     /**

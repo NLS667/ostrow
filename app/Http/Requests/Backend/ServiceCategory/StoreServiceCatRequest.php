@@ -30,6 +30,7 @@ class StoreServiceCatRequest extends Request
         return [
             'name'              => 'required|max:255',
             'short_name'        => 'required|max:5',
+            'type'              => 'required',
             'description'       => 'max:255',
         ];
     }
@@ -46,6 +47,7 @@ class StoreServiceCatRequest extends Request
             'name.max' => 'Nazwa jest za długa (max 255 znaków).',
             'short_name.required' => 'Musisz podać nazwę skrótową.',
             'short_name.max' => 'Skrót jest za długi (max 5 znaków).',
+            'type.required' => 'Musisz wybrać typ Usługi.',
             'description.max' => 'Opis jest za długi (max 255 znaków).',
         ];
     }

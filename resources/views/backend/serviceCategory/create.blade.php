@@ -41,6 +41,16 @@
                           </div>
                         </div>
                         <div class="row">
+                            {{-- Type --}}
+                            <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('type') ? ' has-danger' : '' }}">
+                              <select name="type" class="form-control select2" data-placeholder="Wybierz Typ">
+                                <option></option>
+                                <option value="Zwykła">Zwykła usługa</option>
+                                <option value="Dodatkowa">Dodatkowa Usługa</option>
+                              </select>
+                            </div>
+                          </div>
+                        <div class="row">
                             {{ Form::label('description', 'Opis', ['class' => 'col-lg-2 col-form-label']) }}
                             <div class="col-sm-7">
                                 <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">

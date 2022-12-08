@@ -40,6 +40,14 @@ class TaskTypesTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => null,
             ],
+            [
+                'id'         => 3,
+                'name'       => 'Awaria',
+                'description' => 'Awaria zamontowanych urządzeń',
+                'created_by' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => null,
+            ],
         ];
 
         DB::table('task_types')->insert($default_task_types);

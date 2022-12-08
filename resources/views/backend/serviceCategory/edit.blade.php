@@ -43,6 +43,16 @@
                   </div>
                 </div>
                 <div class="row">
+                            {{-- Type --}}
+                            <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('type') ? ' has-danger' : '' }}">
+                              <select name="type" class="form-control select2" data-placeholder="Wybierz Typ">
+                                <option></option>
+                                <option value="Zwykła" {{ $serviceCategory->type == 'Zwykła' ? 'selected' : ''}} >Zwykła usługa</option>
+                                <option value="Dodatkowa" {{ $serviceCategory->type == 'Dodatkowa' ? 'selected' : ''}} >Dodatkowa Usługa</option>
+                              </select>
+                            </div>
+                          </div>
+                <div class="row">
                   <label class="col-sm-2 col-form-label">Opis</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">

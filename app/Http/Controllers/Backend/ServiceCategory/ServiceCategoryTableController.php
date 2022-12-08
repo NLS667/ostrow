@@ -35,6 +35,9 @@ class ServiceCategoryTableController extends Controller
             ->addColumn('short_name', function ($serviceCategory) {
                 return $serviceCategory->short_name;
             })
+            ->addColumn('type', function ($serviceCategory) {
+                return $serviceCategory->type;
+            })
             ->addColumn('description', function ($serviceCategory) {
                 return $serviceCategory->description;
             })
