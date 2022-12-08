@@ -73,3 +73,12 @@
     </div>
 </div>
 @endsection
+@section('after-scripts')
+     <script type="text/javascript">
+        
+        Backend.Utils.documentReady(function(){
+            Backend.ServiceCat.init();
+        });
+
+    </script>
+@endsection

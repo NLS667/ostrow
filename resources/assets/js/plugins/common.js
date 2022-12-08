@@ -594,6 +594,28 @@ var Backend = {}; // common variable used in all the files of the backend
             }
         },
         /**
+         * Service Category management
+         *
+         */
+        ServiceCat: {
+            selectors: {
+                type: $(".select2"),
+            },
+            init: function () {
+                this.setSelectors();
+                this.addHandlers();                
+            },
+            setSelectors: function () {
+                this.selectors.type = $(".select2");
+            },
+            addHandlers: function(){
+                this.selectors.type.select2({
+                    placeholder: "Wybierz Rodzaj",
+                    theme: "material"
+                });
+            }
+        },
+        /**
          * Task management
          *
          */
