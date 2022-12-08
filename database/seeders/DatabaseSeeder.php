@@ -16,11 +16,13 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AccessTableSeeder::class);
         $this->call(HistoryTypeTableSeeder::class);
-        //$this->call(SettingsTableSeeder::class);
         $this->call(ServiceCategoriesTableSeeder::class);
         $this->call(MenuTableSeeder::class);
         $this->call(ModulesTableSeeder::class);
         $this->call(TaskTypesTableSeeder::class);
+
+        //Temporary seeders
+        $this->call(ProducerTableSeeder::class);
 
         Model::reguard();
     }
