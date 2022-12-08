@@ -45,7 +45,7 @@
                   <select name="service_cat_id" class="form-control select2 servicecat-select" data-placeholder="Wybierz Typ Usługi">
                     <option></option>
                     @foreach ($serviceCategories as $category)
-                    <option value="{{$category->id}}" {{ old('service_cat_id') == $category->id ? "selected":"" }}>{{ $category->name }}</option>
+                    <option value="{{$category->id}}" data-type="{{$category->type}}" {{ old('service_cat_id') == $category->id ? "selected":"" }}>{{ $category->name }}</option>
                     @endforeach                  
                   </select>
                   @else
@@ -280,7 +280,7 @@
           }); 
 
           $('.servicecat-select').change(function () {
-            var type = $( ".servicecat-select option:selected" ).val();
+            var type = $( ".servicecat-select option:selected" ).dataset.type;
             if(type=="Dodatkowa")
             {
               $("#optional").hide();
