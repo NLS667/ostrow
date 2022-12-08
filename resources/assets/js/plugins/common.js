@@ -611,6 +611,7 @@ var Backend = {}; // common variable used in all the files of the backend
             addHandlers: function(){
                 this.selectors.type.select2({
                     placeholder: "Wybierz Rodzaj",
+                    type: "",
                     theme: "material"
                 });
             }
