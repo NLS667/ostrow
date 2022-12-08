@@ -2,7 +2,7 @@
   
 namespace App\Enums;
  
-enum ServiceCategoryTypeEnum:string {
-    case Normal = 'Zwykła';
-    case Addon = 'Dodatkowa';
+abstract class ServiceCategoryTypeEnum {
+    const Normal = 'Zwykła';
+    const Addon = 'Dodatkowa';
 }
