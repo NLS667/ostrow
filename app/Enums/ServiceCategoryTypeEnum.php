@@ -2,7 +2,7 @@
   
 namespace App\Enums;
  
-abstract class ServiceCategoryTypeEnum {
+class ServiceCategoryTypeEnum {
     const Normal = 'Zwykła';
     const Addon = 'Dodatkowa';
 }
