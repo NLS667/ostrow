@@ -24,6 +24,7 @@
                                 <thead>
                                     <tr role="row">
                                         <th>Pracownik</th>
+                                        <th>Rodzaj</th>
                                         <th>Usługa</th>
                                         <th>Data rozpoczęcia</th>
                                         <th>Data zakończenia</th>
@@ -36,6 +37,7 @@
                                 <tfoot>
                                     <tr>
                                         <th>Pracownik</th>
+                                        <th>Rodzaj</th>
                                         <th>Usługa</th>                                        
                                         <th>Data rozpoczęcia</th>
                                         <th>Data zakończenia</th>
@@ -55,7 +57,13 @@
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('service', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Usługa']) !!}
+                                                {!! Form::text('type', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Rodzaj']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('service', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Usługa']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
@@ -63,7 +71,7 @@
                                         <th></th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::select('status', [ 'Nowe' => 'Nowe', 'Oczekujące' => 'Oczekujące', 'Nadchodzące' => 'Nadchodzące', 'Po terminie' => 'Po terminie'], $q_status, ["class" => "search-input-select form-control", "data-column" => 4, "placeholder" => 'Status']) !!}
+                                                {!! Form::select('status', [ 'Nowe' => 'Nowe', 'Oczekujące' => 'Oczekujące', 'Nadchodzące' => 'Nadchodzące', 'Po terminie' => 'Po terminie'], $q_status, ["class" => "search-input-select form-control", "data-column" => 5, "placeholder" => 'Status']) !!}
                                             </div>
                                         </th>
                                         <th></th>
@@ -124,6 +132,7 @@
                 },
                 columns: [
                     {data: 'assignee', name: 'assignee_name'},
+                    {data: 'type', name: 'task_type'},
                     {data: 'service', name: 'title'},                    
                     {data: 'start', name: 'start'},
                     {data: 'end', name: 'end'},

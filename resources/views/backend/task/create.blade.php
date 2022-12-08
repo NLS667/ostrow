@@ -17,7 +17,22 @@
                 <h4 class="card-title">Dodaj Zadanie</h4>
               </div>
             </div>
-            <div class="card-body ">              
+            <div class="card-body ">
+              <div class="row">
+                {{-- Task Type --}}
+                <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('type_id') ? ' has-danger' : '' }}">
+                  @if ($taskType->count())
+                  <select name="type_id" class="form-control select2 type-select" data-placeholder="Wybierz Rodzaj">
+                    <option></option>
+                    @foreach ($taskType as $type)
+                    <option value="{{$type->id}}" {{ old('type_id') == $type->id ? "selected":"" }}>{{ $type->name }}</option>
+                    @endforeach                  
+                  </select>
+                  @else
+                  <p>Brak dostępnych Rodzajów Zadań. {{ link_to_route('admin.taskType.index', 'Dodaj ') }}nowy Rodzaj Zadania.</p>
+                  @endif
+                </div>
+              </div>             
               <div class="row">
                 {{-- Service --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('service_id') ? ' has-danger' : '' }}">

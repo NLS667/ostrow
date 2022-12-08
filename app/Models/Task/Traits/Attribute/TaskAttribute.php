@@ -4,6 +4,7 @@ namespace App\Models\Task\Traits\Attribute;
 
 use App\Models\Access\User\User;
 use App\Models\Service\Service;
+use App\Models\TaskType\TaskType;
 use App\Models\ServiceCategory\ServiceCategory;
 use App\Models\Client\Client;
 
@@ -155,6 +156,13 @@ trait TaskAttribute
         } else {
             return "Nie przypisano"; 
         }  
+    }
+
+    public function getTypeAttribute()
+    {
+        $type = TaskType::where('id', $this->type_id)->first();        
+        $type_name = $type->name;
+        return $type_name;  
     }
 
     public function getServiceNameAttribute()

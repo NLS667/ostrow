@@ -57,8 +57,10 @@ class TaskRepository extends BaseRepository
             ->leftJoin('services', 'services.id', '=', 'tasks.service_id')
             ->leftJoin('service_categories', 'service_categories.id', '=', 'services.service_cat_id')
             ->leftJoin('clients', 'clients.id', '=', 'services.client_id')
+            ->leftJoin('task_types', 'task_types.id', '=', 'tasks.type_id')
             ->select([
                 config('task.tasks_table').'.id',
+                config('task.tasks_table').'.type_id',
                 config('task.tasks_table').'.assignee_id',
                 config('task.tasks_table').'.service_id',
                 config('task.tasks_table').'.title',
@@ -241,6 +243,7 @@ class TaskRepository extends BaseRepository
         $service_type = ServiceCategory::where('id', $service->service_cat_id)->first();
         $client = Client::where('id', $service->client_id)->first();
         $task->title = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
+        $task->type_id = $input['type_id'];
         $task->assignee_id = $input['assignee_id'];
 
         $task->team = $input['team'];
