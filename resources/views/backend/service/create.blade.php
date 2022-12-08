@@ -205,7 +205,6 @@
             </div>
           </div>
         </form>
-        {{ $errors }}
       </div>
     </div>    
   </div>
@@ -280,7 +279,8 @@
           }); 
 
           $('.servicecat-select').change(function () {
-            var type = $( ".servicecat-select option:selected" ).dataset.type;
+            var type = $( ".servicecat-select").select2().find(":selected").data("type");;
+            //var type = $( ".servicecat-select option:selected" ).dataset.type;
             if(type=="Dodatkowa")
             {
               $("#optional").hide();
