@@ -59,5 +59,10 @@ return [
 			"deleted" => "Zadanie zostało usunięte.",
 			"updated" => "Zadanie zostało zaktualizowane.",
 		],
+		"taskType" => [
+			"created" => "Rodzaj zadania został utworzony.",
+			"deleted" => "Rodzaj zadania został usunięty.",
+			"updated" => "Rodzaj zadania został zaktualizowany.",
+		],
 	],
 ];

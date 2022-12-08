@@ -71,6 +71,11 @@ return [
             'created' => 'utworzył zadanie.',
             'deleted' => 'usunął zadanie.',
             'updated' => 'zaktualizował zadanie.',
+            'type' => [
+                'created' => 'utworzył rodzaj zadania.',
+                'deleted' => 'usunął rodzaj zadania.',
+                'updated' => 'zaktualizował rodzaj zadania.',
+            ]
         ],
     ],
 ];
