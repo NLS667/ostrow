@@ -35,10 +35,6 @@ class ServiceCategory extends BaseModel
         'created_by',
         'updated_by',
     ];
-
-    protected $casts = [
-        'type' => ServiceCategoryTypeEnum::class
-    ];
     /**
      * @param array $attributes
      */
