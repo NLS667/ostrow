@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
 
         //Temporary seeders
         $this->call(ProducerTableSeeder::class);
+        $this->call(ClientTableSeeder::class);
 
         Model::reguard();
     }
