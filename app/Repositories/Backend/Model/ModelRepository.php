@@ -52,7 +52,6 @@ class ModelRepository extends BaseRepository
                 config('models.models_table').'.id',
                 config('models.models_table').'.name',
                 config('models.models_table').'.description',
-                config('models.models_table').'.serial_number',
                 config('producers.producers_table').'.name as producer',
                 config('models.models_table').'.created_at',
                 config('models.models_table').'.updated_at',
@@ -143,7 +142,6 @@ class ModelRepository extends BaseRepository
         $model = new $model();
         $model->name = $request['name'];
         $model->description = $request['description'];
-        $model->serial_number = $request['serial_number'];
         $model->producer_id = $request['producer'];
         $model->created_by = access()->user()->id;
 

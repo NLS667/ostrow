@@ -31,7 +31,6 @@ class Model extends BaseModel
     protected $fillable = [
         'name',
         'description',
-        'serial_number',
         'created_by',
         'updated_by',
     ];
