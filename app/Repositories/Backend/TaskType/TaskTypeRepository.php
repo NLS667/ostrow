@@ -134,7 +134,7 @@ class TaskTypeRepository extends BaseRepository
     public function delete($taskType)
     {
         if ($taskType->delete()) {
-            event(new ServiceCategoryDeleted($taskType));
+            event(new TaskTypeDeleted($taskType));
 
             return true;
         }
