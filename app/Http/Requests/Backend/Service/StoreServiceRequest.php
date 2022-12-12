@@ -27,7 +27,7 @@ class StoreServiceRequest extends Request
      */
     public function rules()
     {
-        \Log::info(json_encode($this));
+        \Log::info(json_encode($this['request']));
         return [
             'client_id'         => 'required',
             'service_cat_id'    => 'required',
