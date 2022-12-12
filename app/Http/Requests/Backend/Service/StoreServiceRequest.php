@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Backend\Service;
 
+use App\Models\ServiceCategory\ServiceCategory;
 use App\Http\Requests\Request;
 use Illuminate\Validation\Rule;
 
@@ -27,7 +28,9 @@ class StoreServiceRequest extends Request
      */
     public function rules()
     {
-        \Log::info(json_encode($this['request']));
+        
+        $serviceCat = ServiceCategory::where('id', $this['service_cat_id'])->first();
+        \Log::info($serviceCat->type);
         return [
             'client_id'         => 'required',
             'service_cat_id'    => 'required',
