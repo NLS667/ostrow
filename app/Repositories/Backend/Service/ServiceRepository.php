@@ -8,6 +8,7 @@ use App\Events\Service\ServiceUpdated;
 use App\Exceptions\GeneralException;
 use App\Models\Service\Service;
 use App\Models\Client\Client;
+use App\Models\ServiceCategory\ServiceCategory;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
