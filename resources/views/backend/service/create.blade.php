@@ -276,19 +276,8 @@
           $(document).on('click', '.btn_remove_dev', function(){  
             var button_id = $(this).attr("id");   
             $('#dev_row'+button_id+'').remove();
-          }); 
-
-          $('.servicecat-select').change(function () {
-            var type = $( ".servicecat-select").find(":selected").data("type");;
-            //var type = $( ".servicecat-select option:selected" ).dataset.type;
-            if(type=="Dodatkowa")
-            {
-              $("#optional").hide();
-            } else {
-              $("#optional").show();
-            }
           });
-
+          
           $('.servicecat-select').on('change.select2', function () {
             var type = $( ".servicecat-select").find(":selected").data("type");;
             //var type = $( ".servicecat-select option:selected" ).dataset.type;
