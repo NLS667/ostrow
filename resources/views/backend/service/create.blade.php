@@ -279,7 +279,7 @@
           }); 
 
           $('.servicecat-select').change(function () {
-            var type = $( ".servicecat-select").select2().find(":selected").data("type");;
+            var type = $( ".servicecat-select").find(":selected").data("type");;
             //var type = $( ".servicecat-select option:selected" ).dataset.type;
             if(type=="Dodatkowa")
             {
@@ -288,6 +288,18 @@
               $("#optional").show();
             }
           });
+
+          $('.servicecat-select').on('change.select2', function () {
+            var type = $( ".servicecat-select").find(":selected").data("type");;
+            //var type = $( ".servicecat-select option:selected" ).dataset.type;
+            if(type=="Dodatkowa")
+            {
+              $("#optional").hide();
+            } else {
+              $("#optional").show();
+            }
+          });
+
         });
     </script>
 @endsection
