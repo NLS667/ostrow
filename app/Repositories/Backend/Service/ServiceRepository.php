@@ -73,20 +73,37 @@ class ServiceRepository extends BaseRepository
             $service = new $service();
             $service->client_id = $request['client_id'];
             $service->service_cat_id = $request['service_cat_id'];
-            $service->models = json_encode($request['models']);
-            $service->offered_at = $request['offered_at'];
-            $service->signed_at = $request['signed_at'];
-            $service->installed_at = $request['installed_at'];
-            $service->deal_amount = $request['deal_amount'];
-            $service->advance_date = json_encode($request['advance_date']);
-            $service->deal_advance = json_encode($request['deal_advance']);
+
+            $serviceCat = ServiceCategory::where('id', $this['service_cat_id'])->first();
+            $type = $serviceCat->type;
+
+            if($type == 'Zwykła')
+            {
+                $service->models = json_encode($request['models']);
+                $service->offered_at = $request['offered_at'];
+                $service->signed_at = $request['signed_at'];
+                $service->installed_at = $request['installed_at'];
+                $service->deal_amount = $request['deal_amount'];
+                $service->advance_date = json_encode($request['advance_date']);
+                $service->deal_advance = json_encode($request['deal_advance']);
+            } else {
+                $service->models = null;
+                $service->offered_at = null;
+                $service->signed_at = null;
+                $service->installed_at = null;
+                $service->deal_amount = null;
+                $service->advance_date = null;
+                $service->deal_advance = null;
+            }
+            
 
             $service->created_by = access()->user()->id;
 
             if ($service->save()) {
 
                 $client = Client::where('id', $service->client_id)->first();
-                //Create folder for client related files
+                
+                //Create folder for client related files                
                 $dir = storage_path('app/files/'.$client->full_name.'/'.$service->service_type.'/');
                 
                 // Make sure the storage path exists and writeable

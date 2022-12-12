@@ -26,17 +26,27 @@ class UpdateServiceRequest extends Request
      */
     public function rules()
     {
-        return [
-            'client_id'         => 'required',
-            'service_cat_id'    => 'required',
-            'models.*'          => 'required',
-            'deal_amount'       => 'required',
-            'advance_date.*'    => 'required|date',
-            'deal_advance.*'    => 'required|filled',
-            'offered_at'        => 'required|date:d/m/Y',
-            'signed_at'         => 'required|date:d/m/Y',
-            'installed_at'      => 'nullable|date:d/m/Y',
-        ];
+        $serviceCat = ServiceCategory::where('id', $this['service_cat_id'])->first();
+        $type = $serviceCat->type;
+        if($type == 'Zwykła')
+        {
+            return [
+                'client_id'         => 'required',
+                'service_cat_id'    => 'required',
+                'models.*'          => 'required',
+                'deal_amount'       => 'required',
+                'advance_date.*'    => 'required|date',
+                'deal_advance.*'    => 'required|filled',
+                'offered_at'        => 'required|date:d/m/Y',
+                'signed_at'         => 'required|date:d/m/Y',
+                'installed_at'      => 'nullable|date:d/m/Y',
+            ];
+        } else {
+            return [
+                'client_id'         => 'required',
+                'service_cat_id'    => 'required',
+            ];
+        }
     }
 
     public function messages()
