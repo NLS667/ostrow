@@ -75,7 +75,7 @@ class ServiceRepository extends BaseRepository
             $service->client_id = $request['client_id'];
             $service->service_cat_id = $request['service_cat_id'];
 
-            $serviceCat = ServiceCategory::where('id', $this['service_cat_id'])->first();
+            $serviceCat = ServiceCategory::where('id', $request['service_cat_id'])->first();
             $type = $serviceCat->type;
 
             if($type == 'Zwykła')
