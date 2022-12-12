@@ -40,14 +40,19 @@ class ServiceTableController extends Controller
                 return $service->service_cat_id;
             })
             ->editColumn('models', function ($service) {
-                $devices = json_decode($service->models);
-                $result = '';
-                for($i=0;$i<count($devices);$i++)
+                if(isset($service->deal_advance) && json_decode($service->deal_advance) != null)
                 {
-                    $device = Model::where('id', $devices[$i])->first();
-                    $result .= $device->serial_number.'<br/>';
+                    $devices = json_decode($service->models);
+                    $result = '';
+                    for($i=0;$i<count($devices);$i++)
+                    {
+                        $device = Model::where('id', $devices[$i])->first();
+                        $result .= $device->serial_number.'<br/>';
+                    }
+                    return $result;
+                } else {
+                    return "Nie dotyczy";
                 }
-                return $result;
             })
             ->addColumn('offered_at', function ($service) {
                 if(isset($service->offered_at))
