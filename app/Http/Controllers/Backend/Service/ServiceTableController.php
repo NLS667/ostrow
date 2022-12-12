@@ -89,9 +89,11 @@ class ServiceTableController extends Controller
                 {
                     $advance = json_decode($service->deal_advance);
                     $adv_sum = 0;
-                    for($i=0;$i<count($advance);$i++)
-                    {
-                        $adv_sum += $advance[$i];
+                    if($advance != null)
+                        for($i=0;$i<count($advance);$i++)
+                        {
+                            $adv_sum += $advance[$i];
+                        }
                     }
                     return number_format($adv_sum, 2, ".", "");                    
                 } else {
