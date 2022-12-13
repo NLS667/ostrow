@@ -78,31 +78,22 @@ class FinanceTableController extends Controller
 
             $services = $client->services;
             foreach($services as $service){
-                if($service->type == "Zwykła"){
-                    $advances = json_decode($service->deal_advance);
-                    $totalAdv = 0;
-                    for($i=0;$i<count($advances);$i++){
-                        $totalAdv += $advances[$i];
-                    }
-                    $client_services = (object)[
-                        'id' => $service->id,
-                        'short_name' => $service->service_type_short,
-                        'deal_amount' => floatval($service->deal_amount),
-                        'deal_advance' => floatval($totalAdv),
-                        'left_amount' => floatval($service->deal_amount) - floatval($totalAdv),
-                        'edit_link' => $service->finance_action_button
-                    ];
-                    array_push($client_data->services, $client_services);
-                } else {
-                    $client_services = (object)[
-                        'id' => $service->id,
-                        'short_name' => $service->service_type_short,
-                        'deal_amount' => '',
-                        'deal_advance' => '',
-                        'left_amount' => '',
-                        'edit_link' => $service->finance_action_button
-                    ];
+                
+                $advances = json_decode($service->deal_advance);
+                $totalAdv = 0;
+                for($i=0;$i<count($advances);$i++){
+                    $totalAdv += $advances[$i];
                 }
+                $client_services = (object)[
+                    'id' => $service->id,
+                    'short_name' => $service->service_type_short,
+                    'deal_amount' => floatval($service->deal_amount),
+                    'deal_advance' => floatval($totalAdv),
+                    'left_amount' => floatval($service->deal_amount) - floatval($totalAdv),
+                    'edit_link' => $service->finance_action_button
+                ];
+                array_push($client_data->services, $client_services);
+                
             }
             $dtQuery[] = $client_data;
         };

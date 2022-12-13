@@ -17,7 +17,7 @@ trait ClientRelationship
      */
     public function services()
     {
-        return $this->hasMany(Service::class, 'client_id');
+        return $this->hasMany(Service::class, 'client_id')->where('type', '==', 'Zwykła');
     }
 
     /**
