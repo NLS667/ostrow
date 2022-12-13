@@ -150,7 +150,7 @@
                   @php
                   $dev_counter = 1;
                   @endphp
-                  <div class="row">
+                  <div class="row device-row">
                     {{-- Model --}}
                     <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('models.0') ? ' has-danger' : '' }}">
                       @if ($models->count())
@@ -185,7 +185,7 @@
                   </div>
                   @if(old('models'))
                   @for ($y = 1; $y < count(old('models')); $y++)
-                  <div class="row dynamic-added" id="dev_row{{$y}}">
+                  <div class="row dynamic-added device-row" id="dev_row{{$y}}">
                     <div class="col-sm-6 form-group bmd-form-group">
                       <select name="models[]" class="form-control select2 model-{{$y}}-select" data-placeholder="Wybierz Model Urządzenia">
                         <option></option>
@@ -338,7 +338,7 @@
           $('#input-sn_tags').on('change', function (event)
             {
                 var $element   = $(event.target),
-                    $container = $element.closest('.example');
+                    $container = $element.closest('.device-row');
 
                 if (!$element.data('materialtags'))
                 {
