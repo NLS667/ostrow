@@ -78,8 +78,7 @@ class FinanceTableController extends Controller
 
             $services = $client->services;
             foreach($services as $service){
-                \Log::info($service->type->type);
-                if($service->type->name == "Zwykła"){
+                if($service->type->type == "Zwykła"){
                     $advances = json_decode($service->deal_advance);
                     $totalAdv = 0;
                     for($i=0;$i<count($advances);$i++){
@@ -98,9 +97,9 @@ class FinanceTableController extends Controller
                     $client_services = (object)[
                         'id' => $service->id,
                         'short_name' => $service->service_type_short,
-                        'deal_amount' => '',
-                        'deal_advance' => '',
-                        'left_amount' => '',
+                        'deal_amount' => 'Nie dotyczy',
+                        'deal_advance' => 'Nie dotyczy',
+                        'left_amount' => 'Nie dotyczy',
                         'edit_link' => $service->finance_action_button
                     ];
                 }
