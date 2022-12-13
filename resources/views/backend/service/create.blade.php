@@ -320,8 +320,7 @@
 
           $('#input-sn_tags').on('change', function (event)
             {
-                var $element   = $(event.target),
-                    $container = $element.closest('.device-row');
+                var $element   = $(event.target);
 
                 if (!$element.data('materialtags'))
                 {
@@ -333,8 +332,6 @@
                 {
                     val = "null";
                 }
-                $('code', $('pre.val', $container)).html(($.isArray(val) ? JSON.stringify(val) : "\"" + val.replace('"', '\\"') + "\""));
-                $('code', $('pre.items', $container)).html(JSON.stringify($element.materialtags('items')));
 
             }).trigger('change');
 
