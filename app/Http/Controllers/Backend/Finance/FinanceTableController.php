@@ -93,6 +93,15 @@ class FinanceTableController extends Controller
                         'edit_link' => $service->finance_action_button
                     ];
                     array_push($client_data->services, $client_services);
+                } else {
+                    $client_services = (object)[
+                        'id' => $service->id,
+                        'short_name' => $service->service_type_short,
+                        'deal_amount' => '',
+                        'deal_advance' => '',
+                        'left_amount' => '',
+                        'edit_link' => $service->finance_action_button
+                    ];
                 }
             }
             $dtQuery[] = $client_data;
