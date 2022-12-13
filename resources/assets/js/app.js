@@ -18,6 +18,9 @@ import 'datatables.net-buttons/js/buttons.print.js';
 //Import perfect scrollbar 
 //window.PerfectScrollbar = require('perfect-scrollbar').default;
 
+//Bootstrap Tagsinput
+import 'bootstrap-tagsinput';
+
 //Import chart.js
 window.Chart = require('chart.js/auto').default;
 
