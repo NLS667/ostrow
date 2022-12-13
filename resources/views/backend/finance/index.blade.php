@@ -62,7 +62,7 @@
             });
 
             function displayServices(services) {
-  
+              console.log(services);
               var html = '';
               let amountTotal = parseFloat(+services[0].deal_amount);
               let advanceTotal = +services[0].deal_advance;
