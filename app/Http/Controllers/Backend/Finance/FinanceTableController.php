@@ -92,7 +92,6 @@ class FinanceTableController extends Controller
                         'left_amount' => floatval($service->deal_amount) - floatval($totalAdv),
                         'edit_link' => $service->finance_action_button
                     ];
-                    array_push($client_data->services, $client_services);
                 } else {
                     $client_services = (object)[
                         'id' => $service->id,
@@ -103,6 +102,7 @@ class FinanceTableController extends Controller
                         'edit_link' => $service->finance_action_button
                     ];
                 }
+                array_push($client_data->services, $client_services);
             }
             $dtQuery[] = $client_data;
         };
