@@ -29,6 +29,7 @@ class Service extends BaseModel
     protected $fillable = [
         'client_id',
         'models',
+        'serials',
         'service_cat_id',
         'offered_at',
         'signed_at',
