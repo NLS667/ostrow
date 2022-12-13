@@ -39,129 +39,133 @@
                   <select name="service_cat_id" class="form-control select2 servicecat-select" data-placeholder="Wybierz Typ Usługi">
                     <option></option>
                     @foreach ($serviceCategories as $category)
-                    <option value="{{$category->id}}" {{ $service->service_cat_id == $category->id ? "selected":"" }}>{{ $category->name }}</option>
+                    <option value="{{$category->id}}"  data-type="{{$category->type}}" {{ $service->service_cat_id == $category->id ? "selected":"" }}>{{ $category->name }}</option>
                     @endforeach                  
                   </select>
                   @endif
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <h4 class="title">Informacje o usłudze</h4>
-                </div>
-              </div>
-              <div class="row">
-                {{-- Offer Date --}}
-                <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('offered_at') ? ' has-danger' : '' }}">
-                  <label class="bmd-label-floating">Data Oferty</label>
-                  <input class="form-control datepicker" name="offered_at" id="input-offered_at" type="text" value="{{ old('offered_at', $service->offered_at) }}" />
-                  @if ($errors->has('offered_at'))
-                  <span class="material-icons form-control-feedback">clear</span>
-                  <span id="offered_at-error" class="error text-danger" for="input-offered_at">{{ $errors->first('offered_at') }}</span>
-                  @endif
-                </div>
-                {{-- Deal Date --}}
-                <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('signed_at') ? ' has-danger' : '' }}">
-                  <label class="bmd-label-floating">Data Umowy</label>
-                  <input class="form-control datepicker" name="signed_at" id="input-signed_at" type="text" value="{{ old('signed_at', $service->signed_at) }}" />
-                  @if ($errors->has('signed_at'))
-                  <span class="material-icons form-control-feedback">clear</span>
-                  <span id="signed_at-error" class="error text-danger" for="input-signed_at">{{ $errors->first('signed_at') }}</span>
-                  @endif
-                </div>
-                {{-- Montage Date --}}
-                <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('installed_at') ? ' has-danger' : '' }}">
-                  <label class="bmd-label-floating">Data Montażu</label>
-                  <input class="form-control datepicker" name="installed_at" id="input-installed_at" type="text" value="{{ old('installed_at', $service->installed_at) }}" />
-                  @if ($errors->has('installed_at'))
-                  <span class="material-icons form-control-feedback">clear</span>
-                  <span id="installed_at-error" class="error text-danger" for="input-installed_at">{{ $errors->first('installed_at') }}</span>
-                  @endif
-                </div>
-              </div>
-              <div class="row">
-                {{-- Deal Amount --}}
-                <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_amount') ? ' has-danger' : '' }}">
-                  <label class="bmd-label-floating">Kwota Umowy</label>
-                  <input class="form-control{{ $errors->has('deal_amount') ? ' is-invalid' : '' }}" name="deal_amount" id="input-deal_amount" type="text" value="{{ old('deal_amount', $service->deal_amount) }}" />
-                  @if ($errors->has('deal_amount'))
-                  <span class="material-icons form-control-feedback">clear</span>
-                  <span id="deal_amount-error" class="error text-danger" for="input-deal_amount">{{ $errors->first('deal_amount') }}</span>
-                  @endif
-                </div>
-                <div class="col-sm-6">
-                  <button type="button" name="add_advance" id="add_advance" class="btn btn-primary">Dodaj Zaliczkę</button>
-                </div>
-              </div>
-              <div id="advance">
-                @php
-                    $advances = json_decode($service->deal_advance);
-                    $dates = json_decode($service->advance_date);
-                @endphp
-                @for ($i = 0; $i < count($advances); $i++)
-                <div class="row" id="adv_row{{$i}}">
-                  {{-- Deal Advance Date--}} 
-                  <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('advance_date.'.$i) ? ' has-danger' : '' }}">
-                      <label class="bmd-label-floating">Data Zaliczki</label>
-                      <input class="form-control datepicker" name="advance_date[]" id="input-advance_date" type="text" value="{{ old('advance_date.'.$i, $dates[$i] ) }}" />
-                      @if ($errors->has('advance_date.'.$i))
-                      <span class="material-icons form-control-feedback">clear</span>
-                      <span id="advance_date-error" class="error text-danger" for="input-advance_date">{{ $errors->first('advance_date.'.$i) }}</span>
-                      @endif
+              @if($service->type->type == 'Zwykła')
+              <div id="optional">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="title">Informacje o usłudze</h4>
                   </div>
-                  {{-- Deal Advance Value--}}
-                  <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('deal_advance.'.$i) ? ' has-danger' : '' }}">
-                    <label class="bmd-label-floating">Zaliczka</label>
-                    <input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old('deal_advance.'.$i, $advances[$i]) }}" />
-                    @if ($errors->has('deal_advance.'.$i))
+                </div>
+                <div class="row">
+                  {{-- Offer Date --}}
+                  <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('offered_at') ? ' has-danger' : '' }}">
+                    <label class="bmd-label-floating">Data Oferty</label>
+                    <input class="form-control datepicker" name="offered_at" id="input-offered_at" type="text" value="{{ old('offered_at', $service->offered_at) }}" />
+                    @if ($errors->has('offered_at'))
                     <span class="material-icons form-control-feedback">clear</span>
-                    <span id="deal_advance-error" class="error text-danger" for="input-deal_advance">{{ $errors->first('deal_advance.'.$i) }}</span>
+                    <span id="offered_at-error" class="error text-danger" for="input-offered_at">{{ $errors->first('offered_at') }}</span>
                     @endif
-                  </div>                  
-                  <div class="col-sm-6">
-                    <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_adv">X</button>
+                  </div>
+                  {{-- Deal Date --}}
+                  <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('signed_at') ? ' has-danger' : '' }}">
+                    <label class="bmd-label-floating">Data Umowy</label>
+                    <input class="form-control datepicker" name="signed_at" id="input-signed_at" type="text" value="{{ old('signed_at', $service->signed_at) }}" />
+                    @if ($errors->has('signed_at'))
+                    <span class="material-icons form-control-feedback">clear</span>
+                    <span id="signed_at-error" class="error text-danger" for="input-signed_at">{{ $errors->first('signed_at') }}</span>
+                    @endif
+                  </div>
+                  {{-- Montage Date --}}
+                  <div class="col-sm-4 form-group bmd-form-group {{ $errors->has('installed_at') ? ' has-danger' : '' }}">
+                    <label class="bmd-label-floating">Data Montażu</label>
+                    <input class="form-control datepicker" name="installed_at" id="input-installed_at" type="text" value="{{ old('installed_at', $service->installed_at) }}" />
+                    @if ($errors->has('installed_at'))
+                    <span class="material-icons form-control-feedback">clear</span>
+                    <span id="installed_at-error" class="error text-danger" for="input-installed_at">{{ $errors->first('installed_at') }}</span>
+                    @endif
                   </div>
                 </div>
-                @endfor
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <h4 class="title">Urządzenia</h4>
-                </div>
-              </div>
-              <div id="devices">
-                @php
-                    $devices = json_decode($service->models);
-                @endphp
-                @for ($y = 0; $y < count($devices); $y++)
-                <div class="row" id="dev_row{{$y}}">
-                  {{-- Model --}}
-                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('models.'.$y) ? ' has-danger' : '' }}">
-                    @if ($models->count())
-                    <select name="models[]" class="form-control select2 model-{{$y}}-select" data-placeholder="Wybierz Model Urządzenia">
-                      <option></option>
-                      @foreach ($models as $model)
-                      <option value="{{$model->id}}" {{ $devices[$y] == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
-                      @endforeach                  
-                    </select>
+                <div class="row">
+                  {{-- Deal Amount --}}
+                  <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('deal_amount') ? ' has-danger' : '' }}">
+                    <label class="bmd-label-floating">Kwota Umowy</label>
+                    <input class="form-control{{ $errors->has('deal_amount') ? ' is-invalid' : '' }}" name="deal_amount" id="input-deal_amount" type="text" value="{{ old('deal_amount', $service->deal_amount) }}" />
+                    @if ($errors->has('deal_amount'))
+                    <span class="material-icons form-control-feedback">clear</span>
+                    <span id="deal_amount-error" class="error text-danger" for="input-deal_amount">{{ $errors->first('deal_amount') }}</span>
                     @endif
-                    @if ($errors->has('models.'.$y))
+                  </div>
+                  <div class="col-sm-6">
+                    <button type="button" name="add_advance" id="add_advance" class="btn btn-primary">Dodaj Zaliczkę</button>
+                  </div>
+                </div>
+                <div id="advance">
+                  @php
+                      $advances = json_decode($service->deal_advance);
+                      $dates = json_decode($service->advance_date);
+                  @endphp
+                  @for ($i = 0; $i < count($advances); $i++)
+                  <div class="row" id="adv_row{{$i}}">
+                    {{-- Deal Advance Date--}} 
+                    <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('advance_date.'.$i) ? ' has-danger' : '' }}">
+                        <label class="bmd-label-floating">Data Zaliczki</label>
+                        <input class="form-control datepicker" name="advance_date[]" id="input-advance_date" type="text" value="{{ old('advance_date.'.$i, $dates[$i] ) }}" />
+                        @if ($errors->has('advance_date.'.$i))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="advance_date-error" class="error text-danger" for="input-advance_date">{{ $errors->first('advance_date.'.$i) }}</span>
+                        @endif
+                    </div>
+                    {{-- Deal Advance Value--}}
+                    <div class="col-sm-3 form-group bmd-form-group {{ $errors->has('deal_advance.'.$i) ? ' has-danger' : '' }}">
+                      <label class="bmd-label-floating">Zaliczka</label>
+                      <input class="form-control" name="deal_advance[]" id="input-deal_advance" type="text" value="{{ old('deal_advance.'.$i, $advances[$i]) }}" />
+                      @if ($errors->has('deal_advance.'.$i))
                       <span class="material-icons form-control-feedback">clear</span>
-                      <span id="models-error" class="error text-danger" for="input-models">{{ $errors->first('models.'.$y) }}</span>
+                      <span id="deal_advance-error" class="error text-danger" for="input-deal_advance">{{ $errors->first('deal_advance.'.$i) }}</span>
+                      @endif
+                    </div>                  
+                    <div class="col-sm-6">
+                      <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_adv">X</button>
+                    </div>
+                  </div>
+                  @endfor
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="title">Urządzenia</h4>
+                  </div>
+                </div>
+                <div id="devices">
+                  @php
+                      $devices = json_decode($service->models);
+                  @endphp
+                  @for ($y = 0; $y < count($devices); $y++)
+                  <div class="row" id="dev_row{{$y}}">
+                    {{-- Model --}}
+                    <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('models.'.$y) ? ' has-danger' : '' }}">
+                      @if ($models->count())
+                      <select name="models[]" class="form-control select2 model-{{$y}}-select" data-placeholder="Wybierz Model Urządzenia">
+                        <option></option>
+                        @foreach ($models as $model)
+                        <option value="{{$model->id}}" {{ $devices[$y] == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
+                        @endforeach                  
+                      </select>
+                      @endif
+                      @if ($errors->has('models.'.$y))
+                        <span class="material-icons form-control-feedback">clear</span>
+                        <span id="models-error" class="error text-danger" for="input-models">{{ $errors->first('models.'.$y) }}</span>
+                      @endif
+                    </div>
+                    @if($i == 0)
+                    <div class="col-sm-6">
+                      <button type="button" name="add_device" id="add_device" class="btn btn-primary">Dodaj urządzenie</button>
+                    </div>
+                    @else
+                    <div class="col-sm-6">
+                      <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_dev">X</button>
+                    </div>
                     @endif
                   </div>
-                  @if($i == 0)
-                  <div class="col-sm-6">
-                    <button type="button" name="add_device" id="add_device" class="btn btn-primary">Dodaj urządzenie</button>
-                  </div>
-                  @else
-                  <div class="col-sm-6">
-                    <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_dev">X</button>
-                  </div>
-                  @endif
-                </div>
-                @endfor
-              </div> 
+                  @endfor
+                </div> 
+              </div>
+              @endif
             </div>
             <div class="card-footer">
               {{ link_to_route('admin.service.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
@@ -182,7 +186,15 @@
             md.initFormExtendedDatetimepickers();
         });
 
-        $(document).ready(function(){      
+        $(document).ready(function(){
+          var type = $( ".servicecat-select").find(":selected").data("type");
+          if(type=="Dodatkowa")
+            {
+              $("#optional").hide();
+            } else {
+              $("#optional").show();
+            }
+
           var i=1;
           var y=1;
 
