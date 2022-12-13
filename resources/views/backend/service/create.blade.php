@@ -222,6 +222,7 @@
               </div>
             </div>
             <div class="card-footer">
+              <input type="submit" disabled style="display: none" aria-hidden="true" />
               {{ link_to_route('admin.service.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
               {{ Form::submit('Dodaj', ['class' => 'btn btn-success btn-md']) }}
             </div>
