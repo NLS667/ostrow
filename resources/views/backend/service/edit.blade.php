@@ -162,6 +162,10 @@
                     </div>
                     @endif
                   </div>
+                  <div class="row" id="sn_tags">
+                    <label>Numery seryjne :</label>
+                    <input type="text" data-role="tagsinput" name="sn_tags" class="form-control">
+                  </div>
                   @endfor
                 </div> 
               </div>

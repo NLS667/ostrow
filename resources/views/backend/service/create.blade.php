@@ -218,7 +218,7 @@
             md.initFormExtendedDatetimepickers();
         });
 
-        $(document).ready(function(){      
+        $(document).ready(function(){
 
           var adv_count = {{ $adv_counter }};
           var i=adv_count-1;
@@ -279,7 +279,7 @@
           });
           
           $('.servicecat-select').on('change.select2', function () {
-            var type = $( ".servicecat-select").find(":selected").data("type");;
+            var type = $( ".servicecat-select").find(":selected").data("type");
             //var type = $( ".servicecat-select option:selected" ).dataset.type;
             if(type=="Dodatkowa")
             {
