@@ -172,6 +172,10 @@
                       <button type="button" name="add_device" id="add_device" class="btn btn-primary">Dodaj urządzenie</button>
                     </div>
                   </div>
+                  <div class="row" id="sn_tags">
+                    <label>Numery seryjne :</label>
+                    <input type="text" data-role="tagsinput" name="sn_tags" class="form-control">
+                  </div>
                   @if(old('models'))
                   @for ($y = 1; $y < count(old('models')); $y++)
                   <div class="row dynamic-added" id="dev_row{{$y}}">
@@ -190,6 +194,10 @@
                     <div class="col-sm-6">
                       <button type="button" name="remove" id="{{$y}}" class="btn btn-danger btn_remove_dev">X</button>
                     </div>
+                  </div>
+                  <div class="row" id="sn_tags">
+                    <label>Numery seryjne :</label>
+                    <input type="text" data-role="tagsinput" name="sn_tags" class="form-control">
                   </div>
                   @php
                     $dev_counter++;
