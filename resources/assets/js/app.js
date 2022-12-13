@@ -19,7 +19,7 @@ import 'datatables.net-buttons/js/buttons.print.js';
 //window.PerfectScrollbar = require('perfect-scrollbar').default;
 
 //Bootstrap Tagsinput
-//import 'materialize-tags';
+import 'materialize-tags';
 
 //Import chart.js
 window.Chart = require('chart.js/auto').default;
