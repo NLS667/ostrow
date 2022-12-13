@@ -4668,6 +4668,28 @@ var Backend = {}; // common variable used in all the files of the backend
             }
         },
         /**
+         * Service Category management
+         *
+         */
+        ServiceCat: {
+            selectors: {
+                type: $(".select2"),
+            },
+            init: function () {
+                this.setSelectors();
+                this.addHandlers();                
+            },
+            setSelectors: function () {
+                this.selectors.type = $(".select2");
+            },
+            addHandlers: function(){
+                this.selectors.type.select2({
+                    placeholder: "Wybierz Rodzaj",
+                    theme: "material"
+                });
+            }
+        },
+        /**
          * Task management
          *
          */
@@ -4675,6 +4697,7 @@ var Backend = {}; // common variable used in all the files of the backend
             selectors: {
                 service: $(".select2.service-select"),
                 assignee: $(".select2.assignee-select"),
+                type: $(".select2.type-select"),
             },
             init: function () {
                 this.setSelectors();
@@ -4683,6 +4706,7 @@ var Backend = {}; // common variable used in all the files of the backend
             setSelectors: function () {
                 this.selectors.service = $(".select2.service-select");
                 this.selectors.assignee = $(".select2.assignee-select");
+                this.selectors.type = $(".select2.type-select");
             },
             addHandlers: function(){
                 this.selectors.service.select2({
@@ -4691,6 +4715,10 @@ var Backend = {}; // common variable used in all the files of the backend
                 });
                 this.selectors.assignee.select2({
                     placeholder: "Wybierz Pracownika",
+                    theme: "material"
+                });
+                this.selectors.type.select2({
+                    placeholder: "Wybierz Rodzaj",
                     theme: "material"
                 });
             }
