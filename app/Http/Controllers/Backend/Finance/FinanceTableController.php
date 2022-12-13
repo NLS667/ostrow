@@ -97,9 +97,9 @@ class FinanceTableController extends Controller
                     $client_services = (object)[
                         'id' => $service->id,
                         'short_name' => $service->service_type_short,
-                        'deal_amount' => '0.00',
-                        'deal_advance' => '0.00',
-                        'left_amount' => '0.00',
+                        'deal_amount' => 0.00,
+                        'deal_advance' => 0.00,
+                        'left_amount' => 0.00,
                         'edit_link' => $service->finance_action_button
                     ];
                 }
