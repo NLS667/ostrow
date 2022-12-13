@@ -320,24 +320,6 @@
               $("#optional").show();
             }
           });
-
-          $('#input-sn_tags').on('change', function (event)
-            {
-                var $element   = $(event.target);
-
-                if (!$element.data('materialtags'))
-                {
-                    return;
-                }
-
-                var val = $element.val();
-                if (val === null)
-                {
-                    val = "null";
-                }
-
-            }).trigger('change');
-
         });
     </script>
 @endsection
