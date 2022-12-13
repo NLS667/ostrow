@@ -245,6 +245,9 @@
         Backend.Utils.documentReady(function(){
             Backend.Service.init();
             md.initFormExtendedDatetimepickers();
+            $('#input-sn_tags').materialtags({
+                tagClass: 'chip'
+            });
         });
 
         $(document).ready(function(){
