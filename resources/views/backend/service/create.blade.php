@@ -173,8 +173,12 @@
                     </div>
                   </div>
                   <div class="row" id="sn_tags">
-                    <label class="col-sm-3">Numery seryjne :</label>
-                    <input type="text" data-role="tagsinput" name="sn_tags" class="form-control col-sm-6">
+                    <label class="bmd-label-floating">Numery seryjne :</label>
+                    <input type="text" id="input-sn_tags" data-role="tagsinput" name="sn_tags" class="form-control col-sm-6">
+                    @if ($errors->has('sn_tags'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="sn_tags-error" class="error text-danger" for="input-sn_tags">{{ $errors->first('sn_tags') }}</span>
+                    @endif
                   </div>
                   @if(old('models'))
                   @for ($y = 1; $y < count(old('models')); $y++)
@@ -196,8 +200,12 @@
                     </div>
                   </div>
                   <div class="row" id="sn_tags">
-                    <label>Numery seryjne :</label>
+                    <label class="bmd-label-floating">Numery seryjne :</label>
                     <input type="text" data-role="tagsinput" name="sn_tags" class="form-control">
+                    @if ($errors->has('sn_tags'))
+                      <span class="material-icons form-control-feedback">clear</span>
+                      <span id="sn_tags-error" class="error text-danger" for="input-sn_tags">{{ $errors->first('sn_tags') }}</span>
+                    @endif
                   </div>
                   @php
                     $dev_counter++;
