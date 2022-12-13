@@ -222,7 +222,7 @@
               </div>
             </div>
             <div class="card-footer">
-              <input type="submit" disabled style="display: none" aria-hidden="true" />
+              <input type="submit" style="display: none" aria-hidden="true" disabled />
               {{ link_to_route('admin.service.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
               {{ Form::submit('Dodaj', ['class' => 'btn btn-success btn-md']) }}
             </div>
@@ -247,7 +247,8 @@
             Backend.Service.init();
             md.initFormExtendedDatetimepickers();
             $('#input-sn_tags').materialtags({
-                tagClass: 'chip'
+                tagClass: 'chip',
+                confirmKeys: [13, 44],
             });
         });
 
