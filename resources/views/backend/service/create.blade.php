@@ -173,8 +173,8 @@
                     </div>
                   </div>
                   <div class="row" id="sn_tags">
-                    <label>Numery seryjne :</label>
-                    <input type="text" data-role="tagsinput" name="sn_tags" class="form-control">
+                    <label class="col-sm-3">Numery seryjne :</label>
+                    <input type="text" data-role="tagsinput" name="sn_tags" class="form-control col-sm-6">
                   </div>
                   @if(old('models'))
                   @for ($y = 1; $y < count(old('models')); $y++)
