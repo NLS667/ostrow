@@ -332,7 +332,7 @@
 
           $('.bootstrap-tagsinput').on('itemAdded', function(event) {
             // event.item: contains the item
-            $(event.item).parent().addClass('is-filled'); 
+            $(event.item).parent().parent().addClass('is-filled'); 
           });
         });
     </script>
