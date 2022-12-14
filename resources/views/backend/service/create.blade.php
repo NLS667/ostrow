@@ -236,8 +236,13 @@
 @endsection
 @section('after-styles')
 <style type="text/css">
-        .bootstrap-tagsinput, .bootstrap-tagsinput input{
+        .bootstrap-tagsinput{
             width: 100%;
+        }
+        .bootstrap-tagsinput input{
+          -webkit-box-sizing: border-box; // Safari/Chrome, other WebKit
+          -moz-box-sizing: border-box;    // Firefox, other Gecko
+          box-sizing: border-box;         // Opera/IE 8+
         }
     </style>
 @endsection
