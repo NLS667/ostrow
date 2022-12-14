@@ -235,7 +235,7 @@
 @endsection
 @section('after-styles')
 <style type="text/css">
-        .materialize-tags, .materialize-tags input{
+        .bootstrap-tagsinput, .bootstrap-tagsinput input{
             width: 100%;
         }
     </style>
