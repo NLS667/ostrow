@@ -44,7 +44,7 @@
     this.itemsArray = [];
 
     this.$element = $(element);
-    this.$element.hide();
+    this.$element.parent().hide();
 
     this.isSelect = (element.tagName === 'SELECT');
     this.multiple = (this.isSelect && element.hasAttribute('multiple'));
@@ -52,11 +52,11 @@
     this.placeholderText = element.hasAttribute('placeholder') ? this.$element.attr('placeholder') : '';
     this.inputSize = Math.max(1, this.placeholderText.length);
 
-    this.$container = $('<div class="col-sm-6 form-group bmd-form-group bootstrap-tagsinput {{ $errors->has(\'sn_tags\') ? \' has-danger\' : \'\' }}"></div>');
+    this.$container = $('<div class="col-sm-6 form-group bmd-form-group bootstrap-tagsinput"></div>');
     this.$label = $('<label class="bmd-label-floating">' + this.placeholderText + '</label>').appendTo(this.$container);
     this.$input = $('<input type="text" class="form-control" />').appendTo(this.$container);
 
-    this.$element.before(this.$container);
+    this.$element.parent().before(this.$container);
 
     this.build(options);
     this.isInit = false;
