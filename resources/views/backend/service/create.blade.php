@@ -237,12 +237,11 @@
 @section('after-styles')
 <style type="text/css">
         .bootstrap-tagsinput{
-            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
         }
-        .bootstrap-tagsinput input{
-          -webkit-box-sizing: border-box; // Safari/Chrome, other WebKit
-          -moz-box-sizing: border-box;    // Firefox, other Gecko
-          box-sizing: border-box;         // Opera/IE 8+
+        .bootstrap-tagsinput input[type="text"]{
+          width: 100%;
         }
     </style>
 @endsection
