@@ -325,13 +325,14 @@
             }
           });
 
-          $('#input-sn_tags').tagsinput({
+          $('.bootstrap-tagsinput').tagsinput({
             tagClass: 'badge badge-info',
             focusClass: 'is-focused'
           });
 
-          $('#input-sn_tags').on('itemAdded', function(event) {
+          $('.bootstrap-tagsinput').on('itemAdded', function(event) {
             // event.item: contains the item
+            console.log($(event.item).parent().parent());
             $(event.item).parent().parent().addClass('is-filled'); 
           });
         });
