@@ -296,6 +296,8 @@
                     placeholder: "Wybierz Model",
                     theme: "material"
                 });
+
+               $("#input-sn_tags_"+y).tagsinput();
           });
 
           $(document).on('click', '.btn_remove_adv', function(){  
