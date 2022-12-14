@@ -69,6 +69,33 @@ class ServiceRepository extends BaseRepository
 
             if ($service->save()) {
 
+                if(count($service->devices) > 0){
+
+                    $service_id = $service->id;
+
+                    for($i=0;$i>count($service->devices);$i++)
+                    {
+                        $model_id = $service->models[$i];
+                        $devices = $service->devices[$i];
+                        foreach($devices as $serial)
+                        {
+                            $serial_number = $serial;
+
+                            $device = Device::class;
+                            $device = new $device();
+                            $device->serial_number = $serial_number;
+                            $device->model_id = $model_id;
+                            $device->service_id = $service_id;
+                            DB::transaction(function () use ($device) {
+                                if ($device->save()) {
+                                    return true;
+                                }
+                            });
+                        }
+                        
+                    }
+                }
+
                 $client = Client::where('id', $service->client_id)->first();
                 
                 //Create folder for client related files                
@@ -152,7 +179,6 @@ class ServiceRepository extends BaseRepository
             case 'Zwykła':
                 $service->models = json_encode($request['models']);
                 $service->devices = json_encode($request['devices']);
-                \Log::info($service->devices);
                 $service->offered_at = $request['offered_at'];
                 $service->signed_at = $request['signed_at'];
                 $service->installed_at = $request['installed_at'];
