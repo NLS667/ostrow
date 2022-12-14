@@ -319,7 +319,7 @@
             }
           });
 
-          $('#input-sn_tags').tagsinput({
+          $('.bootstrap-tagsinput').tagsinput({
             tagClass: 'btn btn-info'
           });
         });
