@@ -176,12 +176,7 @@
                     {{-- Serial Numbers --}}
 
                     <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('sn_tags') ? ' has-danger' : '' }}">
-                      <label class="bmd-label-floating">Numery seryjne:</label>
-                      <input type="text" id="input-sn_tags" name="sn_tags" class="form-control">
-                      @if ($errors->has('sn_tags'))
-                        <span class="material-icons form-control-feedback">clear</span>
-                        <span id="sn_tags-error" class="error text-danger" for="input-sn_tags">{{ $errors->first('sn_tags') }}</span>
-                      @endif
+                      <input type="text" id="input-sn_tags" name="sn_tags[]" class="form-control" placeholder="Numery seryjne:">
                     </div>
                   </div>
                   @if(old('models'))
@@ -206,12 +201,7 @@
                   <div class="row" id="sn_tags">
                     {{-- Serial Numbers --}}
                     <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('sn_tags') ? ' has-danger' : '' }}">
-                      <label class="bmd-label-floating">Numery seryjne:</label>
-                      <input type="text" id="input-sn_tags" data-role="tagsinput" name="sn_tags[]" class="form-control" placeholder="Numery seryjne:">
-                      @if ($errors->has('sn_tags'))
-                        <span class="material-icons form-control-feedback">clear</span>
-                        <span id="sn_tags-error" class="error text-danger" for="input-sn_tags">{{ $errors->first('sn_tags') }}</span>
-                      @endif
+                      <input type="text" id="input-sn_tags" name="sn_tags[]" class="form-control" placeholder="Numery seryjne:">
                     </div>
                   </div>
                   @php
