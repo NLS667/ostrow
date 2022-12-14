@@ -176,7 +176,7 @@
                     {{-- Serial Numbers --}}
 
                     <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('sn_tags') ? ' has-danger' : '' }}">
-                      <input type="text" id="input-sn_tags" name="sn_tags[]" class="form-control" placeholder="Numery seryjne:">
+                      <input type="text" id="input-sn_tags" name="sn_tags[]" class="form-control" placeholder="Numer seryjny...">
                     </div>
                   </div>
                   @if(old('models'))
@@ -201,7 +201,7 @@
                   <div class="row" id="sn_tags">
                     {{-- Serial Numbers --}}
                     <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('sn_tags') ? ' has-danger' : '' }}">
-                      <input type="text" id="input-sn_tags" name="sn_tags[]" class="form-control" placeholder="Numery seryjne:">
+                      <input type="text" id="input-sn_tags" name="sn_tags[]" class="form-control" placeholder="Numer seryjny...">
                     </div>
                   </div>
                   @php
@@ -281,7 +281,7 @@
 
           $('#add_device').click(function(){  
                y++;  
-               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-6 form-group bmd-form-group"><select name="models[]" class="form-control select2 model-'+y+'-select" data-placeholder="Wybierz Model Urządzenia"><option></option>@foreach ($models as $model)<option value="{{$model->id}}" {{ old("models['+y+']") == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>@endforeach</select></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_dev">X</button></div></div><div class="row" id="sn_tags"><div class="col-sm-6 form-group bmd-form-group"><label class="bmd-label-floating">Numery seryjne:</label><input type="text" id="input-sn_tags_'+y+'" data-role="tagsinput" name="sn_tags[]" class="form-control"></div></div>');
+               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-6 form-group bmd-form-group"><select name="models[]" class="form-control select2 model-'+y+'-select" data-placeholder="Wybierz Model Urządzenia"><option></option>@foreach ($models as $model)<option value="{{$model->id}}" {{ old("models['+y+']") == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>@endforeach</select></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_dev">X</button></div></div><div class="row" id="sn_tags"><div class="col-sm-6 form-group bmd-form-group"><input type="text" id="input-sn_tags_'+y+'" name="sn_tags[]" class="form-control" placeholder="Numer seryjny..."></div></div>');
 
                $(".select2.model-"+y+"-select").select2({
                     placeholder: "Wybierz Model",
