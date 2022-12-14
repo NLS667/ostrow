@@ -318,6 +318,10 @@
               $("#optional").show();
             }
           });
+
+          $('#input-sn_tags').tagsinput({
+            tagClass: 'big'
+          });
         });
     </script>
 @endsection
