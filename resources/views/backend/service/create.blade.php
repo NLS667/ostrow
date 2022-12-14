@@ -322,6 +322,7 @@
           $('.bootstrap-tagsinput').tagsinput({
             tagClass: 'btn btn-info'
           });
+          
           $('.bootstrap-tagsinput').on('itemAdded', function(event) {
             // event.item: contains the item
             $(event.item).parent().addClass('is-filled'); 
