@@ -52,10 +52,10 @@
     this.placeholderText = element.hasAttribute('placeholder') ? this.$element.attr('placeholder') : '';
     this.inputSize = Math.max(1, this.placeholderText.length);
 
-    this.$container = $('<div class="bootstrap-tagsinput form-control"></div>');
+    this.$container = $('<div class="bootstrap-tagsinput"></div>');
     this.$input = $('<input type="text" class="form-control" placeholder="' + this.placeholderText + '"/>').appendTo(this.$container);
 
-    this.$element.before(this.$input);
+    this.$element.before(this.$container);
 
     this.build(options);
     this.isInit = false;

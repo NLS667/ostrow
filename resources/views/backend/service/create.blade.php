@@ -235,7 +235,7 @@
 @endsection
 @section('after-styles')
 <style type="text/css">
-        .bootstrap-tagsinput{
+        .bootstrap-tagsinput, .bootstrap-tagsinput input{
             width: 100%;
         }
     </style>
