@@ -10,7 +10,7 @@
     tagClass: function(item) {
       return 'badge';
     },
-    focusClass: 'is-focused',
+    focusClass: 'focus',
     itemValue: function(item) {
       return item ? item.toString() : item;
     },

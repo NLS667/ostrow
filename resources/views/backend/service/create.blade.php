@@ -297,7 +297,10 @@
                     theme: "material"
                 });
 
-               $("#input-sn_tags_"+y).tagsinput();
+               $("#input-sn_tags_"+y).tagsinput({
+                tagClass: 'badge badge-info',
+                focusClass: 'is-focused'
+              });
           });
 
           $(document).on('click', '.btn_remove_adv', function(){  
@@ -322,7 +325,8 @@
           });
 
           $('.bootstrap-tagsinput').tagsinput({
-            tagClass: 'btn btn-info'
+            tagClass: 'badge badge-info',
+            focusClass: 'is-focused'
           });
 
           $('.bootstrap-tagsinput').on('itemAdded', function(event) {
