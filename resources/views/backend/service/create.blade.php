@@ -227,11 +227,7 @@
 @section('after-styles')
 <style type="text/css">
         .bootstrap-tagsinput{
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .bootstrap-tagsinput input[type="text"]{
-          width: 100%;
+            width: 100%;
         }
     </style>
 @endsection
