@@ -18,7 +18,7 @@ class CreateServiceTable extends Migration
             $table->foreignId('client_id')->constrained('clients');        
             $table->foreignId('service_cat_id')->constrained('service_categories');
             $table->longText('models')->nullable();
-            $table->longText('serials')->nullable();
+            $table->longText('devices')->nullable();
             $table->date('offered_at')->nullable();
             $table->date('signed_at')->nullable();
             $table->date('installed_at')->nullable();
