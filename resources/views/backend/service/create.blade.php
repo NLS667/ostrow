@@ -325,12 +325,12 @@
             }
           });
 
-          $('.bootstrap-tagsinput').tagsinput({
+          $('#input-sn_tags').tagsinput({
             tagClass: 'badge badge-info',
             focusClass: 'is-focused'
           });
 
-          $('.bootstrap-tagsinput').on('itemAdded', function(event) {
+          $('#input-sn_tags').on('itemAdded', function(event) {
             // event.item: contains the item
             $(event.item).parent().parent().addClass('is-filled'); 
           });
