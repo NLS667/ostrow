@@ -52,6 +52,7 @@ class ModelRepository extends BaseRepository
                 config('models.models_table').'.id',
                 config('models.models_table').'.name',
                 config('models.models_table').'.description',
+                DB::raw('(SELECT COUNT(devices.id) FROM devices WHERE devices.model_id = models.id) AS devices'),
                 config('producers.producers_table').'.name as producer',
                 config('models.models_table').'.created_at',
                 config('models.models_table').'.updated_at',

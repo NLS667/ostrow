@@ -64,41 +64,8 @@ class ServiceRepository extends BaseRepository
      */
     public function create($request)
     {
-        //$data = $request->except('services', 'tasks');
-        //$services = $request->get('services');
-        //$tasks = $request->get('tasks');
-        //$client = $this->createClientStub($data);
-        DB::transaction(function () use ($request) {
-
-            $service = self::MODEL;
-            $service = new $service();
-            $service->client_id = $request['client_id'];
-            $service->service_cat_id = $request['service_cat_id'];
-
-            $serviceCat = ServiceCategory::where('id', $request['service_cat_id'])->first();
-            $type = $serviceCat->type;
-
-            if($type == 'Zwykła')
-            {
-                $service->models = json_encode($request['models']);
-                $service->offered_at = $request['offered_at'];
-                $service->signed_at = $request['signed_at'];
-                $service->installed_at = $request['installed_at'];
-                $service->deal_amount = $request['deal_amount'];
-                $service->advance_date = json_encode($request['advance_date']);
-                $service->deal_advance = json_encode($request['deal_advance']);
-            } else {
-                $service->models = null;
-                $service->offered_at = null;
-                $service->signed_at = null;
-                $service->installed_at = null;
-                $service->deal_amount = null;
-                $service->advance_date = null;
-                $service->deal_advance = null;
-            }
-            
-
-            $service->created_by = access()->user()->id;
+        $service = $this->createServiceStub($request);
+        DB::transaction(function () use ($service) {
 
             if ($service->save()) {
 
@@ -166,6 +133,47 @@ class ServiceRepository extends BaseRepository
         }
 
         throw new GeneralException(trans('exceptions.backend.services.delete_error'));
+    }
+
+    /**
+     * @param  $request
+     *
+     * @return mixed
+     */
+    protected function createServiceStub($request)
+    {
+        $service = self::MODEL;
+        $service = new $service();
+        $service->client_id = $request['client_id'];
+        $service->service_cat_id = $request['service_cat_id'];
+
+        $serviceCat = ServiceCategory::where('id', $request['service_cat_id'])->first();
+        switch ($serviceCat->type) {
+            case 'Zwykła':
+                $service->models = json_encode($request['models']);
+                $service->devices = json_encode($request['devices']);
+                \Log::info($service->devices);
+                $service->offered_at = $request['offered_at'];
+                $service->signed_at = $request['signed_at'];
+                $service->installed_at = $request['installed_at'];
+                $service->deal_amount = $request['deal_amount'];
+                $service->advance_date = json_encode($request['advance_date']);
+                $service->deal_advance = json_encode($request['deal_advance']);
+                break;
+            case 'Dodatkowa':
+                $service->models = null;
+                $service->devices = null;
+                $service->offered_at = null;
+                $service->signed_at = null;
+                $service->installed_at = null;
+                $service->deal_amount = null;
+                $service->advance_date = null;
+                $service->deal_advance = null;
+                break;
+        }
+        
+        $service->created_by = access()->user()->id;
+        return $service;
     }
 
 }

@@ -172,11 +172,11 @@
                       <button type="button" name="add_device" id="add_device" class="btn btn-primary">Dodaj urządzenie</button>
                     </div>
                   </div>
-                  <div class="row" id="sn_tags">
+                  <div class="row" id="devices">
                     {{-- Serial Numbers --}}
 
-                    <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('sn_tags') ? ' has-danger' : '' }}">
-                      <input type="text" id="input-sn_tags" name="sn_tags[]" class="form-control" placeholder="Numer seryjny...">
+                    <div class="col-sm-6 form-group bmd-form-group">
+                      <input type="text" id="input-devices" name="devices[]" class="form-control" placeholder="Numer seryjny...">
                     </div>
                   </div>
                   @if(old('models'))
@@ -198,10 +198,10 @@
                       <button type="button" name="remove" id="{{$y}}" class="btn btn-danger btn_remove_dev">X</button>
                     </div>
                   </div>
-                  <div class="row" id="sn_tags">
+                  <div class="row" id="devices">
                     {{-- Serial Numbers --}}
-                    <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('sn_tags') ? ' has-danger' : '' }}">
-                      <input type="text" id="input-sn_tags" name="sn_tags[]" class="form-control" placeholder="Numer seryjny...">
+                    <div class="col-sm-6 form-group bmd-form-group">
+                      <input type="text" id="input-devices" name="devices[]" class="form-control" placeholder="Numer seryjny...">
                     </div>
                   </div>
                   @php
@@ -281,14 +281,14 @@
 
           $('#add_device').click(function(){  
                y++;  
-               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-6 form-group bmd-form-group"><select name="models[]" class="form-control select2 model-'+y+'-select" data-placeholder="Wybierz Model Urządzenia"><option></option>@foreach ($models as $model)<option value="{{$model->id}}" {{ old("models['+y+']") == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>@endforeach</select></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_dev">X</button></div></div><div class="row" id="sn_tags"><div class="col-sm-6 form-group bmd-form-group"><input type="text" id="input-sn_tags_'+y+'" name="sn_tags[]" class="form-control" placeholder="Numer seryjny..."></div></div>');
+               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-6 form-group bmd-form-group"><select name="models[]" class="form-control select2 model-'+y+'-select" data-placeholder="Wybierz Model Urządzenia"><option></option>@foreach ($models as $model)<option value="{{$model->id}}" {{ old("models['+y+']") == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>@endforeach</select></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_dev">X</button></div></div><div class="row" id="devices"><div class="col-sm-6 form-group bmd-form-group"><input type="text" id="input-devices_'+y+'" name="devices[]" class="form-control" placeholder="Numer seryjny..."></div></div>');
 
                $(".select2.model-"+y+"-select").select2({
                     placeholder: "Wybierz Model",
                     theme: "material"
                 });
 
-               $("#input-sn_tags_"+y).tagsinput({
+               $("#input-devices_"+y).tagsinput({
                 tagClass: 'badge badge-info',
                 focusClass: 'is-focused'
               });
@@ -315,7 +315,7 @@
             }
           });
 
-          $('#input-sn_tags').tagsinput({
+          $('#input-devices').tagsinput({
             tagClass: 'badge badge-info',
             focusClass: 'is-focused'
           });

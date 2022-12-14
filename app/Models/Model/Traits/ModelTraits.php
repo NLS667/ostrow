@@ -23,7 +23,6 @@ trait ModelTraits
         if (is_array($producer)) {
             $producer = $producer['id'];
         }
-        \Log::info($producer);
         $this->producer()->associate($producer);
     }
 }

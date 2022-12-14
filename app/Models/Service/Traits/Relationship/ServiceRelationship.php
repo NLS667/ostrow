@@ -3,6 +3,7 @@
 namespace App\Models\Service\Traits\Relationship;
 
 use App\Models\ServiceCategory\ServiceCategory;
+use App\Models\Device\Device;
 use App\Models\Client\Client;
 use App\Models\Task\Task;
 
@@ -27,6 +28,11 @@ trait ServiceRelationship
     public function tasks()
     {
         return $this->hasMany(Task::class);
+    }
+
+    public function devices()
+    {
+        return $this->hasMany(Device::class);
     }
 
 }
