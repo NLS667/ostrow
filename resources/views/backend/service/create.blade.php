@@ -320,7 +320,7 @@
           });
 
           $('#input-sn_tags').tagsinput({
-            tagClass: 'big'
+            tagClass: 'btn btn-info'
           });
         });
     </script>
