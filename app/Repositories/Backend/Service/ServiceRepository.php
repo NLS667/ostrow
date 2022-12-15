@@ -87,7 +87,8 @@ class ServiceRepository extends BaseRepository
                             $device->serial_number = $serial;
                             $device->model_id = $model_id;
                             $device->service_id = $service->id;
-
+                            $device->created_by = $service->created_by;
+                            
                             DB::transaction(function () use ($device) {
                                 if ($device->save()) {
                                     return true;
