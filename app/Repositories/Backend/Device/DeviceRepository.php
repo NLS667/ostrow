@@ -54,7 +54,7 @@ class DeviceRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
-            ->leftJoin('service', 'devices.service_id', '=', 'services.id')
+            ->leftJoin('services', 'devices.service_id', '=', 'services.id')
             ->leftJoin('models', 'devices.model_id', '=', 'models.id')
             ->select([
                 config('devices.devices_table').'.id',
