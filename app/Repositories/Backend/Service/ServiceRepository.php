@@ -202,14 +202,15 @@ class ServiceRepository extends BaseRepository
         if(count($old_devices) > 0){
             for($i=0;$i < count($old_devices); $i++)
             {
-                foreach($old_devices[$i] as $dev_to_del)
+                $todelete = explode (",", $old_devices[$i]);
+                foreach($todelete as $dev_to_del)
                 {
-                    $devdel = Device::where('serial_number', $serial_number)->first();
+                    $devdel = Device::where('serial_number', $dev_to_del)->first();
                     $devdel->delete();
                 }
             }
         }
-        
+
         if ($service->delete()) {
             event(new ServiceDeleted($service));
 
