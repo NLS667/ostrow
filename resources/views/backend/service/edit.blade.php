@@ -134,7 +134,7 @@
                 <div id="devices">
                   @php
                       $devices = json_decode($service->models);
-                      $serials = jsob_decode($service->devices);
+                      $serials = json_decode($service->devices);
                   @endphp
                   @for ($y = 0; $y < count($devices); $y++)
                   <div class="row" id="dev_row{{$y}}">
