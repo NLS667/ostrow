@@ -166,7 +166,7 @@
                   <div class="row" id="devices">
                     {{-- Serial Numbers --}}
                     <div class="col-sm-6 form-group bmd-form-group">
-                      <input type="text" id="input-devices" name="devices[]" value="{{ $serials[$y]}}" class="form-control" placeholder="Numer seryjny...">
+                      <input type="text" id="input-devices-{{$y}}" name="devices[]" value="{{ $serials[$y]}}" class="input-devices form-control" placeholder="Numer seryjny...">
                     </div>
                   </div>
                   @endfor
@@ -257,7 +257,7 @@
             $('#dev_row'+button_id+'').remove();
           });
 
-          $('#input-devices').tagsinput({
+          $('.input-devices').tagsinput({
             tagClass: 'badge badge-info',
             focusClass: 'is-focused'
           });
