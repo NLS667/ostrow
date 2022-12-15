@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Device;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Device\ManageDeviceRequest;
 use App\Repositories\Backend\Device\DeviceRepository;
+use App\Repositories\Backend\Service\ServiceRepository;
 use Carbon\Carbon;
 use Yajra\DataTables\Facades\DataTables;
 
