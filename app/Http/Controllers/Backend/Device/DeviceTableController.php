@@ -18,9 +18,10 @@ class DeviceTableController extends Controller
     /**
      * @param \App\Repositories\Backend\Model\ModelRepository $service
      */
-    public function __construct(DeviceRepository $devices)
+    public function __construct(DeviceRepository $devices, ServiceRepository $services)
     {
         $this->devices = $devices;
+        $this->services = $services;
     }
 
     /**
@@ -39,7 +40,8 @@ class DeviceTableController extends Controller
                 return $device->model;
             })
             ->addColumn('service', function ($device) {
-                return $device->service;
+                $service = $this->services->query()->where('id', $device->service)->get();
+                return $service->service_name;
             })
             ->addColumn('created_at', function ($device) {
                 return Carbon::parse($device->created_at)->toDateString();
