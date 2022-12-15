@@ -154,11 +154,11 @@ class ServiceRepository extends BaseRepository
 
                 $devices_to_create = array_diff($new_dev, $old_dev);
                 if(count($devices_to_create) > 0) {
-                    for($j=0;$j < count($devices_to_create); $j++)
+                    foreach($devices_to_create as $serial_number)
                     {
                         $devcrea = Device::class;
                         $devcrea = new $devcrea();
-                        $devcrea->serial_number = $devices_to_create[$j];
+                        $devcrea->serial_number = $serial_number;
                         $devcrea->model_id = $old_models[$i];
                         $devcrea->service_id = $service->id;
                         $devcrea->created_by = $service->created_by;
