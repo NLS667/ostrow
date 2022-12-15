@@ -131,6 +131,7 @@ class ServiceRepository extends BaseRepository
     {
         $old_devices = $service->devices;
         \Log::info($old_devices);
+        \Log::info($request['devices']);
         $new_devices = $request['devices'];
         \Log::info($new_devices);
         $devices_to_delete = array_diff($old_devices, $new_devices);
