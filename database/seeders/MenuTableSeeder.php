@@ -74,7 +74,17 @@ class MenuTableSeeder extends Seeder
                 "name":"Zadania",
                 "id":6,
                 "content":"Tasks"
-            },  
+            },
+            {
+                "view_permission_id":"view-device-management",
+                "icon":"task_alt",
+                "open_in_new_tab":0,
+                "url_type":"route",
+                "url":"admin.device.index",
+                "name":"Urządzenia",
+                "id":7,
+                "content":"Devices"
+            },
             {
                 "view_permission_id":"view-dict-management",
                 "icon":"menu_book",
@@ -82,7 +92,7 @@ class MenuTableSeeder extends Seeder
                 "url_type":"route",
                 "url":"",
                 "name":"Słowniki",
-                "id":7,
+                "id":8,
                 "content":"Dictionaries",
                 "children":[{
                     "view_permission_id":"view-producer-management",
@@ -91,7 +101,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.producer.index",
                     "name":"Producenci",
-                    "id":8,
+                    "id":9,
                     "content":"Producers"
                 },
                 {
@@ -101,7 +111,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.model.index",
                     "name":"Modele Produktów",
-                    "id":9,
+                    "id":10,
                     "content":"Product-Models"
                 },
                 {
@@ -111,7 +121,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.serviceCategory.index",
                     "name":"Kategorie Usług",
-                    "id":10,
+                    "id":11,
                     "content":"Service Categories"
                 },
                 {
@@ -121,7 +131,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.taskType.index",
                     "name":"Rodzaje Zadań",
-                    "id":11,
+                    "id":12,
                     "content":"Task Types"
                 }]
             }]';
@@ -133,7 +143,7 @@ class MenuTableSeeder extends Seeder
                 "url_type":"route",
                 "url":"",
                 "name":"Ustawienia Dostępu",
-                "id":12,
+                "id":13,
                 "content":"Access-Management",
                 "children":[{
                     "view_permission_id":"view-user-management",
@@ -142,7 +152,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.access.user.index",
                     "name":"Użytkownicy",
-                    "id":13,
+                    "id":14,
                     "content":"User-Management"
                 },
                 {
@@ -152,7 +162,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.access.role.index",
                     "name":"Role",
-                    "id":14,
+                    "id":15,
                     "content":"Role-Management"
                 },
                 {
@@ -162,7 +172,7 @@ class MenuTableSeeder extends Seeder
                     "url_type":"route",
                     "url":"admin.access.permission.index",
                     "name":"Uprawnienia",
-                    "id":15,
+                    "id":16,
                     "content":"Permission-Management"
                 }]
             }]';
