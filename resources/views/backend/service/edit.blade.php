@@ -134,6 +134,7 @@
                 <div id="devices">
                   @php
                       $devices = json_decode($service->models);
+                      $serials = jsob_decode($service->devices);
                   @endphp
                   @for ($y = 0; $y < count($devices); $y++)
                   <div class="row" id="dev_row{{$y}}">
@@ -162,9 +163,11 @@
                     </div>
                     @endif
                   </div>
-                  <div class="row" id="sn_tags">
-                    <label>Numery seryjne :</label>
-                    <input type="text" data-role="tagsinput" name="sn_tags" class="form-control">
+                  <div class="row" id="devices">
+                    {{-- Serial Numbers --}}
+                    <div class="col-sm-6 form-group bmd-form-group">
+                      <input type="text" id="input-devices" name="devices[]" value="{{ $serials[$y]}}" class="form-control" placeholder="Numer seryjny...">
+                    </div>
                   </div>
                   @endfor
                 </div> 
