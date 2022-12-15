@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Backend\Service;
 
 use App\Http\Requests\Request;
+use App\Models\ServiceCategory\ServiceCategory;
 
 /**
  * Class UpdateServiceRequest.
