@@ -49,12 +49,22 @@
                                         </th>
                                         <th>
                                             <div class="input-group position-relative">
-                                                {!! Form::text('producer', null, ["class" => "search-input-text form-control", "data-column" => 0, "placeholder" => 'Producent']) !!}
+                                                {!! Form::text('producer', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => 'Producent']) !!}
                                                 <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
                                             </div>
                                         </th>
-                                        <th></th>
-                                        <th></th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('model', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => 'Model']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="input-group position-relative">
+                                                {!! Form::text('service', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => 'Usługa']) !!}
+                                                <span class="form-clear d-none reset-data"><i class="material-icons">clear</i></span>
+                                            </div>
+                                        </th>
                                         <th></th>
                                     </tr>
                                 </thead>
