@@ -80,6 +80,8 @@ class ServiceRepository extends BaseRepository
                         $model_id = $models[$i];
                         $serials = $devices[$i];
 
+                        \Log::info($serials);
+
                         foreach($serials as $serial)
                         {
                             $device = Device::class;
