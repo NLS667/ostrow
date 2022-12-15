@@ -10,6 +10,7 @@ use App\Models\Service\Service;
 use App\Models\Client\Client;
 use App\Models\Device\Device;
 use App\Models\ServiceCategory\ServiceCategory;
+use App\Repositories\Device\DeviceRepository;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -28,9 +29,10 @@ class ServiceRepository extends BaseRepository
     /**
      * @param ServiceRepository $service
      */
-    public function __construct(Service $service)
+    public function __construct(Service $service, DeviceRepository $devices)
     {
         $this->service = $service;
+        $this->devices = $devices;
     }
 
     /**
@@ -82,18 +84,13 @@ class ServiceRepository extends BaseRepository
 
                         foreach($serials as $serial)
                         {
-                            $device = Device::class;
-                            $device = new $device();
-                            $device->serial_number = $serial;
-                            $device->model_id = $model_id;
-                            $device->service_id = $service->id;
-                            $device->created_by = $service->created_by;
-                            
-                            DB::transaction(function () use ($device) {
-                                if ($device->save()) {
-                                    return true;
-                                }
-                            });
+                            $tmp_device = (object)[
+                                'serial_number' => $serial,
+                                'model' => $model_id,
+                                'service' => $service->id
+                            ];
+
+                            $this->devices->create($tmp_device);
                         }                        
                     }
                 }
@@ -130,10 +127,44 @@ class ServiceRepository extends BaseRepository
      */
     public function update($service, $request)
     {
+        $old_devices = json_decode($service->devices);
+        \Log::info($old_devices);
+        $new_devices = $request['devices'];
+        \Log::info($new_devices);
+        $result_to_delete = array_diff($old_devices, $new_devices);
+        \Log::info($result_to_delete);
+        $results_to_create = array_diff($new_devices, $old_devices);
+        \Log::info($results_to_create);
+
         DB::transaction(function () use ($service, $request) {
             if ($service->update($request)) {
                 
                 $service->save();
+
+                /*
+                $models = json_decode($service->models);
+                $devices = json_decode($service->devices);
+
+                if(count(json_decode($service->devices)) > 0){
+
+                    for($i=0;$i<count($devices);$i++)
+                    {                        
+                        $model_id = $models[$i];
+                        $serials = explode (",", $devices[$i]);
+
+                        foreach($serials as $serial)
+                        {
+                            $tmp_device = (object)[
+                                'serial_number' => $serial,
+                                'model' => $model_id,
+                                'service' => $service->id
+                            ];
+
+                            $this->devices->create($tmp_device);
+                        }                        
+                    }
+                }
+                */
 
                 event(new ServiceUpdated($service));
 
