@@ -130,32 +130,46 @@ class ServiceRepository extends BaseRepository
     public function update($service, $request)
     {
         $old_models = json_decode($service->models);
-        \Log::info("old_models: ".$service->models);
         $new_models = $request['models'];
-        \Log::info("new_models: ".json_encode($new_models));
         $models_to_delete = array_diff($old_models, $new_models);
-        \Log::info("models_to_delete: ".json_encode($models_to_delete));
         $models_to_create = array_diff($new_models, $old_models);
-        \Log::info("models_to_create: ".json_encode($models_to_create));
-
 
         $old_devices = json_decode($service->devices);
-        \Log::info("old_devices: ".$service->devices);
         $new_devices = $request['devices'];
-        \Log::info("new_devices: ".json_encode($new_devices));
 
         if(count($old_models) > 0){
             for($i=0;$i < count($old_models); $i++)
             {
                 $old_dev = explode (",", $old_devices[$i]);
-                \Log::info("old_dev_".$i.": ".$old_devices[$i]);
                 $new_dev = explode (",", $request['devices'][$i]);
-                \Log::info("new_dev_".$i.": ".$request['devices'][$i]);
 
                 $devices_to_delete = array_diff($old_dev, $new_dev);
-                \Log::info("dev_to_delete_".$i.": ".json_encode($devices_to_delete));
+                if(count($devices_to_delete) > 0) {
+                    for($i=0;$i < count($devices_to_delete); $i++)
+                    {
+                        $devdel = Device::where('serial_number', $devices_to_delete[$i])->first();
+                        $devdel->delete();
+                    }
+                }
+
                 $devices_to_create = array_diff($new_dev, $old_dev);
-                \Log::info("dev_to_create_".$i.": ".json_encode($devices_to_create));
+                if(count($devices_to_create) > 0) {
+                    for($j=0;$j < count($devices_to_create); $j++)
+                    {
+                        $devcrea = Device::class;
+                        $devcrea = new $devcrea();
+                        $devcrea->serial_number = $devices_to_create[$j];
+                        $devcrea->model_id = $old_models[$i];
+                        $devcrea->service_id = $service->id;
+                        $devcrea->created_by = $service->created_by;
+                        DB::transaction(function () use ($devcrea) {
+                            if ($devcrea->save()) {
+                                return true;
+                            }
+                        }); 
+                    }
+                }
+
             }
         }
 
