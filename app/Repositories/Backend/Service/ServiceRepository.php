@@ -132,11 +132,11 @@ class ServiceRepository extends BaseRepository
         $old_devices = json_decode($service->devices);
         \Log::info("old_devices: ".$service->devices);
         $new_devices = $request['devices'];
-        \Log::info("new_devices: ".$new_devices);
+        \Log::info("new_devices: ".json_encode($new_devices));
         $devices_to_delete = array_diff($old_devices, $new_devices);
-        \Log::info("devices_to_delete: ".$devices_to_delete);
+        \Log::info("devices_to_delete: ".json_encode($devices_to_delete));
         $devices_to_create = array_diff($new_devices, $old_devices);
-        \Log::info("devices_to_create: ".$devices_to_create);
+        \Log::info("devices_to_create: ".json_encode($devices_to_create));
 
         DB::transaction(function () use ($service, $request) {
             if ($service->update($request)) {
