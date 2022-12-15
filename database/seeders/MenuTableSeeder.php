@@ -77,7 +77,7 @@ class MenuTableSeeder extends Seeder
             },
             {
                 "view_permission_id":"view-device-management",
-                "icon":"task_alt",
+                "icon":"memory",
                 "open_in_new_tab":0,
                 "url_type":"route",
                 "url":"admin.device.index",
@@ -126,7 +126,7 @@ class MenuTableSeeder extends Seeder
                 },
                 {
                     "view_permission_id":"view-tasktype-management",
-                    "icon":"handyman",
+                    "icon":"task",
                     "open_in_new_tab":0,
                     "url_type":"route",
                     "url":"admin.taskType.index",
