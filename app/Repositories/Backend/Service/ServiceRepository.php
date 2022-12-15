@@ -129,7 +129,7 @@ class ServiceRepository extends BaseRepository
      */
     public function update($service, $request)
     {
-        $old_devices = $service->devices;
+        $old_devices = json_decode($service->devices);
         \Log::info($old_devices);
         \Log::info($request['devices']);
         $new_devices = $request['devices'];
