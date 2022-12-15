@@ -145,9 +145,9 @@ class ServiceRepository extends BaseRepository
 
                 $devices_to_delete = array_diff($old_dev, $new_dev);
                 if(count($devices_to_delete) > 0) {
-                    for($k=0;$k < count($devices_to_delete); $k++)
+                    foreach($devices_to_delete as $serial_number)
                     {
-                        $devdel = Device::where('serial_number', $devices_to_delete[$k])->first();
+                        $devdel = Device::where('serial_number', $serial_number)->first();
                         $devdel->delete();
                     }
                 }
