@@ -59,7 +59,7 @@ class DeviceRepository extends BaseRepository
             ->select([
                 config('devices.devices_table').'.id',
                 config('devices.devices_table').'.serial_number',
-                config('services.services_table').'.id as service',
+                config('service.services_table').'.id as service',
                 config('models.models_table').'.id as model',
                 config('devices.devices_table').'.created_at',
                 config('devices.devices_table').'.updated_at',
