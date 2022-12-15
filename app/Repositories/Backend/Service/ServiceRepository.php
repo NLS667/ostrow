@@ -149,8 +149,8 @@ class ServiceRepository extends BaseRepository
             {
                 $old_devices = explode (",", $old_models[$i]);
                 \Log::info("old_devices_".$i.": ".$old_models[$i]);
-                $new_devices = $request['devices'][$i];
-                \Log::info("new_devices_".$i.": ".$new_devices);
+                $new_devices = explode (",", $request['devices'][$i]);
+                \Log::info("new_devices_".$i.": ".$request['devices'][$i]);
 
                 $devices_to_delete = array_diff($old_devices, $new_devices);
                 \Log::info("devices_to_delete_".$i.": ".json_encode($devices_to_delete));
