@@ -41,7 +41,7 @@ class DeviceRepository extends BaseRepository
     /**
      * @param ModelRepository $model
      */
-    public function __construct(Device $device, ModelRepository $model, ServiceRepository $producer)
+    public function __construct(Device $device, ModelRepository $model, ServiceRepository $service)
     {
         $this->device = $device;
         $this->model = $model;
