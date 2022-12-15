@@ -60,7 +60,7 @@ class DeviceRepository extends BaseRepository
                 config('devices.devices_table').'.id',
                 config('devices.devices_table').'.serial_number',
                 config('service.services_table').'.id as service',
-                config('models.models_table').'.id as model',
+                config('models.models_table').'.name as model',
                 config('devices.devices_table').'.created_at',
                 config('devices.devices_table').'.updated_at',
             ]);
