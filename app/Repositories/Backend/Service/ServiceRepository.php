@@ -148,7 +148,7 @@ class ServiceRepository extends BaseRepository
             for($i=0;$i < count($old_models); $i++)
             {
                 $old_devices = explode (",", $old_models[$i]);
-                \Log::info("old_devices_".$i.": ".$old_devices);
+                \Log::info("old_devices_".$i.": ".$old_models[$i]);
                 $new_devices = $request['devices'][$i];
                 \Log::info("new_devices_".$i.": ".$new_devices);
 
