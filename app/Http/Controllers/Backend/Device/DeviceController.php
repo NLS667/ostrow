@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend\Device;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\Model\ManageModelRequest;
+use App\Http\Requests\Backend\Device\ManageDeviceRequest;
 use App\Http\Responses\ViewResponse;
 
 /**
