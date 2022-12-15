@@ -147,15 +147,15 @@ class ServiceRepository extends BaseRepository
         if(count($old_models) > 0){
             for($i=0;$i < count($old_models); $i++)
             {
-                $old_devices = explode (",", $old_models[$i]);
-                \Log::info("old_devices_".$i.": ".$old_models[$i]);
-                $new_devices = explode (",", $request['devices'][$i]);
-                \Log::info("new_devices_".$i.": ".$request['devices'][$i]);
+                $old_dev = explode (",", $old_devices[$i]);
+                \Log::info("old_dev_".$i.": ".$old_devices[$i]);
+                $new_dev = explode (",", $request['devices'][$i]);
+                \Log::info("new_dev_".$i.": ".$request['devices'][$i]);
 
-                $devices_to_delete = array_diff($old_devices, $new_devices);
-                \Log::info("devices_to_delete_".$i.": ".json_encode($devices_to_delete));
-                $devices_to_create = array_diff($new_devices, $old_devices);
-                \Log::info("devices_to_create_".$i.": ".json_encode($devices_to_create));
+                $devices_to_delete = array_diff($old_dev, $new_dev);
+                \Log::info("dev_to_delete_".$i.": ".json_encode($devices_to_delete));
+                $devices_to_create = array_diff($new_dev, $old_dev);
+                \Log::info("dev_to_create_".$i.": ".json_encode($devices_to_create));
             }
         }
 
