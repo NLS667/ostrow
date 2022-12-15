@@ -10,7 +10,7 @@ use App\Models\Service\Service;
 use App\Models\Client\Client;
 use App\Models\Device\Device;
 use App\Models\ServiceCategory\ServiceCategory;
-use App\Repositories\Device\DeviceRepository;
+use App\Repositories\Backend\Device\DeviceRepository;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
