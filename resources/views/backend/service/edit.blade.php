@@ -185,6 +185,13 @@
   </div>
 </div>
 @endsection
+@section('after-styles')
+<style type="text/css">
+        .bootstrap-tagsinput{
+            width: 100%;
+        }
+    </style>
+@endsection
 @section('after-scripts')
      <script type="text/javascript">
         
@@ -248,7 +255,18 @@
           $(document).on('click', '.btn_remove_dev', function(){  
             var button_id = $(this).attr("id");   
             $('#dev_row'+button_id+'').remove();
-          }); 
+          });
+
+          $('#input-devices').tagsinput({
+            tagClass: 'badge badge-info',
+            focusClass: 'is-focused'
+          });
+
+          $('.bootstrap-tagsinput').on('itemAdded', function(event) {
+            // event.item: contains the item
+            console.log(this)
+            $('.bootstrap-tagsinput').parent().addClass('is-filled'); 
+          });
         });
     </script>
 @endsection
