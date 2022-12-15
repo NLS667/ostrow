@@ -36,6 +36,7 @@ class DeviceTableController extends Controller
                 return $device->serial_number;
             })
             ->addColumn('model', function ($device) {
+                \Log::info($device);
                 return $device->model->name;
             })
             ->addColumn('service', function ($device) {

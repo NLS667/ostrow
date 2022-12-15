@@ -105,10 +105,4 @@ trait ModelAttribute
 
         return $button;
     }
-    
-
-    public function getNameAttribute()
-    {
-        return $this->name;
-    }
 }
