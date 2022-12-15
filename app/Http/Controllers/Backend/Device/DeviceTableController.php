@@ -19,10 +19,9 @@ class DeviceTableController extends Controller
     /**
      * @param \App\Repositories\Backend\Model\ModelRepository $service
      */
-    public function __construct(DeviceRepository $devices, ServiceRepository $services)
+    public function __construct(DeviceRepository $devices)
     {
         $this->devices = $devices;
-        $this->services = $services;
     }
 
     /**
