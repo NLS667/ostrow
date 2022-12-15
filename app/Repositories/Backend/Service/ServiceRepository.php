@@ -129,18 +129,33 @@ class ServiceRepository extends BaseRepository
      */
     public function update($service, $request)
     {
+        $old_models = json_decode($service->models);
+        \Log::info("old_models: ".$service->models);
+        $new_models = $request['models'];
+        \Log::info("new_models: ".json_encode($new_models));
+        $models_to_delete = array_diff($old_models, $new_models);
+        \Log::info("models_to_delete: ".json_encode($models_to_delete));
+        $models_to_create = array_diff($new_models, $old_models);
+        \Log::info("models_to_create: ".json_encode($models_to_create));
+
+
         $old_devices = json_decode($service->devices);
         \Log::info("old_devices: ".$service->devices);
         $new_devices = $request['devices'];
         \Log::info("new_devices: ".json_encode($new_devices));
 
-        if(count($old_devices) > 0){
-            for($i=0;$i < count($old_devices); $i++)
+        if(count($old_models) > 0){
+            for($i=0;$i < count($old_models); $i++)
             {
-                $devices_to_delete = array_diff($old_devices[$i], $new_devices[$i]);
-                \Log::info("devices_to_delete: ".json_encode($devices_to_delete));
-                $devices_to_create = array_diff($new_devices[$i], $old_devices[$i]);
-                \Log::info("devices_to_create: ".json_encode($devices_to_create));
+                $old_devices = $old_models[$i];
+                \Log::info("old_devices_".$i.": ".$old_devices);
+                $new_devices = $request['devices'][$i];
+                \Log::info("new_devices_".$i.": ".$new_devices);
+
+                $devices_to_delete = array_diff($old_devices, $new_devices);
+                \Log::info("devices_to_delete_".$i.": ".json_encode($devices_to_delete));
+                $devices_to_create = array_diff($new_devices, $old_devices);
+                \Log::info("devices_to_create_".$i.": ".json_encode($devices_to_create));
             }
         }
 
