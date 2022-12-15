@@ -2,8 +2,8 @@
 
 namespace App\Models\Device;
 
-use App\Models\Device\Traits\Attribute\ModelAttribute;
-use App\Models\Device\Traits\Relationship\ModelRelationship;
+use App\Models\Device\Traits\Attribute\DeviceAttribute;
+use App\Models\Device\Traits\Relationship\DeviceRelationship;
 use App\Models\BaseModel;
 
 /**
