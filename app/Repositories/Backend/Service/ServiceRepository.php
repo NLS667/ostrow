@@ -70,31 +70,30 @@ class ServiceRepository extends BaseRepository
 
             if ($service->save()) {
 
+                $models = json_decode($service->models);
+                $devices = json_decode($service->devices);
+
                 if(count(json_decode($service->devices)) > 0){
 
-                    $service_id = $service->id;
+                    for($i=0;$i<count($devices);$i++)
+                    {                        
+                        $model_id = $models[$i];
+                        $serials = $devices[$i];
 
-                    for($i=0;$i<count(json_decode($service->devices));$i++)
-                    {
-                        $model_id = $service->models[$i];
-                        $devices = $service->devices[$i];
-                        foreach($devices as $serial)
+                        foreach($serials as $serial)
                         {
-                            $serial_number = $serial;
-
                             $device = Device::class;
                             $device = new $device();
-                            $device->serial_number = $serial_number;
+                            $device->serial_number = $serial;
                             $device->model_id = $model_id;
-                            $device->service_id = $service_id;
+                            $device->service_id = $service->id;
 
                             DB::transaction(function () use ($device) {
                                 if ($device->save()) {
                                     return true;
                                 }
                             });
-                        }
-                        
+                        }                        
                     }
                 }
 
