@@ -39,7 +39,7 @@ class DeviceTableController extends Controller
                 return $device->model->name;
             })
             ->addColumn('service', function ($device) {
-                return $device->service->name;
+                return $device->service->service_name;
             })
             ->addColumn('created_at', function ($device) {
                 return Carbon::parse($device->created_at)->toDateString();
