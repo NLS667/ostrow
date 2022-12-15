@@ -56,9 +56,11 @@ class DeviceRepository extends BaseRepository
         return $this->query()
             ->leftJoin('services', 'devices.service_id', '=', 'services.id')
             ->leftJoin('models', 'devices.model_id', '=', 'models.id')
+            ->leftJoin('producers', 'models.producer_id', '=', 'producers.id')
             ->select([
                 config('devices.devices_table').'.id',
                 config('devices.devices_table').'.serial_number',
+                config('producers.producers_table').'.name as producer',
                 config('service.services_table').'.id as service',
                 config('models.models_table').'.name as model',
                 config('devices.devices_table').'.created_at',
