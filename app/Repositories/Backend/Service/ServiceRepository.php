@@ -75,12 +75,12 @@ class ServiceRepository extends BaseRepository
                 $models = json_decode($service->models);
                 $devices = json_decode($service->devices);
 
-                if(count(json_decode($service->devices)) > 0){
+                if(count($devices) > 0){
 
                     for($i=0;$i<count($devices);$i++)
                     {                        
                         $model_id = $models[$i];
-                        $serials = explode (",", $devices[$i]);
+                        $serials = explode(",", $devices[$i]);
 
                         foreach($serials as $serial)
                         {
@@ -140,31 +140,6 @@ class ServiceRepository extends BaseRepository
             if ($service->update($request)) {
                 
                 $service->save();
-
-                /*
-                $models = json_decode($service->models);
-                $devices = json_decode($service->devices);
-
-                if(count(json_decode($service->devices)) > 0){
-
-                    for($i=0;$i<count($devices);$i++)
-                    {                        
-                        $model_id = $models[$i];
-                        $serials = explode (",", $devices[$i]);
-
-                        foreach($serials as $serial)
-                        {
-                            $tmp_device = (object)[
-                                'serial_number' => $serial,
-                                'model' => $model_id,
-                                'service' => $service->id
-                            ];
-
-                            $this->devices->create($tmp_device);
-                        }                        
-                    }
-                }
-                */
 
                 event(new ServiceUpdated($service));
 
