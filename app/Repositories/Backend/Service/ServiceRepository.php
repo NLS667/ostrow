@@ -78,9 +78,7 @@ class ServiceRepository extends BaseRepository
                     for($i=0;$i<count($devices);$i++)
                     {                        
                         $model_id = $models[$i];
-                        $serials = $devices[$i];
-
-                        \Log::info($serials);
+                        $serials = explode (",", $devices[$i]);
 
                         foreach($serials as $serial)
                         {
