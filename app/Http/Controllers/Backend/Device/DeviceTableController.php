@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend\Device;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Device\ManageDeviceRequest;
 use App\Repositories\Backend\Device\DeviceRepository;
-use App\Repositories\Backend\Service\ServiceRepository;
+use App\Models\Service\Service;
 use Carbon\Carbon;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -41,7 +41,7 @@ class DeviceTableController extends Controller
                 return $device->model;
             })
             ->addColumn('service', function ($device) {
-                $service = $this->services->query()->where('id', $device->service)->get();
+                $service = Service::where('id', $device->service)->get();
                 return $service->service_name;
             })
             ->addColumn('created_at', function ($device) {
