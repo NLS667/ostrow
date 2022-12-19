@@ -110,8 +110,9 @@ trait TaskAttribute
         if (access()->user()->roles[0]->all) {
             return $this->getEditButtonAttribute('btn btn-success btn-round').'
             '.$this->getDeleteButtonAttribute('btn btn-danger btn-round').'                        
-            '.$this->getStatusButtonAttribute('btn btn-warning btn-round').'                        
-            '.$this->getRaportButtonAttribute('btn btn-info btn-round');
+            '.$this->getStatusButtonAttribute('btn btn-warning btn-round');
+            //.'                        
+            //'.$this->getRaportButtonAttribute('btn btn-info btn-round');
         } else {
             $userPermission = $this->getUserPermission();
             $permissionCounter = count($userPermission);
@@ -151,9 +152,9 @@ trait TaskAttribute
             case 'deactivate-task':
             $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
             break;
-            case 'create-task-raport':
-            $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
-            break;
+            //case 'create-task-raport':
+            //$button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
+            //break;
             default:
             $button = '';
             break;
