@@ -60,6 +60,7 @@
 			                </div>
 			                <div class="row">
 			                	<div class="col-sm-12">
+			                		{!! $devices !!}
 			                		@foreach($devices as $device)
 			                		<div class="form-group col-sm-4">
 			                			<input class="form-control" name="model[]" id="input-cmodel" type="text" value="{{ $device->model->name }}" disabled/>
