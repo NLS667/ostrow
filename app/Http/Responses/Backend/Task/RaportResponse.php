@@ -12,11 +12,12 @@ class RaportResponse implements Responsable
     /**
      * @param \App\Models\Task\Task $task
      */
-    public function __construct($task, $service, $client)
+    public function __construct($task, $service, $client, $devices)
     {
         $this->task = $task;
         $this->service = $service;
         $this->client = $client;
+        $this->devices = $devices;
     }
 
     /**
@@ -32,6 +33,7 @@ class RaportResponse implements Responsable
             'task'                => $this->task,
             'service'                => $this->service,
             'client'                => $this->client,
+            'devices'                => $this->devices,
         ]);
     }
 }
