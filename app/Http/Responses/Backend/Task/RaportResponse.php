@@ -12,9 +12,11 @@ class RaportResponse implements Responsable
     /**
      * @param \App\Models\Task\Task $task
      */
-    public function __construct($task)
+    public function __construct($task, $service, $client)
     {
         $this->task = $task;
+        $this->service = $service;
+        $this->client = $client;
     }
 
     /**
@@ -28,6 +30,8 @@ class RaportResponse implements Responsable
     {
         return view('backend.task.raports.form')->with([
             'task'                => $this->task,
+            'service'                => $this->service,
+            'client'                => $this->client,
         ]);
     }
 }

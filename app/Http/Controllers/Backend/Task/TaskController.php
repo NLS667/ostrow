@@ -143,7 +143,9 @@ class TaskController extends Controller
      */
     public function create_raport(Task $task, RaportTaskRequest $request)
     {
-        return new RaportResponse($task);
+        $service = $this->services->find($task->service_id);
+        $client = $service->client;
+        return new RaportResponse($task, $service, $client);
     }
 
     /**
