@@ -55,8 +55,11 @@
 			                </div>
 			                <div class="row">
 			                	<label class="col-sm-2 col-form-label">{{ $service->service_type}}</label>
+			                	<div class="col-sm-10"></div>
+			                </div>
+			                <div class="row">
+			                	<label class="col-sm-2 col-form-label"></label>
 			                	<div class="col-sm-10">
-
 			                		@foreach($devices as $device)
 			                		<div class="row">
 				                		<div class="form-group col-sm-2">
