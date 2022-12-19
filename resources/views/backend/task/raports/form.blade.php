@@ -63,7 +63,7 @@
 			                		
 			                		@foreach($devices as $device)
 			                		<div class="form-group col-sm-2">
-			                			<input class="form-control" name="device['producer'][]" id="input-dev_producer" type="text" value="{{ $device->producer->name }}" disabled/>
+			                			<input class="form-control" name="device['producer'][]" id="input-dev_producer" type="text" value="{{ $device->model->producer->name }}" disabled/>
 			                		</div>
 			                		<div class="form-group col-sm-2">
 			                			<input class="form-control" name="device['model'][]" id="input-dev_model" type="text" value="{{ $device->model->name }}" disabled/>
