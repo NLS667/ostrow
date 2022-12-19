@@ -149,7 +149,7 @@ class TaskController extends Controller
         $client = $service->client;
         $devices = $this->devices->query()->where('service_id'. '=', $task->service_id);
 
-        return new RaportResponse($task, $service, $client, $devices);
+        return new RaportResponse($task, $service, $client, json_encode($devices));
     }
 
     /**
