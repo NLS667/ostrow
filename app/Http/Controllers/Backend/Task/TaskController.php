@@ -146,9 +146,9 @@ class TaskController extends Controller
     {
         $service = $this->services->find($task->service_id);
         $client = $service->client;
-        $devices = Device::where('service_id'. '=', $task->service_id);
+        $devices = Device::where('service_id', $task->service_id);
 
-        return new RaportResponse($task, $service, $client, json_encode($devices));
+        return new RaportResponse($task, $service, $client, $devices);
     }
 
     /**
