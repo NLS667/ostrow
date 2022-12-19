@@ -12,9 +12,11 @@ use App\Http\Requests\Backend\Task\ManageTaskRequest;
 use App\Http\Requests\Backend\Task\ShowTaskRequest;
 use App\Http\Requests\Backend\Task\StoreTaskRequest;
 use App\Http\Requests\Backend\Task\UpdateTaskRequest;
+use App\Http\Requests\Backend\Task\RaportTaskRequest;
 use App\Http\Responses\Backend\Task\CreateResponse;
 use App\Http\Responses\Backend\Task\EditResponse;
 use App\Http\Responses\Backend\Task\ShowResponse;
+use App\Http\Responses\Backend\Task\RaportResponse;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Task\Task;
@@ -130,6 +132,17 @@ class TaskController extends Controller
         $this->tasks->delete($task);
 
         return new RedirectResponse(route('admin.task.index'), ['flash_success' => trans('alerts.backend.tasks.deleted')]);
+    }
+
+    /**
+     * @param \App\Models\Task\Task                             $task
+     * @param \App\Http\Requests\Backend\Task\UpdateTaskRequest        $request
+     *
+     * @return \App\Http\Responses\RedirectResponse
+     */
+    public function raport(Task $task, RaportTaskRequest $request)
+    {
+        return new RaportResponse($task);
     }
 
     /**
