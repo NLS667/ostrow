@@ -24,6 +24,13 @@
             Route::post('task/updateDates', [\App\Http\Controllers\Backend\Task\TaskController::class, 'updateDates'])->name('task.updateDates');
 
             /*
+             * For Raport
+             */
+            Route::group(['prefix' => 'task/{task}'], function () {                
+                Route::get('raport', [TaskController::class, 'raport'])->name('task.raport');
+            }
+            
+            /*
              * Specific Task
              */
             Route::group(['prefix' => 'task/{task}'], function () {
