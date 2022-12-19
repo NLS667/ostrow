@@ -24218,7 +24218,7 @@ select.bs-select-hidden,select.selectpicker {
     outline: none;
     background-color: transparent;
     margin: 0;
-    width: 74px;
+    width: 150px;
     max-width: inherit;
     display: inline-block
 }
