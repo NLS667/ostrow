@@ -31,7 +31,7 @@
             });
 
 
-            Route::post('store_raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'store_raport'])->name('task.storeRaport');
+            Route::post('task/store_raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'store_raport'])->name('task.storeRaport');
             /*
              * Specific Task
              */
