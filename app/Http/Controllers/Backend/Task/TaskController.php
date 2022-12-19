@@ -25,6 +25,7 @@ use App\Repositories\Backend\Task\TaskRepository;
 use App\Repositories\Backend\Service\ServiceRepository;
 use App\Repositories\Backend\Access\User\UserRepository;
 use App\Repositories\Backend\TaskType\TaskTypeRepository;
+use App\Repositories\Backend\Device\DeviceRepository;
 
 /**
  * Class TaskController.
@@ -39,12 +40,13 @@ class TaskController extends Controller
     /**
      * @param \App\Repositories\Backend\Task\TaskRepository                   $tasks
      */
-    public function __construct(TaskRepository $tasks, ServiceRepository $services, UserRepository $users, TaskTypeRepository $types)
+    public function __construct(TaskRepository $tasks, ServiceRepository $services, UserRepository $users, TaskTypeRepository $types, DeviceRepository $devices)
     {
         $this->services = $services;
         $this->users = $users;
         $this->tasks = $tasks;
         $this->types = $types;
+        $this->devices = $devices;
     }
 
     /**
