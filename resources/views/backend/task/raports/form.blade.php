@@ -49,7 +49,7 @@
 			                  <label class="col-sm-2 col-form-label">Imię/Nazwisko/Firma:</label>
 			                  <div class="col-sm-7">
 			                    <div class="form-group">
-			                      <input class="form-control" name="task_type" id="input-task_type" type="text" value="{{ $client->phones[0] }}" disabled/>
+			                      <input class="form-control" name="task_type" id="input-task_type" type="text" value="{{ $client->main_phone }}" disabled/>
 			                    </div>
 			                  </div>
 			                </div>

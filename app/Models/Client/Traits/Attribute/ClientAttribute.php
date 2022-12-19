@@ -183,6 +183,17 @@ trait ClientAttribute
         $address = $street.'<br>'.$this->adr_zipcode.' '.$this->adr_city;
         return $address;
     }
+
+    public function getMainEmailAttribute(){
+        $emails = json_decode($this->emails);
+        return $emails[0];
+    }
+
+    public function getMainPhoneAttribute(){
+        $phones = json_decode($this->phones);
+        return $phones[0];
+    }
+
     public function getCommAddressAttribute(){
         $street = $this->comm_adr_street.' '.$this->comm_adr_street_nr;
         if(isset($this->comm_adr_home_nr)){
