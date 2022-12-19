@@ -71,15 +71,21 @@
 			                			<input class="form-control" name="device['serial_num'][]" id="input-dev_serial_num" type="text" value="{{ $device->serial_number }}" disabled/>
 			                		</div>
 			                		<div class="form-group col-sm-1">
-			                			<input class="form-control" name="device['czyn_rodz'][]" id="input-czyn_rodz" type="text" value="" />
+			                			<input class="form-control" name="device['czyn_rodz'][]" id="input-czyn_rodz" type="text" value="" placeholder="Rodzaj Czynnika"/>
 			                		</div>
 			                		<div class="form-group col-sm-1">
-			                			<input class="form-control" name="device['czyn_card'][]" id="input-czyn_card" type="text" value="" />
+			                			<input class="form-control" name="device['czyn_card'][]" id="input-czyn_card" type="text" value="" placeholder="Czynnik Karta"/>
 			                		</div>
 			                		<div class="form-group col-sm-1">
-			                			<input class="form-control" name="device['czyn_added'][]" id="input-czyn_added" type="text" value="" />
+			                			<input class="form-control" name="device['czyn_added'][]" id="input-czyn_added" type="text" value="" placeholder="Czynnik dodany"/>
 			                		</div>
 			                		@endforeach
+			                </div>
+			                <div class="row">
+			                  <label class="col-sm-2 col-form-label">Uwagi/Zalecenia</label>
+			                  <div class="col-md-10 form-group bmd-form-group">
+			                    <textarea rows="8" cols="50" class="form-control" name="extra" id="input-extra"></textarea>
+			                  </div>
 			                </div>
                             <div class="edit-form-btn">
                                 {{ link_to_route('admin.task.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
