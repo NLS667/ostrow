@@ -21,6 +21,7 @@ class CreateTasksTable extends Migration
             $table->foreignId('type_id')->constrained('task_types');
             $table->integer('status')->default(0);
             $table->boolean('isFinished')->default(false);
+            $table->longText('raport_data')->nullable();
             $table->longText('team')->nullable();
             $table->longText('note')->nullable();
             $table->dateTime('start');

@@ -34,6 +34,7 @@ class Task extends BaseModel
         'type_id',
         'status',
         'isFinished',
+        'raport_data',
         'team',
         'note',
         'start',

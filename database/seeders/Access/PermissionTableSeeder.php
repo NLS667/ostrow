@@ -909,6 +909,17 @@ class PermissionTableSeeder extends Seeder
         $permModel->updated_at = null;
         $permModel->save();
 
+        $permission_model = config('access.permission');
+        $permModel = new $permission_model();
+        $permModel->name = 'create-task-raport';
+        $permModel->display_name = 'Tworzenie Protokołów z Zadań';
+        $permModel->sort = 71;
+        $permModel->created_by = 1;
+        $permModel->updated_by = null;
+        $permModel->created_at = Carbon::now();
+        $permModel->updated_at = null;
+        $permModel->save();
+
         $this->enableForeignKeys();
     }
 }

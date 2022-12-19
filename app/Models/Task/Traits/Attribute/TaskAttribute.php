@@ -71,6 +71,18 @@ trait TaskAttribute
     }
 
     /**
+     * @return string
+     */
+    public function geRaportButtonAttribute($class)
+    {
+        if (access()->allow('create-task-raport')) {
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Protokół" href="'.route('admin.task.raport', $this).'">
+                        <span class="material-icons">inventory</span>
+                    </a>';
+        }
+    }
+
+    /**
      * Get logged in user permission related to user management grid.
      *
      * @return array
@@ -78,7 +90,7 @@ trait TaskAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['50', '51', '64', '65'];
+        $attributePermission = ['50', '51', '64', '65', '71'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
@@ -98,7 +110,8 @@ trait TaskAttribute
         if (access()->user()->roles[0]->all) {
             return $this->getEditButtonAttribute('btn btn-success btn-round').'
             '.$this->getDeleteButtonAttribute('btn btn-danger btn-round').'                        
-            '.$this->getStatusButtonAttribute('btn btn-warning btn-round');
+            '.$this->getStatusButtonAttribute('btn btn-warning btn-round').'                        
+            '.$this->getRaportButtonAttribute('btn btn-info btn-round');
         } else {
             $userPermission = $this->getUserPermission();
             $permissionCounter = count($userPermission);
@@ -136,6 +149,9 @@ trait TaskAttribute
             $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
             break;
             case 'deactivate-task':
+            $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
+            break;
+            case 'create-task-raport':
             $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
             break;
             default:
