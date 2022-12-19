@@ -25,7 +25,7 @@ use App\Repositories\Backend\Task\TaskRepository;
 use App\Repositories\Backend\Service\ServiceRepository;
 use App\Repositories\Backend\Access\User\UserRepository;
 use App\Repositories\Backend\TaskType\TaskTypeRepository;
-use App\Repositories\Backend\Device\DeviceRepository;
+use App\Models\Device\Device;
 
 /**
  * Class TaskController.
@@ -147,7 +147,7 @@ class TaskController extends Controller
     {
         $service = $this->services->find($task->service_id);
         $client = $service->client;
-        $devices = $this->devices->query()->where('service_id'. '=', $task->service_id);
+        $devices = Device::where('service_id'. '=', $task->service_id);
 
         return new RaportResponse($task, $service, $client, json_encode($devices));
     }
