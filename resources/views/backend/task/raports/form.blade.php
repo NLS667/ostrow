@@ -70,16 +70,16 @@
 				                		<div class="form-group col-sm-2">
 				                			<input class="form-control" name="device['model'][]" id="input-dev_model" type="text" value="{{ $device->model->name }}" disabled/>
 				                		</div>
-				                		<div class="form-group col-sm-5">
+				                		<div class="form-group col-sm-2">
 				                			<input class="form-control" name="device['serial_num'][]" id="input-dev_serial_num" type="text" value="{{ $device->serial_number }}" disabled/>
 				                		</div>
-				                		<div class="form-group col-sm-1">
+				                		<div class="form-group col-sm-2">
 				                			<input class="form-control" name="device['czyn_rodz'][]" id="input-czyn_rodz" type="text" value="" placeholder="Rodzaj Czynnika"/>
 				                		</div>
-				                		<div class="form-group col-sm-1">
+				                		<div class="form-group col-sm-2">
 				                			<input class="form-control" name="device['czyn_card'][]" id="input-czyn_card" type="text" value="" placeholder="Czynnik Karta"/>
 				                		</div>
-				                		<div class="form-group col-sm-1">
+				                		<div class="form-group col-sm-2">
 				                			<input class="form-control" name="device['czyn_added'][]" id="input-czyn_added" type="text" value="" placeholder="Czynnik dodany"/>
 				                		</div>
 				                	</div>
