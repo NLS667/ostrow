@@ -27,14 +27,17 @@
              * For Raport
              */
             Route::group(['prefix' => 'task/{task}'], function () {                
-                Route::get('raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'create_raport'])->name('task.createRaport');
-                Route::post('store_raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'store_raport'])->name('task.storeRaport');
+                
             });
 
             /*
              * Specific Task
              */
             Route::group(['prefix' => 'task/{task}'], function () {
+
+                //Raport
+                Route::get('create_raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'create_raport'])->name('task.createRaport');
+                Route::post('store_raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'store_raport'])->name('task.storeRaport');
 
                 // isFinished
                 Route::get('mark/{isFinished}', [\App\Http\Controllers\Backend\Task\TaskStatusController::class, 'mark'])->name('task.mark')->where(['isFinished' => '[0,1]']);

@@ -76,7 +76,7 @@ trait TaskAttribute
     public function getRaportButtonAttribute($class)
     {
         if (access()->allow('create-task-raport')) {
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Protokół" href="'.route('admin.task.raport', $this).'">
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Protokół" href="'.route('admin.task.createRaport', $this).'">
                         <span class="material-icons">inventory</span>
                     </a>';
         }

@@ -4,8 +4,10 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12"> 
-                {{ Form::open(['route' => 'admin.task.store_raport', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post', 'id' => 'store-raport', 'files' => false]) }}
+            <div class="col-md-12">
+                <form method="post" action="{{ route('admin.task.store_raport', $task) }}" autocomplete="off" class="form-horizontal">
+		          @csrf
+		          @method('put')
 
                 <div class="card">
                     <div class="card-header card-header-icon card-header-info d-flex justify-content-between align-items-center">
@@ -20,7 +22,7 @@
                     <div class="card-body">
                         <div class="form-group">
 
-                        	
+
                             <div class="edit-form-btn">
                                 {{ link_to_route('admin.task.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
                                 {{ Form::submit('Zapisz', ['class' => 'btn btn-primary btn-md']) }}
@@ -28,7 +30,7 @@
                         </div>
                     </div><!--box-->
                 </div>
-                {{ Form::close() }}
+                </form>
             </div>
         </div>
     </div>
