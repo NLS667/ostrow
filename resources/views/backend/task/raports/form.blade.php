@@ -54,11 +54,6 @@
 			                  </div>
 			                </div>
 			                <div class="row">
-			                	
-			                		<h4 class="card-title">{{ $service->service_type}}</h4>
-			                	</div>
-			                </div>
-			                <div class="row">
 			                	<label class="col-sm-2 col-form-label">{{ $service->service_type}}</label>
 			                	<div class="col-sm-10">
 
