@@ -13,6 +13,7 @@ use App\Http\Requests\Backend\Task\ShowTaskRequest;
 use App\Http\Requests\Backend\Task\StoreTaskRequest;
 use App\Http\Requests\Backend\Task\UpdateTaskRequest;
 use App\Http\Requests\Backend\Task\RaportTaskRequest;
+use App\Http\Requests\Backend\Task\StoreRaportRequest;
 use App\Http\Responses\Backend\Task\CreateResponse;
 use App\Http\Responses\Backend\Task\EditResponse;
 use App\Http\Responses\Backend\Task\ShowResponse;
@@ -140,9 +141,24 @@ class TaskController extends Controller
      *
      * @return \App\Http\Responses\RedirectResponse
      */
-    public function raport(Task $task, RaportTaskRequest $request)
+    public function create_raport(Task $task, RaportTaskRequest $request)
     {
         return new RaportResponse($task);
+    }
+
+    /**
+     * @param \App\Models\Task\Task                             $task
+     * @param \App\Http\Requests\Backend\Task\UpdateTaskRequest        $request
+     *
+     * @return \App\Http\Responses\RedirectResponse
+     */
+    public function store_raport( StoreRaportRequest $request)
+    {
+        $validated = $request->validated();
+
+        $this->tasks->create_raport($request);
+
+        return new RedirectResponse(route('admin.task.index'), ['flash_success' => trans('alerts.backend.tasks.raport_created')]);
     }
 
     /**

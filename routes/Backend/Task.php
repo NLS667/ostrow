@@ -27,7 +27,8 @@
              * For Raport
              */
             Route::group(['prefix' => 'task/{task}'], function () {                
-                Route::get('raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'raport'])->name('task.raport');
+                Route::get('raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'create_raport'])->name('task.createRaport');
+                Route::post('store_raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'store_raport'])->name('task.storeRaport');
             });
 
             /*
