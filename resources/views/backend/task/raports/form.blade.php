@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form method="post" action="{{ route('admin.task.store_raport', $task) }}" autocomplete="off" class="form-horizontal">
+                <form method="post" action="{{ route('admin.task.storeRaport', $task) }}" autocomplete="off" class="form-horizontal">
 		          @csrf
 		          @method('put')
 
