@@ -28,8 +28,8 @@
              */
             Route::group(['prefix' => 'task/{task}'], function () {                
                 Route::get('raport', [TaskController::class, 'raport'])->name('task.raport');
-            }
-            
+            });
+
             /*
              * Specific Task
              */
