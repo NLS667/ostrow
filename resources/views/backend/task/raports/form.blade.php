@@ -59,7 +59,6 @@
 			                	</div>
 			                </div>
 			                <div class="row">
-			                	<div class="col-sm-12">
 			                		
 			                		@foreach($devices as $device)
 			                		<div class="form-group col-sm-2">
@@ -81,7 +80,6 @@
 			                			<input class="form-control" name="device['czyn_added'][]" id="input-czyn_added" type="text" value="" />
 			                		</div>
 			                		@endforeach
-			                	</div>
 			                </div>
                             <div class="edit-form-btn">
                                 {{ link_to_route('admin.task.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
