@@ -33,30 +33,37 @@
 			                  <label class="col-sm-2 col-form-label">Imię/Nazwisko/Firma:</label>
 			                  <div class="col-sm-7">
 			                    <div class="form-group">
-			                      <input class="form-control" name="task_type" id="input-task_type" type="text" value="{{ $client->name }}" disabled/>
+			                      <input class="form-control" name="client_name" id="input-client_name" type="text" value="{{ $client->name }}" disabled/>
 			                    </div>
 			                  </div>
 			                </div>
 			                <div class="row">
-			                  <label class="col-sm-2 col-form-label">Imię/Nazwisko/Firma:</label>
+			                  <label class="col-sm-2 col-form-label">Adres:</label>
 			                  <div class="col-sm-7">
 			                    <div class="form-group">
-			                      <input class="form-control" name="task_type" id="input-task_type" type="text" value="{{ $client->address }}" disabled/>
+			                      <input class="form-control" name="client_address" id="input-client_address" type="text" value="{{ $client->address }}" disabled/>
 			                    </div>
 			                  </div>
 			                </div>
 			                <div class="row">
-			                  <label class="col-sm-2 col-form-label">Imię/Nazwisko/Firma:</label>
+			                  <label class="col-sm-2 col-form-label">Tel. Kontaktowy:</label>
 			                  <div class="col-sm-7">
 			                    <div class="form-group">
-			                      <input class="form-control" name="task_type" id="input-task_type" type="text" value="{{ $client->main_phone }}" disabled/>
+			                      <input class="form-control" name="client_phone" id="input-client_phone" type="text" value="{{ $client->main_phone }}" disabled/>
 			                    </div>
 			                  </div>
 			                </div>
-
-                        	{{ $task }}
-                        	{{ $service }}
-                        	{{ $client }}
+			                <div class="row">
+			                	<div class="col-sm-12">
+			                		<h4 class="card-title">{{ $service->service_type}}</h4>
+			                	</div>
+			                </div>
+			                <div class="row">
+			                	<div class="col-sm-12">
+			                	</div>
+			                </div>
+			                
+                        	{{ $devices }}
                             <div class="edit-form-btn">
                                 {{ link_to_route('admin.task.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
                                 {{ Form::submit('Zapisz', ['class' => 'btn btn-primary btn-md']) }}

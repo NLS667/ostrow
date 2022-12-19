@@ -145,7 +145,9 @@ class TaskController extends Controller
     {
         $service = $this->services->find($task->service_id);
         $client = $service->client;
-        return new RaportResponse($task, $service, $client);
+        $devices = $this->devices->qyery()->where('service_id'. '=', $task->service_id);
+
+        return new RaportResponse($task, $service, $client, $devices);
     }
 
     /**
