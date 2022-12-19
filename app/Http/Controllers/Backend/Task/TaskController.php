@@ -40,13 +40,12 @@ class TaskController extends Controller
     /**
      * @param \App\Repositories\Backend\Task\TaskRepository                   $tasks
      */
-    public function __construct(TaskRepository $tasks, ServiceRepository $services, UserRepository $users, TaskTypeRepository $types, DeviceRepository $devices)
+    public function __construct(TaskRepository $tasks, ServiceRepository $services, UserRepository $users, TaskTypeRepository $types)
     {
         $this->services = $services;
         $this->users = $users;
         $this->tasks = $tasks;
         $this->types = $types;
-        $this->devices = $devices;
     }
 
     /**
