@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call(TaskTypesTableSeeder::class);
 
         //Temporary seeders
-        $this->call(ProducerTableSeeder::class);
-        $this->call(ClientTableSeeder::class);
+        //$this->call(ProducerTableSeeder::class);
+        //$this->call(ClientTableSeeder::class);
 
         Model::reguard();
     }
