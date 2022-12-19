@@ -21,6 +21,14 @@
 
                     <div class="card-body">
                         <div class="form-group">
+                        	<div class="row">
+			                  <label class="col-sm-2 col-form-label">Protokół z czynności:</label>
+			                  <div class="col-sm-7">
+			                    <div class="form-group">
+			                      <input class="form-control" name="task_type" id="input-task_type" type="text" value="{{ $task->type) }} disabled"/>
+			                    </div>
+			                  </div>
+			                </div>
 
                         	{{ $task }}
                         	{{ $service }}
