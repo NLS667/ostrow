@@ -147,8 +147,12 @@ class TaskController extends Controller
         $service = $this->services->find($task->service_id);
         $client = $service->client;
         $devices = Device::where('service_id', $task->service_id);
+        foreach($devices as $device)
+        {
+            $dev[] = $device;
+        }
 
-        return new RaportResponse($task, $service, $client, $devices);
+        return new RaportResponse($task, $service, $client, $dev);
     }
 
     /**
