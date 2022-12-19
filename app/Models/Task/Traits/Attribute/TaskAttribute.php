@@ -73,7 +73,7 @@ trait TaskAttribute
     /**
      * @return string
      */
-    public function geRaportButtonAttribute($class)
+    public function getRaportButtonAttribute($class)
     {
         if (access()->allow('create-task-raport')) {
             return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Protokół" href="'.route('admin.task.raport', $this).'">
