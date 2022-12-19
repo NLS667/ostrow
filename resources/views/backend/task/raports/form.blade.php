@@ -67,8 +67,6 @@
 			                		@endforeach
 			                	</div>
 			                </div>
-
-                        	{{  }}
                             <div class="edit-form-btn">
                                 {{ link_to_route('admin.task.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
                                 {{ Form::submit('Zapisz', ['class' => 'btn btn-primary btn-md']) }}
