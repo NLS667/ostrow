@@ -29,6 +29,10 @@
                     <div class="card-text">
                       <h3 class="card-title">{{ $client->first_name }}&nbsp;{{ $client->last_name }}</h3>
                     </div>
+                    <div class="card-tools">
+                        <a class="btn btn-round btn-rose" href="{{ url('admin/client/'.$client->id.'/edit/') }}">Edytuj dane</a>
+                    </a>
+                    </div>
                 </div>
                   <div class="card-body ">
                     <div class="row">
