@@ -64,5 +64,10 @@ return [
 			"deleted" => "Rodzaj zadania został usunięty.",
 			"updated" => "Rodzaj zadania został zaktualizowany.",
 		],
+		"notes" => [
+			"created" => "Notatka została utworzona.",
+			"deleted" => "Notatka została usunięta.",
+			"updated" => "Notatka została zaktualizowana.",
+		],
 	],
 ];
