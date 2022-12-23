@@ -25,7 +25,7 @@
           <div class="row">
             <div class="col-md-8">
               <div class="card">
-                  <div class="card-header card-header-text card-header-rose d-flex justify-content-between align-items-center">
+                  <div class="card-header card-header-icon card-header-rose d-flex justify-content-between align-items-center">
                     <div class="card-text">
                       <h3 class="card-title">{{ $client->first_name }}&nbsp;{{ $client->last_name }}</h3>
                     </div>
