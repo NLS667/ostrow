@@ -94,7 +94,9 @@ class ShowResponse implements Responsable
                     'edit_link' => $task->edit_link
                 ];
             }
-            $notes = Note::where('client_id', $this->client->id)->get();
+        }
+
+        $notes = Note::where('client_id', $this->client->id)->get();
             foreach($notes as $note)
             {
                 $note_data[] = (object)[
@@ -104,7 +106,6 @@ class ShowResponse implements Responsable
                     'action_buttons' => $note->action_buttons
                 ];
             }
-        }
         
         
         return view('backend.client.show')
