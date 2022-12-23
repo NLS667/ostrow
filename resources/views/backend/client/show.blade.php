@@ -25,11 +25,11 @@
           <div class="row">
             <div class="col-md-8">
               <div class="card">
-                  <div class="card-header card-header-text card-header-rose">
+                  <div class="card-header card-header-text card-header-rose d-flex justify-content-between align-items-center">
                     <div class="card-text">
                       <h3 class="card-title">{{ $client->first_name }}&nbsp;{{ $client->last_name }}</h3>
                     </div>
-                    <div class="card-tools">
+                    <div class="card-tools" style="margin-top:20px;">
                         <a class="btn btn-round btn-rose" href="{{ url('admin/client/'.$client->id.'/edit/') }}">Edytuj dane</a>
                     </a>
                     </div>
