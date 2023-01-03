@@ -42,18 +42,11 @@ class ServiceTableController extends Controller
             ->editColumn('models', function ($service) {
                 if(isset($service->models) && json_decode($service->models) != null)
                 {
-                    $models = json_decode($service->models);
-                    $all_devices = json_decode($service->devices, true);
-                    \Log::info($all_devices);
+                    $devices = json_decode($service->devices, true);
                     $result = '';
-                    for($i=0;$i<count($models);$i++)
+                    for($i=0;$i<count($devices);$i++)
                     {
-                        $devices = $all_devices[$i];
-                        for($k=0;$k<count($devices);$k++)
-                        {
-                            $device = Device::where('id', $devices[$k])->first();
-                            $result .= $device->serial_number.'<br/>';
-                        }
+                        $result .= $device->serial_number.'<br/>';
                     }
                     return $result;
                 } else {
