@@ -242,6 +242,7 @@
         </button>
       </div>
       <form id="SubmitForm">
+        @csrf
         <div class="modal-body">
           <textarea rows="8" cols="50" class="form-control" name="content" id="input-content"></textarea>
           <span class="text-danger" id="contentErrorMsg"></span>
@@ -266,6 +267,7 @@
         </button>
       </div>
       <form id="UpdateForm">
+        @csrf
         <div class="modal-body">
           <textarea rows="8" cols="50" class="form-control" name="content" id="input-update-content"></textarea>
           <span class="text-danger" id="contentErrorMsg"></span>
