@@ -42,9 +42,9 @@ class ServiceTableController extends Controller
             ->editColumn('models', function ($service) {
                 if(isset($service->models) && json_decode($service->models) != null)
                 {
-                    $devices = json_decode($service->devices, true);
+                    $devices = json_decode($service->devices);
                     $result = '';
-                    foreach($devices as $device)
+                    for($i=0;$i<count($devices);$i++)
                     {
                         $result .= $device->serial_number.'<br/>';
                     }
