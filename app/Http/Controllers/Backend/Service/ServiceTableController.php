@@ -44,7 +44,7 @@ class ServiceTableController extends Controller
                 {
                     $devices = json_decode($service->devices, true);
                     $result = '';
-                    for($i=0;$i<count($devices);$i++)
+                    foreach($devices as $device)
                     {
                         $result .= $device->serial_number.'<br/>';
                     }
