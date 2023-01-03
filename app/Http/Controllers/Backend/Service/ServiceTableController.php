@@ -44,11 +44,10 @@ class ServiceTableController extends Controller
                 {
                     $models = json_decode($service->models);
                     $all_devices = json_decode($service->devices, true);
-
                     $result = '';
                     for($i=0;$i<count($models);$i++)
                     {
-                        $devices = explode(",", $all_devices[$i]);
+                        $devices = $all_devices[$i];
                         for($k=0;$k<count($devices);$k++)
                         {
                             $device = Device::where('id', $devices[$k])->first();
