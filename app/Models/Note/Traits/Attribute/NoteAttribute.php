@@ -47,7 +47,7 @@ trait NoteAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['61', '63'];
+        $attributePermission = ['61', '62', '63'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
