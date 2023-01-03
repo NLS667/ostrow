@@ -43,11 +43,11 @@ class ServiceTableController extends Controller
                 if(isset($service->models) && json_decode($service->models) != null)
                 {
                     $models = json_decode($service->models);
-                    $all_devices = json_decode($service->devices);
+                    $all_devices = json_decode($service->devices, true);
+
                     $result = '';
                     for($i=0;$i<count($models);$i++)
                     {
-                        \Log::info($all_devices[$i]);
                         $devices = explode(",", $all_devices[$i]);
                         for($k=0;$k<count($devices);$k++)
                         {
