@@ -241,8 +241,13 @@ class ServiceRepository extends BaseRepository
                 $service->signed_at = $request['signed_at'];
                 $service->installed_at = $request['installed_at'];
                 $service->deal_amount = $request['deal_amount'];
-                $service->advance_date = json_encode($request['advance_date']);
-                $service->deal_advance = json_encode($request['deal_advance']);
+                if (array_key_exists("advance_date", $request)){
+                    $service->advance_date = json_encode($request['advance_date']);
+                    $service->deal_advance = json_encode($request['deal_advance']);
+                } else {
+                    $service->advance_date = [];
+                    $service->deal_advance = [];
+                }
                 break;
             case 'Dodatkowa':
                 $service->models = null;
