@@ -128,7 +128,7 @@
                               <p>{{ $model->name }}</p>           
                             </div>
                             <div class="col-md-4">
-                              <p style="text-transform: capitalize;">{{ $model->serial_number }}</p>                            
+                              <p style="text-transform: uppercase;">{{ $model->serial_number }}</p>                            
                             </div>
                           </div>
                           @endforeach
