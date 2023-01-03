@@ -405,7 +405,8 @@
           content:content,
           client_id:client_id,
         },
-        success:function(response){          
+        success:function(response){
+          window.location.reload();          
           $('#newNoteModal').modal('hide');
         },
         error: function(response) {
