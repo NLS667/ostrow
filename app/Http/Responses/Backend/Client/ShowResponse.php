@@ -51,7 +51,8 @@ class ShowResponse implements Responsable
         {
             $service = Service::where('client_id', $this->client->id)->where('service_cat_id', $category->id)->first();
             $models = json_decode($service->models);
-            \Log::info($models);
+            $devices = $service->devices;
+            \Log::info($devices);
             $modelsObj = [];
             for($i=0;$i<count($models);$i++){
                 $model = Model::where('id', ($models[$i]))->first();
