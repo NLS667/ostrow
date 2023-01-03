@@ -40,7 +40,7 @@ class ServiceTableController extends Controller
                 return $service->service_cat_id;
             })
             ->editColumn('models', function ($service) {
-                if(isset($service->deal_advance) && json_decode($service->deal_advance) != null)
+                if(isset($service->models) && json_decode($service->models) != null)
                 {
                     $devices = json_decode($service->models);
                     $result = '';
