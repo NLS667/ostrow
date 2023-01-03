@@ -47,7 +47,7 @@ class ServiceTableController extends Controller
                     \Log::info($devices);
                     for($i=0;$i<count($devices);$i++)
                     {
-                        $result .= $device->serial_number.'<br/>';
+                        $result .= $devices[$i]->serial_number.'<br/>';
                     }
                     return $result;
                 } else {
