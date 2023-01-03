@@ -245,8 +245,8 @@ class ServiceRepository extends BaseRepository
                     $service->advance_date = json_encode($request['advance_date']);
                     $service->deal_advance = json_encode($request['deal_advance']);
                 } else {
-                    $service->advance_date = [];
-                    $service->deal_advance = [];
+                    $service->advance_date = json_encode([]);
+                    $service->deal_advance = json_encode([]);
                 }
                 break;
             case 'Dodatkowa':
