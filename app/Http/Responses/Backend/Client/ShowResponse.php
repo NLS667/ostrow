@@ -59,7 +59,7 @@ class ShowResponse implements Responsable
                 for($k=0;$k<count($devices);$k++){
                     $modelsObj[] = (object)[
                         'name' => $model->name,
-                        'serial_number' => $devices[$k]->serial_number,
+                        'serial_number' => $devices[$k],
                         'producer' => $model->producer->name
                     ];
                 }
