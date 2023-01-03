@@ -47,7 +47,7 @@ class ServiceTableController extends Controller
                     $result = '';
                     for($i=0;$i<count($models);$i++)
                     {
-                        $devices = explode (",", $all_devices[$i]);
+                        $devices = explode(",", $all_devices[$i]);
                         for($k=0;$k<count($devices);$k++)
                         {
                             $device = Device::where('id', $devices[$k])->first();
