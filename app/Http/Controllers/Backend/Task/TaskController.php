@@ -26,6 +26,7 @@ use App\Repositories\Backend\Service\ServiceRepository;
 use App\Repositories\Backend\Access\User\UserRepository;
 use App\Repositories\Backend\TaskType\TaskTypeRepository;
 use App\Models\Device\Device;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 /**
  * Class TaskController.
@@ -152,7 +153,8 @@ class TaskController extends Controller
         $data['client'] = $client;
         $data['devices'] = $devices;
 
-        return new ViewResponse('backend.task.raports.template', ['data' => $data]);
+        $pdf = Pdf::loadView('backend.task.raports.template', $data);
+        return $pdf->download('report.pdf');
     }
 
     /**
