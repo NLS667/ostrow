@@ -40,6 +40,8 @@
                 //Raport
                 Route::get('create_raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'create_raport'])->name('task.createRaport');
 
+                Route::get('get_raport', [\App\Http\Controllers\Backend\Task\TaskController::class, 'get_raport'])->name('task.getRaport');
+
                 // isFinished
                 Route::get('mark/{isFinished}', [\App\Http\Controllers\Backend\Task\TaskStatusController::class, 'mark'])->name('task.mark')->where(['isFinished' => '[0,1]']);
             });

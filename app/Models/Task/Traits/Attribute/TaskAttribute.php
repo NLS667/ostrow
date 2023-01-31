@@ -75,9 +75,9 @@ trait TaskAttribute
      */
     public function getRaportButtonAttribute($class)
     {
-        if (access()->allow('create-task-raport')) {
-            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Protokół" href="'.route('admin.task.createRaport', $this).'">
-                        <span class="material-icons">inventory</span>
+        if (access()->allow('get-task-raport')) {
+            return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Protokół" href="'.route('admin.task.getRaport', $this).'">
+                        <span class="material-symbols-outlined">export-notes</span>
                     </a>';
         }
     }
@@ -90,7 +90,7 @@ trait TaskAttribute
     public function getUserPermission()
     {
         $userPermission = [];
-        $attributePermission = ['50', '51', '64', '65', '71'];
+        $attributePermission = ['50', '51', '64', '65', '71', '72'];
         foreach (access()->user()->permissions as $permission) {
             if (in_array($permission->id, $attributePermission)) {
                 $userPermission[] = $permission->name;
@@ -110,9 +110,8 @@ trait TaskAttribute
         if (access()->user()->roles[0]->all) {
             return $this->getEditButtonAttribute('btn btn-success btn-round').'
             '.$this->getDeleteButtonAttribute('btn btn-danger btn-round').'                        
-            '.$this->getStatusButtonAttribute('btn btn-warning btn-round');
-            //.'                        
-            //'.$this->getRaportButtonAttribute('btn btn-info btn-round');
+            '.$this->getStatusButtonAttribute('btn btn-warning btn-round').'                        
+            '.$this->getRaportButtonAttribute('btn btn-info btn-round');
         } else {
             $userPermission = $this->getUserPermission();
             $permissionCounter = count($userPermission);
@@ -151,6 +150,9 @@ trait TaskAttribute
             break;
             case 'deactivate-task':
             $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
+            break;
+            case 'get-task-raport':
+            $button = $this->getRaportButtonAttribute('btn btn-warning btn-round');
             break;
             //case 'create-task-raport':
             //$button = $this->getStatusButtonAttribute('btn btn-warning btn-round');

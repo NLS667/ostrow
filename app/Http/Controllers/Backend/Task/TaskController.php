@@ -142,6 +142,25 @@ class TaskController extends Controller
      *
      * @return \App\Http\Responses\RedirectResponse
      */
+    public function get_raport(Task $task, RaportTaskRequest $request)
+    {
+        $service = $this->services->find($task->service_id);
+        $client = $service->client;
+        $devices = Device::where('service_id', $task->service_id)->get();
+
+        $data['service'] = $service;
+        $data['client'] = $client;
+        $data['devices'] = $devices;
+
+        return new ViewResponse('backend.task.raports.template', ['data' => $data]);
+    }
+
+    /**
+     * @param \App\Models\Task\Task                             $task
+     * @param \App\Http\Requests\Backend\Task\UpdateTaskRequest        $request
+     *
+     * @return \App\Http\Responses\RedirectResponse
+     */
     public function create_raport(Task $task, RaportTaskRequest $request)
     {
         $service = $this->services->find($task->service_id);
