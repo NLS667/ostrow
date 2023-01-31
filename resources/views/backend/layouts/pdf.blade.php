@@ -8,15 +8,7 @@
     @yield('before-styles')
     {{ Html::style(mix('css/app.css')) }}
     {{ Html::style(mix('css/app-custom.css')) }}
-    @yield('after-styles')
-    <styles>
-        * {
-            width: 100%;
-            margin:0px;
-            padding:0px;
-        };
-    </styles>
-    
+    @yield('after-styles')    
 
     </head>
     <body class="layout-fixed">               
