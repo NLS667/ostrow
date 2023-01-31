@@ -9,6 +9,13 @@
     {{ Html::style(mix('css/app.css')) }}
     {{ Html::style(mix('css/app-custom.css')) }}
     @yield('after-styles')
+    <styles>
+        * {
+            width: 100%;
+            margin:0px;
+            padding:0px;
+        };
+    </styles>
     
 
     </head>
