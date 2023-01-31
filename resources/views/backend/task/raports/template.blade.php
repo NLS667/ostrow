@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="content">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
-				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" />
+			<div class="col-3">
+				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" style="width:100%"/>
 			</div>
-			<div class="col-md-9">
+			<div class="col-9">
 				<div class="row green-bg">
 					<div class="col-md-4">
 						Tel. 608 516 632
