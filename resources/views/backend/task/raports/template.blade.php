@@ -250,7 +250,280 @@
 	</div>
 	<div class="page-break"></div>
 	<div class="container">
-
+		<div class="row">
+			<div class="col-md-12">
+				KLIMATYZACJA
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<table>
+					<thead>
+						<tr colspan='2'>
+							<td>MR. SLIM</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Całkowita długość orurowania (dł. mierzona po rurze cieczowej)</td>
+							<td>[m]</td>
+						</tr>
+						<tr>
+							<td>Dodatkowa dodana ilość czynnika chłodniczego </td>
+							<td>[kg]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L1-N</td>
+							<td>[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L2-N</td>
+							<td>[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L3-N</td>
+							<td>[V]</td>
+						</tr>
+						<tr>
+							<td>Ciśnienie czynnika chłodniczego na tłoczeniu (po 30 min. pracy)</td>
+							<td>[bar]</td>
+						</tr>
+						<tr>
+							<td>Ciśnienie czynnika chłodniczego na ssaniu (po 30 min. pracy)</td>
+							<td>[bar]</td>
+						</tr>
+						<tr>
+							<td>Temperatura tłoczenia sprężarki TH4 (po 30 min. pracy)</td>
+							<td>[C]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami S1-S2 (napięcie AC)</td>
+							<td>[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami S2-S3 (napięcie DC)</td>
+							<td>[V]</td>
+						</tr>
+						<tr>
+							<td>Temperatura w odsługiwanym pomieszczeniu</td>
+							<td>[C]</td>
+						</tr>
+						<tr>
+							<td>Temperatura powietrza nawiewnego (po 30 min. pracy)</td>
+							<td>[C]</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<table>
+					<thead>
+						<tr colspan='2'>
+							<td>GREE</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Próba szczelności instalacji freonowej</td>
+							<td>[bar]</td>
+						</tr>
+						<tr>
+							<td>Czas trwania próby</td>
+							<td>[h]</td>
+						</tr>
+						<tr>
+							<td>Osuszanie próżniowe</td>
+							<td>[bar]</td>
+						</tr>
+						<tr>
+							<td>Czas trwania osuszania próżniowego</td>
+							<td>[min]</td>
+						</tr>
+						<tr>
+							<td>Temp. nawiewu jed. Wew. grzanie (min/max)</td>
+							<td>[C]</td>
+						</tr>
+						<tr>
+							<td>Temp. nawiewu jed. Wew. chłodzenie (min/max)</td>
+							<td>[C]</td>
+						</tr>
+						<tr>
+							<td>Temp. w budynku podczas badania nawiewu</td>
+							<td>[C]</td>
+						</tr>
+						<tr>
+							<td>Temp. na zewnątrz podczas badania nawiewu</td>
+							<td>[C]</td>
+						</tr>
+						<tr>
+							<td>Ilość dodanego czynnika chłodniczego</td>
+							<td>[g]</td>
+						</tr>
+						<tr>
+							<td>Długość wyk. instalacji freonowej</td>
+							<td>[m]</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<table>
+					<thead>
+						<tr colspan='2'>
+							<td>SERIA M</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Całkowita długość orurowania (dł. mierzona po rurze cieczowej)</td>
+							<td>[m]</td>
+						</tr>
+						<tr>
+							<td>Dodatkowa dodana ilość czynnika chłodniczego </td>
+							<td>[kg]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L-N</td>
+							<td>[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L i uziemieniem</td>
+							<td>[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami S1-S2 (napięcie AC)</td>
+							<td>[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami S2-S3 (napięcie DC)</td>
+							<td>[V]</td>
+						</tr>
+						<tr>
+							<td>Ciśnienie czynnika chłodniczego na ssaniu (po 30 min. pracy)</td>
+							<td>[bar]</td>
+						</tr>
+						<tr>
+							<td>Temperatura w odsługiwanym pomieszczeniu</td>
+							<td>[C]</td>
+						</tr>
+						<tr>
+							<td>Temperatura powietrza nawiewnego (po 30 min. pracy)</td>
+							<td>[C]</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<table>
+					<thead>
+						<tr colspan='2'>
+							<td>LOSSNAY</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Napięcie el. Pomiędzy zaciskami L-N</td>
+							<td colspan='2'>[V]</td>
+						</tr>
+						<tr>
+							<td>Nagrzewnica wstępna</td>
+							<td>TAK</td>
+							<td>NIE</td>
+						</tr>
+						<tr>
+							<td>Kanał wlotowy powietrza nachylony w stronę czerpni</td>
+							<td>TAK</td>
+							<td>NIE</td>
+						</tr>
+						<tr>
+							<td>Podłączenie wymiennika kanałowego Mitsubishi GUG</td>
+							<td>TAK</td>
+							<td>NIE</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<table>
+					<thead>
+						<tr colspan='2'>
+							<td>CITY MULTI</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Ciśnienie w czasie próby ciśnieniowej instalacji chłodniczej</td>
+							<td colspan='2'>[bar]</td>
+						</tr>
+						<tr>
+							<td>Dodatkowa dodana ilość czynnika chłodniczego </td>
+							<td colspan='2'>[kg]</td>
+						</tr>
+						<tr>
+							<td>Ciśnienie czynnika chłodniczego na ssaniu (po 30 min. pracy)</td>
+							<td colspan='2'>[bar]</td>
+						</tr>
+						<tr>
+							<td>Ciśnienie czynnika chłodniczego na tłoczeniu (po 30 min. pracy)</td>
+							<td colspan='2'>[bar]</td>
+						</tr>
+						<tr>
+							<td>Temp. na tłoczeniu sprężarki TH4-1-2-4-6 w pozycji ON (SW6-10 OFF)</td>
+							<td colspan='2'>[C]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L1-N</td>
+							<td colspan='2'>[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L2-N</td>
+							<td colspan='2'>[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L3-N</td>
+							<td colspan='2'>[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami TB3 (napięcie DC)</td>
+							<td colspan='2'>[V]</td>
+						</tr>
+						<tr>
+							<td>Przekrój ekranowego przewodu komunikacyjnego</td>
+							<td colspan='2'>[mm2]</td>
+						</tr>
+						<tr>
+							<td colspan='3'>Nagranie z narzędzia serwisowego CMS</td>
+						</tr>
+						<tr>
+							<td>Liczba jednostek wewnętrznych podpiętych do układu chłodniczego</td>
+							<td colspan='2'>[szt]</td>
+						</tr>
+						<tr>
+							<td>Sterowanie centralne</td>
+							<td>TAK</td>
+							<td>NIE</td>
+						</tr>
+						<tr>
+							<td colspan='3'>Model sterownika centralnego</td>
+						</tr>
+						<tr>
+							<td>Temperatura w odsługiwanym pomieszczeniu</td>
+							<td colspan='2'>[C]</td>
+						</tr>
+						<tr>
+							<td>Temperatura powietrza nawiewnego (po 30 min. pracy)</td>
+							<td colspan='2'>[C]</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6"></div>
+		</div>
 	</div>
+	<div class="page-break"></div>
 </div>
 @endsection
