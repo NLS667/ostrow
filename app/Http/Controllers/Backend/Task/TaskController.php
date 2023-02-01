@@ -154,7 +154,7 @@ class TaskController extends Controller
         $data['devices'] = $devices;
 
         $pdf = Pdf::loadView('backend.task.raports.template', $data)->setPaper('a4', 'portrait');
-        return $pdf->download('report.pdf');
+        return $pdf->stream('report.pdf');
     }
 
     /**
