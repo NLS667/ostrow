@@ -451,7 +451,7 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col" colspan='2'>CITY MULTI</td>
+							<th scope="col" colspan='3'>CITY MULTI</td>
 						</tr>
 					</thead>
 					<tbody>
