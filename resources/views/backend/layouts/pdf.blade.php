@@ -9,6 +9,9 @@
             .page-break {
                 page-break-after: always;
             }
+            * {
+                font-size: 12px;
+            }
         </style>
     </head>
     <body class="layout-fixed">               
