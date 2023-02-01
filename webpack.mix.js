@@ -16,7 +16,6 @@ mix.autoload({
     })
     .sass('resources/assets/sass/front.scss', 'public/css/front.css')
     .sass('resources/assets/sass/app.scss', 'public/css')
-    .sass('resources/assets/sass/plugins/Bootstrap/bootstrap.css', 'public/css/bootstrap.css')
     .styles([
         //'resources/assets/sass/plugins/jquery.dataTables.min.css',
         //'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css',
