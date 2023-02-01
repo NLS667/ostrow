@@ -14,7 +14,7 @@
             }
         </style>
     </head>
-    <body class="layout-fixed">               
+    <body>               
         @yield('content')
     </body>
 </html>
