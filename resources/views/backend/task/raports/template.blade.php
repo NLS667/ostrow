@@ -65,15 +65,15 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table table-bordered">
-					<thead>
+				<table class="table table-bordered table-sm">
+					<thead class="thead-light">
 						<tr>
-							<td>Producent</td>
-							<td>Model</td>
-							<td>Nr seryjny</td>
-							<td>Rodzaj czytnika</td>
-							<td>Czynnik karta</td>
-							<td>Czynnik dodany</td>
+							<th scope="col">Producent</td>
+							<th scope="col">Model</td>
+							<th scope="col">Nr seryjny</td>
+							<th scope="col">Rodzaj czytnika</td>
+							<th scope="col">Czynnik karta</td>
+							<th scope="col">Czynnik dodany</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -182,7 +182,7 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<td colspan='3'>PRZEPROWADZONE PRACE - Klimatyzacja</td>
+							<th scope="col" colspan='3'>PRZEPROWADZONE PRACE - Klimatyzacja</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -260,7 +260,7 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<td colspan='2'>MR. SLIM</td>
+							<th scope="col" colspan='2'>MR. SLIM</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -319,7 +319,7 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<td colspan='2'>GREE</td>
+							<th scope="col" colspan='2'>GREE</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -372,7 +372,7 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<td colspan='2'>SERIA M</td>
+							<th scope="col" colspan='2'>SERIA M</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -419,7 +419,7 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<td colspan='2'>LOSSNAY</td>
+							<th scope="col" colspan='2'>LOSSNAY</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -451,7 +451,7 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<td colspan='2'>CITY MULTI</td>
+							<th scope="col" colspan='2'>CITY MULTI</td>
 						</tr>
 					</thead>
 					<tbody>
