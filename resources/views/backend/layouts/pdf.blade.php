@@ -12,6 +12,10 @@
             * {
                 font-size: 12px;
             }
+            .green-bg{
+                background-color: #009900;
+                color:  white;
+            }
         </style>
     </head>
     <body>               

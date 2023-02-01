@@ -6,7 +6,7 @@
 		<!-- Header Section -->
 		<div class="row">
 			<div class="col-3">
-				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" style="width:100%"/>
+				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" />
 			</div>
 			<div class="col-9">
 				<div class="row green-bg">
@@ -20,7 +20,7 @@
 					<div class="col-2">
 						www.bio-klim.pl
 					</div>
-					<div class="col-2"></div>
+					<div class="col-4"></div>
 				</div>
 				<div class="row">
 					<div class="col-2"></div>
