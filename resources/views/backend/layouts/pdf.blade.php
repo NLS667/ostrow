@@ -16,6 +16,9 @@
                 background-color: #009900;
                 color:  white;
             }
+            .logo {
+                width:  100%;
+            }
         </style>
     </head>
     <body>               
