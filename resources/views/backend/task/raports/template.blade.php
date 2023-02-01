@@ -9,7 +9,7 @@
 			</div>
 			<div class="col-xs-9">
 				<div class="container">
-					<div class="row green-bg">
+					<div class="row green-bg" style="color:white;">
 						<div class="col-xs-2"></div>
 						<div class="col-xs-2">
 							Tel. 608 516 632
