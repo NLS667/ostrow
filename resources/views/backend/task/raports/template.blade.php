@@ -181,8 +181,8 @@
 			<div class="col-md-12">
 				<table class="table table-bordered">
 					<thead>
-						<tr colspan='3'>
-							<td>PRZEPROWADZONE PRACE - Klimatyzacja</td>
+						<tr>
+							<td colspan='3'>PRZEPROWADZONE PRACE - Klimatyzacja</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -259,8 +259,8 @@
 			<div class="col-md-6">
 				<table class="table table-bordered">
 					<thead>
-						<tr colspan='2'>
-							<td>MR. SLIM</td>
+						<tr>
+							<td colspan='2'>MR. SLIM</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -318,8 +318,8 @@
 			<div class="col-md-6">
 				<table class="table table-bordered">
 					<thead>
-						<tr colspan='2'>
-							<td>GREE</td>
+						<tr>
+							<td colspan='2'>GREE</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -371,8 +371,8 @@
 			<div class="col-md-6">
 				<table class="table table-bordered">
 					<thead>
-						<tr colspan='2'>
-							<td>SERIA M</td>
+						<tr>
+							<td colspan='2'>SERIA M</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -418,8 +418,8 @@
 			<div class="col-md-6">
 				<table class="table table-bordered">
 					<thead>
-						<tr colspan='2'>
-							<td>LOSSNAY</td>
+						<tr>
+							<td colspan='2'>LOSSNAY</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -450,8 +450,8 @@
 			<div class="col-md-6">
 				<table class="table table-bordered">
 					<thead>
-						<tr colspan='2'>
-							<td>CITY MULTI</td>
+						<tr>
+							<td colspan='2'>CITY MULTI</td>
 						</tr>
 					</thead>
 					<tbody>
