@@ -45,7 +45,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table table-bordered">
+				<table class="table table-bordered table-sm">
 					<tbody>
 						<tr>
 							<td>Imię i Nazwisko/Firma</td>
@@ -179,8 +179,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table table-bordered">
-					<thead>
+				<table class="table table-bordered table-sm">
+					<thead class="thead-light">
 						<tr>
 							<td colspan='3'>PRZEPROWADZONE PRACE - Klimatyzacja</td>
 						</tr>
@@ -257,8 +257,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<table class="table table-bordered">
-					<thead>
+				<table class="table table-bordered table-sm">
+					<thead class="thead-light">
 						<tr>
 							<td colspan='2'>MR. SLIM</td>
 						</tr>
@@ -316,8 +316,8 @@
 				</table>
 			</div>
 			<div class="col-md-6">
-				<table class="table table-bordered">
-					<thead>
+				<table class="table table-bordered table-sm">
+					<thead class="thead-light">
 						<tr>
 							<td colspan='2'>GREE</td>
 						</tr>
@@ -369,8 +369,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<table class="table table-bordered">
-					<thead>
+				<table class="table table-bordered table-sm">
+					<thead class="thead-light">
 						<tr>
 							<td colspan='2'>SERIA M</td>
 						</tr>
@@ -416,8 +416,8 @@
 				</table>
 			</div>
 			<div class="col-md-6">
-				<table class="table table-bordered">
-					<thead>
+				<table class="table table-bordered table-sm">
+					<thead class="thead-light">
 						<tr>
 							<td colspan='2'>LOSSNAY</td>
 						</tr>
@@ -448,8 +448,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<table class="table table-bordered">
-					<thead>
+				<table class="table table-bordered table-sm">
+					<thead class="thead-light">
 						<tr>
 							<td colspan='2'>CITY MULTI</td>
 						</tr>
@@ -524,6 +524,5 @@
 			<div class="col-md-6"></div>
 		</div>
 	</div>
-	<div class="page-break"></div>
 </div>
 @endsection
