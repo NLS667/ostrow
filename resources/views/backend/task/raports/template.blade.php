@@ -45,7 +45,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table">
+				<table class="table table-bordered">
 					<tbody>
 						<tr>
 							<td>Imię i Nazwisko/Firma</td>
@@ -65,7 +65,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table">
+				<table class="table table-bordered">
 					<thead>
 						<tr>
 							<td>Producent</td>
@@ -179,7 +179,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table">
+				<table class="table table-bordered">
 					<thead>
 						<tr colspan='3'>
 							<td>PRZEPROWADZONE PRACE - Klimatyzacja</td>
@@ -257,7 +257,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<table class="table">
+				<table class="table table-bordered">
 					<thead>
 						<tr colspan='2'>
 							<td>MR. SLIM</td>
@@ -316,7 +316,7 @@
 				</table>
 			</div>
 			<div class="col-md-6">
-				<table class="table">
+				<table class="table table-bordered">
 					<thead>
 						<tr colspan='2'>
 							<td>GREE</td>
@@ -369,7 +369,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<table class="table">
+				<table class="table table-bordered">
 					<thead>
 						<tr colspan='2'>
 							<td>SERIA M</td>
@@ -416,7 +416,7 @@
 				</table>
 			</div>
 			<div class="col-md-6">
-				<table class="table">
+				<table class="table table-bordered">
 					<thead>
 						<tr colspan='2'>
 							<td>LOSSNAY</td>
@@ -448,7 +448,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<table class="table">
+				<table class="table table-bordered">
 					<thead>
 						<tr colspan='2'>
 							<td>CITY MULTI</td>
