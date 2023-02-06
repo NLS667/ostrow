@@ -7,7 +7,7 @@
 			<div class="col-xs-2">
 				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" />
 			</div>
-			<div class="col-xs-8">
+			<div class="col-xs-9">
 				<div class="container">
 					<div class="row green-bg" style="color:white;">
 						<div class="col-xs-1"></div>
@@ -28,13 +28,13 @@
 					<div class="col-xs-8">
 						FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
 					</div>
-					<div class="col-xs-1"></div>
+					<div class="col-xs-2"></div>
 				</div>
 			</div>
 		</div>
 		<!-- Header Section End -->
 		<div class="row">
-			<div class="col-xs-3">
+			<div class="col-xs-4">
 				Protokół z czynności
 			</div>
 			<div class="col-xs-3">
@@ -45,7 +45,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-10">
+			<div class="col-xs-11">
 				<table class="table table-bordered table-sm">
 					<tbody>
 						<tr>
@@ -65,7 +65,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-10">
+			<div class="col-xs-11">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -179,7 +179,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-10">
+			<div class="col-xs-11">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -232,7 +232,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-10">
+			<div class="col-xs-11">
 				<h4>UWAGI / ZALECENIA / Wykonywanie przeglądów serwisowych zgodnie z kartą gwarancyjną:</h4>
 				<div class="typing-line"></div>
 				<div class="typing-line"></div>
@@ -241,23 +241,23 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-6">PŁATNOŚĆ: GOTÓWKA PRZELEW</div>
+			<div class="col-xs-5">PŁATNOŚĆ: GOTÓWKA PRZELEW</div>
 			<div class="col-xs-6">POTWIERDZENIE: PARAGON FAKTURA</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-6">SERWISANT</div>
+			<div class="col-xs-5">SERWISANT</div>
 			<div class="col-xs-6">ZAMAWIAJĄCY</div>
 		</div>
 	</div>
 	<div class="page-break"></div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-10">
+			<div class="col-xs-11">
 				KLIMATYZACJA
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-5">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -316,7 +316,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-xs-5">
+			<div class="col-xs-6">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -416,7 +416,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-xs-5">
+			<div class="col-xs-6">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -522,7 +522,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-xs-5"></div>
+			<div class="col-xs-6"></div>
 		</div>
 	</div>
 @endsection
