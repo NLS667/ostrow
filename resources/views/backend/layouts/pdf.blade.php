@@ -9,7 +9,7 @@
                 page-break-after: always;
             }
             * {
-                font-size: 12px;
+                font-size: 11px;
             }
             .green-bg{
                 background-color: #009900;
