@@ -448,7 +448,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-5">
+			<div class="col-xs-6">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
