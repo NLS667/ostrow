@@ -48,15 +48,15 @@
 					<tbody>
 						<tr>
 							<td>Imię i Nazwisko/Firma</td>
-							<td></td>
+							<td>{{ $client->name }}</td>
 						</tr>
 						<tr>
 							<td>Adres (dane do faktury)</td>
-							<td></td>
+							<td>{{ $client->address }}</td>
 						</tr>
 						<tr>
 							<td>Tel. kontaktowy</td>
-							<td></td>
+							<td>{{ $client->phone }}</td>
 						</tr>
 					</tbody>
 				</table>
