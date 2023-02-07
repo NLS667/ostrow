@@ -187,8 +187,8 @@
 					<tbody>
 						<tr>
 							<td class="td-10">Wymiana / czyszczenie filtrów powietrza</td>
-							<td class="td-1">TAK</td>
-							<td class="td-1">NIE</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
 						</tr>
 						<tr>
 							<td>Czyszczenie filtrów wody technologicznej</td>
@@ -231,7 +231,7 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
-				<h4>UWAGI / ZALECENIA / Wykonywanie przeglądów serwisowych zgodnie z kartą gwarancyjną:</h4>
+				<p style="font-size:10px;"><strong>UWAGI / ZALECENIA / Wykonywanie przeglądów serwisowych zgodnie z kartą gwarancyjną:</strong></p>
 				<div class="typing-line"></div>
 				<div class="typing-line"></div>
 				<div class="typing-line"></div>
@@ -248,24 +248,24 @@
 		</div>
 	</div>
 	<div class="page-break"></div>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">
-				KLIMATYZACJA
+			<div class="col-xs-12 gray-bg">
+				<strong>KLIMATYZACJA</strong>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-6">
-				<table class="table table-bordered table-sm">
+				<table class="table table-bordered table-sm" style="padding-right: 10px;">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col" colspan='2'>MR. SLIM</th>
+							<th class="gray-bg" scope="col" colspan='2'><strong>MR. SLIM</strong></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>Całkowita długość orurowania (dł. mierzona po rurze cieczowej)</td>
-							<td>[m]</td>
+							<td class="td-10">Całkowita długość orurowania (dł. mierzona po rurze cieczowej)</td>
+							<td class="td-2 text-right">[m]</td>
 						</tr>
 						<tr>
 							<td>Dodatkowa dodana ilość czynnika chłodniczego </td>
