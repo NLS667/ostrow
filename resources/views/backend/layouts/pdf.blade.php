@@ -17,9 +17,6 @@
             .white{
                 color: #ffffff;
             }
-            .logo {
-                width:  100%;
-            }
             .typing-line{
                 display: box;
                 height: 15px;
