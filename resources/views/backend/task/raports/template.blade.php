@@ -2,13 +2,18 @@
 
 @section('content')
 	<!-- Header Section -->
-	<div class="container-fluid">
+	<div class="container">
 		<table>
-			<tr>
-				<td class="td-3" rowspan=2>
-					<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
-				</td>
-			</tr>
+			<tbody>
+				<tr>
+					<td class="td-3" rowspan=2>
+						<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
+					</td>
+					<td class="td-9">
+
+					</td>
+				</tr>
+			</tbody>
 		</table>
 		<div class="row">
 			<div class="col-xs-3">
