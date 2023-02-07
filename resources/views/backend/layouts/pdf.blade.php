@@ -10,6 +10,8 @@
             }
             * {
                 font-size: 11px;
+            }
+            .border {
                 border: solid 1px #ff0000;
             }
             .green-bg{
