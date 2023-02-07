@@ -67,12 +67,12 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col" class="td-3 text-center align-middle">Producent</th>
-							<th scope="col" class="td-2 text-center align-middle">Model</th>
-							<th scope="col" class="td-4 text-center align-middle">Nr seryjny</th>
-							<th scope="col" class="td-1 text-center">Rodzaj czytnika</th>
-							<th scope="col" class="td-1 text-center">Czynnik karta</th>
-							<th scope="col" class="td-1 text-center">Czynnik dodany</th>
+							<th scope="col" class="td-3 gray-bg text-center align-middle">Producent</th>
+							<th scope="col" class="td-2 gray-bg text-center align-middle">Model</th>
+							<th scope="col" class="td-4 gray-bg text-center align-middle">Nr seryjny</th>
+							<th scope="col" class="td-1 gray-bg text-center">Rodzaj czytnika</th>
+							<th scope="col" class="td-1 gray-bg text-center">Czynnik karta</th>
+							<th scope="col" class="td-1 gray-bg text-center">Czynnik dodany</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -192,38 +192,38 @@
 						</tr>
 						<tr>
 							<td>Czyszczenie filtrów wody technologicznej</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
 						</tr>
 						<tr>
 							<td>Czyszczenie parownika</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
 						</tr>
 						<tr>
 							<td>Odgrzybianie</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
 						</tr>
 						<tr>
 							<td>Sprawdzanie szczelności inst. odprowadzenia skroplin</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
 						</tr>
 						<tr>
 							<td>Czyszczenie skraplacza</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
 						</tr>
 						<tr>
 							<td>Kontrola temperatury nawiewnego powietrza</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
 						</tr>
 						<tr>
 							<td>Kontrola szczelności instalacji</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
 						</tr>
 					</tbody>
 				</table>
@@ -269,47 +269,47 @@
 						</tr>
 						<tr>
 							<td>Dodatkowa dodana ilość czynnika chłodniczego </td>
-							<td>[kg]</td>
+							<td class="text-right">[kg]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami L1-N</td>
-							<td>[V]</td>
+							<td class="text-right">[V]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami L2-N</td>
-							<td>[V]</td>
+							<td class="text-right">[V]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami L3-N</td>
-							<td>[V]</td>
+							<td class="text-right">[V]</td>
 						</tr>
 						<tr>
 							<td>Ciśnienie czynnika chłodniczego na tłoczeniu (po 30 min. pracy)</td>
-							<td>[bar]</td>
+							<td class="text-right">[bar]</td>
 						</tr>
 						<tr>
 							<td>Ciśnienie czynnika chłodniczego na ssaniu (po 30 min. pracy)</td>
-							<td>[bar]</td>
+							<td class="text-right">[bar]</td>
 						</tr>
 						<tr>
 							<td>Temperatura tłoczenia sprężarki TH4 (po 30 min. pracy)</td>
-							<td>[C]</td>
+							<td class="text-right">[C]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami S1-S2 (napięcie AC)</td>
-							<td>[V]</td>
+							<td class="text-right">[V]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami S2-S3 (napięcie DC)</td>
-							<td>[V]</td>
+							<td class="text-right">[V]</td>
 						</tr>
 						<tr>
 							<td>Temperatura w odsługiwanym pomieszczeniu</td>
-							<td>[C]</td>
+							<td class="text-right">[C]</td>
 						</tr>
 						<tr>
 							<td>Temperatura powietrza nawiewnego (po 30 min. pracy)</td>
-							<td>[C]</td>
+							<td class="text-right">[C]</td>
 						</tr>
 					</tbody>
 				</table>
@@ -318,49 +318,49 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col" colspan='2'>GREE</th>
+							<th  class="gray-bg" scope="col" colspan='2'><strong>GREE</strong></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>Próba szczelności instalacji freonowej</td>
-							<td>[bar]</td>
+							<td class="td-10">Próba szczelności instalacji freonowej</td>
+							<td class="td-2 text-right">[bar]</td>
 						</tr>
 						<tr>
 							<td>Czas trwania próby</td>
-							<td>[h]</td>
+							<td class="text-right">[h]</td>
 						</tr>
 						<tr>
 							<td>Osuszanie próżniowe</td>
-							<td>[bar]</td>
+							<td class="text-right">[bar]</td>
 						</tr>
 						<tr>
 							<td>Czas trwania osuszania próżniowego</td>
-							<td>[min]</td>
+							<td class="text-right">[min]</td>
 						</tr>
 						<tr>
 							<td>Temp. nawiewu jed. Wew. grzanie (min/max)</td>
-							<td>[C]</td>
+							<td class="text-right">[C]</td>
 						</tr>
 						<tr>
 							<td>Temp. nawiewu jed. Wew. chłodzenie (min/max)</td>
-							<td>[C]</td>
+							<td class="text-right">[C]</td>
 						</tr>
 						<tr>
 							<td>Temp. w budynku podczas badania nawiewu</td>
-							<td>[C]</td>
+							<td class="text-right">[C]</td>
 						</tr>
 						<tr>
 							<td>Temp. na zewnątrz podczas badania nawiewu</td>
-							<td>[C]</td>
+							<td class="text-right">[C]</td>
 						</tr>
 						<tr>
 							<td>Ilość dodanego czynnika chłodniczego</td>
-							<td>[g]</td>
+							<td class="text-right">[g]</td>
 						</tr>
 						<tr>
 							<td>Długość wyk. instalacji freonowej</td>
-							<td>[m]</td>
+							<td class="text-right">[m]</td>
 						</tr>
 					</tbody>
 				</table>
@@ -371,45 +371,45 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col" colspan='2'>SERIA M</th>
+							<th class="gray-bg" scope="col" colspan='2'><strong>SERIA M</strong></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>Całkowita długość orurowania (dł. mierzona po rurze cieczowej)</td>
-							<td>[m]</td>
+							<td class="td-10">Całkowita długość orurowania (dł. mierzona po rurze cieczowej)</td>
+							<td class="td-2 text-right">[m]</td>
 						</tr>
 						<tr>
 							<td>Dodatkowa dodana ilość czynnika chłodniczego </td>
-							<td>[kg]</td>
+							<td class="text-right">[kg]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami L-N</td>
-							<td>[V]</td>
+							<td class="text-right">[V]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami L i uziemieniem</td>
-							<td>[V]</td>
+							<td class="text-right">[V]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami S1-S2 (napięcie AC)</td>
-							<td>[V]</td>
+							<td class="text-right">[V]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami S2-S3 (napięcie DC)</td>
-							<td>[V]</td>
+							<td class="text-right">[V]</td>
 						</tr>
 						<tr>
 							<td>Ciśnienie czynnika chłodniczego na ssaniu (po 30 min. pracy)</td>
-							<td>[bar]</td>
+							<td class="text-right">[bar]</td>
 						</tr>
 						<tr>
 							<td>Temperatura w odsługiwanym pomieszczeniu</td>
-							<td>[C]</td>
+							<td class="text-right">[C]</td>
 						</tr>
 						<tr>
 							<td>Temperatura powietrza nawiewnego (po 30 min. pracy)</td>
-							<td>[C]</td>
+							<td class="text-right">[C]</td>
 						</tr>
 					</tbody>
 				</table>
