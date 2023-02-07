@@ -432,12 +432,12 @@
 							<td class="td-1 text-center">NIE</td>
 						</tr>
 						<tr>
-							<td>Kanał wlotowy powietrza nachylony w stronę czerpni</td>
+							<td>Kanał wlotowy powietrza nachylony<br/>w stronę czerpni</td>
 							<td class="text-center">TAK</td>
 							<td class="text-center">NIE</td>
 						</tr>
 						<tr>
-							<td>Podłączenie wymiennika kanałowego Mitsubishi GUG</td>
+							<td>Podłączenie wymiennika kanałowego<br/> Mitsubishi GUG</td>
 							<td class="text-center">TAK</td>
 							<td class="text-center">NIE</td>
 						</tr>
@@ -480,7 +480,7 @@
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami L2-N</td>
-							<td colspan='2'>[V]</td>
+							<td class="text-right" colspan='2'>[V]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami L3-N</td>
