@@ -59,7 +59,7 @@
                 color:  #ffffff;
             }
             .gray-bg{
-                background-color: #333333;
+                background-color: #dddddd;
             }
             .typing-line{
                 display: box;
