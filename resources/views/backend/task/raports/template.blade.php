@@ -22,14 +22,14 @@
 						</div>
 						<div class="col-xs-3"></div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-1"></div>
-					<div class="col-xs-8">
-						FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
+					<div class="row">
+						<div class="col-xs-1"></div>
+						<div class="col-xs-8">
+							FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
+						</div>
+						<div class="col-xs-2"></div>
 					</div>
-					<div class="col-xs-2"></div>
-				</div>
+				</div>				
 			</div>
 		</div>
 		<!-- Header Section End -->
