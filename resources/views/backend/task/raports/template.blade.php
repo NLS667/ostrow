@@ -9,35 +9,25 @@
 					<td class="td-3" rowspan=2>
 						<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 					</td>
-					<td class="td-9">
-
+					<td class="td-1"></td>
+					<td class="td-2">
+						Tel. 608 516 632
 					</td>
+					<td class="td-2">
+						info@bio-klim.pl
+					</td>
+					<td class="td-2">
+						www.bio-klim.pl
+					</td>
+					<td class="td-1"></td>
+				</tr>
+				<tr>
+				    <td colspan="3">
+				    	FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
+				    </td>
 				</tr>
 			</tbody>
 		</table>
-		<div class="row">
-			<div class="col-xs-3">
-				
-			</div>
-			<div class="col-xs-9">
-					<div class="row green-bg">
-						<div class="col-xs-4">
-							Tel. 608 516 632
-						</div>
-						<div class="col-xs-4">
-							info@bio-klim.pl
-						</div>
-						<div class="col-xs-4">
-							www.bio-klim.pl
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12">
-							FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
-						</div>
-					</div>
-			</div>
-		</div>
 		<!-- Header Section End -->
 		<div class="row">
 			<div class="col-xs-4">
