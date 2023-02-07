@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
         <style>
             html {
-                line-height: 12px !important;
+                line-height: 0.8 !important;
             }
             .td-1{
                 width: 8.333%;
