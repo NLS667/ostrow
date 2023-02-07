@@ -8,9 +8,9 @@
 				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 			</div>
 			<div class="col-xs-9">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row">
-						<div class="col-xs-2 border">
+						<div class="col-xs-3">
 							Tel. 608 516 632
 						</div>
 						<div class="col-xs-3 border">
