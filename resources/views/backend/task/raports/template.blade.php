@@ -8,15 +8,15 @@
 				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 			</div>
 			<div class="col-xs-9">
-				<div class="container border">
+				<div class="container-fluid">
 					<div class="row">
 						<div class="col-xs-3">
 							Tel. 608 516 632
 						</div>
-						<div class="col-xs-3 border">
+						<div class="col-xs-3">
 							info@bio-klim.pl
 						</div>
-						<div class="col-xs-3 border">
+						<div class="col-xs-3">
 							www.bio-klim.pl
 						</div>
 					</div>
