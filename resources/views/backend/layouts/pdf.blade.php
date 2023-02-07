@@ -38,6 +38,12 @@
             .td-11{
                 width: 91.666%;
             }
+            .mb-10{
+                margin-bottom:  10px;
+            }
+
+
+
             .page-break {
                 page-break-after: always;
             }
@@ -53,6 +59,7 @@
             .white{
                 color: #ffffff;
             }
+
             .typing-line{
                 display: box;
                 height: 15px;
