@@ -47,7 +47,7 @@
 				<table class="table table-bordered table-sm">
 					<tbody>
 						<tr>
-							<td class="td-3 gray-bg">Imię i Nazwisko/Firma</td>
+							<td class="td-3 gray-bg"><strong>IMIĘ I NAZWISKO<br/>FIRMA</strong></td>
 							<td class="td-9">{{ $client->name }}</td>
 						</tr>
 						<tr>
