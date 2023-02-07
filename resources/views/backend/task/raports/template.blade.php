@@ -13,17 +13,17 @@
 						<div class="col-xs-2">
 							<p class="white">Tel. 608 516 632</p>
 						</div>
-						<div class="col-xs-2 white">
+						<div class="col-xs-2">
 							info@bio-klim.pl
 						</div>
-						<div class="col-xs-2 white">
+						<div class="col-xs-2">
 							www.bio-klim.pl
 						</div>
 						<div class="col-xs-3"></div>
 					</div>
 					<div class="row">
 						<div class="col-xs-1"></div>
-						<div class="col-xs-8 white">
+						<div class="col-xs-8">
 							FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
 						</div>
 						<div class="col-xs-2"></div>
