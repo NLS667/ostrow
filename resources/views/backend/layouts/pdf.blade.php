@@ -53,9 +53,7 @@
             }
 
             .align-middle {
-                display: inline-block;
                 vertical-align: middle;
-                float: none;
             }
 
             .table th, .table td {
