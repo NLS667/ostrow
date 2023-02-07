@@ -5,7 +5,7 @@
 	<div class="container">
 		<table class="table-borderless mb-10">
 			<tbody>
-				<tr>
+				<tr class="green-bg">
 					<td class="td-3" rowspan="3">
 						<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 					</td>
@@ -56,7 +56,7 @@
 						</tr>
 						<tr>
 							<td>Tel. kontaktowy</td>
-							<td>{{ $client->phone }}</td>
+							<td>{{ $client->phone[0] }}</td>
 						</tr>
 					</tbody>
 				</table>
