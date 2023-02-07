@@ -52,6 +52,12 @@
                 font-size: 10px;
             }
 
+            .align-middle {
+                display: inline-block;
+                vertical-align: middle;
+                float: none;
+            }
+
             .table th, .table td {
               padding: 0.3rem !important;
               vertical-align: top;
