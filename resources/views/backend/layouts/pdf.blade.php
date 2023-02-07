@@ -42,7 +42,7 @@
                 page-break-after: always;
             }
             * {
-                font-size: 8px;
+                font-size: 10px;
             }
             .border {
                 border: solid 1px #ff0000;
