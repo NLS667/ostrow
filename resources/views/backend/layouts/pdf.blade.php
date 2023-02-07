@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
         <style>
             html {
-                line-height: 1 !important;
+                line-height: 12px !important;
             }
             .td-1{
                 width: 8.333%;
@@ -43,10 +43,6 @@
             }
             .mb-10{
                 margin-bottom:  10px;
-            }
-
-            table tbody tr, table tbody tr td {
-                line-height: 12px !important;
             }
 
             .page-break {
