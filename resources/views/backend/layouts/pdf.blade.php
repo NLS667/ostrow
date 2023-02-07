@@ -10,6 +10,7 @@
             }
             * {
                 font-size: 11px;
+                border: solid 1px #ff0000;
             }
             .green-bg{
                 background-color: #009900;
