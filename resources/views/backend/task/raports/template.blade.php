@@ -22,7 +22,7 @@
 					<td class="td-1"></td>
 				</tr>
 				<tr>
-				    <td colspan="3">
+				    <td  class="td-8" colspan="3">
 				    	FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
 				    </td>
 				</tr>
