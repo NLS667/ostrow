@@ -36,10 +36,10 @@
 		<!-- Header Section End -->
 		<div class="row">
 			<div class="col-xs-6">
-				PROTOKÓŁ Z CZYNNOŚCI: {{ $task->type }}
+				<strong>PROTOKÓŁ Z CZYNNOŚCI: {{ $task->type }} </strong>
 			</div>
-			<div class="col-xs-6">
-				DATA: 
+			<div class="col-xs-6 text-right">
+				<strong>DATA: ...................</strong>
 			</div>
 		</div>
 		<div class="row">
