@@ -56,7 +56,7 @@
 						</tr>
 						<tr>
 							<td class="gray-bg"><strong>TEL. KONTAKTOWY</strong></td>
-							<td>{{ $client->phones[0] }}</td>
+							<td>{{ $client->phones }}</td>
 						</tr>
 					</tbody>
 				</table>
