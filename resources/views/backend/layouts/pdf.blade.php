@@ -57,6 +57,17 @@
               vertical-align: top;
               border-top: 1px solid #000000;
             }
+            .table tbody + tbody {
+              border-top: 2px solid #000000;
+            }
+            .table-bordered {
+              border: 1px solid #000000;
+            }
+
+            .table-bordered th,
+            .table-bordered td {
+              border: 1px solid #000000;
+            }
             
             .green-bg{
                 background-color: #009900;
