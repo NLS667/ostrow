@@ -52,11 +52,11 @@
 						</tr>
 						<tr>
 							<td class="gray-bg"><strong>ADRES<br/>DANE DO FAKTURY</strong></td>
-							<td>{! $client->address !}</td>
+							<td>{!! $client->address !!}</td>
 						</tr>
 						<tr>
 							<td class="gray-bg"><strong>TEL. KONTAKTOWY</strong></td>
-							<td>{{ $client->phone[0] }}</td>
+							<td>{{ $client->phones[0] }}</td>
 						</tr>
 					</tbody>
 				</table>
