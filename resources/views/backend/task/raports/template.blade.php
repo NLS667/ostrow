@@ -8,7 +8,6 @@
 				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" />
 			</div>
 			<div class="col-xs-9">
-				<div class="container">
 					<div class="row">
 						<div class="col-xs-1"></div>
 						<div class="col-xs-2">
@@ -28,8 +27,7 @@
 							FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
 						</div>
 						<div class="col-xs-2"></div>
-					</div>
-				</div>				
+					</div>			
 			</div>
 		</div>
 		<!-- Header Section End -->
