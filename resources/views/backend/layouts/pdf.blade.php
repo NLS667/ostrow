@@ -13,7 +13,9 @@
             }
             .green-bg{
                 background-color: #009900;
-                color:  white;
+            }
+            .white{
+                color: #ffffff;
             }
             .logo {
                 width:  100%;

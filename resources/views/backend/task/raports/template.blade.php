@@ -9,22 +9,22 @@
 			</div>
 			<div class="col-xs-9">
 				<div class="container green-bg">
-					<div class="row" style="color:white;">
+					<div class="row">
 						<div class="col-xs-1"></div>
-						<div class="col-xs-2">
+						<div class="col-xs-2 white">
 							Tel. 608 516 632
 						</div>
-						<div class="col-xs-2">
+						<div class="col-xs-2 white">
 							info@bio-klim.pl
 						</div>
-						<div class="col-xs-2">
+						<div class="col-xs-2 white">
 							www.bio-klim.pl
 						</div>
 						<div class="col-xs-3"></div>
 					</div>
 					<div class="row">
 						<div class="col-xs-1"></div>
-						<div class="col-xs-8">
+						<div class="col-xs-8 white">
 							FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
 						</div>
 						<div class="col-xs-2"></div>
