@@ -42,8 +42,8 @@
                 margin-bottom:  10px;
             }
 
-            tr, td {
-                line-height: 12px;
+            table tbody tr, table tbody tr td {
+                line-height: 12px !important;
             }
 
             .page-break {
