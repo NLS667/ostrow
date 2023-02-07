@@ -60,6 +60,7 @@
             }
             .gray-bg{
                 background-color: #dddddd;
+                font-size: 8px;
             }
             .typing-line{
                 display: box;

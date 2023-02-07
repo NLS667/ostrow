@@ -51,11 +51,11 @@
 							<td class="td-9">{{ $client->name }}</td>
 						</tr>
 						<tr>
-							<td>Adres (dane do faktury)</td>
+							<td class="gray-bg"><strong>ADRES<br/>DANE DO FAKTURY</strong></td>
 							<td>{{ $client->address }}</td>
 						</tr>
 						<tr>
-							<td>Tel. kontaktowy</td>
+							<td class="gray-bg"><strong>TEL. KONTAKTOWY</strong></td>
 							<td>{{ $client->phone[0] }}</td>
 						</tr>
 					</tbody>
@@ -67,12 +67,12 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col">Producent</th>
-							<th scope="col">Model</th>
-							<th scope="col">Nr seryjny</th>
-							<th scope="col">Rodzaj czytnika</th>
-							<th scope="col">Czynnik karta</th>
-							<th scope="col">Czynnik dodany</th>
+							<th scope="col" class="td-3">Producent</th>
+							<th scope="col" class="td-2">Model</th>
+							<th scope="col" class="td-4">Nr seryjny</th>
+							<th scope="col" class="td-1">Rodzaj czytnika</th>
+							<th scope="col" class="td-1">Czynnik karta</th>
+							<th scope="col" class="td-1">Czynnik dodany</th>
 						</tr>
 					</thead>
 					<tbody>
