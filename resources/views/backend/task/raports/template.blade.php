@@ -3,27 +3,27 @@
 @section('content')
 	<!-- Header Section -->
 	<div class="container">
-		<table class="table">
+		<table class="table-borderless">
 			<tbody>
 				<tr>
 					<td class="td-3" rowspan="3">
 						<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 					</td>
 					<td class="td-1"></td>
-					<td class="td-2">
+					<td class="td-2 text-left">
 						Tel. 608 516 632
 					</td>
-					<td class="td-2">
+					<td class="td-2 text-center">
 						info@bio-klim.pl
 					</td>
-					<td class="td-2">
+					<td class="td-2 text-right">
 						www.bio-klim.pl
 					</td>
 					<td class="td-1"></td>
 				</tr>
 				<tr>
 					<td class="td-1"></td>
-				    <td  class="td-6" colspan="3">
+				    <td  class="td-6 text-center" colspan="3">
 				    	FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
 				    </td>
 				    <td class="td-1"></td>
