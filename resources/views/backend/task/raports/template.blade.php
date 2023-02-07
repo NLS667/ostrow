@@ -7,7 +7,7 @@
 			<div class="col-xs-2">
 				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" />
 			</div>
-			<div class="col-xs-9">
+			<div class="col-xs-8">
 					<div class="row">
 						<div class="col-xs-1"></div>
 						<div class="col-xs-2">
