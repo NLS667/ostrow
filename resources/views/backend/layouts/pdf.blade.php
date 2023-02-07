@@ -18,8 +18,11 @@
             .logo {
                 width:  100%;
             }
-            tr {
-                line-height: 15px;
+            .typing-line{
+                display: box;
+                height: 15px;
+                width: 100%;
+                border-bottom-style: dashed;
             }
         </style>
     </head>
