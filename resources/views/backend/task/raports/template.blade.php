@@ -3,9 +3,16 @@
 @section('content')
 	<!-- Header Section -->
 	<div class="container-fluid">
+		<table>
+			<tr>
+				<td class="td-3" rowspan=2>
+					<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
+				</td>
+			</tr>
+		</table>
 		<div class="row">
 			<div class="col-xs-3">
-				<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
+				
 			</div>
 			<div class="col-xs-9">
 					<div class="row green-bg">

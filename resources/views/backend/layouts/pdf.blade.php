@@ -5,6 +5,39 @@
         <title>Protokół Zadania</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
         <style>
+            .td-1{
+                width: 8.333%;
+            }
+            .td-2{
+                width:  16.666%;
+            }
+            .td-3{
+                width:  25%;
+            }
+            .td-4{
+                width: 33.333%;
+            }
+            .td-5{
+                width: 41.666%;
+            }
+            .td-6{
+                width: 50%;
+            }
+            .td-7{
+                width: 58.333%;
+            }
+            .td-8{
+                width: 66.666%;
+            }
+            .td-9{
+                width: 75%;
+            }
+            .td-10{
+                width: 83.333%
+            }
+            .td-11{
+                width: 91.666%;
+            }
             .page-break {
                 page-break-after: always;
             }
