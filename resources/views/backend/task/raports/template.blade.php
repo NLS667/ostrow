@@ -446,37 +446,37 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-7">
-				<table class="table table-bordered table-sm">
+			<div class="col-xs-8">
+				<table class="table table-bordered table-sm" style="padding-right:20px;">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col" colspan='3'>CITY MULTI</th>
+							<th class="gray-bg" scope="col" colspan='3'><strong>CITY MULTI</strong></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>Ciśnienie w czasie próby ciśnieniowej instalacji chłodniczej</td>
-							<td colspan='2'>[bar]</td>
+							<td class="td-10">Ciśnienie w czasie próby ciśnieniowej instalacji chłodniczej</td>
+							<td class="td-2 text-right" colspan='2'>[bar]</td>
 						</tr>
 						<tr>
 							<td>Dodatkowa dodana ilość czynnika chłodniczego </td>
-							<td colspan='2'>[kg]</td>
+							<td class="text-right" colspan='2'>[kg]</td>
 						</tr>
 						<tr>
 							<td>Ciśnienie czynnika chłodniczego na ssaniu (po 30 min. pracy)</td>
-							<td colspan='2'>[bar]</td>
+							<td class="text-right" colspan='2'>[bar]</td>
 						</tr>
 						<tr>
 							<td>Ciśnienie czynnika chłodniczego na tłoczeniu (po 30 min. pracy)</td>
-							<td colspan='2'>[bar]</td>
+							<td class="text-right" colspan='2'>[bar]</td>
 						</tr>
 						<tr>
 							<td>Temp. na tłoczeniu sprężarki TH4-1-2-4-6 w pozycji ON (SW6-10 OFF)</td>
-							<td colspan='2'>[C]</td>
+							<td class="text-right" colspan='2'>[C]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami L1-N</td>
-							<td colspan='2'>[V]</td>
+							<td class="text-right" colspan='2'>[V]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami L2-N</td>
@@ -484,43 +484,43 @@
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami L3-N</td>
-							<td colspan='2'>[V]</td>
+							<td class="text-right" colspan='2'>[V]</td>
 						</tr>
 						<tr>
 							<td>Napięcie el. pomiędzy zaciskami TB3 (napięcie DC)</td>
-							<td colspan='2'>[V]</td>
+							<td class="text-right" colspan='2'>[V]</td>
 						</tr>
 						<tr>
 							<td>Przekrój ekranowego przewodu komunikacyjnego</td>
-							<td colspan='2'>[mm2]</td>
+							<td class="text-right" colspan='2'>[mm2]</td>
 						</tr>
 						<tr>
 							<td colspan='3'>Nagranie z narzędzia serwisowego CMS</td>
 						</tr>
 						<tr>
 							<td>Liczba jednostek wewnętrznych podpiętych do układu chłodniczego</td>
-							<td colspan='2'>[szt]</td>
+							<td class="text-right" colspan='2'>[szt]</td>
 						</tr>
 						<tr>
 							<td>Sterowanie centralne</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
 						</tr>
 						<tr>
 							<td colspan='3'>Model sterownika centralnego</td>
 						</tr>
 						<tr>
 							<td>Temperatura w odsługiwanym pomieszczeniu</td>
-							<td colspan='2'>[C]</td>
+							<td class="text-right" colspan='2'>[C]</td>
 						</tr>
 						<tr>
 							<td>Temperatura powietrza nawiewnego (po 30 min. pracy)</td>
-							<td colspan='2'>[C]</td>
+							<td class="text-right" colspan='2'>[C]</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			<div class="col-xs-5"></div>
+			<div class="col-xs-4"></div>
 		</div>
 	</div>
 @endsection
