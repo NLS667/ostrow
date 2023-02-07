@@ -175,7 +175,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-11">
+			<div class="col-xs-12">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -237,11 +237,11 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-5">PŁATNOŚĆ: GOTÓWKA PRZELEW</div>
+			<div class="col-xs-6">PŁATNOŚĆ: GOTÓWKA PRZELEW</div>
 			<div class="col-xs-6">POTWIERDZENIE: PARAGON FAKTURA</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-5">SERWISANT</div>
+			<div class="col-xs-6">SERWISANT</div>
 			<div class="col-xs-6">ZAMAWIAJĄCY</div>
 		</div>
 	</div>
@@ -253,7 +253,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-5">
+			<div class="col-xs-6">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
