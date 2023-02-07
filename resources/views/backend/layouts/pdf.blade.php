@@ -31,6 +31,7 @@
                 padding:0;
                 margin-left:-0.00001;
             }
+            @media print { @page { size: auto; } }
         </style>
     </head>
     <body>               

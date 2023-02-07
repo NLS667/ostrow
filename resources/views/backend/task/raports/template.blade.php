@@ -5,7 +5,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-3">
-				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%; height:100%"/>
+				<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 			</div>
 			<div class="col-xs-9">
 					<div class="row green-bg">
