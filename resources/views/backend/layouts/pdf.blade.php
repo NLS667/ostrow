@@ -42,7 +42,9 @@
                 margin-bottom:  10px;
             }
 
-
+            tr, td {
+                line-height: 12px;
+            }
 
             .page-break {
                 page-break-after: always;
