@@ -10,13 +10,13 @@
 						<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 					</td>
 					<td class="td-1"></td>
-					<td class="td-2 text-left">
+					<td class="td-2 text-right">
 						Tel. 608 516 632
 					</td>
 					<td class="td-2 text-center">
 						info@bio-klim.pl
 					</td>
-					<td class="td-2 text-right">
+					<td class="td-2 text-left">
 						www.bio-klim.pl
 					</td>
 					<td class="td-1"></td>
