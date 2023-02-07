@@ -52,7 +52,7 @@
 						</tr>
 						<tr>
 							<td class="gray-bg"><strong>ADRES<br/>DANE DO FAKTURY</strong></td>
-							<td>{{ $client->address }}</td>
+							<td>{! $client->address !}</td>
 						</tr>
 						<tr>
 							<td class="gray-bg"><strong>TEL. KONTAKTOWY</strong></td>
