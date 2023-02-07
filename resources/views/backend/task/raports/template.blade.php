@@ -67,12 +67,12 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col" class="td-3">Producent</th>
-							<th scope="col" class="td-2">Model</th>
-							<th scope="col" class="td-4">Nr seryjny</th>
-							<th scope="col" class="td-1">Rodzaj czytnika</th>
-							<th scope="col" class="td-1">Czynnik karta</th>
-							<th scope="col" class="td-1">Czynnik dodany</th>
+							<th scope="col" class="td-3 text-center align-middle">Producent</th>
+							<th scope="col" class="td-2 text-center align-middle">Model</th>
+							<th scope="col" class="td-4 text-center align-middle">Nr seryjny</th>
+							<th scope="col" class="td-1 text-center">Rodzaj czytnika</th>
+							<th scope="col" class="td-1 text-center">Czynnik karta</th>
+							<th scope="col" class="td-1 text-center">Czynnik dodany</th>
 						</tr>
 					</thead>
 					<tbody>
