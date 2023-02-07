@@ -5,6 +5,9 @@
         <title>Protokół Zadania</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
         <style>
+            html {
+                line-height: 1 !important;
+            }
             .td-1{
                 width: 8.333%;
             }
