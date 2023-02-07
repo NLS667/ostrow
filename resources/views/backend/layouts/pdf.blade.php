@@ -53,7 +53,7 @@
             }
 
             .table th, .table td {
-              padding: 0.75rem;
+              padding: 0.2rem !important;
               vertical-align: top;
               border-top: 1px solid #000000 !important;
             }
