@@ -181,14 +181,14 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col" colspan='3'>PRZEPROWADZONE PRACE - Klimatyzacja</th>
+							<th class="gray-bg text-center" scope="col" colspan='3'><strong>PRZEPROWADZONE PRACE - Klimatyzacja</strong></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>Wymiana / czyszczenie filtrów powietrza</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="td-10">Wymiana / czyszczenie filtrów powietrza</td>
+							<td class="td-1">TAK</td>
+							<td class="td-1">NIE</td>
 						</tr>
 						<tr>
 							<td>Czyszczenie filtrów wody technologicznej</td>
