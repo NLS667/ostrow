@@ -58,7 +58,9 @@
                 background-color: #009900;
                 color:  #ffffff;
             }
-
+            .gray-bg{
+                background-color: #333333;
+            }
             .typing-line{
                 display: box;
                 height: 15px;

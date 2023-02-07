@@ -36,7 +36,7 @@
 		<!-- Header Section End -->
 		<div class="row">
 			<div class="col-xs-6">
-				<strong style="font-size: 12px;">PROTOKÓŁ Z CZYNNOŚCI: {{ $task->type }} </strong>
+				<strong style="font-size: 12px;">PROTOKÓŁ Z CZYNNOŚCI:&nbsp;&nbsp;&nbsp;&nbsp;{{ $task->type }} </strong>
 			</div>
 			<div class="col-xs-6 text-right">
 				<strong style="font-size: 12px;">DATA: ........................................</strong>
@@ -47,8 +47,8 @@
 				<table class="table table-bordered table-sm">
 					<tbody>
 						<tr>
-							<td>Imię i Nazwisko/Firma</td>
-							<td>{{ $client->name }}</td>
+							<td class="td-3 gray-bg">Imię i Nazwisko/Firma</td>
+							<td class="td-9">{{ $client->name }}</td>
 						</tr>
 						<tr>
 							<td>Adres (dane do faktury)</td>
