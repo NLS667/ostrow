@@ -368,7 +368,7 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-7">
-				<table class="table table-bordered table-sm">
+				<table class="table table-bordered table-sm" style="padding-right: 10px;">
 					<thead class="thead-light">
 						<tr>
 							<th class="gray-bg" scope="col" colspan='2'><strong>SERIA M</strong></th>
@@ -418,28 +418,28 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col" colspan='3'>LOSSNAY</th>
+							<th class="gray-bg" scope="col" colspan='3'><strong>LOSSNAY</strong></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>Napięcie el. Pomiędzy zaciskami L-N</td>
-							<td colspan='2'>[V]</td>
+							<td class="td-10">Napięcie el. Pomiędzy zaciskami L-N</td>
+							<td class="td-2 text-right" colspan='2'>[V]</td>
 						</tr>
 						<tr>
 							<td>Nagrzewnica wstępna</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
 						</tr>
 						<tr>
 							<td>Kanał wlotowy powietrza nachylony w stronę czerpni</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
 						</tr>
 						<tr>
 							<td>Podłączenie wymiennika kanałowego Mitsubishi GUG</td>
-							<td>TAK</td>
-							<td>NIE</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
 						</tr>
 					</tbody>
 				</table>
