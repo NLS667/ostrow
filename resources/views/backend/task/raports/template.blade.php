@@ -10,13 +10,13 @@
 			<div class="col-xs-9">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-3 border">
+						<div class="col-xs-2 border">
 							Tel. 608 516 632
 						</div>
-						<div class="col-xs-3">
+						<div class="col-xs-3 border">
 							info@bio-klim.pl
 						</div>
-						<div class="col-xs-3">
+						<div class="col-xs-3 border">
 							www.bio-klim.pl
 						</div>
 					</div>
