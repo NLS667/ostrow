@@ -2,7 +2,7 @@
 
 @section('content')
 	<!-- Header Section -->
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-2">
 				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
