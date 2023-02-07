@@ -249,13 +249,13 @@
 	</div>
 	<div class="page-break"></div>
 	<div class="container">
-		<div class="row">
+		<div class="row" style="margin-bottom:10px;">
 			<div class="col-xs-12 gray-bg">
 				<strong>KLIMATYZACJA</strong>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-7">
 				<table class="table table-bordered table-sm" style="padding-right: 10px;">
 					<thead class="thead-light">
 						<tr>
@@ -314,7 +314,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-5">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -367,7 +367,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-7">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -414,7 +414,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-5">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -446,7 +446,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-7">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -520,7 +520,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-xs-6"></div>
+			<div class="col-xs-5"></div>
 		</div>
 	</div>
 @endsection
