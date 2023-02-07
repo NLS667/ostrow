@@ -149,6 +149,8 @@ class TaskController extends Controller
         $client = $service->client;
         $devices = Device::where('service_id', $task->service_id)->get();
 
+        $data = array();
+
         $data['service'] = $service;
         $data['client'] = $client;
         $data['devices'] = $devices;
