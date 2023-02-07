@@ -11,7 +11,7 @@
 					<div class="row">
 						<div class="col-xs-1"></div>
 						<div class="col-xs-2">
-							<p class="white">Tel. 608 516 632</p>
+							Tel. 608 516 632
 						</div>
 						<div class="col-xs-2">
 							info@bio-klim.pl
