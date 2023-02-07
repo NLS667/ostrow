@@ -6,7 +6,7 @@
 		<table>
 			<tbody>
 				<tr>
-					<td class="td-3" rowspan=2>
+					<td class="td-3" rowspan="3">
 						<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 					</td>
 					<td class="td-1"></td>
@@ -22,9 +22,14 @@
 					<td class="td-1"></td>
 				</tr>
 				<tr>
-				    <td  class="td-8" colspan="3">
+					<td class="td-1"></td>
+				    <td  class="td-6" colspan="3">
 				    	FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
 				    </td>
+				    <td class="td-1"></td>
+				</tr>
+				<tr>
+					<td class="td-8" colspan="5"></td>
 				</tr>
 			</tbody>
 		</table>
