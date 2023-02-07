@@ -35,11 +35,11 @@
 		</table>
 		<!-- Header Section End -->
 		<div class="row">
-			<div class="col-xs-6" style="font-size: 12px;">
-				<strong>PROTOKÓŁ Z CZYNNOŚCI: {{ $task->type }} </strong>
+			<div class="col-xs-6">
+				<strong style="font-size: 12px;">PROTOKÓŁ Z CZYNNOŚCI: {{ $task->type }} </strong>
 			</div>
-			<div class="col-xs-6 text-right" style="font-size: 12px;">
-				<strong>DATA: ........................................</strong>
+			<div class="col-xs-6 text-right">
+				<strong style="font-size: 12px;">DATA: ........................................</strong>
 			</div>
 		</div>
 		<div class="row">
