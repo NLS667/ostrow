@@ -55,20 +55,20 @@
             .table th, .table td {
               padding: 0.75rem;
               vertical-align: top;
-              border-top: 1px solid #000000;
+              border-top: 1px solid #000000 !important;
             }
             .table tbody + tbody {
-              border-top: 2px solid #000000;
+              border-top: 2px solid #000000 !important;
             }
             .table-bordered {
-              border: 1px solid #000000;
+              border: 1px solid #000000 !important;
             }
 
             .table-bordered th,
             .table-bordered td {
-              border: 1px solid #000000;
+              border: 1px solid #000000 !important;
             }
-            
+
             .green-bg{
                 background-color: #009900;
                 color:  #ffffff;
