@@ -36,7 +36,7 @@
 		<!-- Header Section End -->
 		<div class="row">
 			<div class="col-xs-6">
-				PROTOKÓŁ Z CZYNNOŚCI: {{ $data['task']->type }}
+				PROTOKÓŁ Z CZYNNOŚCI: {{ $task->taskType }}
 			</div>
 			<div class="col-xs-6">
 				DATA: 
