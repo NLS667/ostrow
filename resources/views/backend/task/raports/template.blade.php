@@ -7,13 +7,12 @@
 			<div class="col-xs-2">
 				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 			</div>
-			<div class="col-xs-9">
-				<div class="container-fluid">
-					<div class="row gree-bg">
+			<div class="col-xs-10">
+					<div class="row green-bg">
 						<div class="col-xs-4">
 							Tel. 608 516 632
 						</div>
-						<div class="col-xs-3">
+						<div class="col-xs-4">
 							info@bio-klim.pl
 						</div>
 						<div class="col-xs-4">
@@ -21,11 +20,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-11">
+						<div class="col-xs-12">
 							FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
 						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 		<!-- Header Section End -->
@@ -33,7 +31,7 @@
 			<div class="col-xs-4">
 				Protokół z czynności
 			</div>
-			<div class="col-xs-3">
+			<div class="col-xs-4">
 				Montaż
 			</div>
 			<div class="col-xs-4">
@@ -41,7 +39,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-11">
+			<div class="col-xs-12">
 				<table class="table table-bordered table-sm">
 					<tbody>
 						<tr>
@@ -61,7 +59,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-11">
+			<div class="col-xs-12">
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
@@ -228,7 +226,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-11">
+			<div class="col-xs-12">
 				<h4>UWAGI / ZALECENIA / Wykonywanie przeglądów serwisowych zgodnie z kartą gwarancyjną:</h4>
 				<div class="typing-line"></div>
 				<div class="typing-line"></div>
@@ -248,7 +246,7 @@
 	<div class="page-break"></div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-11">
+			<div class="col-xs-12">
 				KLIMATYZACJA
 			</div>
 		</div>
