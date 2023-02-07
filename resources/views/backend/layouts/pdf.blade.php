@@ -18,6 +18,9 @@
             .logo {
                 width:  100%;
             }
+            tr {
+                line-height: 15px;
+            }
         </style>
     </head>
     <body>               
