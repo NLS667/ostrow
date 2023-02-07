@@ -51,9 +51,13 @@
             * {
                 font-size: 10px;
             }
-            .border {
-                border: solid 1px #ff0000;
+
+            .table th, .table td {
+              padding: 0.75rem;
+              vertical-align: top;
+              border-top: 1px solid #000000;
             }
+            
             .green-bg{
                 background-color: #009900;
                 color:  #ffffff;
