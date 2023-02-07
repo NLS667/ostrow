@@ -57,9 +57,7 @@
             }
             .green-bg{
                 background-color: #009900;
-            }
-            .white{
-                color: #ffffff;
+                color:  #ffffff;
             }
 
             .typing-line{
