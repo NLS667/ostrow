@@ -4,10 +4,11 @@
 	<!-- Header Section -->
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-2 border">
+			<div class="col-xs-2">
 				<img class="logo" alt="BIO-KLIM Logo" src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 			</div>
-			<div class="col-xs-9 border">
+			<div class="col-xs-9">
+				<div class="container border">
 					<div class="row">
 						<div class="col-xs-2">
 							Tel. 608 516 632
@@ -23,7 +24,8 @@
 						<div class="col-xs-11">
 							FHU BIO-KLIM Adam Jańcik Prądzyńskiego 30, 63-400 Ostrów Wlkp.
 						</div>
-					</div>			
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- Header Section End -->
