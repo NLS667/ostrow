@@ -35,14 +35,11 @@
 		</table>
 		<!-- Header Section End -->
 		<div class="row">
-			<div class="col-xs-4">
-				Protokół z czynności
+			<div class="col-xs-6">
+				PROTOKÓŁ Z CZYNNOŚCI: {{ $data['task']->type }}
 			</div>
-			<div class="col-xs-4">
-				Montaż
-			</div>
-			<div class="col-xs-4">
-				Data
+			<div class="col-xs-6">
+				DATA: 
 			</div>
 		</div>
 		<div class="row">

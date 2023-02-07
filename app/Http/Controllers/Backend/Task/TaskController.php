@@ -152,6 +152,7 @@ class TaskController extends Controller
         $data['service'] = $service;
         $data['client'] = $client;
         $data['devices'] = $devices;
+        $data['task'] = $task;
 
         Pdf::setOption(['dpi' => 150, 'default_media_type' => 'screen']);
         $pdf = Pdf::loadView('backend.task.raports.template', $data)->setPaper('a4', 'portrait');
