@@ -26,6 +26,10 @@
                 width: 100%;
                 border-bottom-style: dashed;
             }
+            .row {
+                margin: 10px 0px 0px 0px !important;
+                padding: 0px !important;
+            }
         </style>
     </head>
     <body>               
