@@ -99,6 +99,7 @@
                 display: box;
                 height: 15px;
                 width: 100%;
+                border-bottom-color: #aaaaaa;
                 border-bottom-style: dashed;
             }
             .input-box{
