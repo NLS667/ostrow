@@ -238,9 +238,9 @@
 				<div class="typing-line"></div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-6">PŁATNOŚĆ: GOTÓWKA PRZELEW</div>
-			<div class="col-xs-6">POTWIERDZENIE: PARAGON FAKTURA</div>
+		<div class="row" style="margin-bottom:100px;">
+			<div class="col-xs-6"><strong>PŁATNOŚĆ: GOTÓWKA PRZELEW</strong></div>
+			<div class="col-xs-6"><strong>POTWIERDZENIE: PARAGON FAKTURA</strong></div>
 		</div>
 		<div class="row">
 			<div class="col-xs-6">SERWISANT</div>
