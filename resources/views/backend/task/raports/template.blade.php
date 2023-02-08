@@ -814,7 +814,79 @@
 	</div>
 	<div class="page-break"></div>
 	<div class="container">
-		
+		<div class="row">
+			<div class="col-xs-12">
+				<table class="table table-bordered table-sm" style="padding-right: 10px;">
+					<thead>
+						<tr>
+							<th class="gray-bg text-center" colspan="3"><strong>PRZEPROWADZONE PRACE - klimatyzacja</strong></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="td-10">Wymiana / czyszczenie filtrów powietrza</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Czyszczenie filtrów wody technologicznej</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Czyszczenie parownika</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Odgrzybianie</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Sprawdzanie szczelności inst. odprowadzenia skroplin</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Czyszczenie skraplacza</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Kontrola temperatury nawiewnego powietrza</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Kontrola szczelności instalacji</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-xs-12">
+				<p style="font-size:10px;"><strong>UWAGI / ZALECENIA / Wykonywanie przeglądów serwisowych zgodnie z kartą gwarancyjną:</strong></p>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+			</div>
+		</div>
 	</div>
 	@elseif($service->service_type == "Pompa Ciepła")
 		<div class="row">
