@@ -62,6 +62,7 @@
 			</div>
 		</div>
 		<!-- Header Section End -->
+	@if ($service->service_type == "Klimatyzacja")
 		@if ( $task->type == "Montaż" )
 		<div class="row">
 			<div class="col-xs-12">
@@ -526,8 +527,6 @@
 		@else
 
 		@endif
-	@if ($service->service_type == "Klimatyzacja")
-
 	@elseif($service->service_type == "Pompa Ciepła")
 
 	@elseif($service->service_type == "Fotowoltaika")
