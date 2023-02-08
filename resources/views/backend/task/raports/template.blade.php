@@ -1125,10 +1125,10 @@
 					<tbody>
 						<tr>
 							<td class="td-2" rowspan="2"><strong>Montaż na:</strong></td>
-							<td class="td-10"></td>
+							<td class="td-10"><strong>&nbsp;&nbsp;&#9634;&nbsp;GRUNT&nbsp;&nbsp;&#9634;&nbsp;BUDYNEK JEDNORODZINNY&nbsp;&nbsp;&#9634;&nbsp;BUDYNEK GOSPODARCZY&nbsp;&nbsp;&#9634;&nbsp;GARAŻ</strong></td>
 						</tr>
 						<tr>
-							<td class="td-10"></td>
+							<td class="td-10"><strong>&nbsp;&nbsp;&#9634;&nbsp;UŻYTECZNOŚCI PUBLICZNEJ&nbsp;&nbsp;&#9634;&nbsp;INNY</strong>(jaki?)................................</td>
 						</tr>
 					</tbody>
 				</table>
@@ -1143,7 +1143,7 @@
 				<div class="typing-line"></div>
 			</div>
 		</div>
-		<div class="row" style="font-size:12px;">
+		<div class="row" style="font-size:12px;margin-bottom:50px;">
 			<div class="col-xs-6 text-center border-top">MONTER</div>
 			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
 		</div>
@@ -1156,7 +1156,7 @@
 				<div class="typing-line"></div>
 			</div>
 		</div>
-		<div class="row" style="font-size:12px;">
+		<div class="row" style="font-size:12px;margin-bottom:50px;">
 			<div class="col-xs-6 text-center border-top">MONTER</div>
 			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
 		</div>
