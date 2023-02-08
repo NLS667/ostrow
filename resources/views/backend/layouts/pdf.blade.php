@@ -55,7 +55,7 @@
                 page-break-after: always;
             }
             * {
-                font-size: 10px;
+                font-size: 8px;
             }
 
             .table th, .table td {
