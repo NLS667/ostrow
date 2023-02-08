@@ -1119,7 +1119,7 @@
 				</table>
 			</div>
 		</div>
-		<row class="row">
+		<row class="row" style="margin-bottom:20px;">
 			<div class="col-xs-12">
 				<table class="table table-borderless">
 					<tbody>
