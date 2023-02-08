@@ -7,6 +7,8 @@
         <style>
             html {
                 line-height: 0.8 !important;
+            }
+            body{
                 font-family: DejaVu Sans !important;
             }
             .td-1{
