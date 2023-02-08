@@ -6,8 +6,8 @@
 		<table class="table-borderless mb-10" style="margin-left:20px;">
 			<tbody>
 				<tr class="green-bg">
-					<td class="td-3" rowspan="3">
-						<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
+					<td class="td-3" rowspan="3" style="position:relative;">
+						<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%; position: absolute; left: 0px;"/>
 					</td>
 					<td class="td-1"></td>
 					<td class="td-2 text-right">
