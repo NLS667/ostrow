@@ -1072,10 +1072,49 @@
 			</div>
 		</div>
 		<div class="row">
-			<p><strong>Przewód AC </strong>(z rodzielni do szafy przyłączeniowej): <span class="input-box"></span>mm<sup>2</sup>
-			<p><strong>Przewód AC </strong>(z szafy przyłączeniowej do falownika): <span class="input-box"></span>mm<sup>2</sup>
-			<p><strong>Wyłącznik nadprądowy:</strong><span class="input-box"></span>
-			<p><strong>Zabezpieczenie różnicowo-prądowe:</strong><span class="input-box"></span>
+			<table class="table">
+				<tbody>
+					<tr>
+						<td class="td-3">
+							<strong>Przewód AC </strong>(z rozdzielni do szafy przyłączeniowej):
+						</td>
+						<td class="td-1">
+							<span class="input-box"></span>
+						</td>
+						<td class="td-8 text-left">
+							mm<sup>2</sup>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>Przewód AC </strong>(z szafy przyłączeniowej do falownika): 
+						</td>
+						<td>
+							<span class="input-box"></span>
+						</td>
+						<td>
+							mm<sup>2</sup>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>Wyłącznik nadprądowy:</strong>
+						</td>
+						<td>
+							<span class="input-box"></span>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<strong>Zabezpieczenie różnicowo-prądowe:</strong>
+						</td>
+						<td>
+							<span class="input-box"></span>
+						</td>
+						<td></td>
+					</tr>
+			</table>
 		</div>
 	@endif
 @endsection
