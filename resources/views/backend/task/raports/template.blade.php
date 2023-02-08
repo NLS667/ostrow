@@ -1143,7 +1143,7 @@
 				<div class="typing-line"></div>
 			</div>
 		</div>
-		<div class="row" style="font-size:12px;margin-bottom:50px;">
+		<div class="row" style="font-size:12px;margin-bottom:30px;">
 			<div class="col-xs-6 text-center border-top">MONTER</div>
 			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
 		</div>
@@ -1156,7 +1156,7 @@
 				<div class="typing-line"></div>
 			</div>
 		</div>
-		<div class="row" style="font-size:12px;margin-bottom:50px;">
+		<div class="row" style="font-size:12px;margin-bottom:30px;">
 			<div class="col-xs-6 text-center border-top">MONTER</div>
 			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
 		</div>
