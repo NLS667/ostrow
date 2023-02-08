@@ -997,7 +997,7 @@
 				<strong>INSTALACJA FOTOWOLTAICZNA</strong>
 			</div>
 		</div>
-		<div class="row" style="margin-bottom:10px;">
+		<div class="row">
 			<div class="col-xs-12">
 				<p><strong>Panele fotowoltaiczne:</strong></p>
 				<table class="table table-bordered table-sm">
@@ -1016,7 +1016,7 @@
 				</table>
 			</div>
 		</div>
-		<div class="row" style="margin-bottom:10px;">
+		<div class="row">
 			<div class="col-xs-12">
 				<p><strong>Falownik:</strong></p>
 				<table class="table table-bordered table-sm">
@@ -1035,7 +1035,7 @@
 				</table>
 			</div>
 		</div>
-		<div class="row" style="margin-bottom:10px;">
+		<div class="row">
 			<div class="col-xs-12">
 				<p><strong>Mikroinwertery:</strong></p>
 				<table class="table table-bordered table-sm">
