@@ -527,6 +527,7 @@
 		@else
 
 		@endif
+	</div>
 	@elseif($service->service_type == "Pompa Ciepła")
 		<div class="row">
 			<div class="col-xs-12">
@@ -670,6 +671,5 @@
 	<div class="page-break"></div>
 	@elseif($service->service_type == "Fotowoltaika")
 
-	@endif		
-	</div>
+	@endif
 @endsection
