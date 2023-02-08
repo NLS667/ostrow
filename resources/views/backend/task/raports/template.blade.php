@@ -7,7 +7,7 @@
 			<tbody>
 				<tr class="green-bg">
 					<td class="td-3" rowspan="3">
-						<img src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%; padding-right:30px;"/>
+						<img class="border" src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 					</td>
 					<td class="td-1"></td>
 					<td class="td-2 text-right">

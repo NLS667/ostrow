@@ -52,10 +52,6 @@
                 font-size: 10px;
             }
 
-            .align-middle {
-                vertical-align: middle;
-            }
-
             .table th, .table td {
               padding: 0.3rem !important;
               vertical-align: top;
@@ -71,6 +67,10 @@
             .table-bordered th,
             .table-bordered td {
               border: 1px solid #000000 !important;
+            }
+
+            .border {
+                border: 1px solid #ff0000 !important;
             }
 
             .green-bg{
