@@ -806,27 +806,15 @@
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 		@endif
+	</div>
+	<div class="page-break"></div>
+	<div class="container">
+		
 	</div>
 	@elseif($service->service_type == "Pompa Ciepła")
 		<div class="row">
