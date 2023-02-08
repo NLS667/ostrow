@@ -1,8 +1,8 @@
 @extends ('backend.layouts.pdf', ['activePage' => 'task-management', 'titlePage' => __('Raport Zadania')])
 
 @section('content')
-	<!-- Header Section -->
 	<div class="container">
+		<!-- Header Section -->
 		<table class="table-borderless mb-10">
 			<tbody>
 				<tr class="green-bg td-12">
@@ -33,7 +33,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<!-- Header Section End -->
 		<div class="row">
 			<div class="col-xs-6">
 				<strong style="font-size: 12px;">PROTOKÓŁ Z CZYNNOŚCI:&nbsp;&nbsp;&nbsp;&nbsp;{{ $task->type }} </strong>
@@ -62,6 +61,8 @@
 				</table>
 			</div>
 		</div>
+		<!-- Header Section End -->
+		@if ( $task->type == "Montaż" )
 		<div class="row">
 			<div class="col-xs-12">
 				<table class="table table-bordered table-sm">
@@ -216,7 +217,7 @@
 							<td class="text-center">NIE</td>
 						</tr>
 						<tr>
-							<td>Kontrola temperatury nawiewnego powietrza</td>
+							<td>Kontrola temperatury nawiewanego powietrza</td>
 							<td class="text-center">TAK</td>
 							<td class="text-center">NIE</td>
 						</tr>
@@ -522,5 +523,15 @@
 			</div>
 			<div class="col-xs-4"></div>
 		</div>
+		@else
+
+		@endif
+	@if ($service->service_type == "Klimatyzacja")
+
+	@elseif($service->service_type == "Pompa Ciepła")
+
+	@elseif($service->service_type == "Fotowoltaika")
+
+	@endif		
 	</div>
 @endsection
