@@ -1119,7 +1119,7 @@
 				</table>
 			</div>
 		</div>
-		<row class="row" style="margin-bottom:20px;">
+		<div class="row" style="margin-bottom:20px;">
 			<div class="col-xs-12">
 				<table class="table table-borderless">
 					<tbody>
@@ -1133,7 +1133,7 @@
 					</tbody>
 				</table>
 			</div>
-		</row>
+		</div>
 		<div class="row" style="margin-bottom:20px;">
 			<div class="col-xs-12">
 				<p style="font-size:10px;"><strong>Dodatkowe uwagi / zmiany / ustalenia przed montażem</strong></p>
