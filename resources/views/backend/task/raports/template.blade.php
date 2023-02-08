@@ -243,8 +243,8 @@
 			<div class="col-xs-6"><strong>POTWIERDZENIE:</strong>&nbsp;&nbsp;&#9634;&nbsp;PARAGON&nbsp;&nbsp;&#9634;&nbsp;FAKTURA</div>
 		</div>
 		<div class="row" style="font-size:12px;">
-			<div class="col-xs-6">SERWISANT</div>
-			<div class="col-xs-6">ZAMAWIAJĄCY</div>
+			<div class="col-xs-6 text-center">SERWISANT</div>
+			<div class="col-xs-6 text-center">ZAMAWIAJĄCY</div>
 		</div>
 	</div>
 	<div class="page-break"></div>
