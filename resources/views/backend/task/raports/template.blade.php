@@ -239,8 +239,8 @@
 			</div>
 		</div>
 		<div class="row" style="margin-bottom:100px;">
-			<div class="col-xs-6"><strong>PŁATNOŚĆ: GOTÓWKA PRZELEW</strong></div>
-			<div class="col-xs-6"><strong>POTWIERDZENIE: PARAGON FAKTURA</strong></div>
+			<div class="col-xs-6"><strong>PŁATNOŚĆ:</strong>&nbsp;&nbsp;&#9634;&nbsp;GOTÓWKA&nbsp;&nbsp;&#9634;&nbsp;PRZELEW</div>
+			<div class="col-xs-6"><strong>POTWIERDZENIE:</strong>&nbsp;&nbsp;&#9634;&nbsp;PARAGON&nbsp;&nbsp;&#9634;&nbsp;FAKTURA</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-6">SERWISANT</div>
