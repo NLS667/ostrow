@@ -669,6 +669,269 @@
 		</div>
 	</div>
 	<div class="page-break"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 gray-bg">
+				<strong>POMPA CIEPŁA - jednostka zewnętrzna</strong>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-7">
+				<table class="table table-bordered table-sm" style="padding-right: 10px;">
+					<tbody>
+						<tr>
+							<td class="td-10" colspan="2">Całkowita długość orurowania (dł. mierzona po rurze cieczowej)</td>
+							<td class="td-2 text-right" colspan="2">[m]</td>
+						</tr>
+						<tr>
+							<td>Dodatkowo dodana ilość czynnika chłodniczego</td>
+							<td class="text-right" colspan="2">[kg]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L1-N</td>
+							<td class="text-right" colspan="2">[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L2-N</td>
+							<td class="text-right" colspan="2">[V]</td>
+						</tr>
+						<tr>
+							<td>Napięcie el. pomiędzy zaciskami L3-N</td>
+							<td class="text-right" colspan="2">[V]</td>
+						</tr>
+						<tr>
+							<td>Usunięto blokady transportowe sprężarki</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Zastosowano grzałkę tacy ociekowej</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Wysokość posadowienia agregatu nad powierzchnią gruntu</td>
+							<td class="text-right" colspan="2">[cm]</td>
+						</tr>
+						<tr>
+							<td>Pojemność zbiornika buforowego w instalacji wodnej</td>
+							<td class="text-right" colspan="2">[l]</td>
+						</tr>
+						<tr>
+							<td>Powierzchnia wężownicy w zbiorniku C.W.U.</td>
+							<td class="text-right" colspan="2">[m2]</td>
+						</tr>
+						<tr>
+							<td>Ilość stref w  budynku</td>
+							<td class="td-1 text-center">1 obieg</td>
+							<td class="td-1 text-center">2 obieg</td>
+							<td class="td-1">Inne:</td>
+						</tr>
+						<tr>
+							<td>Rodzaj instalacji w strefie 1</td>
+							<td class="td-1 text-right">podłogowe</td>
+							<td class="td-1 text-right">grzejniki</td>
+						</tr>
+						<tr>
+							<td>Rodzaj instalacji w strefie 2</td>
+							<td class="td-1 text-right">podłogowe</td>
+							<td class="td-1 text-right">grzejniki</td>
+						</tr>
+						<tr>
+							<td>Pompy obiegowe stref grzewczych sterowane za pomocą</td>
+							<td class="td-1 text-right">hydrobox</td>
+							<td class="td-1 text-right">Inne:</td>
+						</tr>
+						<tr>
+							<td>Temp. wody zasilającej strefę THW6 (po 30 min)</td>
+							<td class="text-right" colspan="2">[C]</td>
+						</tr>
+						<tr>
+							<td>Temp. wody powrotnej ze strefy THW7 (po 30 min) </td>
+							<td class="text-right" colspan="2">[C]</td>
+						</tr>
+						<tr>
+							<td>Temp. wody zasilającej strefę 2 THW8 (po 30 min)</td>
+							<td class="text-right" colspan="2">[C]</td>
+						</tr>
+						<tr>
+							<td>Temp. wody powrotnej ze strefy 2 THW9 (po 30 min) </td>
+							<td class="text-right" colspan="2">[C]</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xs-5">
+				<table class="table table-bordered table-sm">
+					<tbody>
+						<tr>
+							<td class="td-10">Zasilanie międzyfazowe L1-L2</td>
+							<td class="td-2 text-right" colspan="2">[V]</td>
+						</tr>
+						<tr>
+							<td>Zasilanie międzyfazowe L1-L3</td>
+							<td class="text-right" colspan="2">[V]</td>
+						</tr>
+						<tr>
+							<td>Zasilanie międzyfazowe L2-L3</td>
+							<td class="text-right" colspan="2">[V]</td>
+						</tr>
+						<tr>
+							<td>Pomiar prądu urządzenia L1</td>
+							<td class="text-right" colspan="2">[A]</td>
+						</tr>
+						<tr>
+							<td>Pomiar prądu urządzenia L2</td>
+							<td class="text-right" colspan="2">[A]</td>
+						</tr>
+						<tr>
+							<td>Pomiar prądu urządzenia L3</td>
+							<td class="text-right" colspan="2">[A]</td>
+						</tr>
+						<tr>
+							<td>Temp. w  budynku</td>
+							<td class="text-right" colspan="2">[C]</td>
+						</tr>
+						<tr>
+							<td>Temp. gazu na wejściu do<br/>wymiennika płytowego</td>
+							<td class="text-right" colspan="2">[C]</td>
+						</tr>
+						<tr>
+							<td>Temp. gazu na wyjściu ze sprężarki</td>
+							<td class="text-right" colspan="2">[C]</td>
+						</tr>
+						<tr>
+							<td>Jednostka zew. Zamontowana na<br/>podkładach wiatroizolacyjnych</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Przeprowadzono szkolenie<br/>użytkownika</td>
+							<td class="text-center">TAK</td>
+							<td class="text-center">NIE</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-xs-12">
+				<table class="table table-bordered table-sm">
+					<tbody>
+						<tr>
+							<td>Sterowanie realizowane na podstawie  </td>
+							<td>PAR-WT</td>
+							<td>Term. Pomieszczeniowy</td>
+							<td>Krzywa grzewcza</td>
+							<td>Temp. przepływu</td>
+							<td>Temp. pomieszczenia</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 gray-bg">
+				<strong>POMPA CIEPŁA - jednostka wewnętrzna</strong>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-7">
+				<table class="table table-bordered table-sm" style="padding-right: 10px;">
+					<tbody>
+						<tr>
+							<td class="td-10" colspan="2">Temp. wody na wyjściu z jednostki wew. THW1 (po 30 min)</td>
+							<td class="td-2 text-right">[C]</td>
+						</tr>
+						<tr>
+							<td colspan="2">Temp. wody na powrocie z instalacji THW2 (po 30 min)</td>
+							<td class="text-right">[C]</td>
+						</tr>
+						<tr>
+							<td colspan="2">Temp. cieczy na wyjściu z wymiennika freonowego TH2 (po 30 min)</td>
+							<td class="text-right">[C]</td>
+						</tr>
+						<tr>
+							<td>Zainstalowano w  urządzeniu kartę SD</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Doprowadzono zasilanie do grzałek elektrycznych w hydroboxie </td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xs-5">
+				<table class="table table-bordered table-sm"">
+					<tbody>
+						<tr>
+							<td class="td-6">Zużycie z ost. roku:</td>
+							<td class="td-6 text-right">[kWh]</td> 
+						</tr>
+						<tr>
+							<td>Zużycie na CWU:</td>
+							<td class="text-right">[kWh]</td> 
+						</tr>
+						<tr>
+							<td>Zużycie na CO:</td>
+							<td class="text-right">[kWh]</td> 
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="row">
+			<div class="col-xs-12 gray-bg">
+				<strong>KODY SERWISOWE:</strong>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-xs-7">
+				<table class="table table-bordered table-sm" style="padding-right: 10px;">
+					<tbody>
+						<tr>
+							<td class="td-1 text-center">540</td>
+							<td class="td-6">Natężenie przepływu (przepływ wody na j. wew.)</td>
+							<td class="td-3 text-right">[l/min]</td>
+						</tr>
+						<tr>
+							<td class="text-center">002</td>
+							<td>Godziny pracy (od początku uruchomienia) (x100)</td>
+							<td class="text-right">[h]</td>
+						</tr>
+						<tr>
+							<td class="text-center">003</td>
+							<td>Ilość włączeń sprężarki  (x10)</td>
+							<td class="text-right">[szt]</td>
+						</tr>
+						<tr>
+							<td class="text-center">004</td>
+							<td>Temp. gazu gorącego TH4</td>
+							<td class="text-right">[C]</td>
+						</tr>
+						<tr>
+							<td class="text-center">012</td>
+							<td>Przegrzanie gazu gorącego</td>
+							<td class="text-right">[C]</td>
+						</tr>
+						<tr>
+							<td class="text-center">013</td>
+							<td>Przechłodzenie</td>
+							<td class="text-right">[C]</td>
+						</tr>
+						<tr>
+							<td class="text-center">025</td>
+							<td>Prąd pracy</td>
+							<td class="text-right">[A]</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+	</div>
 	@elseif($service->service_type == "Fotowoltaika")
 
 	@endif
