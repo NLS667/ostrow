@@ -84,6 +84,9 @@
                 background-color: #dddddd;
                 font-size: 8px;
             }
+            .white-bg{
+                background-color: #ffffff;
+            }
             .typing-line{
                 display: box;
                 height: 15px;
