@@ -75,7 +75,9 @@
             .border {
                 border: 1px solid #ff0000 !important;
             }
-
+            .border-top{
+                border-bottom-style: dashed;
+            }
             .green-bg{
                 background-color: #009900;
                 color:  #ffffff;
