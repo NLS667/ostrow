@@ -3,7 +3,7 @@
 @section('content')
 	<!-- Header Section -->
 	<div class="container">
-		<table class="table-borderless mb-10" style="padding-left:20px;">
+		<table class="table-borderless mb-10" style="margin-left:20px;">
 			<tbody>
 				<tr class="green-bg">
 					<td class="td-3" rowspan="3">
