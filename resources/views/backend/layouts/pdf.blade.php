@@ -41,6 +41,9 @@
             .td-11{
                 width: 91.666%;
             }
+            .td-12{
+                width: 100%;
+            }
             .mb-10{
                 margin-bottom:  10px;
             }

@@ -5,15 +5,15 @@
 	<div class="container">
 		<table class="table-borderless mb-10">
 			<tbody>
-				<tr class="green-bg">
-					<td class="td-4" rowspan="3">
+				<tr class="green-bg td-12">
+					<td class="td-3" rowspan="3">
 						<img class="border" src="{{ asset('/img/bioclim_logo.jpg') }}" style="width: 100%;"/>
 					</td>
 					<td class="td-1"></td>
 					<td class="td-2 text-right">
 						Tel. 608 516 632
 					</td>
-					<td class="td-2 text-center">
+					<td class="td-3 text-center">
 						info@bio-klim.pl
 					</td>
 					<td class="td-2 text-left">
