@@ -844,11 +844,11 @@
 							<td class="td-2 text-right" colspan="2">[C]</td>
 						</tr>
 						<tr>
-							<td colspan="2">Temp. wody na powrocie z instalacji THW2 (po 30 min)</td>
+							<td>Temp. wody na powrocie z instalacji THW2 (po 30 min)</td>
 							<td class="text-right" colspan="2">[C]</td>
 						</tr>
 						<tr>
-							<td colspan="2">Temp. cieczy na wyjściu z wymiennika freonowego TH2 (po 30 min)</td>
+							<td>Temp. cieczy na wyjściu z wymiennika freonowego TH2 (po 30 min)</td>
 							<td class="text-right" colspan="2">[C]</td>
 						</tr>
 						<tr>
