@@ -931,7 +931,65 @@
 				</table>
 			</div>
 		</div>
-
+		<div class="row">
+			<div class="col-xs-12 gray-bg">
+				<strong>KODY SERWISOWE:</strong>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-xs-7">
+				<table class="table table-bordered table-sm" style="padding-right: 10px;">
+					<tbody>
+						<tr>
+							<td>Sprawdzono zawór nadciśnieniowy = <br/>kontrola działania (przekręcić pokrętło)</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Czyszczenie filtrów wody technologicznej</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Czyszczenie skraplacza</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Kontrola temperatury czynnika grzewczego</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xs-5">
+				<table class="table table-bordered table-sm">
+					<tbody>
+						<tr>
+							<td>Kontrola szczelności instalacji</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Sprawdzenie instalacji elektrycznej - pomiary</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Sprawdzenie instalacji freonowej – pomiary temp. czynnika</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+						<tr>
+							<td>Sprawdzenie szczelności inst. odprowadzenia skroplin</td>
+							<td class="td-1 text-center">TAK</td>
+							<td class="td-1 text-center">NIE</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 	@elseif($service->service_type == "Fotowoltaika")
 
