@@ -158,9 +158,9 @@ class TaskController extends Controller
 
         Pdf::setOption(['dpi' => 96, 'default_media_type' => 'print', 'defaultPaperSize' => 'a4' ]);
         $pdf = Pdf::loadView('backend.task.raports.template', $data);
-        //return $pdf->stream('report.pdf');
+        return $pdf->stream('report.pdf');
 
-        return new ViewResponse('backend.task.raports.template', ['data' => $data]);
+        //return new ViewResponse('backend.task.raports.template', ['data' => $data]);
     }
 
     /**
