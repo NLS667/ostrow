@@ -684,41 +684,41 @@
 							<td class="td-2 text-right" colspan="2">[m]</td>
 						</tr>
 						<tr>
-							<td>Dodatkowo dodana ilość czynnika chłodniczego</td>
+							<td colspan="2">Dodatkowo dodana ilość czynnika chłodniczego</td>
 							<td class="text-right" colspan="2">[kg]</td>
 						</tr>
 						<tr>
-							<td>Napięcie el. pomiędzy zaciskami L1-N</td>
+							<td colspan="2">Napięcie el. pomiędzy zaciskami L1-N</td>
 							<td class="text-right" colspan="2">[V]</td>
 						</tr>
 						<tr>
-							<td>Napięcie el. pomiędzy zaciskami L2-N</td>
+							<td colspan="2">Napięcie el. pomiędzy zaciskami L2-N</td>
 							<td class="text-right" colspan="2">[V]</td>
 						</tr>
 						<tr>
-							<td>Napięcie el. pomiędzy zaciskami L3-N</td>
+							<td colspan="2">Napięcie el. pomiędzy zaciskami L3-N</td>
 							<td class="text-right" colspan="2">[V]</td>
 						</tr>
 						<tr>
-							<td>Usunięto blokady transportowe sprężarki</td>
+							<td colspan="2">Usunięto blokady transportowe sprężarki</td>
 							<td class="td-1 text-center">TAK</td>
 							<td class="td-1 text-center">NIE</td>
 						</tr>
 						<tr>
-							<td>Zastosowano grzałkę tacy ociekowej</td>
+							<td colspan="2">Zastosowano grzałkę tacy ociekowej</td>
 							<td class="td-1 text-center">TAK</td>
 							<td class="td-1 text-center">NIE</td>
 						</tr>
 						<tr>
-							<td>Wysokość posadowienia agregatu nad powierzchnią gruntu</td>
+							<td colspan="2">Wysokość posadowienia agregatu nad powierzchnią gruntu</td>
 							<td class="text-right" colspan="2">[cm]</td>
 						</tr>
 						<tr>
-							<td>Pojemność zbiornika buforowego w instalacji wodnej</td>
+							<td colspan="2">Pojemność zbiornika buforowego w instalacji wodnej</td>
 							<td class="text-right" colspan="2">[l]</td>
 						</tr>
 						<tr>
-							<td>Powierzchnia wężownicy w zbiorniku C.W.U.</td>
+							<td colspan="2">Powierzchnia wężownicy w zbiorniku C.W.U.</td>
 							<td class="text-right" colspan="2">[m2]</td>
 						</tr>
 						<tr>
@@ -728,34 +728,34 @@
 							<td class="td-1">Inne:</td>
 						</tr>
 						<tr>
-							<td>Rodzaj instalacji w strefie 1</td>
+							<td colspan="2">Rodzaj instalacji w strefie 1</td>
 							<td class="td-1 text-right">podłogowe</td>
 							<td class="td-1 text-right">grzejniki</td>
 						</tr>
 						<tr>
-							<td>Rodzaj instalacji w strefie 2</td>
+							<td colspan="2">Rodzaj instalacji w strefie 2</td>
 							<td class="td-1 text-right">podłogowe</td>
 							<td class="td-1 text-right">grzejniki</td>
 						</tr>
 						<tr>
-							<td>Pompy obiegowe stref grzewczych sterowane za pomocą</td>
+							<td colspan="2">Pompy obiegowe stref grzewczych sterowane za pomocą</td>
 							<td class="td-1 text-right">hydrobox</td>
 							<td class="td-1 text-right">Inne:</td>
 						</tr>
 						<tr>
-							<td>Temp. wody zasilającej strefę THW6 (po 30 min)</td>
+							<td colspan="2">Temp. wody zasilającej strefę THW6 (po 30 min)</td>
 							<td class="text-right" colspan="2">[C]</td>
 						</tr>
 						<tr>
-							<td>Temp. wody powrotnej ze strefy THW7 (po 30 min) </td>
+							<td colspan="2">Temp. wody powrotnej ze strefy THW7 (po 30 min) </td>
 							<td class="text-right" colspan="2">[C]</td>
 						</tr>
 						<tr>
-							<td>Temp. wody zasilającej strefę 2 THW8 (po 30 min)</td>
+							<td colspan="2">Temp. wody zasilającej strefę 2 THW8 (po 30 min)</td>
 							<td class="text-right" colspan="2">[C]</td>
 						</tr>
 						<tr>
-							<td>Temp. wody powrotnej ze strefy 2 THW9 (po 30 min) </td>
+							<td colspan="2">Temp. wody powrotnej ze strefy 2 THW9 (po 30 min) </td>
 							<td class="text-right" colspan="2">[C]</td>
 						</tr>
 					</tbody>
@@ -840,16 +840,16 @@
 				<table class="table table-bordered table-sm" style="padding-right: 10px;">
 					<tbody>
 						<tr>
-							<td class="td-10" colspan="2">Temp. wody na wyjściu z jednostki wew. THW1 (po 30 min)</td>
-							<td class="td-2 text-right">[C]</td>
+							<td class="td-10">Temp. wody na wyjściu z jednostki wew. THW1 (po 30 min)</td>
+							<td class="td-2 text-right" colspan="2">[C]</td>
 						</tr>
 						<tr>
 							<td colspan="2">Temp. wody na powrocie z instalacji THW2 (po 30 min)</td>
-							<td class="text-right">[C]</td>
+							<td class="text-right" colspan="2">[C]</td>
 						</tr>
 						<tr>
 							<td colspan="2">Temp. cieczy na wyjściu z wymiennika freonowego TH2 (po 30 min)</td>
-							<td class="text-right">[C]</td>
+							<td class="text-right" colspan="2">[C]</td>
 						</tr>
 						<tr>
 							<td>Zainstalowano w  urządzeniu kartę SD</td>
