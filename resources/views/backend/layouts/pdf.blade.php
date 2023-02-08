@@ -71,9 +71,6 @@
             .table-bordered td {
               border: 1px solid #000000 !important;
             }
-            .no-border{
-                border: none !important;
-            }
             .border {
                 border: 1px solid #ff0000 !important;
             }
