@@ -142,38 +142,6 @@
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-						</tr>
 					</tbody>
 				</table>
 			</div>
@@ -234,7 +202,6 @@
 		<div class="row" style="margin-bottom:20px;">
 			<div class="col-xs-12">
 				<p style="font-size:10px;"><strong>UWAGI / ZALECENIA / Wykonywanie przeglądów serwisowych zgodnie z kartą gwarancyjną:</strong></p>
-				<div class="typing-line"></div>
 				<div class="typing-line"></div>
 				<div class="typing-line"></div>
 				<div class="typing-line"></div>
