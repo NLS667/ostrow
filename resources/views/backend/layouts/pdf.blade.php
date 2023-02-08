@@ -71,13 +71,11 @@
             .table-bordered td {
               border: 1px solid #000000 !important;
             }
-            .table-borderless > tbody > tr,
-            .table-borderless > thead > tr,
             .table-borderless > tbody > tr > td,
             .table-borderless > tbody > tr > th,
             .table-borderless > thead > tr > td,
             .table-borderless > thead > tr > th {
-                border: none;
+                border: none !important;
             }
             .border {
                 border: 1px solid #ff0000 !important;
