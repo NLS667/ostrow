@@ -524,7 +524,7 @@
 			</div>
 			<div class="col-xs-4"></div>
 		</div>
-		@elseif($task->type == Serwis")
+		@elseif($task->type == "Serwis")
 		<div class="row">
 			<div class="col-xs-12">
 				<table class="table table-bordered table-sm">
