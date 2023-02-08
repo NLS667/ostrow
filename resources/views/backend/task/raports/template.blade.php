@@ -62,8 +62,8 @@
 			</div>
 		</div>
 		<!-- Header Section End -->
-	@if ($service->service_type == "Pompa ciepła" && $task->type == "montaż")
-			<div class="row">
+	@if($service->service_type == "Pompa ciepła" && $task->type == "montaż")
+		<div class="row">
 				<div class="col-xs-12">
 					<table class="table table-bordered table-sm">
 						<thead class="thead-light">
@@ -176,8 +176,8 @@
 						</tbody>
 					</table>
 				</div>
-			</div>
-			<div class="row">
+		</div>
+		<div class="row">
 				<div class="col-xs-12">
 					<table class="table table-bordered table-sm">
 						<thead class="thead-light">
@@ -229,8 +229,8 @@
 						</tbody>
 					</table>
 				</div>
-			</div>
-			<div class="row" style="margin-bottom:20px;">
+		</div>
+		<div class="row" style="margin-bottom:20px;">
 				<div class="col-xs-12">
 					<p style="font-size:10px;"><strong>UWAGI / ZALECENIA / Wykonywanie przeglądów serwisowych zgodnie z kartą gwarancyjną:</strong></p>
 					<div class="typing-line"></div>
@@ -238,18 +238,18 @@
 					<div class="typing-line"></div>
 					<div class="typing-line"></div>
 				</div>
-			</div>
-			<div class="row" style="margin-bottom:100px; font-size:12px;">
+		</div>
+		<div class="row" style="margin-bottom:100px; font-size:12px;">
 				<div class="col-xs-6"><strong>PŁATNOŚĆ:</strong>&nbsp;&nbsp;&#9634;&nbsp;GOTÓWKA&nbsp;&nbsp;&#9634;&nbsp;PRZELEW</div>
 				<div class="col-xs-6"><strong>POTWIERDZENIE:</strong>&nbsp;&nbsp;&#9634;&nbsp;PARAGON&nbsp;&nbsp;&#9634;&nbsp;FAKTURA</div>
-			</div>
-			<div class="row" style="font-size:12px;">
+		</div>
+		<div class="row" style="font-size:12px;">
 				<div class="col-xs-6 text-center border-top">SERWISANT</div>
 				<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
-			</div>
 		</div>
-		<div class="page-break"></div>
-		<div class="container">
+	</div>
+	<div class="page-break"></div>
+	<div class="container">
 			<div class="row" style="margin-bottom:10px;">
 				<div class="col-xs-12 gray-bg">
 					<strong>KLIMATYZACJA</strong>
@@ -526,8 +526,8 @@
 			@else
 
 			@endif
-		</div>
-	@elseif ( $service->service_type == "Pompa ciepła" && $task->type == "Montaż" )
+	</div>
+	@elseif( $service->service_type == "Pompa ciepła" && $task->type == "Montaż" )
 		<div class="row">
 				<div class="col-xs-12">
 					<table class="table table-bordered table-sm">
@@ -699,6 +699,7 @@
 					</table>
 				</div>
 			</div>
+		</div>
 	@elseif($service->service_type == "Pompa Ciepła")
 		<div class="row">
 			<div class="col-xs-12">
