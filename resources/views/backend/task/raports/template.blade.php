@@ -1081,7 +1081,7 @@
 						<td class="td-1">
 							<span class="input-box"></span>
 						</td>
-						<td class="td-2 text-left">
+						<td class="td-7 text-left">
 							mm<sup>2</sup>
 						</td>
 					</tr>
