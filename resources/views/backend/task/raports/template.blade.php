@@ -885,6 +885,21 @@
 				<div class="typing-line"></div>
 				<div class="typing-line"></div>
 				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
 			</div>
 		</div>
 	</div>
