@@ -491,6 +491,7 @@
 			</div>
 			<div class="col-xs-4"></div>
 		</div>
+	</div>
 		@elseif($task->type == "Serwis")
 		<div class="row">
 			<div class="col-xs-12">
@@ -728,8 +729,7 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
-		@endif
+		</div>	
 	</div>
 	<div class="page-break"></div>
 	<div class="container">
@@ -830,6 +830,7 @@
 			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
 		</div>
 	</div>
+		@endif
 	@elseif($service->service_type == "Pompa Ciepła")
 		<div class="row">
 			<div class="col-xs-12">
