@@ -534,7 +534,7 @@
 				<table class="table table-bordered table-sm">
 					<thead class="thead-light">
 						<tr>
-							<th class="td-3 gray-bg text-center"><strong>POMPA CIEPŁA</strong></th>
+							<th class="td-3 gray-bg text-center" colspan="6"><strong>POMPA CIEPŁA</strong></th>
 						</tr>
 						<tr>
 							<th scope="col" class="td-3 gray-bg text-center align-middle">Producent</th>
