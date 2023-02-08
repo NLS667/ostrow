@@ -999,21 +999,21 @@
 		</div>
 		<div class="row" style="margin-bottom:10px;">
 			<div class="col-xs-12">
-				<table class="table table-bordered table-sm" style="padding-right: 10px;">
+				<table class="table table-bordered table-sm">
 					<thead>
 						<tr>
-							<th colspan="8"><strong>Panele fotowoltaiczne:</strong></th>
+							<th class="no-border" colspan="8"><strong>Panele fotowoltaiczne:</strong></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td class="td-1 gray-bg">Producent:</td>
+							<td class="td-1 gray-bg"><strong>Producent:</strong></td>
 							<td class="td-2"></td>
-							<td class="td-1 gray-bg">Model:</td>
+							<td class="td-1 gray-bg"><strong>Model:</strong></td>
 							<td class="td-3"></td>
-							<td class="td-1">Moc:</td>
+							<td class="td-1 gray-bg"><strong>Moc:</strong></td>
 							<td class="td-1"></td>
-							<td class="td-1">Ilość:</td>
+							<td class="td-1 gray-bg"><strong>Ilość:</strong></td>
 							<td class="td-1"></td>
 						</tr>
 					</tbody>
@@ -1021,18 +1021,70 @@
 			</div>
 		</div>
 		<div class="row" style="margin-bottom:10px;">
-			<div class="col-xs-12 gray-bg">
-				<strong>INSTALACJA FOTOWOLTAICZNA</strong>
+			<div class="col-xs-12">
+				<table class="table table-bordered table-sm">
+					<thead>
+						<tr>
+							<th class="no-border" colspan="8"><strong>Falownik:</strong></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="td-1 gray-bg"><strong>Producent:</strong></td>
+							<td class="td-2"></td>
+							<td class="td-1 gray-bg"><strong>Model:</strong></td>
+							<td class="td-3"></td>
+							<td class="td-1 gray-bg"><strong>Moc:</strong></td>
+							<td class="td-1"></td>
+							<td class="td-1 gray-bg"><strong>Ilość:</strong></td>
+							<td class="td-1"></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="row" style="margin-bottom:10px;">
-			<div class="col-xs-12 gray-bg">
-				<strong>INSTALACJA FOTOWOLTAICZNA</strong>
+			<div class="col-xs-12">
+				<table class="table table-bordered table-sm">
+					<thead>
+						<tr>
+							<th class="no-border" colspan="8"><strong>Mikroinwertery:</strong></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="td-1 gray-bg"><strong>Producent:</strong></td>
+							<td class="td-2"></td>
+							<td class="td-1 gray-bg"><strong>Model:</strong></td>
+							<td class="td-3"></td>
+							<td class="td-1 gray-bg"><strong>Moc:</strong></td>
+							<td class="td-1"></td>
+							<td class="td-1 gray-bg"><strong>Ilość:</strong></td>
+							<td class="td-1"></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="row" style="margin-bottom:10px;">
-			<div class="col-xs-12 gray-bg">
-				<strong>INSTALACJA FOTOWOLTAICZNA</strong>
+			<div class="col-xs-12">
+				<table class="table table-bordered table-sm">
+					<thead>
+						<tr>
+							<th class="no-border" colspan="8"><strong>Optymalizatory:</strong></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="td-1 gray-bg"><strong>Producent:</strong></td>
+							<td class="td-2"></td>
+							<td class="td-1 gray-bg"><strong>Model:</strong></td>
+							<td class="td-3"></td>
+							<td class="td-1 gray-bg"><strong>Ilość:</strong></td>
+							<td class="td-4"></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	@endif
