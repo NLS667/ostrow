@@ -902,6 +902,14 @@
 				<div class="typing-line"></div>
 			</div>
 		</div>
+		<div class="row" style="margin-bottom:100px; font-size:12px;">
+			<div class="col-xs-6"><strong>PŁATNOŚĆ:</strong>&nbsp;&nbsp;&#9634;&nbsp;GOTÓWKA&nbsp;&nbsp;&#9634;&nbsp;PRZELEW</div>
+			<div class="col-xs-6"><strong>POTWIERDZENIE:</strong>&nbsp;&nbsp;&#9634;&nbsp;PARAGON&nbsp;&nbsp;&#9634;&nbsp;FAKTURA</div>
+		</div>
+		<div class="row" style="font-size:12px;">
+			<div class="col-xs-6 text-center border-top">SERWISANT</div>
+			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
+		</div>
 	</div>
 	@elseif($service->service_type == "Pompa Ciepła")
 		<div class="row">
