@@ -865,7 +865,7 @@
 				</table>
 			</div>
 			<div class="col-xs-5">
-				<table class="table table-bordered table-sm"">
+				<table class="table table-bordered table-sm">
 					<tbody>
 						<tr>
 							<td class="td-6">Zużycie z ost. roku:</td>
@@ -882,7 +882,8 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="row">
+		</div>
+		<div class="row">
 			<div class="col-xs-12 gray-bg">
 				<strong>KODY SERWISOWE:</strong>
 			</div>
@@ -930,7 +931,7 @@
 				</table>
 			</div>
 		</div>
-		
+
 	</div>
 	@elseif($service->service_type == "Fotowoltaika")
 
