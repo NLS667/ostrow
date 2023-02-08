@@ -993,7 +993,7 @@
 	</div>
 	@elseif($service->service_type == "Pompa ciepła")
 		<div class="row" style="margin-bottom:10px;">
-			<div class="col-xs-12 gray-bg">
+			<div class="col-xs-12 gray-bg text-center">
 				<strong>INSTALACJA FOTOWOLTAICZNA</strong>
 			</div>
 		</div>
@@ -1070,6 +1070,12 @@
 					</tbody>
 				</table>
 			</div>
+		</div>
+		<div class="row">
+			<p><strong>Przewód AC </strong>(z rodzielni do szafy przyłączeniowej): <span class="input-box"></span>mm<sup>2</sup>
+			<p><strong>Przewód AC </strong>(z szafy przyłączeniowej do falownika): <span class="input-box"></span>mm<sup>2</sup>
+			<p><strong>Wyłącznik nadprądowy:</strong><span class="input-box"></span>
+			<p><strong>Zabezpieczenie różnicowo-prądowe:</strong><span class="input-box"></span>
 		</div>
 	@endif
 @endsection
