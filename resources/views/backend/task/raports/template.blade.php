@@ -62,8 +62,7 @@
 			</div>
 		</div>
 		<!-- Header Section End -->
-	@if ($service->service_type == "Pompa ciepła")
-		@if ( $task->type == "montaż" )
+	@if ($service->service_type == "Pompa ciepła" && $task->type == "montaż")
 			<div class="row">
 				<div class="col-xs-12">
 					<table class="table table-bordered table-sm">
@@ -528,7 +527,7 @@
 
 			@endif
 		</div>
-		@elseif ( $task->type == "Montaż" )
+		@elseif ( $service->service_type == "Pompa ciepła" && $task->type == "Montaż" )
 		<div class="row">
 				<div class="col-xs-12">
 					<table class="table table-bordered table-sm">
@@ -700,7 +699,6 @@
 					</table>
 				</div>
 			</div>
-		@endif
 	@elseif($service->service_type == "Pompa Ciepła")
 		<div class="row">
 			<div class="col-xs-12">
