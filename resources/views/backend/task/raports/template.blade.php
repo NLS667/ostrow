@@ -1018,12 +1018,8 @@
 		</div>
 		<div class="row" style="margin-bottom:10px;">
 			<div class="col-xs-12">
+				<p><strong>Falownik:</strong></p>
 				<table class="table table-bordered table-sm">
-					<thead>
-						<tr>
-							<th colspan="8"><strong>Falownik:</strong></th>
-						</tr>
-					</thead>
 					<tbody>
 						<tr>
 							<td class="td-1 gray-bg"><strong>Producent:</strong></td>
@@ -1041,12 +1037,8 @@
 		</div>
 		<div class="row" style="margin-bottom:10px;">
 			<div class="col-xs-12">
+				<p><strong>Mikroinwertery:</strong></p>
 				<table class="table table-bordered table-sm">
-					<thead>
-						<tr>
-							<th colspan="8"><strong>Mikroinwertery:</strong></th>
-						</tr>
-					</thead>
 					<tbody>
 						<tr>
 							<td class="td-1 gray-bg"><strong>Producent:</strong></td>
@@ -1064,12 +1056,8 @@
 		</div>
 		<div class="row" style="margin-bottom:10px;">
 			<div class="col-xs-12">
+				<p><strong>Optymalizatory:</strong></p>
 				<table class="table table-bordered table-sm">
-					<thead>
-						<tr>
-							<th colspan="6"><strong>Optymalizatory:</strong></th>
-						</tr>
-					</thead>
 					<tbody>
 						<tr>
 							<td class="td-1 gray-bg"><strong>Producent:</strong></td>
