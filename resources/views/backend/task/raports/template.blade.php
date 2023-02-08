@@ -1072,16 +1072,16 @@
 			</div>
 		</div>
 		<div class="row">
-			<table class="table">
+			<table class="table table-borderless">
 				<tbody>
 					<tr>
-						<td class="td-3">
+						<td class="td-5">
 							<strong>Przewód AC </strong>(z rozdzielni do szafy przyłączeniowej):
 						</td>
 						<td class="td-1">
 							<span class="input-box"></span>
 						</td>
-						<td class="td-8 text-left">
+						<td class="td-6 text-left">
 							mm<sup>2</sup>
 						</td>
 					</tr>
