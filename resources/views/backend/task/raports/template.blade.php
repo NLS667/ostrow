@@ -992,6 +992,48 @@
 		</div>
 	</div>
 	@elseif($service->service_type == "Pompa ciepła")
-		
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-xs-12 gray-bg">
+				<strong>INSTALACJA FOTOWOLTAICZNA</strong>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-xs-12">
+				<table class="table table-bordered table-sm" style="padding-right: 10px;">
+					<thead>
+						<tr>
+							<th colspan="8"><strong>Panele fotowoltaiczne:</strong></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="td-1 gray-bg">Producent:</td>
+							<td class="td-2"></td>
+							<td class="td-1 gray-bg">Model:</td>
+							<td class="td-3"></td>
+							<td class="td-1">Moc:</td>
+							<td class="td-1"></td>
+							<td class="td-1">Ilość:</td>
+							<td class="td-1"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-xs-12 gray-bg">
+				<strong>INSTALACJA FOTOWOLTAICZNA</strong>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-xs-12 gray-bg">
+				<strong>INSTALACJA FOTOWOLTAICZNA</strong>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-xs-12 gray-bg">
+				<strong>INSTALACJA FOTOWOLTAICZNA</strong>
+			</div>
+		</div>
 	@endif
 @endsection
