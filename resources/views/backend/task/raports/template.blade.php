@@ -527,7 +527,7 @@
 
 			@endif
 		</div>
-		@elseif ( $service->service_type == "Pompa ciepła" && $task->type == "Montaż" )
+	@elseif ( $service->service_type == "Pompa ciepła" && $task->type == "Montaż" )
 		<div class="row">
 				<div class="col-xs-12">
 					<table class="table table-bordered table-sm">
