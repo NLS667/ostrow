@@ -1119,7 +1119,7 @@
 				</table>
 			</div>
 		</div>
-		<div class="row" style="margin-bottom:20px;">
+		<div class="row" style="margin-bottom:10px;">
 			<div class="col-xs-12">
 				<table class="table table-borderless">
 					<tbody>
@@ -1134,7 +1134,7 @@
 				</table>
 			</div>
 		</div>
-		<div class="row" style="margin-bottom:20px;">
+		<div class="row" style="margin-bottom:10px;">
 			<div class="col-xs-12">
 				<p style="font-size:10px;"><strong>Dodatkowe uwagi / zmiany / ustalenia przed montażem</strong></p>
 				<div class="typing-line"></div>
@@ -1147,7 +1147,7 @@
 			<div class="col-xs-6 text-center border-top">MONTER</div>
 			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
 		</div>
-		<div class="row" style="margin-bottom:20px;">
+		<div class="row" style="margin-bottom:10px;">
 			<div class="col-xs-12">
 				<p style="font-size:10px;"><strong>Uwagi po montażu</strong></p>
 				<div class="typing-line"></div>
@@ -1156,7 +1156,7 @@
 				<div class="typing-line"></div>
 			</div>
 		</div>
-		<div class="row" style="font-size:12px;margin-bottom:30px;">
+		<div class="row" style="font-size:12px;">
 			<div class="col-xs-6 text-center border-top">MONTER</div>
 			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
 		</div>
