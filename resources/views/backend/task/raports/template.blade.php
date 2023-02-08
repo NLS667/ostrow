@@ -1072,49 +1072,93 @@
 			</div>
 		</div>
 		<div class="row">
-			<table class="table table-borderless">
-				<tbody>
-					<tr>
-						<td class="td-5">
-							<strong>Przewód AC </strong>(z rozdzielni do szafy przyłączeniowej):
-						</td>
-						<td class="td-1">
-							<span class="input-box"></span>
-						</td>
-						<td class="td-6 text-left">
-							mm<sup>2</sup>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<strong>Przewód AC </strong>(z szafy przyłączeniowej do falownika): 
-						</td>
-						<td>
-							<span class="input-box"></span>
-						</td>
-						<td>
-							mm<sup>2</sup>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<strong>Wyłącznik nadprądowy:</strong>
-						</td>
-						<td>
-							<span class="input-box"></span>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>
-							<strong>Zabezpieczenie różnicowo-prądowe:</strong>
-						</td>
-						<td>
-							<span class="input-box"></span>
-						</td>
-						<td></td>
-					</tr>
-			</table>
+			<div class="col-xs-12">
+				<table class="table table-borderless">
+					<tbody>
+						<tr>
+							<td class="td-5">
+								<strong>Przewód AC </strong>(z rozdzielni do szafy przyłączeniowej):
+							</td>
+							<td class="td-1">
+								<span class="input-box"></span>
+							</td>
+							<td class="td-6 text-left">
+								mm<sup>2</sup>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>Przewód AC </strong>(z szafy przyłączeniowej do falownika): 
+							</td>
+							<td>
+								<span class="input-box"></span>
+							</td>
+							<td>
+								mm<sup>2</sup>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>Wyłącznik nadprądowy:</strong>
+							</td>
+							<td>
+								<span class="input-box"></span>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<strong>Zabezpieczenie różnicowo-prądowe:</strong>
+							</td>
+							<td>
+								<span class="input-box"></span>
+							</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<row class="row">
+			<div class="col-xs-12">
+				<table class="table table-borderless">
+					<tbody>
+						<tr>
+							<td class="td-2" rowspan="2"><strong>Montaż na:</strong></td>
+							<td class="td-10"></td>
+						</tr>
+						<tr>
+							<td class="td-10"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</row>
+		<div class="row" style="margin-bottom:20px;">
+			<div class="col-xs-12">
+				<p style="font-size:10px;"><strong>Dodatkowe uwagi / zmiany / ustalenia przed montażem</strong></p>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+			</div>
+		</div>
+		<div class="row" style="font-size:12px;">
+			<div class="col-xs-6 text-center border-top">MONTER</div>
+			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
+		</div>
+		<div class="row" style="margin-bottom:20px;">
+			<div class="col-xs-12">
+				<p style="font-size:10px;"><strong>Uwagi po montażu</strong></p>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+			</div>
+		</div>
+		<div class="row" style="font-size:12px;">
+			<div class="col-xs-6 text-center border-top">MONTER</div>
+			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
 		</div>
 	@endif
 @endsection
