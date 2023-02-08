@@ -77,8 +77,7 @@
             }
             .border-top{
                 border-bottom-style: dashed;
-                display: box;
-                width: 100%;
+                width: 50%;
             }
             .green-bg{
                 background-color: #009900;
