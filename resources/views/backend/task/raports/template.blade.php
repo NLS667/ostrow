@@ -528,7 +528,146 @@
 
 		@endif
 	@elseif($service->service_type == "Pompa Ciepła")
-
+		<div class="row">
+			<div class="col-xs-12">
+				<table class="table table-bordered table-sm">
+					<thead class="thead-light">
+						<tr>
+							<th class="td-3 gray-bg text-center"><strong>POMPA CIEPŁA</strong></th>
+						</tr>
+						<tr>
+							<th scope="col" class="td-3 gray-bg text-center align-middle">Producent</th>
+							<th scope="col" class="td-2 gray-bg text-center align-middle">Model</th>
+							<th scope="col" class="td-4 gray-bg text-center align-middle">Nr seryjny</th>
+							<th scope="col" class="td-1 gray-bg text-center">Rodzaj czytnika</th>
+							<th scope="col" class="td-1 gray-bg text-center">Czynnik karta</th>
+							<th scope="col" class="td-1 gray-bg text-center">Czynnik dodany</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:20px;">
+			<div class="col-xs-12">
+				<p style="font-size:10px;"><strong>UWAGI / ZALECENIA / Wykonywanie przeglądów serwisowych zgodnie z kartą gwarancyjną:</strong></p>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+				<div class="typing-line"></div>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:100px; font-size:12px;">
+			<div class="col-xs-6"><strong>PŁATNOŚĆ:</strong>&nbsp;&nbsp;&#9634;&nbsp;GOTÓWKA&nbsp;&nbsp;&#9634;&nbsp;PRZELEW</div>
+			<div class="col-xs-6"><strong>POTWIERDZENIE:</strong>&nbsp;&nbsp;&#9634;&nbsp;PARAGON&nbsp;&nbsp;&#9634;&nbsp;FAKTURA</div>
+		</div>
+		<div class="row" style="font-size:12px;">
+			<div class="col-xs-6 text-center border-top">SERWISANT</div>
+			<div class="col-xs-6 text-center border-top">ZAMAWIAJĄCY</div>
+		</div>
+	</div>
+	<div class="page-break"></div>
 	@elseif($service->service_type == "Fotowoltaika")
 
 	@endif		
