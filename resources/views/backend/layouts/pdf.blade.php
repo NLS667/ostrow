@@ -7,6 +7,7 @@
         <style>
             html {
                 line-height: 0.8 !important;
+                font-family: DejaVu Sans;
             }
             .td-1{
                 width: 8.333%;
