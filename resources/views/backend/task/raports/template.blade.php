@@ -1113,7 +1113,7 @@
 							<td>
 								<span class="input-box"></span>
 							</td>
-							<td></td>
+							<td>&nbsp;</td>
 						</tr>
 					</tbody>
 				</table>
