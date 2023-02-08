@@ -1070,8 +1070,8 @@
 			<div class="col-xs-12">
 				<table class="table table-bordered table-sm">
 					<thead>
-						<tr>
-							<th class="no-border" colspan="6"><strong>Optymalizatory:</strong></th>
+						<tr class="no-border" >
+							<th colspan="6"><strong>Optymalizatory:</strong></th>
 						</tr>
 					</thead>
 					<tbody>
