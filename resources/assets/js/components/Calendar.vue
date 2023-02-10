@@ -53,13 +53,6 @@ export default {
             center: 'title',
             end: 'dayGridMonth timeGridWeek timeGridDay listWeek'
           },
-          views: {
-            CustomView: {
-              type: 'custom',
-              buttonText: 'Harmonogram',
-              click:  $('#calendar').fullCalendar('changeView', 'CustomView')
-            }
-          },
           initialView: 'dayGridMonth',
           weekends: true,
           editable: true,
