@@ -20,10 +20,22 @@ import "@fullcalendar/daygrid/main.css"
 import "@fullcalendar/timegrid/main.css"
 import "@fullcalendar/list/main.css"
 
+const CustomView = {
+  classNames: ['custom-view'],
+  content: function(props) {
+    let html = '<div class="view-title">Test</div>'
+
+    return { html: html }
+  }
+}
+
 export default {
     name: 'Calendar',
     props: {
       filterRoute: String
+    },
+    views: {
+      custom: CustomView
     },
     components: {
         FullCalendar,
