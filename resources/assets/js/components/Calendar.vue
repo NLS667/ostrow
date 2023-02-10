@@ -26,7 +26,11 @@ export default {
       filterRoute: String
     },
     views: {
-      custom: CustomView
+      CustomView: {
+        type: 'custom',
+        buttonText: 'Harmonogram',
+        click:  $('#calendar').fullCalendar('changeView', 'CustomView')
+      }
     },
     components: {
         FullCalendar,

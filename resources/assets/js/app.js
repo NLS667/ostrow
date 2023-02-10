@@ -61,21 +61,6 @@ window.flash = function(message, type) {
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-const CustomView = {
-  classNames: ['custom-view'],
-  content: function(props) {
-    let html = '<div class="view-title">Test</div>'
-
-    return { html: html }
-  }
-}
-
-export default CustomViewPlugin({
-  views: {
-    custom: CustomView
-  }
-});
-
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('flash', require('./components/Flash.vue').default);
 Vue.component('clientsmap', require('./components/ClientsMap.vue').default);
