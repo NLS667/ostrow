@@ -46,8 +46,7 @@ export default {
             timeGridPlugin,
             interactionPlugin,
             listPlugin,
-            bootstrapPlugin,
-            CustomViewPlugin
+            bootstrapPlugin
           ],
           headerToolbar : {
             start: 'prev next today',
