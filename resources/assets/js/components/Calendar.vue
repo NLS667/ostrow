@@ -29,6 +29,12 @@ const CustomView = {
   }
 }
 
+export default CustomViewPlugin({
+  views: {
+    custom: CustomView
+  }
+});
+
 export default {
     name: 'Calendar',
     props: {
@@ -58,7 +64,8 @@ export default {
             timeGridPlugin,
             interactionPlugin,
             listPlugin,
-            bootstrapPlugin
+            bootstrapPlugin,
+            CustomViewPlugin
           ],
           headerToolbar : {
             start: 'prev next today',
