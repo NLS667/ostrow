@@ -17,11 +17,6 @@ import ShowTaskModal from './ShowTaskModal'
 import CustomViewPlugin from './CustomViewPlugin'
 import resourceTimeGridPlugin from '@fullcalendar/resource-timegrid';
 
-import "@fullcalendar/common/main.css"
-import "@fullcalendar/daygrid/main.css"
-import "@fullcalendar/timegrid/main.css"
-import "@fullcalendar/list/main.css"
-
 export default {
     name: 'Calendar',
     props: {
