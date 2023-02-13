@@ -16,6 +16,7 @@ import bootstrapPlugin from '@fullcalendar/bootstrap'
 import ShowTaskModal from './ShowTaskModal'
 import CustomViewPlugin from './CustomViewPlugin'
 import resourceDayGridPlugin from '@fullcalendar/resource-daygrid';
+import resourceTimelinePlugin  from '@fullcalendar/resource-timeline';
 
 export default {
     name: 'Calendar',
@@ -51,9 +52,9 @@ export default {
           headerToolbar : {
             start: 'prev today next',
             center: 'title',
-            end: 'custom resourceDayGridWeek timeGridDay dayGridMonth'
+            end: 'custom resourceTimeline timeGridDay dayGridMonth'
           },
-          initialView: 'resourceDayGridWeek',
+          initialView: 'resourceTimeline',
           weekends: false,
           editable: true,
           dayMaxEventRows: true,
@@ -71,6 +72,11 @@ export default {
               type: 'resourceDayGrid',
               duration: { weeks: 1 },
               buttonText: 'Harmonogram 2'
+            },
+            resourceTimeline: {
+              type: 'resourceTimeline',
+              duration: { weeks: 1 },
+              buttonText: 'Harmonogram 3'
             },
             custom: {
               title: 'Harmonogram',
