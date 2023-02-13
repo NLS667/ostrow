@@ -15,7 +15,7 @@ import plLocale from '@fullcalendar/core/locales/pl'
 import bootstrapPlugin from '@fullcalendar/bootstrap'
 import ShowTaskModal from './ShowTaskModal'
 import CustomViewPlugin from './CustomViewPlugin'
-import resourceTimeGridPlugin from '@fullcalendar/resource-timegrid';
+import resourceDayGridPlugin from '@fullcalendar/resource-daygrid';
 
 export default {
     name: 'Calendar',
@@ -44,15 +44,15 @@ export default {
             interactionPlugin,
             listPlugin,
             bootstrapPlugin,
-            resourceTimeGridPlugin,
+            resourceDayGridPlugin,
             CustomViewPlugin
           ],
           headerToolbar : {
             start: 'prev today next',
             center: 'title',
-            end: 'custom resourceTimeGridFourDay timeGridDay dayGridMonth'
+            end: 'custom resourceDayGridWeek timeGridDay dayGridMonth'
           },
-          initialView: 'resourceTimeGridFourDay',
+          initialView: 'resourceDayGridWeek',
           weekends: false,
           editable: true,
           dayMaxEventRows: true,
@@ -66,8 +66,8 @@ export default {
             dayGrid: {
               dayMaxEvents: 4,
             },
-            resourceTimeGridFourDay: {
-              type: 'resourceTimeGrid',
+            resourceDayGridWeek: {
+              type: 'resourceDayGrid',
               duration: { weeks: 1 },
               buttonText: 'Harmonogram 2'
             },
