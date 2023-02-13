@@ -79,7 +79,8 @@ export default {
             }
           },
           resources: [
-            { id: 'a', title: 'Room A' }
+            { id: '0', title: 'Monter A' },
+            { id: '1', title: 'Monter B' }
           ],
           events: {
             url: this.filterRoute,
