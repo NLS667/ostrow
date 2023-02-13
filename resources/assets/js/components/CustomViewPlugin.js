@@ -3,7 +3,9 @@ import { sliceEvents, createPlugin } from '@fullcalendar/core';
 const CustomViewConfig = {
 
   classNames: [ 'custom-view' ],
-  /**
+  title: 'Harmonogram',
+  buttonText: 'Harmonogram',
+  type: 'list',
   content: function(props) {
     let segs = sliceEvents(props, true); // allDay=true
     let html =
@@ -12,7 +14,7 @@ const CustomViewConfig = {
       '</div>'
 
     return { html: html }
-  }**/
+  }
 
 }
 
