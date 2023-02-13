@@ -68,11 +68,6 @@ export default {
             },
             dayGrid: {
               dayMaxEvents: 4,
-            },
-            CustomView: {
-                type: 'custom',
-                buttonText: 'my Custom View',
-                click:  $('#calendar').fullCalendar('changeView', 'CustomView')
             }
           },
           events: {
