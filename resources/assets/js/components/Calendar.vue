@@ -44,6 +44,7 @@ export default {
             interactionPlugin,
             listPlugin,
             bootstrapPlugin,
+            resourceTimeGridPlugin,
             CustomViewPlugin
           ],
           headerToolbar : {
