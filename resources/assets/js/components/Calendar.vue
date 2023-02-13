@@ -11,10 +11,11 @@ import dayGridPlugin from "@fullcalendar/daygrid"
 import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
 import listPlugin from "@fullcalendar/list"
-import plLocale from '@fullcalendar/core/locales/pl';
-import bootstrapPlugin from '@fullcalendar/bootstrap';
+import plLocale from '@fullcalendar/core/locales/pl'
+import bootstrapPlugin from '@fullcalendar/bootstrap'
 import ShowTaskModal from './ShowTaskModal'
 import CustomViewPlugin from './CustomViewPlugin'
+import resourceTimeGridPlugin from '@fullcalendar/resource-timegrid';
 
 import "@fullcalendar/common/main.css"
 import "@fullcalendar/daygrid/main.css"
