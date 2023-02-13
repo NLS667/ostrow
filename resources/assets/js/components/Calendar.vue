@@ -69,7 +69,10 @@ export default {
             dayGrid: {
               dayMaxEvents: 4,
             },
-            custom: {}
+            custom: {
+              title: 'Harmonogram',
+              buttonText: 'Harmonogram',
+            }
           },
           events: {
             url: this.filterRoute,
