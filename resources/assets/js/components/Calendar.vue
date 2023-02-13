@@ -53,9 +53,9 @@ export default {
           headerToolbar : {
             start: 'prev next today',
             center: 'title',
-            end: 'dayGridMonth timeGridWeek timeGridDay listWeek custom'
+            end: 'custom dayGridMonth timeGridWeek timeGridDay listWeek'
           },
-          initialView: 'dayGridMonth',
+          initialView: 'custom',
           weekends: true,
           editable: true,
           dayMaxEventRows: true,
@@ -70,7 +70,10 @@ export default {
               dayMaxEvents: 4,
             },
             custom: {
-              
+              type: 'list',
+              title: 'Harmonogram',
+              duration: { days: 4 },
+              buttonText: 'Harmonogram'
             }
           },
           events: {
