@@ -51,7 +51,7 @@ export default {
             CustomViewPlugin
           ],
           headerToolbar : {
-            start: 'prev next today',
+            start: 'prev today next',
             center: 'title',
             end: 'custom timeGridDay dayGridMonth'
           },
@@ -70,11 +70,15 @@ export default {
               dayMaxEvents: 4,
             },
             custom: {
+              type: 'resourceTimeGrid',
               title: 'Harmonogram',
               buttonText: 'Harmonogram',
               duration: { weeks: 1 }
             }
           },
+          resources: [
+            { id: 'a', title: 'Room A' }
+          ],
           events: {
             url: this.filterRoute,
             method: 'GET',
