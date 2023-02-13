@@ -67,11 +67,10 @@ export default {
             },
             resourceTimeGridFourDay: {
               type: 'resourceTimeGrid',
-              duration: { week: 1 },
+              duration: { weeks: 1 },
               buttonText: 'Harmonogram 2'
             },
             custom: {
-              type: 'resourceTimeGrid',
               title: 'Harmonogram',
               buttonText: 'Harmonogram',
               duration: { weeks: 1 }
