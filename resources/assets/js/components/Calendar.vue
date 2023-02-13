@@ -47,14 +47,15 @@ export default {
             listPlugin,
             bootstrapPlugin,
             resourceDayGridPlugin,
+            resourceTimelinePlugin,
             CustomViewPlugin
           ],
           headerToolbar : {
             start: 'prev today next',
             center: 'title',
-            end: 'custom resourceTimeline timeGridDay dayGridMonth'
+            end: 'custom resourceTimelineWeek timeGridDay dayGridMonth'
           },
-          initialView: 'resourceTimeline',
+          initialView: 'resourceTimelineWeek',
           weekends: false,
           editable: true,
           dayMaxEventRows: true,
@@ -73,7 +74,7 @@ export default {
               duration: { weeks: 1 },
               buttonText: 'Harmonogram 2'
             },
-            resourceTimeline: {
+            resourceTimelineWeek: {
               type: 'resourceTimeline',
               duration: { weeks: 1 },
               buttonText: 'Harmonogram 3'
