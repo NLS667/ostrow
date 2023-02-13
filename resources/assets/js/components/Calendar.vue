@@ -72,6 +72,7 @@ export default {
             custom: {
               title: 'Harmonogram',
               buttonText: 'Harmonogram',
+              duration: { weeks: 1 }
             }
           },
           events: {
