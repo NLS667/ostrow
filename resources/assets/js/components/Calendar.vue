@@ -53,7 +53,7 @@ export default {
           headerToolbar : {
             start: 'prev today next',
             center: 'title',
-            end: 'custom timeGridDay dayGridMonth'
+            end: 'resourceTimeGridFourDay timeGridDay dayGridMonth'
           },
           initialView: 'custom',
           weekends: false,
@@ -69,11 +69,10 @@ export default {
             dayGrid: {
               dayMaxEvents: 4,
             },
-            custom: {
+            resourceTimeGridFourDay: {
               type: 'resourceTimeGrid',
-              title: 'Harmonogram',
-              buttonText: 'Harmonogram',
-              duration: { weeks: 1 }
+              duration: { week: 1 },
+              buttonText: 'Harmonogram'
             }
           },
           resources: [
