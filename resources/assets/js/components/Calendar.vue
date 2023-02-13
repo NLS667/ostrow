@@ -38,6 +38,7 @@ export default {
         calendarOptions: {
           locale: plLocale,
           themeSystem: 'bootstrap',
+          schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
           plugins: [
             dayGridPlugin,
             timeGridPlugin,
