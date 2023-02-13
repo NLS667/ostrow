@@ -53,10 +53,10 @@ export default {
           headerToolbar : {
             start: 'prev next today',
             center: 'title',
-            end: 'custom dayGridMonth timeGridWeek timeGridDay listWeek'
+            end: 'custom timeGridDay dayGridMonth'
           },
           initialView: 'custom',
-          weekends: true,
+          weekends: false,
           editable: true,
           dayMaxEventRows: true,
           views: {
