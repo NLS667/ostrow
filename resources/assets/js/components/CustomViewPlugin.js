@@ -16,7 +16,7 @@ const CustomViewConfig = {
 
 }
 
-export default customViewPlugin({
+export default CustomViewPlugin({
   views: {
     custom: CustomViewConfig
   }

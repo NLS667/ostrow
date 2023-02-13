@@ -14,7 +14,7 @@ import listPlugin from "@fullcalendar/list"
 import plLocale from '@fullcalendar/core/locales/pl';
 import bootstrapPlugin from '@fullcalendar/bootstrap';
 import ShowTaskModal from './ShowTaskModal'
-import customViewPlugin from './CustomViewPlugin'
+import CustomViewPlugin from './CustomViewPlugin'
 
 import "@fullcalendar/common/main.css"
 import "@fullcalendar/daygrid/main.css"
@@ -48,7 +48,7 @@ export default {
             interactionPlugin,
             listPlugin,
             bootstrapPlugin,
-            customViewPlugin
+            CustomViewPlugin
           ],
           headerToolbar : {
             start: 'prev next today',
