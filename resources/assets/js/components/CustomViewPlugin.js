@@ -7,10 +7,9 @@ const CustomViewConfig = {
   buttonText: 'Harmonogram',
   type: 'list',
   content: function(props) {
-    let segs = sliceEvents(props, true); // allDay=true
     let html =
       '<div class="view-title">' +
-        props
+        JSON.stringify(props, null, 2)
       '</div>'
 
     return { html: html }
