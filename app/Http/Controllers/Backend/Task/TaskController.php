@@ -225,9 +225,9 @@ class TaskController extends Controller
     public function resource(Request $request)
     {
         if (auth()->user()->isAdmin()) {
-          $resource = User::with('tasks')->get();
+          $resource = User::where('tasks', '>', 0)->get();
         } else {
-          $resource = User::with('tasks')->where('id', auth()->user()->id)->get();
+          $resource = User::where('tasks', '>', 0)->where('id', auth()->user()->id)->get();
         }
 
         $resource->makeHidden(['created_at', 'updated_at','created_by','updated_by']);
