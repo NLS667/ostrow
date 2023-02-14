@@ -206,13 +206,15 @@ class TaskController extends Controller
         //$tasks = [];
         
         if (auth()->user()->isAdmin()) {
-          $tasks = Task::select("id", "start", "end", "title",  "assignee_id", "service_id", "assignee_id as resourceId")
+          $tasks = Task::select("id", "task_types.name", "start", "end", "title",  "assignee_id", "service_id", "assignee_id as resourceId")
+                  ->leftJoin('task_types', 'task.type_id', '=', 'task_types.id')
                   ->whereBetween('start', [$request->start, $request->end])
                   ->with('assignee:id,first_name,last_name')
                   ->with('service.client')
                   ->get();
         } else {
-          $tasks = Task::select("id", "start", "end", "title", "assignee_id as resourceId")
+          $tasks = Task::select("id", "task_types.name", "start", "end", "title", "assignee_id as resourceId")
+                  ->leftJoin('task_types', 'task.type_id', '=', 'task_types.id')
                   ->whereBetween('start', [$request->start, $request->end])
                   ->where('assignee_id', auth()->user()->id)
                   ->with('assignee:id,first_name,last_name')
