@@ -220,7 +220,7 @@ class TaskController extends Controller
                   ->get();
         }
 
-        $tasks->makeHidden(['created_at', 'updated_at','created_by','updated_by']);
+        $tasks->makeHidden(['created_at', 'updated_at','created_by','updated_by', "assignee_id"]);
         
         return response()->json($tasks);
     }
