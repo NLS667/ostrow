@@ -221,6 +221,19 @@ class TaskController extends Controller
         return response()->json($tasks);
     }
 
+    public function resource(Request $request)
+    {
+        if (auth()->user()->isAdmin()) {
+          $resource = User::with('tasks')->get();
+        } else {
+          $resource = User::with('tasks')->where('id', auth()->user()->id)->get();
+        }
+
+        $resource->makeHidden(['created_at', 'updated_at','created_by','updated_by']);
+        
+        return response()->json($resource);
+    }
+
     public function updateDates(Request $request)
     { 
         $data = $request->all();

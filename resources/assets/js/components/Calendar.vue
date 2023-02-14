@@ -19,7 +19,8 @@ import resourceTimelinePlugin  from '@fullcalendar/resource-timeline'
 export default {
     name: 'Calendar',
     props: {
-      filterRoute: String
+      filterRoute: String,
+      resourceRoute: String
     },
     components: {
         FullCalendar,
@@ -71,15 +72,18 @@ export default {
               buttonText: 'Harmonogram'
             }
           },
-          resources: [
-            { id: '0', title: 'Monter A' },
-            { id: '1', title: 'Monter B' }
-          ],
+          resources:{
+            url: this.resourceRoute,
+            method: 'GET',
+            failure: function() {
+              alert('Wystąpił problem podczas pobierania pracowników !');
+            }
+          },
           events: {
             url: this.filterRoute,
             method: 'GET',
             failure: function() {
-              alert('there was an error while fetching events!');
+              alert('Wystąpił problem podczas pobierania zadań !');
             },
             color: 'yellow',
             textColor: 'black'

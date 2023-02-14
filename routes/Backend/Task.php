@@ -12,6 +12,7 @@
             Route::post('task/get', TaskTableController::class)->name('task.get');
 
             Route::get('task/filter', [\App\Http\Controllers\Backend\Task\TaskController::class, 'filter'])->name('task.filter');
+            Route::get('task/resource', [\App\Http\Controllers\Backend\Task\TaskController::class, 'resource'])->name('task.resource');
 
             /*
              * Task CRUD
