@@ -9,7 +9,6 @@
 		                <button type="button" class="close" @click="closeModal" aria-label="Close">
 		                	<span aria-hidden="true">×</span>
 		                </button>
-		                <h6>{{ task.tasktype }}</h6>
 		            </div>
 
 		            <!-- Modal body -->

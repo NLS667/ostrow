@@ -206,7 +206,7 @@ class TaskController extends Controller
         //$tasks = [];
         
         if (auth()->user()->isAdmin()) {
-          $tasks = Task::select("tasks.id", "task_types.name as tasktype", "team", "note", "tasks.start", "tasks.end", DB::raw("CONCAT(task_types.name,' ',tasks.title) as title"),  "tasks.assignee_id", "tasks.service_id", "tasks.assignee_id as resourceId")
+          $tasks = Task::select("tasks.id", "task_types.name as tasktype", "team", "note", "tasks.start", "tasks.end", DB::raw("CONCAT(task_types.name,' ',tasks.title) as fulltitle"),  "tasks.assignee_id", "tasks.service_id", "tasks.assignee_id as resourceId")
                   ->leftJoin('task_types', 'tasks.type_id', '=', 'task_types.id')
                   ->whereBetween('tasks.start', [$request->start, $request->end])
                   ->with('assignee:id,first_name,last_name')
