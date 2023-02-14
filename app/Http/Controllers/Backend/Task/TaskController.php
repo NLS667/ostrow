@@ -230,7 +230,7 @@ class TaskController extends Controller
           $resource = User::has('tasks', '>', 0)->where('id', auth()->user()->id)->get();
         }
 
-        $resource->makeHidden(['created_at', 'updated_at','created_by','updated_by']);
+        $resource->only(['id', 'first_name','last_name']);
         
         return response()->json($resource);
     }
