@@ -225,9 +225,9 @@ class TaskController extends Controller
     public function resource(Request $request)
     {
         if (auth()->user()->isAdmin()) {
-          $resource = User::::select("id", DB::raw("CONCAT(users.first_name,' ',users.last_name) as title"))->has('tasks', '>', 0)->get();
+          $resource = User::select("id", DB::raw("CONCAT(users.first_name,' ',users.last_name) as title"))->has('tasks', '>', 0)->get();
         } else {
-          $resource = User::::select("id", DB::raw("CONCAT(users.first_name,' ',users.last_name) as title"))->where('id', auth()->user()->id)->get();
+          $resource = User::select("id", DB::raw("CONCAT(users.first_name,' ',users.last_name) as title"))->where('id', auth()->user()->id)->get();
         }
 
         $resource->makeHidden(['email', 'email_verified_at', 'status', 'confirmation_code', 'confirmed', 'is_term_accept', 'created_by', 'updated_by', 'created_at', 'updated_at', 'deleted_at']);
