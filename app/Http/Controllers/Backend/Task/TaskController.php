@@ -21,6 +21,7 @@ use App\Http\Responses\Backend\Task\RaportResponse;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Models\Task\Task;
+use App\Models\Access\User\User;
 use App\Repositories\Backend\Task\TaskRepository;
 use App\Repositories\Backend\Service\ServiceRepository;
 use App\Repositories\Backend\Access\User\UserRepository;
