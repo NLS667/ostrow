@@ -5,7 +5,7 @@
 		        <div class="modal-content">
 		            <!-- Modal Header -->
 		            <div class="modal-header">
-		                <h5 class="modal-title" id="ShowTaskModal">{{ task.fulltitle }}</h5>
+		                <h5 class="modal-title" id="ShowTaskModal">{{ task.title }}</h5>
 		                <button type="button" class="close" @click="closeModal" aria-label="Close">
 		                	<span aria-hidden="true">×</span>
 		                </button>
