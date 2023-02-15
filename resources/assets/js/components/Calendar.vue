@@ -72,6 +72,12 @@ export default {
               buttonText: 'Harmonogram'
             }
           },
+          resourceColumns: [
+            {
+              labelText: 'Pracownik',
+              field: 'title'
+            }
+          ],
           resources:{
             url: this.resourceRoute,
             method: 'GET',
