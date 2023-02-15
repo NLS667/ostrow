@@ -50,7 +50,7 @@ export default {
           headerToolbar : {
             start: 'prev today next',
             center: 'title',
-            end: 'resourceTimelineWeek timeGridDay dayGridMonth'
+            end: 'resourceTimelineWeek timeGridDay timeGridWeek dayGridMonth'
           },
           initialView: 'resourceTimelineWeek',
           weekends: false,
