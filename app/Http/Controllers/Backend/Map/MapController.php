@@ -19,7 +19,7 @@ class MapController extends Controller
     public function index()
     {
         $clients = Client::where('status', 1)->get();
-        $regions = (            
+        $regions = array(            
             "02" => "dolnośląskie",
             "04" => "kujawsko-pomorskie",
             "06" => "lubelskie",
