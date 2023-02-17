@@ -19,6 +19,24 @@ class MapController extends Controller
     public function index()
     {
         $clients = Client::where('status', 1)->get();
+        $regions = (            
+            "02" => "dolnośląskie",
+            "04" => "kujawsko-pomorskie",
+            "06" => "lubelskie",
+            "08" => "lubuskie",
+            "10" => "łódzkie",
+            "12" => "małopolskie",
+            "14" => "mazowieckie",
+            "16" => "opolskie",
+            "18" => "podkarpackie",
+            "20" => "podlaskie",
+            "22" => "pomorskie",
+            "24" => "śląskie",
+            "26" => "świętokrzyskie",
+            "28" => "warmińsko-mazurskie",
+            "30" => "wielkopolskie",
+            "32" => "zachodniopomorskie"
+        );
         $map_data = [];
 		$map_data['mapMode'] = 'large';
         $map_data['mapHeight'] = 900;
@@ -45,6 +63,7 @@ class MapController extends Controller
             {
                 $services = Service::where('client_id', $client->id)->get();
                 $client_markers = [];
+                $client->adr_region = $regions[$client->adr_region];
 
                 if(auth()->user()->hasRole('Pracownik'))
                 {                    
