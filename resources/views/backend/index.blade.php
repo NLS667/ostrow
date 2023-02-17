@@ -85,7 +85,7 @@
               </div>
             </div>
             <div class="card-body ">
-              <calendar filter-route="{{ route('admin.task.filter') }}" />
+              <calendar filter-route="{{ route('admin.task.filter') }}" resource-route="{{ route('admin.task.resource') }}" />
             </div>
           </div>
         </div>
