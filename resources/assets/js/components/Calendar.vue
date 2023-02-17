@@ -52,6 +52,7 @@ export default {
             center: 'title',
             end: 'resourceTimelineWeek timeGridDay timeGridWeek dayGridMonth'
           },
+          height: auto,
           initialView: 'resourceTimelineWeek',
           weekends: false,
           editable: true,
