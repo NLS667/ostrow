@@ -63,7 +63,7 @@ class MapController extends Controller
             {
                 $services = Service::where('client_id', $client->id)->get();
                 $client_markers = [];
-                $client->adr_region = $regions[$client->adr_region];
+                $client->adr_region = "woj. ".$regions[$client->adr_region];
 
                 if(auth()->user()->hasRole('Pracownik'))
                 {                    
