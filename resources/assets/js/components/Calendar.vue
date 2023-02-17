@@ -69,12 +69,7 @@ export default {
             resourceTimelineWeek: {
               type: 'resourceTimeline',
               duration: { weeks: 1 },
-              buttonText: 'Harmonogram',              
-              slotLabelFormat: [
-                { month: 'long', year: 'numeric' }, 
-                { weekday: 'short' }
-              ],
-
+              buttonText: 'Harmonogram',
             }
           },
           resourceAreaColumns: [
