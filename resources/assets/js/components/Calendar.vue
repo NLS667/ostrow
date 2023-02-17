@@ -69,7 +69,7 @@ export default {
             resourceTimelineWeek: {
               type: 'resourceTimeline',
               duration: { weeks: 1 },
-              buttonText: 'Harmonogram',
+              buttonText: 'Harmonogram'
             }
           },
           resourceAreaColumns: [
