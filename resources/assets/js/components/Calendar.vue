@@ -72,9 +72,9 @@ export default {
               buttonText: 'Harmonogram'
             }
           },
-          resourceColumns: [
+          resourceAreaColumns: [
             {
-              labelText: 'Pracownik',
+              headerContent: 'Pracownik',
               field: 'title'
             }
           ],
