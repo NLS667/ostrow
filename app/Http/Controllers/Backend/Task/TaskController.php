@@ -254,7 +254,7 @@ class TaskController extends Controller
                                 ->where('id', '!=', $data['data']['id'])
                                 ->where('start', '>', $data['data']['start'])
                                 ->get();
-        if($laterTaskToUpdate == null){
+        if($laterTaskToUpdate != null){
             DebugBar::info(json_encode($laterTaskToUpdate));
 
             $delta = date_diff(date_create($laterTaskToUpdate->start), date_create($taskToUpdate->end));
