@@ -29,8 +29,7 @@ use App\Repositories\Backend\Access\User\UserRepository;
 use App\Repositories\Backend\TaskType\TaskTypeRepository;
 use App\Models\Device\Device;
 use Barryvdh\DomPDF\Facade\Pdf;
-use DebugBar\DebugBar;
-
+use Barryvdh\Debugbar\Facade as DebugBar;
 /**
  * Class TaskController.
  */
