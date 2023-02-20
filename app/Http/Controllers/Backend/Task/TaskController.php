@@ -249,7 +249,7 @@ class TaskController extends Controller
                                 ->where('id', '!=', $data['data']['id'])
                                 ->where('start', '>', $data['data']['start'])
                                 ->where('start', '<', $data['data']['end'])
-                                ->get();
+                                ->first();
         if($laterTaskToUpdate->count() > 0){
             $delta = date_diff($laterTaskToUpdate->start, $taskToUpdate->end);
             DebugBar::info(json_encode($laterTaskToUpdate));
