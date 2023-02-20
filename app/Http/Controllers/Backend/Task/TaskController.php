@@ -251,7 +251,7 @@ class TaskController extends Controller
                                 ->where('start', '<', $data['data']['end'])
                                 ->get();
 
-        DebugBar::info(json_encode($laterTasksToUpdate));
+        DebugBar::info(json_encode($laterTaskToUpdate));
         $this->tasks->update($taskToUpdate, $data['data']);
     }
 }
