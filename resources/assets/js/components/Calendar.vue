@@ -95,7 +95,7 @@ export default {
             color: 'yellow',
             textColor: 'black'
           },
-          eventOverlap: false,
+          eventOverlap: true,
           eventResize: this.handleEventResize,
           eventDrop: this.handleEventDrop,
           eventClick: this.handleEventClick
