@@ -257,7 +257,7 @@ class TaskController extends Controller
         if($laterTaskToUpdate != null){
             DebugBar::info(json_encode($laterTaskToUpdate));
 
-            $delta = date_diff(date_create($laterTaskToUpdate->start), date_create($data['data']['end'])));
+            $delta = date_diff(date_create($laterTaskToUpdate->start), date_create($data['data']['end']));
             DebugBar::info($delta->format("%H:%I:%S (Full days: %a)"));
 
             foreach ($allLaterTasks as $laterTask) {
