@@ -177,7 +177,7 @@ export default {
         },
 
         rerenderCalendar() {
-          FullCalendar.getApi().refetchEvents()
+          this.getApi().refetchEvents()
         }
     },
 };
