@@ -120,7 +120,9 @@ export default {
               confirmButtonColor: "#3C8DBC",
               confirmButtonText: "OK"
             });
-            $('#fillCalendar').fullCalendar('rerenderEvents');
+            
+            let calendar = this.$parent.$parent.$refs.calsession.getApi();
+            calendar.refetchEvents()
           })
           .catch( error => {
             e.revert()
