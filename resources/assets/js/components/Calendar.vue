@@ -120,9 +120,7 @@ export default {
               confirmButtonColor: "#3C8DBC",
               confirmButtonText: "OK"
             });
-            
-            let calendar = this.$parent.$parent.$refs.calsession.getApi();
-            calendar.refetchEvents()
+            console.log(e);
           })
           .catch( error => {
             e.revert()
