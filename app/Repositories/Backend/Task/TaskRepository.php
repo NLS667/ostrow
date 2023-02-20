@@ -146,7 +146,7 @@ class TaskRepository extends BaseRepository
                                         ->where('start', '>', $request['start'])
                                         ->get();
                 if($laterTaskToUpdate != null){
-                    $delta = date_diff(date_create($laterTaskToUpdate->start), date_create($data['data']['end']));
+                    $delta = date_diff(date_create($laterTaskToUpdate->start), date_create($request['end']));
                     
                     foreach ($allLaterTasks as $laterTask) {
 
