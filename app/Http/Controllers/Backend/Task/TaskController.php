@@ -255,33 +255,33 @@ class TaskController extends Controller
                                 ->where('start', '>', $data['data']['start'])
                                 ->get();
         if($laterTaskToUpdate != null){
-            DebugBar::info(json_encode($laterTaskToUpdate));
+            //DebugBar::info(json_encode($laterTaskToUpdate));
 
             $delta = date_diff(date_create($laterTaskToUpdate->start), date_create($data['data']['end']));
-            DebugBar::info($delta->format("%H:%I:%S (Full days: %a)"));
+            //DebugBar::info($delta->format("%H:%I:%S (Full days: %a)"));
 
             foreach ($allLaterTasks as $laterTask) {
 
                 $start = date_create($laterTask->start)->add($delta);
-                DebugBar::info("old start date:");
-                DebugBar::info(date_create($laterTask->start)->format('Y-m-d H:i:s'));
-                DebugBar::info("new start date:");
-                DebugBar::info($start->format('Y-m-d H:i:s'));
+                //DebugBar::info("old start date:");
+                //DebugBar::info(date_create($laterTask->start)->format('Y-m-d H:i:s'));
+                //DebugBar::info("new start date:");
+                //DebugBar::info($start->format('Y-m-d H:i:s'));
 
                 $end = date_create($laterTask->end)->add($delta);
-                DebugBar::info("old end date:");
-                DebugBar::info(date_create($laterTask->end)->format('Y-m-d H:i:s'));
-                DebugBar::info("old end date:");
-                DebugBar::info($end->format('Y-m-d H:i:s'));
+                //DebugBar::info("old end date:");
+                //DebugBar::info(date_create($laterTask->end)->format('Y-m-d H:i:s'));
+                //DebugBar::info("old end date:");
+                //DebugBar::info($end->format('Y-m-d H:i:s'));
 
-                //$laterTask->start = $start;
-                //$laterTask->end = $end;
-                //$laterTask->save();
+                $laterTask->start = $start;
+                $laterTask->end = $end;
+                $laterTask->save();
             }
             
             
         } else {
-            DebugBar::info("Nothing to update");
+            //DebugBar::info("Nothing to update");
         }
 
         
