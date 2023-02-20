@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FullCalendar :options="calendarOptions" />
+    <FullCalendar :options="calendarOptions" ref="fullCalendar"/>
     <show-task-modal :show="show_task_details_modal" :task="current_task" :client="task_client_id" @close="show_task_details_modal = false" />
   </div>
 </template>
@@ -177,7 +177,7 @@ export default {
         },
 
         rerenderCalendar() {
-          let cal = this.$parent.$refs.calsession.getApi()
+          let cal = this.$refs.fullCalendar.getApi()
           cal.refetchEvents()
         }
     },
