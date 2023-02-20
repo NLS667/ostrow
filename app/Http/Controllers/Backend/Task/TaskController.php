@@ -29,6 +29,7 @@ use App\Repositories\Backend\Access\User\UserRepository;
 use App\Repositories\Backend\TaskType\TaskTypeRepository;
 use App\Models\Device\Device;
 use Barryvdh\DomPDF\Facade\Pdf;
+use DebugBar\DebugBar;
 
 /**
  * Class TaskController.
@@ -245,6 +246,11 @@ class TaskController extends Controller
         $data = $request->all();
         $taskToUpdate = $this->tasks->find($data['data']['id']);
 
+        $laterTasksToUpdate = $this->tasks
+                                ->where('assignee_id', '=', $taskToUpdate->assignee_id)
+                                ->where('start', '>', $data['data']['start'])
+                                ->get();
+        DebugBar::info(json_encode($laterTasksToUpdate));
         $this->tasks->update($taskToUpdate, $data['data']);
     }
 }
