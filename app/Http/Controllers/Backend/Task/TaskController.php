@@ -250,8 +250,13 @@ class TaskController extends Controller
                                 ->where('start', '>', $data['data']['start'])
                                 ->where('start', '<', $data['data']['end'])
                                 ->get();
+        if($laterTaskToUpdate->count() > 0){
+            DebugBar::info(json_encode($laterTaskToUpdate));
+        } else {
+            DebugBar::info("Nothing to update");
+        }
 
-        DebugBar::info(json_encode($laterTaskToUpdate));
+        
         $this->tasks->update($taskToUpdate, $data['data']);
     }
 }
