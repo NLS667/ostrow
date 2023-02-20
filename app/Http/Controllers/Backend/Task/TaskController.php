@@ -251,7 +251,7 @@ class TaskController extends Controller
                                 ->where('start', '<', $data['data']['end'])
                                 ->first();
         if($laterTaskToUpdate->count() > 0){
-            $delta = date_diff($laterTaskToUpdate->start, $taskToUpdate->end);
+            $delta = date_diff(new DateTime($laterTaskToUpdate->start), new DateTime($taskToUpdate->end));
             DebugBar::info(json_encode($laterTaskToUpdate));
             DebugBar::info($delta->format("%H:%I:%S (Full days: %a)"));
         } else {
