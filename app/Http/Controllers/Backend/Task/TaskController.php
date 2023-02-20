@@ -246,8 +246,7 @@ class TaskController extends Controller
         $data = $request->all();
         $taskToUpdate = $this->tasks->find($data['data']['id']);
 
-        $laterTasksToUpdate = $this->tasks
-                                ->where('assignee_id', '=', $taskToUpdate->assignee_id)
+        $laterTasksToUpdate = Task::where('assignee_id', '=', $taskToUpdate->assignee_id)
                                 ->where('start', '>', $data['data']['start'])
                                 ->get();
         DebugBar::info(json_encode($laterTasksToUpdate));
