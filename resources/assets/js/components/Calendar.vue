@@ -112,6 +112,7 @@ export default {
 
           axios.post('/admin/task/updateDates', { data: updatedEventData })
           .then( ({data}) => {
+            this.rerenderCalendar()
             Swal.fire({
               title: "Zmiana daty",
               text: "Zadanie " + e.event.title + " skończy się " + this.formatDate(e.event.end, 'DD/MM/YYYY HH:mm'),
@@ -132,8 +133,6 @@ export default {
               confirmButtonText: "OK"
             })
           })
-          
-          this.rerenderCalendar()
         },
         handleEventClick(e) {
             this.current_task = e.event
@@ -149,6 +148,7 @@ export default {
 
           axios.post('/admin/task/updateDates', { data: updatedEventData })
           .then( ({data}) => {
+            this.rerenderCalendar()
             Swal.fire({
               title: "Zmiana daty",
               text: "Zadanie " + e.event.title + " zacznie się " + this.formatDate(e.event.start, 'DD/MM/YYYY HH:mm'),
@@ -169,8 +169,6 @@ export default {
               confirmButtonText: "OK"
             })
           })
-
-          this.rerenderCalendar()
         },
         formatDate(date, format = 'DD/MM/YYYY HH:mm') {
           return moment(date).format(format)
