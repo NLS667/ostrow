@@ -270,7 +270,7 @@ class TaskController extends Controller
 
                 $end = date_create($laterTask->end)->add($delta);
                 DebugBar::info("old end date:");
-                DebugBar::info(date_create($taskToUpdate->end)->format('Y-m-d H:i:s'));
+                DebugBar::info(date_create($laterTask->end)->format('Y-m-d H:i:s'));
                 DebugBar::info("old end date:");
                 DebugBar::info($end->format('Y-m-d H:i:s'));
 
