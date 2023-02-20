@@ -120,7 +120,6 @@ export default {
               confirmButtonColor: "#3C8DBC",
               confirmButtonText: "OK"
             });
-            this.rerenderCalendar()
           })
           .catch( error => {
             e.revert()
@@ -133,6 +132,8 @@ export default {
               confirmButtonText: "OK"
             })
           })
+          
+          this.rerenderCalendar()
         },
         handleEventClick(e) {
             this.current_task = e.event
@@ -156,7 +157,6 @@ export default {
               confirmButtonColor: "#3C8DBC",
               confirmButtonText: "OK"
             })
-            this.rerenderCalendar()
           })
           .catch( error => {
             e.revert()
@@ -169,6 +169,8 @@ export default {
               confirmButtonText: "OK"
             })
           })
+
+          this.rerenderCalendar()
         },
         formatDate(date, format = 'DD/MM/YYYY HH:mm') {
           return moment(date).format(format)
