@@ -120,7 +120,7 @@ export default {
               confirmButtonColor: "#3C8DBC",
               confirmButtonText: "OK"
             });
-            console.log(e);
+            this.rerenderCalendar()
           })
           .catch( error => {
             e.revert()
@@ -156,6 +156,7 @@ export default {
               confirmButtonColor: "#3C8DBC",
               confirmButtonText: "OK"
             })
+            this.rerenderCalendar()
           })
           .catch( error => {
             e.revert()
