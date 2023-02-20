@@ -136,6 +136,32 @@ class TaskRepository extends BaseRepository
                     $task->status = 0;
                 }
 
+                $laterTaskToUpdate = Task::where('assignee_id', '=', $task->assignee_id)
+                                ->where('id', '!=', $task->id)
+                                ->where('start', '>', $request['start'])
+                                ->where('start', '<', $request['end'])
+                                ->first();
+                $allLaterTasks = Task::where('assignee_id', '=', $task->assignee_id)
+                                        ->where('id', '!=', $task->id)
+                                        ->where('start', '>', $request['start'])
+                                        ->get();
+                if($laterTaskToUpdate != null){
+                    $delta = date_diff(date_create($laterTaskToUpdate->start), date_create($data['data']['end']));
+                    
+                    foreach ($allLaterTasks as $laterTask) {
+
+                        $start = date_create($laterTask->start)->add($delta);
+                        
+                        $end = date_create($laterTask->end)->add($delta);
+                        
+                        $laterTask->start = $start;
+                        $laterTask->end = $end;
+                        $laterTask->save();
+                    }
+                    
+                    
+                }
+
                 $task->save();
 
                 event(new TaskUpdated($task));
