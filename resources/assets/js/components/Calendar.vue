@@ -177,7 +177,7 @@ export default {
         },
 
         rerenderCalendar() {
-          let cal = this.$parent.$parent.$refs.calsession.getApi()
+          let cal = this.$parent.$refs.calsession.getApi()
           cal.refetchEvents()
         }
     },
