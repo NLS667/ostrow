@@ -119,7 +119,8 @@ export default {
               showCancelButton: false,
               confirmButtonColor: "#3C8DBC",
               confirmButtonText: "OK"
-            })
+            });
+            $('#fillCalendar').fullCalendar('rerenderEvents');
           })
           .catch( error => {
             e.revert()
