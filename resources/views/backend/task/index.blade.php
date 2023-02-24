@@ -140,17 +140,19 @@
                         let output = '';
                         switch (data) {
                             case 0:
-                                output = '<span class="badge badge-default">Nowe</a>';
+                                output = '<span class="badge badge-default">Nowe</span>';
                                 break;
                             case 1:
-                                output = '<span class="badge badge-success">Oczekujące</a>';
+                                output = '<span class="badge badge-success">Oczekujące</span>';
                                 break;
                             case 2:
-                                output = '<span class="badge badge-warning">Nadchodzące</a>';
+                                output = '<span class="badge badge-warning">Nadchodzące</span>';
                                 break;
                             case 3:
-                                output = '<span class="badge badge-danger">Po terminie</a>';
+                                output = '<span class="badge badge-danger">Po terminie</span>';
                                 break;
+                            case 4:
+                                output = '<span class="badge badge-info">Zakończone</span>';
                         }
 
                         return output;
