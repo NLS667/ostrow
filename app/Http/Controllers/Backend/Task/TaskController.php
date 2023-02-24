@@ -214,7 +214,7 @@ class TaskController extends Controller
                   ->with('service.client')
                   ->get();
         } else {
-          $tasks = Task::select("tasks.id", "task_types.name as type", "team", "note", "tasks.start", "tasks.end", DB::raw("CONCAT(task_types.name,' ',tasks.title) as title"), "tasks.assignee_id as resourceId")
+          $tasks = Task::select("tasks.id", "task_types.name as tasktype", "team", "note", "tasks.start", "tasks.end", DB::raw("CONCAT(task_types.name,' ',tasks.title) as title"), "tasks.assignee_id", "tasks.service_id", "tasks.assignee_id as resourceId")
                   ->leftJoin('task_types', 'tasks.type_id', '=', 'task_types.id')
                   ->whereBetween('tasks.start', [$request->start, $request->end])
                   ->where('assignee_id', auth()->user()->id)
