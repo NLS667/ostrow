@@ -93,7 +93,7 @@ class ShowResponse implements Responsable
                 }
                 $task_data[] = (object)[
                     'service' => $service->service_type_short,
-                    'tasktype' => $task->taskType,
+                    'tasktype' => $task->type,
                     'start' => $task->start,
                     'assignee' => $task->assignee_name,
                     'status' => $status,
