@@ -31,8 +31,9 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th colspan="3" class="text-right">RAZEM</th>
-                                        <th class="text-center">{{ $GrandTotal["GTAmount"] }}</th>
+                                        <th colspan="2">&nbsp;</th>
+                                        <th class="text-left">RAZEM</th>
+                                        <th class="text-right">{{ $GrandTotal["GTAmount"] }}</th>
                                         <th class="text-right">{{ $GrandTotal["GTAdvance"] }}</th>
                                         <th class="text-right">{{ $GrandTotal["GTLeft"] }}</th>
                                         <th class="text-right"></th>
