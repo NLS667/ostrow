@@ -65,6 +65,7 @@ class ShowResponse implements Responsable
         $task_data = [];
         $note_data = [];
         $this->client->adr_region = $this->regions[$this->client->adr_region];
+        $this->client->comm_adr_region = $this->regions[$this->client->comm_adr_region];
 
         foreach($this->serviceCategories as $category)
         {
