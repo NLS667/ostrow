@@ -25,7 +25,7 @@ class ShowResponse implements Responsable
         $this->serviceCategories = $serviceCategories;
         $this->services = $services;
         $this->helper = $helper;
-        $this->regions = (object)[
+        $this->regions = (array)[
             "02" => "dolnośląskie",
             "04" => "kujawsko-pomorskie",
             "06" => "lubelskie",
@@ -64,6 +64,7 @@ class ShowResponse implements Responsable
         $client_data = [];
         $task_data = [];
         $note_data = [];
+        $this->client->adr_region = $this->regions[$this->client->adr_region];
 
         foreach($this->serviceCategories as $category)
         {
@@ -138,7 +139,6 @@ class ShowResponse implements Responsable
                 ->with('task_data', $task_data)
                 ->with('map_data', $map_data)
                 ->with('helper', $this->helper)
-                ->with('regions', $this->regions)
                 ->with('notes', $note_data);
     }
 }
