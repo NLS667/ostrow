@@ -70,6 +70,14 @@
                 </div>
                 <div class="card">
                   <div class="card-header">
+                    <h4 class="card-title">Notatki / Dodatkowe informacje</h4>
+                  </div>
+                  <div class="card-body">
+                    <p>{{$client->extra_info}}</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
                     <h4 class="card-title">Usługi wykonywane dla klienta</h4>
                   </div>
                   <div class="card-body">
@@ -168,6 +176,7 @@
                     <thead>
                       <tr>
                         <th scope="col">Usługa</th>
+                        <th scope="col">Typ</th>
                         <th scope="col">Data</th>
                         <th scope="col">Pracownik</th>
                         <th scope="col">Akcje</th>
@@ -177,6 +186,7 @@
                       @foreach ($task_data as $task)
                       <tr class="{{ $task->status }}">
                         <td>{{ $task->service }}</td>
+                        <td>{{ $task->tasktype }}</td>
                         <td>{{ $task->start }}</td>
                         <td>{{ $task->assignee }}</td>
                         <td class="td-actions">{!! $task->edit_link !!}</td>
