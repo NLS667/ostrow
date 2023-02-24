@@ -153,7 +153,7 @@
                         <span id="models-error" class="error text-danger" for="input-models">{{ $errors->first('models.'.$y) }}</span>
                       @endif
                     </div>
-                    @if($i == 0)
+                    @if($y == 0)
                     <div class="col-sm-6">
                       <button type="button" name="add_device" id="add_device" class="btn btn-primary">Dodaj urządzenie</button>
                     </div>
