@@ -31,13 +31,11 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Nazwa</th>
-                                        <th>Adres</th>
-                                        <th>Usługa</th>
-                                        <th class="text-right">Wartość umowy</th>
-                                        <th class="text-right">Wpłacone zaliczki</th>
-                                        <th class="text-right">Pozostało do zapłaty</th>
-                                        <th class="text-right">Akcje</th>
+                                        <th colspan="3" class="text-right">RAZEM</th>
+                                        <th class="text-center">{{ $GrandTotal["GTAmount"] }}</th>
+                                        <th class="text-right">{{ $GrandTotal["GTAdvance"] }}</th>
+                                        <th class="text-right">{{ $GrandTotal["GTLeft"] }}</th>
+                                        <th class="text-right"></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -89,7 +87,6 @@
                 amountTotal += service.deal_amount;
                 advanceTotal += service.deal_advance;
                 leftTotal += service.left_amount;
-                console.log(amountTotal);
               }
               if(leftTotal == '0.00'){
                     var newStyle = 'text-success';

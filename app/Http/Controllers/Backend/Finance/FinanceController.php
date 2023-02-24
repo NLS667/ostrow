@@ -49,11 +49,18 @@ class FinanceController extends Controller
     public function index(ManageFinanceRequest $request)
     {
     	$clients = $this->clients->getAll();
-
+        $GrandTotalAmount = 0;
+        $GrandTotalAdvance = 0;
+        $GrandTotalLeft = 0;
     	$finance_data = [];
     	foreach($clients as $client){    		
     		$client_services = $this->services->query()->where('client_id', $client->id)->get();
     		if($client_services->count() > 0){
+                foreach($client_services as $client_service){
+                    $GrandTotalAmount += $client_service->deal_amount;
+                    $GrandTotalAdvance += $client_service->deal_advance;
+                    $GrandTotalLeft += $client_service->deal_amount - $client_service->deal_advance;
+                }
     			$finance_data[] = (object)[
 	    			'name' => $client->full_name,
 	                'address' => $client->address,
@@ -62,6 +69,10 @@ class FinanceController extends Controller
     		}
     	}
 
-        return new ViewResponse('backend.finance.index', ['data' => $finance_data]);
+        $gt_data['GTAmount'] = $GrandTotalAmount;
+        $gt_data['GTAdvance'] = $GrandTotalAdvance;
+        $gt_data['GTLeft'] = $GrandTotalLeft;
+
+        return new ViewResponse('backend.finance.index', ['data' => $finance_data, 'GrandTotal' => $gt_data]);
     }
 }
