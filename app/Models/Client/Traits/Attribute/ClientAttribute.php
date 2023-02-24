@@ -211,7 +211,9 @@ trait ClientAttribute
             $tasks = Task::where('service_id', $service->id)->get();
             foreach($tasks as $task){
                 if($task->status > $highest_status){
-                    $highest_status = $task->status;
+                    if($task->status != 4)
+                        $highest_status = $task->status;
+                    }
                 }
             }            
         }

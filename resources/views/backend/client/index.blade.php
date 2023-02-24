@@ -166,6 +166,9 @@
                             case 3:
                                 return '<span class="badge badge-danger">PO TERMINIE</a>';
                                 break;
+                            case 4:
+                                return '<span class="badge badge-default">BRAK ZADAŃ</a>';
+                                break;
                         }
                     }},
                     {data: 'services', name: 'service_categories.name', sortable: false},  
