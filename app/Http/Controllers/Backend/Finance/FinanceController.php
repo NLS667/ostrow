@@ -69,9 +69,9 @@ class FinanceController extends Controller
     		}
     	}
 
-        $gt_data['GTAmount'] = $GrandTotalAmount;
-        $gt_data['GTAdvance'] = $GrandTotalAdvance;
-        $gt_data['GTLeft'] = $GrandTotalLeft;
+        $gt_data['GTAmount'] = number_format($GrandTotalAmount, 2, '.', "");
+        $gt_data['GTAdvance'] = number_format($GrandTotalAdvance, 2, '.', "");
+        $gt_data['GTLeft'] = number_format($GrandTotalLeft, 2, '.', "");
 
         return new ViewResponse('backend.finance.index', ['data' => $finance_data, 'GrandTotal' => $gt_data]);
     }
