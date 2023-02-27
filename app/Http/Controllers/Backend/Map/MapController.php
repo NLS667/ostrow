@@ -72,9 +72,9 @@ class MapController extends Controller
                         $service_tasks = $service->tasks()->whereDate('start', '>', Carbon::now()->subMonths(6))->get();
 
                         foreach($service_tasks as $task){
-                            if(auth()->user()->hasRole('Pracownik'))
-                            {   
-                                if($layer->id == $catid){                 
+                            if($layer->id == $catid){ 
+                                if(auth()->user()->hasRole('Pracownik'))
+                                {               
                                     if ($task->assignee_id == auth()->user()->id) {
                                         $layer->markers[]  = (object)[
                                             'content' => view('backend.map.popup')->with('client', $client)->render(),
@@ -82,9 +82,7 @@ class MapController extends Controller
                                             'title' => $client->full_name,
                                         ];
                                     }
-                                }
-                            } else {
-                                if($layer->id == $catid){
+                                } else {
                                     $layer->markers[]  = (object)[
                                         'content' => view('backend.map.popup')->with('client', $client)->render(),
                                         'coords' => [$client->adr_lattitude, $client->adr_longitude],
@@ -97,7 +95,7 @@ class MapController extends Controller
                 }
             }  
         }
-        
+
         return view('backend.map.index')->with('map_data', $map_data);
     }
 }
