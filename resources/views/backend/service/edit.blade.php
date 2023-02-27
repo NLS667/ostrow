@@ -159,7 +159,7 @@
                     </div>
                     @else
                     <div class="col-sm-6">
-                      <button type="button" name="remove" id="{{ $i }}" class="btn btn-danger btn_remove_dev">X</button>
+                      <button type="button" name="remove" id="{{ $y }}" class="btn btn-danger btn_remove_dev">X</button>
                     </div>
                     @endif
                   </div>

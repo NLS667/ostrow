@@ -65,13 +65,6 @@ class MapController extends Controller
                 $client_markers = [];
                 $client->adr_region = "woj. ".$regions[$client->adr_region];
 
-                if(auth()->user()->hasRole('Pracownik'))
-                {                    
-                    $allowed = false;
-                } else {
-                    $allowed = true;
-                }
-
                 foreach($map_data['layers'] as $layer){
 
                     foreach($services as $service){
@@ -79,24 +72,32 @@ class MapController extends Controller
                         $service_tasks = $service->tasks()->whereDate('start', '>', Carbon::now()->subMonths(6))->get();
 
                         foreach($service_tasks as $task){
-                            if ($task->assignee_id == auth()->user()->id) {
-                                $allowed = true;
-                            }
-                        }
-
-                        if($layer->id == $catid){
-                            if($allowed){
-                                $layer->markers[]  = (object)[
-                                    'content' => view('backend.map.popup')->with('client', $client)->render(),
-                                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                                    'title' => $client->full_name,
-                                ];
+                            if(auth()->user()->hasRole('Pracownik'))
+                            {   
+                                if($layer->id == $catid){                 
+                                    if ($task->assignee_id == auth()->user()->id) {
+                                        $layer->markers[]  = (object)[
+                                            'content' => view('backend.map.popup')->with('client', $client)->render(),
+                                            'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                                            'title' => $client->full_name,
+                                        ];
+                                    }
+                                }
+                            } else {
+                                if($layer->id == $catid){
+                                    $layer->markers[]  = (object)[
+                                        'content' => view('backend.map.popup')->with('client', $client)->render(),
+                                        'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                                        'title' => $client->full_name,
+                                    ];
+                                }
                             }
                         }
                     }
                 }
             }  
         }
+        
         return view('backend.map.index')->with('map_data', $map_data);
     }
 }
