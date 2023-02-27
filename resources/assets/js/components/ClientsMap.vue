@@ -94,7 +94,7 @@
 
                         const markerHtmlStyles = 'background-color: ${myCustomColour};width: 3rem;height: 3rem;display: block;left: -1.5rem;top: -1.5rem;position: relative;border-radius: 3rem 3rem 0;transform: rotate(45deg);border: 1px solid #FFFFFF'
 
-                        let icon = L.divIcon({className: 'custom-icon', html: '<span style="${markerHtmlStyles}" />'})
+                        let icon = L.divIcon({className: 'custom-icon', html: '<span style="'+markerHtmlStyles+'" />'})
                         layer_data.markers = [];
                         layerD.markers.forEach((marker) => {
                             var markerOptions = {
