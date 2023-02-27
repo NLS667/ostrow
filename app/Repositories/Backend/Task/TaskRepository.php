@@ -138,7 +138,7 @@ class TaskRepository extends BaseRepository
             }
 
             throw new GeneralException(trans('exceptions.backend.tasks.create_error'));
-        }
+        });
     }
 
 
