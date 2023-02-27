@@ -26,6 +26,24 @@ class AdminController extends Controller
 
 
         $clients = Client::where('status', 1)->get();
+        $regions = array(            
+            "02" => "dolnośląskie",
+            "04" => "kujawsko-pomorskie",
+            "06" => "lubelskie",
+            "08" => "lubuskie",
+            "10" => "łódzkie",
+            "12" => "małopolskie",
+            "14" => "mazowieckie",
+            "16" => "opolskie",
+            "18" => "podkarpackie",
+            "20" => "podlaskie",
+            "22" => "pomorskie",
+            "24" => "śląskie",
+            "26" => "świętokrzyskie",
+            "28" => "warmińsko-mazurskie",
+            "30" => "wielkopolskie",
+            "32" => "zachodniopomorskie"
+        );
         $data['clientCount'] = $clients->count();
 
         $new_tasks = Task::where('status', 0)->get();
@@ -61,14 +79,7 @@ class AdminController extends Controller
             {
                 $services = Service::where('client_id', $client->id)->get();
                 $client_markers = [];
-
-                if(auth()->user()->hasRole('Pracownik'))
-                {                    
-                    $allowed = false;
-                } else {
-                    $allowed = true;
-                }
-
+                $client->adr_region = "woj. ".$regions[$client->adr_region];
 
                 foreach($map_data['layers'] as $layer){
 
@@ -77,18 +88,23 @@ class AdminController extends Controller
                         $service_tasks = $service->tasks()->whereDate('start', '>', Carbon::now()->subMonths(6))->get();
                         
                         foreach($service_tasks as $task){
-                            if ($task->assignee_id == auth()->user()->id) {
-                                $allowed = true;
-                            }
-                        }
-
-                        if($layer->id == $catid){
-                            if($allowed){
-                                $layer->markers[]  = (object)[
-                                    'content' => view('backend.map.popup')->with('client', $client)->render(),
-                                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                                    'title' => $client->full_name,
-                                ];
+                            if($layer->id == $catid){ 
+                                if(auth()->user()->isAdmin())
+                                {               
+                                    $layer->markers[]  = (object)[
+                                        'content' => view('backend.map.popup')->with('client', $client)->render(),
+                                        'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                                        'title' => $client->full_name,
+                                    ];
+                                } else {                                    
+                                    if ($task->assignee_id == auth()->user()->id) {
+                                        $layer->markers[]  = (object)[
+                                            'content' => view('backend.map.popup')->with('client', $client)->render(),
+                                            'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                                            'title' => $client->full_name,
+                                        ];
+                                    }
+                                }
                             }
                         }
                     }
