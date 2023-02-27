@@ -60,16 +60,22 @@ class AdminController extends Controller
         $map_data['layers'] = [];
 
         $serviceCategories = ServiceCategory::all();
+        $colors=array("#ff0000", "#00ff00", "#0000ff", "#ff007f", "#ff8000", "#00ffff", "#ffff00", "#ff00ff", "#006600", "#cc99ff");
+
 
         if($serviceCategories->count() > 0)
         {
+            $x = 0;
             foreach($serviceCategories as $category)
             {
                 $map_data['layers'][] = (object)[
                     'id' => $category->id,
                     'name' => $category->name,
+                    'color' => $color[$x],
                     'markers' => [],
                 ];
+
+                $x++;
             }
         }
 
