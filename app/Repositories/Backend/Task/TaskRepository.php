@@ -107,12 +107,40 @@ class TaskRepository extends BaseRepository
 
                 \Event::dispatch(new TaskCreated($task));
 
+                if($task->type == "Montaż"){
+                    $this->createNextTask($task);
+                }
+
                 return true;
             }
 
             throw new GeneralException(trans('exceptions.backend.tasks.create_error'));
         });
     }
+
+    public function createNextTask($input)
+    {
+        $data = (array)[
+            'service_id' => $input->service_id,
+            'type_id' => 2,
+            'assignee_id' => $input->assignee_id,
+            'team' => null,
+            'note' => null,
+            'start' => Carbon::parse($task->start)->addMonths(6),
+            'end' => Carbon::parse($task->start)->addMonths(6)->addHours(3)
+        ];
+
+        $nextTask = $this->createTaskStub($data);
+
+        DB::transaction(function () use ($task, $request) {
+            if ($task->save()) {
+                return true;
+            }
+
+            throw new GeneralException(trans('exceptions.backend.tasks.create_error'));
+        }
+    }
+
 
     /**
      * @param Model $task
