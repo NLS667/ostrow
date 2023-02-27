@@ -9,8 +9,8 @@
 			{{$client->adr_zipcode}}&nbsp;{{$client->adr_city}}<br>
 			{{$client->adr_region}}<br>
 			{{$client->adr_country}}<br><br>
-			email:&nbsp;<a href="mailto:{{$client->email}}"><strong>{{$client->email}}</strong></a><br>
-			tel:&nbsp;<strong>{{$client->phone_nr}}</strong><br>
+			email:&nbsp;<a href="mailto:{{$client->email}}"><strong>{{$client->emails}}</strong></a><br>
+			tel:&nbsp;<strong>{{$client->phones}}</strong><br>
 		</p>
 		@permission('view-client-management')
 		<a class="btn btn-info"  title="Zobacz" href="{{ route('admin.client.show', $client) }}">Zobacz więcej</a>;
