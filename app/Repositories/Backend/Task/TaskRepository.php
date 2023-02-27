@@ -195,6 +195,10 @@ class TaskRepository extends BaseRepository
 
                 event(new TaskUpdated($task));
 
+                if($request['nextTask']){
+                    $this->createNextTask($task);
+                }
+
                 return true;
             }
 
