@@ -90,7 +90,7 @@
                     this.layerData.forEach((layerD) => {
                         const layer_data = new Object();
 
-                        const myCustomColour = layerD.color;
+                        let myCustomColour = layerD.color;
 
                         const markerHtmlStyles = 'background-color: '+myCustomColour+';width: 2rem;height: 2rem;display: block;left: -1rem;top: -1rem;position: relative;border-radius: 2rem 2rem 0;transform: rotate(45deg);border: 1px solid #FFFFFF'
 
