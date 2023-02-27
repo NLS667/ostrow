@@ -71,7 +71,7 @@ class AdminController extends Controller
                 $map_data['layers'][] = (object)[
                     'id' => $category->id,
                     'name' => $category->name,
-                    'color' => $color[$x],
+                    'color' => $colors[$x],
                     'markers' => [],
                 ];
 
