@@ -110,7 +110,6 @@
               <div class="row">
                 {{-- Add Next  --}}
                 <div class="col-sm-12 form-group bmd-form-group">
-                  <label class="bmd-label-floating">Planowanie nastepnego zadania</label>
                   <div class="form-check">
                     <input type="checkbox" name="nextTask" class="form-check-input" id="nextTaskCheck">
                     <label class="form-check-label" for="nextTaskCheck">Dodać nastepne zadanie typu SERWIS z datą późniejszą o 6 miesięcy ?</label>
