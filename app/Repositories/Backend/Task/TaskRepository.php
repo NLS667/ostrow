@@ -126,14 +126,14 @@ class TaskRepository extends BaseRepository
             'assignee_id' => $input->assignee_id,
             'team' => null,
             'note' => null,
-            'start' => Carbon::parse($task->start)->addMonths(6),
-            'end' => Carbon::parse($task->start)->addMonths(6)->addHours(3)
+            'start' => Carbon::parse($input->start)->addMonths(6),
+            'end' => Carbon::parse($input->start)->addMonths(6)->addHours(3)
         ];
 
         $nextTask = $this->createTaskStub($data);
 
-        DB::transaction(function () use ($task, $request) {
-            if ($task->save()) {
+        DB::transaction(function () use ($nextTask) {
+            if ($nextTask->save()) {
                 return true;
             }
 
