@@ -67,7 +67,7 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">history</i> Przed chwilą
+                <i class="material-icons">date_range</i> Wszystkie w bazie
               </div>
               <a href="{{ route('admin.task.index', ['q_status' => 'Po Terminie']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
             </div>
