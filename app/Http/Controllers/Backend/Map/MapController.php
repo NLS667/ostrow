@@ -73,8 +73,14 @@ class MapController extends Controller
 
                         foreach($service_tasks as $task){
                             if($layer->id == $catid){ 
-                                if(auth()->user()->hasRole('Pracownik'))
+                                if(auth()->user()->isAdmin())
                                 {               
+                                    $layer->markers[]  = (object)[
+                                        'content' => view('backend.map.popup')->with('client', $client)->render(),
+                                        'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                                        'title' => $client->full_name,
+                                    ];
+                                } else {                                    
                                     if ($task->assignee_id == auth()->user()->id) {
                                         $layer->markers[]  = (object)[
                                             'content' => view('backend.map.popup')->with('client', $client)->render(),
@@ -82,12 +88,6 @@ class MapController extends Controller
                                             'title' => $client->full_name,
                                         ];
                                     }
-                                } else {
-                                    $layer->markers[]  = (object)[
-                                        'content' => view('backend.map.popup')->with('client', $client)->render(),
-                                        'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                                        'title' => $client->full_name,
-                                    ];
                                 }
                             }
                         }
