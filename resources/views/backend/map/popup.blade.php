@@ -10,7 +10,7 @@
 			{{$client->adr_region}}<br>
 			{{$client->adr_country}}<br><br>
 			email:&nbsp;<a href="mailto:{{$client->emails}}"><strong>{{$client->email}}</strong></a><br>
-			tel:&nbsp;<strong>{{$client->phone}}</strong><br>
+			tel:&nbsp;<strong>{{$client->phone_nr}}</strong><br>
 		</p>
 		@permission('view-client-management')
 		<a class="btn btn-info"  title="Zobacz" href="{{ route('admin.client.show', $client) }}">Zobacz więcej</a>;
