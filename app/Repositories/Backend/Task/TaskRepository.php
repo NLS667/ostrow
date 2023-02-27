@@ -107,7 +107,7 @@ class TaskRepository extends BaseRepository
 
                 \Event::dispatch(new TaskCreated($task));
 
-                if($task->type == "Montaż"){
+                if($data['nextTask']){
                     $this->createNextTask($task);
                 }
 
