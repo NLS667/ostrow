@@ -116,7 +116,7 @@
                         <span class="form-check-sign">
                           <span class="check"></span>
                         </span>
-                        Dodać nastepne zadanie typu SERWIS z datą późniejszą o 6 miesięcy ?
+                        Dodaj nastepne zadanie typu SERWIS z datą późniejszą o 6 miesięcy.
                     </label>
                   </div>
                 </div>
