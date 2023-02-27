@@ -82,6 +82,7 @@
                         } 
                     }) 
                 } else {
+
                     this.data.layers.forEach((layer) => {
                         this.layerData.push(layer);
                     })
@@ -89,12 +90,12 @@
                     this.layerData.forEach((layerD) => {
                         const layer_data = new Object();
                         layer_data.markers = [];
-
                         layerD.markers.forEach((marker) => {
                             var markerOptions = {
                                 title: marker.title
                             }
-                            marker.leafletObject = L.marker(marker.coords, markerOptions).bindPopup(marker.content);                        
+                            marker.leafletObject = L.marker(marker.coords, markerOptions).bindPopup(marker.content);
+                            marker.leafletObject._icon.style.filter = "hue-rotate(120deg)" ;                       
                             layer_data.markers.push(marker.leafletObject);
                         });
 
