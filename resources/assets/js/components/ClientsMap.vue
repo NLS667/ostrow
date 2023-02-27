@@ -89,13 +89,14 @@
                     
                     this.layerData.forEach((layerD) => {
                         const layer_data = new Object();
+                        let icon = L.divIcon({className: layerD.name + '-icon'})
                         layer_data.markers = [];
                         layerD.markers.forEach((marker) => {
                             var markerOptions = {
-                                title: marker.title
+                                title: marker.title,
+                                icon: icon
                             }
-                            marker.leafletObject = L.marker(marker.coords, markerOptions).bindPopup(marker.content);
-                            marker.leafletObject._icon.style.filter = "hue-rotate(120deg)" ;                       
+                            marker.leafletObject = L.marker(marker.coords, markerOptions).bindPopup(marker.content);                      
                             layer_data.markers.push(marker.leafletObject);
                         });
 
