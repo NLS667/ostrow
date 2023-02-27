@@ -73,7 +73,7 @@ class ServiceRepository extends BaseRepository
                 $models = json_decode($service->models);
                 $devices = json_decode($service->devices);
 
-                if(count(json_decode($service->devices)) > 0){
+                if($devices != null and count(json_decode($service->devices)) > 0){
 
                     for($i=0;$i<count($devices);$i++)
                     {                        
