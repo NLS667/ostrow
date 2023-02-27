@@ -111,9 +111,14 @@
                 {{-- Add Next  --}}
                 <div class="col-sm-12 form-group bmd-form-group">
                   <div class="form-check">
-                    <input type="checkbox" name="nextTask" class="form-check-input" id="nextTaskCheck">
-                    <label class="form-check-label" for="nextTaskCheck">Dodać nastepne zadanie typu SERWIS z datą późniejszą o 6 miesięcy ?</label>
-                  </div>  
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" name="nextTask" value="0" id="nextTask" />
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                        Dodać nastepne zadanie typu SERWIS z datą późniejszą o 6 miesięcy ?
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
