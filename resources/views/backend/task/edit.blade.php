@@ -103,6 +103,20 @@
                   @endif
                 </div>
               </div>
+              <div class="row">
+                {{-- Add Next  --}}
+                <div class="col-sm-12 form-group bmd-form-group">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" name="nextTask" id="nextTask" />
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                        Dodaj nastepne zadanie typu SERWIS z datą późniejszą o 6 miesięcy.
+                    </label>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="card-footer">
               {{ link_to_route('admin.task.index', 'Anuluj', [], ['class' => 'btn btn-danger btn-md']) }}
