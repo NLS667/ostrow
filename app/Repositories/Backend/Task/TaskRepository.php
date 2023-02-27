@@ -134,6 +134,7 @@ class TaskRepository extends BaseRepository
 
         DB::transaction(function () use ($nextTask) {
             if ($nextTask->save()) {
+                \Event::dispatch(new TaskCreated($nextTask));
                 return true;
             }
 
