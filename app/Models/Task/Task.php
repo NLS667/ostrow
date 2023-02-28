@@ -4,6 +4,7 @@ namespace App\Models\Task;
 
 use App\Models\Task\Traits\Attribute\TaskAttribute;
 use App\Models\Task\Traits\Relationship\TaskRelationship;
+use App\Models\Task\Traits\Scope\TaskScope;
 use App\Models\BaseModel;
 
 /**
@@ -12,7 +13,8 @@ use App\Models\BaseModel;
 class Task extends BaseModel
 {
     use TaskAttribute,
-        TaskRelationship;
+        TaskRelationship,
+        TaskScope;
         
     /**
      * The database table used by the model.

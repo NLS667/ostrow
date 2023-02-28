@@ -41,12 +41,12 @@ class TaskRepository extends BaseRepository
     }
 
     /**
-     * @param int  $status
+     * @param int  $isPlanned
      * @param bool $trashed
      *
      * @return mixed
      */
-    public function getForDataTable()
+    public function getForDataTable($isPlanned = false, $trashed = false)
     {
         /**
          * Note: You must return deleted_at or the User getActionButtonsAttribute won't
@@ -72,7 +72,11 @@ class TaskRepository extends BaseRepository
                 config('task.tasks_table').'.updated_at',
             ]);
 
-        return $dataTableQuery;
+        if ($trashed == 'true') {
+            return $dataTableQuery->onlyTrashed();
+        }
+
+        return $dataTableQuery->planned($isPlanned);
     }
 
     /**

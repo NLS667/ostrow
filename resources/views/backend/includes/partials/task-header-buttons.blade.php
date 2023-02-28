@@ -9,7 +9,8 @@
     <span class="sr-only">Zwiń/Rozwiń</span>
   </button>
   <ul class="dropdown-menu dropdown-menu-right" role="menu">
-    <a href="{{route('admin.task.index')}}" class="dropdown-item"><span class="material-icons">list</span>Wszystkie Zadania</a>
+    <a href="{{route('admin.task.index')}}" class="dropdown-item"><span class="material-icons">list</span>Aktywne Zadania</a>
+    <a href="{{route('admin.task.planned')}}" class="dropdown-item"><span class="material-icons">list</span>Planowane Zadania</a>
     @permission('create-task')
     <a href="{{route('admin.task.create')}}" class="dropdown-item"><span class="material-icons">add</span>Dodaj Zadanie</a>
     @endauth
