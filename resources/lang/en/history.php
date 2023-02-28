@@ -71,6 +71,9 @@ return [
             'created' => 'utworzył zadanie.',
             'deleted' => 'usunął zadanie.',
             'updated' => 'zaktualizował zadanie.',
+            'finished' => 'zakończył zadanie.',
+            'planned' => 'zaplanował zadanie.',
+            'activated' => 'aktywował zadanie.',
             'type' => [
                 'created' => 'utworzył rodzaj zadania.',
                 'deleted' => 'usunął rodzaj zadania.',

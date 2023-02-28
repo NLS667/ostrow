@@ -56,6 +56,47 @@ class TaskEventListener
     }
 
     /**
+     * @param $event
+     */
+    public function onFinished($event)
+    {
+        history()->withType($this->history_slug)
+            ->withEntity($event->task->id)
+            ->withText('trans("history.backend.tasks.finished")')
+            ->withIcon('done_all')
+            ->withClass('success')
+            ->log();
+    }
+
+    /**
+     * @param $event
+     */
+    public function onPlanned($event)
+    {
+        history()->withType($this->history_slug)
+            ->withEntity($event->task->id)
+            ->withText('trans("history.backend.tasks.planned")')
+            ->withIcon('event_repeat')
+            ->withClass('primary')
+            ->log();
+    }
+
+    /**
+     * @param $event
+     */
+    public function onActivated($event)
+    {
+        history()->withType($this->history_slug)
+            ->withEntity($event->task->id)
+            ->withText('trans("history.backend.tasks.activated")')
+            ->withIcon('event_available')
+            ->withClass('primary')
+            ->log();
+    }
+
+
+
+    /**
      * Register the listeners for the subscriber.
      *
      * @param \Illuminate\Events\Dispatcher $events
@@ -73,6 +114,18 @@ class TaskEventListener
         $events->listen(
             TaskDeleted::class,
             [TaskEventListener::class, 'onDeleted']
+        );
+        $events->listen(
+            TaskFinished::class,
+            [TaskEventListener::class, 'onFinished']
+        );
+        $events->listen(
+            TaskPlanned::class,
+            [TaskEventListener::class, 'onPlanned']
+        );
+        $events->listen(
+            TaskActivated::class,
+            [TaskEventListener::class, 'onActivated']
         );
     }
 }

@@ -6,6 +6,8 @@ use App\Events\Task\TaskCreated;
 use App\Events\Task\TaskDeleted;
 use App\Events\Task\TaskUpdated;
 use App\Events\Task\TaskFinished;
+use App\Events\Task\TaskPlanned;
+use App\Events\Task\TaskActivated;
 use App\Events\Task\TaskRestarted;
 
 use App\Exceptions\GeneralException;
@@ -294,6 +296,36 @@ class TaskRepository extends BaseRepository
                 $task->status = 4;
                 event(new TaskFinished($task));
             break;
+        }
+
+        if ($task->save()) {
+            return true;
+        }
+
+        throw new GeneralException(trans('exceptions.backend.tasks.mark_error'));
+    }
+
+    /**
+     * @param $task
+     * @param $isPlanned
+     *
+     * @throws GeneralException
+     *
+     * @return bool
+     */
+    public function togglePlanned($task, $isPlanned)
+    {
+        $task->isPlanned = $isPlanned;
+
+        switch ($isPlanned) {
+            case 0:
+                event(new TaskPlanned($task));
+            break;
+
+            case 1:
+                event(new TaskActivated($task));
+            break;
+
         }
 
         if ($task->save()) {
