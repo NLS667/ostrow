@@ -136,7 +136,8 @@ trait TaskAttribute
         // Check if role have all permission
         if (access()->user()->roles[0]->all) {
             return $this->getEditButtonAttribute('btn btn-success btn-round').'
-            '.$this->getDeleteButtonAttribute('btn btn-danger btn-round').'                        
+            '.$this->getPlanButtonAttribute('btn btn-primary btn-round').' 
+            '.$this->getDeleteButtonAttribute('btn btn-danger btn-round').'                       
             '.$this->getStatusButtonAttribute('btn btn-warning btn-round').'                        
             '.$this->getRaportButtonAttribute('btn btn-info btn-round');
         } else {
@@ -167,7 +168,7 @@ trait TaskAttribute
     {
         switch ($permissionName) {
             case 'edit-task':
-            $button = $this->getEditButtonAttribute('btn btn-success btn-round');
+            $button = $this->getEditButtonAttribute('btn btn-success btn-round').' '.$this->getPlanButtonAttribute('btn btn-primary btn-round');
             break;
             case 'delete-task':
             $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
