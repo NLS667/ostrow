@@ -68,6 +68,7 @@ class TaskRepository extends BaseRepository
                 config('task.tasks_table').'.title',
                 config('task.tasks_table').'.status',
                 config('task.tasks_table').'.isFinished',
+                config('task.tasks_table').'.isPlanned',
                 config('task.tasks_table').'.start',
                 config('task.tasks_table').'.end',
                 config('task.tasks_table').'.created_at',
