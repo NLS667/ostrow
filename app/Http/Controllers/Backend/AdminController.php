@@ -47,8 +47,8 @@ class AdminController extends Controller
         $data['clientCount'] = $clients->count();
 
         $active_tasks = Task::where('isPlanned', '==', false)->get();
-        $coming_tasks = Task::where('status', 2)->where('isPlanned', '==', true)->get();
-        $overdue_tasks = Task::where('status', 3)->where('isPlanned', '==', true)->get();
+        $coming_tasks = Task::where('status', 2)->where('isPlanned', '=', true)->get();
+        $overdue_tasks = Task::where('status', 3)->where('isPlanned', '=', true)->get();
         $data['activeTaskCount'] = $active_tasks->count();
         $data['comingTaskCount'] = $coming_tasks->count();
         $data['overdueTaskCount'] = $overdue_tasks->count();
