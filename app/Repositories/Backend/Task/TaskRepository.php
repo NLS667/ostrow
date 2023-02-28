@@ -124,17 +124,18 @@ class TaskRepository extends BaseRepository
             'service_id' => $input->service_id,
             'type_id' => 2,
             'assignee_id' => $input->assignee_id,
+            'isPlanned' => true,
             'team' => null,
             'note' => null,
             'start' => Carbon::parse($input->start)->addMonths(6),
-            'end' => Carbon::parse($input->start)->addMonths(6)->addHours(3)
+            'end' => Carbon::parse($input->start)->addMonths(6)->addHours(4)
         ];
 
         $nextTask = $this->createTaskStub($data);
 
         DB::transaction(function () use ($nextTask) {
             if ($nextTask->save()) {
-                \Event::dispatch(new TaskCreated($nextTask));
+                \Event::dispatch(new TaskPlanned($nextTask));
                 return true;
             }
 
@@ -161,7 +162,7 @@ class TaskRepository extends BaseRepository
                     $task->status = 2;
                 } else if(Carbon::parse($task->start) < Carbon::now()->addDays(30)){
                     $task->status = 1;
-                } else {
+                } else if($task->isPlanned){
                     $task->status = 0;
                 }
 
@@ -280,7 +281,7 @@ class TaskRepository extends BaseRepository
                     $task->status = 2;
                 } else if(Carbon::parse($task->start) < Carbon::now()->addDays(30)){
                     $task->status = 1;
-                } else {
+                } else if($task->isPlanned){
                     $task->status = 0;
                 }
                 event(new TaskRestarted($task));
@@ -325,13 +326,15 @@ class TaskRepository extends BaseRepository
         $enddate->addHours(4);
         $task->end = isset($input['end']) ? Carbon::parse($input['end']) : $enddate;
 
+        $task->isPlanned = isset($input['isPlanned']) ? $input['isPlanned'] : false;
+
         if(Carbon::parse($task->start)->lessThan(Carbon::now())){
             $task->status = 3;
         } else if(Carbon::parse($task->start)->greaterThan(Carbon::now()) && Carbon::parse($task->start)->lessThan(Carbon::now()->addDays(30))){
             $task->status = 2;
         } else if(Carbon::parse($task->start) < Carbon::now()->addDays(30)){
             $task->status = 1;
-        } else {
+        } else if($task->isPlanned){
             $task->status = 0;
         }
         $task->isFinished = 0;

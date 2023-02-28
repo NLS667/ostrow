@@ -85,13 +85,13 @@ class AdminController extends Controller
             {
                 $services = Service::where('client_id', $client->id)->get();
                 $client_markers = [];
-                $client->adr_region = "woj. ".$regions[$client->adr_region];
+                //$client->adr_region = "woj. ".$regions[$client->adr_region];
 
                 foreach($map_data['layers'] as $layer){
 
                     foreach($services as $service){
                         $catid = $service->service_cat_id;
-                        $service_tasks = $service->tasks()->whereDate('start', '>', Carbon::now()->subMonths(6))->get();
+                        $service_tasks = $service->tasks()->where('isPlanned', '=', false)->whereDate('start', '>', Carbon::now()->subMonths(6))->get();
                         
                         foreach($service_tasks as $task){
                             if($layer->id == $catid){ 
