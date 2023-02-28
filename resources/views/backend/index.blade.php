@@ -28,8 +28,8 @@
               <div class="card-icon">
                 <i class="material-icons">add_task</i>
               </div>
-              <p class="card-category">Nowe Zadania</p>
-              <h3 class="card-title">{{ $data['newTaskCount'] }}</h3>
+              <p class="card-category">Aktywne Zadania</p>
+              <h3 class="card-title">{{ $data['activeTaskCount'] }}</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
@@ -52,7 +52,7 @@
               <div class="stats">
                 <i class="material-icons">date_range</i> Najbliższy miesiąc
               </div>
-              <a href="{{ route('admin.task.index', ['q_status' => 'Nadchodzące']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
+              <a href="{{ route('admin.task.planned', ['q_status' => 'Nadchodzące']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@
               <div class="stats">
                 <i class="material-icons">date_range</i> Wszystkie w bazie
               </div>
-              <a href="{{ route('admin.task.index', ['q_status' => 'Po Terminie']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
+              <a href="{{ route('admin.task.planned', ['q_status' => 'Po Terminie']) }}" class="btn btn-sm btn-flat btn-info">Zobacz</a>
             </div>
           </div>
         </div>
