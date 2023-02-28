@@ -33,7 +33,7 @@ class TaskStatusController extends Controller
      */
     public function getPlanned(ManageTaskRequest $request)
     {
-        return view('backend.task.planned');
+        return view('backend.task.planned', ['q_status' => $request->q_status]);
     }
 
     /**
