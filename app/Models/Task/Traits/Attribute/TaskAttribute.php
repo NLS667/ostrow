@@ -46,14 +46,14 @@ trait TaskAttribute
     public function getPlanButtonAttribute($class)
     {
         switch ($this->isPlanned) {
-            case true:
+            case 1:
             if (access()->allow('edit-task')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Aktywuj' : '';
 
                 return '<a class="'.$class.'" data-toggle="tooltip" data-placement="top" title="Aktywuj" href="'.route('admin.task.togglePlanned', [$this, 0]).'"><span class="material-icons">event_available</span>'.$name.'</a>';
             }
             break;
-            case false:
+            case 0:
             if (access()->allow('edit-task')) {
                 $name = ($class == '' || $class == 'dropdown-item') ? 'Zaplanuj' : '';
 
