@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Task;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Task\EditTaskRequest;
+use App\Http\Requests\Backend\Task\ManageTaskRequest;
 use App\Models\Task\Task;
 use App\Repositories\Backend\Task\TaskRepository;
 
@@ -23,6 +24,16 @@ class TaskStatusController extends Controller
     public function __construct(TaskRepository $tasks)
     {
         $this->tasks = $tasks;
+    }
+
+    /**
+     * @param ManageDeactivatedRequest $request
+     *
+     * @return mixed
+     */
+    public function getPlanned(ManageTaskRequest $request)
+    {
+        return view('backend.task.planned');
     }
 
     /**
