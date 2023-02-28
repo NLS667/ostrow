@@ -11,6 +11,8 @@
              */
             Route::post('task/get', TaskTableController::class)->name('task.get');
 
+            Route::get('task/planned', [\App\Http\Controllers\Backend\Task\TaskStatusController::class, 'getPlanned'])->name('task.planned');
+
             Route::get('task/filter', [\App\Http\Controllers\Backend\Task\TaskController::class, 'filter'])->name('task.filter');
             Route::get('task/resource', [\App\Http\Controllers\Backend\Task\TaskController::class, 'resource'])->name('task.resource');
 
@@ -45,6 +47,9 @@
 
                 // isFinished
                 Route::get('mark/{isFinished}', [\App\Http\Controllers\Backend\Task\TaskStatusController::class, 'mark'])->name('task.mark')->where(['isFinished' => '[0,1]']);
+
+                // isPlanned
+                Route::get('markPlanned/{isPlanned}', [\App\Http\Controllers\Backend\Task\TaskStatusController::class, 'togglePlanned'])->name('task.togglePlanned')->where(['isPlanned' => '[0,1]']);
             });
             
         });

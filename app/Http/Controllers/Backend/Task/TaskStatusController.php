@@ -39,4 +39,11 @@ class TaskStatusController extends Controller
         return redirect()->route('admin.task.index')->withFlashSuccess(trans('alerts.backend.tasks.updated'));
     }
 
+    public function togglePlanned(Task $task, $isPlanned, EditTaskRequest $request)
+    {
+        $this->tasks->togglePlanned($task, $isPlanned);
+
+        return redirect()->route('admin.task.planned')->withFlashSuccess(trans('alerts.backend.tasks.updated'));
+    }
+
 }

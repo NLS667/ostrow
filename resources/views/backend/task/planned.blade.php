@@ -128,7 +128,7 @@
                 ajax: {
                     url: '{{ route("admin.task.get") }}',
                     type: 'post',
-                    data: {isPlanned: 0, trashed: false}
+                    data: {isPlanned: 1, trashed: false}
                 },
                 columns: [
                     {data: 'assignee', name: 'assignee_name'},
