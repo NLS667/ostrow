@@ -152,6 +152,7 @@
               </div>
             </div>
           </form>
+          {{ $userData }}
         </div>
       </div>
     </div>
