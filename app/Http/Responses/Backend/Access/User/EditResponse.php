@@ -45,7 +45,7 @@ class EditResponse implements Responsable
 
         return view('backend.access.users.edit')->with([
             'userData'        => $this->user,
-            'userRoles'       => json_encode($this->user->roles->pluck('id')->all()),
+            'userRoles'       => $this->user->roles->pluck('id')->get(),
             'roles'           => $this->roles,
             'userPermissions' => $userPermissions,
             'permissions'     => $permissions,
