@@ -98,7 +98,7 @@ class UserController extends Controller
      */
     public function edit(User $user, EditUserRequest $request)
     {
-        if($user->id = 1){
+        if($user->id == 1){
             $roles = $this->roles->getAll();
         } else {
             $roles = $this->roles->getUsable();
