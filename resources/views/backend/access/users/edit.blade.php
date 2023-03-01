@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <form method="post" action="{{ route('admin.access.user.update', $user) }}" autocomplete="off" class="form-horizontal">
+          <form method="post" action="{{ route('admin.access.user.update', $userData) }}" autocomplete="off" class="form-horizontal">
             @csrf
             @method('put')
 
@@ -24,7 +24,7 @@
                   <label class="col-sm-2 col-form-label">Imię</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('first_name') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" id="input-first_name" type="text" placeholder="Imię" value="{{ old('first_name', $user->first_name) }}" required="true" aria-required="true"/>
+                      <input class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" id="input-first_name" type="text" placeholder="Imię" value="{{ old('first_name', $userData->first_name) }}" required="true" aria-required="true"/>
                       @if ($errors->has('first_name'))
                         <span id="name-error" class="error text-danger" for="input-first_name">{{ $errors->first('first_name') }}</span>
                       @endif
@@ -35,7 +35,7 @@
                   <label class="col-sm-2 col-form-label">Nazwisko</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('last_name') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" id="input-last_name" type="text" placeholder="Imię" value="{{ old('last_name', $user->last_name) }}" required="true" aria-required="true"/>
+                      <input class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" id="input-last_name" type="text" placeholder="Imię" value="{{ old('last_name', $userData->last_name) }}" required="true" aria-required="true"/>
                       @if ($errors->has('last_name'))
                         <span id="name-error" class="error text-danger" for="input-last_name">{{ $errors->first('last_name') }}</span>
                       @endif
@@ -46,7 +46,7 @@
                   <label class="col-sm-2 col-form-label">E-mail</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="E-mail" value="{{ old('email', $user->email) }}" required />
+                      <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="E-mail" value="{{ old('email', $userData->email) }}" required />
                       @if ($errors->has('email'))
                         <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
                       @endif
@@ -55,14 +55,14 @@
                 </div>
 
                 {{-- Status --}}
-                @if ($user->id >= 1)
+                @if ($userData->id >= 1)
                 {{-- Confirmed --}}
                 <div class="row"> 
                   {{ Form::label('confirmed', 'Aktywny?', ['class' => 'col-lg-2 col-form-label']) }}
                   <div class="col-sm-7">
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="status" value="1" id="status" {{ $user->status == 1 ? 'checked' : '' }} />
+                        <input class="form-check-input" type="checkbox" name="status" value="1" id="status" {{ $userData->status == 1 ? 'checked' : '' }} />
                         <span class="form-check-sign">
                           <span class="check"></span>
                         </span>
