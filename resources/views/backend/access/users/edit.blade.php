@@ -55,7 +55,7 @@
                 </div>
 
                 {{-- Status --}}
-                @if ($userData->id >= 1)
+                @if ($userData->id <= 2)
                 {{-- Confirmed --}}
                 <div class="row"> 
                   {{ Form::label('confirmed', 'Aktywny?', ['class' => 'col-lg-2 col-form-label']) }}
