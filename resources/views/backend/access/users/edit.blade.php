@@ -152,9 +152,6 @@
               </div>
             </div>
           </form>
-          @php
-            echo json_encode($userData);
-          @endphp
         </div>
       </div>
     </div>
