@@ -153,6 +153,7 @@
             </div>
           </form>
           {{ $userData }}
+          {{ $userRoles }}
         </div>
       </div>
     </div>
