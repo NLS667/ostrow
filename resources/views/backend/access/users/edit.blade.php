@@ -152,7 +152,6 @@
               </div>
             </div>
           </form>
-          {{ $userData }}
           @php
             echo json_encode($userRoles);
           @endphp
