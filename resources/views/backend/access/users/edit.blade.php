@@ -153,7 +153,7 @@
             </div>
           </form>
           @php
-            echo json_encode($userRoles);
+            echo json_encode($roles);
           @endphp
         </div>
       </div>
