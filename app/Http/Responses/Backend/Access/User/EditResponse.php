@@ -42,7 +42,6 @@ class EditResponse implements Responsable
     {
         $permissions = $this->permissions;
         $userPermissions = $this->user->permissions()->get()->pluck('id')->toArray();
-        \Log::info($this->user);
         return view('backend.access.users.edit')->with([
             'userData'        => $this->user,
             'userRoles'       => $this->user->roles->pluck('id')->toArray(),
