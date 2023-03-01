@@ -73,17 +73,19 @@ class ShowResponse implements Responsable
             $models = json_decode($service->models);
             $all_devices = json_decode($service->devices);
             $modelsObj = [];
-            for($i=0;$i<count($models);$i++){
-                $model = Model::where('id', ($models[$i]))->first();
-                $devices = explode(",", $all_devices[$i]);
-                for($k=0;$k<count($devices);$k++){
-                    $modelsObj[] = (object)[
-                        'name' => $model->name,
-                        'serial_number' => $devices[$k],
-                        'producer' => $model->producer->name
-                    ];
+            if(is_array($models)){
+                for($i=0;$i<count($models);$i++){
+                    $model = Model::where('id', ($models[$i]))->first();
+                    $devices = explode(",", $all_devices[$i]);
+                    for($k=0;$k<count($devices);$k++){
+                        $modelsObj[] = (object)[
+                            'name' => $model->name,
+                            'serial_number' => $devices[$k],
+                            'producer' => $model->producer->name
+                        ];
+                    }
+                    
                 }
-                
             }
             //$model = Model::where('id', $service->model_id)->first();
             //$producer = Producer::where('id', $model->id)->first();
