@@ -36,6 +36,7 @@
               <div class="row">
                 {{-- Service --}}
                 <div class="col-sm-12 form-group bmd-form-group {{ $errors->has('service_id') ? ' has-danger' : '' }}">
+                  {{ $services }}
                   @if ($services->count())
                   <select name="service_id" class="form-control select2 service-select" data-placeholder="Wybierz Usługę">
                     <option></option>
