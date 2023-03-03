@@ -112,9 +112,8 @@ trait ServiceAttribute
     public function getServiceNameAttribute()
     {
         $client = Client::where('id', $this->client_id)->first();
-        \Log::info($client);
+        \Log::info($this->client_id);
         $service_type = ServiceCategory::where('id', $this->service_cat_id)->first();
-        \Log::info($service_type);
         $service_name = $service_type->name.' - '.$client->first_name.' '.$client->last_name;
         return $service_name;
     }
