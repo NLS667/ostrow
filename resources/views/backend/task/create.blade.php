@@ -41,7 +41,7 @@
                   <select name="service_id" class="form-control select2 service-select" data-placeholder="Wybierz Usługę">
                     <option></option>
                     @foreach ($services as $service)
-                    <option value="{{$service->id}}" {{ old('service_id') == $service->id ? "selected":"" }}>{{ $service->service_name }}</option>
+                    <option value="{{$service->id}}" {{ old('service_id') == $service->id ? "selected":"" }}></option>
                     @endforeach                  
                   </select>
                   @else
