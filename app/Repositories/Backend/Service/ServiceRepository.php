@@ -199,14 +199,16 @@ class ServiceRepository extends BaseRepository
     public function delete($service)
     {
         $old_devices = json_decode($service->devices);
-        if(count($old_devices) > 0){
-            for($i=0;$i < count($old_devices); $i++)
-            {
-                $todelete = explode (",", $old_devices[$i]);
-                foreach($todelete as $dev_to_del)
+        if($old_devices != null) {
+            if(count($old_devices) > 0){
+                for($i=0;$i < count($old_devices); $i++)
                 {
-                    $devdel = Device::where('serial_number', $dev_to_del)->first();
-                    $devdel->delete();
+                    $todelete = explode (",", $old_devices[$i]);
+                    foreach($todelete as $dev_to_del)
+                    {
+                        $devdel = Device::where('serial_number', $dev_to_del)->first();
+                        $devdel->delete();
+                    }
                 }
             }
         }
