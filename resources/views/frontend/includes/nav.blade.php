@@ -6,7 +6,7 @@
 					<span class="navbar-toggler-bar"></span>
 					<span class="navbar-toggler-bar"></span>
 	            </button>
-	            {{ link_to_route('frontend.index',app_name(), [], ['class' => 'navbar-brand']) }}
+	            {{ link_to_route('frontend.index', app_name(), [], ['class' => 'navbar-brand']) }}
 			</div>
 	        <div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
