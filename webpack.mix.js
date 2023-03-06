@@ -14,8 +14,8 @@ mix.autoload({
         jquery: ['$', 'window.jQuery', 'jQuery'],
         'popper.js/dist/umd/popper.js': ['Popper']
     })
-    .sass('resources/assets/sass/front.scss', 'public/css/front.css')
-    .sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/assets/sass/front.scss', 'public/css/app.css')
+    .sass('resources/assets/sass/app.scss', 'public/css/backend-app.css')
     .styles([
         //'resources/assets/sass/plugins/jquery.dataTables.min.css',
         //'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css',
@@ -23,12 +23,12 @@ mix.autoload({
         'resources/assets/sass/plugins/lfm.css',
         'resources/assets/sass/material/material-dashboard.css',
         'resources/assets/sass/custom.scss',
-    ], 'public/css/app-custom.css')
+    ], 'public/css/backend-app-custom.css')
     .js([
         'resources/assets/js/front.js',
         'resources/assets/js/plugins/paper-kit.js',
-    ], 'public/js/front.js')
-    .js('resources/assets/js/app.js', 'public/js')
+    ], 'public/js/app.js')
+    .js('resources/assets/js/app.js', 'public/js/backend-app.js')
     .scripts([
         "resources/assets/js/plugins/jquery.min.js",
         "resources/assets/js/plugins/popper.min.js",
@@ -54,7 +54,7 @@ mix.autoload({
         'resources/assets/js/plugins/bootstrap-notify.js',
         'resources/assets/js/plugins/material-dashboard.js',
         'resources/assets/js/plugins/settings.js',
-    ], 'public/js/app-custom.js')
+    ], 'public/js/backend-app-custom.js')
     //Copying images of leaflet to public folder
     .copyDirectory('node_modules/leaflet/dist/images', 'public/images')
     //Copying all directories of tinymce to public folder
