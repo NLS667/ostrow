@@ -6,7 +6,7 @@
         <div class="container" style="height: auto;">
             <div class="row align-items-center">
                 <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
-                    {{ Form::open(['route' => 'auth.login', 'class' => 'form']) }}
+                    {{ Form::open(['route' => 'frontend.auth.login', 'class' => 'form']) }}
                     <div class="card card-login card-hidden mb-3">
                         <div class="card-header card-header-primary text-center">
                             <h4 class="card-title"><strong>{{ config('app.name') }}</strong></h4>
