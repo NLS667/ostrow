@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Frontend\Auth;
 
 use App\Events\Auth\UserLoggedIn;
 use App\Events\Auth\UserLoggedOut;
