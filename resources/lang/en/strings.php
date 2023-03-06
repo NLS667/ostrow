@@ -115,6 +115,10 @@ return [
             'password_updated'     => 'Password successfully updated.',
         ],
 
+        'header' => [
+            'hero_text' => 'Panel do zarządzania klientami.',
+        ],
+
         'welcome_to' => 'Welcome to :place',
     ],
 ];
