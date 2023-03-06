@@ -14,8 +14,8 @@
     <!-- Styles -->
     @stack('styles')
     @yield('before-styles')
-    {{ Html::style(mix('css/app.css')) }}
-    {{ Html::style(mix('css/app-custom.css')) }}
+    {{ Html::style(mix('css/backend-app.css')) }}
+    {{ Html::style(mix('css/backend-app-custom.css')) }}
     @yield('after-styles')
 
     <!-- Scripts -->
@@ -45,8 +45,8 @@
         
         <!-- JavaScripts -->
         @yield('before-scripts')
-        {{ Html::script(mix('js/app.js')) }}
-        {{ Html::script(mix('js/app-custom.js')) }}
+        {{ Html::script(mix('js/backend-app.js')) }}
+        {{ Html::script(mix('js/backend-app-custom.js')) }}
         @yield('after-scripts')
     </body>
 </html>
