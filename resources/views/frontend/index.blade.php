@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <h2 class="title">Teltopanel</h2>
+                    <h2 class="title">OZE-CRM</h2>
                     <h5 class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend eget metus ac venenatis. Ut porta urna ante, vitae tempor mauris facilisis quis. Integer ligula felis, tempus ut nisi at, mattis cursus ipsum. Donec faucibus sagittis ligula, sit amet ultrices nisi malesuada vel</h5>
                     <br>
                     <a href="#" class="btn btn-primary-blue btn-round">Szczegóły</a>
@@ -21,7 +21,7 @@
                             <i class="nc-icon nc-album-2"></i>
                         </div>
                         <div class="description">
-                            <h4 class="info-title">Teltopanel 1</h4>
+                            <h4 class="info-title">Feature 1</h4>
                             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend eget metus ac venenatis.</p>
                             <a href="#pkp" class="btn btn-link btn-primary-blue">{{ trans('buttons.general.see_more') }}</a>
                         </div>
@@ -33,7 +33,7 @@
                             <i class="nc-icon nc-bulb-63"></i>
                         </div>
                         <div class="description">
-                            <h4 class="info-title">Teltopanel 2</h4>
+                            <h4 class="info-title">Feature 2</h4>
                             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend eget metus ac venenatis.</p>
                             <a href="#pkp" class="btn btn-link btn-primary-blue">{{ trans('buttons.general.see_more') }}</a>
                         </div>
@@ -45,7 +45,7 @@
                             <i class="nc-icon nc-chart-bar-32"></i>
                         </div>
                          <div class="description">
-                            <h4 class="info-title">Teltopanel 3</h4>
+                            <h4 class="info-title">Feature 3</h4>
                             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend eget metus ac venenatis.</p>
                             <a href="#pkp" class="btn btn-link btn-primary-blue">{{ trans('buttons.general.see_more') }}</a>
                         </div>
@@ -57,7 +57,7 @@
                             <i class="nc-icon nc-sun-fog-29"></i>
                         </div>
                         <div class="description">
-                            <h4 class="info-title">Teltopanel 4</h4>
+                            <h4 class="info-title">Feature 4</h4>
                             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend eget metus ac venenatis.</p>
                             <a href="#pkp" class="btn btn-link btn-primary-blue">{{ trans('buttons.general.see_more') }}</a>
                         </div>
