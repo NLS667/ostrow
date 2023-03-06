@@ -119,6 +119,8 @@ return [
             'hero_text' => 'Panel do zarządzania klientami.',
         ],
 
+        'copyright' => '© 2023, utworzone z <i class="fa fa-heart heart"></i> przez RAD',
+
         'welcome_to' => 'Welcome to :place',
     ],
 ];
