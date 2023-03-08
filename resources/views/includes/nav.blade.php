@@ -6,7 +6,7 @@
 					<span class="navbar-toggler-bar"></span>
 					<span class="navbar-toggler-bar"></span>
 	            </button>
-	            {{ link_to_route('index',app_name(), [], ['class' => 'navbar-brand']) }}
+	            {{ link_to_route('admin.index',app_name(), [], ['class' => 'navbar-brand']) }}
 			</div>
 	        <div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
@@ -20,7 +20,7 @@
                             @permission('view-backend')
                             <a href="{{ route('admin.index') }}" class="dropdown-item"><i class="fas fa-tools"></i>Panel Administracyjny</a>
                             @endauth
-                            <a href="{{ route('auth.logout') }}" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>Wyloguj</a>
+                            <a href="{{ route('frontend.auth.logout') }}" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>Wyloguj</a>
                         </div>
                     </li>
                 @endif
