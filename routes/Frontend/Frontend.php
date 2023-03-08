@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\FrontendController;
-//use App\Http\Controllers\Frontend\User\AccountController;
+use App\Http\Controllers\Frontend\User\AccountController;
 //use App\Http\Controllers\Frontend\User\ProfileController;
 //use App\Http\Controllers\Frontend\User\DashboardController;
 
@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
         /*
          * User Account Specific
          */
-        //Route::get('account', [AccountController::class, 'index'])->name('account');
+        Route::get('account', [AccountController::class, 'index'])->name('account');
 
         /*
          * User Profile Specific
