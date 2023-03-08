@@ -1,5 +1,5 @@
 @php
-    use Illuminate\Support\Facades\Route;
+    use Illuminate\Support\Facades\Route; 
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -20,6 +20,7 @@
     <!-- Styles -->
     @yield('before-styles')
     {{ Html::style(mix('css/app.css')) }}
+    {{ Html::style(mix('css/app-custom.css')) }}
     @yield('after-styles')
  
     <!-- Scripts -->
@@ -41,6 +42,7 @@
 	<!-- Scripts -->
 	@yield('before-scripts')
 	{!! Html::script(mix('js/app.js')) !!}
+    {{ Html::script(mix('js/app-custom.js')) }}
 	@yield('after-scripts')
 	
 </body>
