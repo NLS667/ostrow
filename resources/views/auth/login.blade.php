@@ -1,16 +1,15 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-<div class="wrapper wrapper-full-page">
-    <div class="page-header login-page header-filter" filter-color="black" style="background-image: url('/img/login.jpg'); background-size: cover; background-position: top center;align-items: center;" data-color="purple">
-        <div class="container" style="height: auto;">
-            <div class="row align-items-center">
-                <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
-                    {{ Form::open(['route' => 'frontend.auth.login', 'class' => 'form']) }}
-                    <div class="card card-login card-hidden mb-3">
-                        <div class="card-header card-header-primary text-center">
-                            <h4 class="card-title"><strong>{{ config('app.name') }}</strong></h4>
-                        </div>
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('/img/login.jpg'), linear-gradient(104.36deg, #00264c 60%, #0054A6 90%);">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 col-sm-6 offset-sm-3">                    
+                    <div class="card card-register">
+                        <h3 class="card-title">{{ trans('labels.frontend.auth.login_box_title') }}</h3>
+                        {{ Form::open(['route' => 'frontend.auth.login', 'class' => 'register-form']) }}
                         <div class="card-body">
                             <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                 <div class="input-group">
@@ -44,13 +43,14 @@
                             </div>
                             <div class="form-check mr-auto ml-3 mt-3">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Zapamiętaj mnie
-                                        <span class="form-check-sign"><span class="check"></span></span>
+                                    <input class="form-check-input @error('remember') is-invalid @enderror" type="checkbox" name="remember">
+                                        <span class="form-check-sign"></span>
+                                        <small>{{ trans('labels.frontend.auth.remember_me') }}</small> 
                                 </label>
                             </div>
                         </div>
                         <div class="card-footer justify-content-center">
-                            {{ Form::submit('Zaloguj', ['class' => 'btn btn-primary btn-link btn-lg']) }}
+                            {{ Form::submit(trans('labels.frontend.auth.login_button'), ['class' => 'btn btn-primary btn-link btn-lg']) }}
                         </div>
                     </div>
                     {{ Form::close() }}

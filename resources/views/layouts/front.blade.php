@@ -14,7 +14,7 @@
     <title>@yield('title', app_name())</title> 
 
     <!-- Meta -->
-    <meta name="description" content="@yield('meta_description', 'CRM - Panel dla Ostrowia')">
+    <meta name="description" content="@yield('meta_description', 'OZE-CRM - Panel do zarządzania klientami')">
     <meta name="author" content="@yield('meta_author', 'Sebastian Kosk')">
     @yield('meta')
 
