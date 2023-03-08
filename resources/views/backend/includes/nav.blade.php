@@ -41,7 +41,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
             <a class="dropdown-item" href="{{ route('admin.profile.edit') }}">Profil</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('auth.logout') }}">Wyloguj</a>
+            <a class="dropdown-item" href="{{ route('frontend.auth.logout') }}">Wyloguj</a>
           </div>
         </li>
       </ul>
