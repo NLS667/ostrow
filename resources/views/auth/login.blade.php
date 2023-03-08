@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('frontend.layouts.app')
 
 @section('content')
 <div class="wrapper wrapper-full-page">
