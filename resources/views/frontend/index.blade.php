@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <h2 class="title">OZE-CRM</h2>
+                    <h2 class="title">{{ app_name() }}</h2>
                     <h5 class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend eget metus ac venenatis. Ut porta urna ante, vitae tempor mauris facilisis quis. Integer ligula felis, tempus ut nisi at, mattis cursus ipsum. Donec faucibus sagittis ligula, sit amet ultrices nisi malesuada vel</h5>
                     <br>
                     <a href="#" class="btn btn-primary-blue btn-round">Szczegóły</a>
