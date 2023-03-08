@@ -16,7 +16,8 @@
     justify-content: center;
 
     .filter::after{
-        background: #f7f9fb;
+        background: linear-gradient(180deg,#003974 0%,rgba(0,57,116,0) 100%);
+        //background: #f7f9fb;
         content: "";
         display: block;
         height: 100%;
