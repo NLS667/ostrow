@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="card-footer justify-content-center">
-                            {{ Form::submit(trans('labels.frontend.auth.login_button'), ['class' => 'btn btn-primary btn-link btn-lg']) }}
+                            {{ Form::submit(trans('labels.frontend.auth.login_button'), ['class' => 'btn btn-primary-blue btn-block btn-round']) }}
                         </div>
                     </div>
                     {{ Form::close() }}
