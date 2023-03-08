@@ -1,7 +1,14 @@
 <template>
-    <div id="message" :class="typeClass" v-show="show" v-html="body">
-        {{ body }}
+<div class="notifications">
+    <div class="container">
+        <div :class="typeClass" v-show="show" role="alert">
+            <span v-html="body"></span>     
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -36,7 +43,7 @@ export default {
             }
 
             this.body = message;
-            this.typeClass = "alert alert-" + type;
+            this.typeClass = "alert-dismissible alert alert-" + type;
             this.show = true;
 
             if(! dontHide) {
