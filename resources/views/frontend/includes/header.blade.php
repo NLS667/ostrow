@@ -1,4 +1,4 @@
-<div class="page-header" data-parallax="true" style="background-image: url('../img/login.jpg');">
+<div class="page-header" data-parallax="true" style="background-image: url('../img/login.jpg'); ">
 	<div class="filter"></div>
 	<div class="container">
 		<div class="motto text-center">
