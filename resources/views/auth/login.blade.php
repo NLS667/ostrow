@@ -66,13 +66,9 @@
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="container">
-                <div class="copyright float-right">
-                    © 2022, wykonano z <i class="material-icons">favorite</i> przez <a href="https://radspzoo.pl" target="_blank">RAD</a>
-                </div>
-            </div>            
-        </footer>
+        <div class="footer register-footer text-center">
+            <h6>{!! trans('strings.frontend.copyright') !!}</h6>
+        </div>
     </div>
 </div>
 @endsection
