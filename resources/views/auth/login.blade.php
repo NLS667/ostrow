@@ -25,13 +25,11 @@
                                 @enderror
                             </div>
                             <label for="password">{{ trans('labels.frontend.auth.register-user.password') }}</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend form-group-no-border">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="nc-icon nc-key-25"></i>
-                                        </span>
-                                    </div>
+                            <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-key-25"></i>
+                                    </span>
                                 </div>
                                 <input id="password" type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="{{ trans('labels.frontend.auth.register-user.password') }}" value="{{ !$errors->has('password') ? 'secret' : '' }}" required>
                                 @error('password')
