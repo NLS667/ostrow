@@ -11,6 +11,9 @@ require('./bootstrap');
 // Register $ global var for jQuery
 import $ from 'jquery';
 
+// Import jQuery plugins
+import 'bootstrap-switch';
+
 window.Vue = require('vue').default;
 
 /**
