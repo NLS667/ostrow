@@ -306,63 +306,45 @@ trait UserAttribute
     public function getActionButtonsByPermissionName($permissionName, $counter)
     {
         // check if counter is less then 3 then apply button client
-        $class = ($counter <= 3) ? 'btn btn-primary btn-round' : '';
-
         switch ($permissionName) {
             case 'show-user':
-                $button = ($counter <= 3) ? $this->getShowButtonAttribute($class) : '<li>'
-                    .$this->getShowButtonAttribute($class).
-                    '</li>';
+                $button = $this->getShowButtonAttribute('btn btn-info btn-round');
                 break;
             case 'edit-user':
-                $button = ($counter <= 3) ? $this->getEditButtonAttribute($class) : '<li>'
-                    .$this->getEditButtonAttribute($class).
-                    '</li>';
-                $button .= ($counter <= 3) ? $this->getChangePasswordButtonAttribute($class) : '<li>'
-                    .$this->getChangePasswordButtonAttribute($class).
-                    '</li>';
+                $button = $this->getEditButtonAttribute('btn btn-success btn-round');
+                $button .= $this->getChangePasswordButtonAttribute('btn btn-primary btn-round');
                 break;
             case 'activate-user':
                 if (\Route::currentRouteName() == 'admin.access.user.deactivated.get') {
-                    $button = ($counter <= 3) ? $this->getStatusButtonAttribute($class) : '<li>'
-                    .$this->getStatusButtonAttribute($class).
-                    '</li>';
+                    $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
                 } else {
                     $button = '';
                 }
                 break;
             case 'deactivate-user':
                 if (\Route::currentRouteName() == 'admin.access.user.get') {
-                    $button = ($counter <= 3) ? $this->getStatusButtonAttribute($class) : '<li>'
-                    .$this->getStatusButtonAttribute($class).
-                    '</li>';
+                    $button = $this->getStatusButtonAttribute('btn btn-warning btn-round');
                 } else {
                     $button = '';
                 }
                 break;
             case 'delete-user':
                 if (access()->user()->id != $this->id) {
-                    $button = ($counter <= 3) ? $this->getDeleteButtonAttribute($class) : '<li>'
-                        .$this->getDeleteButtonAttribute($class).
-                        '</li>';
+                    $button = $this->getDeleteButtonAttribute('btn btn-danger btn-round');
                 } else {
                     $button = '';
                 }
                 break;
             case 'login-as-user':
                 if (access()->user()->id != $this->id) {
-                    $button = ($counter <= 3) ? $this->getLoginAsButtonAttribute($class) : '<li>'
-                        .$this->getLoginAsButtonAttribute($class).
-                        '</li>';
+                    $button = $this->getLoginAsButtonAttribute('btn btn-primary btn-round');
                 } else {
                     $button = '';
                 }
                 break;
             case 'clear-user-session':
                 if (access()->user()->id != $this->id) {
-                    $button = ($counter <= 3) ? $this->getClearSessionButtonAttribute($class) : '<li>'
-                        .$this->getClearSessionButtonAttribute($class).
-                        '</li>';
+                    $button = $this->getClearSessionButtonAttribute('btn btn-rose btn-round');
                 } else {
                     $button = '';
                 }
