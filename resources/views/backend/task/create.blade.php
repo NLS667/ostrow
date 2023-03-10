@@ -112,7 +112,8 @@
                 <div class="col-sm-12 form-group bmd-form-group">
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" name="nextTask" id="nextTask" />
+                      <input type="hidden" name="param" value="0">
+                      <input class="form-check-input" type="checkbox" name="nextTask" id="nextTask" value="1"/>
                         <span class="form-check-sign">
                           <span class="check"></span>
                         </span>
