@@ -419,7 +419,7 @@ trait UserAttribute
                             <ul class="dropdown-menu dropdown-menu-right">';
                     }
                 }
-                *//
+                **/
                 $i++;
             }
             //$actionButton .= '</ul></div>';
