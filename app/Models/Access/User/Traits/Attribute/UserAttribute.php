@@ -403,10 +403,10 @@ trait UserAttribute
             }
 
             foreach ($userPermission as $value) {
-                if ($i != 3) {
+                //if ($i != 3) {
                     $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
-                }
-
+                //}
+                /**
                 if ($i == 3) {
                     $actionButton = $actionButton.''.$this->getActionButtonsByPermissionName($value, $i);
 
@@ -419,9 +419,10 @@ trait UserAttribute
                             <ul class="dropdown-menu dropdown-menu-right">';
                     }
                 }
+                *//
                 $i++;
             }
-            $actionButton .= '</ul></div>';
+            //$actionButton .= '</ul></div>';
 
             return $actionButton;
         }
