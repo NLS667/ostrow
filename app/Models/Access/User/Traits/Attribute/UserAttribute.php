@@ -27,7 +27,7 @@ trait UserAttribute
      * @return bool
      */
     public function isAdmin() {
-       return $this->roles()->where('roles.id','<', 2)->exists();
+       return $this->roles()->where('roles.id','<', 3)->exists();
     }
 
     /**
