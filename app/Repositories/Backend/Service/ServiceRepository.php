@@ -141,7 +141,12 @@ class ServiceRepository extends BaseRepository
             for($i=0;$i < count($old_models); $i++)
             {
                 $old_dev = explode (",", $old_devices[$i]);
-                $new_dev = explode (",", $request['devices'][$i]);
+                if(array_key_exists($i, $request['devices'])){
+                    $new_dev = explode (",", $request['devices'][$i]);
+                } else {
+                    $new_dev = [];
+                }
+                
 
                 $devices_to_delete = array_diff($old_dev, $new_dev);
                 if(count($devices_to_delete) > 0) {
