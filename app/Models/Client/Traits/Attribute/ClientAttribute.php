@@ -273,9 +273,9 @@ trait ClientAttribute
             }
 
             foreach ($userPermission as $value) {
-                if ($i != 3) {
+                //if ($i <= 3) {
                     $actionButton = $actionButton.' '.$this->getActionButtonsByPermissionName($value, $i);
-                }
+                //}
                 /**
                 if ($i == 3) {
                     $actionButton = $actionButton.' '.$this->getActionButtonsByPermissionName($value, $i);
