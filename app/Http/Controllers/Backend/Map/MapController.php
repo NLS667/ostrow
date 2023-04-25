@@ -75,18 +75,19 @@ class MapController extends Controller
 
                     foreach($services as $service){
                         $catid = $service->service_cat_id;
-                        $service_tasks = $service->tasks()->whereDate('start', '>', Carbon::now()->subMonths(6))->get();
+                        $service_tasks = $service->tasks()->where('isPlanned', '=', false)->whereDate('start', '>', Carbon::now()->subMonths(6))->get();
 
-                        foreach($service_tasks as $task){
-                            if($layer->id == $catid){ 
-                                if(auth()->user()->isAdmin())
-                                {               
-                                    $layer->markers[]  = (object)[
-                                        'content' => view('backend.map.popup')->with('client', $client)->render(),
-                                        'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                                        'title' => $client->full_name,
-                                    ];
-                                } else {                                    
+                        
+                        if($layer->id == $catid){ 
+                            if(auth()->user()->isAdmin())
+                            {               
+                                $layer->markers[]  = (object)[
+                                    'content' => view('backend.map.popup')->with('client', $client)->render(),
+                                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                                    'title' => $client->full_name,
+                                ];
+                            } else {
+                                foreach($service_tasks as $task){                             
                                     if ($task->assignee_id == auth()->user()->id) {
                                         $layer->markers[]  = (object)[
                                             'content' => view('backend.map.popup')->with('client', $client)->render(),

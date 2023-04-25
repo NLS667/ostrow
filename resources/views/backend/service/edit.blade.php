@@ -138,35 +138,39 @@
                   @endphp
                   @for ($y = 0; $y < count($devices); $y++)
                   <div class="row" id="dev_row{{$y}}">
-                    {{-- Model --}}
-                    <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('models.'.$y) ? ' has-danger' : '' }}">
-                      @if ($models->count())
-                      <select name="models[]" class="form-control select2 model-{{$y}}-select" data-placeholder="Wybierz Model Urządzenia">
-                        <option></option>
-                        @foreach ($models as $model)
-                        <option value="{{$model->id}}" {{ $devices[$y] == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
-                        @endforeach                  
-                      </select>
-                      @endif
-                      @if ($errors->has('models.'.$y))
-                        <span class="material-icons form-control-feedback">clear</span>
-                        <span id="models-error" class="error text-danger" for="input-models">{{ $errors->first('models.'.$y) }}</span>
-                      @endif
-                    </div>
-                    @if($y == 0)
-                    <div class="col-sm-6">
-                      <button type="button" name="add_device" id="add_device" class="btn btn-primary">Dodaj urządzenie</button>
-                    </div>
-                    @else
-                    <div class="col-sm-6">
-                      <button type="button" name="remove" id="{{ $y }}" class="btn btn-danger btn_remove_dev">X</button>
-                    </div>
-                    @endif
-                  </div>
-                  <div class="row" id="devices">
-                    {{-- Serial Numbers --}}
-                    <div class="col-sm-6 form-group bmd-form-group">
-                      <input type="text" id="input-devices-{{$y}}" name="devices[]" value="{{ $serials[$y]}}" class="input-devices form-control" placeholder="Numer seryjny...">
+                    <div class="col-sm-12">
+                      <div class="row" id="model">
+                        {{-- Model --}}
+                        <div class="col-sm-6 form-group bmd-form-group {{ $errors->has('models.'.$y) ? ' has-danger' : '' }}">
+                          @if ($models->count())
+                          <select name="models[]" class="form-control select2 model-{{$y}}-select" data-placeholder="Wybierz Model Urządzenia">
+                            <option></option>
+                            @foreach ($models as $model)
+                            <option value="{{$model->id}}" {{ $devices[$y] == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>
+                            @endforeach                  
+                          </select>
+                          @endif
+                          @if ($errors->has('models.'.$y))
+                            <span class="material-icons form-control-feedback">clear</span>
+                            <span id="models-error" class="error text-danger" for="input-models">{{ $errors->first('models.'.$y) }}</span>
+                          @endif
+                        </div>
+                        @if($y == 0)
+                        <div class="col-sm-6">
+                          <button type="button" name="add_device" id="add_device" class="btn btn-primary">Dodaj urządzenie</button>
+                        </div>
+                        @else
+                        <div class="col-sm-6">
+                          <button type="button" name="remove" id="{{ $y }}" class="btn btn-danger btn_remove_dev">X</button>
+                        </div>
+                        @endif
+                      </div>
+                      <div class="row" id="devices">
+                        {{-- Serial Numbers --}}
+                        <div class="col-sm-6 form-group bmd-form-group">
+                          <input type="text" id="input-devices-{{$y}}" name="devices[]" value="{{ $serials[$y]}}" class="input-devices form-control" placeholder="Numer seryjny...">
+                        </div>
+                      </div>
                     </div>
                   </div>
                   @endfor
@@ -239,7 +243,7 @@
 
           $('#add_device').click(function(){  
                y++;  
-               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-6 form-group bmd-form-group"><select name="models[]" class="form-control select2 model-'+y+'-select" data-placeholder="Wybierz Model Urządzenia"><option></option>@foreach ($models as $model)<option value="{{$model->id}}" {{ old("models['+y+']") == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>@endforeach</select></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_dev">X</button></div></div>');
+               $('#devices').append('<div class="row dynamic-added" id="dev_row'+y+'"><div class="col-sm-12"><div class="row" id="model"><div class="col-sm-6 form-group bmd-form-group"><select name="models[]" class="form-control select2 model-'+y+'-select" data-placeholder="Wybierz Model Urządzenia"><option></option>@foreach ($models as $model)<option value="{{$model->id}}" {{ old("models['+y+']") == $model->id ? "selected":"" }}>{{ $model->producer->name.' '.$model->name}}</option>@endforeach</select></div><div class="col-sm-6"><button type="button" name="remove" id="'+y+'" class="btn btn-danger btn_remove_dev">X</button></div></div><div class="row" id="devices"><div class="col-sm-6 form-group bmd-form-group"><input type="text" id="input-devices_'+y+'" name="devices[]" class="form-control" placeholder="Numer seryjny..."></div></div></div></div>');
 
                $(".select2.model-"+y+"-select").select2({
                     placeholder: "Wybierz Model",

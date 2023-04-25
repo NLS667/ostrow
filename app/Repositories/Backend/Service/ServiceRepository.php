@@ -141,7 +141,11 @@ class ServiceRepository extends BaseRepository
             for($i=0;$i < count($old_models); $i++)
             {
                 $old_dev = explode (",", $old_devices[$i]);
-                $new_dev = explode (",", $request['devices'][$i]);
+                if(array_key_exists($i, $request['devices'])){
+                    $new_dev = explode (",", $request['devices'][$i]);
+                } else {
+                    $new_dev = [];
+                }
 
                 $devices_to_delete = array_diff($old_dev, $new_dev);
                 if(count($devices_to_delete) > 0) {
@@ -199,14 +203,16 @@ class ServiceRepository extends BaseRepository
     public function delete($service)
     {
         $old_devices = json_decode($service->devices);
-        if(count($old_devices) > 0){
-            for($i=0;$i < count($old_devices); $i++)
-            {
-                $todelete = explode (",", $old_devices[$i]);
-                foreach($todelete as $dev_to_del)
+        if($old_devices != null) {
+            if(count($old_devices) > 0){
+                for($i=0;$i < count($old_devices); $i++)
                 {
-                    $devdel = Device::where('serial_number', $dev_to_del)->first();
-                    $devdel->delete();
+                    $todelete = explode (",", $old_devices[$i]);
+                    foreach($todelete as $dev_to_del)
+                    {
+                        $devdel = Device::where('serial_number', $dev_to_del)->first();
+                        $devdel->delete();
+                    }
                 }
             }
         }

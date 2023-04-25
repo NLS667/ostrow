@@ -14,15 +14,13 @@ use App\Models\Task\Task;
 use App\Models\ServiceCategory\ServiceCategory;
 use Carbon\Carbon as Carbon;
 
-class AdminController extends Controller
-{
+class AdminController extends Controller {
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
+    public function index(){
 
 
         $clients = Client::where('status', 1)->get();
@@ -93,16 +91,16 @@ class AdminController extends Controller
                         $catid = $service->service_cat_id;
                         $service_tasks = $service->tasks()->where('isPlanned', '=', false)->whereDate('start', '>', Carbon::now()->subMonths(6))->get();
                         
-                        foreach($service_tasks as $task){
-                            if($layer->id == $catid){ 
-                                if(auth()->user()->isAdmin())
-                                {               
-                                    $layer->markers[]  = (object)[
-                                        'content' => view('backend.map.popup')->with('client', $client)->render(),
-                                        'coords' => [$client->adr_lattitude, $client->adr_longitude],
-                                        'title' => $client->full_name,
-                                    ];
-                                } else {                                    
+                        if($layer->id == $catid){ 
+                            if(auth()->user()->isAdmin())
+                            {               
+                                $layer->markers[]  = (object)[
+                                    'content' => view('backend.map.popup')->with('client', $client)->render(),
+                                    'coords' => [$client->adr_lattitude, $client->adr_longitude],
+                                    'title' => $client->full_name,
+                                ];
+                            } else {
+                                foreach($service_tasks as $task){                             
                                     if ($task->assignee_id == auth()->user()->id) {
                                         $layer->markers[]  = (object)[
                                             'content' => view('backend.map.popup')->with('client', $client)->render(),
@@ -114,12 +112,11 @@ class AdminController extends Controller
                             }
                         }
                     }
-                }
-            }  
+                }  
+            }
+            return view('backend.index')->with('map_data', $map_data)->with('data', $data);
         }
-        return view('backend.index')->with('map_data', $map_data)->with('data', $data);
-        
-    }
+}
 
     /**
      * Used to display form for edit profile.

@@ -58,8 +58,10 @@ class FinanceController extends Controller
     		if($client_services->count() > 0){
                 foreach($client_services as $client_service){
                     $GrandTotalAmount += $client_service->deal_amount;
-                    $GrandTotalAdvance += array_sum(json_decode($client_service->deal_advance));
-                    $GrandTotalLeft += $client_service->deal_amount - array_sum(json_decode($client_service->deal_advance));
+                    $if($client_service->deal_advance != null){
+                        $GrandTotalAdvance += array_sum(json_decode($client_service->deal_advance));
+                        $GrandTotalLeft += $client_service->deal_amount - array_sum(json_decode($client_service->deal_advance));
+                    }
                 }
     			$finance_data[] = (object)[
 	    			'name' => $client->full_name,
