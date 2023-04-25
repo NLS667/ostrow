@@ -69,6 +69,7 @@ class MapController extends Controller
             {
                 $services = Service::where('client_id', $client->id)->get();
                 $client_markers = [];
+                \Log::info($client);
                 $client->adr_region = "woj. ".$regions[$client->adr_region];
 
                 foreach($map_data['layers'] as $layer){
