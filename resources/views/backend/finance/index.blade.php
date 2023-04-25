@@ -63,9 +63,9 @@
             function displayServices(services) {
               console.log(services);
               var html = '';
-              var amountTotal = '0.00';
-              var advanceTotal = '0.00';
-              var leftTotal = '0.00';
+              var amountTotal = 0.00;
+              var advanceTotal = 0.00;
+              var leftTotal = 0.00;
 
               if(services.length > 0){              
                   amountTotal = parseFloat(+services[0].deal_amount);
