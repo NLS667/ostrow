@@ -77,24 +77,36 @@
               // i=1 - Skip the first service, its in the DT row.
               for (i=1; i<services.length; i++) {
                 var service = services[i];
-                if(service.left_amount == '0.00'){
-                    var style = 'text-success';
-                } else {
-                    style = 'text-danger';
-                }
+                if(service.length > 0 ){
+                    if(service.left_amount == '0.00'){
+                        var style = 'text-success';
+                    } else {
+                        style = 'text-danger';
+                    }
 
-                html += '<tr>'+
-                    '<td></td>'+
-                    '<td></td>'+
-                    '<td>'+service.short_name+'</td>'+
-                    '<td class="text-right">'+service.deal_amount.toFixed(2)+'</td>'+
-                    '<td class="text-right">'+service.deal_advance.toFixed(2)+'</td>'+
-                    '<td class="text-right '+style+'">'+service.left_amount.toFixed(2)+'</td>'+
-                    '<td class="text-center td-actions">'+service.edit_link+'</td>'+
-                '</tr>';
-                amountTotal += service.deal_amount;
-                advanceTotal += service.deal_advance;
-                leftTotal += service.left_amount;
+                    html += '<tr>'+
+                        '<td></td>'+
+                        '<td></td>'+
+                        '<td>'+service.short_name+'</td>'+
+                        '<td class="text-right">'+service.deal_amount.toFixed(2)+'</td>'+
+                        '<td class="text-right">'+service.deal_advance.toFixed(2)+'</td>'+
+                        '<td class="text-right '+style+'">'+service.left_amount.toFixed(2)+'</td>'+
+                        '<td class="text-center td-actions">'+service.edit_link+'</td>'+
+                    '</tr>';
+                    amountTotal += service.deal_amount;
+                    advanceTotal += service.deal_advance;
+                    leftTotal += service.left_amount;
+                } else {
+                    html += '<tr>'+
+                        '<td></td>'+
+                        '<td></td>'+
+                        '<td>'+service.short_name+'</td>'+
+                        '<td class="text-right">Brak umów</td>'+
+                        '<td class="text-right">Brak zaliczek</td>'+
+                        '<td class="text-right success">0.00</td>'+
+                        '<td class="text-center td-actions"> </td>'+
+                    '</tr>';
+                }
               }
               if(leftTotal == '0.00'){
                     var newStyle = 'text-success';
