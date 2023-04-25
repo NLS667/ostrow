@@ -63,9 +63,16 @@
             function displayServices(services) {
               console.log(services);
               var html = '';
-              let amountTotal = parseFloat(+services[0].deal_amount);
-              let advanceTotal = +services[0].deal_advance;
-              let leftTotal = +services[0].left_amount;
+              if(services[0].length > 0)
+              {
+                let amountTotal = parseFloat(+services[0].deal_amount);
+                let advanceTotal = +services[0].deal_advance;
+                let leftTotal = +services[0].left_amount;
+              } else {
+                let amountTotal = 0;
+                let advanceTotal = 0;
+                let leftTotal = 0;
+              }
 
               // i=1 - Skip the first service, its in the DT row.
               for (i=1; i<services.length; i++) {
